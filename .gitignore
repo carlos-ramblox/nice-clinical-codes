@@ -64,5 +64,13 @@ Thumbs.db
 # Docker
 docker-compose.override.yml
 
+# AI agent configs
+AGENTS.md
+CLAUDE.md
+
+# AI agent configs
+AGENTS.md
+CLAUDE.md
+
 # Jupyter
 .ipynb_checkpoints/
