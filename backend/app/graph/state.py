@@ -8,6 +8,7 @@ class ParsedCondition(TypedDict):
     name: str
     condition_type: str  # "primary" or "comorbidity"
     coding_systems: list[str]
+    domain: str  # "Condition", "Drug", or "Procedure"
 
 
 class RetrievedCode(TypedDict):
