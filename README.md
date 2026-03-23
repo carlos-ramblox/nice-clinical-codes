@@ -131,7 +131,7 @@ docker-compose up --build
 |--------|------|------------|
 | [OMOPHub](https://omophub.com) | API | SNOMED CT and ICD-10 concept search |
 | [QOF Business Rules](https://digital.nhs.uk/data-and-information/data-collections-and-data-sets/data-collections/quality-and-outcomes-framework-qof) | Excel | NHS primary care quality indicator code sets |
-| [OpenCodelists](https://www.opencodelists.org) | API | Published, peer-reviewed clinical code lists |
+| [OpenCodelists](https://www.opencodelists.org) | CSV + scraping | Published, peer-reviewed clinical code lists |
 | [UMLS Metathesaurus](https://uts.nlm.nih.gov) | API | Concept relationships, synonyms, hierarchies |
 | [NHS England Refsets](https://digital.nhs.uk/services/terminology-and-classifications/snomed-ct) | CSV | Curated SNOMED reference sets |
 

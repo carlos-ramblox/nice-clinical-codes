@@ -20,3 +20,13 @@ QOF (Quality and Outcomes Framework) business rules for 2024-25. Contains the cl
 - **Format:** Excel with macros (.xlsm)
 - **Size:** ~1.7MB
 - **Used by:** `backend/app/ingestion/ingest_qof.py` (NICE-017)
+
+### raw/opencodelists/
+
+Pre-downloaded CSV exports from [OpenCodelists](https://www.opencodelists.org) (Bennett Institute, University of Oxford). Each CSV contains SNOMED codes for a specific condition.
+
+- **Source:** [OpenCodelists](https://www.opencodelists.org)
+- **Format:** CSV (code, term)
+- **Includes:** diabetes-type-2, diabetes-mellitus, hypertension, atrial-fibrillation, asthma, heart-failure, stroke
+- **Used by:** `backend/app/graph/nodes/opencodelists_retriever.py` (NICE-018)
+- **Note:** The pipeline checks SQLite for pre-downloaded data first, falls back to live scraping if not found
