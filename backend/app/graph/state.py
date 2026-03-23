@@ -21,6 +21,18 @@ class RetrievedCode(TypedDict):
     usage_frequency: int | None
 
 
+class EnrichedCode(TypedDict):
+    code: str
+    term: str
+    vocabulary: str
+    source: str  # first source that returned this code
+    sources: list[str]  # all sources that returned this code
+    source_count: int
+    domain: str
+    similarity_score: float | None
+    usage_frequency: int | None
+
+
 class ScoredCode(TypedDict):
     code: str
     term: str
@@ -53,7 +65,7 @@ class PipelineState(TypedDict):
     retrieved_codes: Annotated[list[RetrievedCode], add]
 
     # Enrichment
-    enriched_codes: list[RetrievedCode]
+    enriched_codes: list[EnrichedCode]
 
     # Scoring
     scored_codes: list[ScoredCode]
