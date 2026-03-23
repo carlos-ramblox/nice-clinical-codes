@@ -1,76 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import type { CodeResult } from "@/lib/api";
-
-const MOCK_RESULTS: CodeResult[] = [
-  {
-    code: "E11.9",
-    term: "Type 2 diabetes mellitus without complications",
-    vocabulary: "ICD-10",
-    decision: "include",
-    confidence: 0.98,
-    rationale: "Direct match for T2DM diagnosis code",
-    sources: ["NICE Guideline NG28"],
-    usage_frequency: 482000,
-    classifier_score: 0.96,
-  },
-  {
-    code: "44054006",
-    term: "Type 2 diabetes mellitus (disorder)",
-    vocabulary: "SNOMED CT",
-    decision: "include",
-    confidence: 0.99,
-    rationale: "Primary SNOMED concept for T2DM",
-    sources: ["NHS Digital", "NICE NG28"],
-    usage_frequency: 510000,
-    classifier_score: 0.98,
-  },
-  {
-    code: "I10",
-    term: "Essential (primary) hypertension",
-    vocabulary: "ICD-10",
-    decision: "uncertain",
-    confidence: 0.85,
-    rationale: "Comorbidity — may need clinical review for inclusion scope",
-    sources: ["NICE Guideline NG136", "Cochrane"],
-    usage_frequency: 390000,
-    classifier_score: 0.78,
-  },
-  {
-    code: "59621000",
-    term: "Essential hypertension (disorder)",
-    vocabulary: "SNOMED CT",
-    decision: "include",
-    confidence: 0.97,
-    rationale: "Primary SNOMED concept for essential hypertension",
-    sources: ["NHS Digital", "NICE NG136"],
-    usage_frequency: 445000,
-    classifier_score: 0.95,
-  },
-  {
-    code: "E10.9",
-    term: "Type 1 diabetes mellitus without complications",
-    vocabulary: "ICD-10",
-    decision: "exclude",
-    confidence: 0.95,
-    rationale: "Type 1 diabetes, not type 2 — different condition",
-    sources: ["NICE Guideline NG17"],
-    usage_frequency: 120000,
-    classifier_score: 0.12,
-  },
-  {
-    code: "46635009",
-    term: "Type 1 diabetes mellitus (disorder)",
-    vocabulary: "SNOMED CT",
-    decision: "exclude",
-    confidence: 0.96,
-    rationale: "Type 1 diabetes — excluded from T2DM code list",
-    sources: ["NHS Digital", "NICE NG17"],
-    usage_frequency: 135000,
-    classifier_score: 0.1,
-  },
-];
+import { searchCodes, exportCodes } from "@/lib/api";
+import type { CodeResult, SearchResponse } from "@/lib/api";
 
 function DecisionBadge({ decision }: { decision: string }) {
   const config = {
@@ -90,19 +22,53 @@ function DecisionBadge({ decision }: { decision: string }) {
 export default function Home() {
   const [query, setQuery] = useState("");
   const [loading, setLoading] = useState(false);
-  const [results, setResults] = useState<CodeResult[] | null>(null);
+  const [error, setError] = useState<string | null>(null);
+  const [response, setResponse] = useState<SearchResponse | null>(null);
   const [selectedCode, setSelectedCode] = useState<CodeResult | null>(null);
+  const [exporting, setExporting] = useState(false);
 
   const handleSearch = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!query.trim()) return;
+    if (!query.trim() || loading) return;
+
     setLoading(true);
-    // TODO: hook up to backend API
-    await new Promise((r) => setTimeout(r, 800));
-    setResults(MOCK_RESULTS);
-    setSelectedCode(MOCK_RESULTS[0]);
-    setLoading(false);
+    setError(null);
+    setResponse(null);
+    setSelectedCode(null);
+
+    try {
+      const data = await searchCodes(query);
+      setResponse(data);
+      if (data.results.length > 0) {
+        setSelectedCode(data.results[0]);
+      }
+    } catch (err) {
+      setError(err instanceof Error ? err.message : "Search failed");
+    } finally {
+      setLoading(false);
+    }
   };
+
+  const handleExport = async (format: "csv" | "xlsx") => {
+    if (!response?.search_id || exporting) return;
+    setExporting(true);
+    try {
+      const blob = await exportCodes(response.search_id, format);
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = `codelist_${response.search_id}.${format}`;
+      a.click();
+      URL.revokeObjectURL(url);
+    } catch (err) {
+      setError(err instanceof Error ? err.message : "Export failed");
+    } finally {
+      setExporting(false);
+    }
+  };
+
+  const results = response?.results ?? null;
+  const summary = response?.summary as Record<string, number> | undefined;
 
   return (
     <div className="max-w-7xl mx-auto px-6 py-8">
@@ -128,21 +94,56 @@ export default function Home() {
               disabled={loading || !query.trim()}
               className="px-8 bg-[#005EA5] text-white font-medium hover:bg-[#00436E] disabled:opacity-50 transition-colors"
             >
-              {loading ? "..." : "Search"}
+              {loading ? "Searching..." : "Search"}
             </button>
           </div>
         </form>
       </div>
 
+      {/* Loading */}
+      {loading && (
+        <div className="text-center py-16">
+          <div className="inline-block h-8 w-8 border-4 border-[#005EA5] border-t-transparent rounded-full animate-spin" />
+          <p className="mt-4 text-gray-500 text-sm">
+            Searching across NHS reference sets, QOF business rules, and published code lists...
+          </p>
+        </div>
+      )}
+
+      {/* Error */}
+      {error && (
+        <div className="max-w-3xl mx-auto bg-red-50 border border-red-200 text-red-700 px-5 py-4 text-sm">
+          <p className="font-semibold">Search failed</p>
+          <p className="mt-1">{error}</p>
+          <button
+            onClick={() => setError(null)}
+            className="mt-2 text-red-600 underline text-xs"
+          >
+            Dismiss
+          </button>
+        </div>
+      )}
+
       {/* Results + Provenance */}
-      {results && (
+      {results && results.length > 0 && (
         <div className="flex gap-6">
           {/* Table */}
           <div className="flex-1 bg-white border border-gray-200">
-            <div className="px-5 py-3 border-b border-gray-200">
+            <div className="px-5 py-3 border-b border-gray-200 flex items-center justify-between">
               <h3 className="font-[family-name:var(--font-lora)] text-lg font-semibold">
                 Results
               </h3>
+              {summary && (
+                <div className="flex gap-3 text-xs text-gray-500">
+                  <span>{summary.total_candidates} codes</span>
+                  <span className="text-green-600">{summary.included} included</span>
+                  <span className="text-red-600">{summary.excluded} excluded</span>
+                  <span className="text-amber-600">{summary.uncertain} review</span>
+                  {response?.elapsed_seconds && (
+                    <span>{response.elapsed_seconds}s</span>
+                  )}
+                </div>
+              )}
             </div>
             <div className="overflow-x-auto">
               <table className="w-full text-sm">
@@ -159,7 +160,7 @@ export default function Home() {
                 <tbody>
                   {results.map((r, i) => (
                     <tr
-                      key={r.code}
+                      key={`${r.code}-${r.vocabulary}`}
                       tabIndex={0}
                       role="button"
                       aria-label={`View details for ${r.term}`}
@@ -171,7 +172,7 @@ export default function Home() {
                         }
                       }}
                       className={`border-b border-gray-100 cursor-pointer transition-colors ${
-                        selectedCode?.code === r.code
+                        selectedCode?.code === r.code && selectedCode?.vocabulary === r.vocabulary
                           ? "bg-blue-50"
                           : i % 2 === 0
                           ? "bg-white"
@@ -193,15 +194,23 @@ export default function Home() {
                 </tbody>
               </table>
             </div>
-            <div className="px-5 py-3 flex justify-end border-t border-gray-200">
+            <div className="px-5 py-3 flex justify-end gap-2 border-t border-gray-200">
               <button
+                onClick={() => handleExport("csv")}
+                disabled={exporting || !response?.search_id}
                 className="inline-flex items-center gap-2 px-5 py-2 bg-[#005EA5] text-white text-sm font-medium hover:bg-[#00436E] transition-colors disabled:opacity-50"
-                disabled
               >
                 <svg width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24" aria-hidden="true">
                   <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3" />
                 </svg>
-                Export CSV
+                {exporting ? "Exporting..." : "Export CSV"}
+              </button>
+              <button
+                onClick={() => handleExport("xlsx")}
+                disabled={exporting || !response?.search_id}
+                className="inline-flex items-center gap-2 px-4 py-2 border border-gray-300 text-gray-700 text-sm font-medium hover:bg-gray-50 transition-colors disabled:opacity-50"
+              >
+                Export Excel
               </button>
             </div>
           </div>
@@ -255,8 +264,15 @@ export default function Home() {
         </div>
       )}
 
+      {/* No results */}
+      {results && results.length === 0 && (
+        <div className="text-center py-16 text-gray-400 text-sm">
+          No codes found for this query.
+        </div>
+      )}
+
       {/* Empty state */}
-      {!results && !loading && (
+      {!results && !loading && !error && (
         <div className="text-center mt-20">
           <h2 className="font-[family-name:var(--font-lora)] text-2xl font-semibold text-gray-700 mb-2">
             Clinical Code Search
