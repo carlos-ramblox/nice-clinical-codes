@@ -1,0 +1,335 @@
+[
+  {
+    "code": "241949004",
+    "term": "Non-allergic anaphylaxis caused by aspirin (disorder)",
+    "vocabulary": "SNOMED CT",
+    "source": "QOF Business Rules 2024-25",
+    "domain": "Condition",
+    "similarity_score": 0.8476,
+    "usage_frequency": null
+  },
+  {
+    "code": "985271000000102",
+    "term": "Apixaban allergy (disorder)",
+    "vocabulary": "SNOMED CT",
+    "source": "QOF Business Rules 2024-25",
+    "domain": "Condition",
+    "similarity_score": 0.7808,
+    "usage_frequency": null
+  },
+  {
+    "code": "609540003",
+    "term": "Non-allergic hypersensitivity to enalapril (finding)",
+    "vocabulary": "SNOMED CT",
+    "source": "QOF Business Rules 2024-25",
+    "domain": "Condition",
+    "similarity_score": 0.771,
+    "usage_frequency": null
+  },
+  {
+    "code": "18401000122101",
+    "term": "Non-allergic hypersensitivity to imidapril (finding)",
+    "vocabulary": "SNOMED CT",
+    "source": "QOF Business Rules 2024-25",
+    "domain": "Condition",
+    "similarity_score": 0.7661,
+    "usage_frequency": null
+  },
+  {
+    "code": "293982008",
+    "term": "Allergy to propranolol (finding)",
+    "vocabulary": "SNOMED CT",
+    "source": "QOF Business Rules 2024-25",
+    "domain": "Condition",
+    "similarity_score": 0.7649,
+    "usage_frequency": null
+  },
+  {
+    "code": "293969000",
+    "term": "Allergy to esmolol (finding)",
+    "vocabulary": "SNOMED CT",
+    "source": "QOF Business Rules 2024-25",
+    "domain": "Condition",
+    "similarity_score": 0.7639,
+    "usage_frequency": null
+  },
+  {
+    "code": "293586001",
+    "term": "Allergy to aspirin (finding)",
+    "vocabulary": "SNOMED CT",
+    "source": "QOF Business Rules 2024-25",
+    "domain": "Condition",
+    "similarity_score": 0.7586,
+    "usage_frequency": null
+  },
+  {
+    "code": "609545008",
+    "term": "Non-allergic hypersensitivity to ramipril (finding)",
+    "vocabulary": "SNOMED CT",
+    "source": "QOF Business Rules 2024-25",
+    "domain": "Condition",
+    "similarity_score": 0.7585,
+    "usage_frequency": null
+  },
+  {
+    "code": "609539000",
+    "term": "Non-allergic hypersensitivity to cilazapril (finding)",
+    "vocabulary": "SNOMED CT",
+    "source": "QOF Business Rules 2024-25",
+    "domain": "Condition",
+    "similarity_score": 0.7578,
+    "usage_frequency": null
+  },
+  {
+    "code": "609538008",
+    "term": "Non-allergic hypersensitivity to captopril (finding)",
+    "vocabulary": "SNOMED CT",
+    "source": "QOF Business Rules 2024-25",
+    "domain": "Condition",
+    "similarity_score": 0.7563,
+    "usage_frequency": null
+  },
+  {
+    "code": "89731000000101",
+    "term": "History of clopidogrel allergy (situation)",
+    "vocabulary": "SNOMED CT",
+    "source": "QOF Business Rules 2024-25",
+    "domain": "Condition",
+    "similarity_score": 0.7558,
+    "usage_frequency": null
+  },
+  {
+    "code": "609544007",
+    "term": "Non-allergic hypersensitivity to quinapril (finding)",
+    "vocabulary": "SNOMED CT",
+    "source": "QOF Business Rules 2024-25",
+    "domain": "Condition",
+    "similarity_score": 0.7553,
+    "usage_frequency": null
+  },
+  {
+    "code": "609541004",
+    "term": "Non-allergic hypersensitivity to fosinopril (finding)",
+    "vocabulary": "SNOMED CT",
+    "source": "QOF Business Rules 2024-25",
+    "domain": "Condition",
+    "similarity_score": 0.7549,
+    "usage_frequency": null
+  },
+  {
+    "code": "293968008",
+    "term": "Allergy to celiprolol (finding)",
+    "vocabulary": "SNOMED CT",
+    "source": "QOF Business Rules 2024-25",
+    "domain": "Condition",
+    "similarity_score": 0.7541,
+    "usage_frequency": null
+  },
+  {
+    "code": "293964005",
+    "term": "Allergy to acebutolol (finding)",
+    "vocabulary": "SNOMED CT",
+    "source": "QOF Business Rules 2024-25",
+    "domain": "Condition",
+    "similarity_score": 0.7538,
+    "usage_frequency": null
+  },
+  {
+    "code": "293972007",
+    "term": "Allergy to nadolol (finding)",
+    "vocabulary": "SNOMED CT",
+    "source": "QOF Business Rules 2024-25",
+    "domain": "Condition",
+    "similarity_score": 0.7529,
+    "usage_frequency": null
+  },
+  {
+    "code": "609534005",
+    "term": "Non-allergic hypersensitivity to losartan (finding)",
+    "vocabulary": "SNOMED CT",
+    "source": "QOF Business Rules 2024-25",
+    "domain": "Condition",
+    "similarity_score": 0.7528,
+    "usage_frequency": null
+  },
+  {
+    "code": "18361000122109",
+    "term": "Non-allergic hypersensitivity to moexipril (finding)",
+    "vocabulary": "SNOMED CT",
+    "source": "QOF Business Rules 2024-25",
+    "domain": "Condition",
+    "similarity_score": 0.751,
+    "usage_frequency": null
+  },
+  {
+    "code": "1362871000000100",
+    "term": "Allergy to inclisiran (finding)",
+    "vocabulary": "SNOMED CT",
+    "source": "QOF Business Rules 2024-25",
+    "domain": "Condition",
+    "similarity_score": 0.7506,
+    "usage_frequency": null
+  },
+  {
+    "code": "18321000122100",
+    "term": "Non-allergic hypersensitivity to benazepril (finding)",
+    "vocabulary": "SNOMED CT",
+    "source": "QOF Business Rules 2024-25",
+    "domain": "Condition",
+    "similarity_score": 0.7487,
+    "usage_frequency": null
+  },
+  {
+    "code": "609542006",
+    "term": "Non-allergic hypersensitivity to lisinopril (finding)",
+    "vocabulary": "SNOMED CT",
+    "source": "QOF Business Rules 2024-25",
+    "domain": "Condition",
+    "similarity_score": 0.7455,
+    "usage_frequency": null
+  },
+  {
+    "code": "985251000000106",
+    "term": "Rivaroxaban allergy (disorder)",
+    "vocabulary": "SNOMED CT",
+    "source": "QOF Business Rules 2024-25",
+    "domain": "Condition",
+    "similarity_score": 0.742,
+    "usage_frequency": null
+  },
+  {
+    "code": "293585002",
+    "term": "Allergy to salicylate (finding)",
+    "vocabulary": "SNOMED CT",
+    "source": "QOF Business Rules 2024-25",
+    "domain": "Condition",
+    "similarity_score": 0.7419,
+    "usage_frequency": null
+  },
+  {
+    "code": "1365431000000106",
+    "term": "Allergy to alirocumab (finding)",
+    "vocabulary": "SNOMED CT",
+    "source": "QOF Business Rules 2024-25",
+    "domain": "Condition",
+    "similarity_score": 0.7389,
+    "usage_frequency": null
+  },
+  {
+    "code": "293965006",
+    "term": "Allergy to atenolol (finding)",
+    "vocabulary": "SNOMED CT",
+    "source": "QOF Business Rules 2024-25",
+    "domain": "Condition",
+    "similarity_score": 0.7386,
+    "usage_frequency": null
+  },
+  {
+    "code": "241960008",
+    "term": "Aspirin-induced angioedema-urticaria (disorder)",
+    "vocabulary": "SNOMED CT",
+    "source": "QOF Business Rules 2024-25",
+    "domain": "Condition",
+    "similarity_score": 0.7382,
+    "usage_frequency": null
+  },
+  {
+    "code": "292440006",
+    "term": "Propranolol adverse reaction (disorder)",
+    "vocabulary": "SNOMED CT",
+    "source": "QOF Business Rules 2024-25",
+    "domain": "Condition",
+    "similarity_score": 0.7376,
+    "usage_frequency": null
+  },
+  {
+    "code": "772021008",
+    "term": "Allergy to nebivolol (finding)",
+    "vocabulary": "SNOMED CT",
+    "source": "QOF Business Rules 2024-25",
+    "domain": "Condition",
+    "similarity_score": 0.7367,
+    "usage_frequency": null
+  },
+  {
+    "code": "293984009",
+    "term": "Allergy to timolol (finding)",
+    "vocabulary": "SNOMED CT",
+    "source": "QOF Business Rules 2024-25",
+    "domain": "Condition",
+    "similarity_score": 0.7356,
+    "usage_frequency": null
+  },
+  {
+    "code": "293981001",
+    "term": "Allergy to practolol (finding)",
+    "vocabulary": "SNOMED CT",
+    "source": "QOF Business Rules 2024-25",
+    "domain": "Condition",
+    "similarity_score": 0.7356,
+    "usage_frequency": null
+  },
+  {
+    "code": "293975009",
+    "term": "Allergy to metipranolol (finding)",
+    "vocabulary": "SNOMED CT",
+    "source": "QOF Business Rules 2024-25",
+    "domain": "Condition",
+    "similarity_score": 0.7342,
+    "usage_frequency": null
+  },
+  {
+    "code": "162660004",
+    "term": "Asthma resolved (finding)",
+    "vocabulary": "SNOMED CT",
+    "source": "QOF Business Rules 2024-25",
+    "domain": "Condition",
+    "similarity_score": 0.734,
+    "usage_frequency": null
+  },
+  {
+    "code": "10675591000119108",
+    "term": "Severe persistent allergic asthma controlled (finding)",
+    "vocabulary": "SNOMED CT",
+    "source": "QOF Business Rules 2024-25",
+    "domain": "Condition",
+    "similarity_score": 0.7321,
+    "usage_frequency": null
+  },
+  {
+    "code": "294973005",
+    "term": "Allergy to pravastatin (finding)",
+    "vocabulary": "SNOMED CT",
+    "source": "QOF Business Rules 2024-25",
+    "domain": "Condition",
+    "similarity_score": 0.7296,
+    "usage_frequency": null
+  },
+  {
+    "code": "609543001",
+    "term": "Non-allergic hypersensitivity to perindopril (finding)",
+    "vocabulary": "SNOMED CT",
+    "source": "QOF Business Rules 2024-25",
+    "domain": "Condition",
+    "similarity_score": 0.7291,
+    "usage_frequency": null
+  },
+  {
+    "code": "402394004",
+    "term": "Urticaria caused by salicylate (disorder)",
+    "vocabulary": "SNOMED CT",
+    "source": "QOF Business Rules 2024-25",
+    "domain": "Condition",
+    "similarity_score": 0.7288,
+    "usage_frequency": null
+  },
+  {
+    "code": "241949004",
+    "term": "Non-allergic anaphylaxis caused by aspirin (disorder)",
+    "vocabulary": "SNOMED CT",
+    "source": "QOF Business Rules 2024-25",
+    "domain": "Condition",
+    "similarity_score": null,
+    "usage_frequency": null
+  }
+]

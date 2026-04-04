@@ -1,0 +1,12 @@
+{
+  "conditions": [
+    {
+      "name": "anaphylaxis",
+      "condition_type": "primary",
+      "coding_systems": [
+        "SNOMED"
+      ],
+      "domain": "Condition"
+    }
+  ]
+}

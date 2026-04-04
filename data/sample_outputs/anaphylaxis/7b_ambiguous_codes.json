@@ -1,0 +1,30 @@
+[
+  {
+    "code": "737855007",
+    "term": "Anaphylaxis care",
+    "vocabulary": "SNOMED CT",
+    "decision": "uncertain",
+    "confidence": 0.5,
+    "rationale": "Anaphylaxis care likely refers to management or procedure codes rather than diagnosis of anaphylaxis itself; clinical judgement needed on whether care/management codes should be included.",
+    "sources": [
+      "OMOPHub"
+    ],
+    "classifier_score": null,
+    "llm_score": 0.5,
+    "usage_frequency": null
+  },
+  {
+    "code": "C0413241",
+    "term": "Aspirin-induced angioedema-urticaria",
+    "vocabulary": "SNOMED CT",
+    "decision": "uncertain",
+    "confidence": 0.6,
+    "rationale": "Aspirin-induced angioedema-urticaria may involve anaphylactoid reactions but is not primary anaphylaxis.",
+    "sources": [
+      "UMLS (synonym)"
+    ],
+    "classifier_score": null,
+    "llm_score": 0.6,
+    "usage_frequency": null
+  }
+]

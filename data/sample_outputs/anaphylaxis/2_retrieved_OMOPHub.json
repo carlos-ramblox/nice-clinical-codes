@@ -1,0 +1,182 @@
+[
+  {
+    "code": "39579001",
+    "term": "Anaphylaxis",
+    "vocabulary": "SNOMED CT",
+    "source": "OMOPHub",
+    "domain": "Condition",
+    "similarity_score": null,
+    "usage_frequency": null
+  },
+  {
+    "code": "871930001",
+    "term": "Anaphylaxis after allergen immunotherapy",
+    "vocabulary": "SNOMED CT",
+    "source": "OMOPHub",
+    "domain": "Condition",
+    "similarity_score": null,
+    "usage_frequency": null
+  },
+  {
+    "code": "737855007",
+    "term": "Anaphylaxis care",
+    "vocabulary": "SNOMED CT",
+    "source": "OMOPHub",
+    "domain": "Observation",
+    "similarity_score": null,
+    "usage_frequency": null
+  },
+  {
+    "code": "139841000119108",
+    "term": "Anaphylaxis caused by allergy skin test",
+    "vocabulary": "SNOMED CT",
+    "source": "OMOPHub",
+    "domain": "Condition",
+    "similarity_score": null,
+    "usage_frequency": null
+  },
+  {
+    "code": "15919481000119106",
+    "term": "Anaphylaxis caused by analgesic",
+    "vocabulary": "SNOMED CT",
+    "source": "OMOPHub",
+    "domain": "Condition",
+    "similarity_score": null,
+    "usage_frequency": null
+  },
+  {
+    "code": "15919521000119106",
+    "term": "Anaphylaxis caused by anesthetic",
+    "vocabulary": "SNOMED CT",
+    "source": "OMOPHub",
+    "domain": "Condition",
+    "similarity_score": null,
+    "usage_frequency": null
+  },
+  {
+    "code": "15919571000119107",
+    "term": "Anaphylaxis caused by antibacterial agent",
+    "vocabulary": "SNOMED CT",
+    "source": "OMOPHub",
+    "domain": "Condition",
+    "similarity_score": null,
+    "usage_frequency": null
+  },
+  {
+    "code": "1217476001",
+    "term": "Anaphylaxis caused by component of vaccine product",
+    "vocabulary": "SNOMED CT",
+    "source": "OMOPHub",
+    "domain": "Condition",
+    "similarity_score": null,
+    "usage_frequency": null
+  },
+  {
+    "code": "914587451000119107",
+    "term": "Anaphylaxis caused by component of vaccine product against severe acute respiratory syndrome coronavirus 2",
+    "vocabulary": "SNOMED CT",
+    "source": "OMOPHub",
+    "domain": "Condition",
+    "similarity_score": null,
+    "usage_frequency": null
+  },
+  {
+    "code": "428291000124105",
+    "term": "Anaphylaxis caused by component of vaccine product containing low dose acellular Bordetella pertussis and Clostridium tetani and low dose Corynebacterium diphtheriae antigens",
+    "vocabulary": "SNOMED CT",
+    "source": "OMOPHub",
+    "domain": "Condition",
+    "similarity_score": null,
+    "usage_frequency": null
+  },
+  {
+    "code": "711561000124107",
+    "term": "Anaphylaxis caused by component of vaccine product containing only acellular Bordetella pertussis and Clostridium tetani and Corynebacterium diphtheriae antigens",
+    "vocabulary": "SNOMED CT",
+    "source": "OMOPHub",
+    "domain": "Condition",
+    "similarity_score": null,
+    "usage_frequency": null
+  },
+  {
+    "code": "116261000119105",
+    "term": "Anaphylaxis caused by egg",
+    "vocabulary": "SNOMED CT",
+    "source": "OMOPHub",
+    "domain": "Condition",
+    "similarity_score": null,
+    "usage_frequency": null
+  },
+  {
+    "code": "427903006",
+    "term": "Anaphylaxis caused by fish",
+    "vocabulary": "SNOMED CT",
+    "source": "OMOPHub",
+    "domain": "Condition",
+    "similarity_score": null,
+    "usage_frequency": null
+  },
+  {
+    "code": "145631000119102",
+    "term": "Anaphylaxis caused by food additive",
+    "vocabulary": "SNOMED CT",
+    "source": "OMOPHub",
+    "domain": "Condition",
+    "similarity_score": null,
+    "usage_frequency": null
+  },
+  {
+    "code": "429751004",
+    "term": "Anaphylaxis caused by fruit",
+    "vocabulary": "SNOMED CT",
+    "source": "OMOPHub",
+    "domain": "Condition",
+    "similarity_score": null,
+    "usage_frequency": null
+  },
+  {
+    "code": "1003758002",
+    "term": "Anaphylaxis caused by Hevea brasiliensis latex protein",
+    "vocabulary": "SNOMED CT",
+    "source": "OMOPHub",
+    "domain": "Condition",
+    "similarity_score": null,
+    "usage_frequency": null
+  },
+  {
+    "code": "16220851000119102",
+    "term": "Anaphylaxis caused by honey bee venom",
+    "vocabulary": "SNOMED CT",
+    "source": "OMOPHub",
+    "domain": "Condition",
+    "similarity_score": null,
+    "usage_frequency": null
+  },
+  {
+    "code": "16220811000119103",
+    "term": "Anaphylaxis caused by hornet venom",
+    "vocabulary": "SNOMED CT",
+    "source": "OMOPHub",
+    "domain": "Condition",
+    "similarity_score": null,
+    "usage_frequency": null
+  },
+  {
+    "code": "430980000",
+    "term": "Anaphylaxis caused by hymenoptera venom",
+    "vocabulary": "SNOMED CT",
+    "source": "OMOPHub",
+    "domain": "Condition",
+    "similarity_score": null,
+    "usage_frequency": null
+  },
+  {
+    "code": "402390008",
+    "term": "Anaphylaxis caused by ingested food",
+    "vocabulary": "SNOMED CT",
+    "source": "OMOPHub",
+    "domain": "Condition",
+    "similarity_score": null,
+    "usage_frequency": null
+  }
+]

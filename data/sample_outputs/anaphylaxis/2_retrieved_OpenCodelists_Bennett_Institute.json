@@ -1,0 +1,128 @@
+[
+  {
+    "code": "735588005",
+    "term": "Uncomplicated allergic asthma",
+    "vocabulary": "SNOMED CT",
+    "source": "OpenCodelists (Bennett Institute)",
+    "domain": "Condition",
+    "similarity_score": 0.7713,
+    "usage_frequency": null
+  },
+  {
+    "code": "389145006",
+    "term": "Allergic asthma",
+    "vocabulary": "SNOMED CT",
+    "source": "OpenCodelists (Bennett Institute)",
+    "domain": "Condition",
+    "similarity_score": 0.7681,
+    "usage_frequency": null
+  },
+  {
+    "code": "401193004",
+    "term": "Asthma confirmed",
+    "vocabulary": "SNOMED CT",
+    "source": "OpenCodelists (Bennett Institute)",
+    "domain": "Condition",
+    "similarity_score": 0.7539,
+    "usage_frequency": null
+  },
+  {
+    "code": "786836003",
+    "term": "Near fatal asthma",
+    "vocabulary": "SNOMED CT",
+    "source": "OpenCodelists (Bennett Institute)",
+    "domain": "Condition",
+    "similarity_score": 0.746,
+    "usage_frequency": null
+  },
+  {
+    "code": "195967001",
+    "term": "Asthma",
+    "vocabulary": "SNOMED CT",
+    "source": "OpenCodelists (Bennett Institute)",
+    "domain": "Condition",
+    "similarity_score": 0.7459,
+    "usage_frequency": null
+  },
+  {
+    "code": "762521001",
+    "term": "Exacerbation of allergic asthma",
+    "vocabulary": "SNOMED CT",
+    "source": "OpenCodelists (Bennett Institute)",
+    "domain": "Condition",
+    "similarity_score": 0.7446,
+    "usage_frequency": null
+  },
+  {
+    "code": "1086701000000102",
+    "term": "Life threatening acute exacerbation of allergic asthma",
+    "vocabulary": "SNOMED CT",
+    "source": "OpenCodelists (Bennett Institute)",
+    "domain": "Condition",
+    "similarity_score": 0.7435,
+    "usage_frequency": null
+  },
+  {
+    "code": "735589002",
+    "term": "Uncomplicated non-allergic asthma",
+    "vocabulary": "SNOMED CT",
+    "source": "OpenCodelists (Bennett Institute)",
+    "domain": "Condition",
+    "similarity_score": 0.7428,
+    "usage_frequency": null
+  },
+  {
+    "code": "34015007",
+    "term": "Bakers' asthma",
+    "vocabulary": "SNOMED CT",
+    "source": "OpenCodelists (Bennett Institute)",
+    "domain": "Condition",
+    "similarity_score": 0.7422,
+    "usage_frequency": null
+  },
+  {
+    "code": "370220003",
+    "term": "Occasional asthma",
+    "vocabulary": "SNOMED CT",
+    "source": "OpenCodelists (Bennett Institute)",
+    "domain": "Condition",
+    "similarity_score": 0.737,
+    "usage_frequency": null
+  },
+  {
+    "code": "266361008",
+    "term": "Non-allergic asthma",
+    "vocabulary": "SNOMED CT",
+    "source": "OpenCodelists (Bennett Institute)",
+    "domain": "Condition",
+    "similarity_score": 0.7338,
+    "usage_frequency": null
+  },
+  {
+    "code": "707444001",
+    "term": "Uncomplicated asthma",
+    "vocabulary": "SNOMED CT",
+    "source": "OpenCodelists (Bennett Institute)",
+    "domain": "Condition",
+    "similarity_score": 0.7316,
+    "usage_frequency": null
+  },
+  {
+    "code": "370221004",
+    "term": "Severe asthma",
+    "vocabulary": "SNOMED CT",
+    "source": "OpenCodelists (Bennett Institute)",
+    "domain": "Condition",
+    "similarity_score": 0.7313,
+    "usage_frequency": null
+  },
+  {
+    "code": "10675431000119106",
+    "term": "Severe persistent allergic asthma",
+    "vocabulary": "SNOMED CT",
+    "source": "OpenCodelists (Bennett Institute)",
+    "domain": "Condition",
+    "similarity_score": 0.7297,
+    "usage_frequency": null
+  }
+]
