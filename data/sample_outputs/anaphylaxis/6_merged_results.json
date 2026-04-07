@@ -3,25 +3,26 @@
     "code": "241949004",
     "term": "Non-allergic anaphylaxis caused by aspirin (disorder)",
     "vocabulary": "SNOMED CT",
-    "source": "QOF Business Rules 2024-25",
+    "source": "ChromaDB",
     "domain": "Condition",
     "similarity_score": 0.8476,
     "usage_frequency": null,
     "sources": [
+      "ChromaDB",
       "QOF Business Rules 2024-25"
     ],
-    "source_count": 1
+    "source_count": 2
   },
   {
     "code": "985271000000102",
     "term": "Apixaban allergy (disorder)",
     "vocabulary": "SNOMED CT",
-    "source": "QOF Business Rules 2024-25",
+    "source": "ChromaDB",
     "domain": "Condition",
     "similarity_score": 0.7808,
     "usage_frequency": null,
     "sources": [
-      "QOF Business Rules 2024-25"
+      "ChromaDB"
     ],
     "source_count": 1
   },
@@ -29,12 +30,12 @@
     "code": "735588005",
     "term": "Uncomplicated allergic asthma",
     "vocabulary": "SNOMED CT",
-    "source": "OpenCodelists (Bennett Institute)",
+    "source": "ChromaDB",
     "domain": "Condition",
     "similarity_score": 0.7713,
     "usage_frequency": null,
     "sources": [
-      "OpenCodelists (Bennett Institute)"
+      "ChromaDB"
     ],
     "source_count": 1
   },
@@ -42,12 +43,12 @@
     "code": "609540003",
     "term": "Non-allergic hypersensitivity to enalapril (finding)",
     "vocabulary": "SNOMED CT",
-    "source": "QOF Business Rules 2024-25",
+    "source": "ChromaDB",
     "domain": "Condition",
     "similarity_score": 0.771,
     "usage_frequency": null,
     "sources": [
-      "QOF Business Rules 2024-25"
+      "ChromaDB"
     ],
     "source_count": 1
   },
@@ -55,12 +56,12 @@
     "code": "389145006",
     "term": "Allergic asthma",
     "vocabulary": "SNOMED CT",
-    "source": "OpenCodelists (Bennett Institute)",
+    "source": "ChromaDB",
     "domain": "Condition",
     "similarity_score": 0.7681,
     "usage_frequency": null,
     "sources": [
-      "OpenCodelists (Bennett Institute)"
+      "ChromaDB"
     ],
     "source_count": 1
   },
@@ -68,12 +69,12 @@
     "code": "18401000122101",
     "term": "Non-allergic hypersensitivity to imidapril (finding)",
     "vocabulary": "SNOMED CT",
-    "source": "QOF Business Rules 2024-25",
+    "source": "ChromaDB",
     "domain": "Condition",
     "similarity_score": 0.7661,
     "usage_frequency": null,
     "sources": [
-      "QOF Business Rules 2024-25"
+      "ChromaDB"
     ],
     "source_count": 1
   },
@@ -81,12 +82,12 @@
     "code": "293982008",
     "term": "Allergy to propranolol (finding)",
     "vocabulary": "SNOMED CT",
-    "source": "QOF Business Rules 2024-25",
+    "source": "ChromaDB",
     "domain": "Condition",
     "similarity_score": 0.7649,
     "usage_frequency": null,
     "sources": [
-      "QOF Business Rules 2024-25"
+      "ChromaDB"
     ],
     "source_count": 1
   },
@@ -94,12 +95,12 @@
     "code": "293969000",
     "term": "Allergy to esmolol (finding)",
     "vocabulary": "SNOMED CT",
-    "source": "QOF Business Rules 2024-25",
+    "source": "ChromaDB",
     "domain": "Condition",
     "similarity_score": 0.7639,
     "usage_frequency": null,
     "sources": [
-      "QOF Business Rules 2024-25"
+      "ChromaDB"
     ],
     "source_count": 1
   },
@@ -107,12 +108,12 @@
     "code": "293586001",
     "term": "Allergy to aspirin (finding)",
     "vocabulary": "SNOMED CT",
-    "source": "QOF Business Rules 2024-25",
+    "source": "ChromaDB",
     "domain": "Condition",
     "similarity_score": 0.7586,
     "usage_frequency": null,
     "sources": [
-      "QOF Business Rules 2024-25"
+      "ChromaDB"
     ],
     "source_count": 1
   },
@@ -120,12 +121,12 @@
     "code": "609545008",
     "term": "Non-allergic hypersensitivity to ramipril (finding)",
     "vocabulary": "SNOMED CT",
-    "source": "QOF Business Rules 2024-25",
+    "source": "ChromaDB",
     "domain": "Condition",
     "similarity_score": 0.7585,
     "usage_frequency": null,
     "sources": [
-      "QOF Business Rules 2024-25"
+      "ChromaDB"
     ],
     "source_count": 1
   },
@@ -133,12 +134,12 @@
     "code": "609539000",
     "term": "Non-allergic hypersensitivity to cilazapril (finding)",
     "vocabulary": "SNOMED CT",
-    "source": "QOF Business Rules 2024-25",
+    "source": "ChromaDB",
     "domain": "Condition",
     "similarity_score": 0.7578,
     "usage_frequency": null,
     "sources": [
-      "QOF Business Rules 2024-25"
+      "ChromaDB"
     ],
     "source_count": 1
   },
@@ -146,12 +147,12 @@
     "code": "609538008",
     "term": "Non-allergic hypersensitivity to captopril (finding)",
     "vocabulary": "SNOMED CT",
-    "source": "QOF Business Rules 2024-25",
+    "source": "ChromaDB",
     "domain": "Condition",
     "similarity_score": 0.7563,
     "usage_frequency": null,
     "sources": [
-      "QOF Business Rules 2024-25"
+      "ChromaDB"
     ],
     "source_count": 1
   },
@@ -159,12 +160,12 @@
     "code": "89731000000101",
     "term": "History of clopidogrel allergy (situation)",
     "vocabulary": "SNOMED CT",
-    "source": "QOF Business Rules 2024-25",
+    "source": "ChromaDB",
     "domain": "Condition",
     "similarity_score": 0.7558,
     "usage_frequency": null,
     "sources": [
-      "QOF Business Rules 2024-25"
+      "ChromaDB"
     ],
     "source_count": 1
   },
@@ -172,12 +173,12 @@
     "code": "609544007",
     "term": "Non-allergic hypersensitivity to quinapril (finding)",
     "vocabulary": "SNOMED CT",
-    "source": "QOF Business Rules 2024-25",
+    "source": "ChromaDB",
     "domain": "Condition",
     "similarity_score": 0.7553,
     "usage_frequency": null,
     "sources": [
-      "QOF Business Rules 2024-25"
+      "ChromaDB"
     ],
     "source_count": 1
   },
@@ -185,12 +186,12 @@
     "code": "609541004",
     "term": "Non-allergic hypersensitivity to fosinopril (finding)",
     "vocabulary": "SNOMED CT",
-    "source": "QOF Business Rules 2024-25",
+    "source": "ChromaDB",
     "domain": "Condition",
     "similarity_score": 0.7549,
     "usage_frequency": null,
     "sources": [
-      "QOF Business Rules 2024-25"
+      "ChromaDB"
     ],
     "source_count": 1
   },
@@ -198,12 +199,12 @@
     "code": "293968008",
     "term": "Allergy to celiprolol (finding)",
     "vocabulary": "SNOMED CT",
-    "source": "QOF Business Rules 2024-25",
+    "source": "ChromaDB",
     "domain": "Condition",
     "similarity_score": 0.7541,
     "usage_frequency": null,
     "sources": [
-      "QOF Business Rules 2024-25"
+      "ChromaDB"
     ],
     "source_count": 1
   },
@@ -211,12 +212,12 @@
     "code": "401193004",
     "term": "Asthma confirmed",
     "vocabulary": "SNOMED CT",
-    "source": "OpenCodelists (Bennett Institute)",
+    "source": "ChromaDB",
     "domain": "Condition",
     "similarity_score": 0.7539,
     "usage_frequency": null,
     "sources": [
-      "OpenCodelists (Bennett Institute)"
+      "ChromaDB"
     ],
     "source_count": 1
   },
@@ -224,12 +225,12 @@
     "code": "293964005",
     "term": "Allergy to acebutolol (finding)",
     "vocabulary": "SNOMED CT",
-    "source": "QOF Business Rules 2024-25",
+    "source": "ChromaDB",
     "domain": "Condition",
     "similarity_score": 0.7538,
     "usage_frequency": null,
     "sources": [
-      "QOF Business Rules 2024-25"
+      "ChromaDB"
     ],
     "source_count": 1
   },
@@ -237,12 +238,12 @@
     "code": "293972007",
     "term": "Allergy to nadolol (finding)",
     "vocabulary": "SNOMED CT",
-    "source": "QOF Business Rules 2024-25",
+    "source": "ChromaDB",
     "domain": "Condition",
     "similarity_score": 0.7529,
     "usage_frequency": null,
     "sources": [
-      "QOF Business Rules 2024-25"
+      "ChromaDB"
     ],
     "source_count": 1
   },
@@ -250,12 +251,12 @@
     "code": "609534005",
     "term": "Non-allergic hypersensitivity to losartan (finding)",
     "vocabulary": "SNOMED CT",
-    "source": "QOF Business Rules 2024-25",
+    "source": "ChromaDB",
     "domain": "Condition",
     "similarity_score": 0.7528,
     "usage_frequency": null,
     "sources": [
-      "QOF Business Rules 2024-25"
+      "ChromaDB"
     ],
     "source_count": 1
   },
@@ -263,12 +264,12 @@
     "code": "18361000122109",
     "term": "Non-allergic hypersensitivity to moexipril (finding)",
     "vocabulary": "SNOMED CT",
-    "source": "QOF Business Rules 2024-25",
+    "source": "ChromaDB",
     "domain": "Condition",
     "similarity_score": 0.751,
     "usage_frequency": null,
     "sources": [
-      "QOF Business Rules 2024-25"
+      "ChromaDB"
     ],
     "source_count": 1
   },
@@ -276,12 +277,12 @@
     "code": "1362871000000100",
     "term": "Allergy to inclisiran (finding)",
     "vocabulary": "SNOMED CT",
-    "source": "QOF Business Rules 2024-25",
+    "source": "ChromaDB",
     "domain": "Condition",
     "similarity_score": 0.7506,
     "usage_frequency": null,
     "sources": [
-      "QOF Business Rules 2024-25"
+      "ChromaDB"
     ],
     "source_count": 1
   },
@@ -289,12 +290,12 @@
     "code": "18321000122100",
     "term": "Non-allergic hypersensitivity to benazepril (finding)",
     "vocabulary": "SNOMED CT",
-    "source": "QOF Business Rules 2024-25",
+    "source": "ChromaDB",
     "domain": "Condition",
     "similarity_score": 0.7487,
     "usage_frequency": null,
     "sources": [
-      "QOF Business Rules 2024-25"
+      "ChromaDB"
     ],
     "source_count": 1
   },
@@ -302,12 +303,12 @@
     "code": "786836003",
     "term": "Near fatal asthma",
     "vocabulary": "SNOMED CT",
-    "source": "OpenCodelists (Bennett Institute)",
+    "source": "ChromaDB",
     "domain": "Condition",
     "similarity_score": 0.746,
     "usage_frequency": null,
     "sources": [
-      "OpenCodelists (Bennett Institute)"
+      "ChromaDB"
     ],
     "source_count": 1
   },
@@ -315,12 +316,12 @@
     "code": "195967001",
     "term": "Asthma",
     "vocabulary": "SNOMED CT",
-    "source": "OpenCodelists (Bennett Institute)",
+    "source": "ChromaDB",
     "domain": "Condition",
     "similarity_score": 0.7459,
     "usage_frequency": null,
     "sources": [
-      "OpenCodelists (Bennett Institute)"
+      "ChromaDB"
     ],
     "source_count": 1
   },
@@ -328,12 +329,12 @@
     "code": "609542006",
     "term": "Non-allergic hypersensitivity to lisinopril (finding)",
     "vocabulary": "SNOMED CT",
-    "source": "QOF Business Rules 2024-25",
+    "source": "ChromaDB",
     "domain": "Condition",
     "similarity_score": 0.7455,
     "usage_frequency": null,
     "sources": [
-      "QOF Business Rules 2024-25"
+      "ChromaDB"
     ],
     "source_count": 1
   },
@@ -341,12 +342,12 @@
     "code": "762521001",
     "term": "Exacerbation of allergic asthma",
     "vocabulary": "SNOMED CT",
-    "source": "OpenCodelists (Bennett Institute)",
+    "source": "ChromaDB",
     "domain": "Condition",
     "similarity_score": 0.7446,
     "usage_frequency": null,
     "sources": [
-      "OpenCodelists (Bennett Institute)"
+      "ChromaDB"
     ],
     "source_count": 1
   },
@@ -354,12 +355,12 @@
     "code": "1086701000000102",
     "term": "Life threatening acute exacerbation of allergic asthma",
     "vocabulary": "SNOMED CT",
-    "source": "OpenCodelists (Bennett Institute)",
+    "source": "ChromaDB",
     "domain": "Condition",
     "similarity_score": 0.7435,
     "usage_frequency": null,
     "sources": [
-      "OpenCodelists (Bennett Institute)"
+      "ChromaDB"
     ],
     "source_count": 1
   },
@@ -367,12 +368,12 @@
     "code": "735589002",
     "term": "Uncomplicated non-allergic asthma",
     "vocabulary": "SNOMED CT",
-    "source": "OpenCodelists (Bennett Institute)",
+    "source": "ChromaDB",
     "domain": "Condition",
     "similarity_score": 0.7428,
     "usage_frequency": null,
     "sources": [
-      "OpenCodelists (Bennett Institute)"
+      "ChromaDB"
     ],
     "source_count": 1
   },
@@ -380,12 +381,12 @@
     "code": "34015007",
     "term": "Bakers' asthma",
     "vocabulary": "SNOMED CT",
-    "source": "OpenCodelists (Bennett Institute)",
+    "source": "ChromaDB",
     "domain": "Condition",
     "similarity_score": 0.7422,
     "usage_frequency": null,
     "sources": [
-      "OpenCodelists (Bennett Institute)"
+      "ChromaDB"
     ],
     "source_count": 1
   },
@@ -393,12 +394,12 @@
     "code": "985251000000106",
     "term": "Rivaroxaban allergy (disorder)",
     "vocabulary": "SNOMED CT",
-    "source": "QOF Business Rules 2024-25",
+    "source": "ChromaDB",
     "domain": "Condition",
     "similarity_score": 0.742,
     "usage_frequency": null,
     "sources": [
-      "QOF Business Rules 2024-25"
+      "ChromaDB"
     ],
     "source_count": 1
   },
@@ -406,12 +407,12 @@
     "code": "293585002",
     "term": "Allergy to salicylate (finding)",
     "vocabulary": "SNOMED CT",
-    "source": "QOF Business Rules 2024-25",
+    "source": "ChromaDB",
     "domain": "Condition",
     "similarity_score": 0.7419,
     "usage_frequency": null,
     "sources": [
-      "QOF Business Rules 2024-25"
+      "ChromaDB"
     ],
     "source_count": 1
   },
@@ -419,12 +420,12 @@
     "code": "1365431000000106",
     "term": "Allergy to alirocumab (finding)",
     "vocabulary": "SNOMED CT",
-    "source": "QOF Business Rules 2024-25",
+    "source": "ChromaDB",
     "domain": "Condition",
     "similarity_score": 0.7389,
     "usage_frequency": null,
     "sources": [
-      "QOF Business Rules 2024-25"
+      "ChromaDB"
     ],
     "source_count": 1
   },
@@ -432,12 +433,12 @@
     "code": "293965006",
     "term": "Allergy to atenolol (finding)",
     "vocabulary": "SNOMED CT",
-    "source": "QOF Business Rules 2024-25",
+    "source": "ChromaDB",
     "domain": "Condition",
     "similarity_score": 0.7386,
     "usage_frequency": null,
     "sources": [
-      "QOF Business Rules 2024-25"
+      "ChromaDB"
     ],
     "source_count": 1
   },
@@ -445,12 +446,12 @@
     "code": "241960008",
     "term": "Aspirin-induced angioedema-urticaria (disorder)",
     "vocabulary": "SNOMED CT",
-    "source": "QOF Business Rules 2024-25",
+    "source": "ChromaDB",
     "domain": "Condition",
     "similarity_score": 0.7382,
     "usage_frequency": null,
     "sources": [
-      "QOF Business Rules 2024-25"
+      "ChromaDB"
     ],
     "source_count": 1
   },
@@ -458,12 +459,12 @@
     "code": "292440006",
     "term": "Propranolol adverse reaction (disorder)",
     "vocabulary": "SNOMED CT",
-    "source": "QOF Business Rules 2024-25",
+    "source": "ChromaDB",
     "domain": "Condition",
     "similarity_score": 0.7376,
     "usage_frequency": null,
     "sources": [
-      "QOF Business Rules 2024-25"
+      "ChromaDB"
     ],
     "source_count": 1
   },
@@ -471,12 +472,12 @@
     "code": "370220003",
     "term": "Occasional asthma",
     "vocabulary": "SNOMED CT",
-    "source": "OpenCodelists (Bennett Institute)",
+    "source": "ChromaDB",
     "domain": "Condition",
     "similarity_score": 0.737,
     "usage_frequency": null,
     "sources": [
-      "OpenCodelists (Bennett Institute)"
+      "ChromaDB"
     ],
     "source_count": 1
   },
@@ -484,12 +485,12 @@
     "code": "772021008",
     "term": "Allergy to nebivolol (finding)",
     "vocabulary": "SNOMED CT",
-    "source": "QOF Business Rules 2024-25",
+    "source": "ChromaDB",
     "domain": "Condition",
     "similarity_score": 0.7367,
     "usage_frequency": null,
     "sources": [
-      "QOF Business Rules 2024-25"
+      "ChromaDB"
     ],
     "source_count": 1
   },
@@ -497,12 +498,12 @@
     "code": "293984009",
     "term": "Allergy to timolol (finding)",
     "vocabulary": "SNOMED CT",
-    "source": "QOF Business Rules 2024-25",
+    "source": "ChromaDB",
     "domain": "Condition",
     "similarity_score": 0.7356,
     "usage_frequency": null,
     "sources": [
-      "QOF Business Rules 2024-25"
+      "ChromaDB"
     ],
     "source_count": 1
   },
@@ -510,12 +511,12 @@
     "code": "293981001",
     "term": "Allergy to practolol (finding)",
     "vocabulary": "SNOMED CT",
-    "source": "QOF Business Rules 2024-25",
+    "source": "ChromaDB",
     "domain": "Condition",
     "similarity_score": 0.7356,
     "usage_frequency": null,
     "sources": [
-      "QOF Business Rules 2024-25"
+      "ChromaDB"
     ],
     "source_count": 1
   },
@@ -523,12 +524,12 @@
     "code": "293975009",
     "term": "Allergy to metipranolol (finding)",
     "vocabulary": "SNOMED CT",
-    "source": "QOF Business Rules 2024-25",
+    "source": "ChromaDB",
     "domain": "Condition",
     "similarity_score": 0.7342,
     "usage_frequency": null,
     "sources": [
-      "QOF Business Rules 2024-25"
+      "ChromaDB"
     ],
     "source_count": 1
   },
@@ -536,12 +537,12 @@
     "code": "162660004",
     "term": "Asthma resolved (finding)",
     "vocabulary": "SNOMED CT",
-    "source": "QOF Business Rules 2024-25",
+    "source": "ChromaDB",
     "domain": "Condition",
     "similarity_score": 0.734,
     "usage_frequency": null,
     "sources": [
-      "QOF Business Rules 2024-25"
+      "ChromaDB"
     ],
     "source_count": 1
   },
@@ -549,12 +550,12 @@
     "code": "266361008",
     "term": "Non-allergic asthma",
     "vocabulary": "SNOMED CT",
-    "source": "OpenCodelists (Bennett Institute)",
+    "source": "ChromaDB",
     "domain": "Condition",
     "similarity_score": 0.7338,
     "usage_frequency": null,
     "sources": [
-      "OpenCodelists (Bennett Institute)"
+      "ChromaDB"
     ],
     "source_count": 1
   },
@@ -562,12 +563,12 @@
     "code": "10675591000119108",
     "term": "Severe persistent allergic asthma controlled (finding)",
     "vocabulary": "SNOMED CT",
-    "source": "QOF Business Rules 2024-25",
+    "source": "ChromaDB",
     "domain": "Condition",
     "similarity_score": 0.7321,
     "usage_frequency": null,
     "sources": [
-      "QOF Business Rules 2024-25"
+      "ChromaDB"
     ],
     "source_count": 1
   },
@@ -575,12 +576,12 @@
     "code": "707444001",
     "term": "Uncomplicated asthma",
     "vocabulary": "SNOMED CT",
-    "source": "OpenCodelists (Bennett Institute)",
+    "source": "ChromaDB",
     "domain": "Condition",
     "similarity_score": 0.7316,
     "usage_frequency": null,
     "sources": [
-      "OpenCodelists (Bennett Institute)"
+      "ChromaDB"
     ],
     "source_count": 1
   },
@@ -588,12 +589,12 @@
     "code": "370221004",
     "term": "Severe asthma",
     "vocabulary": "SNOMED CT",
-    "source": "OpenCodelists (Bennett Institute)",
+    "source": "ChromaDB",
     "domain": "Condition",
     "similarity_score": 0.7313,
     "usage_frequency": null,
     "sources": [
-      "OpenCodelists (Bennett Institute)"
+      "ChromaDB"
     ],
     "source_count": 1
   },
@@ -601,12 +602,12 @@
     "code": "10675431000119106",
     "term": "Severe persistent allergic asthma",
     "vocabulary": "SNOMED CT",
-    "source": "OpenCodelists (Bennett Institute)",
+    "source": "ChromaDB",
     "domain": "Condition",
     "similarity_score": 0.7297,
     "usage_frequency": null,
     "sources": [
-      "OpenCodelists (Bennett Institute)"
+      "ChromaDB"
     ],
     "source_count": 1
   },
@@ -614,12 +615,12 @@
     "code": "294973005",
     "term": "Allergy to pravastatin (finding)",
     "vocabulary": "SNOMED CT",
-    "source": "QOF Business Rules 2024-25",
+    "source": "ChromaDB",
     "domain": "Condition",
     "similarity_score": 0.7296,
     "usage_frequency": null,
     "sources": [
-      "QOF Business Rules 2024-25"
+      "ChromaDB"
     ],
     "source_count": 1
   },
@@ -627,12 +628,12 @@
     "code": "609543001",
     "term": "Non-allergic hypersensitivity to perindopril (finding)",
     "vocabulary": "SNOMED CT",
-    "source": "QOF Business Rules 2024-25",
+    "source": "ChromaDB",
     "domain": "Condition",
     "similarity_score": 0.7291,
     "usage_frequency": null,
     "sources": [
-      "QOF Business Rules 2024-25"
+      "ChromaDB"
     ],
     "source_count": 1
   },
@@ -640,12 +641,12 @@
     "code": "402394004",
     "term": "Urticaria caused by salicylate (disorder)",
     "vocabulary": "SNOMED CT",
-    "source": "QOF Business Rules 2024-25",
+    "source": "ChromaDB",
     "domain": "Condition",
     "similarity_score": 0.7288,
     "usage_frequency": null,
     "sources": [
-      "QOF Business Rules 2024-25"
+      "ChromaDB"
     ],
     "source_count": 1
   },
@@ -912,7 +913,7 @@
   {
     "code": "C0344180",
     "term": "Non-allergic anaphylaxis caused by aspirin",
-    "vocabulary": "SNOMED CT",
+    "vocabulary": "UMLS",
     "source": "UMLS (synonym)",
     "sources": [
       "UMLS (synonym)"
@@ -925,7 +926,7 @@
   {
     "code": "C4543856",
     "term": "Uncomplicated allergic asthma",
-    "vocabulary": "SNOMED CT",
+    "vocabulary": "UMLS",
     "source": "UMLS (synonym)",
     "sources": [
       "UMLS (synonym)"
@@ -938,7 +939,7 @@
   {
     "code": "C3662120",
     "term": "Enalapril pseudoallergy",
-    "vocabulary": "SNOMED CT",
+    "vocabulary": "UMLS",
     "source": "UMLS (synonym)",
     "sources": [
       "UMLS (synonym)"
@@ -951,7 +952,7 @@
   {
     "code": "C0155877",
     "term": "Allergic asthma",
-    "vocabulary": "SNOMED CT",
+    "vocabulary": "UMLS",
     "source": "UMLS (synonym)",
     "sources": [
       "UMLS (synonym)"
@@ -964,7 +965,7 @@
   {
     "code": "C4274388",
     "term": "Non-allergic hypersensitivity to imidapril",
-    "vocabulary": "SNOMED CT",
+    "vocabulary": "UMLS",
     "source": "UMLS (synonym)",
     "sources": [
       "UMLS (synonym)"
@@ -977,7 +978,7 @@
   {
     "code": "C0570901",
     "term": "Allergy to propranolol",
-    "vocabulary": "SNOMED CT",
+    "vocabulary": "UMLS",
     "source": "UMLS (synonym)",
     "sources": [
       "UMLS (synonym)"
@@ -990,7 +991,7 @@
   {
     "code": "C0570888",
     "term": "Allergy to esmolol",
-    "vocabulary": "SNOMED CT",
+    "vocabulary": "UMLS",
     "source": "UMLS (synonym)",
     "sources": [
       "UMLS (synonym)"
@@ -1003,7 +1004,7 @@
   {
     "code": "C0004058",
     "term": "Allergy to aspirin",
-    "vocabulary": "SNOMED CT",
+    "vocabulary": "UMLS",
     "source": "UMLS (synonym)",
     "sources": [
       "UMLS (synonym)"
@@ -1016,7 +1017,7 @@
   {
     "code": "C3662116",
     "term": "Rampiril pseudoallergy",
-    "vocabulary": "SNOMED CT",
+    "vocabulary": "UMLS",
     "source": "UMLS (synonym)",
     "sources": [
       "UMLS (synonym)"
@@ -1029,7 +1030,7 @@
   {
     "code": "C3662103",
     "term": "Cilazapril pseudoallergy",
-    "vocabulary": "SNOMED CT",
+    "vocabulary": "UMLS",
     "source": "UMLS (synonym)",
     "sources": [
       "UMLS (synonym)"
@@ -1042,7 +1043,7 @@
   {
     "code": "C3662118",
     "term": "Captopril pseudoallergy",
-    "vocabulary": "SNOMED CT",
+    "vocabulary": "UMLS",
     "source": "UMLS (synonym)",
     "sources": [
       "UMLS (synonym)"
@@ -1055,7 +1056,7 @@
   {
     "code": "C3662109",
     "term": "Quinapril pseudoallergy",
-    "vocabulary": "SNOMED CT",
+    "vocabulary": "UMLS",
     "source": "UMLS (synonym)",
     "sources": [
       "UMLS (synonym)"
@@ -1068,7 +1069,7 @@
   {
     "code": "C3662122",
     "term": "Non-allergic hypersensitivity to fosinopril",
-    "vocabulary": "SNOMED CT",
+    "vocabulary": "UMLS",
     "source": "UMLS (synonym)",
     "sources": [
       "UMLS (synonym)"
@@ -1081,7 +1082,7 @@
   {
     "code": "C0570887",
     "term": "Allergy to celiprolol",
-    "vocabulary": "SNOMED CT",
+    "vocabulary": "UMLS",
     "source": "UMLS (synonym)",
     "sources": [
       "UMLS (synonym)"
@@ -1094,7 +1095,7 @@
   {
     "code": "C1303167",
     "term": "Asthma confirmed",
-    "vocabulary": "SNOMED CT",
+    "vocabulary": "UMLS",
     "source": "UMLS (synonym)",
     "sources": [
       "UMLS (synonym)"
@@ -1107,7 +1108,7 @@
   {
     "code": "C0570883",
     "term": "Allergy to acebutolol",
-    "vocabulary": "SNOMED CT",
+    "vocabulary": "UMLS",
     "source": "UMLS (synonym)",
     "sources": [
       "UMLS (synonym)"
@@ -1120,7 +1121,7 @@
   {
     "code": "C0570891",
     "term": "Allergy to nadolol",
-    "vocabulary": "SNOMED CT",
+    "vocabulary": "UMLS",
     "source": "UMLS (synonym)",
     "sources": [
       "UMLS (synonym)"
@@ -1133,7 +1134,7 @@
   {
     "code": "C3662101",
     "term": "Losartan pseudoallergy",
-    "vocabulary": "SNOMED CT",
+    "vocabulary": "UMLS",
     "source": "UMLS (synonym)",
     "sources": [
       "UMLS (synonym)"
@@ -1146,7 +1147,7 @@
   {
     "code": "C4274387",
     "term": "Non-allergic hypersensitivity to moexipril",
-    "vocabulary": "SNOMED CT",
+    "vocabulary": "UMLS",
     "source": "UMLS (synonym)",
     "sources": [
       "UMLS (synonym)"
@@ -1159,7 +1160,7 @@
   {
     "code": "C4274303",
     "term": "Non-allergic hypersensitivity to benazepril",
-    "vocabulary": "SNOMED CT",
+    "vocabulary": "UMLS",
     "source": "UMLS (synonym)",
     "sources": [
       "UMLS (synonym)"
@@ -1172,7 +1173,7 @@
   {
     "code": "C5192201",
     "term": "Near fatal asthma",
-    "vocabulary": "SNOMED CT",
+    "vocabulary": "UMLS",
     "source": "UMLS (synonym)",
     "sources": [
       "UMLS (synonym)"
@@ -1185,7 +1186,7 @@
   {
     "code": "C0004096",
     "term": "Asthma",
-    "vocabulary": "SNOMED CT",
+    "vocabulary": "UMLS",
     "source": "UMLS (synonym)",
     "sources": [
       "UMLS (synonym)"
@@ -1198,7 +1199,7 @@
   {
     "code": "C3662123",
     "term": "Lisinopril pseudoallergy",
-    "vocabulary": "SNOMED CT",
+    "vocabulary": "UMLS",
     "source": "UMLS (synonym)",
     "sources": [
       "UMLS (synonym)"
@@ -1211,7 +1212,7 @@
   {
     "code": "C4546431",
     "term": "Exacerbation of allergic asthma",
-    "vocabulary": "SNOMED CT",
+    "vocabulary": "UMLS",
     "source": "UMLS (synonym)",
     "sources": [
       "UMLS (synonym)"
@@ -1224,7 +1225,7 @@
   {
     "code": "C4543857",
     "term": "Uncomplicated non-allergic asthma",
-    "vocabulary": "SNOMED CT",
+    "vocabulary": "UMLS",
     "source": "UMLS (synonym)",
     "sources": [
       "UMLS (synonym)"
@@ -1237,7 +1238,7 @@
   {
     "code": "C0264480",
     "term": "Bakers' asthma",
-    "vocabulary": "SNOMED CT",
+    "vocabulary": "UMLS",
     "source": "UMLS (synonym)",
     "sources": [
       "UMLS (synonym)"
@@ -1250,7 +1251,7 @@
   {
     "code": "C0570514",
     "term": "Allergy to salicylate",
-    "vocabulary": "SNOMED CT",
+    "vocabulary": "UMLS",
     "source": "UMLS (synonym)",
     "sources": [
       "UMLS (synonym)"
@@ -1263,7 +1264,7 @@
   {
     "code": "C0570884",
     "term": "Allergy to atenolol",
-    "vocabulary": "SNOMED CT",
+    "vocabulary": "UMLS",
     "source": "UMLS (synonym)",
     "sources": [
       "UMLS (synonym)"
@@ -1276,7 +1277,7 @@
   {
     "code": "C0413241",
     "term": "Aspirin-induced angioedema-urticaria",
-    "vocabulary": "SNOMED CT",
+    "vocabulary": "UMLS",
     "source": "UMLS (synonym)",
     "sources": [
       "UMLS (synonym)"
@@ -1289,7 +1290,7 @@
   {
     "code": "C0413902",
     "term": "Propranolol adverse reaction",
-    "vocabulary": "SNOMED CT",
+    "vocabulary": "UMLS",
     "source": "UMLS (synonym)",
     "sources": [
       "UMLS (synonym)"

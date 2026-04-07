@@ -33,6 +33,9 @@ def retrieve_from_chromadb(state: dict) -> dict:
             if vocab is None:
                 logger.warning("Unknown coding system '%s', searching unfiltered", sys_key)
             results = search(name, top_k=RETRIEVAL_TOP_K, vocabulary=vocab)
+            # tag source as ChromaDB so the merger can track which retriever found it
+            for r in results:
+                r["source"] = "ChromaDB"
             all_codes.extend(results)
 
         logger.info("ChromaDB: '%s' returned %d codes", name, len(all_codes) - before)

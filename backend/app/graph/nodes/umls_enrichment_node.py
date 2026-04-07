@@ -72,7 +72,7 @@ def enrich_with_umls(state: dict) -> dict:
         new_codes.append({
             "code": suggested_cui,
             "term": suggested_name,
-            "vocabulary": row.get("source_vocabulary", "SNOMED CT"),
+            "vocabulary": "UMLS",
             "source": f"UMLS ({suggestion_type})",
             "sources": [f"UMLS ({suggestion_type})"],
             "source_count": 1,
