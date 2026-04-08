@@ -1,6 +1,8 @@
 import time
 import datetime
 import logging
+from concurrent.futures import ThreadPoolExecutor, as_completed
+from threading import Lock
 
 import requests
 import pandas as pd
@@ -18,6 +20,8 @@ TARGET_RELATIONS = {"RN", "SIB"}
 MAX_PER_RELATION = 10
 MAX_SYNONYMS = 10
 REQUEST_GAP_SECS = 0.05
+MAX_ENRICH_CONCEPTS = 30  # only enrich the top-ranked candidates
+ENRICH_WORKERS = 10       # parallel UMLS lookups
 
 
 class UMLSEnricher:
@@ -33,65 +37,84 @@ class UMLSEnricher:
         self._cui_cache: dict[str, dict] = {}
         self._rel_cache: dict[str, list] = {}
         self._atom_cache: dict[str, list] = {}
+        self._cache_lock = Lock()
+
+    def _enrich_one(self, row: dict) -> list[dict]:
+        """Look up one concept in UMLS and return suggestion rows for it."""
+        concept_id = row.get("concept_id")
+        concept_name = row.get("concept_name", "")
+        vocab = row.get("_query_vocabulary", "")
+
+        cui, preferred_term = self._normalise(concept_name)
+        if not cui:
+            return []
+
+        synonyms = self._get_synonyms(cui)
+        relations = self._get_relations(cui)
+
+        rows: list[dict] = []
+        for syn in synonyms[:MAX_SYNONYMS]:
+            rows.append({
+                "source_concept_id": concept_id,
+                "source_concept_name": concept_name,
+                "source_vocabulary": vocab,
+                "umls_cui": cui,
+                "umls_preferred_term": preferred_term,
+                "suggestion_type": "synonym",
+                "suggested_name": syn["name"],
+                "suggested_cui": cui,
+                "suggested_source": syn.get("rootSource", ""),
+                "relation_label": "SY",
+            })
+
+        for rel in relations[:MAX_PER_RELATION * len(TARGET_RELATIONS)]:
+            rel_label = rel.get("relationLabel", "")
+            if rel_label not in TARGET_RELATIONS:
+                continue
+            rows.append({
+                "source_concept_id": concept_id,
+                "source_concept_name": concept_name,
+                "source_vocabulary": vocab,
+                "umls_cui": cui,
+                "umls_preferred_term": preferred_term,
+                "suggestion_type": _rel_label_to_type(rel_label),
+                "suggested_name": rel.get("relatedIdName", ""),
+                "suggested_cui": _extract_cui(rel.get("relatedId", "")),
+                "suggested_source": rel.get("rootSource", ""),
+                "relation_label": rel_label,
+            })
+
+        return rows
 
     def enrich(self, df: pd.DataFrame) -> pd.DataFrame:
         """
         Takes an OMOPHub results DataFrame, returns a suggestions DataFrame
         with narrower terms, siblings, and synonyms for each concept.
+
+        Only the top MAX_ENRICH_CONCEPTS rows are enriched (the result_merger
+        already ranks candidates by source count + similarity), and lookups
+        run in parallel across ENRICH_WORKERS threads to avoid serializing
+        ~3 HTTP round-trips per concept against the NLM API.
         """
-        suggestion_rows = []
-        total = len(df)
+        if df.empty:
+            return pd.DataFrame()
 
-        for idx, (_, row) in enumerate(df.iterrows()):
-            concept_id = row.get("concept_id")
-            concept_name = row.get("concept_name", "")
-            vocab = row.get("_query_vocabulary", "")
+        capped = df.head(MAX_ENRICH_CONCEPTS)
+        total = len(capped)
+        logger.info("UMLS: enriching top %d of %d candidates with %d workers",
+                    total, len(df), ENRICH_WORKERS)
 
-            logger.info("Enriching [%d/%d]: %s", idx + 1, total, concept_name[:60])
+        rows_to_process = [r.to_dict() for _, r in capped.iterrows()]
+        suggestion_rows: list[dict] = []
 
-            cui, preferred_term = self._normalise(concept_name)
-            if not cui:
-                logger.debug("No CUI found for: %s", concept_name)
-                continue
-
-            logger.debug("CUI: %s | Preferred: %s", cui, preferred_term)
-
-            synonyms = self._get_synonyms(cui)
-            relations = self._get_relations(cui)
-
-            queried_at = datetime.datetime.now(datetime.UTC).isoformat(timespec="seconds") + "Z"
-
-            for syn in synonyms[:MAX_SYNONYMS]:
-                suggestion_rows.append({
-                    "source_concept_id": concept_id,
-                    "source_concept_name": concept_name,
-                    "source_vocabulary": vocab,
-                    "umls_cui": cui,
-                    "umls_preferred_term": preferred_term,
-                    "suggestion_type": "synonym",
-                    "suggested_name": syn["name"],
-                    "suggested_cui": cui,
-                    "suggested_source": syn.get("rootSource", ""),
-                    "relation_label": "SY",
-                })
-
-            for rel in relations[:MAX_PER_RELATION * len(TARGET_RELATIONS)]:
-                rel_label = rel.get("relationLabel", "")
-                if rel_label not in TARGET_RELATIONS:
-                    continue
-
-                suggestion_rows.append({
-                    "source_concept_id": concept_id,
-                    "source_concept_name": concept_name,
-                    "source_vocabulary": vocab,
-                    "umls_cui": cui,
-                    "umls_preferred_term": preferred_term,
-                    "suggestion_type": _rel_label_to_type(rel_label),
-                    "suggested_name": rel.get("relatedIdName", ""),
-                    "suggested_cui": _extract_cui(rel.get("relatedId", "")),
-                    "suggested_source": rel.get("rootSource", ""),
-                    "relation_label": rel_label,
-                })
+        with ThreadPoolExecutor(max_workers=ENRICH_WORKERS) as pool:
+            futures = {pool.submit(self._enrich_one, r): r for r in rows_to_process}
+            for fut in as_completed(futures):
+                try:
+                    suggestion_rows.extend(fut.result())
+                except Exception as exc:
+                    src = futures[fut].get("concept_name", "")
+                    logger.warning("UMLS enrich failed for '%s': %s", src[:60], exc)
 
         suggestions_df = pd.DataFrame(suggestion_rows)
 
