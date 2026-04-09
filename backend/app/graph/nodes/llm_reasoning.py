@@ -103,6 +103,7 @@ def score_codes(state: dict) -> dict:
         model=LLM_SCORING_MODEL,
         api_key=ANTHROPIC_API_KEY,
         max_tokens=4096,
+        temperature=0,
     )
     structured_llm = llm.with_structured_output(BatchDecisions)
 
