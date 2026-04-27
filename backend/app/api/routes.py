@@ -6,9 +6,16 @@ import time
 import uuid
 
 import pandas as pd
-from fastapi import APIRouter, HTTPException
+from fastapi import APIRouter, HTTPException, Query
 from fastapi.responses import StreamingResponse
 from pydantic import BaseModel, Field
+
+_COLD_START_DESCRIPTION = (
+    "When true, disables the OpenCodelists retriever for this request. "
+    "Use for evaluation runs whose reference list comes from "
+    "OpenCodelists itself, so the retriever cannot surface the "
+    "reference and bias recall upward."
+)
 
 from app.graph.graph import run_pipeline
 from app.evaluation.evaluator import run_evaluation
@@ -57,12 +64,33 @@ class SearchResponse(BaseModel):
 # Endpoints
 
 @router.post("/search", response_model=SearchResponse)
-async def search_codes(request: SearchRequest):
-    """Search for clinical codes matching a condition query."""
+async def search_codes(
+    request: SearchRequest,
+    cold_start: bool = Query(False, description=_COLD_START_DESCRIPTION),
+):
+    """Search for clinical codes matching a condition query.
+
+    Query parameters
+    ----------------
+    cold_start : bool, default False
+        When ``True``, the OpenCodelists retriever is disabled for this
+        request. The other three retrievers (OMOPHub, ChromaDB, QOF) and
+        UMLS enrichment remain active. Intended for evaluation runs that
+        compare against an OpenCodelists-derived reference list, where
+        leaving the retriever live would bias recall upward by surfacing
+        the very list the run is meant to compare against.
+
+    Example::
+
+        curl -X POST 'https://clinicalcodes.uk/api/search?cold_start=true' \\
+             -H 'Content-Type: application/json' \\
+             -d '{"query": "type 2 diabetes"}'
+    """
     t0 = time.time()
+    disabled = {"opencodelists"} if cold_start else None
 
     try:
-        result = await asyncio.to_thread(run_pipeline, request.query)
+        result = await asyncio.to_thread(run_pipeline, request.query, disabled)
     except Exception as exc:
         logger.error("Pipeline failed: %s", exc)
         raise HTTPException(status_code=500, detail="Pipeline processing failed")
@@ -148,8 +176,26 @@ class EvaluateRequest(BaseModel):
 
 
 @router.post("/evaluate")
-async def evaluate_codes(request: EvaluateRequest):
-    """Run the pipeline on a test set query and evaluate against the gold standard."""
+async def evaluate_codes(
+    request: EvaluateRequest,
+    cold_start: bool = Query(False, description=_COLD_START_DESCRIPTION),
+):
+    """Run the pipeline on a test set query and evaluate against the gold standard.
+
+    Query parameters
+    ----------------
+    cold_start : bool, default False
+        When ``True``, the OpenCodelists retriever is disabled for this
+        evaluation run. Use this when the reference codelist comes from
+        OpenCodelists itself, so the retriever cannot surface the
+        reference and bias recall upward by construction.
+
+    Example::
+
+        curl -X POST 'https://clinicalcodes.uk/api/evaluate?cold_start=true' \\
+             -H 'Content-Type: application/json' \\
+             -d @test_set.json
+    """
     test_set = request.test_set
     if not test_set:
         raise HTTPException(status_code=400, detail="test_set cannot be empty")
@@ -159,9 +205,10 @@ async def evaluate_codes(request: EvaluateRequest):
         raise HTTPException(status_code=400, detail="No Research_question found in test set")
 
     t0 = time.time()
+    disabled = {"opencodelists"} if cold_start else None
 
     try:
-        pipeline_result = await asyncio.to_thread(run_pipeline, query)
+        pipeline_result = await asyncio.to_thread(run_pipeline, query, disabled)
     except Exception as exc:
         logger.error("Evaluation pipeline failed: %s", exc)
         raise HTTPException(status_code=500, detail="Pipeline processing failed")
@@ -179,6 +226,7 @@ async def evaluate_codes(request: EvaluateRequest):
     eval_result["pipeline_results_count"] = len(final_codes)
     eval_result["scored_codes"] = final_codes
     eval_result["pipeline"] = "rag"
+    eval_result["cold_start"] = cold_start
 
     return eval_result
 

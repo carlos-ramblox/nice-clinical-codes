@@ -37,12 +37,22 @@ def evaluate_codelist(
     output_codes: list of {"code": "...", "term": "...", ...}
 
     Returns EvalMetrics with recall, precision, F1, TP/FP/FN lists.
-    """
-    ref_set = {c["code"].strip().rstrip(".") for c in ref_codes}
-    out_set = {c["code"].strip().rstrip(".") for c in output_codes}
 
-    ref_lookup = {c["code"].strip().rstrip("."): c.get("term", "") for c in ref_codes}
-    out_lookup = {c["code"].strip().rstrip("."): c.get("term", "") for c in output_codes}
+    Code normalization strips all dots before comparison so that
+    "I48.0" (ICD-10 with separator) matches "I480" (compact form).
+    The same transformation is applied to both reference and output
+    codes, so OPCS-4 codes (which carry dots like "K40.1") are
+    mutated symmetrically and set membership is preserved. SNOMED CT
+    contains no dots, so the strip is a no-op for SNOMED.
+    """
+    def _norm(code: str) -> str:
+        return code.strip().replace(".", "")
+
+    ref_set = {_norm(c["code"]) for c in ref_codes}
+    out_set = {_norm(c["code"]) for c in output_codes}
+
+    ref_lookup = {_norm(c["code"]): c.get("term", "") for c in ref_codes}
+    out_lookup = {_norm(c["code"]): c.get("term", "") for c in output_codes}
 
     tp = ref_set & out_set
     fp = out_set - ref_set

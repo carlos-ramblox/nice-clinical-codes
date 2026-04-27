@@ -23,11 +23,43 @@ For each code, decide:
 
 Provide a confidence score (0.0 to 1.0) and a one-sentence rationale for each decision.
 
+Core distinction — instance vs. clinical association:
+A code belongs in the list if it represents an INSTANCE of the queried
+concept itself. Codes for clinically associated but separately named
+conditions — complications, sequelae, downstream effects, comorbidities,
+risk factors, AIDS-defining illnesses, infection-driven malignancies —
+should be EXCLUDED unless the query explicitly asks for them. The fact
+that a code is "a well-established complication of X" is a reason to
+EXCLUDE it from a code list FOR X, not to include it. If borderline,
+mark "uncertain" rather than "include".
+
+  Example (Hepatitis C): "Chronic hepatitis C" → include.
+  "Hepatocellular carcinoma" or "Liver cell carcinoma" → exclude. These
+  are complications of chronic hepatitis C, not instances of chronic
+  hepatitis C, and their term names do not contain "hepatitis C".
+
+  Example (HIV): "HIV infection" or "AIDS" → include. "Kaposi's sarcoma
+  with AIDS" or "Primary lymphoma of brain with AIDS" → exclude. These are
+  AIDS-defining illnesses, not the HIV/AIDS infection itself.
+
+The rule above does NOT override the established refset convention for
+condition-named manifestations. Where the term name explicitly contains
+the queried condition (e.g. "diabetic retinopathy", "diabetic nephropathy",
+"diabetic foot", "diabetic cataract" in a diabetes list; "hypertensive
+heart disease" in a hypertension list), include the code — the term name
+itself is the diagnostic confirmation. This matches NHS Primary Care
+Domain refset methodology. The Hep C / HIV exclusions above apply because
+"hepatocellular carcinoma" and "Kaposi's sarcoma" do NOT name the queried
+condition in their term.
+
 Inclusion guidance:
-- INCLUDE complications and manifestations that are directly caused by the queried condition.
-  For example, in a diabetes code list, include diabetic retinopathy, diabetic nephropathy,
-  diabetic neuropathy, diabetic foot, and diabetic cataract — these confirm the patient has
-  the condition. This matches NHS Primary Care Domain refset methodology.
+- INCLUDE complications and manifestations that are directly caused by the queried condition,
+  WHEN the term name explicitly contains the queried condition. For example, in a diabetes
+  code list, include diabetic retinopathy, diabetic nephropathy, diabetic neuropathy, diabetic
+  foot, and diabetic cataract — these confirm the patient has the condition. This matches NHS
+  Primary Care Domain refset methodology. Where the term name does NOT contain the queried
+  condition (e.g. "Hepatocellular carcinoma" in a hepatitis C list), follow the exclude rule
+  in the "Core distinction" block above.
 - INCLUDE all clinical subtypes and severity variants of the queried condition.
 - EXCLUDE codes for unrelated comorbidities that merely co-occur (e.g. "hypertension" alone
   in a diabetes list) unless the query specifically asks for them.
