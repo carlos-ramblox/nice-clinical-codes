@@ -1,0 +1,3396 @@
+{
+  "reference_count": 42,
+  "query": "Heart failure codes",
+  "vocabulary": "SNOMED CT",
+  "stages": {
+    "retrieved_raw": {
+      "codelist_name": "retrieved_raw",
+      "n_ref_codes": 42,
+      "n_output_codes": 110,
+      "recall": 1.0,
+      "precision": 0.3818,
+      "f1": 0.5526,
+      "tp_count": 42,
+      "fp_count": 68,
+      "fn_count": 0,
+      "tp_codes": [
+        {
+          "code": "10335000",
+          "term": "Chronic right-sided heart failure"
+        },
+        {
+          "code": "10633002",
+          "term": "Acute congestive heart failure"
+        },
+        {
+          "code": "111283005",
+          "term": "Chronic left-sided heart failure"
+        },
+        {
+          "code": "1204200007",
+          "term": "Left ventricular failure with normal ejection fraction due to valvular heart disease"
+        },
+        {
+          "code": "1204203009",
+          "term": "Left ventricular failure with normal ejection fraction due to coronary arteriosclerosis"
+        },
+        {
+          "code": "1204204003",
+          "term": "Left ventricular failure with normal ejection fraction due to myocarditis"
+        },
+        {
+          "code": "1204206001",
+          "term": "Left ventricular failure with normal ejection fraction due to cardiomyopathy"
+        },
+        {
+          "code": "1204462004",
+          "term": "Left ventricular failure with sepsis"
+        },
+        {
+          "code": "1204468000",
+          "term": "Right ventricular failure with sepsis"
+        },
+        {
+          "code": "1208843003",
+          "term": "Right ventricular failure due to heart valve disorder"
+        },
+        {
+          "code": "1208846006",
+          "term": "Right ventricular failure due to disorder of lung"
+        },
+        {
+          "code": "1208848007",
+          "term": "Right ventricular failure due to disorder of pulmonary circulation"
+        },
+        {
+          "code": "1208850004",
+          "term": "Right ventricular failure due to right ventricular infarction"
+        },
+        {
+          "code": "128404006",
+          "term": "Right heart failure"
+        },
+        {
+          "code": "1296659009",
+          "term": "Acute exacerbation of chronic heart failure"
+        },
+        {
+          "code": "153941000119100",
+          "term": "Chronic combined systolic and diastolic heart failure"
+        },
+        {
+          "code": "16838951000119100",
+          "term": "Acute on chronic right-sided congestive heart failure"
+        },
+        {
+          "code": "195111005",
+          "term": "Decompensated cardiac failure"
+        },
+        {
+          "code": "195112003",
+          "term": "Compensated cardiac failure"
+        },
+        {
+          "code": "195114002",
+          "term": "Acute left ventricular failure"
+        },
+        {
+          "code": "233924009",
+          "term": "Heart failure as a complication of care"
+        },
+        {
+          "code": "314206003",
+          "term": "Refractory heart failure"
+        },
+        {
+          "code": "367363000",
+          "term": "Right ventricular failure"
+        },
+        {
+          "code": "42343007",
+          "term": "Congestive heart failure"
+        },
+        {
+          "code": "426611007",
+          "term": "Congestive heart failure due to valvular disease"
+        },
+        {
+          "code": "43736008",
+          "term": "Rheumatic left ventricular failure"
+        },
+        {
+          "code": "441481004",
+          "term": "Chronic systolic heart failure"
+        },
+        {
+          "code": "441530006",
+          "term": "Chronic diastolic heart failure"
+        },
+        {
+          "code": "446221000",
+          "term": "Heart failure with normal ejection fraction"
+        },
+        {
+          "code": "48447003",
+          "term": "Chronic heart failure"
+        },
+        {
+          "code": "5375005",
+          "term": "Chronic left-sided congestive heart failure"
+        },
+        {
+          "code": "56675007",
+          "term": "Acute heart failure"
+        },
+        {
+          "code": "66989003",
+          "term": "Chronic right-sided congestive heart failure"
+        },
+        {
+          "code": "703272007",
+          "term": "Heart failure with reduced ejection fraction"
+        },
+        {
+          "code": "788950000",
+          "term": "Heart failure with mid range ejection fraction"
+        },
+        {
+          "code": "82523003",
+          "term": "Congestive rheumatic heart failure"
+        },
+        {
+          "code": "84114007",
+          "term": "Heart failure"
+        },
+        {
+          "code": "85232009",
+          "term": "Left heart failure"
+        },
+        {
+          "code": "871617000",
+          "term": "Low output heart failure due to and following Fontan operation"
+        },
+        {
+          "code": "88805009",
+          "term": "Chronic congestive heart failure"
+        },
+        {
+          "code": "898208007",
+          "term": "Heart failure due to thyrotoxicosis"
+        },
+        {
+          "code": "92506005",
+          "term": "Biventricular congestive heart failure"
+        }
+      ],
+      "fp_codes": [
+        {
+          "code": "1110931000000103",
+          "term": "Quality and Outcomes Framework heart failure quality indicator-related care invitation (procedure)"
+        },
+        {
+          "code": "134378009",
+          "term": "Congestive heart failure monitoring (regime/therapy)"
+        },
+        {
+          "code": "134401001",
+          "term": "Left ventricular systolic dysfunction (disorder)"
+        },
+        {
+          "code": "134440006",
+          "term": "Referral to heart failure clinic (procedure)"
+        },
+        {
+          "code": "143411000000100",
+          "term": "Quality and Outcomes Framework heart failure quality indicator-related care invitation using preferred method of communication (procedure)"
+        },
+        {
+          "code": "153931000119109",
+          "term": "Acute combined systolic and diastolic heart failure"
+        },
+        {
+          "code": "153951000119103",
+          "term": "Acute on chronic combined systolic and diastolic heart failure"
+        },
+        {
+          "code": "202231000000106",
+          "term": "Heart failure review completed (situation)"
+        },
+        {
+          "code": "247361000000100",
+          "term": "Heart failure 6 month review (regime/therapy)"
+        },
+        {
+          "code": "359617009",
+          "term": "Acute right-sided heart failure"
+        },
+        {
+          "code": "364006",
+          "term": "Acute left-sided heart failure"
+        },
+        {
+          "code": "390885007",
+          "term": "Heart failure annual review (regime/therapy)"
+        },
+        {
+          "code": "420300004",
+          "term": "New York Heart Association Classification - Class I (finding)"
+        },
+        {
+          "code": "420913000",
+          "term": "New York Heart Association Classification - Class III (finding)"
+        },
+        {
+          "code": "421704003",
+          "term": "New York Heart Association Classification - Class II (finding)"
+        },
+        {
+          "code": "422293003",
+          "term": "New York Heart Association Classification - Class IV (finding)"
+        },
+        {
+          "code": "424404003",
+          "term": "Decompensated chronic heart failure"
+        },
+        {
+          "code": "426263006",
+          "term": "Congestive heart failure due to left ventricular systolic dysfunction (disorder)"
+        },
+        {
+          "code": "430396006",
+          "term": "Chronic systolic dysfunction of left ventricle (disorder)"
+        },
+        {
+          "code": "443253003",
+          "term": "Acute on chronic systolic heart failure"
+        },
+        {
+          "code": "443254009",
+          "term": "Acute systolic heart failure"
+        },
+        {
+          "code": "443343001",
+          "term": "Acute diastolic heart failure"
+        },
+        {
+          "code": "443344007",
+          "term": "Acute on chronic diastolic heart failure"
+        },
+        {
+          "code": "473226007",
+          "term": "Heart failure medication review (procedure)"
+        },
+        {
+          "code": "521691000000100",
+          "term": "Heart failure resolved (finding)"
+        },
+        {
+          "code": "609387006",
+          "term": "At high risk for heart failure"
+        },
+        {
+          "code": "698296002",
+          "term": "Acute exacerbation of chronic congestive heart failure"
+        },
+        {
+          "code": "698592004",
+          "term": "Asymptomatic left ventricular systolic dysfunction (disorder)"
+        },
+        {
+          "code": "703273002",
+          "term": "Heart failure with reduced ejection fraction due to coronary artery disease (disorder)"
+        },
+        {
+          "code": "703274008",
+          "term": "Heart failure with reduced ejection fraction due to myocarditis (disorder)"
+        },
+        {
+          "code": "703275009",
+          "term": "Heart failure with reduced ejection fraction due to cardiomyopathy (disorder)"
+        },
+        {
+          "code": "703276005",
+          "term": "Heart failure with reduced ejection fraction due to heart valve disease (disorder)"
+        },
+        {
+          "code": "708018005",
+          "term": "Assessment using congestive heart failure, hypertension, age 2, diabetes mellitus, stroke 2 - vascular disease, age, sex category score"
+        },
+        {
+          "code": "711461000000104",
+          "term": "Heart failure monitoring invitation (procedure)"
+        },
+        {
+          "code": "716621000000101",
+          "term": "Heart failure monitoring third letter (procedure)"
+        },
+        {
+          "code": "716971000000109",
+          "term": "Heart failure monitoring first letter (procedure)"
+        },
+        {
+          "code": "717191000000108",
+          "term": "Heart failure monitoring second letter (procedure)"
+        },
+        {
+          "code": "717481000000104",
+          "term": "Excepted from heart failure quality indicators - patient unsuitable (finding)"
+        },
+        {
+          "code": "717491000000102",
+          "term": "Excepted from heart failure quality indicators - informed dissent (finding)"
+        },
+        {
+          "code": "717501000000108",
+          "term": "Heart failure monitoring verbal invitation (procedure)"
+        },
+        {
+          "code": "717531000000102",
+          "term": "Heart failure monitoring telephone invitation (procedure)"
+        },
+        {
+          "code": "735259005",
+          "term": "Congestive heart failure, hypertension, age 2, diabetes mellitus, stroke 2, vascular disease, age, sex category stroke risk score (observable entity)"
+        },
+        {
+          "code": "7371000175103",
+          "term": "Reduced ejection fraction co-occurrent and due to acute on chronic heart failure"
+        },
+        {
+          "code": "7381000175100",
+          "term": "Reduced ejection fraction co-occurrent and due to chronic heart failure"
+        },
+        {
+          "code": "7391000175102",
+          "term": "Reduced ejection fraction co-occurrent and due to acute heart failure"
+        },
+        {
+          "code": "7401000175100",
+          "term": "Acute on chronic heart failure co-occurrent with normal ejection fraction"
+        },
+        {
+          "code": "7411000175102",
+          "term": "Chronic heart failure co-occurrent with normal ejection fraction"
+        },
+        {
+          "code": "7421000175106",
+          "term": "Acute heart failure co-occurrent with normal ejection fraction"
+        },
+        {
+          "code": "74960003",
+          "term": "Acute left-sided congestive heart failure"
+        },
+        {
+          "code": "760361000000100",
+          "term": "Fast track heart failure referral for transthoracic two dimensional echocardiogram (procedure)"
+        },
+        {
+          "code": "763007002",
+          "term": "Assessment using congestive heart failure, hypertension, age 75 years or older, diabetes mellitus and previous stroke or transient ischemic attack score (procedure)"
+        },
+        {
+          "code": "763008007",
+          "term": "Congestive heart failure, hypertension, age 75 years or older, diabetes mellitus and previous stroke or transient ischemic attack score (observable entity)"
+        },
+        {
+          "code": "773587008",
+          "term": "X-linked intellectual disability, cardiomegaly, congestive heart failure syndrome (disorder)"
+        },
+        {
+          "code": "80479009",
+          "term": "Acute right-sided congestive heart failure"
+        },
+        {
+          "code": "810971000000105",
+          "term": "Heart failure self-management plan review (procedure)"
+        },
+        {
+          "code": "813991000000101",
+          "term": "Education about deteriorating heart failure (procedure)"
+        },
+        {
+          "code": "851071000000108",
+          "term": "Heart failure initial assessment (regime/therapy)"
+        },
+        {
+          "code": "871681000000102",
+          "term": "Heart failure monitoring (regime/therapy)"
+        },
+        {
+          "code": "872361000000105",
+          "term": "Discussion about heart failure care plan (procedure)"
+        },
+        {
+          "code": "873881000000100",
+          "term": "Referral to rapid access heart failure clinic (procedure)"
+        },
+        {
+          "code": "879780004",
+          "term": "Telehealth monitoring for chronic heart failure"
+        },
+        {
+          "code": "I110",
+          "term": "Hypertensive heart disease with (congestive) heart failure"
+        },
+        {
+          "code": "I119",
+          "term": "Hypertensive heart disease without (congestive) heart failure"
+        },
+        {
+          "code": "I130",
+          "term": "Hypertensive heart and renal disease with (congestive) heart failure"
+        },
+        {
+          "code": "I132",
+          "term": "Hypertensive heart and renal disease with both (congestive) heart failure and renal failure"
+        },
+        {
+          "code": "I50",
+          "term": "Heart failure"
+        },
+        {
+          "code": "I500",
+          "term": "Congestive heart failure"
+        },
+        {
+          "code": "I509",
+          "term": "Heart failure, unspecified"
+        }
+      ],
+      "fn_codes": []
+    },
+    "merged_enriched": {
+      "codelist_name": "merged_enriched",
+      "n_ref_codes": 42,
+      "n_output_codes": 100,
+      "recall": 1.0,
+      "precision": 0.42,
+      "f1": 0.5915,
+      "tp_count": 42,
+      "fp_count": 58,
+      "fn_count": 0,
+      "tp_codes": [
+        {
+          "code": "10335000",
+          "term": "Chronic right-sided heart failure"
+        },
+        {
+          "code": "10633002",
+          "term": "Acute congestive heart failure"
+        },
+        {
+          "code": "111283005",
+          "term": "Chronic left-sided heart failure"
+        },
+        {
+          "code": "1204200007",
+          "term": "Left ventricular failure with normal ejection fraction due to valvular heart disease"
+        },
+        {
+          "code": "1204203009",
+          "term": "Left ventricular failure with normal ejection fraction due to coronary arteriosclerosis"
+        },
+        {
+          "code": "1204204003",
+          "term": "Left ventricular failure with normal ejection fraction due to myocarditis"
+        },
+        {
+          "code": "1204206001",
+          "term": "Left ventricular failure with normal ejection fraction due to cardiomyopathy"
+        },
+        {
+          "code": "1204462004",
+          "term": "Left ventricular failure with sepsis"
+        },
+        {
+          "code": "1204468000",
+          "term": "Right ventricular failure with sepsis"
+        },
+        {
+          "code": "1208843003",
+          "term": "Right ventricular failure due to heart valve disorder"
+        },
+        {
+          "code": "1208846006",
+          "term": "Right ventricular failure due to disorder of lung"
+        },
+        {
+          "code": "1208848007",
+          "term": "Right ventricular failure due to disorder of pulmonary circulation"
+        },
+        {
+          "code": "1208850004",
+          "term": "Right ventricular failure due to right ventricular infarction"
+        },
+        {
+          "code": "128404006",
+          "term": "Right heart failure"
+        },
+        {
+          "code": "1296659009",
+          "term": "Acute exacerbation of chronic heart failure"
+        },
+        {
+          "code": "153941000119100",
+          "term": "Chronic combined systolic and diastolic heart failure"
+        },
+        {
+          "code": "16838951000119100",
+          "term": "Acute on chronic right-sided congestive heart failure"
+        },
+        {
+          "code": "195111005",
+          "term": "Decompensated cardiac failure"
+        },
+        {
+          "code": "195112003",
+          "term": "Compensated cardiac failure"
+        },
+        {
+          "code": "195114002",
+          "term": "Acute left ventricular failure"
+        },
+        {
+          "code": "233924009",
+          "term": "Heart failure as a complication of care"
+        },
+        {
+          "code": "314206003",
+          "term": "Refractory heart failure"
+        },
+        {
+          "code": "367363000",
+          "term": "Right ventricular failure"
+        },
+        {
+          "code": "42343007",
+          "term": "Congestive heart failure"
+        },
+        {
+          "code": "426611007",
+          "term": "Congestive heart failure due to valvular disease"
+        },
+        {
+          "code": "43736008",
+          "term": "Rheumatic left ventricular failure"
+        },
+        {
+          "code": "441481004",
+          "term": "Chronic systolic heart failure"
+        },
+        {
+          "code": "441530006",
+          "term": "Chronic diastolic heart failure"
+        },
+        {
+          "code": "446221000",
+          "term": "Heart failure with normal ejection fraction"
+        },
+        {
+          "code": "48447003",
+          "term": "Chronic heart failure"
+        },
+        {
+          "code": "5375005",
+          "term": "Chronic left-sided congestive heart failure"
+        },
+        {
+          "code": "56675007",
+          "term": "Acute heart failure"
+        },
+        {
+          "code": "66989003",
+          "term": "Chronic right-sided congestive heart failure"
+        },
+        {
+          "code": "703272007",
+          "term": "Heart failure with reduced ejection fraction"
+        },
+        {
+          "code": "788950000",
+          "term": "Heart failure with mid range ejection fraction"
+        },
+        {
+          "code": "82523003",
+          "term": "Congestive rheumatic heart failure"
+        },
+        {
+          "code": "84114007",
+          "term": "Heart failure"
+        },
+        {
+          "code": "85232009",
+          "term": "Left heart failure"
+        },
+        {
+          "code": "871617000",
+          "term": "Low output heart failure due to and following Fontan operation"
+        },
+        {
+          "code": "88805009",
+          "term": "Chronic congestive heart failure"
+        },
+        {
+          "code": "898208007",
+          "term": "Heart failure due to thyrotoxicosis"
+        },
+        {
+          "code": "92506005",
+          "term": "Biventricular congestive heart failure"
+        }
+      ],
+      "fp_codes": [
+        {
+          "code": "1110931000000103",
+          "term": "Quality and Outcomes Framework heart failure quality indicator-related care invitation (procedure)"
+        },
+        {
+          "code": "134378009",
+          "term": "Congestive heart failure monitoring (regime/therapy)"
+        },
+        {
+          "code": "134440006",
+          "term": "Referral to heart failure clinic (procedure)"
+        },
+        {
+          "code": "143411000000100",
+          "term": "Quality and Outcomes Framework heart failure quality indicator-related care invitation using preferred method of communication (procedure)"
+        },
+        {
+          "code": "153931000119109",
+          "term": "Acute combined systolic and diastolic heart failure"
+        },
+        {
+          "code": "153951000119103",
+          "term": "Acute on chronic combined systolic and diastolic heart failure"
+        },
+        {
+          "code": "202231000000106",
+          "term": "Heart failure review completed (situation)"
+        },
+        {
+          "code": "359617009",
+          "term": "Acute right-sided heart failure"
+        },
+        {
+          "code": "364006",
+          "term": "Acute left-sided heart failure"
+        },
+        {
+          "code": "390885007",
+          "term": "Heart failure annual review (regime/therapy)"
+        },
+        {
+          "code": "420300004",
+          "term": "New York Heart Association Classification - Class I (finding)"
+        },
+        {
+          "code": "420913000",
+          "term": "New York Heart Association Classification - Class III (finding)"
+        },
+        {
+          "code": "421704003",
+          "term": "New York Heart Association Classification - Class II (finding)"
+        },
+        {
+          "code": "422293003",
+          "term": "New York Heart Association Classification - Class IV (finding)"
+        },
+        {
+          "code": "424404003",
+          "term": "Decompensated chronic heart failure"
+        },
+        {
+          "code": "426263006",
+          "term": "Congestive heart failure due to left ventricular systolic dysfunction (disorder)"
+        },
+        {
+          "code": "443253003",
+          "term": "Acute on chronic systolic heart failure"
+        },
+        {
+          "code": "443254009",
+          "term": "Acute systolic heart failure"
+        },
+        {
+          "code": "443343001",
+          "term": "Acute diastolic heart failure"
+        },
+        {
+          "code": "443344007",
+          "term": "Acute on chronic diastolic heart failure"
+        },
+        {
+          "code": "473226007",
+          "term": "Heart failure medication review (procedure)"
+        },
+        {
+          "code": "521691000000100",
+          "term": "Heart failure resolved (finding)"
+        },
+        {
+          "code": "609387006",
+          "term": "At high risk for heart failure"
+        },
+        {
+          "code": "698296002",
+          "term": "Acute exacerbation of chronic congestive heart failure"
+        },
+        {
+          "code": "703273002",
+          "term": "Heart failure with reduced ejection fraction due to coronary artery disease (disorder)"
+        },
+        {
+          "code": "703274008",
+          "term": "Heart failure with reduced ejection fraction due to myocarditis (disorder)"
+        },
+        {
+          "code": "703275009",
+          "term": "Heart failure with reduced ejection fraction due to cardiomyopathy (disorder)"
+        },
+        {
+          "code": "703276005",
+          "term": "Heart failure with reduced ejection fraction due to heart valve disease (disorder)"
+        },
+        {
+          "code": "708018005",
+          "term": "Assessment using congestive heart failure, hypertension, age 2, diabetes mellitus, stroke 2 - vascular disease, age, sex category score"
+        },
+        {
+          "code": "711461000000104",
+          "term": "Heart failure monitoring invitation (procedure)"
+        },
+        {
+          "code": "716621000000101",
+          "term": "Heart failure monitoring third letter (procedure)"
+        },
+        {
+          "code": "716971000000109",
+          "term": "Heart failure monitoring first letter (procedure)"
+        },
+        {
+          "code": "717191000000108",
+          "term": "Heart failure monitoring second letter (procedure)"
+        },
+        {
+          "code": "717501000000108",
+          "term": "Heart failure monitoring verbal invitation (procedure)"
+        },
+        {
+          "code": "735259005",
+          "term": "Congestive heart failure, hypertension, age 2, diabetes mellitus, stroke 2, vascular disease, age, sex category stroke risk score (observable entity)"
+        },
+        {
+          "code": "7371000175103",
+          "term": "Reduced ejection fraction co-occurrent and due to acute on chronic heart failure"
+        },
+        {
+          "code": "7381000175100",
+          "term": "Reduced ejection fraction co-occurrent and due to chronic heart failure"
+        },
+        {
+          "code": "7391000175102",
+          "term": "Reduced ejection fraction co-occurrent and due to acute heart failure"
+        },
+        {
+          "code": "7401000175100",
+          "term": "Acute on chronic heart failure co-occurrent with normal ejection fraction"
+        },
+        {
+          "code": "7411000175102",
+          "term": "Chronic heart failure co-occurrent with normal ejection fraction"
+        },
+        {
+          "code": "7421000175106",
+          "term": "Acute heart failure co-occurrent with normal ejection fraction"
+        },
+        {
+          "code": "74960003",
+          "term": "Acute left-sided congestive heart failure"
+        },
+        {
+          "code": "760361000000100",
+          "term": "Fast track heart failure referral for transthoracic two dimensional echocardiogram (procedure)"
+        },
+        {
+          "code": "763007002",
+          "term": "Assessment using congestive heart failure, hypertension, age 75 years or older, diabetes mellitus and previous stroke or transient ischemic attack score (procedure)"
+        },
+        {
+          "code": "763008007",
+          "term": "Congestive heart failure, hypertension, age 75 years or older, diabetes mellitus and previous stroke or transient ischemic attack score (observable entity)"
+        },
+        {
+          "code": "80479009",
+          "term": "Acute right-sided congestive heart failure"
+        },
+        {
+          "code": "813991000000101",
+          "term": "Education about deteriorating heart failure (procedure)"
+        },
+        {
+          "code": "851071000000108",
+          "term": "Heart failure initial assessment (regime/therapy)"
+        },
+        {
+          "code": "871681000000102",
+          "term": "Heart failure monitoring (regime/therapy)"
+        },
+        {
+          "code": "873881000000100",
+          "term": "Referral to rapid access heart failure clinic (procedure)"
+        },
+        {
+          "code": "879780004",
+          "term": "Telehealth monitoring for chronic heart failure"
+        },
+        {
+          "code": "I110",
+          "term": "Hypertensive heart disease with (congestive) heart failure"
+        },
+        {
+          "code": "I119",
+          "term": "Hypertensive heart disease without (congestive) heart failure"
+        },
+        {
+          "code": "I130",
+          "term": "Hypertensive heart and renal disease with (congestive) heart failure"
+        },
+        {
+          "code": "I132",
+          "term": "Hypertensive heart and renal disease with both (congestive) heart failure and renal failure"
+        },
+        {
+          "code": "I50",
+          "term": "Heart failure"
+        },
+        {
+          "code": "I500",
+          "term": "Congestive heart failure"
+        },
+        {
+          "code": "I509",
+          "term": "Heart failure, unspecified"
+        }
+      ],
+      "fn_codes": []
+    },
+    "all_scored": {
+      "codelist_name": "all_scored",
+      "n_ref_codes": 42,
+      "n_output_codes": 100,
+      "recall": 1.0,
+      "precision": 0.42,
+      "f1": 0.5915,
+      "tp_count": 42,
+      "fp_count": 58,
+      "fn_count": 0,
+      "tp_codes": [
+        {
+          "code": "10335000",
+          "term": "Chronic right-sided heart failure"
+        },
+        {
+          "code": "10633002",
+          "term": "Acute congestive heart failure"
+        },
+        {
+          "code": "111283005",
+          "term": "Chronic left-sided heart failure"
+        },
+        {
+          "code": "1204200007",
+          "term": "Left ventricular failure with normal ejection fraction due to valvular heart disease"
+        },
+        {
+          "code": "1204203009",
+          "term": "Left ventricular failure with normal ejection fraction due to coronary arteriosclerosis"
+        },
+        {
+          "code": "1204204003",
+          "term": "Left ventricular failure with normal ejection fraction due to myocarditis"
+        },
+        {
+          "code": "1204206001",
+          "term": "Left ventricular failure with normal ejection fraction due to cardiomyopathy"
+        },
+        {
+          "code": "1204462004",
+          "term": "Left ventricular failure with sepsis"
+        },
+        {
+          "code": "1204468000",
+          "term": "Right ventricular failure with sepsis"
+        },
+        {
+          "code": "1208843003",
+          "term": "Right ventricular failure due to heart valve disorder"
+        },
+        {
+          "code": "1208846006",
+          "term": "Right ventricular failure due to disorder of lung"
+        },
+        {
+          "code": "1208848007",
+          "term": "Right ventricular failure due to disorder of pulmonary circulation"
+        },
+        {
+          "code": "1208850004",
+          "term": "Right ventricular failure due to right ventricular infarction"
+        },
+        {
+          "code": "128404006",
+          "term": "Right heart failure"
+        },
+        {
+          "code": "1296659009",
+          "term": "Acute exacerbation of chronic heart failure"
+        },
+        {
+          "code": "153941000119100",
+          "term": "Chronic combined systolic and diastolic heart failure"
+        },
+        {
+          "code": "16838951000119100",
+          "term": "Acute on chronic right-sided congestive heart failure"
+        },
+        {
+          "code": "195111005",
+          "term": "Decompensated cardiac failure"
+        },
+        {
+          "code": "195112003",
+          "term": "Compensated cardiac failure"
+        },
+        {
+          "code": "195114002",
+          "term": "Acute left ventricular failure"
+        },
+        {
+          "code": "233924009",
+          "term": "Heart failure as a complication of care"
+        },
+        {
+          "code": "314206003",
+          "term": "Refractory heart failure"
+        },
+        {
+          "code": "367363000",
+          "term": "Right ventricular failure"
+        },
+        {
+          "code": "42343007",
+          "term": "Congestive heart failure"
+        },
+        {
+          "code": "426611007",
+          "term": "Congestive heart failure due to valvular disease"
+        },
+        {
+          "code": "43736008",
+          "term": "Rheumatic left ventricular failure"
+        },
+        {
+          "code": "441481004",
+          "term": "Chronic systolic heart failure"
+        },
+        {
+          "code": "441530006",
+          "term": "Chronic diastolic heart failure"
+        },
+        {
+          "code": "446221000",
+          "term": "Heart failure with normal ejection fraction"
+        },
+        {
+          "code": "48447003",
+          "term": "Chronic heart failure"
+        },
+        {
+          "code": "5375005",
+          "term": "Chronic left-sided congestive heart failure"
+        },
+        {
+          "code": "56675007",
+          "term": "Acute heart failure"
+        },
+        {
+          "code": "66989003",
+          "term": "Chronic right-sided congestive heart failure"
+        },
+        {
+          "code": "703272007",
+          "term": "Heart failure with reduced ejection fraction"
+        },
+        {
+          "code": "788950000",
+          "term": "Heart failure with mid range ejection fraction"
+        },
+        {
+          "code": "82523003",
+          "term": "Congestive rheumatic heart failure"
+        },
+        {
+          "code": "84114007",
+          "term": "Heart failure"
+        },
+        {
+          "code": "85232009",
+          "term": "Left heart failure"
+        },
+        {
+          "code": "871617000",
+          "term": "Low output heart failure due to and following Fontan operation"
+        },
+        {
+          "code": "88805009",
+          "term": "Chronic congestive heart failure"
+        },
+        {
+          "code": "898208007",
+          "term": "Heart failure due to thyrotoxicosis"
+        },
+        {
+          "code": "92506005",
+          "term": "Biventricular congestive heart failure"
+        }
+      ],
+      "fp_codes": [
+        {
+          "code": "1110931000000103",
+          "term": "Quality and Outcomes Framework heart failure quality indicator-related care invitation (procedure)"
+        },
+        {
+          "code": "134378009",
+          "term": "Congestive heart failure monitoring (regime/therapy)"
+        },
+        {
+          "code": "134440006",
+          "term": "Referral to heart failure clinic (procedure)"
+        },
+        {
+          "code": "143411000000100",
+          "term": "Quality and Outcomes Framework heart failure quality indicator-related care invitation using preferred method of communication (procedure)"
+        },
+        {
+          "code": "153931000119109",
+          "term": "Acute combined systolic and diastolic heart failure"
+        },
+        {
+          "code": "153951000119103",
+          "term": "Acute on chronic combined systolic and diastolic heart failure"
+        },
+        {
+          "code": "202231000000106",
+          "term": "Heart failure review completed (situation)"
+        },
+        {
+          "code": "359617009",
+          "term": "Acute right-sided heart failure"
+        },
+        {
+          "code": "364006",
+          "term": "Acute left-sided heart failure"
+        },
+        {
+          "code": "390885007",
+          "term": "Heart failure annual review (regime/therapy)"
+        },
+        {
+          "code": "420300004",
+          "term": "New York Heart Association Classification - Class I (finding)"
+        },
+        {
+          "code": "420913000",
+          "term": "New York Heart Association Classification - Class III (finding)"
+        },
+        {
+          "code": "421704003",
+          "term": "New York Heart Association Classification - Class II (finding)"
+        },
+        {
+          "code": "422293003",
+          "term": "New York Heart Association Classification - Class IV (finding)"
+        },
+        {
+          "code": "424404003",
+          "term": "Decompensated chronic heart failure"
+        },
+        {
+          "code": "426263006",
+          "term": "Congestive heart failure due to left ventricular systolic dysfunction (disorder)"
+        },
+        {
+          "code": "443253003",
+          "term": "Acute on chronic systolic heart failure"
+        },
+        {
+          "code": "443254009",
+          "term": "Acute systolic heart failure"
+        },
+        {
+          "code": "443343001",
+          "term": "Acute diastolic heart failure"
+        },
+        {
+          "code": "443344007",
+          "term": "Acute on chronic diastolic heart failure"
+        },
+        {
+          "code": "473226007",
+          "term": "Heart failure medication review (procedure)"
+        },
+        {
+          "code": "521691000000100",
+          "term": "Heart failure resolved (finding)"
+        },
+        {
+          "code": "609387006",
+          "term": "At high risk for heart failure"
+        },
+        {
+          "code": "698296002",
+          "term": "Acute exacerbation of chronic congestive heart failure"
+        },
+        {
+          "code": "703273002",
+          "term": "Heart failure with reduced ejection fraction due to coronary artery disease (disorder)"
+        },
+        {
+          "code": "703274008",
+          "term": "Heart failure with reduced ejection fraction due to myocarditis (disorder)"
+        },
+        {
+          "code": "703275009",
+          "term": "Heart failure with reduced ejection fraction due to cardiomyopathy (disorder)"
+        },
+        {
+          "code": "703276005",
+          "term": "Heart failure with reduced ejection fraction due to heart valve disease (disorder)"
+        },
+        {
+          "code": "708018005",
+          "term": "Assessment using congestive heart failure, hypertension, age 2, diabetes mellitus, stroke 2 - vascular disease, age, sex category score"
+        },
+        {
+          "code": "711461000000104",
+          "term": "Heart failure monitoring invitation (procedure)"
+        },
+        {
+          "code": "716621000000101",
+          "term": "Heart failure monitoring third letter (procedure)"
+        },
+        {
+          "code": "716971000000109",
+          "term": "Heart failure monitoring first letter (procedure)"
+        },
+        {
+          "code": "717191000000108",
+          "term": "Heart failure monitoring second letter (procedure)"
+        },
+        {
+          "code": "717501000000108",
+          "term": "Heart failure monitoring verbal invitation (procedure)"
+        },
+        {
+          "code": "735259005",
+          "term": "Congestive heart failure, hypertension, age 2, diabetes mellitus, stroke 2, vascular disease, age, sex category stroke risk score (observable entity)"
+        },
+        {
+          "code": "7371000175103",
+          "term": "Reduced ejection fraction co-occurrent and due to acute on chronic heart failure"
+        },
+        {
+          "code": "7381000175100",
+          "term": "Reduced ejection fraction co-occurrent and due to chronic heart failure"
+        },
+        {
+          "code": "7391000175102",
+          "term": "Reduced ejection fraction co-occurrent and due to acute heart failure"
+        },
+        {
+          "code": "7401000175100",
+          "term": "Acute on chronic heart failure co-occurrent with normal ejection fraction"
+        },
+        {
+          "code": "7411000175102",
+          "term": "Chronic heart failure co-occurrent with normal ejection fraction"
+        },
+        {
+          "code": "7421000175106",
+          "term": "Acute heart failure co-occurrent with normal ejection fraction"
+        },
+        {
+          "code": "74960003",
+          "term": "Acute left-sided congestive heart failure"
+        },
+        {
+          "code": "760361000000100",
+          "term": "Fast track heart failure referral for transthoracic two dimensional echocardiogram (procedure)"
+        },
+        {
+          "code": "763007002",
+          "term": "Assessment using congestive heart failure, hypertension, age 75 years or older, diabetes mellitus and previous stroke or transient ischemic attack score (procedure)"
+        },
+        {
+          "code": "763008007",
+          "term": "Congestive heart failure, hypertension, age 75 years or older, diabetes mellitus and previous stroke or transient ischemic attack score (observable entity)"
+        },
+        {
+          "code": "80479009",
+          "term": "Acute right-sided congestive heart failure"
+        },
+        {
+          "code": "813991000000101",
+          "term": "Education about deteriorating heart failure (procedure)"
+        },
+        {
+          "code": "851071000000108",
+          "term": "Heart failure initial assessment (regime/therapy)"
+        },
+        {
+          "code": "871681000000102",
+          "term": "Heart failure monitoring (regime/therapy)"
+        },
+        {
+          "code": "873881000000100",
+          "term": "Referral to rapid access heart failure clinic (procedure)"
+        },
+        {
+          "code": "879780004",
+          "term": "Telehealth monitoring for chronic heart failure"
+        },
+        {
+          "code": "I110",
+          "term": "Hypertensive heart disease with (congestive) heart failure"
+        },
+        {
+          "code": "I119",
+          "term": "Hypertensive heart disease without (congestive) heart failure"
+        },
+        {
+          "code": "I130",
+          "term": "Hypertensive heart and renal disease with (congestive) heart failure"
+        },
+        {
+          "code": "I132",
+          "term": "Hypertensive heart and renal disease with both (congestive) heart failure and renal failure"
+        },
+        {
+          "code": "I50",
+          "term": "Heart failure"
+        },
+        {
+          "code": "I500",
+          "term": "Congestive heart failure"
+        },
+        {
+          "code": "I509",
+          "term": "Heart failure, unspecified"
+        }
+      ],
+      "fn_codes": []
+    },
+    "included_only": {
+      "codelist_name": "included_only",
+      "n_ref_codes": 42,
+      "n_output_codes": 63,
+      "recall": 0.881,
+      "precision": 0.5873,
+      "f1": 0.7048,
+      "tp_count": 37,
+      "fp_count": 26,
+      "fn_count": 5,
+      "tp_codes": [
+        {
+          "code": "10335000",
+          "term": "Chronic right-sided heart failure"
+        },
+        {
+          "code": "10633002",
+          "term": "Acute congestive heart failure"
+        },
+        {
+          "code": "111283005",
+          "term": "Chronic left-sided heart failure"
+        },
+        {
+          "code": "1204200007",
+          "term": "Left ventricular failure with normal ejection fraction due to valvular heart disease"
+        },
+        {
+          "code": "1204203009",
+          "term": "Left ventricular failure with normal ejection fraction due to coronary arteriosclerosis"
+        },
+        {
+          "code": "1204204003",
+          "term": "Left ventricular failure with normal ejection fraction due to myocarditis"
+        },
+        {
+          "code": "1204206001",
+          "term": "Left ventricular failure with normal ejection fraction due to cardiomyopathy"
+        },
+        {
+          "code": "1208843003",
+          "term": "Right ventricular failure due to heart valve disorder"
+        },
+        {
+          "code": "1208850004",
+          "term": "Right ventricular failure due to right ventricular infarction"
+        },
+        {
+          "code": "128404006",
+          "term": "Right heart failure"
+        },
+        {
+          "code": "1296659009",
+          "term": "Acute exacerbation of chronic heart failure"
+        },
+        {
+          "code": "153941000119100",
+          "term": "Chronic combined systolic and diastolic heart failure"
+        },
+        {
+          "code": "16838951000119100",
+          "term": "Acute on chronic right-sided congestive heart failure"
+        },
+        {
+          "code": "195111005",
+          "term": "Decompensated cardiac failure"
+        },
+        {
+          "code": "195112003",
+          "term": "Compensated cardiac failure"
+        },
+        {
+          "code": "195114002",
+          "term": "Acute left ventricular failure"
+        },
+        {
+          "code": "314206003",
+          "term": "Refractory heart failure"
+        },
+        {
+          "code": "367363000",
+          "term": "Right ventricular failure"
+        },
+        {
+          "code": "42343007",
+          "term": "Congestive heart failure"
+        },
+        {
+          "code": "426611007",
+          "term": "Congestive heart failure due to valvular disease"
+        },
+        {
+          "code": "43736008",
+          "term": "Rheumatic left ventricular failure"
+        },
+        {
+          "code": "441481004",
+          "term": "Chronic systolic heart failure"
+        },
+        {
+          "code": "441530006",
+          "term": "Chronic diastolic heart failure"
+        },
+        {
+          "code": "446221000",
+          "term": "Heart failure with normal ejection fraction"
+        },
+        {
+          "code": "48447003",
+          "term": "Chronic heart failure"
+        },
+        {
+          "code": "5375005",
+          "term": "Chronic left-sided congestive heart failure"
+        },
+        {
+          "code": "56675007",
+          "term": "Acute heart failure"
+        },
+        {
+          "code": "66989003",
+          "term": "Chronic right-sided congestive heart failure"
+        },
+        {
+          "code": "703272007",
+          "term": "Heart failure with reduced ejection fraction"
+        },
+        {
+          "code": "788950000",
+          "term": "Heart failure with mid range ejection fraction"
+        },
+        {
+          "code": "82523003",
+          "term": "Congestive rheumatic heart failure"
+        },
+        {
+          "code": "84114007",
+          "term": "Heart failure"
+        },
+        {
+          "code": "85232009",
+          "term": "Left heart failure"
+        },
+        {
+          "code": "871617000",
+          "term": "Low output heart failure due to and following Fontan operation"
+        },
+        {
+          "code": "88805009",
+          "term": "Chronic congestive heart failure"
+        },
+        {
+          "code": "898208007",
+          "term": "Heart failure due to thyrotoxicosis"
+        },
+        {
+          "code": "92506005",
+          "term": "Biventricular congestive heart failure"
+        }
+      ],
+      "fp_codes": [
+        {
+          "code": "153931000119109",
+          "term": "Acute combined systolic and diastolic heart failure"
+        },
+        {
+          "code": "153951000119103",
+          "term": "Acute on chronic combined systolic and diastolic heart failure"
+        },
+        {
+          "code": "359617009",
+          "term": "Acute right-sided heart failure"
+        },
+        {
+          "code": "364006",
+          "term": "Acute left-sided heart failure"
+        },
+        {
+          "code": "424404003",
+          "term": "Decompensated chronic heart failure"
+        },
+        {
+          "code": "426263006",
+          "term": "Congestive heart failure due to left ventricular systolic dysfunction (disorder)"
+        },
+        {
+          "code": "443253003",
+          "term": "Acute on chronic systolic heart failure"
+        },
+        {
+          "code": "443254009",
+          "term": "Acute systolic heart failure"
+        },
+        {
+          "code": "443343001",
+          "term": "Acute diastolic heart failure"
+        },
+        {
+          "code": "443344007",
+          "term": "Acute on chronic diastolic heart failure"
+        },
+        {
+          "code": "698296002",
+          "term": "Acute exacerbation of chronic congestive heart failure"
+        },
+        {
+          "code": "703273002",
+          "term": "Heart failure with reduced ejection fraction due to coronary artery disease (disorder)"
+        },
+        {
+          "code": "703274008",
+          "term": "Heart failure with reduced ejection fraction due to myocarditis (disorder)"
+        },
+        {
+          "code": "703275009",
+          "term": "Heart failure with reduced ejection fraction due to cardiomyopathy (disorder)"
+        },
+        {
+          "code": "703276005",
+          "term": "Heart failure with reduced ejection fraction due to heart valve disease (disorder)"
+        },
+        {
+          "code": "7371000175103",
+          "term": "Reduced ejection fraction co-occurrent and due to acute on chronic heart failure"
+        },
+        {
+          "code": "7381000175100",
+          "term": "Reduced ejection fraction co-occurrent and due to chronic heart failure"
+        },
+        {
+          "code": "7391000175102",
+          "term": "Reduced ejection fraction co-occurrent and due to acute heart failure"
+        },
+        {
+          "code": "7401000175100",
+          "term": "Acute on chronic heart failure co-occurrent with normal ejection fraction"
+        },
+        {
+          "code": "7411000175102",
+          "term": "Chronic heart failure co-occurrent with normal ejection fraction"
+        },
+        {
+          "code": "7421000175106",
+          "term": "Acute heart failure co-occurrent with normal ejection fraction"
+        },
+        {
+          "code": "74960003",
+          "term": "Acute left-sided congestive heart failure"
+        },
+        {
+          "code": "80479009",
+          "term": "Acute right-sided congestive heart failure"
+        },
+        {
+          "code": "I50",
+          "term": "Heart failure"
+        },
+        {
+          "code": "I500",
+          "term": "Congestive heart failure"
+        },
+        {
+          "code": "I509",
+          "term": "Heart failure, unspecified"
+        }
+      ],
+      "fn_codes": [
+        {
+          "code": "1204462004",
+          "term": "Left ventricular failure with sepsis"
+        },
+        {
+          "code": "1204468000",
+          "term": "Right ventricular failure with sepsis"
+        },
+        {
+          "code": "1208846006",
+          "term": "Right ventricular failure due to disorder of lung"
+        },
+        {
+          "code": "1208848007",
+          "term": "Right ventricular failure due to disorder of pulmonary circulation"
+        },
+        {
+          "code": "233924009",
+          "term": "Heart failure as a complication of care"
+        }
+      ]
+    },
+    "included_plus_uncertain": {
+      "codelist_name": "included_plus_uncertain",
+      "n_ref_codes": 42,
+      "n_output_codes": 65,
+      "recall": 0.9286,
+      "precision": 0.6,
+      "f1": 0.729,
+      "tp_count": 39,
+      "fp_count": 26,
+      "fn_count": 3,
+      "tp_codes": [
+        {
+          "code": "10335000",
+          "term": "Chronic right-sided heart failure"
+        },
+        {
+          "code": "10633002",
+          "term": "Acute congestive heart failure"
+        },
+        {
+          "code": "111283005",
+          "term": "Chronic left-sided heart failure"
+        },
+        {
+          "code": "1204200007",
+          "term": "Left ventricular failure with normal ejection fraction due to valvular heart disease"
+        },
+        {
+          "code": "1204203009",
+          "term": "Left ventricular failure with normal ejection fraction due to coronary arteriosclerosis"
+        },
+        {
+          "code": "1204204003",
+          "term": "Left ventricular failure with normal ejection fraction due to myocarditis"
+        },
+        {
+          "code": "1204206001",
+          "term": "Left ventricular failure with normal ejection fraction due to cardiomyopathy"
+        },
+        {
+          "code": "1204462004",
+          "term": "Left ventricular failure with sepsis"
+        },
+        {
+          "code": "1204468000",
+          "term": "Right ventricular failure with sepsis"
+        },
+        {
+          "code": "1208843003",
+          "term": "Right ventricular failure due to heart valve disorder"
+        },
+        {
+          "code": "1208850004",
+          "term": "Right ventricular failure due to right ventricular infarction"
+        },
+        {
+          "code": "128404006",
+          "term": "Right heart failure"
+        },
+        {
+          "code": "1296659009",
+          "term": "Acute exacerbation of chronic heart failure"
+        },
+        {
+          "code": "153941000119100",
+          "term": "Chronic combined systolic and diastolic heart failure"
+        },
+        {
+          "code": "16838951000119100",
+          "term": "Acute on chronic right-sided congestive heart failure"
+        },
+        {
+          "code": "195111005",
+          "term": "Decompensated cardiac failure"
+        },
+        {
+          "code": "195112003",
+          "term": "Compensated cardiac failure"
+        },
+        {
+          "code": "195114002",
+          "term": "Acute left ventricular failure"
+        },
+        {
+          "code": "314206003",
+          "term": "Refractory heart failure"
+        },
+        {
+          "code": "367363000",
+          "term": "Right ventricular failure"
+        },
+        {
+          "code": "42343007",
+          "term": "Congestive heart failure"
+        },
+        {
+          "code": "426611007",
+          "term": "Congestive heart failure due to valvular disease"
+        },
+        {
+          "code": "43736008",
+          "term": "Rheumatic left ventricular failure"
+        },
+        {
+          "code": "441481004",
+          "term": "Chronic systolic heart failure"
+        },
+        {
+          "code": "441530006",
+          "term": "Chronic diastolic heart failure"
+        },
+        {
+          "code": "446221000",
+          "term": "Heart failure with normal ejection fraction"
+        },
+        {
+          "code": "48447003",
+          "term": "Chronic heart failure"
+        },
+        {
+          "code": "5375005",
+          "term": "Chronic left-sided congestive heart failure"
+        },
+        {
+          "code": "56675007",
+          "term": "Acute heart failure"
+        },
+        {
+          "code": "66989003",
+          "term": "Chronic right-sided congestive heart failure"
+        },
+        {
+          "code": "703272007",
+          "term": "Heart failure with reduced ejection fraction"
+        },
+        {
+          "code": "788950000",
+          "term": "Heart failure with mid range ejection fraction"
+        },
+        {
+          "code": "82523003",
+          "term": "Congestive rheumatic heart failure"
+        },
+        {
+          "code": "84114007",
+          "term": "Heart failure"
+        },
+        {
+          "code": "85232009",
+          "term": "Left heart failure"
+        },
+        {
+          "code": "871617000",
+          "term": "Low output heart failure due to and following Fontan operation"
+        },
+        {
+          "code": "88805009",
+          "term": "Chronic congestive heart failure"
+        },
+        {
+          "code": "898208007",
+          "term": "Heart failure due to thyrotoxicosis"
+        },
+        {
+          "code": "92506005",
+          "term": "Biventricular congestive heart failure"
+        }
+      ],
+      "fp_codes": [
+        {
+          "code": "153931000119109",
+          "term": "Acute combined systolic and diastolic heart failure"
+        },
+        {
+          "code": "153951000119103",
+          "term": "Acute on chronic combined systolic and diastolic heart failure"
+        },
+        {
+          "code": "359617009",
+          "term": "Acute right-sided heart failure"
+        },
+        {
+          "code": "364006",
+          "term": "Acute left-sided heart failure"
+        },
+        {
+          "code": "424404003",
+          "term": "Decompensated chronic heart failure"
+        },
+        {
+          "code": "426263006",
+          "term": "Congestive heart failure due to left ventricular systolic dysfunction (disorder)"
+        },
+        {
+          "code": "443253003",
+          "term": "Acute on chronic systolic heart failure"
+        },
+        {
+          "code": "443254009",
+          "term": "Acute systolic heart failure"
+        },
+        {
+          "code": "443343001",
+          "term": "Acute diastolic heart failure"
+        },
+        {
+          "code": "443344007",
+          "term": "Acute on chronic diastolic heart failure"
+        },
+        {
+          "code": "698296002",
+          "term": "Acute exacerbation of chronic congestive heart failure"
+        },
+        {
+          "code": "703273002",
+          "term": "Heart failure with reduced ejection fraction due to coronary artery disease (disorder)"
+        },
+        {
+          "code": "703274008",
+          "term": "Heart failure with reduced ejection fraction due to myocarditis (disorder)"
+        },
+        {
+          "code": "703275009",
+          "term": "Heart failure with reduced ejection fraction due to cardiomyopathy (disorder)"
+        },
+        {
+          "code": "703276005",
+          "term": "Heart failure with reduced ejection fraction due to heart valve disease (disorder)"
+        },
+        {
+          "code": "7371000175103",
+          "term": "Reduced ejection fraction co-occurrent and due to acute on chronic heart failure"
+        },
+        {
+          "code": "7381000175100",
+          "term": "Reduced ejection fraction co-occurrent and due to chronic heart failure"
+        },
+        {
+          "code": "7391000175102",
+          "term": "Reduced ejection fraction co-occurrent and due to acute heart failure"
+        },
+        {
+          "code": "7401000175100",
+          "term": "Acute on chronic heart failure co-occurrent with normal ejection fraction"
+        },
+        {
+          "code": "7411000175102",
+          "term": "Chronic heart failure co-occurrent with normal ejection fraction"
+        },
+        {
+          "code": "7421000175106",
+          "term": "Acute heart failure co-occurrent with normal ejection fraction"
+        },
+        {
+          "code": "74960003",
+          "term": "Acute left-sided congestive heart failure"
+        },
+        {
+          "code": "80479009",
+          "term": "Acute right-sided congestive heart failure"
+        },
+        {
+          "code": "I50",
+          "term": "Heart failure"
+        },
+        {
+          "code": "I500",
+          "term": "Congestive heart failure"
+        },
+        {
+          "code": "I509",
+          "term": "Heart failure, unspecified"
+        }
+      ],
+      "fn_codes": [
+        {
+          "code": "1208846006",
+          "term": "Right ventricular failure due to disorder of lung"
+        },
+        {
+          "code": "1208848007",
+          "term": "Right ventricular failure due to disorder of pulmonary circulation"
+        },
+        {
+          "code": "233924009",
+          "term": "Heart failure as a complication of care"
+        }
+      ]
+    }
+  },
+  "false_exclusions": {
+    "count": 3,
+    "codes": [
+      {
+        "code": "233924009",
+        "term": "Heart failure as a complication of care (disorder)",
+        "rationale": "Heart failure as a complication of care is iatrogenic heart failure secondary to medical intervention, not primary heart failure."
+      },
+      {
+        "code": "1208846006",
+        "term": "Right ventricular failure due to disorder of lung (disorder)",
+        "rationale": "Right ventricular failure due to lung disorder is secondary heart failure caused by pulmonary disease, not primary."
+      },
+      {
+        "code": "1208848007",
+        "term": "Right ventricular failure due to disorder of pulmonary circulation (disorder)",
+        "rationale": "Right ventricular failure due to pulmonary circulation disorder is secondary heart failure caused by pulmonary disease, not primary."
+      }
+    ]
+  },
+  "uncertain_in_reference": {
+    "count": 2,
+    "codes": [
+      {
+        "code": "1204462004",
+        "term": "Left ventricular failure with sepsis (disorder)",
+        "rationale": "Left ventricular failure with sepsis represents heart failure complicated by sepsis; unclear if sepsis-induced cardiomyopathy counts as primary heart failure."
+      },
+      {
+        "code": "1204468000",
+        "term": "Right ventricular failure with sepsis (disorder)",
+        "rationale": "Right ventricular failure with sepsis represents heart failure complicated by sepsis; unclear if sepsis-induced cardiomyopathy counts as primary heart failure."
+      }
+    ]
+  },
+  "summary": "Recall: 88.1% (37 of 42 reference codes retrieved). Precision: 58.7%. F1: 70.5%. 3 reference codes were incorrectly excluded.",
+  "elapsed_seconds": 42.27,
+  "pipeline_results_count": 100,
+  "scored_codes": [
+    {
+      "code": "84114007",
+      "term": "Heart failure (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 1.0,
+      "rationale": "Heart failure (disorder) is the primary diagnosis code and directly represents the queried condition.",
+      "sources": [
+        "ChromaDB",
+        "OpenCodelists (Bennett Institute)",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 1.0,
+      "usage_frequency": null
+    },
+    {
+      "code": "I50",
+      "term": "Heart failure",
+      "vocabulary": "ICD-10 (WHO)",
+      "decision": "include",
+      "confidence": 0.99,
+      "rationale": "Heart failure is the primary condition being queried and this is the main ICD-10 code for it.",
+      "sources": [
+        "OMOPHub"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.99,
+      "usage_frequency": null
+    },
+    {
+      "code": "I50.0",
+      "term": "Congestive heart failure",
+      "vocabulary": "ICD-10 (WHO)",
+      "decision": "include",
+      "confidence": 0.99,
+      "rationale": "Congestive heart failure is a direct clinical subtype of heart failure.",
+      "sources": [
+        "OMOPHub"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.99,
+      "usage_frequency": null
+    },
+    {
+      "code": "I50.9",
+      "term": "Heart failure, unspecified",
+      "vocabulary": "ICD-10 (WHO)",
+      "decision": "include",
+      "confidence": 0.99,
+      "rationale": "Heart failure unspecified is a valid diagnostic code for heart failure when type is not specified.",
+      "sources": [
+        "OMOPHub"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.99,
+      "usage_frequency": null
+    },
+    {
+      "code": "10335000",
+      "term": "Chronic right-sided heart failure (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.99,
+      "rationale": "Chronic right-sided heart failure is a clinical subtype of primary heart failure.",
+      "sources": [
+        "ChromaDB",
+        "OpenCodelists (Bennett Institute)",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.99,
+      "usage_frequency": null
+    },
+    {
+      "code": "10633002",
+      "term": "Acute congestive heart failure (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.99,
+      "rationale": "Acute congestive heart failure is a clinical subtype of primary heart failure.",
+      "sources": [
+        "ChromaDB",
+        "OMOPHub",
+        "OpenCodelists (Bennett Institute)",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.99,
+      "usage_frequency": null
+    },
+    {
+      "code": "111283005",
+      "term": "Chronic left-sided heart failure (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.99,
+      "rationale": "Chronic left-sided heart failure is a clinical subtype of primary heart failure.",
+      "sources": [
+        "ChromaDB",
+        "OpenCodelists (Bennett Institute)",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.99,
+      "usage_frequency": null
+    },
+    {
+      "code": "128404006",
+      "term": "Right heart failure",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.99,
+      "rationale": "Right heart failure is a clinical subtype of primary heart failure.",
+      "sources": [
+        "ChromaDB",
+        "OpenCodelists (Bennett Institute)"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.99,
+      "usage_frequency": null
+    },
+    {
+      "code": "1296659009",
+      "term": "Acute exacerbation of chronic heart failure",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.99,
+      "rationale": "Acute exacerbation of chronic heart failure is a clinical variant of primary heart failure.",
+      "sources": [
+        "ChromaDB",
+        "OMOPHub",
+        "OpenCodelists (Bennett Institute)"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.99,
+      "usage_frequency": null
+    },
+    {
+      "code": "153931000119109",
+      "term": "Acute combined systolic and diastolic heart failure",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.99,
+      "rationale": "Acute combined systolic and diastolic heart failure is a specific clinical subtype of primary heart failure.",
+      "sources": [
+        "OMOPHub"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.99,
+      "usage_frequency": null
+    },
+    {
+      "code": "153941000119100",
+      "term": "Chronic combined systolic and diastolic heart failure (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.99,
+      "rationale": "Chronic combined systolic and diastolic heart failure is a specific clinical subtype of primary heart failure.",
+      "sources": [
+        "ChromaDB",
+        "OpenCodelists (Bennett Institute)",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.99,
+      "usage_frequency": null
+    },
+    {
+      "code": "153951000119103",
+      "term": "Acute on chronic combined systolic and diastolic heart failure",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.99,
+      "rationale": "Acute on chronic combined systolic and diastolic heart failure is a specific clinical variant of primary heart failure.",
+      "sources": [
+        "OMOPHub"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.99,
+      "usage_frequency": null
+    },
+    {
+      "code": "16838951000119100",
+      "term": "Acute on chronic right-sided congestive heart failure (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.99,
+      "rationale": "Acute on chronic right-sided congestive heart failure is a specific clinical variant of primary heart failure.",
+      "sources": [
+        "ChromaDB",
+        "OMOPHub",
+        "OpenCodelists (Bennett Institute)",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.99,
+      "usage_frequency": null
+    },
+    {
+      "code": "195111005",
+      "term": "Decompensated cardiac failure (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.99,
+      "rationale": "Decompensated cardiac failure is a clinical state of primary heart failure.",
+      "sources": [
+        "ChromaDB",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.99,
+      "usage_frequency": null
+    },
+    {
+      "code": "195112003",
+      "term": "Compensated cardiac failure (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.99,
+      "rationale": "Compensated cardiac failure is a clinical state of primary heart failure.",
+      "sources": [
+        "ChromaDB",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.99,
+      "usage_frequency": null
+    },
+    {
+      "code": "195114002",
+      "term": "Acute left ventricular failure (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.99,
+      "rationale": "Acute left ventricular failure is a specific clinical subtype of primary heart failure.",
+      "sources": [
+        "ChromaDB",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.99,
+      "usage_frequency": null
+    },
+    {
+      "code": "359617009",
+      "term": "Acute right-sided heart failure",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.99,
+      "rationale": "Acute right-sided heart failure is a specific clinical subtype of primary heart failure.",
+      "sources": [
+        "OMOPHub"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.99,
+      "usage_frequency": null
+    },
+    {
+      "code": "364006",
+      "term": "Acute left-sided heart failure",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.99,
+      "rationale": "Acute left-sided heart failure is a specific clinical subtype of primary heart failure.",
+      "sources": [
+        "OMOPHub"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.99,
+      "usage_frequency": null
+    },
+    {
+      "code": "367363000",
+      "term": "Right ventricular failure (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.99,
+      "rationale": "Right ventricular failure is a clinical subtype of primary heart failure.",
+      "sources": [
+        "ChromaDB",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.99,
+      "usage_frequency": null
+    },
+    {
+      "code": "42343007",
+      "term": "Congestive heart failure (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.99,
+      "rationale": "Congestive heart failure is a direct instance of the queried condition (heart failure).",
+      "sources": [
+        "ChromaDB",
+        "OpenCodelists (Bennett Institute)",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.99,
+      "usage_frequency": null
+    },
+    {
+      "code": "426263006",
+      "term": "Congestive heart failure due to left ventricular systolic dysfunction (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.99,
+      "rationale": "Congestive heart failure due to left ventricular systolic dysfunction is a specific etiology-based subtype of heart failure.",
+      "sources": [
+        "ChromaDB",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.99,
+      "usage_frequency": null
+    },
+    {
+      "code": "426611007",
+      "term": "Congestive heart failure due to valvular disease (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.99,
+      "rationale": "Congestive heart failure due to valvular disease is a specific etiology-based subtype of heart failure.",
+      "sources": [
+        "ChromaDB",
+        "OpenCodelists (Bennett Institute)",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.99,
+      "usage_frequency": null
+    },
+    {
+      "code": "441481004",
+      "term": "Chronic systolic heart failure (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.99,
+      "rationale": "Chronic systolic heart failure is a clinical subtype of heart failure based on ejection fraction and chronicity.",
+      "sources": [
+        "ChromaDB",
+        "OpenCodelists (Bennett Institute)",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.99,
+      "usage_frequency": null
+    },
+    {
+      "code": "441530006",
+      "term": "Chronic diastolic heart failure (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.99,
+      "rationale": "Chronic diastolic heart failure is a clinical subtype of heart failure based on ejection fraction and chronicity.",
+      "sources": [
+        "ChromaDB",
+        "OpenCodelists (Bennett Institute)",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.99,
+      "usage_frequency": null
+    },
+    {
+      "code": "443253003",
+      "term": "Acute on chronic systolic heart failure",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.99,
+      "rationale": "Acute on chronic systolic heart failure is a clinical subtype representing acute exacerbation of chronic systolic heart failure.",
+      "sources": [
+        "OMOPHub"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.99,
+      "usage_frequency": null
+    },
+    {
+      "code": "443254009",
+      "term": "Acute systolic heart failure",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.99,
+      "rationale": "Acute systolic heart failure is a clinical subtype of heart failure based on ejection fraction and acuity.",
+      "sources": [
+        "OMOPHub"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.99,
+      "usage_frequency": null
+    },
+    {
+      "code": "443343001",
+      "term": "Acute diastolic heart failure",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.99,
+      "rationale": "Acute diastolic heart failure is a clinical subtype of heart failure based on ejection fraction and acuity.",
+      "sources": [
+        "OMOPHub"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.99,
+      "usage_frequency": null
+    },
+    {
+      "code": "443344007",
+      "term": "Acute on chronic diastolic heart failure",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.99,
+      "rationale": "Acute on chronic diastolic heart failure is a clinical subtype representing acute exacerbation of chronic diastolic heart failure.",
+      "sources": [
+        "OMOPHub"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.99,
+      "usage_frequency": null
+    },
+    {
+      "code": "446221000",
+      "term": "Heart failure with normal ejection fraction (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.99,
+      "rationale": "Heart failure with normal ejection fraction (HFpEF) is a major clinical subtype of heart failure.",
+      "sources": [
+        "ChromaDB",
+        "OpenCodelists (Bennett Institute)",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.99,
+      "usage_frequency": null
+    },
+    {
+      "code": "48447003",
+      "term": "Chronic heart failure (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.99,
+      "rationale": "Chronic heart failure is a direct instance of the queried condition (heart failure).",
+      "sources": [
+        "ChromaDB",
+        "OMOPHub",
+        "OpenCodelists (Bennett Institute)",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.99,
+      "usage_frequency": null
+    },
+    {
+      "code": "5375005",
+      "term": "Chronic left-sided congestive heart failure (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.99,
+      "rationale": "Chronic left-sided congestive heart failure is a specific anatomical/clinical subtype of heart failure.",
+      "sources": [
+        "ChromaDB",
+        "OpenCodelists (Bennett Institute)",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.99,
+      "usage_frequency": null
+    },
+    {
+      "code": "56675007",
+      "term": "Acute heart failure (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.99,
+      "rationale": "Acute heart failure is a clinical subtype of heart failure based on acuity of presentation.",
+      "sources": [
+        "ChromaDB",
+        "OMOPHub",
+        "OpenCodelists (Bennett Institute)",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.99,
+      "usage_frequency": null
+    },
+    {
+      "code": "66989003",
+      "term": "Chronic right-sided congestive heart failure (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.99,
+      "rationale": "Chronic right-sided congestive heart failure is a specific anatomical/clinical subtype of heart failure.",
+      "sources": [
+        "ChromaDB",
+        "OpenCodelists (Bennett Institute)",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.99,
+      "usage_frequency": null
+    },
+    {
+      "code": "698296002",
+      "term": "Acute exacerbation of chronic congestive heart failure",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.99,
+      "rationale": "Acute exacerbation of chronic congestive heart failure is a clinical manifestation representing acute worsening of chronic heart failure.",
+      "sources": [
+        "OMOPHub"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.99,
+      "usage_frequency": null
+    },
+    {
+      "code": "703272007",
+      "term": "Heart failure with reduced ejection fraction (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.99,
+      "rationale": "Heart failure with reduced ejection fraction (HFrEF) is a major clinical subtype of heart failure.",
+      "sources": [
+        "ChromaDB",
+        "OpenCodelists (Bennett Institute)",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.99,
+      "usage_frequency": null
+    },
+    {
+      "code": "703273002",
+      "term": "Heart failure with reduced ejection fraction due to coronary artery disease (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.99,
+      "rationale": "Heart failure with reduced ejection fraction due to coronary artery disease is a specific etiology-based subtype of heart failure.",
+      "sources": [
+        "ChromaDB",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.99,
+      "usage_frequency": null
+    },
+    {
+      "code": "703274008",
+      "term": "Heart failure with reduced ejection fraction due to myocarditis (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.99,
+      "rationale": "Heart failure with reduced ejection fraction due to myocarditis is a specific etiology-based subtype of heart failure.",
+      "sources": [
+        "ChromaDB",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.99,
+      "usage_frequency": null
+    },
+    {
+      "code": "703275009",
+      "term": "Heart failure with reduced ejection fraction due to cardiomyopathy (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.99,
+      "rationale": "Heart failure with reduced ejection fraction due to cardiomyopathy is a specific etiology-based subtype of heart failure.",
+      "sources": [
+        "ChromaDB",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.99,
+      "usage_frequency": null
+    },
+    {
+      "code": "703276005",
+      "term": "Heart failure with reduced ejection fraction due to heart valve disease (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.99,
+      "rationale": "Heart failure with reduced ejection fraction due to heart valve disease is a specific etiology-based subtype of heart failure.",
+      "sources": [
+        "ChromaDB",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.99,
+      "usage_frequency": null
+    },
+    {
+      "code": "424404003",
+      "term": "Decompensated chronic heart failure",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.98,
+      "rationale": "Decompensated chronic heart failure is a clinical subtype/manifestation of heart failure representing acute worsening.",
+      "sources": [
+        "OMOPHub"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.98,
+      "usage_frequency": null
+    },
+    {
+      "code": "43736008",
+      "term": "Rheumatic left ventricular failure (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.98,
+      "rationale": "Rheumatic left ventricular failure is a specific etiology-based subtype of heart failure (rheumatic origin).",
+      "sources": [
+        "ChromaDB",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.98,
+      "usage_frequency": null
+    },
+    {
+      "code": "7371000175103",
+      "term": "Reduced ejection fraction co-occurrent and due to acute on chronic heart failure",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.98,
+      "rationale": "Reduced ejection fraction co-occurrent and due to acute on chronic heart failure is a specific clinical subtype of heart failure.",
+      "sources": [
+        "OMOPHub"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.98,
+      "usage_frequency": null
+    },
+    {
+      "code": "7381000175100",
+      "term": "Reduced ejection fraction co-occurrent and due to chronic heart failure",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.98,
+      "rationale": "Reduced ejection fraction co-occurrent and due to chronic heart failure is a specific clinical subtype of heart failure.",
+      "sources": [
+        "OMOPHub"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.98,
+      "usage_frequency": null
+    },
+    {
+      "code": "7391000175102",
+      "term": "Reduced ejection fraction co-occurrent and due to acute heart failure",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.98,
+      "rationale": "Reduced ejection fraction co-occurrent and due to acute heart failure is a specific clinical subtype of heart failure.",
+      "sources": [
+        "OMOPHub"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.98,
+      "usage_frequency": null
+    },
+    {
+      "code": "7401000175100",
+      "term": "Acute on chronic heart failure co-occurrent with normal ejection fraction",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.98,
+      "rationale": "Acute on chronic heart failure co-occurrent with normal ejection fraction is a specific clinical subtype of heart failure.",
+      "sources": [
+        "OMOPHub"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.98,
+      "usage_frequency": null
+    },
+    {
+      "code": "1204200007",
+      "term": "Left ventricular failure with normal ejection fraction due to valvular heart disease (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Left ventricular failure with normal ejection fraction due to valvular disease is a specific type of primary heart failure.",
+      "sources": [
+        "ChromaDB",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "1204203009",
+      "term": "Left ventricular failure with normal ejection fraction due to coronary arteriosclerosis (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Left ventricular failure with normal ejection fraction due to coronary arteriosclerosis is a specific type of primary heart failure.",
+      "sources": [
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "1204204003",
+      "term": "Left ventricular failure with normal ejection fraction due to myocarditis (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Left ventricular failure with normal ejection fraction due to myocarditis is a specific type of primary heart failure.",
+      "sources": [
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "1204206001",
+      "term": "Left ventricular failure with normal ejection fraction due to cardiomyopathy (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Left ventricular failure with normal ejection fraction due to cardiomyopathy is a specific type of primary heart failure.",
+      "sources": [
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "1208843003",
+      "term": "Right ventricular failure due to heart valve disorder (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Right ventricular failure due to heart valve disorder is a specific type of primary heart failure.",
+      "sources": [
+        "ChromaDB",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "1208850004",
+      "term": "Right ventricular failure due to right ventricular infarction (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Right ventricular failure due to right ventricular infarction is a specific type of primary heart failure from cardiac cause.",
+      "sources": [
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "314206003",
+      "term": "Refractory heart failure (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Refractory heart failure is a clinical severity variant of primary heart failure.",
+      "sources": [
+        "ChromaDB",
+        "OpenCodelists (Bennett Institute)",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "7411000175102",
+      "term": "Chronic heart failure co-occurrent with normal ejection fraction",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Chronic heart failure with normal ejection fraction is a clinical subtype of heart failure and directly represents an instance of the queried condition.",
+      "sources": [
+        "OMOPHub"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "7421000175106",
+      "term": "Acute heart failure co-occurrent with normal ejection fraction",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Acute heart failure with normal ejection fraction is a clinical subtype of heart failure and directly represents an instance of the queried condition.",
+      "sources": [
+        "OMOPHub"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "74960003",
+      "term": "Acute left-sided congestive heart failure",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Acute left-sided congestive heart failure is a specific clinical manifestation of heart failure and represents an instance of the queried condition.",
+      "sources": [
+        "OMOPHub"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "788950000",
+      "term": "Heart failure with mid range ejection fraction (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Heart failure with mid-range ejection fraction is a clinical subtype of heart failure and directly represents an instance of the queried condition.",
+      "sources": [
+        "ChromaDB",
+        "OpenCodelists (Bennett Institute)",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "80479009",
+      "term": "Acute right-sided congestive heart failure",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Acute right-sided congestive heart failure is a specific clinical manifestation of heart failure and represents an instance of the queried condition.",
+      "sources": [
+        "OMOPHub"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "85232009",
+      "term": "Left heart failure (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Left heart failure is a specific clinical manifestation of heart failure and represents an instance of the queried condition.",
+      "sources": [
+        "ChromaDB",
+        "OpenCodelists (Bennett Institute)",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "88805009",
+      "term": "Chronic congestive heart failure (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Chronic congestive heart failure is a clinical subtype of heart failure and directly represents an instance of the queried condition.",
+      "sources": [
+        "ChromaDB",
+        "OpenCodelists (Bennett Institute)",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "92506005",
+      "term": "Biventricular congestive heart failure (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Biventricular congestive heart failure is a specific clinical manifestation of heart failure and represents an instance of the queried condition.",
+      "sources": [
+        "ChromaDB",
+        "OpenCodelists (Bennett Institute)",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "82523003",
+      "term": "Congestive rheumatic heart failure (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.9,
+      "rationale": "Congestive rheumatic heart failure is a specific etiology of heart failure and represents an instance of the queried condition.",
+      "sources": [
+        "ChromaDB",
+        "OpenCodelists (Bennett Institute)",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.9,
+      "usage_frequency": null
+    },
+    {
+      "code": "871617000",
+      "term": "Low output heart failure due to and following Fontan operation (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.9,
+      "rationale": "Low output heart failure due to Fontan operation is a specific etiology of heart failure and represents an instance of the queried condition.",
+      "sources": [
+        "OpenCodelists (Bennett Institute)",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.9,
+      "usage_frequency": null
+    },
+    {
+      "code": "898208007",
+      "term": "Heart failure due to thyrotoxicosis (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.9,
+      "rationale": "Heart failure due to thyrotoxicosis is a specific etiology of heart failure and represents an instance of the queried condition.",
+      "sources": [
+        "ChromaDB",
+        "OpenCodelists (Bennett Institute)",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.9,
+      "usage_frequency": null
+    },
+    {
+      "code": "1204462004",
+      "term": "Left ventricular failure with sepsis (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "uncertain",
+      "confidence": 0.6,
+      "rationale": "Left ventricular failure with sepsis represents heart failure complicated by sepsis; unclear if sepsis-induced cardiomyopathy counts as primary heart failure.",
+      "sources": [
+        "ChromaDB",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.6,
+      "usage_frequency": null
+    },
+    {
+      "code": "1204468000",
+      "term": "Right ventricular failure with sepsis (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "uncertain",
+      "confidence": 0.6,
+      "rationale": "Right ventricular failure with sepsis represents heart failure complicated by sepsis; unclear if sepsis-induced cardiomyopathy counts as primary heart failure.",
+      "sources": [
+        "ChromaDB",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.6,
+      "usage_frequency": null
+    },
+    {
+      "code": "1110931000000103",
+      "term": "Quality and Outcomes Framework heart failure quality indicator-related care invitation (procedure)",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.99,
+      "rationale": "This is an administrative QOF care invitation code, not a diagnostic code confirming heart failure.",
+      "sources": [
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.99,
+      "usage_frequency": null
+    },
+    {
+      "code": "134378009",
+      "term": "Congestive heart failure monitoring (regime/therapy)",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.99,
+      "rationale": "Heart failure monitoring is a therapeutic regime/procedure, not a diagnostic code confirming heart failure.",
+      "sources": [
+        "ChromaDB",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.99,
+      "usage_frequency": null
+    },
+    {
+      "code": "134440006",
+      "term": "Referral to heart failure clinic (procedure)",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.99,
+      "rationale": "Referral to heart failure clinic is an administrative procedure, not a diagnostic code confirming heart failure.",
+      "sources": [
+        "ChromaDB",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.99,
+      "usage_frequency": null
+    },
+    {
+      "code": "143411000000100",
+      "term": "Quality and Outcomes Framework heart failure quality indicator-related care invitation using preferred method of communication (procedure)",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.99,
+      "rationale": "This is an administrative QOF care invitation code, not a diagnostic code confirming heart failure.",
+      "sources": [
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.99,
+      "usage_frequency": null
+    },
+    {
+      "code": "202231000000106",
+      "term": "Heart failure review completed (situation)",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.99,
+      "rationale": "Heart failure review completed is an administrative situation/outcome code, not a diagnostic code confirming heart failure.",
+      "sources": [
+        "ChromaDB",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.99,
+      "usage_frequency": null
+    },
+    {
+      "code": "390885007",
+      "term": "Heart failure annual review (regime/therapy)",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.99,
+      "rationale": "Heart failure annual review is a therapeutic regime/procedure, not a diagnostic code confirming heart failure.",
+      "sources": [
+        "ChromaDB",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.99,
+      "usage_frequency": null
+    },
+    {
+      "code": "473226007",
+      "term": "Heart failure medication review (procedure)",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.98,
+      "rationale": "Heart failure medication review is an administrative/procedural code for management, not a diagnosis of heart failure.",
+      "sources": [
+        "ChromaDB",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.98,
+      "usage_frequency": null
+    },
+    {
+      "code": "521691000000100",
+      "term": "Heart failure resolved (finding)",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.98,
+      "rationale": "Heart failure resolved indicates a past condition that is no longer present; codes for resolved conditions should be excluded.",
+      "sources": [
+        "ChromaDB",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.98,
+      "usage_frequency": null
+    },
+    {
+      "code": "708018005",
+      "term": "Assessment using congestive heart failure, hypertension, age 2, diabetes mellitus, stroke 2 - vascular disease, age, sex category score",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.98,
+      "rationale": "This is a risk assessment score (CHA2DS2-VASc) that includes heart failure as one component; it is not a diagnosis of heart failure itself.",
+      "sources": [
+        "OMOPHub"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.98,
+      "usage_frequency": null
+    },
+    {
+      "code": "711461000000104",
+      "term": "Heart failure monitoring invitation (procedure)",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.98,
+      "rationale": "Heart failure monitoring invitation is an administrative/screening code, not a diagnosis of heart failure.",
+      "sources": [
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.98,
+      "usage_frequency": null
+    },
+    {
+      "code": "716621000000101",
+      "term": "Heart failure monitoring third letter (procedure)",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.98,
+      "rationale": "Heart failure monitoring third letter is an administrative/procedural code, not a diagnosis of heart failure.",
+      "sources": [
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.98,
+      "usage_frequency": null
+    },
+    {
+      "code": "716971000000109",
+      "term": "Heart failure monitoring first letter (procedure)",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.98,
+      "rationale": "Heart failure monitoring first letter is an administrative/procedural code, not a diagnosis of heart failure.",
+      "sources": [
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.98,
+      "usage_frequency": null
+    },
+    {
+      "code": "717191000000108",
+      "term": "Heart failure monitoring second letter (procedure)",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.98,
+      "rationale": "Heart failure monitoring second letter is an administrative/procedural code, not a diagnosis of heart failure.",
+      "sources": [
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.98,
+      "usage_frequency": null
+    },
+    {
+      "code": "717501000000108",
+      "term": "Heart failure monitoring verbal invitation (procedure)",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.98,
+      "rationale": "Heart failure monitoring verbal invitation is an administrative/procedural code, not a diagnosis of heart failure.",
+      "sources": [
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.98,
+      "usage_frequency": null
+    },
+    {
+      "code": "735259005",
+      "term": "Congestive heart failure, hypertension, age 2, diabetes mellitus, stroke 2, vascular disease, age, sex category stroke risk score (observable entity)",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.98,
+      "rationale": "This is a risk score observable entity (CHA2DS2-VASc), not a diagnosis of heart failure itself.",
+      "sources": [
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.98,
+      "usage_frequency": null
+    },
+    {
+      "code": "609387006",
+      "term": "At high risk for heart failure",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.97,
+      "rationale": "At high risk for heart failure is a risk factor/prediction code, not a diagnosis of heart failure itself.",
+      "sources": [
+        "OMOPHub"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.97,
+      "usage_frequency": null
+    },
+    {
+      "code": "I11.0",
+      "term": "Hypertensive heart disease with (congestive) heart failure",
+      "vocabulary": "ICD-10 (WHO)",
+      "decision": "exclude",
+      "confidence": 0.95,
+      "rationale": "Hypertensive heart disease with heart failure is a secondary heart failure caused by hypertension, not primary heart failure.",
+      "sources": [
+        "OMOPHub"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "I11.9",
+      "term": "Hypertensive heart disease without (congestive) heart failure",
+      "vocabulary": "ICD-10 (WHO)",
+      "decision": "exclude",
+      "confidence": 0.95,
+      "rationale": "Hypertensive heart disease without heart failure is not heart failure and is secondary to hypertension.",
+      "sources": [
+        "OMOPHub"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "I13.0",
+      "term": "Hypertensive heart and renal disease with (congestive) heart failure",
+      "vocabulary": "ICD-10 (WHO)",
+      "decision": "exclude",
+      "confidence": 0.95,
+      "rationale": "Hypertensive heart and renal disease with heart failure is secondary heart failure caused by hypertension and renal disease, not primary.",
+      "sources": [
+        "OMOPHub"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "I13.2",
+      "term": "Hypertensive heart and renal disease with both (congestive) heart failure and renal failure",
+      "vocabulary": "ICD-10 (WHO)",
+      "decision": "exclude",
+      "confidence": 0.95,
+      "rationale": "Hypertensive heart and renal disease with heart failure and renal failure is secondary heart failure, not primary.",
+      "sources": [
+        "OMOPHub"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "420300004",
+      "term": "New York Heart Association Classification - Class I (finding)",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.95,
+      "rationale": "NYHA classification is a severity assessment tool, not a diagnosis of heart failure itself; it describes functional capacity in patients with heart failure.",
+      "sources": [
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "420913000",
+      "term": "New York Heart Association Classification - Class III (finding)",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.95,
+      "rationale": "NYHA classification is a severity assessment tool, not a diagnosis of heart failure itself; it describes functional capacity in patients with heart failure.",
+      "sources": [
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "421704003",
+      "term": "New York Heart Association Classification - Class II (finding)",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.95,
+      "rationale": "NYHA classification is a severity assessment tool, not a diagnosis of heart failure itself; it describes functional capacity in patients with heart failure.",
+      "sources": [
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "422293003",
+      "term": "New York Heart Association Classification - Class IV (finding)",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.95,
+      "rationale": "NYHA classification is a severity assessment tool, not a diagnosis of heart failure itself; it describes functional capacity in patients with heart failure.",
+      "sources": [
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "760361000000100",
+      "term": "Fast track heart failure referral for transthoracic two dimensional echocardiogram (procedure)",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.95,
+      "rationale": "This is a procedure code for referral and echocardiogram, not a diagnosis code confirming the presence of heart failure.",
+      "sources": [
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "763007002",
+      "term": "Assessment using congestive heart failure, hypertension, age 75 years or older, diabetes mellitus and previous stroke or transient ischemic attack score (procedure)",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.95,
+      "rationale": "This is a procedure code for assessment using a risk score (CHA2DS2-VASc), not a diagnosis code for heart failure itself.",
+      "sources": [
+        "OMOPHub",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "763008007",
+      "term": "Congestive heart failure, hypertension, age 75 years or older, diabetes mellitus and previous stroke or transient ischemic attack score (observable entity)",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.95,
+      "rationale": "This is an observable entity representing a risk score calculation, not a diagnosis code confirming the presence of heart failure.",
+      "sources": [
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "813991000000101",
+      "term": "Education about deteriorating heart failure (procedure)",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.95,
+      "rationale": "This is a procedure code for patient education, not a diagnosis code confirming the presence of heart failure.",
+      "sources": [
+        "ChromaDB",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "851071000000108",
+      "term": "Heart failure initial assessment (regime/therapy)",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.95,
+      "rationale": "This is a regime/therapy code for initial assessment, not a diagnosis code confirming the presence of heart failure.",
+      "sources": [
+        "ChromaDB",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "871681000000102",
+      "term": "Heart failure monitoring (regime/therapy)",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.95,
+      "rationale": "This is a regime/therapy code for monitoring, not a diagnosis code confirming the presence of heart failure.",
+      "sources": [
+        "ChromaDB",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "873881000000100",
+      "term": "Referral to rapid access heart failure clinic (procedure)",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.95,
+      "rationale": "This is a procedure code for referral to a clinic, not a diagnosis code confirming the presence of heart failure.",
+      "sources": [
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "879780004",
+      "term": "Telehealth monitoring for chronic heart failure",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.95,
+      "rationale": "This is a procedure code for telehealth monitoring, not a diagnosis code confirming the presence of heart failure.",
+      "sources": [
+        "OMOPHub"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "233924009",
+      "term": "Heart failure as a complication of care (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.9,
+      "rationale": "Heart failure as a complication of care is iatrogenic heart failure secondary to medical intervention, not primary heart failure.",
+      "sources": [
+        "ChromaDB",
+        "OpenCodelists (Bennett Institute)",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.9,
+      "usage_frequency": null
+    },
+    {
+      "code": "1208846006",
+      "term": "Right ventricular failure due to disorder of lung (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.85,
+      "rationale": "Right ventricular failure due to lung disorder is secondary heart failure caused by pulmonary disease, not primary.",
+      "sources": [
+        "ChromaDB",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.85,
+      "usage_frequency": null
+    },
+    {
+      "code": "1208848007",
+      "term": "Right ventricular failure due to disorder of pulmonary circulation (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.85,
+      "rationale": "Right ventricular failure due to pulmonary circulation disorder is secondary heart failure caused by pulmonary disease, not primary.",
+      "sources": [
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.85,
+      "usage_frequency": null
+    }
+  ],
+  "pipeline": "rag",
+  "cold_start": false
+}

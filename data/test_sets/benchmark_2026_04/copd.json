@@ -1,0 +1,22 @@
+[
+  {
+    "Entry_no": 8,
+    "Ref_link": "https://www.opencodelists.org/codelist/nhsd-primary-care-domain-refsets/copd_cod/20250912/",
+    "Ref_reviewer": "OpenCodelists",
+    "Ref_review_FLAG": "published",
+    "Source_creation_date": "",
+    "Research_question": "Chronic obstructive pulmonary disease (COPD) codes",
+    "Codelist_vocabulary": "SNOMED CT",
+    "Codelist": "1010333003;1010334009;106001000119101;10692761000119107;1287820006;135836000;13645005;16003001;16846004;1751000119100;185086009;195949008;195951007;195953005;195957006;195958001;195959009;195963002;196001008;196026004;233674008;233675009;233677001;23958009;266355005;266356006;285381006;293241000119100;293991000000106;313296004;313297008;313299006;31898008;360470001;425748003;45145000;47895001;49691004;4981000;52571006;60805002;61937009;63480004;66110007;66987001;68328006;70756004;708030004;74417001;785736001;836477007;840493007;84409004;847091000000104;87433001;89549007",
+    "Codelist_terms": "Emphysema of left lung;Emphysema of right lung;Chronic obstructive pulmonary disease with acute bronchitis;Asthma-chronic obstructive pulmonary disease overlap syndrome;Chronic respiratory disease originating in perinatal period;End stage chronic obstructive pulmonary disease;Chronic obstructive pulmonary disease;Giant bullous emphysema;Obstructive emphysema;Acute exacerbation of chronic obstructive pulmonary disease with asthma;Chronic obstructive bronchitis;Chronic asthmatic bronchitis;Acute exacerbation of chronic obstructive pulmonary disease;Mixed simple and mucopurulent chronic bronchitis;Chronic bullous emphysema;Segmental bullous emphysema;Zonal bullous emphysema;Acute vesicular emphysema;Chronic obstructive pulmonary disease with acute lower respiratory infection;Chronic emphysema caused by chemical fumes;Pulmonary emphysema in alpha-1 primary immunodeficiency deficiency;Toxic emphysema;Scar emphysema;Vanishing lung;Bullous emphysema with collapse;Atrophic (senile) emphysema;Acute infective exacerbation of chronic obstructive pulmonary disease;Acute exacerbation of chronic obstructive bronchitis;Very severe chronic obstructive pulmonary disease;Mild chronic obstructive pulmonary disease;Moderate chronic obstructive pulmonary disease;Severe chronic obstructive pulmonary disease;Paraseptal emphysema;Chronic mucus hypersecretion;Acute exacerbation of chronic bronchitis;Unilateral emphysema;Congenital emphysema;Occupational bronchitis;Panacinar emphysema;Chronic tracheobronchitis;Hemolytic anemia with emphysema AND cutis laxa;Simple chronic bronchitis;Chronic bronchitis;Chronic diffuse emphysema caused by inhalation of chemical fumes AND/OR vapors;Congenital lobar emphysema;Centriacinar emphysema;Bronchial atresia with segmental pulmonary emphysema;Pulmonary emphysema co-occurrent with fibrosis of lung;Mucopurulent chronic bronchitis;Chronic bronchitis co-occurrent with wheeze;Chronic emphysema caused by vapor;Congenital lobar emphysema of bilateral lungs;Fetid chronic bronchitis;Acute non-infective exacerbation of chronic obstructive pulmonary disease;Pulmonary emphysema;Catarrhal bronchitis",
+    "Terms_count": 56,
+    "Codes_count": 56,
+    "Diff_FLAG": "N",
+    "Benchmark_meta": {
+      "short_name": "copd",
+      "condition_area": "respiratory",
+      "organisation": "nhsd-primary-care-domain-refsets",
+      "opencodelists_version": "nhsd-primary-care-domain-refsets/copd_cod/20250912"
+    }
+  }
+]

@@ -1,0 +1,22 @@
+[
+  {
+    "Entry_no": 4,
+    "Ref_link": "https://www.opencodelists.org/codelist/reducehf/myocardial-infarction-icd10/6b463edb/",
+    "Ref_reviewer": "OpenCodelists",
+    "Ref_review_FLAG": "published",
+    "Source_creation_date": "",
+    "Research_question": "Myocardial infarction (ICD10)",
+    "Codelist_vocabulary": "ICD-10",
+    "Codelist": "I21;I210;I211;I212;I213;I214;I219;I22;I220;I221;I228;I229",
+    "Codelist_terms": "Acute myocardial infarction;Acute transmural myocardial infarction of anterior wall;Acute transmural myocardial infarction of inferior wall;Acute transmural myocardial infarction of other sites;Acute transmural myocardial infarction of unspecified site;Acute subendocardial myocardial infarction;Acute myocardial infarction, unspecified;Subsequent myocardial infarction;Subsequent myocardial infarction of anterior wall;Subsequent myocardial infarction of inferior wall;Subsequent myocardial infarction of other sites;Subsequent myocardial infarction of unspecified site",
+    "Terms_count": 12,
+    "Codes_count": 12,
+    "Diff_FLAG": "N",
+    "Benchmark_meta": {
+      "short_name": "mi_icd10",
+      "condition_area": "cardiometabolic",
+      "organisation": "reducehf",
+      "opencodelists_version": "reducehf/myocardial-infarction-icd10/6b463edb"
+    }
+  }
+]

@@ -1,0 +1,16 @@
+short,name,vocabulary,area,organisation,n_ref,n_out,tp,fp,fn,precision,recall,f1,n_out_filtered,tp_filtered,fp_filtered,fn_filtered,precision_filtered,recall_filtered,f1_filtered,elapsed_seconds
+heart_failure,Heart failure codes,SNOMED CT,cardiometabolic,nhsd-primary-care-domain-refsets,42,73,42,31,0,0.5753,1.0,0.7304,67,42,25,0,0.6269,1.0,0.7706,46.22
+diabetes_mellitus,Diabetes mellitus codes,SNOMED CT,cardiometabolic,nhsd-primary-care-domain-refsets,86,95,71,24,15,0.7474,0.8256,0.7845,95,71,24,15,0.7474,0.8256,0.7845,39.94
+hypertension,Hypertension diagnosis codes,SNOMED CT,cardiometabolic,nhsd-primary-care-domain-refsets,117,42,42,0,75,1.0,0.359,0.5283,42,42,0,75,1.0,0.359,0.5283,44.76
+mi_icd10,Myocardial infarction (ICD10),ICD-10,cardiometabolic,reducehf,12,93,0,93,12,0.0,0.0,0.0,0,0,0,12,0.0,0.0,0.0,47.48
+atrial_fib_icd10,Atrial Fibrillation and Flutter - ICD10,ICD-10,cardiometabolic,reducehf,7,61,7,54,0,0.1148,1.0,0.2059,7,7,0,0,1.0,1.0,1.0,30.65
+stroke,Stroke diagnosis codes,SNOMED CT,cerebrovascular,nhsd-primary-care-domain-refsets,266,93,93,0,173,1.0,0.3496,0.5181,93,93,0,173,1.0,0.3496,0.5181,41.63
+asthma_pincer,Asthma,SNOMED CT,respiratory,pincer,124,99,96,3,28,0.9697,0.7742,0.861,99,96,3,28,0.9697,0.7742,0.861,48.52
+copd,Chronic obstructive pulmonary disease (COPD) codes,SNOMED CT,respiratory,nhsd-primary-care-domain-refsets,56,45,39,6,17,0.8667,0.6964,0.7723,40,39,1,17,0.975,0.6964,0.8125,43.58
+depression,Depression diagnosis codes,SNOMED CT,mental_health,nhsd-primary-care-domain-refsets,106,64,61,3,45,0.9531,0.5755,0.7176,64,61,3,45,0.9531,0.5755,0.7176,45.89
+psychosis_schiz_bipolar,Psychosis and schizophrenia and bipolar affective disease codes,SNOMED CT,mental_health,nhsd-primary-care-domain-refsets,198,95,95,0,103,1.0,0.4798,0.6485,95,95,0,103,1.0,0.4798,0.6485,53.69
+dementia,Codes for dementia,SNOMED CT,neurology,nhsd-primary-care-domain-refsets,325,90,68,22,257,0.7556,0.2092,0.3277,71,68,3,257,0.9577,0.2092,0.3434,39.45
+epilepsy,Epilepsy diagnosis codes,SNOMED CT,neurology,nhsd-primary-care-domain-refsets,476,64,54,10,422,0.8438,0.1134,0.2,55,54,1,422,0.9818,0.1134,0.2034,43.52
+lung_cancer,Lung cancer codes,SNOMED CT,oncology,nhsd-primary-care-domain-refsets,363,75,71,4,292,0.9467,0.1956,0.3242,75,71,4,292,0.9467,0.1956,0.3242,48.53
+hepatitis_c_chronic,Chronic hepatitis C codes,SNOMED CT,infection,nhsd-primary-care-domain-refsets,20,49,20,29,0,0.4082,1.0,0.5797,34,20,14,0,0.5882,1.0,0.7407,43.28
+hiv,Human immunodeficiency virus (HIV) codes,SNOMED CT,infection,nhsd-primary-care-domain-refsets,243,52,27,25,216,0.5192,0.1111,0.1831,35,27,8,216,0.7714,0.1111,0.1942,45.04

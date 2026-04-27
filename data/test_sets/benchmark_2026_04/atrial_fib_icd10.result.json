@@ -1,0 +1,2646 @@
+{
+  "reference_count": 7,
+  "query": "Atrial Fibrillation and Flutter - ICD10",
+  "vocabulary": "ICD-10",
+  "stages": {
+    "retrieved_raw": {
+      "codelist_name": "retrieved_raw",
+      "n_ref_codes": 7,
+      "n_output_codes": 51,
+      "recall": 0.1429,
+      "precision": 0.0196,
+      "f1": 0.0345,
+      "tp_count": 1,
+      "fp_count": 50,
+      "fn_count": 6,
+      "tp_codes": [
+        {
+          "code": "I48",
+          "term": "Atrial fibrillation and flutter"
+        }
+      ],
+      "fp_codes": [
+        {
+          "code": "1010405004",
+          "term": "Paroxysmal atrial fibrillation with rapid ventricular response"
+        },
+        {
+          "code": "1105331000000106",
+          "term": "Blood pressure measurement using oscillometric monitoring device with opportunistic atrial fibrillation detection (procedure)"
+        },
+        {
+          "code": "1109921000000106",
+          "term": "Quality and Outcomes Framework quality indicator-related care invitation (procedure)"
+        },
+        {
+          "code": "1110851000000100",
+          "term": "Quality and Outcomes Framework atrial fibrillation quality indicator-related care invitation (procedure)"
+        },
+        {
+          "code": "120041000119109",
+          "term": "Atrial fibrillation with rapid ventricular response"
+        },
+        {
+          "code": "133111000000106",
+          "term": "Quality and Outcomes Framework atrial fibrillation quality indicator-related care invitation using preferred method of communication (procedure)"
+        },
+        {
+          "code": "15964901000119107",
+          "term": "Atypical atrial flutter"
+        },
+        {
+          "code": "15964901000119108",
+          "term": "Atypical atrial flutter (disorder)"
+        },
+        {
+          "code": "195080001",
+          "term": "Atrial fibrillation and flutter"
+        },
+        {
+          "code": "196371000000102",
+          "term": "Atrial fibrillation resolved (finding)"
+        },
+        {
+          "code": "233910005",
+          "term": "Lone atrial fibrillation"
+        },
+        {
+          "code": "233911009",
+          "term": "Non-rheumatic atrial fibrillation"
+        },
+        {
+          "code": "280797561000119104",
+          "term": "Permanent atrial fibrillation due to heart valve disorder (disorder)"
+        },
+        {
+          "code": "280797561000119107",
+          "term": "Permanent atrial fibrillation due to heart valve disorder"
+        },
+        {
+          "code": "282825002",
+          "term": "Paroxysmal atrial fibrillation"
+        },
+        {
+          "code": "300996004",
+          "term": "Controlled atrial fibrillation"
+        },
+        {
+          "code": "313377641000119104",
+          "term": "Atrial fibrillation due to heart valve disorder (disorder)"
+        },
+        {
+          "code": "313377641000119105",
+          "term": "Atrial fibrillation due to heart valve disorder"
+        },
+        {
+          "code": "314208002",
+          "term": "Rapid atrial fibrillation"
+        },
+        {
+          "code": "425615007",
+          "term": "Chronic atrial flutter"
+        },
+        {
+          "code": "426749004",
+          "term": "Chronic atrial fibrillation"
+        },
+        {
+          "code": "426814001",
+          "term": "Transient cerebral ischemia due to atrial fibrillation (disorder)"
+        },
+        {
+          "code": "427665004",
+          "term": "Paroxysmal atrial flutter"
+        },
+        {
+          "code": "440028005",
+          "term": "Permanent atrial fibrillation"
+        },
+        {
+          "code": "440059007",
+          "term": "Persistent atrial fibrillation"
+        },
+        {
+          "code": "467643831000119104",
+          "term": "Paroxysmal atrial fibrillation due to heart valve disorder (disorder)"
+        },
+        {
+          "code": "467643831000119105",
+          "term": "Paroxysmal atrial fibrillation due to heart valve disorder"
+        },
+        {
+          "code": "489609371000119104",
+          "term": "Persistent atrial fibrillation due to heart valve disorder"
+        },
+        {
+          "code": "49436004",
+          "term": "Atrial fibrillation"
+        },
+        {
+          "code": "5370000",
+          "term": "Atrial flutter"
+        },
+        {
+          "code": "706923002",
+          "term": "Longstanding persistent atrial fibrillation"
+        },
+        {
+          "code": "711411000000101",
+          "term": "Atrial fibrillation monitoring invitation (procedure)"
+        },
+        {
+          "code": "715395008",
+          "term": "Familial atrial fibrillation"
+        },
+        {
+          "code": "715941000000109",
+          "term": "Excepted from atrial fibrillation quality indicators - patient unsuitable (finding)"
+        },
+        {
+          "code": "716181000000109",
+          "term": "Atrial fibrillation monitoring third letter (procedure)"
+        },
+        {
+          "code": "716721000000107",
+          "term": "Atrial fibrillation monitoring telephone invitation (procedure)"
+        },
+        {
+          "code": "716981000000106",
+          "term": "Atrial fibrillation monitoring second letter (procedure)"
+        },
+        {
+          "code": "717011000000100",
+          "term": "Atrial fibrillation monitoring verbal invitation (procedure)"
+        },
+        {
+          "code": "717221000000101",
+          "term": "Atrial fibrillation monitoring first letter (procedure)"
+        },
+        {
+          "code": "717381000000109",
+          "term": "Excepted from atrial fibrillation quality indicators - informed dissent (finding)"
+        },
+        {
+          "code": "720448006",
+          "term": "Typical atrial flutter"
+        },
+        {
+          "code": "762247006",
+          "term": "Preexcited atrial fibrillation"
+        },
+        {
+          "code": "I48.0",
+          "term": "Paroxysmal atrial fibrillation"
+        },
+        {
+          "code": "I48.1",
+          "term": "Persistent atrial fibrillation"
+        },
+        {
+          "code": "I48.2",
+          "term": "Chronic atrial fibrillation"
+        },
+        {
+          "code": "I48.3",
+          "term": "Typical atrial flutter"
+        },
+        {
+          "code": "I48.4",
+          "term": "Atypical atrial flutter"
+        },
+        {
+          "code": "I48.9",
+          "term": "Atrial fibrillation and atrial flutter, unspecified"
+        },
+        {
+          "code": "K62.2",
+          "term": "Percutaneous transluminal ablation of atrial wall for atrial flutter"
+        },
+        {
+          "code": "K62.3",
+          "term": "Percutaneous transluminal ablation of conducting system of heart for atrial flutter NEC"
+        }
+      ],
+      "fn_codes": [
+        {
+          "code": "I480",
+          "term": "Paroxysmal atrial fibrillation"
+        },
+        {
+          "code": "I481",
+          "term": "Persistent atrial fibrillation"
+        },
+        {
+          "code": "I482",
+          "term": "Chronic atrial fibrillation"
+        },
+        {
+          "code": "I483",
+          "term": "Typical atrial flutter"
+        },
+        {
+          "code": "I484",
+          "term": "Atypical atrial flutter"
+        },
+        {
+          "code": "I489",
+          "term": "Atrial fibrillation and atrial flutter, unspecified"
+        }
+      ]
+    },
+    "merged_enriched": {
+      "codelist_name": "merged_enriched",
+      "n_ref_codes": 7,
+      "n_output_codes": 77,
+      "recall": 0.1429,
+      "precision": 0.013,
+      "f1": 0.0238,
+      "tp_count": 1,
+      "fp_count": 76,
+      "fn_count": 6,
+      "tp_codes": [
+        {
+          "code": "I48",
+          "term": "Atrial fibrillation and flutter"
+        }
+      ],
+      "fp_codes": [
+        {
+          "code": "1010405004",
+          "term": "Paroxysmal atrial fibrillation with rapid ventricular response (disorder)"
+        },
+        {
+          "code": "1105331000000106",
+          "term": "Blood pressure measurement using oscillometric monitoring device with opportunistic atrial fibrillation detection (procedure)"
+        },
+        {
+          "code": "1109921000000106",
+          "term": "Quality and Outcomes Framework quality indicator-related care invitation (procedure)"
+        },
+        {
+          "code": "1110851000000100",
+          "term": "Quality and Outcomes Framework atrial fibrillation quality indicator-related care invitation (procedure)"
+        },
+        {
+          "code": "120041000119109",
+          "term": "Atrial fibrillation with rapid ventricular response (disorder)"
+        },
+        {
+          "code": "133111000000106",
+          "term": "Quality and Outcomes Framework atrial fibrillation quality indicator-related care invitation using preferred method of communication (procedure)"
+        },
+        {
+          "code": "15964901000119107",
+          "term": "Atypical atrial flutter"
+        },
+        {
+          "code": "15964901000119108",
+          "term": "Atypical atrial flutter (disorder)"
+        },
+        {
+          "code": "195080001",
+          "term": "Atrial fibrillation and flutter (disorder)"
+        },
+        {
+          "code": "196371000000102",
+          "term": "Atrial fibrillation resolved (finding)"
+        },
+        {
+          "code": "233910005",
+          "term": "Lone atrial fibrillation (disorder)"
+        },
+        {
+          "code": "233911009",
+          "term": "Non-rheumatic atrial fibrillation (disorder)"
+        },
+        {
+          "code": "280797561000119104",
+          "term": "Permanent atrial fibrillation due to heart valve disorder (disorder)"
+        },
+        {
+          "code": "280797561000119107",
+          "term": "Permanent atrial fibrillation due to heart valve disorder"
+        },
+        {
+          "code": "282825002",
+          "term": "Paroxysmal atrial fibrillation (disorder)"
+        },
+        {
+          "code": "300996004",
+          "term": "Controlled atrial fibrillation (disorder)"
+        },
+        {
+          "code": "313377641000119104",
+          "term": "Atrial fibrillation due to heart valve disorder (disorder)"
+        },
+        {
+          "code": "313377641000119105",
+          "term": "Atrial fibrillation due to heart valve disorder"
+        },
+        {
+          "code": "314208002",
+          "term": "Rapid atrial fibrillation (disorder)"
+        },
+        {
+          "code": "425615007",
+          "term": "Chronic atrial flutter (disorder)"
+        },
+        {
+          "code": "426749004",
+          "term": "Chronic atrial fibrillation (disorder)"
+        },
+        {
+          "code": "426814001",
+          "term": "Transient cerebral ischemia due to atrial fibrillation (disorder)"
+        },
+        {
+          "code": "427665004",
+          "term": "Paroxysmal atrial flutter (disorder)"
+        },
+        {
+          "code": "440028005",
+          "term": "Permanent atrial fibrillation (disorder)"
+        },
+        {
+          "code": "440059007",
+          "term": "Persistent atrial fibrillation"
+        },
+        {
+          "code": "467643831000119104",
+          "term": "Paroxysmal atrial fibrillation due to heart valve disorder (disorder)"
+        },
+        {
+          "code": "467643831000119105",
+          "term": "Paroxysmal atrial fibrillation due to heart valve disorder"
+        },
+        {
+          "code": "489609371000119104",
+          "term": "Persistent atrial fibrillation due to heart valve disorder (disorder)"
+        },
+        {
+          "code": "49436004",
+          "term": "Atrial fibrillation (disorder)"
+        },
+        {
+          "code": "5370000",
+          "term": "Atrial flutter (disorder)"
+        },
+        {
+          "code": "706923002",
+          "term": "Longstanding persistent atrial fibrillation (disorder)"
+        },
+        {
+          "code": "711411000000101",
+          "term": "Atrial fibrillation monitoring invitation (procedure)"
+        },
+        {
+          "code": "715395008",
+          "term": "Familial atrial fibrillation (disorder)"
+        },
+        {
+          "code": "715941000000109",
+          "term": "Excepted from atrial fibrillation quality indicators - patient unsuitable (finding)"
+        },
+        {
+          "code": "716181000000109",
+          "term": "Atrial fibrillation monitoring third letter (procedure)"
+        },
+        {
+          "code": "716721000000107",
+          "term": "Atrial fibrillation monitoring telephone invitation (procedure)"
+        },
+        {
+          "code": "716981000000106",
+          "term": "Atrial fibrillation monitoring second letter (procedure)"
+        },
+        {
+          "code": "717011000000100",
+          "term": "Atrial fibrillation monitoring verbal invitation (procedure)"
+        },
+        {
+          "code": "717221000000101",
+          "term": "Atrial fibrillation monitoring first letter (procedure)"
+        },
+        {
+          "code": "717381000000109",
+          "term": "Excepted from atrial fibrillation quality indicators - informed dissent (finding)"
+        },
+        {
+          "code": "720448006",
+          "term": "Typical atrial flutter (disorder)"
+        },
+        {
+          "code": "762247006",
+          "term": "Preexcited atrial fibrillation (disorder)"
+        },
+        {
+          "code": "C0004238",
+          "term": "Atrial Fibrillation"
+        },
+        {
+          "code": "C0004239",
+          "term": "Atrial Flutter"
+        },
+        {
+          "code": "C0155709",
+          "term": "Atrial fibrillation and flutter"
+        },
+        {
+          "code": "C0235480",
+          "term": "Paroxysmal atrial fibrillation"
+        },
+        {
+          "code": "C0340489",
+          "term": "Lone atrial fibrillation"
+        },
+        {
+          "code": "C0340490",
+          "term": "Non-rheumatic atrial fibrillation"
+        },
+        {
+          "code": "C0577699",
+          "term": "Controlled atrial fibrillation"
+        },
+        {
+          "code": "C0694539",
+          "term": "Chronic atrial fibrillation"
+        },
+        {
+          "code": "C0741289",
+          "term": "Chronic atrial flutter"
+        },
+        {
+          "code": "C0741292",
+          "term": "Paroxysmal atrial flutter"
+        },
+        {
+          "code": "C1142306",
+          "term": "Atrial fibrillation with rapid ventricular response"
+        },
+        {
+          "code": "C1281999",
+          "term": "Rapid atrial fibrillation"
+        },
+        {
+          "code": "C2585653",
+          "term": "Persistent atrial fibrillation"
+        },
+        {
+          "code": "C2586056",
+          "term": "Permanent atrial fibrillation"
+        },
+        {
+          "code": "C3264370",
+          "term": "Typical atrial flutter"
+        },
+        {
+          "code": "C3264372",
+          "term": "Atypical atrial flutter"
+        },
+        {
+          "code": "C3264373",
+          "term": "Unspecified atrial fibrillation and atrial flutter"
+        },
+        {
+          "code": "C3468561",
+          "term": "familial atrial fibrillation"
+        },
+        {
+          "code": "C3873617",
+          "term": "Longstanding persistent atrial fibrillation"
+        },
+        {
+          "code": "C4546063",
+          "term": "Preexcited atrial fibrillation"
+        },
+        {
+          "code": "C5140810",
+          "term": "other persistent atrial fibrillation"
+        },
+        {
+          "code": "C5439136",
+          "term": "Paroxysmal atrial fibrillation with rapid ventricular response"
+        },
+        {
+          "code": "C5817242",
+          "term": "Atrial fibrillation due to heart valve disorder"
+        },
+        {
+          "code": "C5817244",
+          "term": "Paroxysmal atrial fibrillation due to heart valve disorder"
+        },
+        {
+          "code": "C5817245",
+          "term": "Permanent atrial fibrillation due to heart valve disorder"
+        },
+        {
+          "code": "C5817247",
+          "term": "Persistent atrial fibrillation due to heart valve disorder"
+        },
+        {
+          "code": "I48.0",
+          "term": "Paroxysmal atrial fibrillation"
+        },
+        {
+          "code": "I48.1",
+          "term": "Persistent atrial fibrillation"
+        },
+        {
+          "code": "I48.2",
+          "term": "Chronic atrial fibrillation"
+        },
+        {
+          "code": "I48.3",
+          "term": "Typical atrial flutter"
+        },
+        {
+          "code": "I48.4",
+          "term": "Atypical atrial flutter"
+        },
+        {
+          "code": "I48.9",
+          "term": "Atrial fibrillation and atrial flutter, unspecified"
+        },
+        {
+          "code": "K62.2",
+          "term": "Percutaneous transluminal ablation of atrial wall for atrial flutter"
+        },
+        {
+          "code": "K62.3",
+          "term": "Percutaneous transluminal ablation of conducting system of heart for atrial flutter NEC"
+        }
+      ],
+      "fn_codes": [
+        {
+          "code": "I480",
+          "term": "Paroxysmal atrial fibrillation"
+        },
+        {
+          "code": "I481",
+          "term": "Persistent atrial fibrillation"
+        },
+        {
+          "code": "I482",
+          "term": "Chronic atrial fibrillation"
+        },
+        {
+          "code": "I483",
+          "term": "Typical atrial flutter"
+        },
+        {
+          "code": "I484",
+          "term": "Atypical atrial flutter"
+        },
+        {
+          "code": "I489",
+          "term": "Atrial fibrillation and atrial flutter, unspecified"
+        }
+      ]
+    },
+    "all_scored": {
+      "codelist_name": "all_scored",
+      "n_ref_codes": 7,
+      "n_output_codes": 77,
+      "recall": 0.1429,
+      "precision": 0.013,
+      "f1": 0.0238,
+      "tp_count": 1,
+      "fp_count": 76,
+      "fn_count": 6,
+      "tp_codes": [
+        {
+          "code": "I48",
+          "term": "Atrial fibrillation and flutter"
+        }
+      ],
+      "fp_codes": [
+        {
+          "code": "1010405004",
+          "term": "Paroxysmal atrial fibrillation with rapid ventricular response (disorder)"
+        },
+        {
+          "code": "1105331000000106",
+          "term": "Blood pressure measurement using oscillometric monitoring device with opportunistic atrial fibrillation detection (procedure)"
+        },
+        {
+          "code": "1109921000000106",
+          "term": "Quality and Outcomes Framework quality indicator-related care invitation (procedure)"
+        },
+        {
+          "code": "1110851000000100",
+          "term": "Quality and Outcomes Framework atrial fibrillation quality indicator-related care invitation (procedure)"
+        },
+        {
+          "code": "120041000119109",
+          "term": "Atrial fibrillation with rapid ventricular response (disorder)"
+        },
+        {
+          "code": "133111000000106",
+          "term": "Quality and Outcomes Framework atrial fibrillation quality indicator-related care invitation using preferred method of communication (procedure)"
+        },
+        {
+          "code": "15964901000119107",
+          "term": "Atypical atrial flutter"
+        },
+        {
+          "code": "15964901000119108",
+          "term": "Atypical atrial flutter (disorder)"
+        },
+        {
+          "code": "195080001",
+          "term": "Atrial fibrillation and flutter (disorder)"
+        },
+        {
+          "code": "196371000000102",
+          "term": "Atrial fibrillation resolved (finding)"
+        },
+        {
+          "code": "233910005",
+          "term": "Lone atrial fibrillation (disorder)"
+        },
+        {
+          "code": "233911009",
+          "term": "Non-rheumatic atrial fibrillation (disorder)"
+        },
+        {
+          "code": "280797561000119104",
+          "term": "Permanent atrial fibrillation due to heart valve disorder (disorder)"
+        },
+        {
+          "code": "280797561000119107",
+          "term": "Permanent atrial fibrillation due to heart valve disorder"
+        },
+        {
+          "code": "282825002",
+          "term": "Paroxysmal atrial fibrillation (disorder)"
+        },
+        {
+          "code": "300996004",
+          "term": "Controlled atrial fibrillation (disorder)"
+        },
+        {
+          "code": "313377641000119104",
+          "term": "Atrial fibrillation due to heart valve disorder (disorder)"
+        },
+        {
+          "code": "313377641000119105",
+          "term": "Atrial fibrillation due to heart valve disorder"
+        },
+        {
+          "code": "314208002",
+          "term": "Rapid atrial fibrillation (disorder)"
+        },
+        {
+          "code": "425615007",
+          "term": "Chronic atrial flutter (disorder)"
+        },
+        {
+          "code": "426749004",
+          "term": "Chronic atrial fibrillation (disorder)"
+        },
+        {
+          "code": "426814001",
+          "term": "Transient cerebral ischemia due to atrial fibrillation (disorder)"
+        },
+        {
+          "code": "427665004",
+          "term": "Paroxysmal atrial flutter (disorder)"
+        },
+        {
+          "code": "440028005",
+          "term": "Permanent atrial fibrillation (disorder)"
+        },
+        {
+          "code": "440059007",
+          "term": "Persistent atrial fibrillation"
+        },
+        {
+          "code": "467643831000119104",
+          "term": "Paroxysmal atrial fibrillation due to heart valve disorder (disorder)"
+        },
+        {
+          "code": "467643831000119105",
+          "term": "Paroxysmal atrial fibrillation due to heart valve disorder"
+        },
+        {
+          "code": "489609371000119104",
+          "term": "Persistent atrial fibrillation due to heart valve disorder (disorder)"
+        },
+        {
+          "code": "49436004",
+          "term": "Atrial fibrillation (disorder)"
+        },
+        {
+          "code": "5370000",
+          "term": "Atrial flutter (disorder)"
+        },
+        {
+          "code": "706923002",
+          "term": "Longstanding persistent atrial fibrillation (disorder)"
+        },
+        {
+          "code": "711411000000101",
+          "term": "Atrial fibrillation monitoring invitation (procedure)"
+        },
+        {
+          "code": "715395008",
+          "term": "Familial atrial fibrillation (disorder)"
+        },
+        {
+          "code": "715941000000109",
+          "term": "Excepted from atrial fibrillation quality indicators - patient unsuitable (finding)"
+        },
+        {
+          "code": "716181000000109",
+          "term": "Atrial fibrillation monitoring third letter (procedure)"
+        },
+        {
+          "code": "716721000000107",
+          "term": "Atrial fibrillation monitoring telephone invitation (procedure)"
+        },
+        {
+          "code": "716981000000106",
+          "term": "Atrial fibrillation monitoring second letter (procedure)"
+        },
+        {
+          "code": "717011000000100",
+          "term": "Atrial fibrillation monitoring verbal invitation (procedure)"
+        },
+        {
+          "code": "717221000000101",
+          "term": "Atrial fibrillation monitoring first letter (procedure)"
+        },
+        {
+          "code": "717381000000109",
+          "term": "Excepted from atrial fibrillation quality indicators - informed dissent (finding)"
+        },
+        {
+          "code": "720448006",
+          "term": "Typical atrial flutter (disorder)"
+        },
+        {
+          "code": "762247006",
+          "term": "Preexcited atrial fibrillation (disorder)"
+        },
+        {
+          "code": "C0004238",
+          "term": "Atrial Fibrillation"
+        },
+        {
+          "code": "C0004239",
+          "term": "Atrial Flutter"
+        },
+        {
+          "code": "C0155709",
+          "term": "Atrial fibrillation and flutter"
+        },
+        {
+          "code": "C0235480",
+          "term": "Paroxysmal atrial fibrillation"
+        },
+        {
+          "code": "C0340489",
+          "term": "Lone atrial fibrillation"
+        },
+        {
+          "code": "C0340490",
+          "term": "Non-rheumatic atrial fibrillation"
+        },
+        {
+          "code": "C0577699",
+          "term": "Controlled atrial fibrillation"
+        },
+        {
+          "code": "C0694539",
+          "term": "Chronic atrial fibrillation"
+        },
+        {
+          "code": "C0741289",
+          "term": "Chronic atrial flutter"
+        },
+        {
+          "code": "C0741292",
+          "term": "Paroxysmal atrial flutter"
+        },
+        {
+          "code": "C1142306",
+          "term": "Atrial fibrillation with rapid ventricular response"
+        },
+        {
+          "code": "C1281999",
+          "term": "Rapid atrial fibrillation"
+        },
+        {
+          "code": "C2585653",
+          "term": "Persistent atrial fibrillation"
+        },
+        {
+          "code": "C2586056",
+          "term": "Permanent atrial fibrillation"
+        },
+        {
+          "code": "C3264370",
+          "term": "Typical atrial flutter"
+        },
+        {
+          "code": "C3264372",
+          "term": "Atypical atrial flutter"
+        },
+        {
+          "code": "C3264373",
+          "term": "Unspecified atrial fibrillation and atrial flutter"
+        },
+        {
+          "code": "C3468561",
+          "term": "familial atrial fibrillation"
+        },
+        {
+          "code": "C3873617",
+          "term": "Longstanding persistent atrial fibrillation"
+        },
+        {
+          "code": "C4546063",
+          "term": "Preexcited atrial fibrillation"
+        },
+        {
+          "code": "C5140810",
+          "term": "other persistent atrial fibrillation"
+        },
+        {
+          "code": "C5439136",
+          "term": "Paroxysmal atrial fibrillation with rapid ventricular response"
+        },
+        {
+          "code": "C5817242",
+          "term": "Atrial fibrillation due to heart valve disorder"
+        },
+        {
+          "code": "C5817244",
+          "term": "Paroxysmal atrial fibrillation due to heart valve disorder"
+        },
+        {
+          "code": "C5817245",
+          "term": "Permanent atrial fibrillation due to heart valve disorder"
+        },
+        {
+          "code": "C5817247",
+          "term": "Persistent atrial fibrillation due to heart valve disorder"
+        },
+        {
+          "code": "I48.0",
+          "term": "Paroxysmal atrial fibrillation"
+        },
+        {
+          "code": "I48.1",
+          "term": "Persistent atrial fibrillation"
+        },
+        {
+          "code": "I48.2",
+          "term": "Chronic atrial fibrillation"
+        },
+        {
+          "code": "I48.3",
+          "term": "Typical atrial flutter"
+        },
+        {
+          "code": "I48.4",
+          "term": "Atypical atrial flutter"
+        },
+        {
+          "code": "I48.9",
+          "term": "Atrial fibrillation and atrial flutter, unspecified"
+        },
+        {
+          "code": "K62.2",
+          "term": "Percutaneous transluminal ablation of atrial wall for atrial flutter"
+        },
+        {
+          "code": "K62.3",
+          "term": "Percutaneous transluminal ablation of conducting system of heart for atrial flutter NEC"
+        }
+      ],
+      "fn_codes": [
+        {
+          "code": "I480",
+          "term": "Paroxysmal atrial fibrillation"
+        },
+        {
+          "code": "I481",
+          "term": "Persistent atrial fibrillation"
+        },
+        {
+          "code": "I482",
+          "term": "Chronic atrial fibrillation"
+        },
+        {
+          "code": "I483",
+          "term": "Typical atrial flutter"
+        },
+        {
+          "code": "I484",
+          "term": "Atypical atrial flutter"
+        },
+        {
+          "code": "I489",
+          "term": "Atrial fibrillation and atrial flutter, unspecified"
+        }
+      ]
+    },
+    "included_only": {
+      "codelist_name": "included_only",
+      "n_ref_codes": 7,
+      "n_output_codes": 61,
+      "recall": 0.1429,
+      "precision": 0.0164,
+      "f1": 0.0294,
+      "tp_count": 1,
+      "fp_count": 60,
+      "fn_count": 6,
+      "tp_codes": [
+        {
+          "code": "I48",
+          "term": "Atrial fibrillation and flutter"
+        }
+      ],
+      "fp_codes": [
+        {
+          "code": "1010405004",
+          "term": "Paroxysmal atrial fibrillation with rapid ventricular response (disorder)"
+        },
+        {
+          "code": "120041000119109",
+          "term": "Atrial fibrillation with rapid ventricular response (disorder)"
+        },
+        {
+          "code": "15964901000119107",
+          "term": "Atypical atrial flutter"
+        },
+        {
+          "code": "15964901000119108",
+          "term": "Atypical atrial flutter (disorder)"
+        },
+        {
+          "code": "195080001",
+          "term": "Atrial fibrillation and flutter (disorder)"
+        },
+        {
+          "code": "233910005",
+          "term": "Lone atrial fibrillation (disorder)"
+        },
+        {
+          "code": "233911009",
+          "term": "Non-rheumatic atrial fibrillation (disorder)"
+        },
+        {
+          "code": "280797561000119104",
+          "term": "Permanent atrial fibrillation due to heart valve disorder (disorder)"
+        },
+        {
+          "code": "280797561000119107",
+          "term": "Permanent atrial fibrillation due to heart valve disorder"
+        },
+        {
+          "code": "282825002",
+          "term": "Paroxysmal atrial fibrillation (disorder)"
+        },
+        {
+          "code": "300996004",
+          "term": "Controlled atrial fibrillation (disorder)"
+        },
+        {
+          "code": "313377641000119104",
+          "term": "Atrial fibrillation due to heart valve disorder (disorder)"
+        },
+        {
+          "code": "313377641000119105",
+          "term": "Atrial fibrillation due to heart valve disorder"
+        },
+        {
+          "code": "314208002",
+          "term": "Rapid atrial fibrillation (disorder)"
+        },
+        {
+          "code": "425615007",
+          "term": "Chronic atrial flutter (disorder)"
+        },
+        {
+          "code": "426749004",
+          "term": "Chronic atrial fibrillation (disorder)"
+        },
+        {
+          "code": "427665004",
+          "term": "Paroxysmal atrial flutter (disorder)"
+        },
+        {
+          "code": "440028005",
+          "term": "Permanent atrial fibrillation (disorder)"
+        },
+        {
+          "code": "440059007",
+          "term": "Persistent atrial fibrillation"
+        },
+        {
+          "code": "467643831000119104",
+          "term": "Paroxysmal atrial fibrillation due to heart valve disorder (disorder)"
+        },
+        {
+          "code": "467643831000119105",
+          "term": "Paroxysmal atrial fibrillation due to heart valve disorder"
+        },
+        {
+          "code": "489609371000119104",
+          "term": "Persistent atrial fibrillation due to heart valve disorder (disorder)"
+        },
+        {
+          "code": "49436004",
+          "term": "Atrial fibrillation (disorder)"
+        },
+        {
+          "code": "5370000",
+          "term": "Atrial flutter (disorder)"
+        },
+        {
+          "code": "706923002",
+          "term": "Longstanding persistent atrial fibrillation (disorder)"
+        },
+        {
+          "code": "715395008",
+          "term": "Familial atrial fibrillation (disorder)"
+        },
+        {
+          "code": "720448006",
+          "term": "Typical atrial flutter (disorder)"
+        },
+        {
+          "code": "762247006",
+          "term": "Preexcited atrial fibrillation (disorder)"
+        },
+        {
+          "code": "C0004238",
+          "term": "Atrial Fibrillation"
+        },
+        {
+          "code": "C0004239",
+          "term": "Atrial Flutter"
+        },
+        {
+          "code": "C0155709",
+          "term": "Atrial fibrillation and flutter"
+        },
+        {
+          "code": "C0235480",
+          "term": "Paroxysmal atrial fibrillation"
+        },
+        {
+          "code": "C0340489",
+          "term": "Lone atrial fibrillation"
+        },
+        {
+          "code": "C0340490",
+          "term": "Non-rheumatic atrial fibrillation"
+        },
+        {
+          "code": "C0577699",
+          "term": "Controlled atrial fibrillation"
+        },
+        {
+          "code": "C0694539",
+          "term": "Chronic atrial fibrillation"
+        },
+        {
+          "code": "C0741289",
+          "term": "Chronic atrial flutter"
+        },
+        {
+          "code": "C0741292",
+          "term": "Paroxysmal atrial flutter"
+        },
+        {
+          "code": "C1142306",
+          "term": "Atrial fibrillation with rapid ventricular response"
+        },
+        {
+          "code": "C1281999",
+          "term": "Rapid atrial fibrillation"
+        },
+        {
+          "code": "C2585653",
+          "term": "Persistent atrial fibrillation"
+        },
+        {
+          "code": "C2586056",
+          "term": "Permanent atrial fibrillation"
+        },
+        {
+          "code": "C3264370",
+          "term": "Typical atrial flutter"
+        },
+        {
+          "code": "C3264372",
+          "term": "Atypical atrial flutter"
+        },
+        {
+          "code": "C3264373",
+          "term": "Unspecified atrial fibrillation and atrial flutter"
+        },
+        {
+          "code": "C3468561",
+          "term": "familial atrial fibrillation"
+        },
+        {
+          "code": "C3873617",
+          "term": "Longstanding persistent atrial fibrillation"
+        },
+        {
+          "code": "C4546063",
+          "term": "Preexcited atrial fibrillation"
+        },
+        {
+          "code": "C5140810",
+          "term": "other persistent atrial fibrillation"
+        },
+        {
+          "code": "C5439136",
+          "term": "Paroxysmal atrial fibrillation with rapid ventricular response"
+        },
+        {
+          "code": "C5817242",
+          "term": "Atrial fibrillation due to heart valve disorder"
+        },
+        {
+          "code": "C5817244",
+          "term": "Paroxysmal atrial fibrillation due to heart valve disorder"
+        },
+        {
+          "code": "C5817245",
+          "term": "Permanent atrial fibrillation due to heart valve disorder"
+        },
+        {
+          "code": "C5817247",
+          "term": "Persistent atrial fibrillation due to heart valve disorder"
+        },
+        {
+          "code": "I48.0",
+          "term": "Paroxysmal atrial fibrillation"
+        },
+        {
+          "code": "I48.1",
+          "term": "Persistent atrial fibrillation"
+        },
+        {
+          "code": "I48.2",
+          "term": "Chronic atrial fibrillation"
+        },
+        {
+          "code": "I48.3",
+          "term": "Typical atrial flutter"
+        },
+        {
+          "code": "I48.4",
+          "term": "Atypical atrial flutter"
+        },
+        {
+          "code": "I48.9",
+          "term": "Atrial fibrillation and atrial flutter, unspecified"
+        }
+      ],
+      "fn_codes": [
+        {
+          "code": "I480",
+          "term": "Paroxysmal atrial fibrillation"
+        },
+        {
+          "code": "I481",
+          "term": "Persistent atrial fibrillation"
+        },
+        {
+          "code": "I482",
+          "term": "Chronic atrial fibrillation"
+        },
+        {
+          "code": "I483",
+          "term": "Typical atrial flutter"
+        },
+        {
+          "code": "I484",
+          "term": "Atypical atrial flutter"
+        },
+        {
+          "code": "I489",
+          "term": "Atrial fibrillation and atrial flutter, unspecified"
+        }
+      ]
+    },
+    "included_plus_uncertain": {
+      "codelist_name": "included_plus_uncertain",
+      "n_ref_codes": 7,
+      "n_output_codes": 61,
+      "recall": 0.1429,
+      "precision": 0.0164,
+      "f1": 0.0294,
+      "tp_count": 1,
+      "fp_count": 60,
+      "fn_count": 6,
+      "tp_codes": [
+        {
+          "code": "I48",
+          "term": "Atrial fibrillation and flutter"
+        }
+      ],
+      "fp_codes": [
+        {
+          "code": "1010405004",
+          "term": "Paroxysmal atrial fibrillation with rapid ventricular response (disorder)"
+        },
+        {
+          "code": "120041000119109",
+          "term": "Atrial fibrillation with rapid ventricular response (disorder)"
+        },
+        {
+          "code": "15964901000119107",
+          "term": "Atypical atrial flutter"
+        },
+        {
+          "code": "15964901000119108",
+          "term": "Atypical atrial flutter (disorder)"
+        },
+        {
+          "code": "195080001",
+          "term": "Atrial fibrillation and flutter (disorder)"
+        },
+        {
+          "code": "233910005",
+          "term": "Lone atrial fibrillation (disorder)"
+        },
+        {
+          "code": "233911009",
+          "term": "Non-rheumatic atrial fibrillation (disorder)"
+        },
+        {
+          "code": "280797561000119104",
+          "term": "Permanent atrial fibrillation due to heart valve disorder (disorder)"
+        },
+        {
+          "code": "280797561000119107",
+          "term": "Permanent atrial fibrillation due to heart valve disorder"
+        },
+        {
+          "code": "282825002",
+          "term": "Paroxysmal atrial fibrillation (disorder)"
+        },
+        {
+          "code": "300996004",
+          "term": "Controlled atrial fibrillation (disorder)"
+        },
+        {
+          "code": "313377641000119104",
+          "term": "Atrial fibrillation due to heart valve disorder (disorder)"
+        },
+        {
+          "code": "313377641000119105",
+          "term": "Atrial fibrillation due to heart valve disorder"
+        },
+        {
+          "code": "314208002",
+          "term": "Rapid atrial fibrillation (disorder)"
+        },
+        {
+          "code": "425615007",
+          "term": "Chronic atrial flutter (disorder)"
+        },
+        {
+          "code": "426749004",
+          "term": "Chronic atrial fibrillation (disorder)"
+        },
+        {
+          "code": "427665004",
+          "term": "Paroxysmal atrial flutter (disorder)"
+        },
+        {
+          "code": "440028005",
+          "term": "Permanent atrial fibrillation (disorder)"
+        },
+        {
+          "code": "440059007",
+          "term": "Persistent atrial fibrillation"
+        },
+        {
+          "code": "467643831000119104",
+          "term": "Paroxysmal atrial fibrillation due to heart valve disorder (disorder)"
+        },
+        {
+          "code": "467643831000119105",
+          "term": "Paroxysmal atrial fibrillation due to heart valve disorder"
+        },
+        {
+          "code": "489609371000119104",
+          "term": "Persistent atrial fibrillation due to heart valve disorder (disorder)"
+        },
+        {
+          "code": "49436004",
+          "term": "Atrial fibrillation (disorder)"
+        },
+        {
+          "code": "5370000",
+          "term": "Atrial flutter (disorder)"
+        },
+        {
+          "code": "706923002",
+          "term": "Longstanding persistent atrial fibrillation (disorder)"
+        },
+        {
+          "code": "715395008",
+          "term": "Familial atrial fibrillation (disorder)"
+        },
+        {
+          "code": "720448006",
+          "term": "Typical atrial flutter (disorder)"
+        },
+        {
+          "code": "762247006",
+          "term": "Preexcited atrial fibrillation (disorder)"
+        },
+        {
+          "code": "C0004238",
+          "term": "Atrial Fibrillation"
+        },
+        {
+          "code": "C0004239",
+          "term": "Atrial Flutter"
+        },
+        {
+          "code": "C0155709",
+          "term": "Atrial fibrillation and flutter"
+        },
+        {
+          "code": "C0235480",
+          "term": "Paroxysmal atrial fibrillation"
+        },
+        {
+          "code": "C0340489",
+          "term": "Lone atrial fibrillation"
+        },
+        {
+          "code": "C0340490",
+          "term": "Non-rheumatic atrial fibrillation"
+        },
+        {
+          "code": "C0577699",
+          "term": "Controlled atrial fibrillation"
+        },
+        {
+          "code": "C0694539",
+          "term": "Chronic atrial fibrillation"
+        },
+        {
+          "code": "C0741289",
+          "term": "Chronic atrial flutter"
+        },
+        {
+          "code": "C0741292",
+          "term": "Paroxysmal atrial flutter"
+        },
+        {
+          "code": "C1142306",
+          "term": "Atrial fibrillation with rapid ventricular response"
+        },
+        {
+          "code": "C1281999",
+          "term": "Rapid atrial fibrillation"
+        },
+        {
+          "code": "C2585653",
+          "term": "Persistent atrial fibrillation"
+        },
+        {
+          "code": "C2586056",
+          "term": "Permanent atrial fibrillation"
+        },
+        {
+          "code": "C3264370",
+          "term": "Typical atrial flutter"
+        },
+        {
+          "code": "C3264372",
+          "term": "Atypical atrial flutter"
+        },
+        {
+          "code": "C3264373",
+          "term": "Unspecified atrial fibrillation and atrial flutter"
+        },
+        {
+          "code": "C3468561",
+          "term": "familial atrial fibrillation"
+        },
+        {
+          "code": "C3873617",
+          "term": "Longstanding persistent atrial fibrillation"
+        },
+        {
+          "code": "C4546063",
+          "term": "Preexcited atrial fibrillation"
+        },
+        {
+          "code": "C5140810",
+          "term": "other persistent atrial fibrillation"
+        },
+        {
+          "code": "C5439136",
+          "term": "Paroxysmal atrial fibrillation with rapid ventricular response"
+        },
+        {
+          "code": "C5817242",
+          "term": "Atrial fibrillation due to heart valve disorder"
+        },
+        {
+          "code": "C5817244",
+          "term": "Paroxysmal atrial fibrillation due to heart valve disorder"
+        },
+        {
+          "code": "C5817245",
+          "term": "Permanent atrial fibrillation due to heart valve disorder"
+        },
+        {
+          "code": "C5817247",
+          "term": "Persistent atrial fibrillation due to heart valve disorder"
+        },
+        {
+          "code": "I48.0",
+          "term": "Paroxysmal atrial fibrillation"
+        },
+        {
+          "code": "I48.1",
+          "term": "Persistent atrial fibrillation"
+        },
+        {
+          "code": "I48.2",
+          "term": "Chronic atrial fibrillation"
+        },
+        {
+          "code": "I48.3",
+          "term": "Typical atrial flutter"
+        },
+        {
+          "code": "I48.4",
+          "term": "Atypical atrial flutter"
+        },
+        {
+          "code": "I48.9",
+          "term": "Atrial fibrillation and atrial flutter, unspecified"
+        }
+      ],
+      "fn_codes": [
+        {
+          "code": "I480",
+          "term": "Paroxysmal atrial fibrillation"
+        },
+        {
+          "code": "I481",
+          "term": "Persistent atrial fibrillation"
+        },
+        {
+          "code": "I482",
+          "term": "Chronic atrial fibrillation"
+        },
+        {
+          "code": "I483",
+          "term": "Typical atrial flutter"
+        },
+        {
+          "code": "I484",
+          "term": "Atypical atrial flutter"
+        },
+        {
+          "code": "I489",
+          "term": "Atrial fibrillation and atrial flutter, unspecified"
+        }
+      ]
+    }
+  },
+  "false_exclusions": {
+    "count": 0,
+    "codes": []
+  },
+  "uncertain_in_reference": {
+    "count": 0,
+    "codes": []
+  },
+  "summary": "Recall: 14.3% (1 of 7 reference codes retrieved). Precision: 1.6%. F1: 2.9%. 0 reference codes were incorrectly excluded.",
+  "elapsed_seconds": 30.65,
+  "pipeline_results_count": 78,
+  "scored_codes": [
+    {
+      "code": "I48",
+      "term": "Atrial fibrillation and flutter",
+      "vocabulary": "ICD-10 (WHO)",
+      "decision": "include",
+      "confidence": 1.0,
+      "rationale": "Parent ICD-10 code for both atrial fibrillation and atrial flutter, directly matches both primary and comorbidity conditions.",
+      "sources": [
+        "OMOPHub"
+      ],
+      "classifier_score": null,
+      "llm_score": 1.0,
+      "usage_frequency": null
+    },
+    {
+      "code": "I48.0",
+      "term": "Paroxysmal atrial fibrillation",
+      "vocabulary": "ICD-10 (WHO)",
+      "decision": "include",
+      "confidence": 1.0,
+      "rationale": "Paroxysmal atrial fibrillation is a clinical subtype of the primary condition.",
+      "sources": [
+        "OMOPHub"
+      ],
+      "classifier_score": null,
+      "llm_score": 1.0,
+      "usage_frequency": null
+    },
+    {
+      "code": "I48.1",
+      "term": "Persistent atrial fibrillation",
+      "vocabulary": "ICD-10 (WHO)",
+      "decision": "include",
+      "confidence": 1.0,
+      "rationale": "Persistent atrial fibrillation is a clinical subtype of the primary condition.",
+      "sources": [
+        "OMOPHub"
+      ],
+      "classifier_score": null,
+      "llm_score": 1.0,
+      "usage_frequency": null
+    },
+    {
+      "code": "I48.2",
+      "term": "Chronic atrial fibrillation",
+      "vocabulary": "ICD-10 (WHO)",
+      "decision": "include",
+      "confidence": 1.0,
+      "rationale": "Chronic atrial fibrillation is a clinical subtype of the primary condition.",
+      "sources": [
+        "OMOPHub"
+      ],
+      "classifier_score": null,
+      "llm_score": 1.0,
+      "usage_frequency": null
+    },
+    {
+      "code": "I48.3",
+      "term": "Typical atrial flutter",
+      "vocabulary": "ICD-10 (WHO)",
+      "decision": "include",
+      "confidence": 1.0,
+      "rationale": "Typical atrial flutter is a clinical subtype of the comorbidity condition.",
+      "sources": [
+        "OMOPHub"
+      ],
+      "classifier_score": null,
+      "llm_score": 1.0,
+      "usage_frequency": null
+    },
+    {
+      "code": "I48.4",
+      "term": "Atypical atrial flutter",
+      "vocabulary": "ICD-10 (WHO)",
+      "decision": "include",
+      "confidence": 1.0,
+      "rationale": "Atypical atrial flutter is a clinical subtype of the comorbidity condition.",
+      "sources": [
+        "OMOPHub"
+      ],
+      "classifier_score": null,
+      "llm_score": 1.0,
+      "usage_frequency": null
+    },
+    {
+      "code": "I48.9",
+      "term": "Atrial fibrillation and atrial flutter, unspecified",
+      "vocabulary": "ICD-10 (WHO)",
+      "decision": "include",
+      "confidence": 1.0,
+      "rationale": "Unspecified atrial fibrillation and flutter code covers both primary and comorbidity conditions.",
+      "sources": [
+        "OMOPHub"
+      ],
+      "classifier_score": null,
+      "llm_score": 1.0,
+      "usage_frequency": null
+    },
+    {
+      "code": "1010405004",
+      "term": "Paroxysmal atrial fibrillation with rapid ventricular response (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 1.0,
+      "rationale": "Paroxysmal atrial fibrillation with rapid ventricular response is a clinical manifestation of the primary condition.",
+      "sources": [
+        "OpenCodelists (Bennett Institute)",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 1.0,
+      "usage_frequency": null
+    },
+    {
+      "code": "120041000119109",
+      "term": "Atrial fibrillation with rapid ventricular response (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 1.0,
+      "rationale": "Atrial fibrillation with rapid ventricular response is a clinical manifestation of the primary condition.",
+      "sources": [
+        "OpenCodelists (Bennett Institute)",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 1.0,
+      "usage_frequency": null
+    },
+    {
+      "code": "15964901000119107",
+      "term": "Atypical atrial flutter",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 1.0,
+      "rationale": "Atypical atrial flutter is a clinical subtype of the comorbidity condition.",
+      "sources": [
+        "OpenCodelists (Bennett Institute)"
+      ],
+      "classifier_score": null,
+      "llm_score": 1.0,
+      "usage_frequency": null
+    },
+    {
+      "code": "15964901000119108",
+      "term": "Atypical atrial flutter (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 1.0,
+      "rationale": "Atypical atrial flutter (disorder) is a clinical subtype of the comorbidity condition.",
+      "sources": [
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 1.0,
+      "usage_frequency": null
+    },
+    {
+      "code": "195080001",
+      "term": "Atrial fibrillation and flutter (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 1.0,
+      "rationale": "Atrial fibrillation and flutter (disorder) directly matches both primary and comorbidity conditions.",
+      "sources": [
+        "OpenCodelists (Bennett Institute)",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 1.0,
+      "usage_frequency": null
+    },
+    {
+      "code": "233910005",
+      "term": "Lone atrial fibrillation (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 1.0,
+      "rationale": "Lone atrial fibrillation is a clinical subtype of the primary condition.",
+      "sources": [
+        "OpenCodelists (Bennett Institute)",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 1.0,
+      "usage_frequency": null
+    },
+    {
+      "code": "233911009",
+      "term": "Non-rheumatic atrial fibrillation (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 1.0,
+      "rationale": "Non-rheumatic atrial fibrillation is a clinical subtype of the primary condition.",
+      "sources": [
+        "OpenCodelists (Bennett Institute)",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 1.0,
+      "usage_frequency": null
+    },
+    {
+      "code": "280797561000119104",
+      "term": "Permanent atrial fibrillation due to heart valve disorder (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 1.0,
+      "rationale": "Permanent atrial fibrillation due to heart valve disorder is a clinical subtype of the primary condition.",
+      "sources": [
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 1.0,
+      "usage_frequency": null
+    },
+    {
+      "code": "280797561000119107",
+      "term": "Permanent atrial fibrillation due to heart valve disorder",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 1.0,
+      "rationale": "Permanent atrial fibrillation due to heart valve disorder is a clinical subtype of the primary condition.",
+      "sources": [
+        "OpenCodelists (Bennett Institute)"
+      ],
+      "classifier_score": null,
+      "llm_score": 1.0,
+      "usage_frequency": null
+    },
+    {
+      "code": "282825002",
+      "term": "Paroxysmal atrial fibrillation (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 1.0,
+      "rationale": "Paroxysmal atrial fibrillation (disorder) is a clinical subtype of the primary condition.",
+      "sources": [
+        "OpenCodelists (Bennett Institute)",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 1.0,
+      "usage_frequency": null
+    },
+    {
+      "code": "300996004",
+      "term": "Controlled atrial fibrillation (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 1.0,
+      "rationale": "Controlled atrial fibrillation is a clinical subtype/severity variant of the primary condition.",
+      "sources": [
+        "OpenCodelists (Bennett Institute)",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 1.0,
+      "usage_frequency": null
+    },
+    {
+      "code": "313377641000119104",
+      "term": "Atrial fibrillation due to heart valve disorder (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 1.0,
+      "rationale": "Atrial fibrillation due to heart valve disorder is a clinical subtype of the primary condition.",
+      "sources": [
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 1.0,
+      "usage_frequency": null
+    },
+    {
+      "code": "313377641000119105",
+      "term": "Atrial fibrillation due to heart valve disorder",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 1.0,
+      "rationale": "Atrial fibrillation due to heart valve disorder is a clinical subtype of the primary condition.",
+      "sources": [
+        "OpenCodelists (Bennett Institute)"
+      ],
+      "classifier_score": null,
+      "llm_score": 1.0,
+      "usage_frequency": null
+    },
+    {
+      "code": "314208002",
+      "term": "Rapid atrial fibrillation (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 1.0,
+      "rationale": "Rapid atrial fibrillation is a clinical manifestation/severity variant of the primary condition.",
+      "sources": [
+        "OpenCodelists (Bennett Institute)",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 1.0,
+      "usage_frequency": null
+    },
+    {
+      "code": "425615007",
+      "term": "Chronic atrial flutter (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 1.0,
+      "rationale": "Chronic atrial flutter is a clinical subtype of the comorbidity condition.",
+      "sources": [
+        "OpenCodelists (Bennett Institute)",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 1.0,
+      "usage_frequency": null
+    },
+    {
+      "code": "426749004",
+      "term": "Chronic atrial fibrillation (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 1.0,
+      "rationale": "Chronic atrial fibrillation is a clinical subtype of the primary condition.",
+      "sources": [
+        "OpenCodelists (Bennett Institute)",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 1.0,
+      "usage_frequency": null
+    },
+    {
+      "code": "427665004",
+      "term": "Paroxysmal atrial flutter (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 1.0,
+      "rationale": "Paroxysmal atrial flutter is a clinical subtype of the comorbidity condition.",
+      "sources": [
+        "OpenCodelists (Bennett Institute)",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 1.0,
+      "usage_frequency": null
+    },
+    {
+      "code": "440028005",
+      "term": "Permanent atrial fibrillation (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 1.0,
+      "rationale": "Permanent atrial fibrillation is a clinical subtype of the primary condition.",
+      "sources": [
+        "OpenCodelists (Bennett Institute)",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 1.0,
+      "usage_frequency": null
+    },
+    {
+      "code": "440059007",
+      "term": "Persistent atrial fibrillation (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 1.0,
+      "rationale": "Persistent atrial fibrillation is a clinical subtype of the primary condition.",
+      "sources": [
+        "OpenCodelists (Bennett Institute)",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 1.0,
+      "usage_frequency": null
+    },
+    {
+      "code": "467643831000119104",
+      "term": "Paroxysmal atrial fibrillation due to heart valve disorder (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 1.0,
+      "rationale": "Paroxysmal atrial fibrillation due to heart valve disorder is a clinical subtype of the primary condition.",
+      "sources": [
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 1.0,
+      "usage_frequency": null
+    },
+    {
+      "code": "467643831000119105",
+      "term": "Paroxysmal atrial fibrillation due to heart valve disorder",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 1.0,
+      "rationale": "Paroxysmal atrial fibrillation due to heart valve disorder is a clinical subtype of the primary condition.",
+      "sources": [
+        "OpenCodelists (Bennett Institute)"
+      ],
+      "classifier_score": null,
+      "llm_score": 1.0,
+      "usage_frequency": null
+    },
+    {
+      "code": "489609371000119104",
+      "term": "Persistent atrial fibrillation due to heart valve disorder (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 1.0,
+      "rationale": "Persistent atrial fibrillation due to heart valve disorder is a clinical subtype of the primary condition.",
+      "sources": [
+        "OpenCodelists (Bennett Institute)",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 1.0,
+      "usage_frequency": null
+    },
+    {
+      "code": "49436004",
+      "term": "Atrial fibrillation (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 1.0,
+      "rationale": "Atrial fibrillation (disorder) is the primary condition.",
+      "sources": [
+        "OpenCodelists (Bennett Institute)",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 1.0,
+      "usage_frequency": null
+    },
+    {
+      "code": "5370000",
+      "term": "Atrial flutter (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 1.0,
+      "rationale": "Atrial flutter (disorder) is the comorbidity condition.",
+      "sources": [
+        "OpenCodelists (Bennett Institute)",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 1.0,
+      "usage_frequency": null
+    },
+    {
+      "code": "706923002",
+      "term": "Longstanding persistent atrial fibrillation (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 1.0,
+      "rationale": "Longstanding persistent atrial fibrillation is a clinical subtype of the primary condition.",
+      "sources": [
+        "OpenCodelists (Bennett Institute)",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 1.0,
+      "usage_frequency": null
+    },
+    {
+      "code": "715395008",
+      "term": "Familial atrial fibrillation (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Familial atrial fibrillation is a clinical subtype of atrial fibrillation and should be included as it confirms the diagnosis.",
+      "sources": [
+        "OpenCodelists (Bennett Institute)",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "720448006",
+      "term": "Typical atrial flutter (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Typical atrial flutter is a clinical subtype of atrial flutter, which is listed as a comorbidity in the query.",
+      "sources": [
+        "OpenCodelists (Bennett Institute)",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "762247006",
+      "term": "Preexcited atrial fibrillation (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Preexcited atrial fibrillation is a clinical subtype of atrial fibrillation and should be included as it confirms the diagnosis.",
+      "sources": [
+        "OpenCodelists (Bennett Institute)",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "440059007",
+      "term": "Persistent atrial fibrillation",
+      "vocabulary": "UMLS",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Persistent atrial fibrillation is a clinical subtype of atrial fibrillation and should be included.",
+      "sources": [
+        "UMLS (narrower)"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "C0004238",
+      "term": "Atrial Fibrillation",
+      "vocabulary": "UMLS",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "This is the primary condition code for atrial fibrillation and should be included.",
+      "sources": [
+        "UMLS (synonym)"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "C0004239",
+      "term": "Atrial Flutter",
+      "vocabulary": "UMLS",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "This is the code for atrial flutter, which is explicitly listed as a comorbidity in the query.",
+      "sources": [
+        "UMLS (synonym)"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "C0155709",
+      "term": "Atrial fibrillation and flutter",
+      "vocabulary": "UMLS",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "This code covers both atrial fibrillation and flutter, both of which are in the query.",
+      "sources": [
+        "UMLS (synonym)"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "C0235480",
+      "term": "Paroxysmal atrial fibrillation",
+      "vocabulary": "UMLS",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Paroxysmal atrial fibrillation is a clinical subtype of atrial fibrillation and should be included.",
+      "sources": [
+        "UMLS (synonym)"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "C0340489",
+      "term": "Lone atrial fibrillation",
+      "vocabulary": "UMLS",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Lone atrial fibrillation is a clinical subtype of atrial fibrillation and should be included.",
+      "sources": [
+        "UMLS (synonym)"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "C0340490",
+      "term": "Non-rheumatic atrial fibrillation",
+      "vocabulary": "UMLS",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Non-rheumatic atrial fibrillation is a clinical subtype of atrial fibrillation and should be included.",
+      "sources": [
+        "UMLS (synonym)"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "C0577699",
+      "term": "Controlled atrial fibrillation",
+      "vocabulary": "UMLS",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Controlled atrial fibrillation is a clinical variant of atrial fibrillation and should be included.",
+      "sources": [
+        "UMLS (synonym)"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "C0694539",
+      "term": "Chronic atrial fibrillation",
+      "vocabulary": "UMLS",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Chronic atrial fibrillation is a clinical subtype of atrial fibrillation and should be included.",
+      "sources": [
+        "UMLS (synonym)"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "C0741289",
+      "term": "Chronic atrial flutter",
+      "vocabulary": "UMLS",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Chronic atrial flutter is a clinical subtype of atrial flutter, which is listed as a comorbidity.",
+      "sources": [
+        "UMLS (synonym)"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "C0741292",
+      "term": "Paroxysmal atrial flutter",
+      "vocabulary": "UMLS",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Paroxysmal atrial flutter is a clinical subtype of atrial flutter, which is listed as a comorbidity.",
+      "sources": [
+        "UMLS (synonym)"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "C1142306",
+      "term": "Atrial fibrillation with rapid ventricular response",
+      "vocabulary": "UMLS",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Atrial fibrillation with rapid ventricular response is a clinical manifestation of atrial fibrillation and should be included.",
+      "sources": [
+        "UMLS (synonym)"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "C1281999",
+      "term": "Rapid atrial fibrillation",
+      "vocabulary": "UMLS",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Rapid atrial fibrillation is a clinical variant of atrial fibrillation and should be included.",
+      "sources": [
+        "UMLS (synonym)"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "C2585653",
+      "term": "Persistent atrial fibrillation",
+      "vocabulary": "UMLS",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Persistent atrial fibrillation is a clinical subtype of atrial fibrillation and should be included.",
+      "sources": [
+        "UMLS (synonym)"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "C2586056",
+      "term": "Permanent atrial fibrillation",
+      "vocabulary": "UMLS",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Permanent atrial fibrillation is a clinical subtype of atrial fibrillation and should be included.",
+      "sources": [
+        "UMLS (synonym)"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "C3264370",
+      "term": "Typical atrial flutter",
+      "vocabulary": "UMLS",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Typical atrial flutter is a clinical subtype of atrial flutter, which is listed as a comorbidity.",
+      "sources": [
+        "UMLS (synonym)"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "C3264372",
+      "term": "Atypical atrial flutter",
+      "vocabulary": "UMLS",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Atypical atrial flutter is a clinical subtype of atrial flutter, which is listed as a comorbidity.",
+      "sources": [
+        "UMLS (synonym)"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "C3264373",
+      "term": "Unspecified atrial fibrillation and atrial flutter",
+      "vocabulary": "UMLS",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Unspecified atrial fibrillation and atrial flutter covers both conditions in the query.",
+      "sources": [
+        "UMLS (synonym)"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "C3468561",
+      "term": "familial atrial fibrillation",
+      "vocabulary": "UMLS",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Familial atrial fibrillation is a clinical subtype of atrial fibrillation and should be included.",
+      "sources": [
+        "UMLS (synonym)"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "C3873617",
+      "term": "Longstanding persistent atrial fibrillation",
+      "vocabulary": "UMLS",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Longstanding persistent atrial fibrillation is a clinical subtype of atrial fibrillation and should be included.",
+      "sources": [
+        "UMLS (synonym)"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "C4546063",
+      "term": "Preexcited atrial fibrillation",
+      "vocabulary": "UMLS",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Preexcited atrial fibrillation is a clinical subtype of atrial fibrillation and should be included.",
+      "sources": [
+        "UMLS (synonym)"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "C5140810",
+      "term": "other persistent atrial fibrillation",
+      "vocabulary": "UMLS",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Other persistent atrial fibrillation is a clinical subtype of atrial fibrillation and should be included.",
+      "sources": [
+        "UMLS (synonym)"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "C5439136",
+      "term": "Paroxysmal atrial fibrillation with rapid ventricular response",
+      "vocabulary": "UMLS",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Paroxysmal atrial fibrillation with rapid ventricular response is a clinical manifestation of atrial fibrillation and should be included.",
+      "sources": [
+        "UMLS (synonym)"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "C5817242",
+      "term": "Atrial fibrillation due to heart valve disorder",
+      "vocabulary": "UMLS",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Atrial fibrillation due to heart valve disorder is a clinical subtype of atrial fibrillation and should be included.",
+      "sources": [
+        "UMLS (synonym)"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "C5817244",
+      "term": "Paroxysmal atrial fibrillation due to heart valve disorder",
+      "vocabulary": "UMLS",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Paroxysmal atrial fibrillation due to heart valve disorder is a clinical subtype of atrial fibrillation and should be included.",
+      "sources": [
+        "UMLS (synonym)"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "C5817245",
+      "term": "Permanent atrial fibrillation due to heart valve disorder",
+      "vocabulary": "UMLS",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Permanent atrial fibrillation due to heart valve disorder is a clinical subtype of atrial fibrillation and should be included.",
+      "sources": [
+        "UMLS (synonym)"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "C5817247",
+      "term": "Persistent atrial fibrillation due to heart valve disorder",
+      "vocabulary": "UMLS",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Persistent atrial fibrillation due to heart valve disorder is a clinical subtype of atrial fibrillation and should be included.",
+      "sources": [
+        "UMLS (synonym)"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "K62.2",
+      "term": "Percutaneous transluminal ablation of atrial wall for atrial flutter",
+      "vocabulary": "OPCS-4",
+      "decision": "exclude",
+      "confidence": 0.95,
+      "rationale": "This is a procedural code for ablation treatment, not a diagnostic code confirming the condition itself.",
+      "sources": [
+        "OPCS-4 (NHS England)"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "K62.3",
+      "term": "Percutaneous transluminal ablation of conducting system of heart for atrial flutter NEC",
+      "vocabulary": "OPCS-4",
+      "decision": "exclude",
+      "confidence": 0.95,
+      "rationale": "This is a procedural code for ablation treatment, not a diagnostic code confirming the condition itself.",
+      "sources": [
+        "OPCS-4 (NHS England)"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "1105331000000106",
+      "term": "Blood pressure measurement using oscillometric monitoring device with opportunistic atrial fibrillation detection (procedure)",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.95,
+      "rationale": "This is a screening/detection procedure code, not a diagnostic code confirming the patient has atrial fibrillation.",
+      "sources": [
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "1109921000000106",
+      "term": "Quality and Outcomes Framework quality indicator-related care invitation (procedure)",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.95,
+      "rationale": "This is an administrative QOF care invitation code, not a diagnostic code confirming the condition.",
+      "sources": [
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "1110851000000100",
+      "term": "Quality and Outcomes Framework atrial fibrillation quality indicator-related care invitation (procedure)",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.95,
+      "rationale": "This is an administrative QOF care invitation code, not a diagnostic code confirming the condition.",
+      "sources": [
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "133111000000106",
+      "term": "Quality and Outcomes Framework atrial fibrillation quality indicator-related care invitation using preferred method of communication (procedure)",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.95,
+      "rationale": "This is an administrative QOF care invitation code, not a diagnostic code confirming the condition.",
+      "sources": [
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "196371000000102",
+      "term": "Atrial fibrillation resolved (finding)",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.95,
+      "rationale": "Atrial fibrillation resolved indicates the condition is no longer present and should not confirm active disease.",
+      "sources": [
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "711411000000101",
+      "term": "Atrial fibrillation monitoring invitation (procedure)",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.95,
+      "rationale": "This is an administrative invitation code for monitoring, not a clinical diagnosis confirming the patient has atrial fibrillation.",
+      "sources": [
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "715941000000109",
+      "term": "Excepted from atrial fibrillation quality indicators - patient unsuitable (finding)",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.95,
+      "rationale": "This is an administrative exception code indicating the patient is unsuitable for quality indicators, not a clinical diagnosis.",
+      "sources": [
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "716181000000109",
+      "term": "Atrial fibrillation monitoring third letter (procedure)",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.95,
+      "rationale": "This is an administrative procedure code for monitoring correspondence, not a clinical diagnosis.",
+      "sources": [
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "716721000000107",
+      "term": "Atrial fibrillation monitoring telephone invitation (procedure)",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.95,
+      "rationale": "This is an administrative invitation procedure code, not a clinical diagnosis confirming atrial fibrillation.",
+      "sources": [
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "716981000000106",
+      "term": "Atrial fibrillation monitoring second letter (procedure)",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.95,
+      "rationale": "This is an administrative procedure code for monitoring correspondence, not a clinical diagnosis.",
+      "sources": [
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "717011000000100",
+      "term": "Atrial fibrillation monitoring verbal invitation (procedure)",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.95,
+      "rationale": "This is an administrative invitation procedure code, not a clinical diagnosis confirming atrial fibrillation.",
+      "sources": [
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "717221000000101",
+      "term": "Atrial fibrillation monitoring first letter (procedure)",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.95,
+      "rationale": "This is an administrative procedure code for monitoring correspondence, not a clinical diagnosis.",
+      "sources": [
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "717381000000109",
+      "term": "Excepted from atrial fibrillation quality indicators - informed dissent (finding)",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.95,
+      "rationale": "This is an administrative exception code indicating informed dissent, not a clinical diagnosis.",
+      "sources": [
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "426814001",
+      "term": "Transient cerebral ischemia due to atrial fibrillation (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.85,
+      "rationale": "Transient cerebral ischemia due to atrial fibrillation is a complication/manifestation of atrial fibrillation, but represents a separate condition (stroke/TIA) rather than confirming atrial fibrillation itself.",
+      "sources": [
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.85,
+      "usage_frequency": null
+    }
+  ],
+  "pipeline": "rag"
+}

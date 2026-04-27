@@ -1,0 +1,5536 @@
+{
+  "reference_count": 106,
+  "query": "Depression diagnosis codes",
+  "vocabulary": "SNOMED CT",
+  "stages": {
+    "retrieved_raw": {
+      "codelist_name": "retrieved_raw",
+      "n_ref_codes": 106,
+      "n_output_codes": 464,
+      "recall": 0.9528,
+      "precision": 0.2177,
+      "f1": 0.3544,
+      "tp_count": 101,
+      "fp_count": 363,
+      "fn_count": 5,
+      "tp_codes": [
+        {
+          "code": "104851000119103",
+          "term": "Postpartum major depression in remission"
+        },
+        {
+          "code": "1086471000000103",
+          "term": "Recurrent reactive depressive episodes, severe, with psychosis"
+        },
+        {
+          "code": "1086661000000108",
+          "term": "Reactive depression, prolonged single episode"
+        },
+        {
+          "code": "1089511000000100",
+          "term": "Recurrent depression with current severe episode and psychotic features"
+        },
+        {
+          "code": "1089631000000109",
+          "term": "Recurrent depression with current severe episode without psychotic features"
+        },
+        {
+          "code": "1089641000000100",
+          "term": "Recurrent depression with current moderate episode"
+        },
+        {
+          "code": "1153570009",
+          "term": "Treatment resistant depression"
+        },
+        {
+          "code": "1153575004",
+          "term": "Persistent depressive disorder"
+        },
+        {
+          "code": "1260298008",
+          "term": "Depression following menopause"
+        },
+        {
+          "code": "14183003",
+          "term": "Chronic major depressive disorder, single episode"
+        },
+        {
+          "code": "15639000",
+          "term": "Moderate major depression, single episode"
+        },
+        {
+          "code": "16238181000119101",
+          "term": "Depressive disorder caused by amphetamine"
+        },
+        {
+          "code": "16238221000119109",
+          "term": "Depressive disorder caused by methamphetamine"
+        },
+        {
+          "code": "16264621000119109",
+          "term": "Recurrent mild major depressive disorder co-occurrent with anxiety"
+        },
+        {
+          "code": "16264821000119108",
+          "term": "Recurrent severe major depressive disorder co-occurrent with anxiety"
+        },
+        {
+          "code": "16264901000119109",
+          "term": "Recurrent moderate major depressive disorder co-occurrent with anxiety"
+        },
+        {
+          "code": "16265061000119105",
+          "term": "Recurrent major depressive disorder co-occurrent with anxiety in full remission"
+        },
+        {
+          "code": "16265301000119106",
+          "term": "Recurrent major depressive disorder in partial remission co-occurrent with anxiety"
+        },
+        {
+          "code": "16265951000119109",
+          "term": "Mild major depressive disorder co-occurrent with anxiety single episode"
+        },
+        {
+          "code": "16266831000119100",
+          "term": "Moderate major depressive disorder co-occurrent with anxiety single episode"
+        },
+        {
+          "code": "16266991000119108",
+          "term": "Severe major depressive disorder co-occurrent with anxiety single episode"
+        },
+        {
+          "code": "18818009",
+          "term": "Moderate recurrent major depression"
+        },
+        {
+          "code": "191455000",
+          "term": "Presenile dementia with depression"
+        },
+        {
+          "code": "191459006",
+          "term": "Senile dementia with depression"
+        },
+        {
+          "code": "191601008",
+          "term": "Single major depressive episode, mild"
+        },
+        {
+          "code": "191602001",
+          "term": "Single major depressive episode, moderate"
+        },
+        {
+          "code": "191604000",
+          "term": "Single major depressive episode, severe, with psychosis"
+        },
+        {
+          "code": "191610000",
+          "term": "Recurrent major depressive episodes, mild"
+        },
+        {
+          "code": "191611001",
+          "term": "Recurrent major depressive episodes, moderate"
+        },
+        {
+          "code": "191613003",
+          "term": "Recurrent major depressive episodes, severe, with psychosis"
+        },
+        {
+          "code": "191616006",
+          "term": "Recurrent depression"
+        },
+        {
+          "code": "191634005",
+          "term": "Bipolar affective disorder, currently depressed, in full remission"
+        },
+        {
+          "code": "191659001",
+          "term": "Atypical depressive disorder"
+        },
+        {
+          "code": "191676002",
+          "term": "Reactive depressive psychosis"
+        },
+        {
+          "code": "192049004",
+          "term": "Prolonged depressive adjustment reaction"
+        },
+        {
+          "code": "192080009",
+          "term": "Chronic depression"
+        },
+        {
+          "code": "19527009",
+          "term": "Single episode of major depression in full remission"
+        },
+        {
+          "code": "20250007",
+          "term": "Severe major depression, single episode, with psychotic features, mood-incongruent"
+        },
+        {
+          "code": "231485007",
+          "term": "Post-schizophrenic depression"
+        },
+        {
+          "code": "231499006",
+          "term": "Endogenous depression first episode"
+        },
+        {
+          "code": "231500002",
+          "term": "Masked depression"
+        },
+        {
+          "code": "231504006",
+          "term": "Mixed anxiety and depressive disorder"
+        },
+        {
+          "code": "237349002",
+          "term": "Mild postnatal depression"
+        },
+        {
+          "code": "247803002",
+          "term": "Seasonal affective disorder"
+        },
+        {
+          "code": "251000119105",
+          "term": "Severe major depression, single episode"
+        },
+        {
+          "code": "25922000",
+          "term": "Major depressive disorder, single episode with postpartum onset"
+        },
+        {
+          "code": "268620009",
+          "term": "Single major depressive episode"
+        },
+        {
+          "code": "268621008",
+          "term": "Recurrent major depressive episodes"
+        },
+        {
+          "code": "274948002",
+          "term": "Endogenous depression - recurrent"
+        },
+        {
+          "code": "28475009",
+          "term": "Severe recurrent major depression with psychotic features"
+        },
+        {
+          "code": "288751000119101",
+          "term": "Reactive depressive psychosis, single episode"
+        },
+        {
+          "code": "300706003",
+          "term": "Endogenous depression"
+        },
+        {
+          "code": "30605009",
+          "term": "Major depression in partial remission"
+        },
+        {
+          "code": "310495003",
+          "term": "Mild depression"
+        },
+        {
+          "code": "310496002",
+          "term": "Moderate depression"
+        },
+        {
+          "code": "310497006",
+          "term": "Severe depression"
+        },
+        {
+          "code": "321717001",
+          "term": "Involutional depression"
+        },
+        {
+          "code": "33135002",
+          "term": "Recurrent major depression in partial remission"
+        },
+        {
+          "code": "35489007",
+          "term": "Depressive disorder"
+        },
+        {
+          "code": "357705009",
+          "term": "Cotard's syndrome"
+        },
+        {
+          "code": "36474008",
+          "term": "Severe recurrent major depression without psychotic features"
+        },
+        {
+          "code": "36923009",
+          "term": "Major depression, single episode"
+        },
+        {
+          "code": "370143000",
+          "term": "Major depressive disorder"
+        },
+        {
+          "code": "397701000000102",
+          "term": "[X]Severe depressive episode without psychotic symptoms"
+        },
+        {
+          "code": "401211000000106",
+          "term": "[X] Single episode major depression without psychotic symptoms"
+        },
+        {
+          "code": "40379007",
+          "term": "Mild recurrent major depression"
+        },
+        {
+          "code": "40568001",
+          "term": "Recurrent brief depressive disorder"
+        },
+        {
+          "code": "426578000",
+          "term": "Premenstrual dysphoric disorder in remission"
+        },
+        {
+          "code": "42810003",
+          "term": "Major depression in remission"
+        },
+        {
+          "code": "42925002",
+          "term": "Major depressive disorder, single episode with atypical features"
+        },
+        {
+          "code": "430421000000104",
+          "term": "[X]Mild depressive episode"
+        },
+        {
+          "code": "455731000000100",
+          "term": "[X] Single episode agitated depression without psychotic symptoms"
+        },
+        {
+          "code": "46244001",
+          "term": "Recurrent major depression in full remission"
+        },
+        {
+          "code": "465441000000108",
+          "term": "[X]Moderate depressive episode"
+        },
+        {
+          "code": "63412003",
+          "term": "Major depression in full remission"
+        },
+        {
+          "code": "63778009",
+          "term": "Major depressive disorder, single episode with melancholic features"
+        },
+        {
+          "code": "68019004",
+          "term": "Recurrent major depression in remission"
+        },
+        {
+          "code": "69392006",
+          "term": "Major depressive disorder, single episode with catatonic features"
+        },
+        {
+          "code": "698957003",
+          "term": "Depressive disorder in remission"
+        },
+        {
+          "code": "70747007",
+          "term": "Major depression single episode, in partial remission"
+        },
+        {
+          "code": "720453001",
+          "term": "Moderately severe major depression single episode"
+        },
+        {
+          "code": "720454007",
+          "term": "Minimal major depression single episode"
+        },
+        {
+          "code": "73867007",
+          "term": "Severe major depression with psychotic features"
+        },
+        {
+          "code": "75084000",
+          "term": "Severe major depression without psychotic features"
+        },
+        {
+          "code": "755321000000106",
+          "term": "Single major depressive episode, severe, with psychosis, psychosis in remission"
+        },
+        {
+          "code": "755331000000108",
+          "term": "Recurrent major depressive episodes, severe, with psychosis, psychosis in remission"
+        },
+        {
+          "code": "76441001",
+          "term": "Severe major depression, single episode, without psychotic features"
+        },
+        {
+          "code": "764611000000100",
+          "term": "Recurrent major depressive episodes, severe"
+        },
+        {
+          "code": "764631000000108",
+          "term": "Single major depressive episode, severe"
+        },
+        {
+          "code": "764691000000109",
+          "term": "Recurrent major depressive episodes, in partial remission"
+        },
+        {
+          "code": "764711000000106",
+          "term": "Single major depressive episode, in remission"
+        },
+        {
+          "code": "765176007",
+          "term": "Psychosis and severe depression co-occurrent and due to bipolar affective disorder"
+        },
+        {
+          "code": "77911002",
+          "term": "Severe major depression, single episode, with psychotic features, mood-congruent"
+        },
+        {
+          "code": "78667006",
+          "term": "Dysthymia"
+        },
+        {
+          "code": "788120007",
+          "term": "Antenatal depression"
+        },
+        {
+          "code": "79298009",
+          "term": "Mild major depression, single episode"
+        },
+        {
+          "code": "832007",
+          "term": "Moderate major depression"
+        },
+        {
+          "code": "83458005",
+          "term": "Agitated depression"
+        },
+        {
+          "code": "84760002",
+          "term": "Schizoaffective disorder, depressive type"
+        },
+        {
+          "code": "87414006",
+          "term": "Reactive depression (situational)"
+        },
+        {
+          "code": "87512008",
+          "term": "Mild major depression"
+        }
+      ],
+      "fp_codes": [
+        {
+          "code": "1010649005",
+          "term": "Acute vestibular syndrome due to anxiety and fear"
+        },
+        {
+          "code": "10211000132109",
+          "term": "Perinatal depression"
+        },
+        {
+          "code": "102912007",
+          "term": "Fear of death"
+        },
+        {
+          "code": "1036481000000106",
+          "term": "Self-referral to Improving Access to Psychological Therapies programme"
+        },
+        {
+          "code": "1038261000000100",
+          "term": "Maternal postnatal depression"
+        },
+        {
+          "code": "10532003",
+          "term": "Primary degenerative dementia of the Alzheimer type, presenile onset, with depression (disorder)"
+        },
+        {
+          "code": "1053791000000108",
+          "term": "Signposting to Improving Access to Psychological Therapies service"
+        },
+        {
+          "code": "10586006",
+          "term": "Occupation-related stress disorder"
+        },
+        {
+          "code": "10743001000119103",
+          "term": "Anxiety disorder in mother complicating childbirth"
+        },
+        {
+          "code": "1083051000000106",
+          "term": "Depression monitoring invitation email (procedure)"
+        },
+        {
+          "code": "1083071000000102",
+          "term": "Depression monitoring invitation short message service text message (procedure)"
+        },
+        {
+          "code": "1084061000000106",
+          "term": "Depressive personality disorder"
+        },
+        {
+          "code": "1086671000000101",
+          "term": "Reactive depression, single episode"
+        },
+        {
+          "code": "1086681000000104",
+          "term": "Reactive depression, recurrent"
+        },
+        {
+          "code": "1086691000000102",
+          "term": "Reactive depression, first episode"
+        },
+        {
+          "code": "109006",
+          "term": "Anxiety disorder of childhood OR adolescence"
+        },
+        {
+          "code": "11003002",
+          "term": "Nervous diarrhea"
+        },
+        {
+          "code": "1110911000000106",
+          "term": "Quality and Outcomes Framework depression quality indicator-related care invitation (procedure)"
+        },
+        {
+          "code": "111475002",
+          "term": "Neurosis"
+        },
+        {
+          "code": "112001000119100",
+          "term": "Positive screening for depression on Patient Health Questionnaire 9"
+        },
+        {
+          "code": "11458009",
+          "term": "Anticipatory anxiety, mild"
+        },
+        {
+          "code": "1148351000000100",
+          "term": "Assessment using Depression, Anxiety and Positive Outlook Scale"
+        },
+        {
+          "code": "12398201000119102",
+          "term": "Anxiety disorder caused by methamphetamine"
+        },
+        {
+          "code": "129869000",
+          "term": "Death anxiety"
+        },
+        {
+          "code": "133121000119109",
+          "term": "Severe seasonal affective disorder"
+        },
+        {
+          "code": "13448004",
+          "term": "Nervousness"
+        },
+        {
+          "code": "139476005",
+          "term": "Anxiousness (& symptom)"
+        },
+        {
+          "code": "139480000",
+          "term": "(Depressed (& symptom)) or (unhappy)"
+        },
+        {
+          "code": "139598003",
+          "term": "Anxious cognitions"
+        },
+        {
+          "code": "139947002",
+          "term": "O/E - depressed"
+        },
+        {
+          "code": "139948007",
+          "term": "O/E - anxious"
+        },
+        {
+          "code": "139949004",
+          "term": "O/E - nervous"
+        },
+        {
+          "code": "14070001",
+          "term": "Multi-infarct dementia with depression (disorder)"
+        },
+        {
+          "code": "143391000000100",
+          "term": "Quality and Outcomes Framework depression quality indicator-related care invitation using preferred method of communication (procedure)"
+        },
+        {
+          "code": "15277004",
+          "term": "Hallucinogen-induced anxiety disorder"
+        },
+        {
+          "code": "154876006",
+          "term": "Seasonal affective disorder"
+        },
+        {
+          "code": "154964007",
+          "term": "Mixed anxiety and depressive disorder"
+        },
+        {
+          "code": "154965008",
+          "term": "Mild depression"
+        },
+        {
+          "code": "154969002",
+          "term": "Seasonal affective disorder"
+        },
+        {
+          "code": "154970001",
+          "term": "Recurrent depression"
+        },
+        {
+          "code": "158735002",
+          "term": "[D]Nervousness"
+        },
+        {
+          "code": "162191009",
+          "term": "[\"Nerves\"] or [nervousness] or [nervous tension]"
+        },
+        {
+          "code": "162192002",
+          "term": "Anxiousness (& symptom)"
+        },
+        {
+          "code": "162196004",
+          "term": "(Depressed) or (C/O feeling: [depressed] or [unhappy])"
+        },
+        {
+          "code": "16238181000119100",
+          "term": "Depressive disorder caused by amphetamine (disorder)"
+        },
+        {
+          "code": "16238221000119108",
+          "term": "Depressive disorder caused by methamphetamine (disorder)"
+        },
+        {
+          "code": "16264621000119108",
+          "term": "Recurrent mild major depressive disorder co-occurrent with anxiety (disorder)"
+        },
+        {
+          "code": "16264901000119108",
+          "term": "Recurrent moderate major depressive disorder co-occurrent with anxiety (disorder)"
+        },
+        {
+          "code": "16265061000119104",
+          "term": "Recurrent major depressive disorder co-occurrent with anxiety in full remission (disorder)"
+        },
+        {
+          "code": "16265951000119108",
+          "term": "Mild major depressive disorder co-occurrent with anxiety single episode (disorder)"
+        },
+        {
+          "code": "162722001",
+          "term": "On examination - depressed"
+        },
+        {
+          "code": "162723006",
+          "term": "On examination - anxious"
+        },
+        {
+          "code": "162724000",
+          "term": "On examination - nervous"
+        },
+        {
+          "code": "1686006",
+          "term": "Sedative, hypnotic AND/OR anxiolytic-induced anxiety disorder"
+        },
+        {
+          "code": "186151000000108",
+          "term": "Loss of interest in previously enjoyable activity"
+        },
+        {
+          "code": "186751000000109",
+          "term": "O/E - panic attack"
+        },
+        {
+          "code": "189591000000101",
+          "term": "Loss of interest in previously enjoyable activity"
+        },
+        {
+          "code": "190191000000103",
+          "term": "O/E - panic attack"
+        },
+        {
+          "code": "191466007",
+          "term": "Arteriosclerotic dementia with depression (disorder)"
+        },
+        {
+          "code": "191495003",
+          "term": "Drug-induced depressive state"
+        },
+        {
+          "code": "191599006",
+          "term": "Depression: [single major episode] or [agitated] or [endogenous (including first episode)]"
+        },
+        {
+          "code": "191600009",
+          "term": "Single major depressive episode, unspecified"
+        },
+        {
+          "code": "191603006",
+          "term": "Single major depressive episode, severe, without mention of psychosis"
+        },
+        {
+          "code": "191607007",
+          "term": "Single major depressive episode NOS"
+        },
+        {
+          "code": "191608002",
+          "term": "Recurrent depression: [major episode] or [endogenous]"
+        },
+        {
+          "code": "191609005",
+          "term": "Recurrent major depressive episodes, unspecified"
+        },
+        {
+          "code": "191612008",
+          "term": "Recurrent major depressive episodes, severe, without mention of psychosis"
+        },
+        {
+          "code": "191617002",
+          "term": "Recurrent major depressive episode NOS"
+        },
+        {
+          "code": "191627008",
+          "term": "Bipolar affective disorder, current episode depression (disorder)"
+        },
+        {
+          "code": "191629006",
+          "term": "Bipolar affective disorder, currently depressed, mild (disorder)"
+        },
+        {
+          "code": "191655007",
+          "term": "Seasonal affective disorder"
+        },
+        {
+          "code": "191703000",
+          "term": "Anxiety disorder"
+        },
+        {
+          "code": "191704006",
+          "term": "Anxiety state unspecified"
+        },
+        {
+          "code": "191705007",
+          "term": "(Panic disorder) or (panic attack)"
+        },
+        {
+          "code": "191706008",
+          "term": "Generalised anxiety disorder"
+        },
+        {
+          "code": "191707004",
+          "term": "Mixed anxiety and depressive disorder"
+        },
+        {
+          "code": "191708009",
+          "term": "Chronic anxiety"
+        },
+        {
+          "code": "191709001",
+          "term": "Recurrent anxiety"
+        },
+        {
+          "code": "191711005",
+          "term": "Anxiety state NOS"
+        },
+        {
+          "code": "191732002",
+          "term": "Fear of death"
+        },
+        {
+          "code": "191740008",
+          "term": "(Neurotic depression reactive type) or (postnatal depression)"
+        },
+        {
+          "code": "191952007",
+          "term": "Somatoform autonomic dysfunction - respiratory tract"
+        },
+        {
+          "code": "191962000",
+          "term": "Neurocirculatory asthenia"
+        },
+        {
+          "code": "192037000",
+          "term": "Acute panic state due to acute stress reaction"
+        },
+        {
+          "code": "192041001",
+          "term": "Acute situational disturbance"
+        },
+        {
+          "code": "192042008",
+          "term": "Acute post-trauma stress state"
+        },
+        {
+          "code": "192043003",
+          "term": "Other acute stress reaction NOS"
+        },
+        {
+          "code": "192046006",
+          "term": "Brief depressive adjustment reaction"
+        },
+        {
+          "code": "192078003",
+          "term": "Depressive disorder NEC"
+        },
+        {
+          "code": "192079006",
+          "term": "Postviral depression"
+        },
+        {
+          "code": "192108001",
+          "term": "Disturbance of anxiety and fearfulness in childhood and adolescence"
+        },
+        {
+          "code": "192110004",
+          "term": "Childhood and adolescent fearfulness disturbance"
+        },
+        {
+          "code": "192111000",
+          "term": "Disturbance of anxiety and fearfulness in childhood and adolescence NOS"
+        },
+        {
+          "code": "192366006",
+          "term": "Single major depressive episode"
+        },
+        {
+          "code": "192367002",
+          "term": "[X]Mild depressive episode"
+        },
+        {
+          "code": "192368007",
+          "term": "[X]Moderate depressive episode"
+        },
+        {
+          "code": "192369004",
+          "term": "[X] Severe depressive episode without psychotic symptoms: (& [single episode agitated depression] or [single episode major depression] or [single episode vital depression])"
+        },
+        {
+          "code": "192371004",
+          "term": "[X] Depression: [other episodes] or [atypical] or [single episode masked NOS]"
+        },
+        {
+          "code": "192372006",
+          "term": "[X] (Depression: [episode, unspecified] or [NOS (& reactive)] or [depressive disorder NOS]"
+        },
+        {
+          "code": "192375008",
+          "term": "[X]Recurrent depressive disorder, current episode mild"
+        },
+        {
+          "code": "192376009",
+          "term": "[X]Recurrent depressive disorder, current episode moderate"
+        },
+        {
+          "code": "192380004",
+          "term": "[X]Other recurrent depressive disorders"
+        },
+        {
+          "code": "192384008",
+          "term": "Dysthymia"
+        },
+        {
+          "code": "192399008",
+          "term": "[X]Other anxiety disorders"
+        },
+        {
+          "code": "192400001",
+          "term": "[X]Panic disorder [episodic paroxysmal anxiety]"
+        },
+        {
+          "code": "192401002",
+          "term": "Generalised anxiety disorder"
+        },
+        {
+          "code": "192402009",
+          "term": "[X]Mixed anxiety and depressive disorder (& mild anxiety depression)"
+        },
+        {
+          "code": "192403004",
+          "term": "[X]Other mixed anxiety disorders"
+        },
+        {
+          "code": "192404005",
+          "term": "[X] Anxiety disorders: [other specified] or [anxiety hysteria]"
+        },
+        {
+          "code": "192405006",
+          "term": "[X]Anxiety disorder, unspecified"
+        },
+        {
+          "code": "192411009",
+          "term": "[X]Obsessive-compulsive disorder, unspecified"
+        },
+        {
+          "code": "192459009",
+          "term": "[X] Nightmares or dream anxiety disorder"
+        },
+        {
+          "code": "196381000000100",
+          "term": "Depression resolved (finding)"
+        },
+        {
+          "code": "19694002",
+          "term": "Late onset dysthymia"
+        },
+        {
+          "code": "197480006",
+          "term": "Anxiety disorder"
+        },
+        {
+          "code": "198288003",
+          "term": "Anxiety state"
+        },
+        {
+          "code": "207363009",
+          "term": "Anxiety neurosis"
+        },
+        {
+          "code": "207556008",
+          "term": "[D]Nervousness"
+        },
+        {
+          "code": "20876004",
+          "term": "Inhalant-induced anxiety disorder"
+        },
+        {
+          "code": "21897009",
+          "term": "Generalized anxiety disorder"
+        },
+        {
+          "code": "225624000",
+          "term": "Panic attack"
+        },
+        {
+          "code": "22621000119103",
+          "term": "Anxiety disorder caused by drug"
+        },
+        {
+          "code": "231502005",
+          "term": "Situational panic attack"
+        },
+        {
+          "code": "231503000",
+          "term": "Non-situational panic attack"
+        },
+        {
+          "code": "231506008",
+          "term": "Anxiety hysteria"
+        },
+        {
+          "code": "237350002",
+          "term": "Severe postnatal depression"
+        },
+        {
+          "code": "237352005",
+          "term": "Severe postnatal psychosis"
+        },
+        {
+          "code": "247649009",
+          "term": "Anxious cognitions"
+        },
+        {
+          "code": "247776002",
+          "term": "Depressive preoccupation"
+        },
+        {
+          "code": "247796005",
+          "term": "Loss of capacity for enjoyment"
+        },
+        {
+          "code": "247800004",
+          "term": "Diurnal variation of mood"
+        },
+        {
+          "code": "247801000",
+          "term": "Depression worse in morning"
+        },
+        {
+          "code": "247802007",
+          "term": "Depression worse later in day"
+        },
+        {
+          "code": "247805009",
+          "term": "Anxiety and fear"
+        },
+        {
+          "code": "2506003",
+          "term": "Early onset dysthymia"
+        },
+        {
+          "code": "250833002",
+          "term": "Finding of single stimulus depression"
+        },
+        {
+          "code": "2618002",
+          "term": "Chronic recurrent major depressive disorder"
+        },
+        {
+          "code": "267171009",
+          "term": "(Depressed (& symptom)) or (unhappy)"
+        },
+        {
+          "code": "26852004",
+          "term": "Primary degenerative dementia of the Alzheimer type, senile onset, with depression (disorder)"
+        },
+        {
+          "code": "268627007",
+          "term": "Panic disorder"
+        },
+        {
+          "code": "268657003",
+          "term": "Acute stress reaction NOS"
+        },
+        {
+          "code": "268702009",
+          "term": "[X]Severe depressive episode without psychotic symptoms"
+        },
+        {
+          "code": "268705006",
+          "term": "[X]Other depressive episodes"
+        },
+        {
+          "code": "268706007",
+          "term": "[X]Depressive episode, unspecified"
+        },
+        {
+          "code": "268707003",
+          "term": "[X]Recurrent depressive disorder"
+        },
+        {
+          "code": "268708008",
+          "term": "[X]Recurrent depressive disorder, current episode severe without psychotic symptoms"
+        },
+        {
+          "code": "268710005",
+          "term": "[X]Recurrent depressive disorder, unspecified"
+        },
+        {
+          "code": "268957000",
+          "term": "Neurotic condition, insight present"
+        },
+        {
+          "code": "271951008",
+          "term": "Crying associated with mood"
+        },
+        {
+          "code": "271952001",
+          "term": "Stress and adjustment reaction"
+        },
+        {
+          "code": "272022009",
+          "term": "Complaining of feeling depressed"
+        },
+        {
+          "code": "272024005",
+          "term": "Complaining of feeling unhappy"
+        },
+        {
+          "code": "279225001",
+          "term": "Maternity blues"
+        },
+        {
+          "code": "279611005",
+          "term": "Shell shock"
+        },
+        {
+          "code": "281000119103",
+          "term": "Severe recurrent major depression"
+        },
+        {
+          "code": "286544004",
+          "term": "Panic"
+        },
+        {
+          "code": "300895004",
+          "term": "Anxiety attack"
+        },
+        {
+          "code": "3109008",
+          "term": "Secondary dysthymia early onset"
+        },
+        {
+          "code": "313182004",
+          "term": "Chronic post-traumatic stress disorder"
+        },
+        {
+          "code": "318784009",
+          "term": "Posttraumatic stress disorder, delayed onset"
+        },
+        {
+          "code": "319768000",
+          "term": "Recurrent major depressive disorder with melancholic features"
+        },
+        {
+          "code": "320751009",
+          "term": "Major depression, melancholic type"
+        },
+        {
+          "code": "34563004",
+          "term": "Fear of getting cancer"
+        },
+        {
+          "code": "34938008",
+          "term": "Alcohol-induced anxiety disorder"
+        },
+        {
+          "code": "35429005",
+          "term": "Anticipatory anxiety"
+        },
+        {
+          "code": "35607004",
+          "term": "Panic disorder with agoraphobia"
+        },
+        {
+          "code": "36170009",
+          "term": "Secondary dysthymia late onset"
+        },
+        {
+          "code": "36646009",
+          "term": "Anticipatory anxiety, moderate"
+        },
+        {
+          "code": "366968009",
+          "term": "Loss of interest"
+        },
+        {
+          "code": "366969001",
+          "term": "Loss of capacity for enjoyment"
+        },
+        {
+          "code": "366979004",
+          "term": "Depressed mood"
+        },
+        {
+          "code": "367192008",
+          "term": "Loss of interest"
+        },
+        {
+          "code": "367193003",
+          "term": "Loss of capacity for enjoyment"
+        },
+        {
+          "code": "367204005",
+          "term": "Depressed mood"
+        },
+        {
+          "code": "371631005",
+          "term": "Panic disorder"
+        },
+        {
+          "code": "37868008",
+          "term": "Anxiety disorder of adolescence"
+        },
+        {
+          "code": "37872007",
+          "term": "Avoidant disorder of childhood OR adolescence"
+        },
+        {
+          "code": "380201000000109",
+          "term": "Referral to improving access to psychological therapies programme"
+        },
+        {
+          "code": "380221000000100",
+          "term": "Referral to Improving Access to Psychological Therapies programme "
+        },
+        {
+          "code": "38237000",
+          "term": "Feeling anxious"
+        },
+        {
+          "code": "38451003",
+          "term": "Primary dysthymia early onset"
+        },
+        {
+          "code": "38694004",
+          "term": "Recurrent major depressive disorder with atypical features"
+        },
+        {
+          "code": "389335004",
+          "term": "Loss of hope for the future"
+        },
+        {
+          "code": "390068009",
+          "term": "Loss of hope for the future"
+        },
+        {
+          "code": "390717003",
+          "term": "Mild depression"
+        },
+        {
+          "code": "392721003",
+          "term": "Symptoms of depression"
+        },
+        {
+          "code": "392722005",
+          "term": "C/O - panic attack"
+        },
+        {
+          "code": "393676006",
+          "term": "Symptoms of depression"
+        },
+        {
+          "code": "393677002",
+          "term": "C/O - panic attack"
+        },
+        {
+          "code": "394924000",
+          "term": "Symptoms of depression"
+        },
+        {
+          "code": "395017009",
+          "term": "Complaining of panic attack"
+        },
+        {
+          "code": "39809009",
+          "term": "Recurrent major depressive disorder with catatonic features"
+        },
+        {
+          "code": "39951001",
+          "term": "Cannabis-induced anxiety disorder"
+        },
+        {
+          "code": "402191000000101",
+          "term": "[X] Anxiety disorders: [other specified] or [anxiety hysteria]"
+        },
+        {
+          "code": "402441000000102",
+          "term": "[X]Recurrent depressive disorder, current episode severe without psychotic symptoms"
+        },
+        {
+          "code": "402911000000108",
+          "term": "[X]Obsessive-compulsive disorder, unspecified"
+        },
+        {
+          "code": "41006004",
+          "term": "Depression"
+        },
+        {
+          "code": "41201000000107",
+          "term": "Chronic anxiety"
+        },
+        {
+          "code": "41211000000109",
+          "term": "Recurrent anxiety"
+        },
+        {
+          "code": "413972000",
+          "term": "Depression annual review (finding)"
+        },
+        {
+          "code": "413973005",
+          "term": "Depression interim review (finding)"
+        },
+        {
+          "code": "413974004",
+          "term": "Depression medication review (procedure)"
+        },
+        {
+          "code": "415051000000101",
+          "term": "[X]Other depressive episodes"
+        },
+        {
+          "code": "416621000000108",
+          "term": "[X]Panic disorder [episodic paroxysmal anxiety]"
+        },
+        {
+          "code": "417523004",
+          "term": "Loss of interest in previously enjoyable activity"
+        },
+        {
+          "code": "417620007",
+          "term": "On examination - fearful mood"
+        },
+        {
+          "code": "417676004",
+          "term": "On examination - panic attack"
+        },
+        {
+          "code": "419311000000100",
+          "term": "[X] Depression: [other episodes] or [atypical] or [single episode masked NOS]"
+        },
+        {
+          "code": "424196004",
+          "term": "Feeling nervous"
+        },
+        {
+          "code": "427781000000106",
+          "term": "[X]Other recurrent depressive disorders"
+        },
+        {
+          "code": "428687006",
+          "term": "Nightmares associated with chronic post-traumatic stress disorder"
+        },
+        {
+          "code": "430051000000100",
+          "term": "[X]Recurrent depressive disorder, current episode mild"
+        },
+        {
+          "code": "430641005",
+          "term": "Markedly diminished pleasure"
+        },
+        {
+          "code": "43150009",
+          "term": "Panic disorder without agoraphobia with severe panic attacks"
+        },
+        {
+          "code": "432601000000107",
+          "term": "[X]Depressive episode, unspecified"
+        },
+        {
+          "code": "443919007",
+          "term": "Complex posttraumatic stress disorder"
+        },
+        {
+          "code": "445587006",
+          "term": "Assessment using geriatric depression scale"
+        },
+        {
+          "code": "445676008",
+          "term": "Assessment using geriatric depression scale short form"
+        },
+        {
+          "code": "445677004",
+          "term": "Assessment using geriatric depression scale 4 item form"
+        },
+        {
+          "code": "445688005",
+          "term": "Assessment using geriatric depression scale original long form"
+        },
+        {
+          "code": "445991008",
+          "term": "Assessment using hospital anxiety and depression scale"
+        },
+        {
+          "code": "446175003",
+          "term": "Acute posttraumatic stress disorder following military combat"
+        },
+        {
+          "code": "446180007",
+          "term": "Delayed posttraumatic stress disorder following military combat"
+        },
+        {
+          "code": "446765009",
+          "term": "Assessment using Beck depression inventory"
+        },
+        {
+          "code": "450319007",
+          "term": "Assessment using Edinburgh postnatal depression scale"
+        },
+        {
+          "code": "450714000",
+          "term": "Severe major depression"
+        },
+        {
+          "code": "450751000000102",
+          "term": "[X]Anxiety disorder, unspecified"
+        },
+        {
+          "code": "455421000000106",
+          "term": "[X] Depression recurrent: [unspecified] or [monopolar NOS]"
+        },
+        {
+          "code": "455621000000108",
+          "term": "[X] Severe depressive episode without psychotic symptoms: (& [single episode agitated depression] or [single episode major depression] or [single episode vital depression])"
+        },
+        {
+          "code": "456601000000107",
+          "term": "[X]Recurrent depressive disorder"
+        },
+        {
+          "code": "465451000000106",
+          "term": "[X]Recurrent depressive disorder, current episode moderate"
+        },
+        {
+          "code": "468761000000105",
+          "term": "[X]Other anxiety disorders"
+        },
+        {
+          "code": "470951000000103",
+          "term": "[X] (Depression: [episode, unspecified] or [NOS (& reactive)] or [depressive disorder NOS]"
+        },
+        {
+          "code": "471451000000102",
+          "term": "[X]Recurrent depressive disorder, unspecified"
+        },
+        {
+          "code": "47372000",
+          "term": "Adjustment disorder with anxious mood"
+        },
+        {
+          "code": "47505003",
+          "term": "Posttraumatic stress disorder"
+        },
+        {
+          "code": "478661000000105",
+          "term": "[X]Other mixed anxiety disorders"
+        },
+        {
+          "code": "48589009",
+          "term": "Minor depressive disorder"
+        },
+        {
+          "code": "48694002",
+          "term": "Anxiety"
+        },
+        {
+          "code": "501891000000105",
+          "term": "[D]Nervousness"
+        },
+        {
+          "code": "509781000000103",
+          "term": "Severe major depression without psychotic features"
+        },
+        {
+          "code": "51493001",
+          "term": "Cocaine-induced anxiety disorder"
+        },
+        {
+          "code": "52910006",
+          "term": "Anxiety disorder due to a general medical condition"
+        },
+        {
+          "code": "530281000000109",
+          "term": "Single major depressive episode, severe, without mention of psychosis"
+        },
+        {
+          "code": "530291000000106",
+          "term": "Recurrent major depressive episodes, severe, without mention of psychosis"
+        },
+        {
+          "code": "5509004",
+          "term": "Panic disorder with agoraphobia AND severe panic attacks"
+        },
+        {
+          "code": "55967005",
+          "term": "Phencyclidine-induced anxiety disorder"
+        },
+        {
+          "code": "56576003",
+          "term": "Panic disorder without agoraphobia"
+        },
+        {
+          "code": "571221000000102",
+          "term": "Acute stress reaction NOS"
+        },
+        {
+          "code": "57194009",
+          "term": "Adjustment disorder with depressed mood"
+        },
+        {
+          "code": "58703003",
+          "term": "Postpartum depression"
+        },
+        {
+          "code": "5874002",
+          "term": "Anticipatory anxiety, severe"
+        },
+        {
+          "code": "606921000000104",
+          "term": "Recurrent major depressive episodes, unspecified"
+        },
+        {
+          "code": "609311000000100",
+          "term": "Depressive disorder NEC"
+        },
+        {
+          "code": "61157009",
+          "term": "Combat fatigue"
+        },
+        {
+          "code": "61387006",
+          "term": "Moderate anxiety"
+        },
+        {
+          "code": "620181000000106",
+          "term": "Other post-traumatic stress disorder"
+        },
+        {
+          "code": "621271000000109",
+          "term": "Anxiety state unspecified"
+        },
+        {
+          "code": "633361000000109",
+          "term": "Anxiety state NOS"
+        },
+        {
+          "code": "633681000000107",
+          "term": "Single major depressive episode, unspecified"
+        },
+        {
+          "code": "633701000000109",
+          "term": "Single major depressive episode NOS"
+        },
+        {
+          "code": "633721000000100",
+          "term": "Recurrent major depressive episode NOS"
+        },
+        {
+          "code": "63701002",
+          "term": "Panic disorder with agoraphobia, mild agoraphobic avoidance AND mild panic attacks"
+        },
+        {
+          "code": "65064003",
+          "term": "Panic disorder without agoraphobia with moderate panic attacks"
+        },
+        {
+          "code": "65673007",
+          "term": "Anxiety disorder"
+        },
+        {
+          "code": "657791000000107",
+          "term": "Disturbance of anxiety and fearfulness in childhood and adolescence NOS"
+        },
+        {
+          "code": "66344007",
+          "term": "Recurrent major depression"
+        },
+        {
+          "code": "66446005",
+          "term": "Depressed mood"
+        },
+        {
+          "code": "665981000000107",
+          "term": "Other acute stress reaction NOS"
+        },
+        {
+          "code": "67195008",
+          "term": "Acute stress disorder"
+        },
+        {
+          "code": "67711008",
+          "term": "Primary dysthymia late onset"
+        },
+        {
+          "code": "69479009",
+          "term": "Anxiety hyperventilation"
+        },
+        {
+          "code": "699241002",
+          "term": "Chronic post-traumatic stress disorder following military combat"
+        },
+        {
+          "code": "705011000",
+          "term": "Anterior ST segment depression"
+        },
+        {
+          "code": "70655008",
+          "term": "Caffeine-induced anxiety disorder"
+        },
+        {
+          "code": "70997004",
+          "term": "Mild anxiety"
+        },
+        {
+          "code": "711451000000102",
+          "term": "Depression monitoring invitation (procedure)"
+        },
+        {
+          "code": "712823008",
+          "term": "Acute depression"
+        },
+        {
+          "code": "71336009",
+          "term": "Recurrent major depressive disorder with postpartum onset"
+        },
+        {
+          "code": "715831000000109",
+          "term": "Excepted from depression quality indicators - informed dissent (finding)"
+        },
+        {
+          "code": "716421000000103",
+          "term": "Depression monitoring telephone invitation (procedure)"
+        },
+        {
+          "code": "716681000000100",
+          "term": "Depression monitoring second letter (procedure)"
+        },
+        {
+          "code": "716831000000103",
+          "term": "Excepted from depression quality indicators - patient unsuitable (finding)"
+        },
+        {
+          "code": "716961000000102",
+          "term": "Depression monitoring third letter (procedure)"
+        },
+        {
+          "code": "717211000000107",
+          "term": "Depression monitoring first letter (procedure)"
+        },
+        {
+          "code": "717261000000109",
+          "term": "Depression monitoring verbal invitation (procedure)"
+        },
+        {
+          "code": "717268000",
+          "term": "Assessment using Beck Depression Inventory II"
+        },
+        {
+          "code": "717310003",
+          "term": "Assessment using Brief Assessment Schedule Depression Cards"
+        },
+        {
+          "code": "718636001",
+          "term": "Minimal depression"
+        },
+        {
+          "code": "718862007",
+          "term": "Assessment using Neurological Disorders Depression Inventory in Epilepsy"
+        },
+        {
+          "code": "719592004",
+          "term": "Moderately severe major depression"
+        },
+        {
+          "code": "719593009",
+          "term": "Moderately severe depression"
+        },
+        {
+          "code": "720451004",
+          "term": "Minimal recurrent major depression"
+        },
+        {
+          "code": "720452006",
+          "term": "Moderately severe recurrent major depression"
+        },
+        {
+          "code": "720455008",
+          "term": "Minimal major depression"
+        },
+        {
+          "code": "724654009",
+          "term": "Anxiety disorder caused by opioid"
+        },
+        {
+          "code": "724708007",
+          "term": "Anxiety disorder caused by methylenedioxymethamphetamine"
+        },
+        {
+          "code": "724722007",
+          "term": "Anxiety disorder caused by dissociative drug"
+        },
+        {
+          "code": "724723002",
+          "term": "Anxiety disorder caused by ketamine"
+        },
+        {
+          "code": "72861004",
+          "term": "Panic disorder without agoraphobia with mild panic attacks"
+        },
+        {
+          "code": "737341006",
+          "term": "Anxiety disorder caused by synthetic cannabinoid"
+        },
+        {
+          "code": "761873006",
+          "term": "Assessment using MADRS (Montgomery-\u00c5sberg Depression Rating Scale)"
+        },
+        {
+          "code": "762331007",
+          "term": "Anxiety disorder caused by stimulant"
+        },
+        {
+          "code": "762515000",
+          "term": "Anxiety disorder caused by synthetic cathinone"
+        },
+        {
+          "code": "763071002",
+          "term": "Assessment using Hamilton Rating Scale for Depression"
+        },
+        {
+          "code": "767631007",
+          "term": "Bipolar disorder, most recent episode depression (disorder)"
+        },
+        {
+          "code": "767636002",
+          "term": "Bipolar I disorder, most recent episode depression (disorder)"
+        },
+        {
+          "code": "782501005",
+          "term": "Adjustment disorder with mixed anxiety and depressed mood"
+        },
+        {
+          "code": "78541000000103",
+          "term": "Chronic anxiety"
+        },
+        {
+          "code": "78551000000100",
+          "term": "Recurrent anxiety"
+        },
+        {
+          "code": "788866004",
+          "term": "Anxiety due to dementia"
+        },
+        {
+          "code": "790961000000101",
+          "term": "Antenatal depression"
+        },
+        {
+          "code": "79823003",
+          "term": "Panic"
+        },
+        {
+          "code": "79842004",
+          "term": "Stuporous depression"
+        },
+        {
+          "code": "80583007",
+          "term": "Severe anxiety (panic)"
+        },
+        {
+          "code": "808721000000109",
+          "term": "Antenatal depression"
+        },
+        {
+          "code": "81350009",
+          "term": "Free-floating anxiety"
+        },
+        {
+          "code": "8185002",
+          "term": "Panic disorder with agoraphobia AND moderate panic attacks"
+        },
+        {
+          "code": "820321000000102",
+          "term": "Assessment using depression intensity scale circles"
+        },
+        {
+          "code": "82218004",
+          "term": "Postoperative depression"
+        },
+        {
+          "code": "82339009",
+          "term": "Amphetamine-induced anxiety disorder"
+        },
+        {
+          "code": "83176005",
+          "term": "Primary dysthymia"
+        },
+        {
+          "code": "84788008",
+          "term": "Menopausal depression"
+        },
+        {
+          "code": "85080004",
+          "term": "Secondary dysthymia"
+        },
+        {
+          "code": "870191006",
+          "term": "Follow up for depression (procedure)"
+        },
+        {
+          "code": "89948007",
+          "term": "Panic disorder with agoraphobia AND mild panic attacks"
+        },
+        {
+          "code": "90790003",
+          "term": "Avoidant disorder of adolescence"
+        },
+        {
+          "code": "94641000119109",
+          "term": "Anxiety in pregnancy"
+        },
+        {
+          "code": "967561000000100",
+          "term": "Assessment using BDRS (Brief Depression Rating Scale)"
+        },
+        {
+          "code": "F204",
+          "term": "Post-schizophrenic depression"
+        },
+        {
+          "code": "F313",
+          "term": "Bipolar affective disorder, current episode mild or moderate depression"
+        },
+        {
+          "code": "F314",
+          "term": "Bipolar affective disorder, current episode severe depression without psychotic symptoms"
+        },
+        {
+          "code": "F315",
+          "term": "Bipolar affective disorder, current episode severe depression with psychotic symptoms"
+        },
+        {
+          "code": "F32",
+          "term": "Depressive episode"
+        },
+        {
+          "code": "F320",
+          "term": "Mild depressive episode"
+        },
+        {
+          "code": "F321",
+          "term": "Moderate depressive episode"
+        },
+        {
+          "code": "F322",
+          "term": "Severe depressive episode without psychotic symptoms"
+        },
+        {
+          "code": "F323",
+          "term": "Severe depressive episode with psychotic symptoms"
+        },
+        {
+          "code": "F328",
+          "term": "Other depressive episodes"
+        },
+        {
+          "code": "F329",
+          "term": "Depressive episode, unspecified"
+        },
+        {
+          "code": "F33",
+          "term": "Recurrent depressive disorder"
+        },
+        {
+          "code": "F330",
+          "term": "Recurrent depressive disorder, current episode mild"
+        },
+        {
+          "code": "F331",
+          "term": "Recurrent depressive disorder, current episode moderate"
+        },
+        {
+          "code": "F332",
+          "term": "Recurrent depressive disorder, current episode severe without psychotic symptoms"
+        },
+        {
+          "code": "F333",
+          "term": "Recurrent depressive disorder, current episode severe with psychotic symptoms"
+        },
+        {
+          "code": "F334",
+          "term": "Recurrent depressive disorder, currently in remission"
+        },
+        {
+          "code": "F338",
+          "term": "Other recurrent depressive disorders"
+        },
+        {
+          "code": "F339",
+          "term": "Recurrent depressive disorder, unspecified"
+        },
+        {
+          "code": "F341",
+          "term": "Dysthymia"
+        },
+        {
+          "code": "F410",
+          "term": "Panic disorder [episodic paroxysmal anxiety]"
+        },
+        {
+          "code": "F411",
+          "term": "Generalized anxiety disorder"
+        },
+        {
+          "code": "F412",
+          "term": "Mixed anxiety and depressive disorder"
+        },
+        {
+          "code": "F413",
+          "term": "Other mixed anxiety disorders"
+        },
+        {
+          "code": "F418",
+          "term": "Other specified anxiety disorders"
+        },
+        {
+          "code": "F419",
+          "term": "Anxiety disorder, unspecified"
+        },
+        {
+          "code": "F43",
+          "term": "Reaction to severe stress, and adjustment disorders"
+        },
+        {
+          "code": "F430",
+          "term": "Acute stress reaction"
+        },
+        {
+          "code": "F431",
+          "term": "Post-traumatic stress disorder"
+        },
+        {
+          "code": "F432",
+          "term": "Adjustment disorders"
+        },
+        {
+          "code": "F438",
+          "term": "Other reactions to severe stress"
+        },
+        {
+          "code": "F439",
+          "term": "Reaction to severe stress, unspecified"
+        },
+        {
+          "code": "F530",
+          "term": "Mild mental and behavioural disorders associated with the puerperium, not elsewhere classified"
+        },
+        {
+          "code": "P914",
+          "term": "Neonatal cerebral depression"
+        }
+      ],
+      "fn_codes": [
+        {
+          "code": "191606003",
+          "term": "Single major depressive episode, in full remission"
+        },
+        {
+          "code": "191615005",
+          "term": "Recurrent major depressive episodes, in full remission"
+        },
+        {
+          "code": "191632009",
+          "term": "Bipolar affective disorder, currently depressed, severe, with psychosis"
+        },
+        {
+          "code": "397711000000100",
+          "term": "[X]Severe depressive episode with psychotic symptoms"
+        },
+        {
+          "code": "467361000000105",
+          "term": "[X] Manic-depressive psychosis, depressed type without psychotic symptoms"
+        }
+      ]
+    },
+    "merged_enriched": {
+      "codelist_name": "merged_enriched",
+      "n_ref_codes": 106,
+      "n_output_codes": 100,
+      "recall": 0.6038,
+      "precision": 0.64,
+      "f1": 0.6214,
+      "tp_count": 64,
+      "fp_count": 36,
+      "fn_count": 42,
+      "tp_codes": [
+        {
+          "code": "104851000119103",
+          "term": "Postpartum major depression in remission"
+        },
+        {
+          "code": "1086661000000108",
+          "term": "Reactive depression, prolonged single episode"
+        },
+        {
+          "code": "1089631000000109",
+          "term": "Recurrent depression with current severe episode without psychotic features"
+        },
+        {
+          "code": "1089641000000100",
+          "term": "Recurrent depression with current moderate episode"
+        },
+        {
+          "code": "1153570009",
+          "term": "Treatment resistant depression"
+        },
+        {
+          "code": "1153575004",
+          "term": "Persistent depressive disorder"
+        },
+        {
+          "code": "14183003",
+          "term": "Chronic major depressive disorder, single episode"
+        },
+        {
+          "code": "15639000",
+          "term": "Moderate major depression, single episode"
+        },
+        {
+          "code": "16264821000119108",
+          "term": "Recurrent severe major depressive disorder co-occurrent with anxiety"
+        },
+        {
+          "code": "16265301000119106",
+          "term": "Recurrent major depressive disorder in partial remission co-occurrent with anxiety"
+        },
+        {
+          "code": "16266831000119100",
+          "term": "Moderate major depressive disorder co-occurrent with anxiety single episode"
+        },
+        {
+          "code": "16266991000119108",
+          "term": "Severe major depressive disorder co-occurrent with anxiety single episode"
+        },
+        {
+          "code": "18818009",
+          "term": "Moderate recurrent major depression"
+        },
+        {
+          "code": "191455000",
+          "term": "Presenile dementia with depression"
+        },
+        {
+          "code": "191459006",
+          "term": "Senile dementia with depression"
+        },
+        {
+          "code": "191610000",
+          "term": "Recurrent major depressive episodes, mild"
+        },
+        {
+          "code": "191611001",
+          "term": "Recurrent major depressive episodes, moderate"
+        },
+        {
+          "code": "191616006",
+          "term": "Recurrent depression"
+        },
+        {
+          "code": "191659001",
+          "term": "Atypical depressive disorder"
+        },
+        {
+          "code": "192049004",
+          "term": "Prolonged depressive adjustment reaction"
+        },
+        {
+          "code": "192080009",
+          "term": "Chronic depression"
+        },
+        {
+          "code": "19527009",
+          "term": "Single episode of major depression in full remission"
+        },
+        {
+          "code": "231499006",
+          "term": "Endogenous depression first episode"
+        },
+        {
+          "code": "231500002",
+          "term": "Masked depression"
+        },
+        {
+          "code": "231504006",
+          "term": "Mixed anxiety and depressive disorder"
+        },
+        {
+          "code": "237349002",
+          "term": "Mild postnatal depression"
+        },
+        {
+          "code": "247803002",
+          "term": "Seasonal affective disorder"
+        },
+        {
+          "code": "251000119105",
+          "term": "Severe major depression, single episode"
+        },
+        {
+          "code": "25922000",
+          "term": "Major depressive disorder, single episode with postpartum onset"
+        },
+        {
+          "code": "268621008",
+          "term": "Recurrent major depressive episodes"
+        },
+        {
+          "code": "274948002",
+          "term": "Endogenous depression - recurrent"
+        },
+        {
+          "code": "300706003",
+          "term": "Endogenous depression"
+        },
+        {
+          "code": "30605009",
+          "term": "Major depression in partial remission"
+        },
+        {
+          "code": "310495003",
+          "term": "Mild depression"
+        },
+        {
+          "code": "310496002",
+          "term": "Moderate depression"
+        },
+        {
+          "code": "310497006",
+          "term": "Severe depression"
+        },
+        {
+          "code": "321717001",
+          "term": "Involutional depression"
+        },
+        {
+          "code": "35489007",
+          "term": "Depressive disorder"
+        },
+        {
+          "code": "36474008",
+          "term": "Severe recurrent major depression without psychotic features"
+        },
+        {
+          "code": "36923009",
+          "term": "Major depression, single episode"
+        },
+        {
+          "code": "370143000",
+          "term": "Major depressive disorder"
+        },
+        {
+          "code": "40379007",
+          "term": "Mild recurrent major depression"
+        },
+        {
+          "code": "40568001",
+          "term": "Recurrent brief depressive disorder"
+        },
+        {
+          "code": "42810003",
+          "term": "Major depression in remission"
+        },
+        {
+          "code": "42925002",
+          "term": "Major depressive disorder, single episode with atypical features"
+        },
+        {
+          "code": "63412003",
+          "term": "Major depression in full remission"
+        },
+        {
+          "code": "63778009",
+          "term": "Major depressive disorder, single episode with melancholic features"
+        },
+        {
+          "code": "68019004",
+          "term": "Recurrent major depression in remission"
+        },
+        {
+          "code": "69392006",
+          "term": "Major depressive disorder, single episode with catatonic features"
+        },
+        {
+          "code": "698957003",
+          "term": "Depressive disorder in remission"
+        },
+        {
+          "code": "70747007",
+          "term": "Major depression single episode, in partial remission"
+        },
+        {
+          "code": "720453001",
+          "term": "Moderately severe major depression single episode"
+        },
+        {
+          "code": "720454007",
+          "term": "Minimal major depression single episode"
+        },
+        {
+          "code": "75084000",
+          "term": "Severe major depression without psychotic features"
+        },
+        {
+          "code": "76441001",
+          "term": "Severe major depression, single episode, without psychotic features"
+        },
+        {
+          "code": "764611000000100",
+          "term": "Recurrent major depressive episodes, severe"
+        },
+        {
+          "code": "764711000000106",
+          "term": "Single major depressive episode, in remission"
+        },
+        {
+          "code": "78667006",
+          "term": "Dysthymia"
+        },
+        {
+          "code": "788120007",
+          "term": "Antenatal depression"
+        },
+        {
+          "code": "79298009",
+          "term": "Mild major depression, single episode"
+        },
+        {
+          "code": "832007",
+          "term": "Moderate major depression"
+        },
+        {
+          "code": "83458005",
+          "term": "Agitated depression"
+        },
+        {
+          "code": "87414006",
+          "term": "Reactive depression (situational)"
+        },
+        {
+          "code": "87512008",
+          "term": "Mild major depression"
+        }
+      ],
+      "fp_codes": [
+        {
+          "code": "1010649005",
+          "term": "Acute vestibular syndrome due to anxiety and fear"
+        },
+        {
+          "code": "10211000132109",
+          "term": "Perinatal depression"
+        },
+        {
+          "code": "102912007",
+          "term": "Fear of death"
+        },
+        {
+          "code": "1036481000000106",
+          "term": "Self-referral to Improving Access to Psychological Therapies programme"
+        },
+        {
+          "code": "1038261000000100",
+          "term": "Maternal postnatal depression"
+        },
+        {
+          "code": "10532003",
+          "term": "Primary degenerative dementia of the Alzheimer type, presenile onset, with depression (disorder)"
+        },
+        {
+          "code": "1148351000000100",
+          "term": "Assessment using Depression, Anxiety and Positive Outlook Scale"
+        },
+        {
+          "code": "14070001",
+          "term": "Multi-infarct dementia with depression (disorder)"
+        },
+        {
+          "code": "191466007",
+          "term": "Arteriosclerotic dementia with depression (disorder)"
+        },
+        {
+          "code": "191627008",
+          "term": "Bipolar affective disorder, current episode depression (disorder)"
+        },
+        {
+          "code": "191629006",
+          "term": "Bipolar affective disorder, currently depressed, mild (disorder)"
+        },
+        {
+          "code": "196381000000100",
+          "term": "Depression resolved (finding)"
+        },
+        {
+          "code": "26852004",
+          "term": "Primary degenerative dementia of the Alzheimer type, senile onset, with depression (disorder)"
+        },
+        {
+          "code": "445587006",
+          "term": "Assessment using geriatric depression scale"
+        },
+        {
+          "code": "445676008",
+          "term": "Assessment using geriatric depression scale short form"
+        },
+        {
+          "code": "445677004",
+          "term": "Assessment using geriatric depression scale 4 item form"
+        },
+        {
+          "code": "445688005",
+          "term": "Assessment using geriatric depression scale original long form"
+        },
+        {
+          "code": "445991008",
+          "term": "Assessment using hospital anxiety and depression scale"
+        },
+        {
+          "code": "446765009",
+          "term": "Assessment using Beck depression inventory"
+        },
+        {
+          "code": "450319007",
+          "term": "Assessment using Edinburgh postnatal depression scale"
+        },
+        {
+          "code": "705011000",
+          "term": "Anterior ST segment depression"
+        },
+        {
+          "code": "712823008",
+          "term": "Acute depression"
+        },
+        {
+          "code": "715831000000109",
+          "term": "Excepted from depression quality indicators - informed dissent (finding)"
+        },
+        {
+          "code": "716831000000103",
+          "term": "Excepted from depression quality indicators - patient unsuitable (finding)"
+        },
+        {
+          "code": "717268000",
+          "term": "Assessment using Beck Depression Inventory II"
+        },
+        {
+          "code": "717310003",
+          "term": "Assessment using Brief Assessment Schedule Depression Cards"
+        },
+        {
+          "code": "718862007",
+          "term": "Assessment using Neurological Disorders Depression Inventory in Epilepsy"
+        },
+        {
+          "code": "761873006",
+          "term": "Assessment using MADRS (Montgomery-\u00c5sberg Depression Rating Scale)"
+        },
+        {
+          "code": "763071002",
+          "term": "Assessment using Hamilton Rating Scale for Depression"
+        },
+        {
+          "code": "820321000000102",
+          "term": "Assessment using depression intensity scale circles"
+        },
+        {
+          "code": "967561000000100",
+          "term": "Assessment using BDRS (Brief Depression Rating Scale)"
+        },
+        {
+          "code": "F204",
+          "term": "Post-schizophrenic depression"
+        },
+        {
+          "code": "F313",
+          "term": "Bipolar affective disorder, current episode mild or moderate depression"
+        },
+        {
+          "code": "F314",
+          "term": "Bipolar affective disorder, current episode severe depression without psychotic symptoms"
+        },
+        {
+          "code": "F315",
+          "term": "Bipolar affective disorder, current episode severe depression with psychotic symptoms"
+        },
+        {
+          "code": "P914",
+          "term": "Neonatal cerebral depression"
+        }
+      ],
+      "fn_codes": [
+        {
+          "code": "1086471000000103",
+          "term": "Recurrent reactive depressive episodes, severe, with psychosis"
+        },
+        {
+          "code": "1089511000000100",
+          "term": "Recurrent depression with current severe episode and psychotic features"
+        },
+        {
+          "code": "1260298008",
+          "term": "Depression following menopause"
+        },
+        {
+          "code": "16238181000119101",
+          "term": "Depressive disorder caused by amphetamine"
+        },
+        {
+          "code": "16238221000119109",
+          "term": "Depressive disorder caused by methamphetamine"
+        },
+        {
+          "code": "16264621000119109",
+          "term": "Recurrent mild major depressive disorder co-occurrent with anxiety"
+        },
+        {
+          "code": "16264901000119109",
+          "term": "Recurrent moderate major depressive disorder co-occurrent with anxiety"
+        },
+        {
+          "code": "16265061000119105",
+          "term": "Recurrent major depressive disorder co-occurrent with anxiety in full remission"
+        },
+        {
+          "code": "16265951000119109",
+          "term": "Mild major depressive disorder co-occurrent with anxiety single episode"
+        },
+        {
+          "code": "191601008",
+          "term": "Single major depressive episode, mild"
+        },
+        {
+          "code": "191602001",
+          "term": "Single major depressive episode, moderate"
+        },
+        {
+          "code": "191604000",
+          "term": "Single major depressive episode, severe, with psychosis"
+        },
+        {
+          "code": "191606003",
+          "term": "Single major depressive episode, in full remission"
+        },
+        {
+          "code": "191613003",
+          "term": "Recurrent major depressive episodes, severe, with psychosis"
+        },
+        {
+          "code": "191615005",
+          "term": "Recurrent major depressive episodes, in full remission"
+        },
+        {
+          "code": "191632009",
+          "term": "Bipolar affective disorder, currently depressed, severe, with psychosis"
+        },
+        {
+          "code": "191634005",
+          "term": "Bipolar affective disorder, currently depressed, in full remission"
+        },
+        {
+          "code": "191676002",
+          "term": "Reactive depressive psychosis"
+        },
+        {
+          "code": "20250007",
+          "term": "Severe major depression, single episode, with psychotic features, mood-incongruent"
+        },
+        {
+          "code": "231485007",
+          "term": "Post-schizophrenic depression"
+        },
+        {
+          "code": "268620009",
+          "term": "Single major depressive episode"
+        },
+        {
+          "code": "28475009",
+          "term": "Severe recurrent major depression with psychotic features"
+        },
+        {
+          "code": "288751000119101",
+          "term": "Reactive depressive psychosis, single episode"
+        },
+        {
+          "code": "33135002",
+          "term": "Recurrent major depression in partial remission"
+        },
+        {
+          "code": "357705009",
+          "term": "Cotard's syndrome"
+        },
+        {
+          "code": "397701000000102",
+          "term": "[X]Severe depressive episode without psychotic symptoms"
+        },
+        {
+          "code": "397711000000100",
+          "term": "[X]Severe depressive episode with psychotic symptoms"
+        },
+        {
+          "code": "401211000000106",
+          "term": "[X] Single episode major depression without psychotic symptoms"
+        },
+        {
+          "code": "426578000",
+          "term": "Premenstrual dysphoric disorder in remission"
+        },
+        {
+          "code": "430421000000104",
+          "term": "[X]Mild depressive episode"
+        },
+        {
+          "code": "455731000000100",
+          "term": "[X] Single episode agitated depression without psychotic symptoms"
+        },
+        {
+          "code": "46244001",
+          "term": "Recurrent major depression in full remission"
+        },
+        {
+          "code": "465441000000108",
+          "term": "[X]Moderate depressive episode"
+        },
+        {
+          "code": "467361000000105",
+          "term": "[X] Manic-depressive psychosis, depressed type without psychotic symptoms"
+        },
+        {
+          "code": "73867007",
+          "term": "Severe major depression with psychotic features"
+        },
+        {
+          "code": "755321000000106",
+          "term": "Single major depressive episode, severe, with psychosis, psychosis in remission"
+        },
+        {
+          "code": "755331000000108",
+          "term": "Recurrent major depressive episodes, severe, with psychosis, psychosis in remission"
+        },
+        {
+          "code": "764631000000108",
+          "term": "Single major depressive episode, severe"
+        },
+        {
+          "code": "764691000000109",
+          "term": "Recurrent major depressive episodes, in partial remission"
+        },
+        {
+          "code": "765176007",
+          "term": "Psychosis and severe depression co-occurrent and due to bipolar affective disorder"
+        },
+        {
+          "code": "77911002",
+          "term": "Severe major depression, single episode, with psychotic features, mood-congruent"
+        },
+        {
+          "code": "84760002",
+          "term": "Schizoaffective disorder, depressive type"
+        }
+      ]
+    },
+    "all_scored": {
+      "codelist_name": "all_scored",
+      "n_ref_codes": 106,
+      "n_output_codes": 100,
+      "recall": 0.6038,
+      "precision": 0.64,
+      "f1": 0.6214,
+      "tp_count": 64,
+      "fp_count": 36,
+      "fn_count": 42,
+      "tp_codes": [
+        {
+          "code": "104851000119103",
+          "term": "Postpartum major depression in remission"
+        },
+        {
+          "code": "1086661000000108",
+          "term": "Reactive depression, prolonged single episode"
+        },
+        {
+          "code": "1089631000000109",
+          "term": "Recurrent depression with current severe episode without psychotic features"
+        },
+        {
+          "code": "1089641000000100",
+          "term": "Recurrent depression with current moderate episode"
+        },
+        {
+          "code": "1153570009",
+          "term": "Treatment resistant depression"
+        },
+        {
+          "code": "1153575004",
+          "term": "Persistent depressive disorder"
+        },
+        {
+          "code": "14183003",
+          "term": "Chronic major depressive disorder, single episode"
+        },
+        {
+          "code": "15639000",
+          "term": "Moderate major depression, single episode"
+        },
+        {
+          "code": "16264821000119108",
+          "term": "Recurrent severe major depressive disorder co-occurrent with anxiety"
+        },
+        {
+          "code": "16265301000119106",
+          "term": "Recurrent major depressive disorder in partial remission co-occurrent with anxiety"
+        },
+        {
+          "code": "16266831000119100",
+          "term": "Moderate major depressive disorder co-occurrent with anxiety single episode"
+        },
+        {
+          "code": "16266991000119108",
+          "term": "Severe major depressive disorder co-occurrent with anxiety single episode"
+        },
+        {
+          "code": "18818009",
+          "term": "Moderate recurrent major depression"
+        },
+        {
+          "code": "191455000",
+          "term": "Presenile dementia with depression"
+        },
+        {
+          "code": "191459006",
+          "term": "Senile dementia with depression"
+        },
+        {
+          "code": "191610000",
+          "term": "Recurrent major depressive episodes, mild"
+        },
+        {
+          "code": "191611001",
+          "term": "Recurrent major depressive episodes, moderate"
+        },
+        {
+          "code": "191616006",
+          "term": "Recurrent depression"
+        },
+        {
+          "code": "191659001",
+          "term": "Atypical depressive disorder"
+        },
+        {
+          "code": "192049004",
+          "term": "Prolonged depressive adjustment reaction"
+        },
+        {
+          "code": "192080009",
+          "term": "Chronic depression"
+        },
+        {
+          "code": "19527009",
+          "term": "Single episode of major depression in full remission"
+        },
+        {
+          "code": "231499006",
+          "term": "Endogenous depression first episode"
+        },
+        {
+          "code": "231500002",
+          "term": "Masked depression"
+        },
+        {
+          "code": "231504006",
+          "term": "Mixed anxiety and depressive disorder"
+        },
+        {
+          "code": "237349002",
+          "term": "Mild postnatal depression"
+        },
+        {
+          "code": "247803002",
+          "term": "Seasonal affective disorder"
+        },
+        {
+          "code": "251000119105",
+          "term": "Severe major depression, single episode"
+        },
+        {
+          "code": "25922000",
+          "term": "Major depressive disorder, single episode with postpartum onset"
+        },
+        {
+          "code": "268621008",
+          "term": "Recurrent major depressive episodes"
+        },
+        {
+          "code": "274948002",
+          "term": "Endogenous depression - recurrent"
+        },
+        {
+          "code": "300706003",
+          "term": "Endogenous depression"
+        },
+        {
+          "code": "30605009",
+          "term": "Major depression in partial remission"
+        },
+        {
+          "code": "310495003",
+          "term": "Mild depression"
+        },
+        {
+          "code": "310496002",
+          "term": "Moderate depression"
+        },
+        {
+          "code": "310497006",
+          "term": "Severe depression"
+        },
+        {
+          "code": "321717001",
+          "term": "Involutional depression"
+        },
+        {
+          "code": "35489007",
+          "term": "Depressive disorder"
+        },
+        {
+          "code": "36474008",
+          "term": "Severe recurrent major depression without psychotic features"
+        },
+        {
+          "code": "36923009",
+          "term": "Major depression, single episode"
+        },
+        {
+          "code": "370143000",
+          "term": "Major depressive disorder"
+        },
+        {
+          "code": "40379007",
+          "term": "Mild recurrent major depression"
+        },
+        {
+          "code": "40568001",
+          "term": "Recurrent brief depressive disorder"
+        },
+        {
+          "code": "42810003",
+          "term": "Major depression in remission"
+        },
+        {
+          "code": "42925002",
+          "term": "Major depressive disorder, single episode with atypical features"
+        },
+        {
+          "code": "63412003",
+          "term": "Major depression in full remission"
+        },
+        {
+          "code": "63778009",
+          "term": "Major depressive disorder, single episode with melancholic features"
+        },
+        {
+          "code": "68019004",
+          "term": "Recurrent major depression in remission"
+        },
+        {
+          "code": "69392006",
+          "term": "Major depressive disorder, single episode with catatonic features"
+        },
+        {
+          "code": "698957003",
+          "term": "Depressive disorder in remission"
+        },
+        {
+          "code": "70747007",
+          "term": "Major depression single episode, in partial remission"
+        },
+        {
+          "code": "720453001",
+          "term": "Moderately severe major depression single episode"
+        },
+        {
+          "code": "720454007",
+          "term": "Minimal major depression single episode"
+        },
+        {
+          "code": "75084000",
+          "term": "Severe major depression without psychotic features"
+        },
+        {
+          "code": "76441001",
+          "term": "Severe major depression, single episode, without psychotic features"
+        },
+        {
+          "code": "764611000000100",
+          "term": "Recurrent major depressive episodes, severe"
+        },
+        {
+          "code": "764711000000106",
+          "term": "Single major depressive episode, in remission"
+        },
+        {
+          "code": "78667006",
+          "term": "Dysthymia"
+        },
+        {
+          "code": "788120007",
+          "term": "Antenatal depression"
+        },
+        {
+          "code": "79298009",
+          "term": "Mild major depression, single episode"
+        },
+        {
+          "code": "832007",
+          "term": "Moderate major depression"
+        },
+        {
+          "code": "83458005",
+          "term": "Agitated depression"
+        },
+        {
+          "code": "87414006",
+          "term": "Reactive depression (situational)"
+        },
+        {
+          "code": "87512008",
+          "term": "Mild major depression"
+        }
+      ],
+      "fp_codes": [
+        {
+          "code": "1010649005",
+          "term": "Acute vestibular syndrome due to anxiety and fear"
+        },
+        {
+          "code": "10211000132109",
+          "term": "Perinatal depression"
+        },
+        {
+          "code": "102912007",
+          "term": "Fear of death"
+        },
+        {
+          "code": "1036481000000106",
+          "term": "Self-referral to Improving Access to Psychological Therapies programme"
+        },
+        {
+          "code": "1038261000000100",
+          "term": "Maternal postnatal depression"
+        },
+        {
+          "code": "10532003",
+          "term": "Primary degenerative dementia of the Alzheimer type, presenile onset, with depression (disorder)"
+        },
+        {
+          "code": "1148351000000100",
+          "term": "Assessment using Depression, Anxiety and Positive Outlook Scale"
+        },
+        {
+          "code": "14070001",
+          "term": "Multi-infarct dementia with depression (disorder)"
+        },
+        {
+          "code": "191466007",
+          "term": "Arteriosclerotic dementia with depression (disorder)"
+        },
+        {
+          "code": "191627008",
+          "term": "Bipolar affective disorder, current episode depression (disorder)"
+        },
+        {
+          "code": "191629006",
+          "term": "Bipolar affective disorder, currently depressed, mild (disorder)"
+        },
+        {
+          "code": "196381000000100",
+          "term": "Depression resolved (finding)"
+        },
+        {
+          "code": "26852004",
+          "term": "Primary degenerative dementia of the Alzheimer type, senile onset, with depression (disorder)"
+        },
+        {
+          "code": "445587006",
+          "term": "Assessment using geriatric depression scale"
+        },
+        {
+          "code": "445676008",
+          "term": "Assessment using geriatric depression scale short form"
+        },
+        {
+          "code": "445677004",
+          "term": "Assessment using geriatric depression scale 4 item form"
+        },
+        {
+          "code": "445688005",
+          "term": "Assessment using geriatric depression scale original long form"
+        },
+        {
+          "code": "445991008",
+          "term": "Assessment using hospital anxiety and depression scale"
+        },
+        {
+          "code": "446765009",
+          "term": "Assessment using Beck depression inventory"
+        },
+        {
+          "code": "450319007",
+          "term": "Assessment using Edinburgh postnatal depression scale"
+        },
+        {
+          "code": "705011000",
+          "term": "Anterior ST segment depression"
+        },
+        {
+          "code": "712823008",
+          "term": "Acute depression"
+        },
+        {
+          "code": "715831000000109",
+          "term": "Excepted from depression quality indicators - informed dissent (finding)"
+        },
+        {
+          "code": "716831000000103",
+          "term": "Excepted from depression quality indicators - patient unsuitable (finding)"
+        },
+        {
+          "code": "717268000",
+          "term": "Assessment using Beck Depression Inventory II"
+        },
+        {
+          "code": "717310003",
+          "term": "Assessment using Brief Assessment Schedule Depression Cards"
+        },
+        {
+          "code": "718862007",
+          "term": "Assessment using Neurological Disorders Depression Inventory in Epilepsy"
+        },
+        {
+          "code": "761873006",
+          "term": "Assessment using MADRS (Montgomery-\u00c5sberg Depression Rating Scale)"
+        },
+        {
+          "code": "763071002",
+          "term": "Assessment using Hamilton Rating Scale for Depression"
+        },
+        {
+          "code": "820321000000102",
+          "term": "Assessment using depression intensity scale circles"
+        },
+        {
+          "code": "967561000000100",
+          "term": "Assessment using BDRS (Brief Depression Rating Scale)"
+        },
+        {
+          "code": "F204",
+          "term": "Post-schizophrenic depression"
+        },
+        {
+          "code": "F313",
+          "term": "Bipolar affective disorder, current episode mild or moderate depression"
+        },
+        {
+          "code": "F314",
+          "term": "Bipolar affective disorder, current episode severe depression without psychotic symptoms"
+        },
+        {
+          "code": "F315",
+          "term": "Bipolar affective disorder, current episode severe depression with psychotic symptoms"
+        },
+        {
+          "code": "P914",
+          "term": "Neonatal cerebral depression"
+        }
+      ],
+      "fn_codes": [
+        {
+          "code": "1086471000000103",
+          "term": "Recurrent reactive depressive episodes, severe, with psychosis"
+        },
+        {
+          "code": "1089511000000100",
+          "term": "Recurrent depression with current severe episode and psychotic features"
+        },
+        {
+          "code": "1260298008",
+          "term": "Depression following menopause"
+        },
+        {
+          "code": "16238181000119101",
+          "term": "Depressive disorder caused by amphetamine"
+        },
+        {
+          "code": "16238221000119109",
+          "term": "Depressive disorder caused by methamphetamine"
+        },
+        {
+          "code": "16264621000119109",
+          "term": "Recurrent mild major depressive disorder co-occurrent with anxiety"
+        },
+        {
+          "code": "16264901000119109",
+          "term": "Recurrent moderate major depressive disorder co-occurrent with anxiety"
+        },
+        {
+          "code": "16265061000119105",
+          "term": "Recurrent major depressive disorder co-occurrent with anxiety in full remission"
+        },
+        {
+          "code": "16265951000119109",
+          "term": "Mild major depressive disorder co-occurrent with anxiety single episode"
+        },
+        {
+          "code": "191601008",
+          "term": "Single major depressive episode, mild"
+        },
+        {
+          "code": "191602001",
+          "term": "Single major depressive episode, moderate"
+        },
+        {
+          "code": "191604000",
+          "term": "Single major depressive episode, severe, with psychosis"
+        },
+        {
+          "code": "191606003",
+          "term": "Single major depressive episode, in full remission"
+        },
+        {
+          "code": "191613003",
+          "term": "Recurrent major depressive episodes, severe, with psychosis"
+        },
+        {
+          "code": "191615005",
+          "term": "Recurrent major depressive episodes, in full remission"
+        },
+        {
+          "code": "191632009",
+          "term": "Bipolar affective disorder, currently depressed, severe, with psychosis"
+        },
+        {
+          "code": "191634005",
+          "term": "Bipolar affective disorder, currently depressed, in full remission"
+        },
+        {
+          "code": "191676002",
+          "term": "Reactive depressive psychosis"
+        },
+        {
+          "code": "20250007",
+          "term": "Severe major depression, single episode, with psychotic features, mood-incongruent"
+        },
+        {
+          "code": "231485007",
+          "term": "Post-schizophrenic depression"
+        },
+        {
+          "code": "268620009",
+          "term": "Single major depressive episode"
+        },
+        {
+          "code": "28475009",
+          "term": "Severe recurrent major depression with psychotic features"
+        },
+        {
+          "code": "288751000119101",
+          "term": "Reactive depressive psychosis, single episode"
+        },
+        {
+          "code": "33135002",
+          "term": "Recurrent major depression in partial remission"
+        },
+        {
+          "code": "357705009",
+          "term": "Cotard's syndrome"
+        },
+        {
+          "code": "397701000000102",
+          "term": "[X]Severe depressive episode without psychotic symptoms"
+        },
+        {
+          "code": "397711000000100",
+          "term": "[X]Severe depressive episode with psychotic symptoms"
+        },
+        {
+          "code": "401211000000106",
+          "term": "[X] Single episode major depression without psychotic symptoms"
+        },
+        {
+          "code": "426578000",
+          "term": "Premenstrual dysphoric disorder in remission"
+        },
+        {
+          "code": "430421000000104",
+          "term": "[X]Mild depressive episode"
+        },
+        {
+          "code": "455731000000100",
+          "term": "[X] Single episode agitated depression without psychotic symptoms"
+        },
+        {
+          "code": "46244001",
+          "term": "Recurrent major depression in full remission"
+        },
+        {
+          "code": "465441000000108",
+          "term": "[X]Moderate depressive episode"
+        },
+        {
+          "code": "467361000000105",
+          "term": "[X] Manic-depressive psychosis, depressed type without psychotic symptoms"
+        },
+        {
+          "code": "73867007",
+          "term": "Severe major depression with psychotic features"
+        },
+        {
+          "code": "755321000000106",
+          "term": "Single major depressive episode, severe, with psychosis, psychosis in remission"
+        },
+        {
+          "code": "755331000000108",
+          "term": "Recurrent major depressive episodes, severe, with psychosis, psychosis in remission"
+        },
+        {
+          "code": "764631000000108",
+          "term": "Single major depressive episode, severe"
+        },
+        {
+          "code": "764691000000109",
+          "term": "Recurrent major depressive episodes, in partial remission"
+        },
+        {
+          "code": "765176007",
+          "term": "Psychosis and severe depression co-occurrent and due to bipolar affective disorder"
+        },
+        {
+          "code": "77911002",
+          "term": "Severe major depression, single episode, with psychotic features, mood-congruent"
+        },
+        {
+          "code": "84760002",
+          "term": "Schizoaffective disorder, depressive type"
+        }
+      ]
+    },
+    "included_only": {
+      "codelist_name": "included_only",
+      "n_ref_codes": 106,
+      "n_output_codes": 61,
+      "recall": 0.5472,
+      "precision": 0.9508,
+      "f1": 0.6946,
+      "tp_count": 58,
+      "fp_count": 3,
+      "fn_count": 48,
+      "tp_codes": [
+        {
+          "code": "1086661000000108",
+          "term": "Reactive depression, prolonged single episode"
+        },
+        {
+          "code": "1089631000000109",
+          "term": "Recurrent depression with current severe episode without psychotic features"
+        },
+        {
+          "code": "1089641000000100",
+          "term": "Recurrent depression with current moderate episode"
+        },
+        {
+          "code": "1153570009",
+          "term": "Treatment resistant depression"
+        },
+        {
+          "code": "1153575004",
+          "term": "Persistent depressive disorder"
+        },
+        {
+          "code": "14183003",
+          "term": "Chronic major depressive disorder, single episode"
+        },
+        {
+          "code": "15639000",
+          "term": "Moderate major depression, single episode"
+        },
+        {
+          "code": "16264821000119108",
+          "term": "Recurrent severe major depressive disorder co-occurrent with anxiety"
+        },
+        {
+          "code": "16265301000119106",
+          "term": "Recurrent major depressive disorder in partial remission co-occurrent with anxiety"
+        },
+        {
+          "code": "16266831000119100",
+          "term": "Moderate major depressive disorder co-occurrent with anxiety single episode"
+        },
+        {
+          "code": "16266991000119108",
+          "term": "Severe major depressive disorder co-occurrent with anxiety single episode"
+        },
+        {
+          "code": "18818009",
+          "term": "Moderate recurrent major depression"
+        },
+        {
+          "code": "191610000",
+          "term": "Recurrent major depressive episodes, mild"
+        },
+        {
+          "code": "191611001",
+          "term": "Recurrent major depressive episodes, moderate"
+        },
+        {
+          "code": "191616006",
+          "term": "Recurrent depression"
+        },
+        {
+          "code": "191659001",
+          "term": "Atypical depressive disorder"
+        },
+        {
+          "code": "192049004",
+          "term": "Prolonged depressive adjustment reaction"
+        },
+        {
+          "code": "192080009",
+          "term": "Chronic depression"
+        },
+        {
+          "code": "231499006",
+          "term": "Endogenous depression first episode"
+        },
+        {
+          "code": "231500002",
+          "term": "Masked depression"
+        },
+        {
+          "code": "237349002",
+          "term": "Mild postnatal depression"
+        },
+        {
+          "code": "247803002",
+          "term": "Seasonal affective disorder"
+        },
+        {
+          "code": "251000119105",
+          "term": "Severe major depression, single episode"
+        },
+        {
+          "code": "25922000",
+          "term": "Major depressive disorder, single episode with postpartum onset"
+        },
+        {
+          "code": "268621008",
+          "term": "Recurrent major depressive episodes"
+        },
+        {
+          "code": "274948002",
+          "term": "Endogenous depression - recurrent"
+        },
+        {
+          "code": "300706003",
+          "term": "Endogenous depression"
+        },
+        {
+          "code": "30605009",
+          "term": "Major depression in partial remission"
+        },
+        {
+          "code": "310495003",
+          "term": "Mild depression"
+        },
+        {
+          "code": "310496002",
+          "term": "Moderate depression"
+        },
+        {
+          "code": "310497006",
+          "term": "Severe depression"
+        },
+        {
+          "code": "321717001",
+          "term": "Involutional depression"
+        },
+        {
+          "code": "35489007",
+          "term": "Depressive disorder"
+        },
+        {
+          "code": "36474008",
+          "term": "Severe recurrent major depression without psychotic features"
+        },
+        {
+          "code": "36923009",
+          "term": "Major depression, single episode"
+        },
+        {
+          "code": "370143000",
+          "term": "Major depressive disorder"
+        },
+        {
+          "code": "40379007",
+          "term": "Mild recurrent major depression"
+        },
+        {
+          "code": "40568001",
+          "term": "Recurrent brief depressive disorder"
+        },
+        {
+          "code": "42810003",
+          "term": "Major depression in remission"
+        },
+        {
+          "code": "42925002",
+          "term": "Major depressive disorder, single episode with atypical features"
+        },
+        {
+          "code": "63412003",
+          "term": "Major depression in full remission"
+        },
+        {
+          "code": "63778009",
+          "term": "Major depressive disorder, single episode with melancholic features"
+        },
+        {
+          "code": "68019004",
+          "term": "Recurrent major depression in remission"
+        },
+        {
+          "code": "69392006",
+          "term": "Major depressive disorder, single episode with catatonic features"
+        },
+        {
+          "code": "698957003",
+          "term": "Depressive disorder in remission"
+        },
+        {
+          "code": "70747007",
+          "term": "Major depression single episode, in partial remission"
+        },
+        {
+          "code": "720453001",
+          "term": "Moderately severe major depression single episode"
+        },
+        {
+          "code": "720454007",
+          "term": "Minimal major depression single episode"
+        },
+        {
+          "code": "75084000",
+          "term": "Severe major depression without psychotic features"
+        },
+        {
+          "code": "76441001",
+          "term": "Severe major depression, single episode, without psychotic features"
+        },
+        {
+          "code": "764611000000100",
+          "term": "Recurrent major depressive episodes, severe"
+        },
+        {
+          "code": "78667006",
+          "term": "Dysthymia"
+        },
+        {
+          "code": "788120007",
+          "term": "Antenatal depression"
+        },
+        {
+          "code": "79298009",
+          "term": "Mild major depression, single episode"
+        },
+        {
+          "code": "832007",
+          "term": "Moderate major depression"
+        },
+        {
+          "code": "83458005",
+          "term": "Agitated depression"
+        },
+        {
+          "code": "87414006",
+          "term": "Reactive depression (situational)"
+        },
+        {
+          "code": "87512008",
+          "term": "Mild major depression"
+        }
+      ],
+      "fp_codes": [
+        {
+          "code": "10211000132109",
+          "term": "Perinatal depression"
+        },
+        {
+          "code": "1038261000000100",
+          "term": "Maternal postnatal depression"
+        },
+        {
+          "code": "712823008",
+          "term": "Acute depression"
+        }
+      ],
+      "fn_codes": [
+        {
+          "code": "104851000119103",
+          "term": "Postpartum major depression in remission"
+        },
+        {
+          "code": "1086471000000103",
+          "term": "Recurrent reactive depressive episodes, severe, with psychosis"
+        },
+        {
+          "code": "1089511000000100",
+          "term": "Recurrent depression with current severe episode and psychotic features"
+        },
+        {
+          "code": "1260298008",
+          "term": "Depression following menopause"
+        },
+        {
+          "code": "16238181000119101",
+          "term": "Depressive disorder caused by amphetamine"
+        },
+        {
+          "code": "16238221000119109",
+          "term": "Depressive disorder caused by methamphetamine"
+        },
+        {
+          "code": "16264621000119109",
+          "term": "Recurrent mild major depressive disorder co-occurrent with anxiety"
+        },
+        {
+          "code": "16264901000119109",
+          "term": "Recurrent moderate major depressive disorder co-occurrent with anxiety"
+        },
+        {
+          "code": "16265061000119105",
+          "term": "Recurrent major depressive disorder co-occurrent with anxiety in full remission"
+        },
+        {
+          "code": "16265951000119109",
+          "term": "Mild major depressive disorder co-occurrent with anxiety single episode"
+        },
+        {
+          "code": "191455000",
+          "term": "Presenile dementia with depression"
+        },
+        {
+          "code": "191459006",
+          "term": "Senile dementia with depression"
+        },
+        {
+          "code": "191601008",
+          "term": "Single major depressive episode, mild"
+        },
+        {
+          "code": "191602001",
+          "term": "Single major depressive episode, moderate"
+        },
+        {
+          "code": "191604000",
+          "term": "Single major depressive episode, severe, with psychosis"
+        },
+        {
+          "code": "191606003",
+          "term": "Single major depressive episode, in full remission"
+        },
+        {
+          "code": "191613003",
+          "term": "Recurrent major depressive episodes, severe, with psychosis"
+        },
+        {
+          "code": "191615005",
+          "term": "Recurrent major depressive episodes, in full remission"
+        },
+        {
+          "code": "191632009",
+          "term": "Bipolar affective disorder, currently depressed, severe, with psychosis"
+        },
+        {
+          "code": "191634005",
+          "term": "Bipolar affective disorder, currently depressed, in full remission"
+        },
+        {
+          "code": "191676002",
+          "term": "Reactive depressive psychosis"
+        },
+        {
+          "code": "19527009",
+          "term": "Single episode of major depression in full remission"
+        },
+        {
+          "code": "20250007",
+          "term": "Severe major depression, single episode, with psychotic features, mood-incongruent"
+        },
+        {
+          "code": "231485007",
+          "term": "Post-schizophrenic depression"
+        },
+        {
+          "code": "231504006",
+          "term": "Mixed anxiety and depressive disorder"
+        },
+        {
+          "code": "268620009",
+          "term": "Single major depressive episode"
+        },
+        {
+          "code": "28475009",
+          "term": "Severe recurrent major depression with psychotic features"
+        },
+        {
+          "code": "288751000119101",
+          "term": "Reactive depressive psychosis, single episode"
+        },
+        {
+          "code": "33135002",
+          "term": "Recurrent major depression in partial remission"
+        },
+        {
+          "code": "357705009",
+          "term": "Cotard's syndrome"
+        },
+        {
+          "code": "397701000000102",
+          "term": "[X]Severe depressive episode without psychotic symptoms"
+        },
+        {
+          "code": "397711000000100",
+          "term": "[X]Severe depressive episode with psychotic symptoms"
+        },
+        {
+          "code": "401211000000106",
+          "term": "[X] Single episode major depression without psychotic symptoms"
+        },
+        {
+          "code": "426578000",
+          "term": "Premenstrual dysphoric disorder in remission"
+        },
+        {
+          "code": "430421000000104",
+          "term": "[X]Mild depressive episode"
+        },
+        {
+          "code": "455731000000100",
+          "term": "[X] Single episode agitated depression without psychotic symptoms"
+        },
+        {
+          "code": "46244001",
+          "term": "Recurrent major depression in full remission"
+        },
+        {
+          "code": "465441000000108",
+          "term": "[X]Moderate depressive episode"
+        },
+        {
+          "code": "467361000000105",
+          "term": "[X] Manic-depressive psychosis, depressed type without psychotic symptoms"
+        },
+        {
+          "code": "73867007",
+          "term": "Severe major depression with psychotic features"
+        },
+        {
+          "code": "755321000000106",
+          "term": "Single major depressive episode, severe, with psychosis, psychosis in remission"
+        },
+        {
+          "code": "755331000000108",
+          "term": "Recurrent major depressive episodes, severe, with psychosis, psychosis in remission"
+        },
+        {
+          "code": "764631000000108",
+          "term": "Single major depressive episode, severe"
+        },
+        {
+          "code": "764691000000109",
+          "term": "Recurrent major depressive episodes, in partial remission"
+        },
+        {
+          "code": "764711000000106",
+          "term": "Single major depressive episode, in remission"
+        },
+        {
+          "code": "765176007",
+          "term": "Psychosis and severe depression co-occurrent and due to bipolar affective disorder"
+        },
+        {
+          "code": "77911002",
+          "term": "Severe major depression, single episode, with psychotic features, mood-congruent"
+        },
+        {
+          "code": "84760002",
+          "term": "Schizoaffective disorder, depressive type"
+        }
+      ]
+    },
+    "included_plus_uncertain": {
+      "codelist_name": "included_plus_uncertain",
+      "n_ref_codes": 106,
+      "n_output_codes": 62,
+      "recall": 0.5566,
+      "precision": 0.9516,
+      "f1": 0.7024,
+      "tp_count": 59,
+      "fp_count": 3,
+      "fn_count": 47,
+      "tp_codes": [
+        {
+          "code": "1086661000000108",
+          "term": "Reactive depression, prolonged single episode"
+        },
+        {
+          "code": "1089631000000109",
+          "term": "Recurrent depression with current severe episode without psychotic features"
+        },
+        {
+          "code": "1089641000000100",
+          "term": "Recurrent depression with current moderate episode"
+        },
+        {
+          "code": "1153570009",
+          "term": "Treatment resistant depression"
+        },
+        {
+          "code": "1153575004",
+          "term": "Persistent depressive disorder"
+        },
+        {
+          "code": "14183003",
+          "term": "Chronic major depressive disorder, single episode"
+        },
+        {
+          "code": "15639000",
+          "term": "Moderate major depression, single episode"
+        },
+        {
+          "code": "16264821000119108",
+          "term": "Recurrent severe major depressive disorder co-occurrent with anxiety"
+        },
+        {
+          "code": "16265301000119106",
+          "term": "Recurrent major depressive disorder in partial remission co-occurrent with anxiety"
+        },
+        {
+          "code": "16266831000119100",
+          "term": "Moderate major depressive disorder co-occurrent with anxiety single episode"
+        },
+        {
+          "code": "16266991000119108",
+          "term": "Severe major depressive disorder co-occurrent with anxiety single episode"
+        },
+        {
+          "code": "18818009",
+          "term": "Moderate recurrent major depression"
+        },
+        {
+          "code": "191610000",
+          "term": "Recurrent major depressive episodes, mild"
+        },
+        {
+          "code": "191611001",
+          "term": "Recurrent major depressive episodes, moderate"
+        },
+        {
+          "code": "191616006",
+          "term": "Recurrent depression"
+        },
+        {
+          "code": "191659001",
+          "term": "Atypical depressive disorder"
+        },
+        {
+          "code": "192049004",
+          "term": "Prolonged depressive adjustment reaction"
+        },
+        {
+          "code": "192080009",
+          "term": "Chronic depression"
+        },
+        {
+          "code": "231499006",
+          "term": "Endogenous depression first episode"
+        },
+        {
+          "code": "231500002",
+          "term": "Masked depression"
+        },
+        {
+          "code": "237349002",
+          "term": "Mild postnatal depression"
+        },
+        {
+          "code": "247803002",
+          "term": "Seasonal affective disorder"
+        },
+        {
+          "code": "251000119105",
+          "term": "Severe major depression, single episode"
+        },
+        {
+          "code": "25922000",
+          "term": "Major depressive disorder, single episode with postpartum onset"
+        },
+        {
+          "code": "268621008",
+          "term": "Recurrent major depressive episodes"
+        },
+        {
+          "code": "274948002",
+          "term": "Endogenous depression - recurrent"
+        },
+        {
+          "code": "300706003",
+          "term": "Endogenous depression"
+        },
+        {
+          "code": "30605009",
+          "term": "Major depression in partial remission"
+        },
+        {
+          "code": "310495003",
+          "term": "Mild depression"
+        },
+        {
+          "code": "310496002",
+          "term": "Moderate depression"
+        },
+        {
+          "code": "310497006",
+          "term": "Severe depression"
+        },
+        {
+          "code": "321717001",
+          "term": "Involutional depression"
+        },
+        {
+          "code": "35489007",
+          "term": "Depressive disorder"
+        },
+        {
+          "code": "36474008",
+          "term": "Severe recurrent major depression without psychotic features"
+        },
+        {
+          "code": "36923009",
+          "term": "Major depression, single episode"
+        },
+        {
+          "code": "370143000",
+          "term": "Major depressive disorder"
+        },
+        {
+          "code": "40379007",
+          "term": "Mild recurrent major depression"
+        },
+        {
+          "code": "40568001",
+          "term": "Recurrent brief depressive disorder"
+        },
+        {
+          "code": "42810003",
+          "term": "Major depression in remission"
+        },
+        {
+          "code": "42925002",
+          "term": "Major depressive disorder, single episode with atypical features"
+        },
+        {
+          "code": "63412003",
+          "term": "Major depression in full remission"
+        },
+        {
+          "code": "63778009",
+          "term": "Major depressive disorder, single episode with melancholic features"
+        },
+        {
+          "code": "68019004",
+          "term": "Recurrent major depression in remission"
+        },
+        {
+          "code": "69392006",
+          "term": "Major depressive disorder, single episode with catatonic features"
+        },
+        {
+          "code": "698957003",
+          "term": "Depressive disorder in remission"
+        },
+        {
+          "code": "70747007",
+          "term": "Major depression single episode, in partial remission"
+        },
+        {
+          "code": "720453001",
+          "term": "Moderately severe major depression single episode"
+        },
+        {
+          "code": "720454007",
+          "term": "Minimal major depression single episode"
+        },
+        {
+          "code": "75084000",
+          "term": "Severe major depression without psychotic features"
+        },
+        {
+          "code": "76441001",
+          "term": "Severe major depression, single episode, without psychotic features"
+        },
+        {
+          "code": "764611000000100",
+          "term": "Recurrent major depressive episodes, severe"
+        },
+        {
+          "code": "764711000000106",
+          "term": "Single major depressive episode, in remission"
+        },
+        {
+          "code": "78667006",
+          "term": "Dysthymia"
+        },
+        {
+          "code": "788120007",
+          "term": "Antenatal depression"
+        },
+        {
+          "code": "79298009",
+          "term": "Mild major depression, single episode"
+        },
+        {
+          "code": "832007",
+          "term": "Moderate major depression"
+        },
+        {
+          "code": "83458005",
+          "term": "Agitated depression"
+        },
+        {
+          "code": "87414006",
+          "term": "Reactive depression (situational)"
+        },
+        {
+          "code": "87512008",
+          "term": "Mild major depression"
+        }
+      ],
+      "fp_codes": [
+        {
+          "code": "10211000132109",
+          "term": "Perinatal depression"
+        },
+        {
+          "code": "1038261000000100",
+          "term": "Maternal postnatal depression"
+        },
+        {
+          "code": "712823008",
+          "term": "Acute depression"
+        }
+      ],
+      "fn_codes": [
+        {
+          "code": "104851000119103",
+          "term": "Postpartum major depression in remission"
+        },
+        {
+          "code": "1086471000000103",
+          "term": "Recurrent reactive depressive episodes, severe, with psychosis"
+        },
+        {
+          "code": "1089511000000100",
+          "term": "Recurrent depression with current severe episode and psychotic features"
+        },
+        {
+          "code": "1260298008",
+          "term": "Depression following menopause"
+        },
+        {
+          "code": "16238181000119101",
+          "term": "Depressive disorder caused by amphetamine"
+        },
+        {
+          "code": "16238221000119109",
+          "term": "Depressive disorder caused by methamphetamine"
+        },
+        {
+          "code": "16264621000119109",
+          "term": "Recurrent mild major depressive disorder co-occurrent with anxiety"
+        },
+        {
+          "code": "16264901000119109",
+          "term": "Recurrent moderate major depressive disorder co-occurrent with anxiety"
+        },
+        {
+          "code": "16265061000119105",
+          "term": "Recurrent major depressive disorder co-occurrent with anxiety in full remission"
+        },
+        {
+          "code": "16265951000119109",
+          "term": "Mild major depressive disorder co-occurrent with anxiety single episode"
+        },
+        {
+          "code": "191455000",
+          "term": "Presenile dementia with depression"
+        },
+        {
+          "code": "191459006",
+          "term": "Senile dementia with depression"
+        },
+        {
+          "code": "191601008",
+          "term": "Single major depressive episode, mild"
+        },
+        {
+          "code": "191602001",
+          "term": "Single major depressive episode, moderate"
+        },
+        {
+          "code": "191604000",
+          "term": "Single major depressive episode, severe, with psychosis"
+        },
+        {
+          "code": "191606003",
+          "term": "Single major depressive episode, in full remission"
+        },
+        {
+          "code": "191613003",
+          "term": "Recurrent major depressive episodes, severe, with psychosis"
+        },
+        {
+          "code": "191615005",
+          "term": "Recurrent major depressive episodes, in full remission"
+        },
+        {
+          "code": "191632009",
+          "term": "Bipolar affective disorder, currently depressed, severe, with psychosis"
+        },
+        {
+          "code": "191634005",
+          "term": "Bipolar affective disorder, currently depressed, in full remission"
+        },
+        {
+          "code": "191676002",
+          "term": "Reactive depressive psychosis"
+        },
+        {
+          "code": "19527009",
+          "term": "Single episode of major depression in full remission"
+        },
+        {
+          "code": "20250007",
+          "term": "Severe major depression, single episode, with psychotic features, mood-incongruent"
+        },
+        {
+          "code": "231485007",
+          "term": "Post-schizophrenic depression"
+        },
+        {
+          "code": "231504006",
+          "term": "Mixed anxiety and depressive disorder"
+        },
+        {
+          "code": "268620009",
+          "term": "Single major depressive episode"
+        },
+        {
+          "code": "28475009",
+          "term": "Severe recurrent major depression with psychotic features"
+        },
+        {
+          "code": "288751000119101",
+          "term": "Reactive depressive psychosis, single episode"
+        },
+        {
+          "code": "33135002",
+          "term": "Recurrent major depression in partial remission"
+        },
+        {
+          "code": "357705009",
+          "term": "Cotard's syndrome"
+        },
+        {
+          "code": "397701000000102",
+          "term": "[X]Severe depressive episode without psychotic symptoms"
+        },
+        {
+          "code": "397711000000100",
+          "term": "[X]Severe depressive episode with psychotic symptoms"
+        },
+        {
+          "code": "401211000000106",
+          "term": "[X] Single episode major depression without psychotic symptoms"
+        },
+        {
+          "code": "426578000",
+          "term": "Premenstrual dysphoric disorder in remission"
+        },
+        {
+          "code": "430421000000104",
+          "term": "[X]Mild depressive episode"
+        },
+        {
+          "code": "455731000000100",
+          "term": "[X] Single episode agitated depression without psychotic symptoms"
+        },
+        {
+          "code": "46244001",
+          "term": "Recurrent major depression in full remission"
+        },
+        {
+          "code": "465441000000108",
+          "term": "[X]Moderate depressive episode"
+        },
+        {
+          "code": "467361000000105",
+          "term": "[X] Manic-depressive psychosis, depressed type without psychotic symptoms"
+        },
+        {
+          "code": "73867007",
+          "term": "Severe major depression with psychotic features"
+        },
+        {
+          "code": "755321000000106",
+          "term": "Single major depressive episode, severe, with psychosis, psychosis in remission"
+        },
+        {
+          "code": "755331000000108",
+          "term": "Recurrent major depressive episodes, severe, with psychosis, psychosis in remission"
+        },
+        {
+          "code": "764631000000108",
+          "term": "Single major depressive episode, severe"
+        },
+        {
+          "code": "764691000000109",
+          "term": "Recurrent major depressive episodes, in partial remission"
+        },
+        {
+          "code": "765176007",
+          "term": "Psychosis and severe depression co-occurrent and due to bipolar affective disorder"
+        },
+        {
+          "code": "77911002",
+          "term": "Severe major depression, single episode, with psychotic features, mood-congruent"
+        },
+        {
+          "code": "84760002",
+          "term": "Schizoaffective disorder, depressive type"
+        }
+      ]
+    }
+  },
+  "false_exclusions": {
+    "count": 5,
+    "codes": [
+      {
+        "code": "104851000119103",
+        "term": "Postpartum major depression in remission (disorder)",
+        "rationale": "Postpartum major depression in remission indicates resolved/past depression, not current primary depression."
+      },
+      {
+        "code": "191455000",
+        "term": "Presenile dementia with depression (disorder)",
+        "rationale": "Presenile dementia with depression is dementia as the primary condition with depression as a complication."
+      },
+      {
+        "code": "191459006",
+        "term": "Senile dementia with depression (disorder)",
+        "rationale": "Senile dementia with depression is dementia as the primary condition with depression as a complication."
+      },
+      {
+        "code": "19527009",
+        "term": "Single episode of major depression in full remission (disorder)",
+        "rationale": "Single episode of major depression in full remission indicates resolved/past depression, not current primary depression."
+      },
+      {
+        "code": "231504006",
+        "term": "Mixed anxiety and depressive disorder (disorder)",
+        "rationale": "Mixed anxiety and depressive disorder is a distinct comorbid condition combining two separate diagnoses, not a primary depression instance."
+      }
+    ]
+  },
+  "uncertain_in_reference": {
+    "count": 1,
+    "codes": [
+      {
+        "code": "764711000000106",
+        "term": "Single major depressive episode, in remission (disorder)",
+        "rationale": "This code describes a single major depressive episode 'in remission'; clinical judgment is needed on whether remitted/resolved depression should be included in an active depression code list."
+      }
+    ]
+  },
+  "summary": "Recall: 54.7% (58 of 106 reference codes retrieved). Precision: 95.1%. F1: 69.5%. 5 reference codes were incorrectly excluded.",
+  "elapsed_seconds": 46.43,
+  "pipeline_results_count": 100,
+  "scored_codes": [
+    {
+      "code": "1086661000000108",
+      "term": "Reactive depression, prolonged single episode (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Reactive depression, prolonged single episode is a recognized clinical subtype of primary depression.",
+      "sources": [
+        "ChromaDB",
+        "OpenCodelists (ons)",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "1089631000000109",
+      "term": "Recurrent depression with current severe episode without psychotic features (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Recurrent depression with current severe episode without psychotic features is a clinical subtype of primary depression.",
+      "sources": [
+        "OpenCodelists (ons)",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "1089641000000100",
+      "term": "Recurrent depression with current moderate episode (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Recurrent depression with current moderate episode is a clinical subtype of primary depression.",
+      "sources": [
+        "ChromaDB",
+        "OpenCodelists (ons)",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "1153570009",
+      "term": "Treatment resistant depression (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Treatment resistant depression is a recognized clinical subtype of primary depression.",
+      "sources": [
+        "ChromaDB",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "1153575004",
+      "term": "Persistent depressive disorder (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Persistent depressive disorder (dysthymia) is a recognized clinical subtype of primary depression.",
+      "sources": [
+        "ChromaDB",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "14183003",
+      "term": "Chronic major depressive disorder, single episode (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Chronic major depressive disorder, single episode is a recognized clinical subtype of primary depression.",
+      "sources": [
+        "ChromaDB",
+        "OpenCodelists (ons)",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "15639000",
+      "term": "Moderate major depression, single episode (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Moderate major depression, single episode is a recognized clinical subtype of primary depression.",
+      "sources": [
+        "ChromaDB",
+        "OpenCodelists (ons)",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "18818009",
+      "term": "Moderate recurrent major depression (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Moderate recurrent major depression is a recognized clinical subtype of primary depression.",
+      "sources": [
+        "ChromaDB",
+        "OpenCodelists (ons)",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "191610000",
+      "term": "Recurrent major depressive episodes, mild (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Recurrent major depressive episodes, mild is a recognized clinical subtype of primary depression.",
+      "sources": [
+        "ChromaDB",
+        "OpenCodelists (ons)",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "191611001",
+      "term": "Recurrent major depressive episodes, moderate (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Recurrent major depressive episodes, moderate is a recognized clinical subtype of primary depression.",
+      "sources": [
+        "ChromaDB",
+        "OpenCodelists (ons)",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "191616006",
+      "term": "Recurrent depression (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Recurrent depression is a recognized clinical subtype of primary depression.",
+      "sources": [
+        "ChromaDB",
+        "OpenCodelists (ons)",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "191659001",
+      "term": "Atypical depressive disorder (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Atypical depressive disorder is a recognized clinical subtype of primary depression.",
+      "sources": [
+        "ChromaDB",
+        "OpenCodelists (ons)",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "192080009",
+      "term": "Chronic depression (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Chronic depression is a recognized clinical subtype of primary depression.",
+      "sources": [
+        "ChromaDB",
+        "OMOPHub",
+        "OpenCodelists (ons)",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "231499006",
+      "term": "Endogenous depression first episode (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Endogenous depression first episode is a recognized clinical subtype of primary depression.",
+      "sources": [
+        "OpenCodelists (ons)",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "231500002",
+      "term": "Masked depression (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Masked depression is a clinical subtype of depression where symptoms are not overtly emotional but manifest as physical complaints; it is a genuine instance of primary depression.",
+      "sources": [
+        "ChromaDB",
+        "OpenCodelists (ons)",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "237349002",
+      "term": "Mild postnatal depression (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Mild postnatal depression is a clinical subtype of depression with a specific temporal and contextual onset; it is an instance of primary depression.",
+      "sources": [
+        "ChromaDB",
+        "OpenCodelists (ons)",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "247803002",
+      "term": "Seasonal affective disorder (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Seasonal affective disorder is a recognized clinical subtype of depression with a specific seasonal pattern; it is an instance of primary depression.",
+      "sources": [
+        "OpenCodelists (ons)",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "251000119105",
+      "term": "Severe major depression, single episode (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Severe major depression, single episode is a severity variant of major depression; it is a direct instance of primary depression.",
+      "sources": [
+        "ChromaDB",
+        "OpenCodelists (ons)",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "25922000",
+      "term": "Major depressive disorder, single episode with postpartum onset (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Major depressive disorder with postpartum onset is a clinical subtype of depression with specific temporal context; it is an instance of primary depression.",
+      "sources": [
+        "ChromaDB",
+        "OpenCodelists (ons)",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "268621008",
+      "term": "Recurrent major depressive episodes (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Recurrent major depressive episodes is a clinical subtype describing the pattern of major depression; it is an instance of primary depression.",
+      "sources": [
+        "ChromaDB",
+        "OpenCodelists (ons)",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "274948002",
+      "term": "Endogenous depression - recurrent (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Endogenous depression - recurrent is a clinical subtype of depression with a specific etiology and pattern; it is an instance of primary depression.",
+      "sources": [
+        "ChromaDB",
+        "OpenCodelists (ons)",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "300706003",
+      "term": "Endogenous depression (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Endogenous depression is a recognized clinical subtype of depression; it is an instance of primary depression.",
+      "sources": [
+        "ChromaDB",
+        "OpenCodelists (ons)",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "310495003",
+      "term": "Mild depression (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Mild depression is a severity variant of depression; it is a direct instance of primary depression.",
+      "sources": [
+        "ChromaDB",
+        "OpenCodelists (ons)",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "310496002",
+      "term": "Moderate depression (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Moderate depression is a severity variant of depression; it is a direct instance of primary depression.",
+      "sources": [
+        "ChromaDB",
+        "OpenCodelists (ons)",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "310497006",
+      "term": "Severe depression (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Severe depression is a severity variant of depression; it is a direct instance of primary depression.",
+      "sources": [
+        "ChromaDB",
+        "OpenCodelists (ons)",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "35489007",
+      "term": "Depressive disorder (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Depressive disorder is a broad, direct instance of primary depression.",
+      "sources": [
+        "ChromaDB",
+        "OpenCodelists (ons)",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "36474008",
+      "term": "Severe recurrent major depression without psychotic features (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Severe recurrent major depression without psychotic features is a clinical subtype specifying severity and pattern; it is an instance of primary depression.",
+      "sources": [
+        "OpenCodelists (ons)",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "36923009",
+      "term": "Major depression, single episode (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Major depression, single episode is a clinical subtype of major depression; it is an instance of primary depression.",
+      "sources": [
+        "ChromaDB",
+        "OpenCodelists (ons)",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "370143000",
+      "term": "Major depressive disorder (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Major depressive disorder is a core diagnostic category of primary depression; it is a direct instance.",
+      "sources": [
+        "ChromaDB",
+        "OpenCodelists (ons)",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "40379007",
+      "term": "Mild recurrent major depression (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Mild recurrent major depression is a severity and pattern variant of major depression; it is an instance of primary depression.",
+      "sources": [
+        "ChromaDB",
+        "OpenCodelists (ons)",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "40568001",
+      "term": "Recurrent brief depressive disorder (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Recurrent brief depressive disorder is a recognized clinical subtype of depression with a specific pattern; it is an instance of primary depression.",
+      "sources": [
+        "ChromaDB",
+        "OpenCodelists (ons)",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "42925002",
+      "term": "Major depressive disorder, single episode with atypical features (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Major depressive disorder with atypical features is a clinical subtype of major depression; it is an instance of primary depression.",
+      "sources": [
+        "ChromaDB",
+        "OpenCodelists (ons)",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "63778009",
+      "term": "Major depressive disorder, single episode with melancholic features (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Major depressive disorder with melancholic features is a clinical subtype of major depression; it is an instance of primary depression.",
+      "sources": [
+        "ChromaDB",
+        "OpenCodelists (ons)",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "69392006",
+      "term": "Major depressive disorder, single episode with catatonic features (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Major depressive disorder with catatonic features is a clinical subtype of major depression; it is an instance of primary depression.",
+      "sources": [
+        "OpenCodelists (ons)",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "720453001",
+      "term": "Moderately severe major depression single episode (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "This is a specific clinical subtype of major depression (moderately severe, single episode), which is a direct instance of primary depression.",
+      "sources": [
+        "ChromaDB",
+        "OpenCodelists (ons)",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "720454007",
+      "term": "Minimal major depression single episode (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "This is a specific clinical subtype of major depression (minimal severity, single episode), which is a direct instance of primary depression.",
+      "sources": [
+        "ChromaDB",
+        "OpenCodelists (ons)",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "75084000",
+      "term": "Severe major depression without psychotic features (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "This is a specific clinical subtype of major depression (severe, without psychotic features), which is a direct instance of primary depression.",
+      "sources": [
+        "OpenCodelists (ons)",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "76441001",
+      "term": "Severe major depression, single episode, without psychotic features (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "This is a specific clinical subtype of major depression (severe, single episode, without psychotic features), which is a direct instance of primary depression.",
+      "sources": [
+        "OpenCodelists (ons)",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "764611000000100",
+      "term": "Recurrent major depressive episodes, severe (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "This is a specific clinical subtype of major depression (recurrent, severe episodes), which is a direct instance of primary depression.",
+      "sources": [
+        "ChromaDB",
+        "OpenCodelists (ons)",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "79298009",
+      "term": "Mild major depression, single episode (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "This is a specific clinical subtype of major depression (mild, single episode), which is a direct instance of primary depression.",
+      "sources": [
+        "ChromaDB",
+        "OpenCodelists (ons)",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "832007",
+      "term": "Moderate major depression (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "This is a specific clinical subtype of major depression (moderate severity), which is a direct instance of primary depression.",
+      "sources": [
+        "ChromaDB",
+        "OpenCodelists (ons)",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "87512008",
+      "term": "Mild major depression (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "This is a specific clinical subtype of major depression (mild severity), which is a direct instance of primary depression.",
+      "sources": [
+        "ChromaDB",
+        "OpenCodelists (ons)",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "10211000132109",
+      "term": "Perinatal depression",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.9,
+      "rationale": "Perinatal depression is a recognized clinical subtype of primary depression occurring in the perinatal period.",
+      "sources": [
+        "OpenCodelists (ons)"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.9,
+      "usage_frequency": null
+    },
+    {
+      "code": "1038261000000100",
+      "term": "Maternal postnatal depression",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.9,
+      "rationale": "Maternal postnatal depression is a recognized clinical subtype of primary depression occurring postpartum.",
+      "sources": [
+        "OpenCodelists (ons)"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.9,
+      "usage_frequency": null
+    },
+    {
+      "code": "16264821000119108",
+      "term": "Recurrent severe major depressive disorder co-occurrent with anxiety (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.9,
+      "rationale": "Recurrent severe major depressive disorder co-occurring with anxiety is a recognized clinical subtype of primary depression.",
+      "sources": [
+        "OpenCodelists (ons)",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.9,
+      "usage_frequency": null
+    },
+    {
+      "code": "16265301000119106",
+      "term": "Recurrent major depressive disorder in partial remission co-occurrent with anxiety (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.9,
+      "rationale": "Recurrent major depressive disorder in partial remission co-occurring with anxiety is a recognized clinical subtype of primary depression.",
+      "sources": [
+        "OpenCodelists (ons)",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.9,
+      "usage_frequency": null
+    },
+    {
+      "code": "16266831000119100",
+      "term": "Moderate major depressive disorder co-occurrent with anxiety single episode (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.9,
+      "rationale": "Moderate major depressive disorder co-occurring with anxiety single episode is a recognized clinical subtype of primary depression.",
+      "sources": [
+        "OpenCodelists (ons)",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.9,
+      "usage_frequency": null
+    },
+    {
+      "code": "16266991000119108",
+      "term": "Severe major depressive disorder co-occurrent with anxiety single episode (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.9,
+      "rationale": "Severe major depressive disorder co-occurring with anxiety single episode is a recognized clinical subtype of primary depression.",
+      "sources": [
+        "OpenCodelists (ons)",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.9,
+      "usage_frequency": null
+    },
+    {
+      "code": "192049004",
+      "term": "Prolonged depressive adjustment reaction (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.9,
+      "rationale": "Prolonged depressive adjustment reaction is a recognized clinical subtype of primary depression.",
+      "sources": [
+        "OpenCodelists (ons)",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.9,
+      "usage_frequency": null
+    },
+    {
+      "code": "30605009",
+      "term": "Major depression in partial remission (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.9,
+      "rationale": "Major depression in partial remission is a severity/status variant of major depression; it represents an instance of the condition in a particular state.",
+      "sources": [
+        "ChromaDB",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.9,
+      "usage_frequency": null
+    },
+    {
+      "code": "321717001",
+      "term": "Involutional depression (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.9,
+      "rationale": "Involutional depression is a recognized clinical subtype of depression occurring during life transitions; it is an instance of primary depression.",
+      "sources": [
+        "OpenCodelists (ons)",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.9,
+      "usage_frequency": null
+    },
+    {
+      "code": "42810003",
+      "term": "Major depression in remission (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.9,
+      "rationale": "Major depression in remission is a status variant of major depression; it represents an instance of the condition in remission state.",
+      "sources": [
+        "ChromaDB",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.9,
+      "usage_frequency": null
+    },
+    {
+      "code": "63412003",
+      "term": "Major depression in full remission (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.9,
+      "rationale": "Major depression in full remission is a status variant of major depression; it represents an instance of the condition in remission state.",
+      "sources": [
+        "ChromaDB",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.9,
+      "usage_frequency": null
+    },
+    {
+      "code": "68019004",
+      "term": "Recurrent major depression in remission (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.9,
+      "rationale": "Recurrent major depression in remission is a status and pattern variant of major depression; it represents an instance of the condition.",
+      "sources": [
+        "ChromaDB",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.9,
+      "usage_frequency": null
+    },
+    {
+      "code": "698957003",
+      "term": "Depressive disorder in remission (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.9,
+      "rationale": "Depressive disorder in remission is a status variant of depressive disorder; it represents an instance of the condition in remission state.",
+      "sources": [
+        "ChromaDB",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.9,
+      "usage_frequency": null
+    },
+    {
+      "code": "70747007",
+      "term": "Major depression single episode, in partial remission (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.9,
+      "rationale": "Major depression single episode in partial remission is a status variant of major depression; it represents an instance of the condition.",
+      "sources": [
+        "ChromaDB",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.9,
+      "usage_frequency": null
+    },
+    {
+      "code": "712823008",
+      "term": "Acute depression",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.9,
+      "rationale": "Acute depression is a temporal variant of depression; it is an instance of primary depression with acute onset.",
+      "sources": [
+        "OMOPHub",
+        "OpenCodelists (ons)"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.9,
+      "usage_frequency": null
+    },
+    {
+      "code": "78667006",
+      "term": "Dysthymia (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.9,
+      "rationale": "Dysthymia is a chronic form of depression and a direct instance of primary depression disorder.",
+      "sources": [
+        "OpenCodelists (ons)",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.9,
+      "usage_frequency": null
+    },
+    {
+      "code": "788120007",
+      "term": "Antenatal depression (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.9,
+      "rationale": "Antenatal depression is a specific clinical context/subtype of primary depression, representing depression during pregnancy.",
+      "sources": [
+        "ChromaDB",
+        "OMOPHub",
+        "OpenCodelists (ons)",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.9,
+      "usage_frequency": null
+    },
+    {
+      "code": "83458005",
+      "term": "Agitated depression (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.9,
+      "rationale": "Agitated depression is a specific clinical subtype/manifestation of primary depression with characteristic features.",
+      "sources": [
+        "ChromaDB",
+        "OMOPHub",
+        "OpenCodelists (ons)",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.9,
+      "usage_frequency": null
+    },
+    {
+      "code": "87414006",
+      "term": "Reactive depression (situational) (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.9,
+      "rationale": "Reactive depression (situational) is a specific clinical subtype of primary depression based on etiology.",
+      "sources": [
+        "OpenCodelists (ons)",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.9,
+      "usage_frequency": null
+    },
+    {
+      "code": "764711000000106",
+      "term": "Single major depressive episode, in remission (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "uncertain",
+      "confidence": 0.6,
+      "rationale": "This code describes a single major depressive episode 'in remission'; clinical judgment is needed on whether remitted/resolved depression should be included in an active depression code list.",
+      "sources": [
+        "ChromaDB",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.6,
+      "usage_frequency": null
+    },
+    {
+      "code": "F20.4",
+      "term": "Post-schizophrenic depression",
+      "vocabulary": "ICD-10 (WHO)",
+      "decision": "exclude",
+      "confidence": 0.95,
+      "rationale": "Post-schizophrenic depression is a complication of schizophrenia, not primary depression; the term names schizophrenia as the primary condition.",
+      "sources": [
+        "OMOPHub"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "F31.3",
+      "term": "Bipolar affective disorder, current episode mild or moderate depression",
+      "vocabulary": "ICD-10 (WHO)",
+      "decision": "exclude",
+      "confidence": 0.95,
+      "rationale": "This is bipolar affective disorder in a depressive episode, not primary depression; bipolar disorder is a distinct primary condition.",
+      "sources": [
+        "OMOPHub"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "F31.4",
+      "term": "Bipolar affective disorder, current episode severe depression without psychotic symptoms",
+      "vocabulary": "ICD-10 (WHO)",
+      "decision": "exclude",
+      "confidence": 0.95,
+      "rationale": "This is bipolar affective disorder in a depressive episode, not primary depression; bipolar disorder is a distinct primary condition.",
+      "sources": [
+        "OMOPHub"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "F31.5",
+      "term": "Bipolar affective disorder, current episode severe depression with psychotic symptoms",
+      "vocabulary": "ICD-10 (WHO)",
+      "decision": "exclude",
+      "confidence": 0.95,
+      "rationale": "This is bipolar affective disorder in a depressive episode, not primary depression; bipolar disorder is a distinct primary condition.",
+      "sources": [
+        "OMOPHub"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "P91.4",
+      "term": "Neonatal cerebral depression",
+      "vocabulary": "ICD-10 (WHO)",
+      "decision": "exclude",
+      "confidence": 0.95,
+      "rationale": "Neonatal cerebral depression is a perinatal neurological condition, not primary depression in the psychiatric sense.",
+      "sources": [
+        "OMOPHub"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "1010649005",
+      "term": "Acute vestibular syndrome due to anxiety and fear",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.95,
+      "rationale": "Acute vestibular syndrome due to anxiety is a vestibular/neurological condition, not primary depression.",
+      "sources": [
+        "OpenCodelists (ons)"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "102912007",
+      "term": "Fear of death",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.95,
+      "rationale": "Fear of death is a symptom or anxiety manifestation, not primary depression itself.",
+      "sources": [
+        "OpenCodelists (ons)"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "1036481000000106",
+      "term": "Self-referral to Improving Access to Psychological Therapies programme",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.95,
+      "rationale": "Self-referral to psychological therapy is an administrative/service code, not a clinical diagnosis of depression.",
+      "sources": [
+        "OpenCodelists (ons)"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "1148351000000100",
+      "term": "Assessment using Depression, Anxiety and Positive Outlook Scale",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.95,
+      "rationale": "Assessment using a depression scale is a screening/assessment code, not a clinical diagnosis of depression.",
+      "sources": [
+        "OMOPHub"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "191627008",
+      "term": "Bipolar affective disorder, current episode depression (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.95,
+      "rationale": "Bipolar affective disorder, current episode depression is bipolar disorder, not primary depression; bipolar is a distinct primary condition.",
+      "sources": [
+        "ChromaDB",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "191629006",
+      "term": "Bipolar affective disorder, currently depressed, mild (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.95,
+      "rationale": "Bipolar affective disorder, currently depressed, mild is bipolar disorder, not primary depression; bipolar is a distinct primary condition.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "196381000000100",
+      "term": "Depression resolved (finding)",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.95,
+      "rationale": "Depression resolved is a past/resolved condition, not current primary depression.",
+      "sources": [
+        "ChromaDB",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "445587006",
+      "term": "Assessment using geriatric depression scale",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.95,
+      "rationale": "Assessment using geriatric depression scale is a screening/assessment procedure, not a diagnosis of depression itself.",
+      "sources": [
+        "OMOPHub"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "445676008",
+      "term": "Assessment using geriatric depression scale short form",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.95,
+      "rationale": "Assessment using geriatric depression scale short form is a screening/assessment procedure, not a diagnosis of depression itself.",
+      "sources": [
+        "OMOPHub"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "445677004",
+      "term": "Assessment using geriatric depression scale 4 item form",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.95,
+      "rationale": "Assessment using geriatric depression scale 4 item form is a screening/assessment procedure, not a diagnosis of depression itself.",
+      "sources": [
+        "OMOPHub"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "445688005",
+      "term": "Assessment using geriatric depression scale original long form",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.95,
+      "rationale": "Assessment using geriatric depression scale original long form is a screening/assessment procedure, not a diagnosis of depression itself.",
+      "sources": [
+        "OMOPHub"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "445991008",
+      "term": "Assessment using hospital anxiety and depression scale",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.95,
+      "rationale": "Assessment using hospital anxiety and depression scale is a screening/assessment procedure, not a diagnosis of depression itself.",
+      "sources": [
+        "OMOPHub"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "446765009",
+      "term": "Assessment using Beck depression inventory",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.95,
+      "rationale": "Assessment using Beck depression inventory is a screening/assessment procedure, not a diagnosis of depression itself.",
+      "sources": [
+        "OMOPHub"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "450319007",
+      "term": "Assessment using Edinburgh postnatal depression scale",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.95,
+      "rationale": "Assessment using Edinburgh postnatal depression scale is a screening/assessment procedure, not a diagnosis of depression itself.",
+      "sources": [
+        "OMOPHub"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "705011000",
+      "term": "Anterior ST segment depression",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.95,
+      "rationale": "Anterior ST segment depression is a cardiac finding on ECG, not a psychiatric diagnosis of depression.",
+      "sources": [
+        "OMOPHub"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "715831000000109",
+      "term": "Excepted from depression quality indicators - informed dissent (finding)",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.95,
+      "rationale": "This is an administrative exception code indicating a patient is excepted from quality indicators, not a diagnosis of depression.",
+      "sources": [
+        "OpenCodelists (nhsd-primary-care-domain-refsets)",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "716831000000103",
+      "term": "Excepted from depression quality indicators - patient unsuitable (finding)",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.95,
+      "rationale": "This is an administrative exception code indicating a patient is excepted from quality indicators, not a diagnosis of depression.",
+      "sources": [
+        "OpenCodelists (nhsd-primary-care-domain-refsets)",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "717268000",
+      "term": "Assessment using Beck Depression Inventory II",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.95,
+      "rationale": "This is an assessment/screening tool code, not a diagnosis of depression itself; administrative codes for measurement do not confirm the patient has the condition.",
+      "sources": [
+        "OMOPHub"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "717310003",
+      "term": "Assessment using Brief Assessment Schedule Depression Cards",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.95,
+      "rationale": "This is an assessment/screening tool code, not a diagnosis of depression itself; administrative codes for measurement do not confirm the patient has the condition.",
+      "sources": [
+        "OMOPHub"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "718862007",
+      "term": "Assessment using Neurological Disorders Depression Inventory in Epilepsy",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.95,
+      "rationale": "This is an assessment/screening tool code specific to epilepsy-related depression, not a diagnosis of depression itself; administrative codes for measurement do not confirm the patient has the condition.",
+      "sources": [
+        "OMOPHub"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "761873006",
+      "term": "Assessment using MADRS (Montgomery-\u00c5sberg Depression Rating Scale)",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.95,
+      "rationale": "This is an assessment/screening tool code (MADRS scale), not a diagnosis of depression itself; administrative codes for measurement do not confirm the patient has the condition.",
+      "sources": [
+        "OMOPHub"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "763071002",
+      "term": "Assessment using Hamilton Rating Scale for Depression",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.95,
+      "rationale": "This is an assessment/screening tool code (Hamilton Rating Scale), not a diagnosis of depression itself; administrative codes for measurement do not confirm the patient has the condition.",
+      "sources": [
+        "OMOPHub"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "820321000000102",
+      "term": "Assessment using depression intensity scale circles",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.95,
+      "rationale": "This is an assessment/screening tool code (depression intensity scale circles), not a diagnosis of depression itself; administrative codes for measurement do not confirm the patient has the condition.",
+      "sources": [
+        "OMOPHub"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "967561000000100",
+      "term": "Assessment using BDRS (Brief Depression Rating Scale)",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.95,
+      "rationale": "This is an assessment/screening tool code (Brief Depression Rating Scale), not a diagnosis of depression itself; administrative codes for measurement do not confirm the patient has the condition.",
+      "sources": [
+        "OMOPHub"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "104851000119103",
+      "term": "Postpartum major depression in remission (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.9,
+      "rationale": "Postpartum major depression in remission indicates resolved/past depression, not current primary depression.",
+      "sources": [
+        "ChromaDB",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.9,
+      "usage_frequency": null
+    },
+    {
+      "code": "10532003",
+      "term": "Primary degenerative dementia of the Alzheimer type, presenile onset, with depression (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.9,
+      "rationale": "This is Alzheimer's dementia with depression as a complication; the primary condition is dementia, not primary depression.",
+      "sources": [
+        "OpenCodelists (ons)",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.9,
+      "usage_frequency": null
+    },
+    {
+      "code": "14070001",
+      "term": "Multi-infarct dementia with depression (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.9,
+      "rationale": "Multi-infarct dementia with depression is dementia as the primary condition with depression as a complication.",
+      "sources": [
+        "OpenCodelists (ons)",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.9,
+      "usage_frequency": null
+    },
+    {
+      "code": "191455000",
+      "term": "Presenile dementia with depression (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.9,
+      "rationale": "Presenile dementia with depression is dementia as the primary condition with depression as a complication.",
+      "sources": [
+        "OpenCodelists (ons)",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.9,
+      "usage_frequency": null
+    },
+    {
+      "code": "191459006",
+      "term": "Senile dementia with depression (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.9,
+      "rationale": "Senile dementia with depression is dementia as the primary condition with depression as a complication.",
+      "sources": [
+        "OpenCodelists (ons)",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.9,
+      "usage_frequency": null
+    },
+    {
+      "code": "191466007",
+      "term": "Arteriosclerotic dementia with depression (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.9,
+      "rationale": "Arteriosclerotic dementia with depression is dementia as the primary condition with depression as a complication.",
+      "sources": [
+        "OMOPHub",
+        "OpenCodelists (ons)",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.9,
+      "usage_frequency": null
+    },
+    {
+      "code": "19527009",
+      "term": "Single episode of major depression in full remission (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.9,
+      "rationale": "Single episode of major depression in full remission indicates resolved/past depression, not current primary depression.",
+      "sources": [
+        "ChromaDB",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.9,
+      "usage_frequency": null
+    },
+    {
+      "code": "231504006",
+      "term": "Mixed anxiety and depressive disorder (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.9,
+      "rationale": "Mixed anxiety and depressive disorder is a distinct comorbid condition combining two separate diagnoses, not a primary depression instance.",
+      "sources": [
+        "ChromaDB",
+        "OpenCodelists (ons)",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.9,
+      "usage_frequency": null
+    },
+    {
+      "code": "26852004",
+      "term": "Primary degenerative dementia of the Alzheimer type, senile onset, with depression (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.9,
+      "rationale": "This code describes Alzheimer's dementia with depression as a comorbid feature, not primary depression; the primary condition is dementia.",
+      "sources": [
+        "OpenCodelists (ons)",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.9,
+      "usage_frequency": null
+    }
+  ],
+  "pipeline": "rag",
+  "cold_start": false
+}

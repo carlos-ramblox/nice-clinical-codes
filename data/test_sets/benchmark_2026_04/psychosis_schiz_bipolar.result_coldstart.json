@@ -1,0 +1,5872 @@
+{
+  "reference_count": 198,
+  "query": "Psychosis and schizophrenia and bipolar affective disease codes",
+  "vocabulary": "SNOMED CT",
+  "stages": {
+    "retrieved_raw": {
+      "codelist_name": "retrieved_raw",
+      "n_ref_codes": 198,
+      "n_output_codes": 231,
+      "recall": 0.9192,
+      "precision": 0.7879,
+      "f1": 0.8485,
+      "tp_count": 182,
+      "fp_count": 49,
+      "fn_count": 16,
+      "tp_codes": [
+        {
+          "code": "1086471000000103",
+          "term": "Recurrent reactive depressive episodes, severe, with psychosis"
+        },
+        {
+          "code": "1089481000000106",
+          "term": "Cataleptic schizophrenia"
+        },
+        {
+          "code": "1089661000000104",
+          "term": "Mania with mood-congruent psychotic features"
+        },
+        {
+          "code": "1089671000000106",
+          "term": "Mania with mood-incongruent psychotic features"
+        },
+        {
+          "code": "1089681000000108",
+          "term": "Mania with psychotic features"
+        },
+        {
+          "code": "1089691000000105",
+          "term": "Acute predominantly delusional psychotic disorder"
+        },
+        {
+          "code": "111482003",
+          "term": "Subchronic schizophrenia with acute exacerbations"
+        },
+        {
+          "code": "111483008",
+          "term": "Catatonic schizophrenia in remission"
+        },
+        {
+          "code": "111484002",
+          "term": "Undifferentiated schizophrenia"
+        },
+        {
+          "code": "111485001",
+          "term": "Mixed bipolar I disorder in full remission"
+        },
+        {
+          "code": "1127191000000108",
+          "term": "First episode psychosis"
+        },
+        {
+          "code": "1204417003",
+          "term": "Early onset schizophrenia"
+        },
+        {
+          "code": "1231333004",
+          "term": "Psychostimulant dependence episodic"
+        },
+        {
+          "code": "1231336007",
+          "term": "Psychostimulant dependence continuous"
+        },
+        {
+          "code": "1231503005",
+          "term": "Psychotic disorder with insight present"
+        },
+        {
+          "code": "12939007",
+          "term": "Chronic disorganized schizophrenia"
+        },
+        {
+          "code": "13313007",
+          "term": "Mild bipolar disorder"
+        },
+        {
+          "code": "13746004",
+          "term": "Bipolar disorder"
+        },
+        {
+          "code": "14291003",
+          "term": "Subchronic disorganized schizophrenia with acute exacerbations"
+        },
+        {
+          "code": "1499003",
+          "term": "Bipolar I disorder, single manic episode with postpartum onset"
+        },
+        {
+          "code": "162004",
+          "term": "Severe manic bipolar I disorder without psychotic features"
+        },
+        {
+          "code": "16506000",
+          "term": "Mixed bipolar I disorder"
+        },
+        {
+          "code": "16990005",
+          "term": "Subchronic schizophrenia"
+        },
+        {
+          "code": "17782008",
+          "term": "Bipolar I disorder, most recent episode manic with catatonic features"
+        },
+        {
+          "code": "191525009",
+          "term": "Non-organic psychosis"
+        },
+        {
+          "code": "191526005",
+          "term": "Schizophrenic disorders"
+        },
+        {
+          "code": "191527001",
+          "term": "Simple schizophrenia"
+        },
+        {
+          "code": "191531007",
+          "term": "Acute exacerbation of chronic schizophrenia"
+        },
+        {
+          "code": "191542003",
+          "term": "Catatonic schizophrenia"
+        },
+        {
+          "code": "191547009",
+          "term": "Acute exacerbation of subchronic catatonic schizophrenia"
+        },
+        {
+          "code": "191548004",
+          "term": "Acute exacerbation of chronic catatonic schizophrenia"
+        },
+        {
+          "code": "191554003",
+          "term": "Acute exacerbation of subchronic paranoid schizophrenia"
+        },
+        {
+          "code": "191555002",
+          "term": "Acute exacerbation of chronic paranoid schizophrenia"
+        },
+        {
+          "code": "191559008",
+          "term": "Latent schizophrenia"
+        },
+        {
+          "code": "191561004",
+          "term": "Subchronic latent schizophrenia"
+        },
+        {
+          "code": "191562006",
+          "term": "Chronic latent schizophrenia"
+        },
+        {
+          "code": "191563001",
+          "term": "Acute exacerbation of subchronic latent schizophrenia"
+        },
+        {
+          "code": "191564007",
+          "term": "Acute exacerbation of chronic latent schizophrenia"
+        },
+        {
+          "code": "191565008",
+          "term": "Latent schizophrenia in remission"
+        },
+        {
+          "code": "191567000",
+          "term": "Schizoaffective schizophrenia"
+        },
+        {
+          "code": "191569002",
+          "term": "Subchronic schizoaffective schizophrenia"
+        },
+        {
+          "code": "191570001",
+          "term": "Chronic schizoaffective schizophrenia"
+        },
+        {
+          "code": "191571002",
+          "term": "Acute exacerbation of subchronic schizoaffective schizophrenia"
+        },
+        {
+          "code": "191572009",
+          "term": "Acute exacerbation of chronic schizoaffective schizophrenia"
+        },
+        {
+          "code": "191574005",
+          "term": "Schizoaffective schizophrenia in remission"
+        },
+        {
+          "code": "191577003",
+          "term": "Cenesthopathic schizophrenia"
+        },
+        {
+          "code": "191583000",
+          "term": "Single manic episode, mild"
+        },
+        {
+          "code": "191584006",
+          "term": "Single manic episode, moderate"
+        },
+        {
+          "code": "191586008",
+          "term": "Single manic episode, severe, with psychosis"
+        },
+        {
+          "code": "191588009",
+          "term": "Single manic episode in full remission"
+        },
+        {
+          "code": "191590005",
+          "term": "Recurrent manic episodes"
+        },
+        {
+          "code": "191592002",
+          "term": "Recurrent manic episodes, mild"
+        },
+        {
+          "code": "191593007",
+          "term": "Recurrent manic episodes, moderate"
+        },
+        {
+          "code": "191595000",
+          "term": "Recurrent manic episodes, severe, with psychosis"
+        },
+        {
+          "code": "191597008",
+          "term": "Recurrent manic episodes, in full remission"
+        },
+        {
+          "code": "191604000",
+          "term": "Single major depressive episode, severe, with psychosis"
+        },
+        {
+          "code": "191613003",
+          "term": "Recurrent major depressive episodes, severe, with psychosis"
+        },
+        {
+          "code": "191618007",
+          "term": "Bipolar affective disorder, current episode manic"
+        },
+        {
+          "code": "191620005",
+          "term": "Bipolar affective disorder, currently manic, mild"
+        },
+        {
+          "code": "191621009",
+          "term": "Bipolar affective disorder, currently manic, moderate"
+        },
+        {
+          "code": "191623007",
+          "term": "Bipolar affective disorder, currently manic, severe, with psychosis"
+        },
+        {
+          "code": "191625000",
+          "term": "Bipolar affective disorder, currently manic, in full remission"
+        },
+        {
+          "code": "191627008",
+          "term": "Bipolar affective disorder, current episode depression"
+        },
+        {
+          "code": "191629006",
+          "term": "Bipolar affective disorder, currently depressed, mild"
+        },
+        {
+          "code": "191630001",
+          "term": "Bipolar affective disorder, currently depressed, moderate"
+        },
+        {
+          "code": "191634005",
+          "term": "Bipolar affective disorder, currently depressed, in full remission"
+        },
+        {
+          "code": "191636007",
+          "term": "Mixed bipolar affective disorder"
+        },
+        {
+          "code": "191638008",
+          "term": "Mixed bipolar affective disorder, mild"
+        },
+        {
+          "code": "191639000",
+          "term": "Mixed bipolar affective disorder, moderate"
+        },
+        {
+          "code": "191641004",
+          "term": "Mixed bipolar affective disorder, severe, with psychosis"
+        },
+        {
+          "code": "191643001",
+          "term": "Mixed bipolar affective disorder, in full remission"
+        },
+        {
+          "code": "191658009",
+          "term": "Atypical manic disorder"
+        },
+        {
+          "code": "191668004",
+          "term": "Simple paranoid state"
+        },
+        {
+          "code": "191672000",
+          "term": "Paranoia querulans"
+        },
+        {
+          "code": "191676002",
+          "term": "Reactive depressive psychosis"
+        },
+        {
+          "code": "191677006",
+          "term": "Acute hysterical psychosis"
+        },
+        {
+          "code": "191680007",
+          "term": "Psychogenic paranoid psychosis"
+        },
+        {
+          "code": "191683009",
+          "term": "Psychogenic stupor"
+        },
+        {
+          "code": "192362008",
+          "term": "Bipolar affective disorder, current episode mixed"
+        },
+        {
+          "code": "231437006",
+          "term": "Reactive psychoses"
+        },
+        {
+          "code": "231449007",
+          "term": "Epileptic psychosis"
+        },
+        {
+          "code": "231485007",
+          "term": "Post-schizophrenic depression"
+        },
+        {
+          "code": "231487004",
+          "term": "Persistent delusional disorder"
+        },
+        {
+          "code": "231489001",
+          "term": "Acute transient psychotic disorder"
+        },
+        {
+          "code": "231494001",
+          "term": "Mania"
+        },
+        {
+          "code": "231495000",
+          "term": "Manic stupor"
+        },
+        {
+          "code": "231496004",
+          "term": "Hypomania"
+        },
+        {
+          "code": "238972008",
+          "term": "Cutaneous monosymptomatic delusional psychosis"
+        },
+        {
+          "code": "238973003",
+          "term": "Delusions of parasitosis"
+        },
+        {
+          "code": "238974009",
+          "term": "Delusions of infestation"
+        },
+        {
+          "code": "238977002",
+          "term": "Delusional hyperhidrosis"
+        },
+        {
+          "code": "247804008",
+          "term": "Schizophrenic prodrome"
+        },
+        {
+          "code": "26025008",
+          "term": "Residual schizophrenia"
+        },
+        {
+          "code": "26472000",
+          "term": "Paraphrenia"
+        },
+        {
+          "code": "268617001",
+          "term": "Acute schizophrenic episode"
+        },
+        {
+          "code": "268619003",
+          "term": "Manic disorder, single episode"
+        },
+        {
+          "code": "268622001",
+          "term": "Chronic paranoid psychosis"
+        },
+        {
+          "code": "268624000",
+          "term": "Acute paranoid reaction"
+        },
+        {
+          "code": "270901009",
+          "term": "Schizoaffective disorder, mixed type"
+        },
+        {
+          "code": "271428004",
+          "term": "Schizoaffective disorder, manic type"
+        },
+        {
+          "code": "27387000",
+          "term": "Subchronic disorganized schizophrenia"
+        },
+        {
+          "code": "274952002",
+          "term": "Borderline schizophrenia"
+        },
+        {
+          "code": "274953007",
+          "term": "Acute polymorphic psychotic disorder"
+        },
+        {
+          "code": "278506006",
+          "term": "Involutional paranoid state"
+        },
+        {
+          "code": "278508007",
+          "term": "Delusional dysmorphophobia"
+        },
+        {
+          "code": "278853003",
+          "term": "Acute schizophrenia-like psychotic disorder"
+        },
+        {
+          "code": "280949006",
+          "term": "Erotomania"
+        },
+        {
+          "code": "28663008",
+          "term": "Severe manic bipolar I disorder with psychotic features"
+        },
+        {
+          "code": "29599000",
+          "term": "Chronic undifferentiated schizophrenia"
+        },
+        {
+          "code": "30336007",
+          "term": "Chronic residual schizophrenia with acute exacerbations"
+        },
+        {
+          "code": "307417003",
+          "term": "Cycloid psychosis"
+        },
+        {
+          "code": "31027006",
+          "term": "Schizotypal personality disorder"
+        },
+        {
+          "code": "31373002",
+          "term": "Disorganized schizophrenia in remission"
+        },
+        {
+          "code": "31446002",
+          "term": "Bipolar I disorder, most recent episode hypomanic"
+        },
+        {
+          "code": "31658008",
+          "term": "Chronic paranoid schizophrenia"
+        },
+        {
+          "code": "33323008",
+          "term": "Somatic delusion disorder"
+        },
+        {
+          "code": "35218008",
+          "term": "Chronic disorganized schizophrenia with acute exacerbation"
+        },
+        {
+          "code": "35252006",
+          "term": "Disorganized schizophrenia"
+        },
+        {
+          "code": "371596008",
+          "term": "Bipolar I disorder"
+        },
+        {
+          "code": "38295006",
+          "term": "Involutional paraphrenia"
+        },
+        {
+          "code": "38368003",
+          "term": "Schizoaffective disorder, bipolar type"
+        },
+        {
+          "code": "39610001",
+          "term": "Undifferentiated schizophrenia in remission"
+        },
+        {
+          "code": "416340002",
+          "term": "Late onset schizophrenia"
+        },
+        {
+          "code": "41836007",
+          "term": "Bipolar disorder in full remission"
+        },
+        {
+          "code": "41932008",
+          "term": "Amok"
+        },
+        {
+          "code": "42868002",
+          "term": "Subchronic catatonic schizophrenia"
+        },
+        {
+          "code": "441704009",
+          "term": "Affective psychosis"
+        },
+        {
+          "code": "4441000",
+          "term": "Severe bipolar disorder with psychotic features"
+        },
+        {
+          "code": "48500005",
+          "term": "Delusional disorder"
+        },
+        {
+          "code": "4926007",
+          "term": "Schizophrenia in remission"
+        },
+        {
+          "code": "51133006",
+          "term": "Residual schizophrenia in remission"
+        },
+        {
+          "code": "53049002",
+          "term": "Severe bipolar disorder without psychotic features"
+        },
+        {
+          "code": "53607008",
+          "term": "Depressed bipolar I disorder in remission"
+        },
+        {
+          "code": "5464005",
+          "term": "Brief reactive psychosis"
+        },
+        {
+          "code": "55516002",
+          "term": "Bipolar I disorder, most recent episode manic with postpartum onset"
+        },
+        {
+          "code": "58214004",
+          "term": "Schizophrenia"
+        },
+        {
+          "code": "60401000119104",
+          "term": "Postpartum psychosis in remission"
+        },
+        {
+          "code": "61403008",
+          "term": "Severe depressed bipolar I disorder without psychotic features"
+        },
+        {
+          "code": "61831009",
+          "term": "Induced psychotic disorder"
+        },
+        {
+          "code": "63181006",
+          "term": "Paranoid schizophrenia in remission"
+        },
+        {
+          "code": "63204009",
+          "term": "Bouff\u00e9e d\u00e9lirante"
+        },
+        {
+          "code": "63249007",
+          "term": "Manic bipolar I disorder in partial remission"
+        },
+        {
+          "code": "63395003",
+          "term": "Folie \u00e0 trois"
+        },
+        {
+          "code": "64905009",
+          "term": "Paranoid schizophrenia"
+        },
+        {
+          "code": "65971000052100",
+          "term": "Acute psychosis"
+        },
+        {
+          "code": "68890003",
+          "term": "Schizoaffective disorder"
+        },
+        {
+          "code": "68995007",
+          "term": "Chronic catatonic schizophrenia"
+        },
+        {
+          "code": "69322001",
+          "term": "Psychotic disorder"
+        },
+        {
+          "code": "7025000",
+          "term": "Subchronic undifferentiated schizophrenia with acute exacerbations"
+        },
+        {
+          "code": "70814008",
+          "term": "Subchronic residual schizophrenia with acute exacerbations"
+        },
+        {
+          "code": "71103003",
+          "term": "Chronic residual schizophrenia"
+        },
+        {
+          "code": "712824002",
+          "term": "Acute polymorphic psychotic disorder without symptoms of schizophrenia"
+        },
+        {
+          "code": "712850003",
+          "term": "Acute polymorphic psychotic disorder co-occurrent with symptoms of schizophrenia"
+        },
+        {
+          "code": "755311000000100",
+          "term": "Non-organic psychosis in remission"
+        },
+        {
+          "code": "755321000000106",
+          "term": "Single major depressive episode, severe, with psychosis, psychosis in remission"
+        },
+        {
+          "code": "755331000000108",
+          "term": "Recurrent major depressive episodes, severe, with psychosis, psychosis in remission"
+        },
+        {
+          "code": "760721000000109",
+          "term": "Mixed bipolar affective disorder, in partial remission"
+        },
+        {
+          "code": "764591000000108",
+          "term": "Mixed bipolar affective disorder, severe"
+        },
+        {
+          "code": "764621000000106",
+          "term": "Recurrent manic episodes, severe"
+        },
+        {
+          "code": "764641000000104",
+          "term": "Single manic episode, severe"
+        },
+        {
+          "code": "764671000000105",
+          "term": "Recurrent manic episodes, in partial remission"
+        },
+        {
+          "code": "764681000000107",
+          "term": "Recurrent manic episodes, in remission"
+        },
+        {
+          "code": "764731000000103",
+          "term": "Single manic episode in partial remission"
+        },
+        {
+          "code": "764741000000107",
+          "term": "Single manic episode in remission"
+        },
+        {
+          "code": "765176007",
+          "term": "Psychosis and severe depression co-occurrent and due to bipolar affective disorder"
+        },
+        {
+          "code": "76566000",
+          "term": "Subchronic residual schizophrenia"
+        },
+        {
+          "code": "767631007",
+          "term": "Bipolar disorder, most recent episode depression"
+        },
+        {
+          "code": "767632000",
+          "term": "Bipolar disorder, most recent episode manic"
+        },
+        {
+          "code": "767633005",
+          "term": "Bipolar affective disorder, most recent episode mixed"
+        },
+        {
+          "code": "767635003",
+          "term": "Bipolar I disorder, most recent episode manic"
+        },
+        {
+          "code": "767636002",
+          "term": "Bipolar I disorder, most recent episode depression"
+        },
+        {
+          "code": "77475008",
+          "term": "Jealous delusion disorder"
+        },
+        {
+          "code": "789061003",
+          "term": "Rapid cycling bipolar II disorder"
+        },
+        {
+          "code": "79204003",
+          "term": "Chronic undifferentiated schizophrenia with acute exacerbations"
+        },
+        {
+          "code": "79584002",
+          "term": "Moderate bipolar disorder"
+        },
+        {
+          "code": "79866005",
+          "term": "Subchronic paranoid schizophrenia"
+        },
+        {
+          "code": "83225003",
+          "term": "Bipolar II disorder"
+        },
+        {
+          "code": "83746006",
+          "term": "Chronic schizophrenia"
+        },
+        {
+          "code": "85248005",
+          "term": "Bipolar disorder in remission"
+        },
+        {
+          "code": "85861002",
+          "term": "Subchronic undifferentiated schizophrenia"
+        },
+        {
+          "code": "87950005",
+          "term": "Bipolar I disorder, single manic episode with catatonic features"
+        },
+        {
+          "code": "88975006",
+          "term": "Schizophreniform disorder"
+        }
+      ],
+      "fp_codes": [
+        {
+          "code": "1089501000000102",
+          "term": "Presenile dementia with psychosis (disorder)"
+        },
+        {
+          "code": "1231439001",
+          "term": "Calgary Depression Scale for Schizophrenia"
+        },
+        {
+          "code": "1259128002",
+          "term": "Alzheimer disease with psychosis (disorder)"
+        },
+        {
+          "code": "1335862003",
+          "term": "Childhood-onset schizophrenia"
+        },
+        {
+          "code": "16238741000119104",
+          "term": "Bipolar disorder caused by drug (disorder)"
+        },
+        {
+          "code": "191483003",
+          "term": "Drug-induced psychosis"
+        },
+        {
+          "code": "191659001",
+          "term": "Atypical depressive disorder (disorder)"
+        },
+        {
+          "code": "191697001",
+          "term": "Borderline psychosis of childhood"
+        },
+        {
+          "code": "200951000000109",
+          "term": "Psychosis, schizophrenia and bipolar affective disorder resolved"
+        },
+        {
+          "code": "247803002",
+          "term": "Seasonal affective disorder (disorder)"
+        },
+        {
+          "code": "285491000000101",
+          "term": "Bipolar affective disorder resolved"
+        },
+        {
+          "code": "288751000119101",
+          "term": "Reactive depressive psychosis, single episode (disorder)"
+        },
+        {
+          "code": "371026009",
+          "term": "Senile dementia with psychosis (disorder)"
+        },
+        {
+          "code": "390815004",
+          "term": "Early intervention in psychosis"
+        },
+        {
+          "code": "391183008",
+          "term": "Early intervention in psychosis - 24 hour intensive"
+        },
+        {
+          "code": "391188004",
+          "term": "Early intervention in psychosis - 1-2 contacts/week"
+        },
+        {
+          "code": "391189007",
+          "term": "Early intervention in psychosis - 1-3 contacts/month"
+        },
+        {
+          "code": "391190003",
+          "term": "Early intervention in psychosis - <1 contact/month"
+        },
+        {
+          "code": "473452003",
+          "term": "Atypical psychosis"
+        },
+        {
+          "code": "702356009",
+          "term": "X-linked intellectual disability-psychosis-macroorchidism syndrome (disorder)"
+        },
+        {
+          "code": "718026005",
+          "term": "Cognitive behavioral therapy for psychosis"
+        },
+        {
+          "code": "943081000000102",
+          "term": "Cannabis-induced psychosis"
+        },
+        {
+          "code": "943101000000108",
+          "term": "Cocaine-induced psychosis"
+        },
+        {
+          "code": "F062",
+          "term": "Organic delusional [schizophrenia-like] disorder"
+        },
+        {
+          "code": "F20",
+          "term": "Schizophrenia"
+        },
+        {
+          "code": "F20-F29",
+          "term": "Schizophrenia, schizotypal and delusional disorders"
+        },
+        {
+          "code": "F200",
+          "term": "Paranoid schizophrenia"
+        },
+        {
+          "code": "F201",
+          "term": "Hebephrenic schizophrenia"
+        },
+        {
+          "code": "F202",
+          "term": "Catatonic schizophrenia"
+        },
+        {
+          "code": "F203",
+          "term": "Undifferentiated schizophrenia"
+        },
+        {
+          "code": "F205",
+          "term": "Residual schizophrenia"
+        },
+        {
+          "code": "F206",
+          "term": "Simple schizophrenia"
+        },
+        {
+          "code": "F208",
+          "term": "Other schizophrenia"
+        },
+        {
+          "code": "F209",
+          "term": "Schizophrenia, unspecified"
+        },
+        {
+          "code": "F230",
+          "term": "Acute polymorphic psychotic disorder without symptoms of schizophrenia"
+        },
+        {
+          "code": "F231",
+          "term": "Acute polymorphic psychotic disorder with symptoms of schizophrenia"
+        },
+        {
+          "code": "F232",
+          "term": "Acute schizophrenia-like psychotic disorder"
+        },
+        {
+          "code": "F29",
+          "term": "Unspecified nonorganic psychosis"
+        },
+        {
+          "code": "F31",
+          "term": "Bipolar affective disorder"
+        },
+        {
+          "code": "F310",
+          "term": "Bipolar affective disorder, current episode hypomanic"
+        },
+        {
+          "code": "F311",
+          "term": "Bipolar affective disorder, current episode manic without psychotic symptoms"
+        },
+        {
+          "code": "F312",
+          "term": "Bipolar affective disorder, current episode manic with psychotic symptoms"
+        },
+        {
+          "code": "F313",
+          "term": "Bipolar affective disorder, current episode mild or moderate depression"
+        },
+        {
+          "code": "F314",
+          "term": "Bipolar affective disorder, current episode severe depression without psychotic symptoms"
+        },
+        {
+          "code": "F315",
+          "term": "Bipolar affective disorder, current episode severe depression with psychotic symptoms"
+        },
+        {
+          "code": "F316",
+          "term": "Bipolar affective disorder, current episode mixed"
+        },
+        {
+          "code": "F317",
+          "term": "Bipolar affective disorder, currently in remission"
+        },
+        {
+          "code": "F318",
+          "term": "Other bipolar affective disorders"
+        },
+        {
+          "code": "F319",
+          "term": "Bipolar affective disorder, unspecified"
+        }
+      ],
+      "fn_codes": [
+        {
+          "code": "1089511000000100",
+          "term": "Recurrent depression with current severe episode and psychotic features"
+        },
+        {
+          "code": "162313000",
+          "term": "Morbid jealousy"
+        },
+        {
+          "code": "16238741000119105",
+          "term": "Bipolar disorder caused by drug"
+        },
+        {
+          "code": "191530008",
+          "term": "Acute exacerbation of subchronic schizophrenia"
+        },
+        {
+          "code": "191538001",
+          "term": "Acute exacerbation of subchronic hebephrenic schizophrenia"
+        },
+        {
+          "code": "191539009",
+          "term": "Acute exacerbation of chronic hebephrenic schizophrenia"
+        },
+        {
+          "code": "191632009",
+          "term": "Bipolar affective disorder, currently depressed, severe, with psychosis"
+        },
+        {
+          "code": "191667009",
+          "term": "Paranoid disorder"
+        },
+        {
+          "code": "191670008",
+          "term": "Shared paranoid disorder"
+        },
+        {
+          "code": "28475009",
+          "term": "Severe recurrent major depression with psychotic features"
+        },
+        {
+          "code": "307504004",
+          "term": "Oneirophrenia"
+        },
+        {
+          "code": "397711000000100",
+          "term": "[X]Severe depressive episode with psychotic symptoms"
+        },
+        {
+          "code": "417601000000102",
+          "term": "[X]Schizophrenia, schizotypal and delusional disorders"
+        },
+        {
+          "code": "73867007",
+          "term": "Severe major depression with psychotic features"
+        },
+        {
+          "code": "755301000000102",
+          "term": "Paranoid state in remission"
+        },
+        {
+          "code": "84760002",
+          "term": "Schizoaffective disorder, depressive type"
+        }
+      ]
+    },
+    "merged_enriched": {
+      "codelist_name": "merged_enriched",
+      "n_ref_codes": 198,
+      "n_output_codes": 100,
+      "recall": 0.5,
+      "precision": 0.99,
+      "f1": 0.6644,
+      "tp_count": 99,
+      "fp_count": 1,
+      "fn_count": 99,
+      "tp_codes": [
+        {
+          "code": "1089481000000106",
+          "term": "Cataleptic schizophrenia"
+        },
+        {
+          "code": "111483008",
+          "term": "Catatonic schizophrenia in remission"
+        },
+        {
+          "code": "111484002",
+          "term": "Undifferentiated schizophrenia"
+        },
+        {
+          "code": "111485001",
+          "term": "Mixed bipolar I disorder in full remission"
+        },
+        {
+          "code": "1127191000000108",
+          "term": "First episode psychosis"
+        },
+        {
+          "code": "1204417003",
+          "term": "Early onset schizophrenia"
+        },
+        {
+          "code": "1231503005",
+          "term": "Psychotic disorder with insight present"
+        },
+        {
+          "code": "12939007",
+          "term": "Chronic disorganized schizophrenia"
+        },
+        {
+          "code": "13313007",
+          "term": "Mild bipolar disorder"
+        },
+        {
+          "code": "13746004",
+          "term": "Bipolar disorder"
+        },
+        {
+          "code": "1499003",
+          "term": "Bipolar I disorder, single manic episode with postpartum onset"
+        },
+        {
+          "code": "162004",
+          "term": "Severe manic bipolar I disorder without psychotic features"
+        },
+        {
+          "code": "16506000",
+          "term": "Mixed bipolar I disorder"
+        },
+        {
+          "code": "16990005",
+          "term": "Subchronic schizophrenia"
+        },
+        {
+          "code": "17782008",
+          "term": "Bipolar I disorder, most recent episode manic with catatonic features"
+        },
+        {
+          "code": "191525009",
+          "term": "Non-organic psychosis"
+        },
+        {
+          "code": "191526005",
+          "term": "Schizophrenic disorders"
+        },
+        {
+          "code": "191527001",
+          "term": "Simple schizophrenia"
+        },
+        {
+          "code": "191531007",
+          "term": "Acute exacerbation of chronic schizophrenia"
+        },
+        {
+          "code": "191542003",
+          "term": "Catatonic schizophrenia"
+        },
+        {
+          "code": "191555002",
+          "term": "Acute exacerbation of chronic paranoid schizophrenia"
+        },
+        {
+          "code": "191559008",
+          "term": "Latent schizophrenia"
+        },
+        {
+          "code": "191562006",
+          "term": "Chronic latent schizophrenia"
+        },
+        {
+          "code": "191567000",
+          "term": "Schizoaffective schizophrenia"
+        },
+        {
+          "code": "191569002",
+          "term": "Subchronic schizoaffective schizophrenia"
+        },
+        {
+          "code": "191570001",
+          "term": "Chronic schizoaffective schizophrenia"
+        },
+        {
+          "code": "191571002",
+          "term": "Acute exacerbation of subchronic schizoaffective schizophrenia"
+        },
+        {
+          "code": "191572009",
+          "term": "Acute exacerbation of chronic schizoaffective schizophrenia"
+        },
+        {
+          "code": "191574005",
+          "term": "Schizoaffective schizophrenia in remission"
+        },
+        {
+          "code": "191577003",
+          "term": "Cenesthopathic schizophrenia"
+        },
+        {
+          "code": "191618007",
+          "term": "Bipolar affective disorder, current episode manic"
+        },
+        {
+          "code": "191620005",
+          "term": "Bipolar affective disorder, currently manic, mild"
+        },
+        {
+          "code": "191621009",
+          "term": "Bipolar affective disorder, currently manic, moderate"
+        },
+        {
+          "code": "191623007",
+          "term": "Bipolar affective disorder, currently manic, severe, with psychosis"
+        },
+        {
+          "code": "191625000",
+          "term": "Bipolar affective disorder, currently manic, in full remission"
+        },
+        {
+          "code": "191627008",
+          "term": "Bipolar affective disorder, current episode depression"
+        },
+        {
+          "code": "191629006",
+          "term": "Bipolar affective disorder, currently depressed, mild"
+        },
+        {
+          "code": "191630001",
+          "term": "Bipolar affective disorder, currently depressed, moderate"
+        },
+        {
+          "code": "191634005",
+          "term": "Bipolar affective disorder, currently depressed, in full remission"
+        },
+        {
+          "code": "191636007",
+          "term": "Mixed bipolar affective disorder"
+        },
+        {
+          "code": "191638008",
+          "term": "Mixed bipolar affective disorder, mild"
+        },
+        {
+          "code": "191639000",
+          "term": "Mixed bipolar affective disorder, moderate"
+        },
+        {
+          "code": "191641004",
+          "term": "Mixed bipolar affective disorder, severe, with psychosis"
+        },
+        {
+          "code": "191643001",
+          "term": "Mixed bipolar affective disorder, in full remission"
+        },
+        {
+          "code": "191658009",
+          "term": "Atypical manic disorder"
+        },
+        {
+          "code": "191677006",
+          "term": "Acute hysterical psychosis"
+        },
+        {
+          "code": "191680007",
+          "term": "Psychogenic paranoid psychosis"
+        },
+        {
+          "code": "192362008",
+          "term": "Bipolar affective disorder, current episode mixed"
+        },
+        {
+          "code": "231449007",
+          "term": "Epileptic psychosis"
+        },
+        {
+          "code": "231494001",
+          "term": "Mania"
+        },
+        {
+          "code": "238972008",
+          "term": "Cutaneous monosymptomatic delusional psychosis"
+        },
+        {
+          "code": "26025008",
+          "term": "Residual schizophrenia"
+        },
+        {
+          "code": "268617001",
+          "term": "Acute schizophrenic episode"
+        },
+        {
+          "code": "268622001",
+          "term": "Chronic paranoid psychosis"
+        },
+        {
+          "code": "27387000",
+          "term": "Subchronic disorganized schizophrenia"
+        },
+        {
+          "code": "274952002",
+          "term": "Borderline schizophrenia"
+        },
+        {
+          "code": "278853003",
+          "term": "Acute schizophrenia-like psychotic disorder"
+        },
+        {
+          "code": "28663008",
+          "term": "Severe manic bipolar I disorder with psychotic features"
+        },
+        {
+          "code": "29599000",
+          "term": "Chronic undifferentiated schizophrenia"
+        },
+        {
+          "code": "307417003",
+          "term": "Cycloid psychosis"
+        },
+        {
+          "code": "31373002",
+          "term": "Disorganized schizophrenia in remission"
+        },
+        {
+          "code": "31446002",
+          "term": "Bipolar I disorder, most recent episode hypomanic"
+        },
+        {
+          "code": "31658008",
+          "term": "Chronic paranoid schizophrenia"
+        },
+        {
+          "code": "35218008",
+          "term": "Chronic disorganized schizophrenia with acute exacerbation"
+        },
+        {
+          "code": "35252006",
+          "term": "Disorganized schizophrenia"
+        },
+        {
+          "code": "371596008",
+          "term": "Bipolar I disorder"
+        },
+        {
+          "code": "38368003",
+          "term": "Schizoaffective disorder, bipolar type"
+        },
+        {
+          "code": "441704009",
+          "term": "Affective psychosis"
+        },
+        {
+          "code": "4441000",
+          "term": "Severe bipolar disorder with psychotic features"
+        },
+        {
+          "code": "53049002",
+          "term": "Severe bipolar disorder without psychotic features"
+        },
+        {
+          "code": "53607008",
+          "term": "Depressed bipolar I disorder in remission"
+        },
+        {
+          "code": "5464005",
+          "term": "Brief reactive psychosis"
+        },
+        {
+          "code": "55516002",
+          "term": "Bipolar I disorder, most recent episode manic with postpartum onset"
+        },
+        {
+          "code": "58214004",
+          "term": "Schizophrenia"
+        },
+        {
+          "code": "61403008",
+          "term": "Severe depressed bipolar I disorder without psychotic features"
+        },
+        {
+          "code": "61831009",
+          "term": "Induced psychotic disorder"
+        },
+        {
+          "code": "63249007",
+          "term": "Manic bipolar I disorder in partial remission"
+        },
+        {
+          "code": "64905009",
+          "term": "Paranoid schizophrenia"
+        },
+        {
+          "code": "65971000052100",
+          "term": "Acute psychosis"
+        },
+        {
+          "code": "68995007",
+          "term": "Chronic catatonic schizophrenia"
+        },
+        {
+          "code": "69322001",
+          "term": "Psychotic disorder"
+        },
+        {
+          "code": "71103003",
+          "term": "Chronic residual schizophrenia"
+        },
+        {
+          "code": "712824002",
+          "term": "Acute polymorphic psychotic disorder without symptoms of schizophrenia"
+        },
+        {
+          "code": "712850003",
+          "term": "Acute polymorphic psychotic disorder co-occurrent with symptoms of schizophrenia"
+        },
+        {
+          "code": "760721000000109",
+          "term": "Mixed bipolar affective disorder, in partial remission"
+        },
+        {
+          "code": "764591000000108",
+          "term": "Mixed bipolar affective disorder, severe"
+        },
+        {
+          "code": "765176007",
+          "term": "Psychosis and severe depression co-occurrent and due to bipolar affective disorder"
+        },
+        {
+          "code": "767631007",
+          "term": "Bipolar disorder, most recent episode depression"
+        },
+        {
+          "code": "767632000",
+          "term": "Bipolar disorder, most recent episode manic"
+        },
+        {
+          "code": "767633005",
+          "term": "Bipolar affective disorder, most recent episode mixed"
+        },
+        {
+          "code": "767635003",
+          "term": "Bipolar I disorder, most recent episode manic"
+        },
+        {
+          "code": "767636002",
+          "term": "Bipolar I disorder, most recent episode depression"
+        },
+        {
+          "code": "789061003",
+          "term": "Rapid cycling bipolar II disorder"
+        },
+        {
+          "code": "79584002",
+          "term": "Moderate bipolar disorder"
+        },
+        {
+          "code": "79866005",
+          "term": "Subchronic paranoid schizophrenia"
+        },
+        {
+          "code": "83225003",
+          "term": "Bipolar II disorder"
+        },
+        {
+          "code": "83746006",
+          "term": "Chronic schizophrenia"
+        },
+        {
+          "code": "85248005",
+          "term": "Bipolar disorder in remission"
+        },
+        {
+          "code": "87950005",
+          "term": "Bipolar I disorder, single manic episode with catatonic features"
+        }
+      ],
+      "fp_codes": [
+        {
+          "code": "1259128002",
+          "term": "Alzheimer disease with psychosis (disorder)"
+        }
+      ],
+      "fn_codes": [
+        {
+          "code": "1086471000000103",
+          "term": "Recurrent reactive depressive episodes, severe, with psychosis"
+        },
+        {
+          "code": "1089511000000100",
+          "term": "Recurrent depression with current severe episode and psychotic features"
+        },
+        {
+          "code": "1089661000000104",
+          "term": "Mania with mood-congruent psychotic features"
+        },
+        {
+          "code": "1089671000000106",
+          "term": "Mania with mood-incongruent psychotic features"
+        },
+        {
+          "code": "1089681000000108",
+          "term": "Mania with psychotic features"
+        },
+        {
+          "code": "1089691000000105",
+          "term": "Acute predominantly delusional psychotic disorder"
+        },
+        {
+          "code": "111482003",
+          "term": "Subchronic schizophrenia with acute exacerbations"
+        },
+        {
+          "code": "1231333004",
+          "term": "Psychostimulant dependence episodic"
+        },
+        {
+          "code": "1231336007",
+          "term": "Psychostimulant dependence continuous"
+        },
+        {
+          "code": "14291003",
+          "term": "Subchronic disorganized schizophrenia with acute exacerbations"
+        },
+        {
+          "code": "162313000",
+          "term": "Morbid jealousy"
+        },
+        {
+          "code": "16238741000119105",
+          "term": "Bipolar disorder caused by drug"
+        },
+        {
+          "code": "191530008",
+          "term": "Acute exacerbation of subchronic schizophrenia"
+        },
+        {
+          "code": "191538001",
+          "term": "Acute exacerbation of subchronic hebephrenic schizophrenia"
+        },
+        {
+          "code": "191539009",
+          "term": "Acute exacerbation of chronic hebephrenic schizophrenia"
+        },
+        {
+          "code": "191547009",
+          "term": "Acute exacerbation of subchronic catatonic schizophrenia"
+        },
+        {
+          "code": "191548004",
+          "term": "Acute exacerbation of chronic catatonic schizophrenia"
+        },
+        {
+          "code": "191554003",
+          "term": "Acute exacerbation of subchronic paranoid schizophrenia"
+        },
+        {
+          "code": "191561004",
+          "term": "Subchronic latent schizophrenia"
+        },
+        {
+          "code": "191563001",
+          "term": "Acute exacerbation of subchronic latent schizophrenia"
+        },
+        {
+          "code": "191564007",
+          "term": "Acute exacerbation of chronic latent schizophrenia"
+        },
+        {
+          "code": "191565008",
+          "term": "Latent schizophrenia in remission"
+        },
+        {
+          "code": "191583000",
+          "term": "Single manic episode, mild"
+        },
+        {
+          "code": "191584006",
+          "term": "Single manic episode, moderate"
+        },
+        {
+          "code": "191586008",
+          "term": "Single manic episode, severe, with psychosis"
+        },
+        {
+          "code": "191588009",
+          "term": "Single manic episode in full remission"
+        },
+        {
+          "code": "191590005",
+          "term": "Recurrent manic episodes"
+        },
+        {
+          "code": "191592002",
+          "term": "Recurrent manic episodes, mild"
+        },
+        {
+          "code": "191593007",
+          "term": "Recurrent manic episodes, moderate"
+        },
+        {
+          "code": "191595000",
+          "term": "Recurrent manic episodes, severe, with psychosis"
+        },
+        {
+          "code": "191597008",
+          "term": "Recurrent manic episodes, in full remission"
+        },
+        {
+          "code": "191604000",
+          "term": "Single major depressive episode, severe, with psychosis"
+        },
+        {
+          "code": "191613003",
+          "term": "Recurrent major depressive episodes, severe, with psychosis"
+        },
+        {
+          "code": "191632009",
+          "term": "Bipolar affective disorder, currently depressed, severe, with psychosis"
+        },
+        {
+          "code": "191667009",
+          "term": "Paranoid disorder"
+        },
+        {
+          "code": "191668004",
+          "term": "Simple paranoid state"
+        },
+        {
+          "code": "191670008",
+          "term": "Shared paranoid disorder"
+        },
+        {
+          "code": "191672000",
+          "term": "Paranoia querulans"
+        },
+        {
+          "code": "191676002",
+          "term": "Reactive depressive psychosis"
+        },
+        {
+          "code": "191683009",
+          "term": "Psychogenic stupor"
+        },
+        {
+          "code": "231437006",
+          "term": "Reactive psychoses"
+        },
+        {
+          "code": "231485007",
+          "term": "Post-schizophrenic depression"
+        },
+        {
+          "code": "231487004",
+          "term": "Persistent delusional disorder"
+        },
+        {
+          "code": "231489001",
+          "term": "Acute transient psychotic disorder"
+        },
+        {
+          "code": "231495000",
+          "term": "Manic stupor"
+        },
+        {
+          "code": "231496004",
+          "term": "Hypomania"
+        },
+        {
+          "code": "238973003",
+          "term": "Delusions of parasitosis"
+        },
+        {
+          "code": "238974009",
+          "term": "Delusions of infestation"
+        },
+        {
+          "code": "238977002",
+          "term": "Delusional hyperhidrosis"
+        },
+        {
+          "code": "247804008",
+          "term": "Schizophrenic prodrome"
+        },
+        {
+          "code": "26472000",
+          "term": "Paraphrenia"
+        },
+        {
+          "code": "268619003",
+          "term": "Manic disorder, single episode"
+        },
+        {
+          "code": "268624000",
+          "term": "Acute paranoid reaction"
+        },
+        {
+          "code": "270901009",
+          "term": "Schizoaffective disorder, mixed type"
+        },
+        {
+          "code": "271428004",
+          "term": "Schizoaffective disorder, manic type"
+        },
+        {
+          "code": "274953007",
+          "term": "Acute polymorphic psychotic disorder"
+        },
+        {
+          "code": "278506006",
+          "term": "Involutional paranoid state"
+        },
+        {
+          "code": "278508007",
+          "term": "Delusional dysmorphophobia"
+        },
+        {
+          "code": "280949006",
+          "term": "Erotomania"
+        },
+        {
+          "code": "28475009",
+          "term": "Severe recurrent major depression with psychotic features"
+        },
+        {
+          "code": "30336007",
+          "term": "Chronic residual schizophrenia with acute exacerbations"
+        },
+        {
+          "code": "307504004",
+          "term": "Oneirophrenia"
+        },
+        {
+          "code": "31027006",
+          "term": "Schizotypal personality disorder"
+        },
+        {
+          "code": "33323008",
+          "term": "Somatic delusion disorder"
+        },
+        {
+          "code": "38295006",
+          "term": "Involutional paraphrenia"
+        },
+        {
+          "code": "39610001",
+          "term": "Undifferentiated schizophrenia in remission"
+        },
+        {
+          "code": "397711000000100",
+          "term": "[X]Severe depressive episode with psychotic symptoms"
+        },
+        {
+          "code": "416340002",
+          "term": "Late onset schizophrenia"
+        },
+        {
+          "code": "417601000000102",
+          "term": "[X]Schizophrenia, schizotypal and delusional disorders"
+        },
+        {
+          "code": "41836007",
+          "term": "Bipolar disorder in full remission"
+        },
+        {
+          "code": "41932008",
+          "term": "Amok"
+        },
+        {
+          "code": "42868002",
+          "term": "Subchronic catatonic schizophrenia"
+        },
+        {
+          "code": "48500005",
+          "term": "Delusional disorder"
+        },
+        {
+          "code": "4926007",
+          "term": "Schizophrenia in remission"
+        },
+        {
+          "code": "51133006",
+          "term": "Residual schizophrenia in remission"
+        },
+        {
+          "code": "60401000119104",
+          "term": "Postpartum psychosis in remission"
+        },
+        {
+          "code": "63181006",
+          "term": "Paranoid schizophrenia in remission"
+        },
+        {
+          "code": "63204009",
+          "term": "Bouff\u00e9e d\u00e9lirante"
+        },
+        {
+          "code": "63395003",
+          "term": "Folie \u00e0 trois"
+        },
+        {
+          "code": "68890003",
+          "term": "Schizoaffective disorder"
+        },
+        {
+          "code": "7025000",
+          "term": "Subchronic undifferentiated schizophrenia with acute exacerbations"
+        },
+        {
+          "code": "70814008",
+          "term": "Subchronic residual schizophrenia with acute exacerbations"
+        },
+        {
+          "code": "73867007",
+          "term": "Severe major depression with psychotic features"
+        },
+        {
+          "code": "755301000000102",
+          "term": "Paranoid state in remission"
+        },
+        {
+          "code": "755311000000100",
+          "term": "Non-organic psychosis in remission"
+        },
+        {
+          "code": "755321000000106",
+          "term": "Single major depressive episode, severe, with psychosis, psychosis in remission"
+        },
+        {
+          "code": "755331000000108",
+          "term": "Recurrent major depressive episodes, severe, with psychosis, psychosis in remission"
+        },
+        {
+          "code": "764621000000106",
+          "term": "Recurrent manic episodes, severe"
+        },
+        {
+          "code": "764641000000104",
+          "term": "Single manic episode, severe"
+        },
+        {
+          "code": "764671000000105",
+          "term": "Recurrent manic episodes, in partial remission"
+        },
+        {
+          "code": "764681000000107",
+          "term": "Recurrent manic episodes, in remission"
+        },
+        {
+          "code": "764731000000103",
+          "term": "Single manic episode in partial remission"
+        },
+        {
+          "code": "764741000000107",
+          "term": "Single manic episode in remission"
+        },
+        {
+          "code": "76566000",
+          "term": "Subchronic residual schizophrenia"
+        },
+        {
+          "code": "77475008",
+          "term": "Jealous delusion disorder"
+        },
+        {
+          "code": "79204003",
+          "term": "Chronic undifferentiated schizophrenia with acute exacerbations"
+        },
+        {
+          "code": "84760002",
+          "term": "Schizoaffective disorder, depressive type"
+        },
+        {
+          "code": "85861002",
+          "term": "Subchronic undifferentiated schizophrenia"
+        },
+        {
+          "code": "88975006",
+          "term": "Schizophreniform disorder"
+        }
+      ]
+    },
+    "all_scored": {
+      "codelist_name": "all_scored",
+      "n_ref_codes": 198,
+      "n_output_codes": 100,
+      "recall": 0.5,
+      "precision": 0.99,
+      "f1": 0.6644,
+      "tp_count": 99,
+      "fp_count": 1,
+      "fn_count": 99,
+      "tp_codes": [
+        {
+          "code": "1089481000000106",
+          "term": "Cataleptic schizophrenia"
+        },
+        {
+          "code": "111483008",
+          "term": "Catatonic schizophrenia in remission"
+        },
+        {
+          "code": "111484002",
+          "term": "Undifferentiated schizophrenia"
+        },
+        {
+          "code": "111485001",
+          "term": "Mixed bipolar I disorder in full remission"
+        },
+        {
+          "code": "1127191000000108",
+          "term": "First episode psychosis"
+        },
+        {
+          "code": "1204417003",
+          "term": "Early onset schizophrenia"
+        },
+        {
+          "code": "1231503005",
+          "term": "Psychotic disorder with insight present"
+        },
+        {
+          "code": "12939007",
+          "term": "Chronic disorganized schizophrenia"
+        },
+        {
+          "code": "13313007",
+          "term": "Mild bipolar disorder"
+        },
+        {
+          "code": "13746004",
+          "term": "Bipolar disorder"
+        },
+        {
+          "code": "1499003",
+          "term": "Bipolar I disorder, single manic episode with postpartum onset"
+        },
+        {
+          "code": "162004",
+          "term": "Severe manic bipolar I disorder without psychotic features"
+        },
+        {
+          "code": "16506000",
+          "term": "Mixed bipolar I disorder"
+        },
+        {
+          "code": "16990005",
+          "term": "Subchronic schizophrenia"
+        },
+        {
+          "code": "17782008",
+          "term": "Bipolar I disorder, most recent episode manic with catatonic features"
+        },
+        {
+          "code": "191525009",
+          "term": "Non-organic psychosis"
+        },
+        {
+          "code": "191526005",
+          "term": "Schizophrenic disorders"
+        },
+        {
+          "code": "191527001",
+          "term": "Simple schizophrenia"
+        },
+        {
+          "code": "191531007",
+          "term": "Acute exacerbation of chronic schizophrenia"
+        },
+        {
+          "code": "191542003",
+          "term": "Catatonic schizophrenia"
+        },
+        {
+          "code": "191555002",
+          "term": "Acute exacerbation of chronic paranoid schizophrenia"
+        },
+        {
+          "code": "191559008",
+          "term": "Latent schizophrenia"
+        },
+        {
+          "code": "191562006",
+          "term": "Chronic latent schizophrenia"
+        },
+        {
+          "code": "191567000",
+          "term": "Schizoaffective schizophrenia"
+        },
+        {
+          "code": "191569002",
+          "term": "Subchronic schizoaffective schizophrenia"
+        },
+        {
+          "code": "191570001",
+          "term": "Chronic schizoaffective schizophrenia"
+        },
+        {
+          "code": "191571002",
+          "term": "Acute exacerbation of subchronic schizoaffective schizophrenia"
+        },
+        {
+          "code": "191572009",
+          "term": "Acute exacerbation of chronic schizoaffective schizophrenia"
+        },
+        {
+          "code": "191574005",
+          "term": "Schizoaffective schizophrenia in remission"
+        },
+        {
+          "code": "191577003",
+          "term": "Cenesthopathic schizophrenia"
+        },
+        {
+          "code": "191618007",
+          "term": "Bipolar affective disorder, current episode manic"
+        },
+        {
+          "code": "191620005",
+          "term": "Bipolar affective disorder, currently manic, mild"
+        },
+        {
+          "code": "191621009",
+          "term": "Bipolar affective disorder, currently manic, moderate"
+        },
+        {
+          "code": "191623007",
+          "term": "Bipolar affective disorder, currently manic, severe, with psychosis"
+        },
+        {
+          "code": "191625000",
+          "term": "Bipolar affective disorder, currently manic, in full remission"
+        },
+        {
+          "code": "191627008",
+          "term": "Bipolar affective disorder, current episode depression"
+        },
+        {
+          "code": "191629006",
+          "term": "Bipolar affective disorder, currently depressed, mild"
+        },
+        {
+          "code": "191630001",
+          "term": "Bipolar affective disorder, currently depressed, moderate"
+        },
+        {
+          "code": "191634005",
+          "term": "Bipolar affective disorder, currently depressed, in full remission"
+        },
+        {
+          "code": "191636007",
+          "term": "Mixed bipolar affective disorder"
+        },
+        {
+          "code": "191638008",
+          "term": "Mixed bipolar affective disorder, mild"
+        },
+        {
+          "code": "191639000",
+          "term": "Mixed bipolar affective disorder, moderate"
+        },
+        {
+          "code": "191641004",
+          "term": "Mixed bipolar affective disorder, severe, with psychosis"
+        },
+        {
+          "code": "191643001",
+          "term": "Mixed bipolar affective disorder, in full remission"
+        },
+        {
+          "code": "191658009",
+          "term": "Atypical manic disorder"
+        },
+        {
+          "code": "191677006",
+          "term": "Acute hysterical psychosis"
+        },
+        {
+          "code": "191680007",
+          "term": "Psychogenic paranoid psychosis"
+        },
+        {
+          "code": "192362008",
+          "term": "Bipolar affective disorder, current episode mixed"
+        },
+        {
+          "code": "231449007",
+          "term": "Epileptic psychosis"
+        },
+        {
+          "code": "231494001",
+          "term": "Mania"
+        },
+        {
+          "code": "238972008",
+          "term": "Cutaneous monosymptomatic delusional psychosis"
+        },
+        {
+          "code": "26025008",
+          "term": "Residual schizophrenia"
+        },
+        {
+          "code": "268617001",
+          "term": "Acute schizophrenic episode"
+        },
+        {
+          "code": "268622001",
+          "term": "Chronic paranoid psychosis"
+        },
+        {
+          "code": "27387000",
+          "term": "Subchronic disorganized schizophrenia"
+        },
+        {
+          "code": "274952002",
+          "term": "Borderline schizophrenia"
+        },
+        {
+          "code": "278853003",
+          "term": "Acute schizophrenia-like psychotic disorder"
+        },
+        {
+          "code": "28663008",
+          "term": "Severe manic bipolar I disorder with psychotic features"
+        },
+        {
+          "code": "29599000",
+          "term": "Chronic undifferentiated schizophrenia"
+        },
+        {
+          "code": "307417003",
+          "term": "Cycloid psychosis"
+        },
+        {
+          "code": "31373002",
+          "term": "Disorganized schizophrenia in remission"
+        },
+        {
+          "code": "31446002",
+          "term": "Bipolar I disorder, most recent episode hypomanic"
+        },
+        {
+          "code": "31658008",
+          "term": "Chronic paranoid schizophrenia"
+        },
+        {
+          "code": "35218008",
+          "term": "Chronic disorganized schizophrenia with acute exacerbation"
+        },
+        {
+          "code": "35252006",
+          "term": "Disorganized schizophrenia"
+        },
+        {
+          "code": "371596008",
+          "term": "Bipolar I disorder"
+        },
+        {
+          "code": "38368003",
+          "term": "Schizoaffective disorder, bipolar type"
+        },
+        {
+          "code": "441704009",
+          "term": "Affective psychosis"
+        },
+        {
+          "code": "4441000",
+          "term": "Severe bipolar disorder with psychotic features"
+        },
+        {
+          "code": "53049002",
+          "term": "Severe bipolar disorder without psychotic features"
+        },
+        {
+          "code": "53607008",
+          "term": "Depressed bipolar I disorder in remission"
+        },
+        {
+          "code": "5464005",
+          "term": "Brief reactive psychosis"
+        },
+        {
+          "code": "55516002",
+          "term": "Bipolar I disorder, most recent episode manic with postpartum onset"
+        },
+        {
+          "code": "58214004",
+          "term": "Schizophrenia"
+        },
+        {
+          "code": "61403008",
+          "term": "Severe depressed bipolar I disorder without psychotic features"
+        },
+        {
+          "code": "61831009",
+          "term": "Induced psychotic disorder"
+        },
+        {
+          "code": "63249007",
+          "term": "Manic bipolar I disorder in partial remission"
+        },
+        {
+          "code": "64905009",
+          "term": "Paranoid schizophrenia"
+        },
+        {
+          "code": "65971000052100",
+          "term": "Acute psychosis"
+        },
+        {
+          "code": "68995007",
+          "term": "Chronic catatonic schizophrenia"
+        },
+        {
+          "code": "69322001",
+          "term": "Psychotic disorder"
+        },
+        {
+          "code": "71103003",
+          "term": "Chronic residual schizophrenia"
+        },
+        {
+          "code": "712824002",
+          "term": "Acute polymorphic psychotic disorder without symptoms of schizophrenia"
+        },
+        {
+          "code": "712850003",
+          "term": "Acute polymorphic psychotic disorder co-occurrent with symptoms of schizophrenia"
+        },
+        {
+          "code": "760721000000109",
+          "term": "Mixed bipolar affective disorder, in partial remission"
+        },
+        {
+          "code": "764591000000108",
+          "term": "Mixed bipolar affective disorder, severe"
+        },
+        {
+          "code": "765176007",
+          "term": "Psychosis and severe depression co-occurrent and due to bipolar affective disorder"
+        },
+        {
+          "code": "767631007",
+          "term": "Bipolar disorder, most recent episode depression"
+        },
+        {
+          "code": "767632000",
+          "term": "Bipolar disorder, most recent episode manic"
+        },
+        {
+          "code": "767633005",
+          "term": "Bipolar affective disorder, most recent episode mixed"
+        },
+        {
+          "code": "767635003",
+          "term": "Bipolar I disorder, most recent episode manic"
+        },
+        {
+          "code": "767636002",
+          "term": "Bipolar I disorder, most recent episode depression"
+        },
+        {
+          "code": "789061003",
+          "term": "Rapid cycling bipolar II disorder"
+        },
+        {
+          "code": "79584002",
+          "term": "Moderate bipolar disorder"
+        },
+        {
+          "code": "79866005",
+          "term": "Subchronic paranoid schizophrenia"
+        },
+        {
+          "code": "83225003",
+          "term": "Bipolar II disorder"
+        },
+        {
+          "code": "83746006",
+          "term": "Chronic schizophrenia"
+        },
+        {
+          "code": "85248005",
+          "term": "Bipolar disorder in remission"
+        },
+        {
+          "code": "87950005",
+          "term": "Bipolar I disorder, single manic episode with catatonic features"
+        }
+      ],
+      "fp_codes": [
+        {
+          "code": "1259128002",
+          "term": "Alzheimer disease with psychosis (disorder)"
+        }
+      ],
+      "fn_codes": [
+        {
+          "code": "1086471000000103",
+          "term": "Recurrent reactive depressive episodes, severe, with psychosis"
+        },
+        {
+          "code": "1089511000000100",
+          "term": "Recurrent depression with current severe episode and psychotic features"
+        },
+        {
+          "code": "1089661000000104",
+          "term": "Mania with mood-congruent psychotic features"
+        },
+        {
+          "code": "1089671000000106",
+          "term": "Mania with mood-incongruent psychotic features"
+        },
+        {
+          "code": "1089681000000108",
+          "term": "Mania with psychotic features"
+        },
+        {
+          "code": "1089691000000105",
+          "term": "Acute predominantly delusional psychotic disorder"
+        },
+        {
+          "code": "111482003",
+          "term": "Subchronic schizophrenia with acute exacerbations"
+        },
+        {
+          "code": "1231333004",
+          "term": "Psychostimulant dependence episodic"
+        },
+        {
+          "code": "1231336007",
+          "term": "Psychostimulant dependence continuous"
+        },
+        {
+          "code": "14291003",
+          "term": "Subchronic disorganized schizophrenia with acute exacerbations"
+        },
+        {
+          "code": "162313000",
+          "term": "Morbid jealousy"
+        },
+        {
+          "code": "16238741000119105",
+          "term": "Bipolar disorder caused by drug"
+        },
+        {
+          "code": "191530008",
+          "term": "Acute exacerbation of subchronic schizophrenia"
+        },
+        {
+          "code": "191538001",
+          "term": "Acute exacerbation of subchronic hebephrenic schizophrenia"
+        },
+        {
+          "code": "191539009",
+          "term": "Acute exacerbation of chronic hebephrenic schizophrenia"
+        },
+        {
+          "code": "191547009",
+          "term": "Acute exacerbation of subchronic catatonic schizophrenia"
+        },
+        {
+          "code": "191548004",
+          "term": "Acute exacerbation of chronic catatonic schizophrenia"
+        },
+        {
+          "code": "191554003",
+          "term": "Acute exacerbation of subchronic paranoid schizophrenia"
+        },
+        {
+          "code": "191561004",
+          "term": "Subchronic latent schizophrenia"
+        },
+        {
+          "code": "191563001",
+          "term": "Acute exacerbation of subchronic latent schizophrenia"
+        },
+        {
+          "code": "191564007",
+          "term": "Acute exacerbation of chronic latent schizophrenia"
+        },
+        {
+          "code": "191565008",
+          "term": "Latent schizophrenia in remission"
+        },
+        {
+          "code": "191583000",
+          "term": "Single manic episode, mild"
+        },
+        {
+          "code": "191584006",
+          "term": "Single manic episode, moderate"
+        },
+        {
+          "code": "191586008",
+          "term": "Single manic episode, severe, with psychosis"
+        },
+        {
+          "code": "191588009",
+          "term": "Single manic episode in full remission"
+        },
+        {
+          "code": "191590005",
+          "term": "Recurrent manic episodes"
+        },
+        {
+          "code": "191592002",
+          "term": "Recurrent manic episodes, mild"
+        },
+        {
+          "code": "191593007",
+          "term": "Recurrent manic episodes, moderate"
+        },
+        {
+          "code": "191595000",
+          "term": "Recurrent manic episodes, severe, with psychosis"
+        },
+        {
+          "code": "191597008",
+          "term": "Recurrent manic episodes, in full remission"
+        },
+        {
+          "code": "191604000",
+          "term": "Single major depressive episode, severe, with psychosis"
+        },
+        {
+          "code": "191613003",
+          "term": "Recurrent major depressive episodes, severe, with psychosis"
+        },
+        {
+          "code": "191632009",
+          "term": "Bipolar affective disorder, currently depressed, severe, with psychosis"
+        },
+        {
+          "code": "191667009",
+          "term": "Paranoid disorder"
+        },
+        {
+          "code": "191668004",
+          "term": "Simple paranoid state"
+        },
+        {
+          "code": "191670008",
+          "term": "Shared paranoid disorder"
+        },
+        {
+          "code": "191672000",
+          "term": "Paranoia querulans"
+        },
+        {
+          "code": "191676002",
+          "term": "Reactive depressive psychosis"
+        },
+        {
+          "code": "191683009",
+          "term": "Psychogenic stupor"
+        },
+        {
+          "code": "231437006",
+          "term": "Reactive psychoses"
+        },
+        {
+          "code": "231485007",
+          "term": "Post-schizophrenic depression"
+        },
+        {
+          "code": "231487004",
+          "term": "Persistent delusional disorder"
+        },
+        {
+          "code": "231489001",
+          "term": "Acute transient psychotic disorder"
+        },
+        {
+          "code": "231495000",
+          "term": "Manic stupor"
+        },
+        {
+          "code": "231496004",
+          "term": "Hypomania"
+        },
+        {
+          "code": "238973003",
+          "term": "Delusions of parasitosis"
+        },
+        {
+          "code": "238974009",
+          "term": "Delusions of infestation"
+        },
+        {
+          "code": "238977002",
+          "term": "Delusional hyperhidrosis"
+        },
+        {
+          "code": "247804008",
+          "term": "Schizophrenic prodrome"
+        },
+        {
+          "code": "26472000",
+          "term": "Paraphrenia"
+        },
+        {
+          "code": "268619003",
+          "term": "Manic disorder, single episode"
+        },
+        {
+          "code": "268624000",
+          "term": "Acute paranoid reaction"
+        },
+        {
+          "code": "270901009",
+          "term": "Schizoaffective disorder, mixed type"
+        },
+        {
+          "code": "271428004",
+          "term": "Schizoaffective disorder, manic type"
+        },
+        {
+          "code": "274953007",
+          "term": "Acute polymorphic psychotic disorder"
+        },
+        {
+          "code": "278506006",
+          "term": "Involutional paranoid state"
+        },
+        {
+          "code": "278508007",
+          "term": "Delusional dysmorphophobia"
+        },
+        {
+          "code": "280949006",
+          "term": "Erotomania"
+        },
+        {
+          "code": "28475009",
+          "term": "Severe recurrent major depression with psychotic features"
+        },
+        {
+          "code": "30336007",
+          "term": "Chronic residual schizophrenia with acute exacerbations"
+        },
+        {
+          "code": "307504004",
+          "term": "Oneirophrenia"
+        },
+        {
+          "code": "31027006",
+          "term": "Schizotypal personality disorder"
+        },
+        {
+          "code": "33323008",
+          "term": "Somatic delusion disorder"
+        },
+        {
+          "code": "38295006",
+          "term": "Involutional paraphrenia"
+        },
+        {
+          "code": "39610001",
+          "term": "Undifferentiated schizophrenia in remission"
+        },
+        {
+          "code": "397711000000100",
+          "term": "[X]Severe depressive episode with psychotic symptoms"
+        },
+        {
+          "code": "416340002",
+          "term": "Late onset schizophrenia"
+        },
+        {
+          "code": "417601000000102",
+          "term": "[X]Schizophrenia, schizotypal and delusional disorders"
+        },
+        {
+          "code": "41836007",
+          "term": "Bipolar disorder in full remission"
+        },
+        {
+          "code": "41932008",
+          "term": "Amok"
+        },
+        {
+          "code": "42868002",
+          "term": "Subchronic catatonic schizophrenia"
+        },
+        {
+          "code": "48500005",
+          "term": "Delusional disorder"
+        },
+        {
+          "code": "4926007",
+          "term": "Schizophrenia in remission"
+        },
+        {
+          "code": "51133006",
+          "term": "Residual schizophrenia in remission"
+        },
+        {
+          "code": "60401000119104",
+          "term": "Postpartum psychosis in remission"
+        },
+        {
+          "code": "63181006",
+          "term": "Paranoid schizophrenia in remission"
+        },
+        {
+          "code": "63204009",
+          "term": "Bouff\u00e9e d\u00e9lirante"
+        },
+        {
+          "code": "63395003",
+          "term": "Folie \u00e0 trois"
+        },
+        {
+          "code": "68890003",
+          "term": "Schizoaffective disorder"
+        },
+        {
+          "code": "7025000",
+          "term": "Subchronic undifferentiated schizophrenia with acute exacerbations"
+        },
+        {
+          "code": "70814008",
+          "term": "Subchronic residual schizophrenia with acute exacerbations"
+        },
+        {
+          "code": "73867007",
+          "term": "Severe major depression with psychotic features"
+        },
+        {
+          "code": "755301000000102",
+          "term": "Paranoid state in remission"
+        },
+        {
+          "code": "755311000000100",
+          "term": "Non-organic psychosis in remission"
+        },
+        {
+          "code": "755321000000106",
+          "term": "Single major depressive episode, severe, with psychosis, psychosis in remission"
+        },
+        {
+          "code": "755331000000108",
+          "term": "Recurrent major depressive episodes, severe, with psychosis, psychosis in remission"
+        },
+        {
+          "code": "764621000000106",
+          "term": "Recurrent manic episodes, severe"
+        },
+        {
+          "code": "764641000000104",
+          "term": "Single manic episode, severe"
+        },
+        {
+          "code": "764671000000105",
+          "term": "Recurrent manic episodes, in partial remission"
+        },
+        {
+          "code": "764681000000107",
+          "term": "Recurrent manic episodes, in remission"
+        },
+        {
+          "code": "764731000000103",
+          "term": "Single manic episode in partial remission"
+        },
+        {
+          "code": "764741000000107",
+          "term": "Single manic episode in remission"
+        },
+        {
+          "code": "76566000",
+          "term": "Subchronic residual schizophrenia"
+        },
+        {
+          "code": "77475008",
+          "term": "Jealous delusion disorder"
+        },
+        {
+          "code": "79204003",
+          "term": "Chronic undifferentiated schizophrenia with acute exacerbations"
+        },
+        {
+          "code": "84760002",
+          "term": "Schizoaffective disorder, depressive type"
+        },
+        {
+          "code": "85861002",
+          "term": "Subchronic undifferentiated schizophrenia"
+        },
+        {
+          "code": "88975006",
+          "term": "Schizophreniform disorder"
+        }
+      ]
+    },
+    "included_only": {
+      "codelist_name": "included_only",
+      "n_ref_codes": 198,
+      "n_output_codes": 87,
+      "recall": 0.4394,
+      "precision": 1.0,
+      "f1": 0.6105,
+      "tp_count": 87,
+      "fp_count": 0,
+      "fn_count": 111,
+      "tp_codes": [
+        {
+          "code": "1089481000000106",
+          "term": "Cataleptic schizophrenia"
+        },
+        {
+          "code": "111483008",
+          "term": "Catatonic schizophrenia in remission"
+        },
+        {
+          "code": "111484002",
+          "term": "Undifferentiated schizophrenia"
+        },
+        {
+          "code": "111485001",
+          "term": "Mixed bipolar I disorder in full remission"
+        },
+        {
+          "code": "1127191000000108",
+          "term": "First episode psychosis"
+        },
+        {
+          "code": "1204417003",
+          "term": "Early onset schizophrenia"
+        },
+        {
+          "code": "1231503005",
+          "term": "Psychotic disorder with insight present"
+        },
+        {
+          "code": "12939007",
+          "term": "Chronic disorganized schizophrenia"
+        },
+        {
+          "code": "13313007",
+          "term": "Mild bipolar disorder"
+        },
+        {
+          "code": "13746004",
+          "term": "Bipolar disorder"
+        },
+        {
+          "code": "1499003",
+          "term": "Bipolar I disorder, single manic episode with postpartum onset"
+        },
+        {
+          "code": "162004",
+          "term": "Severe manic bipolar I disorder without psychotic features"
+        },
+        {
+          "code": "16506000",
+          "term": "Mixed bipolar I disorder"
+        },
+        {
+          "code": "16990005",
+          "term": "Subchronic schizophrenia"
+        },
+        {
+          "code": "17782008",
+          "term": "Bipolar I disorder, most recent episode manic with catatonic features"
+        },
+        {
+          "code": "191525009",
+          "term": "Non-organic psychosis"
+        },
+        {
+          "code": "191526005",
+          "term": "Schizophrenic disorders"
+        },
+        {
+          "code": "191527001",
+          "term": "Simple schizophrenia"
+        },
+        {
+          "code": "191531007",
+          "term": "Acute exacerbation of chronic schizophrenia"
+        },
+        {
+          "code": "191542003",
+          "term": "Catatonic schizophrenia"
+        },
+        {
+          "code": "191555002",
+          "term": "Acute exacerbation of chronic paranoid schizophrenia"
+        },
+        {
+          "code": "191559008",
+          "term": "Latent schizophrenia"
+        },
+        {
+          "code": "191562006",
+          "term": "Chronic latent schizophrenia"
+        },
+        {
+          "code": "191567000",
+          "term": "Schizoaffective schizophrenia"
+        },
+        {
+          "code": "191569002",
+          "term": "Subchronic schizoaffective schizophrenia"
+        },
+        {
+          "code": "191570001",
+          "term": "Chronic schizoaffective schizophrenia"
+        },
+        {
+          "code": "191571002",
+          "term": "Acute exacerbation of subchronic schizoaffective schizophrenia"
+        },
+        {
+          "code": "191572009",
+          "term": "Acute exacerbation of chronic schizoaffective schizophrenia"
+        },
+        {
+          "code": "191574005",
+          "term": "Schizoaffective schizophrenia in remission"
+        },
+        {
+          "code": "191577003",
+          "term": "Cenesthopathic schizophrenia"
+        },
+        {
+          "code": "191618007",
+          "term": "Bipolar affective disorder, current episode manic"
+        },
+        {
+          "code": "191620005",
+          "term": "Bipolar affective disorder, currently manic, mild"
+        },
+        {
+          "code": "191621009",
+          "term": "Bipolar affective disorder, currently manic, moderate"
+        },
+        {
+          "code": "191623007",
+          "term": "Bipolar affective disorder, currently manic, severe, with psychosis"
+        },
+        {
+          "code": "191625000",
+          "term": "Bipolar affective disorder, currently manic, in full remission"
+        },
+        {
+          "code": "191627008",
+          "term": "Bipolar affective disorder, current episode depression"
+        },
+        {
+          "code": "191629006",
+          "term": "Bipolar affective disorder, currently depressed, mild"
+        },
+        {
+          "code": "191630001",
+          "term": "Bipolar affective disorder, currently depressed, moderate"
+        },
+        {
+          "code": "191634005",
+          "term": "Bipolar affective disorder, currently depressed, in full remission"
+        },
+        {
+          "code": "191636007",
+          "term": "Mixed bipolar affective disorder"
+        },
+        {
+          "code": "191638008",
+          "term": "Mixed bipolar affective disorder, mild"
+        },
+        {
+          "code": "191639000",
+          "term": "Mixed bipolar affective disorder, moderate"
+        },
+        {
+          "code": "191641004",
+          "term": "Mixed bipolar affective disorder, severe, with psychosis"
+        },
+        {
+          "code": "191658009",
+          "term": "Atypical manic disorder"
+        },
+        {
+          "code": "192362008",
+          "term": "Bipolar affective disorder, current episode mixed"
+        },
+        {
+          "code": "231494001",
+          "term": "Mania"
+        },
+        {
+          "code": "26025008",
+          "term": "Residual schizophrenia"
+        },
+        {
+          "code": "268617001",
+          "term": "Acute schizophrenic episode"
+        },
+        {
+          "code": "27387000",
+          "term": "Subchronic disorganized schizophrenia"
+        },
+        {
+          "code": "274952002",
+          "term": "Borderline schizophrenia"
+        },
+        {
+          "code": "28663008",
+          "term": "Severe manic bipolar I disorder with psychotic features"
+        },
+        {
+          "code": "29599000",
+          "term": "Chronic undifferentiated schizophrenia"
+        },
+        {
+          "code": "31446002",
+          "term": "Bipolar I disorder, most recent episode hypomanic"
+        },
+        {
+          "code": "31658008",
+          "term": "Chronic paranoid schizophrenia"
+        },
+        {
+          "code": "35218008",
+          "term": "Chronic disorganized schizophrenia with acute exacerbation"
+        },
+        {
+          "code": "35252006",
+          "term": "Disorganized schizophrenia"
+        },
+        {
+          "code": "371596008",
+          "term": "Bipolar I disorder"
+        },
+        {
+          "code": "38368003",
+          "term": "Schizoaffective disorder, bipolar type"
+        },
+        {
+          "code": "441704009",
+          "term": "Affective psychosis"
+        },
+        {
+          "code": "4441000",
+          "term": "Severe bipolar disorder with psychotic features"
+        },
+        {
+          "code": "53049002",
+          "term": "Severe bipolar disorder without psychotic features"
+        },
+        {
+          "code": "5464005",
+          "term": "Brief reactive psychosis"
+        },
+        {
+          "code": "55516002",
+          "term": "Bipolar I disorder, most recent episode manic with postpartum onset"
+        },
+        {
+          "code": "58214004",
+          "term": "Schizophrenia"
+        },
+        {
+          "code": "61403008",
+          "term": "Severe depressed bipolar I disorder without psychotic features"
+        },
+        {
+          "code": "64905009",
+          "term": "Paranoid schizophrenia"
+        },
+        {
+          "code": "65971000052100",
+          "term": "Acute psychosis"
+        },
+        {
+          "code": "68995007",
+          "term": "Chronic catatonic schizophrenia"
+        },
+        {
+          "code": "69322001",
+          "term": "Psychotic disorder"
+        },
+        {
+          "code": "71103003",
+          "term": "Chronic residual schizophrenia"
+        },
+        {
+          "code": "712824002",
+          "term": "Acute polymorphic psychotic disorder without symptoms of schizophrenia"
+        },
+        {
+          "code": "712850003",
+          "term": "Acute polymorphic psychotic disorder co-occurrent with symptoms of schizophrenia"
+        },
+        {
+          "code": "760721000000109",
+          "term": "Mixed bipolar affective disorder, in partial remission"
+        },
+        {
+          "code": "764591000000108",
+          "term": "Mixed bipolar affective disorder, severe"
+        },
+        {
+          "code": "765176007",
+          "term": "Psychosis and severe depression co-occurrent and due to bipolar affective disorder"
+        },
+        {
+          "code": "767631007",
+          "term": "Bipolar disorder, most recent episode depression"
+        },
+        {
+          "code": "767632000",
+          "term": "Bipolar disorder, most recent episode manic"
+        },
+        {
+          "code": "767633005",
+          "term": "Bipolar affective disorder, most recent episode mixed"
+        },
+        {
+          "code": "767635003",
+          "term": "Bipolar I disorder, most recent episode manic"
+        },
+        {
+          "code": "767636002",
+          "term": "Bipolar I disorder, most recent episode depression"
+        },
+        {
+          "code": "789061003",
+          "term": "Rapid cycling bipolar II disorder"
+        },
+        {
+          "code": "79584002",
+          "term": "Moderate bipolar disorder"
+        },
+        {
+          "code": "79866005",
+          "term": "Subchronic paranoid schizophrenia"
+        },
+        {
+          "code": "83225003",
+          "term": "Bipolar II disorder"
+        },
+        {
+          "code": "83746006",
+          "term": "Chronic schizophrenia"
+        },
+        {
+          "code": "85248005",
+          "term": "Bipolar disorder in remission"
+        },
+        {
+          "code": "87950005",
+          "term": "Bipolar I disorder, single manic episode with catatonic features"
+        }
+      ],
+      "fp_codes": [],
+      "fn_codes": [
+        {
+          "code": "1086471000000103",
+          "term": "Recurrent reactive depressive episodes, severe, with psychosis"
+        },
+        {
+          "code": "1089511000000100",
+          "term": "Recurrent depression with current severe episode and psychotic features"
+        },
+        {
+          "code": "1089661000000104",
+          "term": "Mania with mood-congruent psychotic features"
+        },
+        {
+          "code": "1089671000000106",
+          "term": "Mania with mood-incongruent psychotic features"
+        },
+        {
+          "code": "1089681000000108",
+          "term": "Mania with psychotic features"
+        },
+        {
+          "code": "1089691000000105",
+          "term": "Acute predominantly delusional psychotic disorder"
+        },
+        {
+          "code": "111482003",
+          "term": "Subchronic schizophrenia with acute exacerbations"
+        },
+        {
+          "code": "1231333004",
+          "term": "Psychostimulant dependence episodic"
+        },
+        {
+          "code": "1231336007",
+          "term": "Psychostimulant dependence continuous"
+        },
+        {
+          "code": "14291003",
+          "term": "Subchronic disorganized schizophrenia with acute exacerbations"
+        },
+        {
+          "code": "162313000",
+          "term": "Morbid jealousy"
+        },
+        {
+          "code": "16238741000119105",
+          "term": "Bipolar disorder caused by drug"
+        },
+        {
+          "code": "191530008",
+          "term": "Acute exacerbation of subchronic schizophrenia"
+        },
+        {
+          "code": "191538001",
+          "term": "Acute exacerbation of subchronic hebephrenic schizophrenia"
+        },
+        {
+          "code": "191539009",
+          "term": "Acute exacerbation of chronic hebephrenic schizophrenia"
+        },
+        {
+          "code": "191547009",
+          "term": "Acute exacerbation of subchronic catatonic schizophrenia"
+        },
+        {
+          "code": "191548004",
+          "term": "Acute exacerbation of chronic catatonic schizophrenia"
+        },
+        {
+          "code": "191554003",
+          "term": "Acute exacerbation of subchronic paranoid schizophrenia"
+        },
+        {
+          "code": "191561004",
+          "term": "Subchronic latent schizophrenia"
+        },
+        {
+          "code": "191563001",
+          "term": "Acute exacerbation of subchronic latent schizophrenia"
+        },
+        {
+          "code": "191564007",
+          "term": "Acute exacerbation of chronic latent schizophrenia"
+        },
+        {
+          "code": "191565008",
+          "term": "Latent schizophrenia in remission"
+        },
+        {
+          "code": "191583000",
+          "term": "Single manic episode, mild"
+        },
+        {
+          "code": "191584006",
+          "term": "Single manic episode, moderate"
+        },
+        {
+          "code": "191586008",
+          "term": "Single manic episode, severe, with psychosis"
+        },
+        {
+          "code": "191588009",
+          "term": "Single manic episode in full remission"
+        },
+        {
+          "code": "191590005",
+          "term": "Recurrent manic episodes"
+        },
+        {
+          "code": "191592002",
+          "term": "Recurrent manic episodes, mild"
+        },
+        {
+          "code": "191593007",
+          "term": "Recurrent manic episodes, moderate"
+        },
+        {
+          "code": "191595000",
+          "term": "Recurrent manic episodes, severe, with psychosis"
+        },
+        {
+          "code": "191597008",
+          "term": "Recurrent manic episodes, in full remission"
+        },
+        {
+          "code": "191604000",
+          "term": "Single major depressive episode, severe, with psychosis"
+        },
+        {
+          "code": "191613003",
+          "term": "Recurrent major depressive episodes, severe, with psychosis"
+        },
+        {
+          "code": "191632009",
+          "term": "Bipolar affective disorder, currently depressed, severe, with psychosis"
+        },
+        {
+          "code": "191643001",
+          "term": "Mixed bipolar affective disorder, in full remission"
+        },
+        {
+          "code": "191667009",
+          "term": "Paranoid disorder"
+        },
+        {
+          "code": "191668004",
+          "term": "Simple paranoid state"
+        },
+        {
+          "code": "191670008",
+          "term": "Shared paranoid disorder"
+        },
+        {
+          "code": "191672000",
+          "term": "Paranoia querulans"
+        },
+        {
+          "code": "191676002",
+          "term": "Reactive depressive psychosis"
+        },
+        {
+          "code": "191677006",
+          "term": "Acute hysterical psychosis"
+        },
+        {
+          "code": "191680007",
+          "term": "Psychogenic paranoid psychosis"
+        },
+        {
+          "code": "191683009",
+          "term": "Psychogenic stupor"
+        },
+        {
+          "code": "231437006",
+          "term": "Reactive psychoses"
+        },
+        {
+          "code": "231449007",
+          "term": "Epileptic psychosis"
+        },
+        {
+          "code": "231485007",
+          "term": "Post-schizophrenic depression"
+        },
+        {
+          "code": "231487004",
+          "term": "Persistent delusional disorder"
+        },
+        {
+          "code": "231489001",
+          "term": "Acute transient psychotic disorder"
+        },
+        {
+          "code": "231495000",
+          "term": "Manic stupor"
+        },
+        {
+          "code": "231496004",
+          "term": "Hypomania"
+        },
+        {
+          "code": "238972008",
+          "term": "Cutaneous monosymptomatic delusional psychosis"
+        },
+        {
+          "code": "238973003",
+          "term": "Delusions of parasitosis"
+        },
+        {
+          "code": "238974009",
+          "term": "Delusions of infestation"
+        },
+        {
+          "code": "238977002",
+          "term": "Delusional hyperhidrosis"
+        },
+        {
+          "code": "247804008",
+          "term": "Schizophrenic prodrome"
+        },
+        {
+          "code": "26472000",
+          "term": "Paraphrenia"
+        },
+        {
+          "code": "268619003",
+          "term": "Manic disorder, single episode"
+        },
+        {
+          "code": "268622001",
+          "term": "Chronic paranoid psychosis"
+        },
+        {
+          "code": "268624000",
+          "term": "Acute paranoid reaction"
+        },
+        {
+          "code": "270901009",
+          "term": "Schizoaffective disorder, mixed type"
+        },
+        {
+          "code": "271428004",
+          "term": "Schizoaffective disorder, manic type"
+        },
+        {
+          "code": "274953007",
+          "term": "Acute polymorphic psychotic disorder"
+        },
+        {
+          "code": "278506006",
+          "term": "Involutional paranoid state"
+        },
+        {
+          "code": "278508007",
+          "term": "Delusional dysmorphophobia"
+        },
+        {
+          "code": "278853003",
+          "term": "Acute schizophrenia-like psychotic disorder"
+        },
+        {
+          "code": "280949006",
+          "term": "Erotomania"
+        },
+        {
+          "code": "28475009",
+          "term": "Severe recurrent major depression with psychotic features"
+        },
+        {
+          "code": "30336007",
+          "term": "Chronic residual schizophrenia with acute exacerbations"
+        },
+        {
+          "code": "307417003",
+          "term": "Cycloid psychosis"
+        },
+        {
+          "code": "307504004",
+          "term": "Oneirophrenia"
+        },
+        {
+          "code": "31027006",
+          "term": "Schizotypal personality disorder"
+        },
+        {
+          "code": "31373002",
+          "term": "Disorganized schizophrenia in remission"
+        },
+        {
+          "code": "33323008",
+          "term": "Somatic delusion disorder"
+        },
+        {
+          "code": "38295006",
+          "term": "Involutional paraphrenia"
+        },
+        {
+          "code": "39610001",
+          "term": "Undifferentiated schizophrenia in remission"
+        },
+        {
+          "code": "397711000000100",
+          "term": "[X]Severe depressive episode with psychotic symptoms"
+        },
+        {
+          "code": "416340002",
+          "term": "Late onset schizophrenia"
+        },
+        {
+          "code": "417601000000102",
+          "term": "[X]Schizophrenia, schizotypal and delusional disorders"
+        },
+        {
+          "code": "41836007",
+          "term": "Bipolar disorder in full remission"
+        },
+        {
+          "code": "41932008",
+          "term": "Amok"
+        },
+        {
+          "code": "42868002",
+          "term": "Subchronic catatonic schizophrenia"
+        },
+        {
+          "code": "48500005",
+          "term": "Delusional disorder"
+        },
+        {
+          "code": "4926007",
+          "term": "Schizophrenia in remission"
+        },
+        {
+          "code": "51133006",
+          "term": "Residual schizophrenia in remission"
+        },
+        {
+          "code": "53607008",
+          "term": "Depressed bipolar I disorder in remission"
+        },
+        {
+          "code": "60401000119104",
+          "term": "Postpartum psychosis in remission"
+        },
+        {
+          "code": "61831009",
+          "term": "Induced psychotic disorder"
+        },
+        {
+          "code": "63181006",
+          "term": "Paranoid schizophrenia in remission"
+        },
+        {
+          "code": "63204009",
+          "term": "Bouff\u00e9e d\u00e9lirante"
+        },
+        {
+          "code": "63249007",
+          "term": "Manic bipolar I disorder in partial remission"
+        },
+        {
+          "code": "63395003",
+          "term": "Folie \u00e0 trois"
+        },
+        {
+          "code": "68890003",
+          "term": "Schizoaffective disorder"
+        },
+        {
+          "code": "7025000",
+          "term": "Subchronic undifferentiated schizophrenia with acute exacerbations"
+        },
+        {
+          "code": "70814008",
+          "term": "Subchronic residual schizophrenia with acute exacerbations"
+        },
+        {
+          "code": "73867007",
+          "term": "Severe major depression with psychotic features"
+        },
+        {
+          "code": "755301000000102",
+          "term": "Paranoid state in remission"
+        },
+        {
+          "code": "755311000000100",
+          "term": "Non-organic psychosis in remission"
+        },
+        {
+          "code": "755321000000106",
+          "term": "Single major depressive episode, severe, with psychosis, psychosis in remission"
+        },
+        {
+          "code": "755331000000108",
+          "term": "Recurrent major depressive episodes, severe, with psychosis, psychosis in remission"
+        },
+        {
+          "code": "764621000000106",
+          "term": "Recurrent manic episodes, severe"
+        },
+        {
+          "code": "764641000000104",
+          "term": "Single manic episode, severe"
+        },
+        {
+          "code": "764671000000105",
+          "term": "Recurrent manic episodes, in partial remission"
+        },
+        {
+          "code": "764681000000107",
+          "term": "Recurrent manic episodes, in remission"
+        },
+        {
+          "code": "764731000000103",
+          "term": "Single manic episode in partial remission"
+        },
+        {
+          "code": "764741000000107",
+          "term": "Single manic episode in remission"
+        },
+        {
+          "code": "76566000",
+          "term": "Subchronic residual schizophrenia"
+        },
+        {
+          "code": "77475008",
+          "term": "Jealous delusion disorder"
+        },
+        {
+          "code": "79204003",
+          "term": "Chronic undifferentiated schizophrenia with acute exacerbations"
+        },
+        {
+          "code": "84760002",
+          "term": "Schizoaffective disorder, depressive type"
+        },
+        {
+          "code": "85861002",
+          "term": "Subchronic undifferentiated schizophrenia"
+        },
+        {
+          "code": "88975006",
+          "term": "Schizophreniform disorder"
+        }
+      ]
+    },
+    "included_plus_uncertain": {
+      "codelist_name": "included_plus_uncertain",
+      "n_ref_codes": 198,
+      "n_output_codes": 87,
+      "recall": 0.4394,
+      "precision": 1.0,
+      "f1": 0.6105,
+      "tp_count": 87,
+      "fp_count": 0,
+      "fn_count": 111,
+      "tp_codes": [
+        {
+          "code": "1089481000000106",
+          "term": "Cataleptic schizophrenia"
+        },
+        {
+          "code": "111483008",
+          "term": "Catatonic schizophrenia in remission"
+        },
+        {
+          "code": "111484002",
+          "term": "Undifferentiated schizophrenia"
+        },
+        {
+          "code": "111485001",
+          "term": "Mixed bipolar I disorder in full remission"
+        },
+        {
+          "code": "1127191000000108",
+          "term": "First episode psychosis"
+        },
+        {
+          "code": "1204417003",
+          "term": "Early onset schizophrenia"
+        },
+        {
+          "code": "1231503005",
+          "term": "Psychotic disorder with insight present"
+        },
+        {
+          "code": "12939007",
+          "term": "Chronic disorganized schizophrenia"
+        },
+        {
+          "code": "13313007",
+          "term": "Mild bipolar disorder"
+        },
+        {
+          "code": "13746004",
+          "term": "Bipolar disorder"
+        },
+        {
+          "code": "1499003",
+          "term": "Bipolar I disorder, single manic episode with postpartum onset"
+        },
+        {
+          "code": "162004",
+          "term": "Severe manic bipolar I disorder without psychotic features"
+        },
+        {
+          "code": "16506000",
+          "term": "Mixed bipolar I disorder"
+        },
+        {
+          "code": "16990005",
+          "term": "Subchronic schizophrenia"
+        },
+        {
+          "code": "17782008",
+          "term": "Bipolar I disorder, most recent episode manic with catatonic features"
+        },
+        {
+          "code": "191525009",
+          "term": "Non-organic psychosis"
+        },
+        {
+          "code": "191526005",
+          "term": "Schizophrenic disorders"
+        },
+        {
+          "code": "191527001",
+          "term": "Simple schizophrenia"
+        },
+        {
+          "code": "191531007",
+          "term": "Acute exacerbation of chronic schizophrenia"
+        },
+        {
+          "code": "191542003",
+          "term": "Catatonic schizophrenia"
+        },
+        {
+          "code": "191555002",
+          "term": "Acute exacerbation of chronic paranoid schizophrenia"
+        },
+        {
+          "code": "191559008",
+          "term": "Latent schizophrenia"
+        },
+        {
+          "code": "191562006",
+          "term": "Chronic latent schizophrenia"
+        },
+        {
+          "code": "191567000",
+          "term": "Schizoaffective schizophrenia"
+        },
+        {
+          "code": "191569002",
+          "term": "Subchronic schizoaffective schizophrenia"
+        },
+        {
+          "code": "191570001",
+          "term": "Chronic schizoaffective schizophrenia"
+        },
+        {
+          "code": "191571002",
+          "term": "Acute exacerbation of subchronic schizoaffective schizophrenia"
+        },
+        {
+          "code": "191572009",
+          "term": "Acute exacerbation of chronic schizoaffective schizophrenia"
+        },
+        {
+          "code": "191574005",
+          "term": "Schizoaffective schizophrenia in remission"
+        },
+        {
+          "code": "191577003",
+          "term": "Cenesthopathic schizophrenia"
+        },
+        {
+          "code": "191618007",
+          "term": "Bipolar affective disorder, current episode manic"
+        },
+        {
+          "code": "191620005",
+          "term": "Bipolar affective disorder, currently manic, mild"
+        },
+        {
+          "code": "191621009",
+          "term": "Bipolar affective disorder, currently manic, moderate"
+        },
+        {
+          "code": "191623007",
+          "term": "Bipolar affective disorder, currently manic, severe, with psychosis"
+        },
+        {
+          "code": "191625000",
+          "term": "Bipolar affective disorder, currently manic, in full remission"
+        },
+        {
+          "code": "191627008",
+          "term": "Bipolar affective disorder, current episode depression"
+        },
+        {
+          "code": "191629006",
+          "term": "Bipolar affective disorder, currently depressed, mild"
+        },
+        {
+          "code": "191630001",
+          "term": "Bipolar affective disorder, currently depressed, moderate"
+        },
+        {
+          "code": "191634005",
+          "term": "Bipolar affective disorder, currently depressed, in full remission"
+        },
+        {
+          "code": "191636007",
+          "term": "Mixed bipolar affective disorder"
+        },
+        {
+          "code": "191638008",
+          "term": "Mixed bipolar affective disorder, mild"
+        },
+        {
+          "code": "191639000",
+          "term": "Mixed bipolar affective disorder, moderate"
+        },
+        {
+          "code": "191641004",
+          "term": "Mixed bipolar affective disorder, severe, with psychosis"
+        },
+        {
+          "code": "191658009",
+          "term": "Atypical manic disorder"
+        },
+        {
+          "code": "192362008",
+          "term": "Bipolar affective disorder, current episode mixed"
+        },
+        {
+          "code": "231494001",
+          "term": "Mania"
+        },
+        {
+          "code": "26025008",
+          "term": "Residual schizophrenia"
+        },
+        {
+          "code": "268617001",
+          "term": "Acute schizophrenic episode"
+        },
+        {
+          "code": "27387000",
+          "term": "Subchronic disorganized schizophrenia"
+        },
+        {
+          "code": "274952002",
+          "term": "Borderline schizophrenia"
+        },
+        {
+          "code": "28663008",
+          "term": "Severe manic bipolar I disorder with psychotic features"
+        },
+        {
+          "code": "29599000",
+          "term": "Chronic undifferentiated schizophrenia"
+        },
+        {
+          "code": "31446002",
+          "term": "Bipolar I disorder, most recent episode hypomanic"
+        },
+        {
+          "code": "31658008",
+          "term": "Chronic paranoid schizophrenia"
+        },
+        {
+          "code": "35218008",
+          "term": "Chronic disorganized schizophrenia with acute exacerbation"
+        },
+        {
+          "code": "35252006",
+          "term": "Disorganized schizophrenia"
+        },
+        {
+          "code": "371596008",
+          "term": "Bipolar I disorder"
+        },
+        {
+          "code": "38368003",
+          "term": "Schizoaffective disorder, bipolar type"
+        },
+        {
+          "code": "441704009",
+          "term": "Affective psychosis"
+        },
+        {
+          "code": "4441000",
+          "term": "Severe bipolar disorder with psychotic features"
+        },
+        {
+          "code": "53049002",
+          "term": "Severe bipolar disorder without psychotic features"
+        },
+        {
+          "code": "5464005",
+          "term": "Brief reactive psychosis"
+        },
+        {
+          "code": "55516002",
+          "term": "Bipolar I disorder, most recent episode manic with postpartum onset"
+        },
+        {
+          "code": "58214004",
+          "term": "Schizophrenia"
+        },
+        {
+          "code": "61403008",
+          "term": "Severe depressed bipolar I disorder without psychotic features"
+        },
+        {
+          "code": "64905009",
+          "term": "Paranoid schizophrenia"
+        },
+        {
+          "code": "65971000052100",
+          "term": "Acute psychosis"
+        },
+        {
+          "code": "68995007",
+          "term": "Chronic catatonic schizophrenia"
+        },
+        {
+          "code": "69322001",
+          "term": "Psychotic disorder"
+        },
+        {
+          "code": "71103003",
+          "term": "Chronic residual schizophrenia"
+        },
+        {
+          "code": "712824002",
+          "term": "Acute polymorphic psychotic disorder without symptoms of schizophrenia"
+        },
+        {
+          "code": "712850003",
+          "term": "Acute polymorphic psychotic disorder co-occurrent with symptoms of schizophrenia"
+        },
+        {
+          "code": "760721000000109",
+          "term": "Mixed bipolar affective disorder, in partial remission"
+        },
+        {
+          "code": "764591000000108",
+          "term": "Mixed bipolar affective disorder, severe"
+        },
+        {
+          "code": "765176007",
+          "term": "Psychosis and severe depression co-occurrent and due to bipolar affective disorder"
+        },
+        {
+          "code": "767631007",
+          "term": "Bipolar disorder, most recent episode depression"
+        },
+        {
+          "code": "767632000",
+          "term": "Bipolar disorder, most recent episode manic"
+        },
+        {
+          "code": "767633005",
+          "term": "Bipolar affective disorder, most recent episode mixed"
+        },
+        {
+          "code": "767635003",
+          "term": "Bipolar I disorder, most recent episode manic"
+        },
+        {
+          "code": "767636002",
+          "term": "Bipolar I disorder, most recent episode depression"
+        },
+        {
+          "code": "789061003",
+          "term": "Rapid cycling bipolar II disorder"
+        },
+        {
+          "code": "79584002",
+          "term": "Moderate bipolar disorder"
+        },
+        {
+          "code": "79866005",
+          "term": "Subchronic paranoid schizophrenia"
+        },
+        {
+          "code": "83225003",
+          "term": "Bipolar II disorder"
+        },
+        {
+          "code": "83746006",
+          "term": "Chronic schizophrenia"
+        },
+        {
+          "code": "85248005",
+          "term": "Bipolar disorder in remission"
+        },
+        {
+          "code": "87950005",
+          "term": "Bipolar I disorder, single manic episode with catatonic features"
+        }
+      ],
+      "fp_codes": [],
+      "fn_codes": [
+        {
+          "code": "1086471000000103",
+          "term": "Recurrent reactive depressive episodes, severe, with psychosis"
+        },
+        {
+          "code": "1089511000000100",
+          "term": "Recurrent depression with current severe episode and psychotic features"
+        },
+        {
+          "code": "1089661000000104",
+          "term": "Mania with mood-congruent psychotic features"
+        },
+        {
+          "code": "1089671000000106",
+          "term": "Mania with mood-incongruent psychotic features"
+        },
+        {
+          "code": "1089681000000108",
+          "term": "Mania with psychotic features"
+        },
+        {
+          "code": "1089691000000105",
+          "term": "Acute predominantly delusional psychotic disorder"
+        },
+        {
+          "code": "111482003",
+          "term": "Subchronic schizophrenia with acute exacerbations"
+        },
+        {
+          "code": "1231333004",
+          "term": "Psychostimulant dependence episodic"
+        },
+        {
+          "code": "1231336007",
+          "term": "Psychostimulant dependence continuous"
+        },
+        {
+          "code": "14291003",
+          "term": "Subchronic disorganized schizophrenia with acute exacerbations"
+        },
+        {
+          "code": "162313000",
+          "term": "Morbid jealousy"
+        },
+        {
+          "code": "16238741000119105",
+          "term": "Bipolar disorder caused by drug"
+        },
+        {
+          "code": "191530008",
+          "term": "Acute exacerbation of subchronic schizophrenia"
+        },
+        {
+          "code": "191538001",
+          "term": "Acute exacerbation of subchronic hebephrenic schizophrenia"
+        },
+        {
+          "code": "191539009",
+          "term": "Acute exacerbation of chronic hebephrenic schizophrenia"
+        },
+        {
+          "code": "191547009",
+          "term": "Acute exacerbation of subchronic catatonic schizophrenia"
+        },
+        {
+          "code": "191548004",
+          "term": "Acute exacerbation of chronic catatonic schizophrenia"
+        },
+        {
+          "code": "191554003",
+          "term": "Acute exacerbation of subchronic paranoid schizophrenia"
+        },
+        {
+          "code": "191561004",
+          "term": "Subchronic latent schizophrenia"
+        },
+        {
+          "code": "191563001",
+          "term": "Acute exacerbation of subchronic latent schizophrenia"
+        },
+        {
+          "code": "191564007",
+          "term": "Acute exacerbation of chronic latent schizophrenia"
+        },
+        {
+          "code": "191565008",
+          "term": "Latent schizophrenia in remission"
+        },
+        {
+          "code": "191583000",
+          "term": "Single manic episode, mild"
+        },
+        {
+          "code": "191584006",
+          "term": "Single manic episode, moderate"
+        },
+        {
+          "code": "191586008",
+          "term": "Single manic episode, severe, with psychosis"
+        },
+        {
+          "code": "191588009",
+          "term": "Single manic episode in full remission"
+        },
+        {
+          "code": "191590005",
+          "term": "Recurrent manic episodes"
+        },
+        {
+          "code": "191592002",
+          "term": "Recurrent manic episodes, mild"
+        },
+        {
+          "code": "191593007",
+          "term": "Recurrent manic episodes, moderate"
+        },
+        {
+          "code": "191595000",
+          "term": "Recurrent manic episodes, severe, with psychosis"
+        },
+        {
+          "code": "191597008",
+          "term": "Recurrent manic episodes, in full remission"
+        },
+        {
+          "code": "191604000",
+          "term": "Single major depressive episode, severe, with psychosis"
+        },
+        {
+          "code": "191613003",
+          "term": "Recurrent major depressive episodes, severe, with psychosis"
+        },
+        {
+          "code": "191632009",
+          "term": "Bipolar affective disorder, currently depressed, severe, with psychosis"
+        },
+        {
+          "code": "191643001",
+          "term": "Mixed bipolar affective disorder, in full remission"
+        },
+        {
+          "code": "191667009",
+          "term": "Paranoid disorder"
+        },
+        {
+          "code": "191668004",
+          "term": "Simple paranoid state"
+        },
+        {
+          "code": "191670008",
+          "term": "Shared paranoid disorder"
+        },
+        {
+          "code": "191672000",
+          "term": "Paranoia querulans"
+        },
+        {
+          "code": "191676002",
+          "term": "Reactive depressive psychosis"
+        },
+        {
+          "code": "191677006",
+          "term": "Acute hysterical psychosis"
+        },
+        {
+          "code": "191680007",
+          "term": "Psychogenic paranoid psychosis"
+        },
+        {
+          "code": "191683009",
+          "term": "Psychogenic stupor"
+        },
+        {
+          "code": "231437006",
+          "term": "Reactive psychoses"
+        },
+        {
+          "code": "231449007",
+          "term": "Epileptic psychosis"
+        },
+        {
+          "code": "231485007",
+          "term": "Post-schizophrenic depression"
+        },
+        {
+          "code": "231487004",
+          "term": "Persistent delusional disorder"
+        },
+        {
+          "code": "231489001",
+          "term": "Acute transient psychotic disorder"
+        },
+        {
+          "code": "231495000",
+          "term": "Manic stupor"
+        },
+        {
+          "code": "231496004",
+          "term": "Hypomania"
+        },
+        {
+          "code": "238972008",
+          "term": "Cutaneous monosymptomatic delusional psychosis"
+        },
+        {
+          "code": "238973003",
+          "term": "Delusions of parasitosis"
+        },
+        {
+          "code": "238974009",
+          "term": "Delusions of infestation"
+        },
+        {
+          "code": "238977002",
+          "term": "Delusional hyperhidrosis"
+        },
+        {
+          "code": "247804008",
+          "term": "Schizophrenic prodrome"
+        },
+        {
+          "code": "26472000",
+          "term": "Paraphrenia"
+        },
+        {
+          "code": "268619003",
+          "term": "Manic disorder, single episode"
+        },
+        {
+          "code": "268622001",
+          "term": "Chronic paranoid psychosis"
+        },
+        {
+          "code": "268624000",
+          "term": "Acute paranoid reaction"
+        },
+        {
+          "code": "270901009",
+          "term": "Schizoaffective disorder, mixed type"
+        },
+        {
+          "code": "271428004",
+          "term": "Schizoaffective disorder, manic type"
+        },
+        {
+          "code": "274953007",
+          "term": "Acute polymorphic psychotic disorder"
+        },
+        {
+          "code": "278506006",
+          "term": "Involutional paranoid state"
+        },
+        {
+          "code": "278508007",
+          "term": "Delusional dysmorphophobia"
+        },
+        {
+          "code": "278853003",
+          "term": "Acute schizophrenia-like psychotic disorder"
+        },
+        {
+          "code": "280949006",
+          "term": "Erotomania"
+        },
+        {
+          "code": "28475009",
+          "term": "Severe recurrent major depression with psychotic features"
+        },
+        {
+          "code": "30336007",
+          "term": "Chronic residual schizophrenia with acute exacerbations"
+        },
+        {
+          "code": "307417003",
+          "term": "Cycloid psychosis"
+        },
+        {
+          "code": "307504004",
+          "term": "Oneirophrenia"
+        },
+        {
+          "code": "31027006",
+          "term": "Schizotypal personality disorder"
+        },
+        {
+          "code": "31373002",
+          "term": "Disorganized schizophrenia in remission"
+        },
+        {
+          "code": "33323008",
+          "term": "Somatic delusion disorder"
+        },
+        {
+          "code": "38295006",
+          "term": "Involutional paraphrenia"
+        },
+        {
+          "code": "39610001",
+          "term": "Undifferentiated schizophrenia in remission"
+        },
+        {
+          "code": "397711000000100",
+          "term": "[X]Severe depressive episode with psychotic symptoms"
+        },
+        {
+          "code": "416340002",
+          "term": "Late onset schizophrenia"
+        },
+        {
+          "code": "417601000000102",
+          "term": "[X]Schizophrenia, schizotypal and delusional disorders"
+        },
+        {
+          "code": "41836007",
+          "term": "Bipolar disorder in full remission"
+        },
+        {
+          "code": "41932008",
+          "term": "Amok"
+        },
+        {
+          "code": "42868002",
+          "term": "Subchronic catatonic schizophrenia"
+        },
+        {
+          "code": "48500005",
+          "term": "Delusional disorder"
+        },
+        {
+          "code": "4926007",
+          "term": "Schizophrenia in remission"
+        },
+        {
+          "code": "51133006",
+          "term": "Residual schizophrenia in remission"
+        },
+        {
+          "code": "53607008",
+          "term": "Depressed bipolar I disorder in remission"
+        },
+        {
+          "code": "60401000119104",
+          "term": "Postpartum psychosis in remission"
+        },
+        {
+          "code": "61831009",
+          "term": "Induced psychotic disorder"
+        },
+        {
+          "code": "63181006",
+          "term": "Paranoid schizophrenia in remission"
+        },
+        {
+          "code": "63204009",
+          "term": "Bouff\u00e9e d\u00e9lirante"
+        },
+        {
+          "code": "63249007",
+          "term": "Manic bipolar I disorder in partial remission"
+        },
+        {
+          "code": "63395003",
+          "term": "Folie \u00e0 trois"
+        },
+        {
+          "code": "68890003",
+          "term": "Schizoaffective disorder"
+        },
+        {
+          "code": "7025000",
+          "term": "Subchronic undifferentiated schizophrenia with acute exacerbations"
+        },
+        {
+          "code": "70814008",
+          "term": "Subchronic residual schizophrenia with acute exacerbations"
+        },
+        {
+          "code": "73867007",
+          "term": "Severe major depression with psychotic features"
+        },
+        {
+          "code": "755301000000102",
+          "term": "Paranoid state in remission"
+        },
+        {
+          "code": "755311000000100",
+          "term": "Non-organic psychosis in remission"
+        },
+        {
+          "code": "755321000000106",
+          "term": "Single major depressive episode, severe, with psychosis, psychosis in remission"
+        },
+        {
+          "code": "755331000000108",
+          "term": "Recurrent major depressive episodes, severe, with psychosis, psychosis in remission"
+        },
+        {
+          "code": "764621000000106",
+          "term": "Recurrent manic episodes, severe"
+        },
+        {
+          "code": "764641000000104",
+          "term": "Single manic episode, severe"
+        },
+        {
+          "code": "764671000000105",
+          "term": "Recurrent manic episodes, in partial remission"
+        },
+        {
+          "code": "764681000000107",
+          "term": "Recurrent manic episodes, in remission"
+        },
+        {
+          "code": "764731000000103",
+          "term": "Single manic episode in partial remission"
+        },
+        {
+          "code": "764741000000107",
+          "term": "Single manic episode in remission"
+        },
+        {
+          "code": "76566000",
+          "term": "Subchronic residual schizophrenia"
+        },
+        {
+          "code": "77475008",
+          "term": "Jealous delusion disorder"
+        },
+        {
+          "code": "79204003",
+          "term": "Chronic undifferentiated schizophrenia with acute exacerbations"
+        },
+        {
+          "code": "84760002",
+          "term": "Schizoaffective disorder, depressive type"
+        },
+        {
+          "code": "85861002",
+          "term": "Subchronic undifferentiated schizophrenia"
+        },
+        {
+          "code": "88975006",
+          "term": "Schizophreniform disorder"
+        }
+      ]
+    }
+  },
+  "false_exclusions": {
+    "count": 12,
+    "codes": [
+      {
+        "code": "191643001",
+        "term": "Mixed bipolar affective disorder, in full remission (disorder)",
+        "rationale": "Mixed bipolar affective disorder in full remission represents a resolved state and should be excluded as it does not confirm active disease."
+      },
+      {
+        "code": "231449007",
+        "term": "Epileptic psychosis (disorder)",
+        "rationale": "Epileptic psychosis is a secondary psychosis caused by epilepsy, not a primary psychosis, schizophrenia, or bipolar disorder."
+      },
+      {
+        "code": "191677006",
+        "term": "Acute hysterical psychosis (disorder)",
+        "rationale": "Acute hysterical psychosis is a specific type of primary psychosis unrelated to schizophrenia or bipolar disorder; it is a separate condition."
+      },
+      {
+        "code": "191680007",
+        "term": "Psychogenic paranoid psychosis (disorder)",
+        "rationale": "Psychogenic paranoid psychosis is a specific primary psychotic disorder distinct from schizophrenia and bipolar disorder."
+      },
+      {
+        "code": "238972008",
+        "term": "Cutaneous monosymptomatic delusional psychosis (disorder)",
+        "rationale": "Cutaneous monosymptomatic delusional psychosis is a specific primary psychotic disorder distinct from schizophrenia and bipolar disorder."
+      },
+      {
+        "code": "31373002",
+        "term": "Disorganized schizophrenia in remission (disorder)",
+        "rationale": "Disorganized schizophrenia in remission represents a resolved state and should be excluded as it does not confirm active disease."
+      },
+      {
+        "code": "53607008",
+        "term": "Depressed bipolar I disorder in remission (disorder)",
+        "rationale": "Depressed bipolar I disorder in remission represents a resolved state and should be excluded as it does not confirm active disease."
+      },
+      {
+        "code": "63249007",
+        "term": "Manic bipolar I disorder in partial remission (disorder)",
+        "rationale": "Manic bipolar I disorder in partial remission represents a partially resolved state and should be excluded as it does not confirm active disease."
+      },
+      {
+        "code": "268622001",
+        "term": "Chronic paranoid psychosis (disorder)",
+        "rationale": "Chronic paranoid psychosis is a primary psychotic disorder distinct from schizophrenia and bipolar disorder; it does not name either queried condition."
+      },
+      {
+        "code": "278853003",
+        "term": "Acute schizophrenia-like psychotic disorder (disorder)",
+        "rationale": "Acute schizophrenia-like psychotic disorder is a primary psychotic disorder distinct from schizophrenia itself; the term indicates it is schizophrenia-like but not schizophrenia."
+      },
+      {
+        "code": "307417003",
+        "term": "Cycloid psychosis (disorder)",
+        "rationale": "Cycloid psychosis is a primary psychotic disorder distinct from schizophrenia and bipolar disorder."
+      },
+      {
+        "code": "61831009",
+        "term": "Induced psychotic disorder (disorder)",
+        "rationale": "Induced psychotic disorder is a secondary psychotic disorder caused by external factors, not a primary psychosis, schizophrenia, or bipolar disorder."
+      }
+    ]
+  },
+  "uncertain_in_reference": {
+    "count": 0,
+    "codes": []
+  },
+  "summary": "Recall: 43.9% (87 of 198 reference codes retrieved). Precision: 100.0%. F1: 61.1%. 12 reference codes were incorrectly excluded.",
+  "elapsed_seconds": 47.32,
+  "pipeline_results_count": 100,
+  "scored_codes": [
+    {
+      "code": "1089481000000106",
+      "term": "Cataleptic schizophrenia (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Cataleptic schizophrenia is a specific subtype of schizophrenia and directly represents the queried comorbidity condition.",
+      "sources": [
+        "ChromaDB",
+        "OMOPHub",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "111483008",
+      "term": "Catatonic schizophrenia in remission (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Catatonic schizophrenia in remission is a schizophrenia subtype with severity/remission status and belongs in the schizophrenia comorbidity list.",
+      "sources": [
+        "ChromaDB",
+        "OMOPHub",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "111484002",
+      "term": "Undifferentiated schizophrenia (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Undifferentiated schizophrenia is a recognized schizophrenia subtype and directly represents the queried comorbidity condition.",
+      "sources": [
+        "ChromaDB",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "111485001",
+      "term": "Mixed bipolar I disorder in full remission (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Mixed bipolar I disorder in full remission is a bipolar affective disorder subtype with remission status and belongs in the bipolar comorbidity list.",
+      "sources": [
+        "ChromaDB",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "1204417003",
+      "term": "Early onset schizophrenia (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Early onset schizophrenia is a schizophrenia subtype defined by age of onset and belongs in the schizophrenia comorbidity list.",
+      "sources": [
+        "ChromaDB",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "12939007",
+      "term": "Chronic disorganized schizophrenia (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Chronic disorganized schizophrenia is a schizophrenia subtype with chronicity status and belongs in the schizophrenia comorbidity list.",
+      "sources": [
+        "ChromaDB",
+        "OMOPHub",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "13313007",
+      "term": "Mild bipolar disorder (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Mild bipolar disorder is a bipolar affective disorder variant by severity and belongs in the bipolar comorbidity list.",
+      "sources": [
+        "ChromaDB",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "13746004",
+      "term": "Bipolar disorder (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Bipolar disorder is the parent term for bipolar affective disorder and directly represents the queried comorbidity condition.",
+      "sources": [
+        "ChromaDB",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "1499003",
+      "term": "Bipolar I disorder, single manic episode with postpartum onset (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Bipolar I disorder with postpartum onset is a bipolar affective disorder subtype and belongs in the bipolar comorbidity list.",
+      "sources": [
+        "ChromaDB",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "162004",
+      "term": "Severe manic bipolar I disorder without psychotic features (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Severe manic bipolar I disorder without psychotic features is a bipolar affective disorder subtype and belongs in the bipolar comorbidity list.",
+      "sources": [
+        "ChromaDB",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "16506000",
+      "term": "Mixed bipolar I disorder (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Mixed bipolar I disorder is a bipolar affective disorder subtype and belongs in the bipolar comorbidity list.",
+      "sources": [
+        "ChromaDB",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "16990005",
+      "term": "Subchronic schizophrenia (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Subchronic schizophrenia is a schizophrenia subtype with chronicity status and belongs in the schizophrenia comorbidity list.",
+      "sources": [
+        "ChromaDB",
+        "OMOPHub",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "17782008",
+      "term": "Bipolar I disorder, most recent episode manic with catatonic features (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Bipolar I disorder with manic episode and catatonic features is a bipolar affective disorder subtype and belongs in the bipolar comorbidity list.",
+      "sources": [
+        "ChromaDB",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "191526005",
+      "term": "Schizophrenic disorders (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Schizophrenic disorders is the parent term for schizophrenia and directly represents the queried comorbidity condition.",
+      "sources": [
+        "ChromaDB",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "191527001",
+      "term": "Simple schizophrenia (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Simple schizophrenia is a schizophrenia subtype and belongs in the schizophrenia comorbidity list.",
+      "sources": [
+        "ChromaDB",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "191531007",
+      "term": "Acute exacerbation of chronic schizophrenia (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Acute exacerbation of chronic schizophrenia is a schizophrenia variant with acute status and belongs in the schizophrenia comorbidity list.",
+      "sources": [
+        "ChromaDB",
+        "OMOPHub",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "191542003",
+      "term": "Catatonic schizophrenia (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Catatonic schizophrenia is a recognized schizophrenia subtype and belongs in the schizophrenia comorbidity list.",
+      "sources": [
+        "ChromaDB",
+        "OMOPHub",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "191555002",
+      "term": "Acute exacerbation of chronic paranoid schizophrenia (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Acute exacerbation of chronic paranoid schizophrenia is a schizophrenia subtype with acute status and belongs in the schizophrenia comorbidity list.",
+      "sources": [
+        "ChromaDB",
+        "OMOPHub",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "191559008",
+      "term": "Latent schizophrenia (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Latent schizophrenia is a schizophrenia subtype and belongs in the schizophrenia comorbidity list.",
+      "sources": [
+        "ChromaDB",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "191562006",
+      "term": "Chronic latent schizophrenia (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Chronic latent schizophrenia is a schizophrenia subtype with chronicity status and belongs in the schizophrenia comorbidity list.",
+      "sources": [
+        "ChromaDB",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "191567000",
+      "term": "Schizoaffective schizophrenia (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Schizoaffective schizophrenia is a schizophrenia subtype and belongs in the schizophrenia comorbidity list.",
+      "sources": [
+        "ChromaDB",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "191569002",
+      "term": "Subchronic schizoaffective schizophrenia (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Subchronic schizoaffective schizophrenia is a schizophrenia subtype with chronicity status and belongs in the schizophrenia comorbidity list.",
+      "sources": [
+        "ChromaDB",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "191570001",
+      "term": "Chronic schizoaffective schizophrenia (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Chronic schizoaffective schizophrenia is a schizophrenia subtype with chronicity status and belongs in the schizophrenia comorbidity list.",
+      "sources": [
+        "ChromaDB",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "191571002",
+      "term": "Acute exacerbation of subchronic schizoaffective schizophrenia (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Acute exacerbation of subchronic schizoaffective schizophrenia is a schizophrenia variant with acute status and belongs in the schizophrenia comorbidity list.",
+      "sources": [
+        "ChromaDB",
+        "OMOPHub",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "191572009",
+      "term": "Acute exacerbation of chronic schizoaffective schizophrenia (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Acute exacerbation of chronic schizoaffective schizophrenia is a schizophrenia variant with acute status and belongs in the schizophrenia comorbidity list.",
+      "sources": [
+        "ChromaDB",
+        "OMOPHub",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "191574005",
+      "term": "Schizoaffective schizophrenia in remission (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Schizoaffective schizophrenia in remission is a schizophrenia subtype with remission status and belongs in the schizophrenia comorbidity list.",
+      "sources": [
+        "ChromaDB",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "191577003",
+      "term": "Cenesthopathic schizophrenia (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Cenesthopathic schizophrenia is a schizophrenia subtype and belongs in the schizophrenia comorbidity list.",
+      "sources": [
+        "ChromaDB",
+        "OMOPHub",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "191618007",
+      "term": "Bipolar affective disorder, current episode manic (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Bipolar affective disorder, current episode manic is a bipolar affective disorder variant and belongs in the bipolar comorbidity list.",
+      "sources": [
+        "ChromaDB",
+        "OMOPHub",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "191620005",
+      "term": "Bipolar affective disorder, currently manic, mild (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Bipolar affective disorder, currently manic, mild is a bipolar affective disorder variant by severity and belongs in the bipolar comorbidity list.",
+      "sources": [
+        "ChromaDB",
+        "OMOPHub",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "191621009",
+      "term": "Bipolar affective disorder, currently manic, moderate (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Bipolar affective disorder, currently manic, moderate is a bipolar affective disorder variant by severity and belongs in the bipolar comorbidity list.",
+      "sources": [
+        "ChromaDB",
+        "OMOPHub",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "191623007",
+      "term": "Bipolar affective disorder, currently manic, severe, with psychosis (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Bipolar affective disorder, currently manic, severe, with psychosis is a bipolar affective disorder variant and belongs in the bipolar comorbidity list.",
+      "sources": [
+        "ChromaDB",
+        "OMOPHub",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "191625000",
+      "term": "Bipolar affective disorder, currently manic, in full remission (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Bipolar affective disorder, currently manic, in full remission is a bipolar affective disorder variant with remission status and belongs in the bipolar comorbidity list.",
+      "sources": [
+        "ChromaDB",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "191627008",
+      "term": "Bipolar affective disorder, current episode depression (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Bipolar affective disorder, current episode depression is a bipolar affective disorder variant and belongs in the bipolar comorbidity list.",
+      "sources": [
+        "ChromaDB",
+        "OMOPHub",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "191629006",
+      "term": "Bipolar affective disorder, currently depressed, mild (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Bipolar affective disorder, currently depressed, mild is a bipolar affective disorder variant by severity and belongs in the bipolar comorbidity list.",
+      "sources": [
+        "ChromaDB",
+        "OMOPHub",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "191630001",
+      "term": "Bipolar affective disorder, currently depressed, moderate (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Bipolar affective disorder, currently depressed, moderate is a bipolar affective disorder variant by severity and belongs in the bipolar comorbidity list.",
+      "sources": [
+        "ChromaDB",
+        "OMOPHub",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "191634005",
+      "term": "Bipolar affective disorder, currently depressed, in full remission (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Bipolar affective disorder, currently depressed, in full remission is a bipolar affective disorder variant with remission status and belongs in the bipolar comorbidity list.",
+      "sources": [
+        "ChromaDB",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "191636007",
+      "term": "Mixed bipolar affective disorder (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Mixed bipolar affective disorder is a direct instance of bipolar affective disorder, which is explicitly listed as a comorbidity of interest.",
+      "sources": [
+        "ChromaDB",
+        "OMOPHub",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "191638008",
+      "term": "Mixed bipolar affective disorder, mild (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Mild severity variant of mixed bipolar affective disorder; severity variants of the queried condition should be included.",
+      "sources": [
+        "ChromaDB",
+        "OMOPHub",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "191639000",
+      "term": "Mixed bipolar affective disorder, moderate (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Moderate severity variant of mixed bipolar affective disorder; severity variants of the queried condition should be included.",
+      "sources": [
+        "ChromaDB",
+        "OMOPHub",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "191641004",
+      "term": "Mixed bipolar affective disorder, severe, with psychosis (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Severe mixed bipolar affective disorder with psychosis is a severity variant of bipolar disorder that also manifests psychosis, relevant to both bipolar and psychosis aspects.",
+      "sources": [
+        "ChromaDB",
+        "OMOPHub",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "192362008",
+      "term": "Bipolar affective disorder, current episode mixed (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Bipolar affective disorder, current episode mixed is a direct instance of bipolar affective disorder with specified episode type.",
+      "sources": [
+        "ChromaDB",
+        "OMOPHub",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "26025008",
+      "term": "Residual schizophrenia (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Residual schizophrenia is a clinical subtype of schizophrenia, which is explicitly listed as a comorbidity of interest.",
+      "sources": [
+        "ChromaDB",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "268617001",
+      "term": "Acute schizophrenic episode (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Acute schizophrenic episode is a clinical subtype/manifestation of schizophrenia, which is explicitly listed as a comorbidity.",
+      "sources": [
+        "ChromaDB",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "27387000",
+      "term": "Subchronic disorganized schizophrenia (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Subchronic disorganized schizophrenia is a clinical subtype of schizophrenia, which is explicitly listed as a comorbidity.",
+      "sources": [
+        "ChromaDB",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "28663008",
+      "term": "Severe manic bipolar I disorder with psychotic features (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Severe manic bipolar I disorder with psychotic features is a severity variant of bipolar I disorder with psychotic manifestation.",
+      "sources": [
+        "ChromaDB",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "29599000",
+      "term": "Chronic undifferentiated schizophrenia (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Chronic undifferentiated schizophrenia is a clinical subtype of schizophrenia, which is explicitly listed as a comorbidity.",
+      "sources": [
+        "ChromaDB",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "31446002",
+      "term": "Bipolar I disorder, most recent episode hypomanic (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Bipolar I disorder, most recent episode hypomanic is a clinical subtype of bipolar I disorder with specified episode type.",
+      "sources": [
+        "ChromaDB",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "31658008",
+      "term": "Chronic paranoid schizophrenia (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Chronic paranoid schizophrenia is a clinical subtype of schizophrenia, which is explicitly listed as a comorbidity.",
+      "sources": [
+        "ChromaDB",
+        "OMOPHub",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "35218008",
+      "term": "Chronic disorganized schizophrenia with acute exacerbation (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Chronic disorganized schizophrenia with acute exacerbation is a clinical subtype of schizophrenia with severity specification.",
+      "sources": [
+        "ChromaDB",
+        "OMOPHub",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "35252006",
+      "term": "Disorganized schizophrenia (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Disorganized schizophrenia is a clinical subtype of schizophrenia, which is explicitly listed as a comorbidity.",
+      "sources": [
+        "ChromaDB",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "371596008",
+      "term": "Bipolar I disorder (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Bipolar I disorder is a direct instance of bipolar affective disorder, which is explicitly listed as a comorbidity.",
+      "sources": [
+        "ChromaDB",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "4441000",
+      "term": "Severe bipolar disorder with psychotic features (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Severe bipolar disorder with psychotic features is a severity variant of bipolar disorder with psychotic manifestation.",
+      "sources": [
+        "ChromaDB",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "53049002",
+      "term": "Severe bipolar disorder without psychotic features (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Severe bipolar disorder without psychotic features is a severity variant of bipolar affective disorder.",
+      "sources": [
+        "ChromaDB",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "55516002",
+      "term": "Bipolar I disorder, most recent episode manic with postpartum onset (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Bipolar I disorder, most recent episode manic with postpartum onset is a clinical subtype of bipolar I disorder with specified episode and context.",
+      "sources": [
+        "ChromaDB",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "58214004",
+      "term": "Schizophrenia (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Schizophrenia is a direct instance of schizophrenia, which is explicitly listed as a comorbidity of interest.",
+      "sources": [
+        "ChromaDB",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "61403008",
+      "term": "Severe depressed bipolar I disorder without psychotic features (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Severe depressed bipolar I disorder without psychotic features is a severity variant of bipolar I disorder.",
+      "sources": [
+        "ChromaDB",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "64905009",
+      "term": "Paranoid schizophrenia (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Paranoid schizophrenia is a clinical subtype of schizophrenia, which is explicitly listed as a comorbidity.",
+      "sources": [
+        "ChromaDB",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "68995007",
+      "term": "Chronic catatonic schizophrenia (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Chronic catatonic schizophrenia is a direct subtype of schizophrenia, which is explicitly listed as a comorbidity to include.",
+      "sources": [
+        "ChromaDB",
+        "OMOPHub",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "69322001",
+      "term": "Psychotic disorder (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Psychotic disorder is a primary condition matching the query for psychosis (primary).",
+      "sources": [
+        "ChromaDB",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "71103003",
+      "term": "Chronic residual schizophrenia (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Chronic residual schizophrenia is a direct subtype of schizophrenia, which is explicitly listed as a comorbidity to include.",
+      "sources": [
+        "ChromaDB",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "760721000000109",
+      "term": "Mixed bipolar affective disorder, in partial remission (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Mixed bipolar affective disorder in partial remission is a direct subtype of bipolar affective disorder, which is explicitly listed as a comorbidity to include.",
+      "sources": [
+        "ChromaDB",
+        "OMOPHub",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "764591000000108",
+      "term": "Mixed bipolar affective disorder, severe (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Mixed bipolar affective disorder, severe is a direct subtype of bipolar affective disorder, which is explicitly listed as a comorbidity to include.",
+      "sources": [
+        "ChromaDB",
+        "OMOPHub",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "767631007",
+      "term": "Bipolar disorder, most recent episode depression (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Bipolar disorder, most recent episode depression is a direct subtype of bipolar affective disorder, which is explicitly listed as a comorbidity to include.",
+      "sources": [
+        "ChromaDB",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "767632000",
+      "term": "Bipolar disorder, most recent episode manic (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Bipolar disorder, most recent episode manic is a direct subtype of bipolar affective disorder, which is explicitly listed as a comorbidity to include.",
+      "sources": [
+        "ChromaDB",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "767633005",
+      "term": "Bipolar affective disorder, most recent episode mixed (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Bipolar affective disorder, most recent episode mixed is a direct subtype of bipolar affective disorder, which is explicitly listed as a comorbidity to include.",
+      "sources": [
+        "ChromaDB",
+        "OMOPHub",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "767635003",
+      "term": "Bipolar I disorder, most recent episode manic (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Bipolar I disorder, most recent episode manic is a direct subtype of bipolar affective disorder, which is explicitly listed as a comorbidity to include.",
+      "sources": [
+        "ChromaDB",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "767636002",
+      "term": "Bipolar I disorder, most recent episode depression (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Bipolar I disorder, most recent episode depression is a direct subtype of bipolar affective disorder, which is explicitly listed as a comorbidity to include.",
+      "sources": [
+        "ChromaDB",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "789061003",
+      "term": "Rapid cycling bipolar II disorder (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Rapid cycling bipolar II disorder is a direct subtype of bipolar affective disorder, which is explicitly listed as a comorbidity to include.",
+      "sources": [
+        "ChromaDB",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "79584002",
+      "term": "Moderate bipolar disorder (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Moderate bipolar disorder is a direct subtype of bipolar affective disorder, which is explicitly listed as a comorbidity to include.",
+      "sources": [
+        "ChromaDB",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "79866005",
+      "term": "Subchronic paranoid schizophrenia (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Subchronic paranoid schizophrenia is a direct subtype of schizophrenia, which is explicitly listed as a comorbidity to include.",
+      "sources": [
+        "ChromaDB",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "83225003",
+      "term": "Bipolar II disorder (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Bipolar II disorder is a direct subtype of bipolar affective disorder, which is explicitly listed as a comorbidity to include.",
+      "sources": [
+        "ChromaDB",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "83746006",
+      "term": "Chronic schizophrenia (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Chronic schizophrenia is a direct subtype of schizophrenia, which is explicitly listed as a comorbidity to include.",
+      "sources": [
+        "ChromaDB",
+        "OMOPHub",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "87950005",
+      "term": "Bipolar I disorder, single manic episode with catatonic features (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Bipolar I disorder, single manic episode with catatonic features is a direct subtype of bipolar affective disorder, which is explicitly listed as a comorbidity to include.",
+      "sources": [
+        "ChromaDB",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "765176007",
+      "term": "Psychosis and severe depression co-occurrent and due to bipolar affective disorder (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.93,
+      "rationale": "This code explicitly names both psychosis and bipolar affective disorder, directly matching two of the three query conditions.",
+      "sources": [
+        "ChromaDB",
+        "OMOPHub",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.93,
+      "usage_frequency": null
+    },
+    {
+      "code": "712850003",
+      "term": "Acute polymorphic psychotic disorder co-occurrent with symptoms of schizophrenia (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.92,
+      "rationale": "Acute polymorphic psychotic disorder with schizophrenia symptoms represents both primary psychosis and schizophrenia comorbidity.",
+      "sources": [
+        "ChromaDB",
+        "OMOPHub",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.92,
+      "usage_frequency": null
+    },
+    {
+      "code": "1127191000000108",
+      "term": "First episode psychosis (finding)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.9,
+      "rationale": "First episode psychosis is a primary presentation of psychosis and directly represents the queried primary condition.",
+      "sources": [
+        "ChromaDB",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.9,
+      "usage_frequency": null
+    },
+    {
+      "code": "1231503005",
+      "term": "Psychotic disorder with insight present (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.9,
+      "rationale": "Psychotic disorder with insight present is a psychotic disorder variant and represents the primary psychosis condition.",
+      "sources": [
+        "ChromaDB",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.9,
+      "usage_frequency": null
+    },
+    {
+      "code": "191525009",
+      "term": "Non-organic psychosis (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.9,
+      "rationale": "Non-organic psychosis is a primary psychotic disorder and represents the queried primary psychosis condition.",
+      "sources": [
+        "ChromaDB",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.9,
+      "usage_frequency": null
+    },
+    {
+      "code": "274952002",
+      "term": "Borderline schizophrenia (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.9,
+      "rationale": "Borderline schizophrenia is a clinical variant of schizophrenia, which is explicitly listed as a comorbidity.",
+      "sources": [
+        "ChromaDB",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.9,
+      "usage_frequency": null
+    },
+    {
+      "code": "38368003",
+      "term": "Schizoaffective disorder, bipolar type (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.9,
+      "rationale": "Schizoaffective disorder, bipolar type combines schizophrenia and bipolar features; it is relevant to both conditions listed as comorbidities.",
+      "sources": [
+        "ChromaDB",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.9,
+      "usage_frequency": null
+    },
+    {
+      "code": "65971000052100",
+      "term": "Acute psychosis (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.9,
+      "rationale": "Acute psychosis is a primary psychotic disorder relevant to the primary psychosis aspect of the query.",
+      "sources": [
+        "ChromaDB",
+        "OMOPHub",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.9,
+      "usage_frequency": null
+    },
+    {
+      "code": "712824002",
+      "term": "Acute polymorphic psychotic disorder without symptoms of schizophrenia (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.9,
+      "rationale": "Acute polymorphic psychotic disorder without schizophrenia symptoms is a primary psychotic disorder matching the psychosis (primary) criterion.",
+      "sources": [
+        "ChromaDB",
+        "OMOPHub",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.9,
+      "usage_frequency": null
+    },
+    {
+      "code": "85248005",
+      "term": "Bipolar disorder in remission (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.9,
+      "rationale": "Bipolar disorder in remission is a state variant of bipolar affective disorder, which is explicitly listed as a comorbidity to include.",
+      "sources": [
+        "ChromaDB",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.9,
+      "usage_frequency": null
+    },
+    {
+      "code": "191658009",
+      "term": "Atypical manic disorder (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.85,
+      "rationale": "Atypical manic disorder is a clinical subtype of bipolar affective disorder and should be included as a variant.",
+      "sources": [
+        "ChromaDB",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.85,
+      "usage_frequency": null
+    },
+    {
+      "code": "231494001",
+      "term": "Mania (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.85,
+      "rationale": "Mania is a core manifestation of bipolar affective disorder and should be included as a clinical subtype/manifestation.",
+      "sources": [
+        "ChromaDB",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.85,
+      "usage_frequency": null
+    },
+    {
+      "code": "441704009",
+      "term": "Affective psychosis (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.85,
+      "rationale": "Affective psychosis is a primary psychotic disorder with affective features; it represents a form of primary psychosis relevant to the query.",
+      "sources": [
+        "ChromaDB",
+        "OMOPHub",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.85,
+      "usage_frequency": null
+    },
+    {
+      "code": "5464005",
+      "term": "Brief reactive psychosis (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.85,
+      "rationale": "Brief reactive psychosis is a primary psychotic disorder relevant to the primary psychosis aspect of the query.",
+      "sources": [
+        "ChromaDB",
+        "OMOPHub",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.85,
+      "usage_frequency": null
+    },
+    {
+      "code": "1259128002",
+      "term": "Alzheimer disease with psychosis (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.95,
+      "rationale": "Alzheimer disease with psychosis is a secondary psychosis caused by Alzheimer disease, not a primary psychosis or the named comorbidities.",
+      "sources": [
+        "ChromaDB",
+        "OMOPHub",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "191643001",
+      "term": "Mixed bipolar affective disorder, in full remission (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.9,
+      "rationale": "Mixed bipolar affective disorder in full remission represents a resolved state and should be excluded as it does not confirm active disease.",
+      "sources": [
+        "ChromaDB",
+        "OMOPHub",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.9,
+      "usage_frequency": null
+    },
+    {
+      "code": "231449007",
+      "term": "Epileptic psychosis (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.9,
+      "rationale": "Epileptic psychosis is a secondary psychosis caused by epilepsy, not a primary psychosis, schizophrenia, or bipolar disorder.",
+      "sources": [
+        "ChromaDB",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.9,
+      "usage_frequency": null
+    },
+    {
+      "code": "191677006",
+      "term": "Acute hysterical psychosis (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.85,
+      "rationale": "Acute hysterical psychosis is a specific type of primary psychosis unrelated to schizophrenia or bipolar disorder; it is a separate condition.",
+      "sources": [
+        "ChromaDB",
+        "OMOPHub",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.85,
+      "usage_frequency": null
+    },
+    {
+      "code": "191680007",
+      "term": "Psychogenic paranoid psychosis (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.85,
+      "rationale": "Psychogenic paranoid psychosis is a specific primary psychotic disorder distinct from schizophrenia and bipolar disorder.",
+      "sources": [
+        "ChromaDB",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.85,
+      "usage_frequency": null
+    },
+    {
+      "code": "238972008",
+      "term": "Cutaneous monosymptomatic delusional psychosis (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.85,
+      "rationale": "Cutaneous monosymptomatic delusional psychosis is a specific primary psychotic disorder distinct from schizophrenia and bipolar disorder.",
+      "sources": [
+        "ChromaDB",
+        "OMOPHub",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.85,
+      "usage_frequency": null
+    },
+    {
+      "code": "31373002",
+      "term": "Disorganized schizophrenia in remission (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.85,
+      "rationale": "Disorganized schizophrenia in remission represents a resolved state and should be excluded as it does not confirm active disease.",
+      "sources": [
+        "ChromaDB",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.85,
+      "usage_frequency": null
+    },
+    {
+      "code": "53607008",
+      "term": "Depressed bipolar I disorder in remission (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.85,
+      "rationale": "Depressed bipolar I disorder in remission represents a resolved state and should be excluded as it does not confirm active disease.",
+      "sources": [
+        "ChromaDB",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.85,
+      "usage_frequency": null
+    },
+    {
+      "code": "63249007",
+      "term": "Manic bipolar I disorder in partial remission (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.85,
+      "rationale": "Manic bipolar I disorder in partial remission represents a partially resolved state and should be excluded as it does not confirm active disease.",
+      "sources": [
+        "ChromaDB",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.85,
+      "usage_frequency": null
+    },
+    {
+      "code": "268622001",
+      "term": "Chronic paranoid psychosis (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.8,
+      "rationale": "Chronic paranoid psychosis is a primary psychotic disorder distinct from schizophrenia and bipolar disorder; it does not name either queried condition.",
+      "sources": [
+        "ChromaDB",
+        "OMOPHub",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.8,
+      "usage_frequency": null
+    },
+    {
+      "code": "278853003",
+      "term": "Acute schizophrenia-like psychotic disorder (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.8,
+      "rationale": "Acute schizophrenia-like psychotic disorder is a primary psychotic disorder distinct from schizophrenia itself; the term indicates it is schizophrenia-like but not schizophrenia.",
+      "sources": [
+        "ChromaDB",
+        "OMOPHub",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.8,
+      "usage_frequency": null
+    },
+    {
+      "code": "307417003",
+      "term": "Cycloid psychosis (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.8,
+      "rationale": "Cycloid psychosis is a primary psychotic disorder distinct from schizophrenia and bipolar disorder.",
+      "sources": [
+        "ChromaDB",
+        "OMOPHub",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.8,
+      "usage_frequency": null
+    },
+    {
+      "code": "61831009",
+      "term": "Induced psychotic disorder (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.8,
+      "rationale": "Induced psychotic disorder is a secondary psychotic disorder caused by external factors, not a primary psychosis, schizophrenia, or bipolar disorder.",
+      "sources": [
+        "ChromaDB",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.8,
+      "usage_frequency": null
+    }
+  ],
+  "pipeline": "rag",
+  "cold_start": true
+}

@@ -1,0 +1,4117 @@
+{
+  "reference_count": 86,
+  "query": "Diabetes mellitus codes",
+  "vocabulary": "SNOMED CT",
+  "stages": {
+    "retrieved_raw": {
+      "codelist_name": "retrieved_raw",
+      "n_ref_codes": 86,
+      "n_output_codes": 172,
+      "recall": 1.0,
+      "precision": 0.5,
+      "f1": 0.6667,
+      "tp_count": 86,
+      "fp_count": 86,
+      "fn_count": 0,
+      "tp_codes": [
+        {
+          "code": "111552007",
+          "term": "Diabetes mellitus without complication"
+        },
+        {
+          "code": "112991000000101",
+          "term": "Lipoatrophic diabetes mellitus without complication"
+        },
+        {
+          "code": "1142044000",
+          "term": "Pre-existing malnutrition-related diabetes mellitus in pregnancy"
+        },
+        {
+          "code": "11530004",
+          "term": "Brittle diabetes mellitus"
+        },
+        {
+          "code": "1196922005",
+          "term": "Neovascular glaucoma due to diabetes mellitus type 2"
+        },
+        {
+          "code": "1196923000",
+          "term": "Neovascular glaucoma due to diabetes mellitus type 1"
+        },
+        {
+          "code": "1217044000",
+          "term": "Ketosis-resistant diabetes mellitus"
+        },
+        {
+          "code": "1217068008",
+          "term": "Fulminant type 1 diabetes mellitus"
+        },
+        {
+          "code": "1217674007",
+          "term": "Neurotrophic keratitis due to diabetes mellitus"
+        },
+        {
+          "code": "1222660008",
+          "term": "Pancreatic agenesis, holoprosencephaly syndrome"
+        },
+        {
+          "code": "1255271005",
+          "term": "Type 1 diabetes mellitus, central and peripheral neurodegeneration syndrome"
+        },
+        {
+          "code": "127012008",
+          "term": "Lipoatrophic diabetes"
+        },
+        {
+          "code": "127013003",
+          "term": "Disorder of kidney due to diabetes mellitus"
+        },
+        {
+          "code": "127014009",
+          "term": "Peripheral angiopathy due to diabetes mellitus"
+        },
+        {
+          "code": "1481000119100",
+          "term": "Diabetes mellitus type 2 without retinopathy"
+        },
+        {
+          "code": "190368000",
+          "term": "Type I diabetes mellitus with ulcer"
+        },
+        {
+          "code": "190369008",
+          "term": "Type I diabetes mellitus with gangrene"
+        },
+        {
+          "code": "190372001",
+          "term": "Type I diabetes mellitus maturity onset"
+        },
+        {
+          "code": "190388001",
+          "term": "Multiple complications due to type 2 diabetes mellitus"
+        },
+        {
+          "code": "190389009",
+          "term": "Type II diabetes mellitus with ulcer"
+        },
+        {
+          "code": "190390000",
+          "term": "Type II diabetes mellitus with gangrene"
+        },
+        {
+          "code": "201724008",
+          "term": "Neuropathic arthropathy due to diabetes mellitus"
+        },
+        {
+          "code": "230577008",
+          "term": "Mononeuropathy due to diabetes mellitus"
+        },
+        {
+          "code": "237599002",
+          "term": "Insulin treated type 2 diabetes mellitus"
+        },
+        {
+          "code": "237601000",
+          "term": "Secondary endocrine diabetes mellitus"
+        },
+        {
+          "code": "237604008",
+          "term": "Maturity onset diabetes of the young, type 2"
+        },
+        {
+          "code": "237612000",
+          "term": "Photomyoclonus, diabetes mellitus, deafness, nephropathy and cerebral dysfunction"
+        },
+        {
+          "code": "237618001",
+          "term": "Insulin-dependent diabetes mellitus secretory diarrhea syndrome"
+        },
+        {
+          "code": "237619009",
+          "term": "Maternally inherited diabetes and deafness"
+        },
+        {
+          "code": "268519009",
+          "term": "Diabetic - poor control"
+        },
+        {
+          "code": "290002008",
+          "term": "Brittle type 1 diabetes mellitus"
+        },
+        {
+          "code": "313435000",
+          "term": "Type I diabetes mellitus without complication"
+        },
+        {
+          "code": "313436004",
+          "term": "Type II diabetes mellitus without complication"
+        },
+        {
+          "code": "314771006",
+          "term": "Type I diabetes mellitus with hypoglycemic coma"
+        },
+        {
+          "code": "314893005",
+          "term": "Arthropathy due to type 1 diabetes mellitus"
+        },
+        {
+          "code": "314902007",
+          "term": "Peripheral angiopathy due to type 2 diabetes mellitus"
+        },
+        {
+          "code": "314903002",
+          "term": "Arthropathy due to type 2 diabetes mellitus"
+        },
+        {
+          "code": "314904008",
+          "term": "Type II diabetes mellitus with neuropathic arthropathy"
+        },
+        {
+          "code": "335621000000101",
+          "term": "Maternally inherited diabetes mellitus"
+        },
+        {
+          "code": "368711000119106",
+          "term": "Mild nonproliferative retinopathy due to secondary diabetes mellitus"
+        },
+        {
+          "code": "385041000000108",
+          "term": "Diabetes mellitus with multiple complications"
+        },
+        {
+          "code": "395204000",
+          "term": "Hyperosmolar non-ketotic state due to type 2 diabetes mellitus"
+        },
+        {
+          "code": "401110002",
+          "term": "Type 1 diabetes mellitus with persistent microalbuminuria"
+        },
+        {
+          "code": "408540003",
+          "term": "Diabetes mellitus caused by non-steroid drugs"
+        },
+        {
+          "code": "413183008",
+          "term": "Diabetes mellitus caused by non-steroid drugs without complication"
+        },
+        {
+          "code": "420270002",
+          "term": "Ketoacidosis due to type 1 diabetes mellitus"
+        },
+        {
+          "code": "420825003",
+          "term": "Gangrene due to type 1 diabetes mellitus"
+        },
+        {
+          "code": "420868002",
+          "term": "Disorder due to type 1 diabetes mellitus"
+        },
+        {
+          "code": "421075007",
+          "term": "Ketoacidotic coma due to type 1 diabetes mellitus"
+        },
+        {
+          "code": "421305000",
+          "term": "Persistent microalbuminuria due to type 1 diabetes mellitus"
+        },
+        {
+          "code": "421437000",
+          "term": "Hypoglycemic coma due to type 1 diabetes mellitus"
+        },
+        {
+          "code": "421631007",
+          "term": "Gangrene due to type 2 diabetes mellitus"
+        },
+        {
+          "code": "421750000",
+          "term": "Ketoacidosis due to type 2 diabetes mellitus"
+        },
+        {
+          "code": "421847006",
+          "term": "Ketoacidotic coma due to type 2 diabetes mellitus"
+        },
+        {
+          "code": "422014003",
+          "term": "Disorder due to type 2 diabetes mellitus"
+        },
+        {
+          "code": "422228004",
+          "term": "Multiple complications due to type 1 diabetes mellitus"
+        },
+        {
+          "code": "426705001",
+          "term": "Diabetes mellitus co-occurrent and due to cystic fibrosis"
+        },
+        {
+          "code": "426875007",
+          "term": "Latent autoimmune diabetes mellitus in adult"
+        },
+        {
+          "code": "427089005",
+          "term": "Diabetes mellitus due to cystic fibrosis"
+        },
+        {
+          "code": "44054006",
+          "term": "Diabetes mellitus type 2"
+        },
+        {
+          "code": "443694000",
+          "term": "Uncontrolled type 2 diabetes mellitus"
+        },
+        {
+          "code": "444073006",
+          "term": "Uncontrolled type 1 diabetes mellitus"
+        },
+        {
+          "code": "445353002",
+          "term": "Brittle type 2 diabetes mellitus"
+        },
+        {
+          "code": "46635009",
+          "term": "Diabetes mellitus type 1"
+        },
+        {
+          "code": "4855003",
+          "term": "Retinopathy due to diabetes mellitus"
+        },
+        {
+          "code": "49455004",
+          "term": "Polyneuropathy due to diabetes mellitus"
+        },
+        {
+          "code": "51002006",
+          "term": "Diabetes mellitus associated with pancreatic disease"
+        },
+        {
+          "code": "5368009",
+          "term": "Drug-induced diabetes mellitus"
+        },
+        {
+          "code": "5969009",
+          "term": "Diabetes mellitus associated with genetic syndrome"
+        },
+        {
+          "code": "609561005",
+          "term": "Maturity-onset diabetes of the young"
+        },
+        {
+          "code": "609562003",
+          "term": "Maturity onset diabetes of the young, type 1"
+        },
+        {
+          "code": "609572000",
+          "term": "Maturity-onset diabetes of the young, type 5"
+        },
+        {
+          "code": "703136005",
+          "term": "Diabetes mellitus in remission"
+        },
+        {
+          "code": "703137001",
+          "term": "Type I diabetes mellitus in remission"
+        },
+        {
+          "code": "703138006",
+          "term": "Type II diabetes mellitus in remission"
+        },
+        {
+          "code": "70694009",
+          "term": "Wolfram syndrome"
+        },
+        {
+          "code": "73211009",
+          "term": "Diabetes mellitus"
+        },
+        {
+          "code": "737212004",
+          "term": "Diabetes mellitus caused by chemical"
+        },
+        {
+          "code": "739681000",
+          "term": "Disorder of eye due to type 1 diabetes mellitus"
+        },
+        {
+          "code": "75682002",
+          "term": "Diabetes mellitus caused by insulin receptor antibodies"
+        },
+        {
+          "code": "768792007",
+          "term": "Cataract of right eye due to diabetes mellitus"
+        },
+        {
+          "code": "768793002",
+          "term": "Cataract of left eye due to diabetes mellitus"
+        },
+        {
+          "code": "768794008",
+          "term": "Cataract of bilateral eyes due to diabetes mellitus"
+        },
+        {
+          "code": "816067005",
+          "term": "Diabetes, hypogonadism, deafness, intellectual disability syndrome"
+        },
+        {
+          "code": "82581000119105",
+          "term": "Rubeosis iridis due to type 1 diabetes mellitus"
+        },
+        {
+          "code": "8801005",
+          "term": "Secondary diabetes mellitus"
+        }
+      ],
+      "fp_codes": [
+        {
+          "code": "1110921000000100",
+          "term": "Quality and Outcomes Framework diabetes mellitus quality indicator-related care invitation (procedure)"
+        },
+        {
+          "code": "127991000119101",
+          "term": "Hypertension concurrent and due to end stage renal disease on dialysis due to type 2 diabetes mellitus"
+        },
+        {
+          "code": "128001000119105",
+          "term": "Hypertension concurrent and due to end stage renal disease on dialysis due to type 1 diabetes mellitus"
+        },
+        {
+          "code": "140101000119109",
+          "term": "Hypertension in chronic kidney disease stage 5 due to type 2 diabetes mellitus"
+        },
+        {
+          "code": "140111000119107",
+          "term": "Hypertension in chronic kidney disease stage 4 due to type 2 diabetes mellitus"
+        },
+        {
+          "code": "140121000119100",
+          "term": "Hypertension in chronic kidney disease stage 3 due to type 2 diabetes mellitus"
+        },
+        {
+          "code": "140131000119102",
+          "term": "Hypertension in chronic kidney disease stage 2 due to type 2 diabetes mellitus"
+        },
+        {
+          "code": "140381000119104",
+          "term": "Neuropathic ulcer of toe due to type 2 diabetes mellitus"
+        },
+        {
+          "code": "140531000119105",
+          "term": "Neuropathic ulcer of foot due to type 2 diabetes mellitus"
+        },
+        {
+          "code": "143401000000102",
+          "term": "Quality and Outcomes Framework diabetes mellitus quality indicator-related care invitation using preferred method of communication (procedure)"
+        },
+        {
+          "code": "157141000119108",
+          "term": "Proteinuria due to type 2 diabetes mellitus (disorder)"
+        },
+        {
+          "code": "16891151000119104",
+          "term": "Coronary artery disease due to type 2 diabetes mellitus (disorder)"
+        },
+        {
+          "code": "16891191000119108",
+          "term": "Coronary artery disease due to type 1 diabetes mellitus (disorder)"
+        },
+        {
+          "code": "18521000119106",
+          "term": "Microalbuminuria due to type 1 diabetes mellitus (disorder)"
+        },
+        {
+          "code": "193350004",
+          "term": "Advanced maculopathy due to diabetes mellitus"
+        },
+        {
+          "code": "230576004",
+          "term": "Asymmetric polyneuropathy due to diabetes mellitus"
+        },
+        {
+          "code": "236499007",
+          "term": "Microalbuminuric nephropathy due to diabetes mellitus (disorder)"
+        },
+        {
+          "code": "236500003",
+          "term": "Proteinuric nephropathy due to diabetes mellitus (disorder)"
+        },
+        {
+          "code": "237620003",
+          "term": "Abnormal metabolic state due to diabetes mellitus"
+        },
+        {
+          "code": "243421000119104",
+          "term": "Proteinuria due to type 1 diabetes mellitus (disorder)"
+        },
+        {
+          "code": "311782002",
+          "term": "Advanced retinal disease due to diabetes mellitus"
+        },
+        {
+          "code": "31211000119101",
+          "term": "Peripheral angiopathy due to type 1 diabetes mellitus (disorder)"
+        },
+        {
+          "code": "315287002",
+          "term": "Diabetes mellitus insulin-glucose infusion in acute myocardial infarction (procedure)"
+        },
+        {
+          "code": "368421000119108",
+          "term": "Chronic kidney disease stage 1 due to drug induced diabetes mellitus (disorder)"
+        },
+        {
+          "code": "368431000119106",
+          "term": "Chronic kidney disease stage 2 due to drug induced diabetes mellitus (disorder)"
+        },
+        {
+          "code": "368441000119102",
+          "term": "Chronic kidney disease stage 3 due to drug induced diabetes mellitus (disorder)"
+        },
+        {
+          "code": "368451000119100",
+          "term": "Chronic kidney disease stage 4 due to drug induced diabetes mellitus (disorder)"
+        },
+        {
+          "code": "368461000119103",
+          "term": "Chronic kidney disease stage 5 due to drug induced diabetes mellitus (disorder)"
+        },
+        {
+          "code": "420514000",
+          "term": "Persistent proteinuria due to type 1 diabetes mellitus (disorder)"
+        },
+        {
+          "code": "420715001",
+          "term": "Persistent microalbuminuria due to type 2 diabetes mellitus"
+        },
+        {
+          "code": "421986006",
+          "term": "Persistent proteinuria due to type 2 diabetes mellitus (disorder)"
+        },
+        {
+          "code": "445170001",
+          "term": "Macroalbuminuric nephropathy due to diabetes mellitus (disorder)"
+        },
+        {
+          "code": "700449008",
+          "term": "Non-diabetic hyperglycemia (disorder)"
+        },
+        {
+          "code": "708018005",
+          "term": "Assessment using congestive heart failure, hypertension, age 2, diabetes mellitus, stroke 2 - vascular disease, age, sex category score"
+        },
+        {
+          "code": "711000119100",
+          "term": "Chronic kidney disease stage 5 due to type 2 diabetes mellitus (disorder)"
+        },
+        {
+          "code": "71421000119105",
+          "term": "Hypertension in chronic kidney disease due to type 2 diabetes mellitus"
+        },
+        {
+          "code": "71701000119105",
+          "term": "Hypertension in chronic kidney disease due to type 1 diabetes mellitus"
+        },
+        {
+          "code": "721000119107",
+          "term": "Chronic kidney disease stage 4 due to type 2 diabetes mellitus (disorder)"
+        },
+        {
+          "code": "721283000",
+          "term": "Acidosis due to type 1 diabetes mellitus"
+        },
+        {
+          "code": "721284006",
+          "term": "Acidosis due to type 2 diabetes mellitus"
+        },
+        {
+          "code": "722454003",
+          "term": "Intellectual disability, craniofacial dysmorphism, hypogonadism, diabetes mellitus syndrome (disorder)"
+        },
+        {
+          "code": "731000119105",
+          "term": "Chronic kidney disease stage 3 due to type 2 diabetes mellitus (disorder)"
+        },
+        {
+          "code": "733072002",
+          "term": "Alaninuria, microcephaly, dwarfism, enamel hypoplasia, diabetes mellitus syndrome (disorder)"
+        },
+        {
+          "code": "735200002",
+          "term": "Absence of lower limb due to diabetes mellitus"
+        },
+        {
+          "code": "735259005",
+          "term": "Congestive heart failure, hypertension, age 2, diabetes mellitus, stroke 2, vascular disease, age, sex category stroke risk score (observable entity)"
+        },
+        {
+          "code": "741000119101",
+          "term": "Chronic kidney disease stage 2 due to type 2 diabetes mellitus (disorder)"
+        },
+        {
+          "code": "751000119104",
+          "term": "Chronic kidney disease stage 1 due to type 2 diabetes mellitus (disorder)"
+        },
+        {
+          "code": "762489000",
+          "term": "Acute complication due to diabetes mellitus"
+        },
+        {
+          "code": "763007002",
+          "term": "Assessment using congestive heart failure, hypertension, age 75 years or older, diabetes mellitus and previous stroke or transient ischemic attack score (procedure)"
+        },
+        {
+          "code": "763008007",
+          "term": "Congestive heart failure, hypertension, age 75 years or older, diabetes mellitus and previous stroke or transient ischemic attack score (observable entity)"
+        },
+        {
+          "code": "772788006",
+          "term": "Assessment of risk of type 2 diabetes mellitus"
+        },
+        {
+          "code": "789569005",
+          "term": "Neuropathic ulcer of heel due to type 2 diabetes mellitus"
+        },
+        {
+          "code": "791000119109",
+          "term": "Angina due to type 2 diabetes mellitus (disorder)"
+        },
+        {
+          "code": "792926007",
+          "term": "Armanni-Ebstein kidney due to diabetes mellitus"
+        },
+        {
+          "code": "79554005",
+          "term": "Asymmetric proximal motor neuropathy due to diabetes mellitus"
+        },
+        {
+          "code": "82980005",
+          "term": "Anemia due to diabetes mellitus"
+        },
+        {
+          "code": "870422002",
+          "term": "Assessment of self management of diabetes mellitus"
+        },
+        {
+          "code": "87441000119104",
+          "term": "Ankle ulcer due to type 2 diabetes mellitus"
+        },
+        {
+          "code": "87471000119106",
+          "term": "Ankle ulcer due to type 1 diabetes mellitus"
+        },
+        {
+          "code": "90721000119101",
+          "term": "Chronic kidney disease stage 1 due to type 1 diabetes mellitus (disorder)"
+        },
+        {
+          "code": "90731000119103",
+          "term": "Chronic kidney disease stage 2 due to type 1 diabetes mellitus (disorder)"
+        },
+        {
+          "code": "90741000119107",
+          "term": "Chronic kidney disease stage 3 due to type 1 diabetes mellitus (disorder)"
+        },
+        {
+          "code": "90751000119109",
+          "term": "Chronic kidney disease stage 4 due to type 1 diabetes mellitus (disorder)"
+        },
+        {
+          "code": "90761000119106",
+          "term": "Chronic kidney disease stage 5 due to type 1 diabetes mellitus (disorder)"
+        },
+        {
+          "code": "90781000119102",
+          "term": "Microalbuminuria due to type 2 diabetes mellitus (disorder)"
+        },
+        {
+          "code": "9859006",
+          "term": "Acanthosis nigricans due to type 2 diabetes mellitus"
+        },
+        {
+          "code": "E10-E14",
+          "term": "Diabetes mellitus"
+        },
+        {
+          "code": "E12",
+          "term": "Malnutrition-related diabetes mellitus"
+        },
+        {
+          "code": "E12.0",
+          "term": "Malnutrition-related diabetes mellitus, with coma"
+        },
+        {
+          "code": "E12.1",
+          "term": "Malnutrition-related diabetes mellitus, with ketoacidosis"
+        },
+        {
+          "code": "E12.2",
+          "term": "Malnutrition-related diabetes mellitus, with renal complications"
+        },
+        {
+          "code": "E12.3",
+          "term": "Malnutrition-related diabetes mellitus, with ophthalmic complications"
+        },
+        {
+          "code": "E12.4",
+          "term": "Malnutrition-related diabetes mellitus, with neurological complications"
+        },
+        {
+          "code": "E12.5",
+          "term": "Malnutrition-related diabetes mellitus, with peripheral circulatory complications"
+        },
+        {
+          "code": "E12.6",
+          "term": "Malnutrition-related diabetes mellitus, with other specified complications"
+        },
+        {
+          "code": "E12.7",
+          "term": "Malnutrition-related diabetes mellitus, with multiple complications"
+        },
+        {
+          "code": "E12.9",
+          "term": "Malnutrition-related diabetes mellitus, without complications"
+        },
+        {
+          "code": "N08.3",
+          "term": "Glomerular disorders in diabetes mellitus"
+        },
+        {
+          "code": "O24",
+          "term": "Diabetes mellitus in pregnancy"
+        },
+        {
+          "code": "O24.0",
+          "term": "Diabetes mellitus in pregnancy: Pre-existing diabetes mellitus, insulin-dependent"
+        },
+        {
+          "code": "O24.1",
+          "term": "Diabetes mellitus in pregnancy: Pre-existing diabetes mellitus, non-insulin-dependent"
+        },
+        {
+          "code": "O24.2",
+          "term": "Diabetes mellitus in pregnancy: Pre-existing malnutrition-related diabetes mellitus"
+        },
+        {
+          "code": "O24.3",
+          "term": "Diabetes mellitus in pregnancy: Pre-existing diabetes mellitus, unspecified"
+        },
+        {
+          "code": "O24.4",
+          "term": "Diabetes mellitus arising in pregnancy"
+        },
+        {
+          "code": "O24.9",
+          "term": "Diabetes mellitus in pregnancy, unspecified"
+        },
+        {
+          "code": "Z83.3",
+          "term": "Family history of diabetes mellitus"
+        }
+      ],
+      "fn_codes": []
+    },
+    "merged_enriched": {
+      "codelist_name": "merged_enriched",
+      "n_ref_codes": 86,
+      "n_output_codes": 100,
+      "recall": 0.8605,
+      "precision": 0.74,
+      "f1": 0.7957,
+      "tp_count": 74,
+      "fp_count": 26,
+      "fn_count": 12,
+      "tp_codes": [
+        {
+          "code": "111552007",
+          "term": "Diabetes mellitus without complication"
+        },
+        {
+          "code": "112991000000101",
+          "term": "Lipoatrophic diabetes mellitus without complication"
+        },
+        {
+          "code": "1142044000",
+          "term": "Pre-existing malnutrition-related diabetes mellitus in pregnancy"
+        },
+        {
+          "code": "11530004",
+          "term": "Brittle diabetes mellitus"
+        },
+        {
+          "code": "1196922005",
+          "term": "Neovascular glaucoma due to diabetes mellitus type 2"
+        },
+        {
+          "code": "1196923000",
+          "term": "Neovascular glaucoma due to diabetes mellitus type 1"
+        },
+        {
+          "code": "1217044000",
+          "term": "Ketosis-resistant diabetes mellitus"
+        },
+        {
+          "code": "1217068008",
+          "term": "Fulminant type 1 diabetes mellitus"
+        },
+        {
+          "code": "1217674007",
+          "term": "Neurotrophic keratitis due to diabetes mellitus"
+        },
+        {
+          "code": "1255271005",
+          "term": "Type 1 diabetes mellitus, central and peripheral neurodegeneration syndrome"
+        },
+        {
+          "code": "127013003",
+          "term": "Disorder of kidney due to diabetes mellitus"
+        },
+        {
+          "code": "127014009",
+          "term": "Peripheral angiopathy due to diabetes mellitus"
+        },
+        {
+          "code": "1481000119100",
+          "term": "Diabetes mellitus type 2 without retinopathy"
+        },
+        {
+          "code": "190368000",
+          "term": "Type I diabetes mellitus with ulcer"
+        },
+        {
+          "code": "190369008",
+          "term": "Type I diabetes mellitus with gangrene"
+        },
+        {
+          "code": "190372001",
+          "term": "Type I diabetes mellitus maturity onset"
+        },
+        {
+          "code": "190388001",
+          "term": "Multiple complications due to type 2 diabetes mellitus"
+        },
+        {
+          "code": "190389009",
+          "term": "Type II diabetes mellitus with ulcer"
+        },
+        {
+          "code": "190390000",
+          "term": "Type II diabetes mellitus with gangrene"
+        },
+        {
+          "code": "201724008",
+          "term": "Neuropathic arthropathy due to diabetes mellitus"
+        },
+        {
+          "code": "230577008",
+          "term": "Mononeuropathy due to diabetes mellitus"
+        },
+        {
+          "code": "237599002",
+          "term": "Insulin treated type 2 diabetes mellitus"
+        },
+        {
+          "code": "237601000",
+          "term": "Secondary endocrine diabetes mellitus"
+        },
+        {
+          "code": "237612000",
+          "term": "Photomyoclonus, diabetes mellitus, deafness, nephropathy and cerebral dysfunction"
+        },
+        {
+          "code": "290002008",
+          "term": "Brittle type 1 diabetes mellitus"
+        },
+        {
+          "code": "313435000",
+          "term": "Type I diabetes mellitus without complication"
+        },
+        {
+          "code": "313436004",
+          "term": "Type II diabetes mellitus without complication"
+        },
+        {
+          "code": "314771006",
+          "term": "Type I diabetes mellitus with hypoglycemic coma"
+        },
+        {
+          "code": "314893005",
+          "term": "Arthropathy due to type 1 diabetes mellitus"
+        },
+        {
+          "code": "314902007",
+          "term": "Peripheral angiopathy due to type 2 diabetes mellitus"
+        },
+        {
+          "code": "314903002",
+          "term": "Arthropathy due to type 2 diabetes mellitus"
+        },
+        {
+          "code": "335621000000101",
+          "term": "Maternally inherited diabetes mellitus"
+        },
+        {
+          "code": "368711000119106",
+          "term": "Mild nonproliferative retinopathy due to secondary diabetes mellitus"
+        },
+        {
+          "code": "385041000000108",
+          "term": "Diabetes mellitus with multiple complications"
+        },
+        {
+          "code": "395204000",
+          "term": "Hyperosmolar non-ketotic state due to type 2 diabetes mellitus"
+        },
+        {
+          "code": "401110002",
+          "term": "Type 1 diabetes mellitus with persistent microalbuminuria"
+        },
+        {
+          "code": "408540003",
+          "term": "Diabetes mellitus caused by non-steroid drugs"
+        },
+        {
+          "code": "413183008",
+          "term": "Diabetes mellitus caused by non-steroid drugs without complication"
+        },
+        {
+          "code": "420270002",
+          "term": "Ketoacidosis due to type 1 diabetes mellitus"
+        },
+        {
+          "code": "420825003",
+          "term": "Gangrene due to type 1 diabetes mellitus"
+        },
+        {
+          "code": "420868002",
+          "term": "Disorder due to type 1 diabetes mellitus"
+        },
+        {
+          "code": "421075007",
+          "term": "Ketoacidotic coma due to type 1 diabetes mellitus"
+        },
+        {
+          "code": "421305000",
+          "term": "Persistent microalbuminuria due to type 1 diabetes mellitus"
+        },
+        {
+          "code": "421437000",
+          "term": "Hypoglycemic coma due to type 1 diabetes mellitus"
+        },
+        {
+          "code": "421631007",
+          "term": "Gangrene due to type 2 diabetes mellitus"
+        },
+        {
+          "code": "421750000",
+          "term": "Ketoacidosis due to type 2 diabetes mellitus"
+        },
+        {
+          "code": "421847006",
+          "term": "Ketoacidotic coma due to type 2 diabetes mellitus"
+        },
+        {
+          "code": "422014003",
+          "term": "Disorder due to type 2 diabetes mellitus"
+        },
+        {
+          "code": "422228004",
+          "term": "Multiple complications due to type 1 diabetes mellitus"
+        },
+        {
+          "code": "426705001",
+          "term": "Diabetes mellitus co-occurrent and due to cystic fibrosis"
+        },
+        {
+          "code": "426875007",
+          "term": "Latent autoimmune diabetes mellitus in adult"
+        },
+        {
+          "code": "427089005",
+          "term": "Diabetes mellitus due to cystic fibrosis"
+        },
+        {
+          "code": "44054006",
+          "term": "Diabetes mellitus type 2"
+        },
+        {
+          "code": "443694000",
+          "term": "Uncontrolled type 2 diabetes mellitus"
+        },
+        {
+          "code": "444073006",
+          "term": "Uncontrolled type 1 diabetes mellitus"
+        },
+        {
+          "code": "445353002",
+          "term": "Brittle type 2 diabetes mellitus"
+        },
+        {
+          "code": "46635009",
+          "term": "Diabetes mellitus type 1"
+        },
+        {
+          "code": "4855003",
+          "term": "Retinopathy due to diabetes mellitus"
+        },
+        {
+          "code": "49455004",
+          "term": "Polyneuropathy due to diabetes mellitus"
+        },
+        {
+          "code": "51002006",
+          "term": "Diabetes mellitus associated with pancreatic disease"
+        },
+        {
+          "code": "5368009",
+          "term": "Drug-induced diabetes mellitus"
+        },
+        {
+          "code": "5969009",
+          "term": "Diabetes mellitus associated with genetic syndrome"
+        },
+        {
+          "code": "703136005",
+          "term": "Diabetes mellitus in remission"
+        },
+        {
+          "code": "703137001",
+          "term": "Type I diabetes mellitus in remission"
+        },
+        {
+          "code": "703138006",
+          "term": "Type II diabetes mellitus in remission"
+        },
+        {
+          "code": "73211009",
+          "term": "Diabetes mellitus"
+        },
+        {
+          "code": "737212004",
+          "term": "Diabetes mellitus caused by chemical"
+        },
+        {
+          "code": "739681000",
+          "term": "Disorder of eye due to type 1 diabetes mellitus"
+        },
+        {
+          "code": "75682002",
+          "term": "Diabetes mellitus caused by insulin receptor antibodies"
+        },
+        {
+          "code": "768792007",
+          "term": "Cataract of right eye due to diabetes mellitus"
+        },
+        {
+          "code": "768793002",
+          "term": "Cataract of left eye due to diabetes mellitus"
+        },
+        {
+          "code": "768794008",
+          "term": "Cataract of bilateral eyes due to diabetes mellitus"
+        },
+        {
+          "code": "82581000119105",
+          "term": "Rubeosis iridis due to type 1 diabetes mellitus"
+        },
+        {
+          "code": "8801005",
+          "term": "Secondary diabetes mellitus"
+        }
+      ],
+      "fp_codes": [
+        {
+          "code": "127991000119101",
+          "term": "Hypertension concurrent and due to end stage renal disease on dialysis due to type 2 diabetes mellitus (disorder)"
+        },
+        {
+          "code": "128001000119105",
+          "term": "Hypertension concurrent and due to end stage renal disease on dialysis due to type 1 diabetes mellitus (disorder)"
+        },
+        {
+          "code": "140101000119109",
+          "term": "Hypertension in chronic kidney disease stage 5 due to type 2 diabetes mellitus (disorder)"
+        },
+        {
+          "code": "140111000119107",
+          "term": "Hypertension in chronic kidney disease stage 4 due to type 2 diabetes mellitus (disorder)"
+        },
+        {
+          "code": "140121000119100",
+          "term": "Hypertension in chronic kidney disease stage 3 due to type 2 diabetes mellitus (disorder)"
+        },
+        {
+          "code": "140131000119102",
+          "term": "Hypertension in chronic kidney disease stage 2 due to type 2 diabetes mellitus (disorder)"
+        },
+        {
+          "code": "140381000119104",
+          "term": "Neuropathic ulcer of toe due to type 2 diabetes mellitus (disorder)"
+        },
+        {
+          "code": "140531000119105",
+          "term": "Neuropathic ulcer of foot due to type 2 diabetes mellitus (disorder)"
+        },
+        {
+          "code": "157141000119108",
+          "term": "Proteinuria due to type 2 diabetes mellitus (disorder)"
+        },
+        {
+          "code": "18521000119106",
+          "term": "Microalbuminuria due to type 1 diabetes mellitus (disorder)"
+        },
+        {
+          "code": "193350004",
+          "term": "Advanced maculopathy due to diabetes mellitus"
+        },
+        {
+          "code": "237620003",
+          "term": "Abnormal metabolic state due to diabetes mellitus"
+        },
+        {
+          "code": "311782002",
+          "term": "Advanced retinal disease due to diabetes mellitus"
+        },
+        {
+          "code": "420715001",
+          "term": "Persistent microalbuminuria due to type 2 diabetes mellitus (disorder)"
+        },
+        {
+          "code": "700449008",
+          "term": "Non-diabetic hyperglycemia (disorder)"
+        },
+        {
+          "code": "71421000119105",
+          "term": "Hypertension in chronic kidney disease due to type 2 diabetes mellitus (disorder)"
+        },
+        {
+          "code": "71701000119105",
+          "term": "Hypertension in chronic kidney disease due to type 1 diabetes mellitus (disorder)"
+        },
+        {
+          "code": "721283000",
+          "term": "Acidosis due to type 1 diabetes mellitus"
+        },
+        {
+          "code": "721284006",
+          "term": "Acidosis due to type 2 diabetes mellitus"
+        },
+        {
+          "code": "735200002",
+          "term": "Absence of lower limb due to diabetes mellitus"
+        },
+        {
+          "code": "762489000",
+          "term": "Acute complication due to diabetes mellitus"
+        },
+        {
+          "code": "763007002",
+          "term": "Assessment using congestive heart failure, hypertension, age 75 years or older, diabetes mellitus and previous stroke or transient ischemic attack score (procedure)"
+        },
+        {
+          "code": "789569005",
+          "term": "Neuropathic ulcer of heel due to type 2 diabetes mellitus (disorder)"
+        },
+        {
+          "code": "791000119109",
+          "term": "Angina due to type 2 diabetes mellitus (disorder)"
+        },
+        {
+          "code": "90781000119102",
+          "term": "Microalbuminuria due to type 2 diabetes mellitus (disorder)"
+        },
+        {
+          "code": "9859006",
+          "term": "Acanthosis nigricans due to type 2 diabetes mellitus"
+        }
+      ],
+      "fn_codes": [
+        {
+          "code": "1222660008",
+          "term": "Pancreatic agenesis, holoprosencephaly syndrome"
+        },
+        {
+          "code": "127012008",
+          "term": "Lipoatrophic diabetes"
+        },
+        {
+          "code": "237604008",
+          "term": "Maturity onset diabetes of the young, type 2"
+        },
+        {
+          "code": "237618001",
+          "term": "Insulin-dependent diabetes mellitus secretory diarrhea syndrome"
+        },
+        {
+          "code": "237619009",
+          "term": "Maternally inherited diabetes and deafness"
+        },
+        {
+          "code": "268519009",
+          "term": "Diabetic - poor control"
+        },
+        {
+          "code": "314904008",
+          "term": "Type II diabetes mellitus with neuropathic arthropathy"
+        },
+        {
+          "code": "609561005",
+          "term": "Maturity-onset diabetes of the young"
+        },
+        {
+          "code": "609562003",
+          "term": "Maturity onset diabetes of the young, type 1"
+        },
+        {
+          "code": "609572000",
+          "term": "Maturity-onset diabetes of the young, type 5"
+        },
+        {
+          "code": "70694009",
+          "term": "Wolfram syndrome"
+        },
+        {
+          "code": "816067005",
+          "term": "Diabetes, hypogonadism, deafness, intellectual disability syndrome"
+        }
+      ]
+    },
+    "all_scored": {
+      "codelist_name": "all_scored",
+      "n_ref_codes": 86,
+      "n_output_codes": 100,
+      "recall": 0.8605,
+      "precision": 0.74,
+      "f1": 0.7957,
+      "tp_count": 74,
+      "fp_count": 26,
+      "fn_count": 12,
+      "tp_codes": [
+        {
+          "code": "111552007",
+          "term": "Diabetes mellitus without complication"
+        },
+        {
+          "code": "112991000000101",
+          "term": "Lipoatrophic diabetes mellitus without complication"
+        },
+        {
+          "code": "1142044000",
+          "term": "Pre-existing malnutrition-related diabetes mellitus in pregnancy"
+        },
+        {
+          "code": "11530004",
+          "term": "Brittle diabetes mellitus"
+        },
+        {
+          "code": "1196922005",
+          "term": "Neovascular glaucoma due to diabetes mellitus type 2"
+        },
+        {
+          "code": "1196923000",
+          "term": "Neovascular glaucoma due to diabetes mellitus type 1"
+        },
+        {
+          "code": "1217044000",
+          "term": "Ketosis-resistant diabetes mellitus"
+        },
+        {
+          "code": "1217068008",
+          "term": "Fulminant type 1 diabetes mellitus"
+        },
+        {
+          "code": "1217674007",
+          "term": "Neurotrophic keratitis due to diabetes mellitus"
+        },
+        {
+          "code": "1255271005",
+          "term": "Type 1 diabetes mellitus, central and peripheral neurodegeneration syndrome"
+        },
+        {
+          "code": "127013003",
+          "term": "Disorder of kidney due to diabetes mellitus"
+        },
+        {
+          "code": "127014009",
+          "term": "Peripheral angiopathy due to diabetes mellitus"
+        },
+        {
+          "code": "1481000119100",
+          "term": "Diabetes mellitus type 2 without retinopathy"
+        },
+        {
+          "code": "190368000",
+          "term": "Type I diabetes mellitus with ulcer"
+        },
+        {
+          "code": "190369008",
+          "term": "Type I diabetes mellitus with gangrene"
+        },
+        {
+          "code": "190372001",
+          "term": "Type I diabetes mellitus maturity onset"
+        },
+        {
+          "code": "190388001",
+          "term": "Multiple complications due to type 2 diabetes mellitus"
+        },
+        {
+          "code": "190389009",
+          "term": "Type II diabetes mellitus with ulcer"
+        },
+        {
+          "code": "190390000",
+          "term": "Type II diabetes mellitus with gangrene"
+        },
+        {
+          "code": "201724008",
+          "term": "Neuropathic arthropathy due to diabetes mellitus"
+        },
+        {
+          "code": "230577008",
+          "term": "Mononeuropathy due to diabetes mellitus"
+        },
+        {
+          "code": "237599002",
+          "term": "Insulin treated type 2 diabetes mellitus"
+        },
+        {
+          "code": "237601000",
+          "term": "Secondary endocrine diabetes mellitus"
+        },
+        {
+          "code": "237612000",
+          "term": "Photomyoclonus, diabetes mellitus, deafness, nephropathy and cerebral dysfunction"
+        },
+        {
+          "code": "290002008",
+          "term": "Brittle type 1 diabetes mellitus"
+        },
+        {
+          "code": "313435000",
+          "term": "Type I diabetes mellitus without complication"
+        },
+        {
+          "code": "313436004",
+          "term": "Type II diabetes mellitus without complication"
+        },
+        {
+          "code": "314771006",
+          "term": "Type I diabetes mellitus with hypoglycemic coma"
+        },
+        {
+          "code": "314893005",
+          "term": "Arthropathy due to type 1 diabetes mellitus"
+        },
+        {
+          "code": "314902007",
+          "term": "Peripheral angiopathy due to type 2 diabetes mellitus"
+        },
+        {
+          "code": "314903002",
+          "term": "Arthropathy due to type 2 diabetes mellitus"
+        },
+        {
+          "code": "335621000000101",
+          "term": "Maternally inherited diabetes mellitus"
+        },
+        {
+          "code": "368711000119106",
+          "term": "Mild nonproliferative retinopathy due to secondary diabetes mellitus"
+        },
+        {
+          "code": "385041000000108",
+          "term": "Diabetes mellitus with multiple complications"
+        },
+        {
+          "code": "395204000",
+          "term": "Hyperosmolar non-ketotic state due to type 2 diabetes mellitus"
+        },
+        {
+          "code": "401110002",
+          "term": "Type 1 diabetes mellitus with persistent microalbuminuria"
+        },
+        {
+          "code": "408540003",
+          "term": "Diabetes mellitus caused by non-steroid drugs"
+        },
+        {
+          "code": "413183008",
+          "term": "Diabetes mellitus caused by non-steroid drugs without complication"
+        },
+        {
+          "code": "420270002",
+          "term": "Ketoacidosis due to type 1 diabetes mellitus"
+        },
+        {
+          "code": "420825003",
+          "term": "Gangrene due to type 1 diabetes mellitus"
+        },
+        {
+          "code": "420868002",
+          "term": "Disorder due to type 1 diabetes mellitus"
+        },
+        {
+          "code": "421075007",
+          "term": "Ketoacidotic coma due to type 1 diabetes mellitus"
+        },
+        {
+          "code": "421305000",
+          "term": "Persistent microalbuminuria due to type 1 diabetes mellitus"
+        },
+        {
+          "code": "421437000",
+          "term": "Hypoglycemic coma due to type 1 diabetes mellitus"
+        },
+        {
+          "code": "421631007",
+          "term": "Gangrene due to type 2 diabetes mellitus"
+        },
+        {
+          "code": "421750000",
+          "term": "Ketoacidosis due to type 2 diabetes mellitus"
+        },
+        {
+          "code": "421847006",
+          "term": "Ketoacidotic coma due to type 2 diabetes mellitus"
+        },
+        {
+          "code": "422014003",
+          "term": "Disorder due to type 2 diabetes mellitus"
+        },
+        {
+          "code": "422228004",
+          "term": "Multiple complications due to type 1 diabetes mellitus"
+        },
+        {
+          "code": "426705001",
+          "term": "Diabetes mellitus co-occurrent and due to cystic fibrosis"
+        },
+        {
+          "code": "426875007",
+          "term": "Latent autoimmune diabetes mellitus in adult"
+        },
+        {
+          "code": "427089005",
+          "term": "Diabetes mellitus due to cystic fibrosis"
+        },
+        {
+          "code": "44054006",
+          "term": "Diabetes mellitus type 2"
+        },
+        {
+          "code": "443694000",
+          "term": "Uncontrolled type 2 diabetes mellitus"
+        },
+        {
+          "code": "444073006",
+          "term": "Uncontrolled type 1 diabetes mellitus"
+        },
+        {
+          "code": "445353002",
+          "term": "Brittle type 2 diabetes mellitus"
+        },
+        {
+          "code": "46635009",
+          "term": "Diabetes mellitus type 1"
+        },
+        {
+          "code": "4855003",
+          "term": "Retinopathy due to diabetes mellitus"
+        },
+        {
+          "code": "49455004",
+          "term": "Polyneuropathy due to diabetes mellitus"
+        },
+        {
+          "code": "51002006",
+          "term": "Diabetes mellitus associated with pancreatic disease"
+        },
+        {
+          "code": "5368009",
+          "term": "Drug-induced diabetes mellitus"
+        },
+        {
+          "code": "5969009",
+          "term": "Diabetes mellitus associated with genetic syndrome"
+        },
+        {
+          "code": "703136005",
+          "term": "Diabetes mellitus in remission"
+        },
+        {
+          "code": "703137001",
+          "term": "Type I diabetes mellitus in remission"
+        },
+        {
+          "code": "703138006",
+          "term": "Type II diabetes mellitus in remission"
+        },
+        {
+          "code": "73211009",
+          "term": "Diabetes mellitus"
+        },
+        {
+          "code": "737212004",
+          "term": "Diabetes mellitus caused by chemical"
+        },
+        {
+          "code": "739681000",
+          "term": "Disorder of eye due to type 1 diabetes mellitus"
+        },
+        {
+          "code": "75682002",
+          "term": "Diabetes mellitus caused by insulin receptor antibodies"
+        },
+        {
+          "code": "768792007",
+          "term": "Cataract of right eye due to diabetes mellitus"
+        },
+        {
+          "code": "768793002",
+          "term": "Cataract of left eye due to diabetes mellitus"
+        },
+        {
+          "code": "768794008",
+          "term": "Cataract of bilateral eyes due to diabetes mellitus"
+        },
+        {
+          "code": "82581000119105",
+          "term": "Rubeosis iridis due to type 1 diabetes mellitus"
+        },
+        {
+          "code": "8801005",
+          "term": "Secondary diabetes mellitus"
+        }
+      ],
+      "fp_codes": [
+        {
+          "code": "127991000119101",
+          "term": "Hypertension concurrent and due to end stage renal disease on dialysis due to type 2 diabetes mellitus (disorder)"
+        },
+        {
+          "code": "128001000119105",
+          "term": "Hypertension concurrent and due to end stage renal disease on dialysis due to type 1 diabetes mellitus (disorder)"
+        },
+        {
+          "code": "140101000119109",
+          "term": "Hypertension in chronic kidney disease stage 5 due to type 2 diabetes mellitus (disorder)"
+        },
+        {
+          "code": "140111000119107",
+          "term": "Hypertension in chronic kidney disease stage 4 due to type 2 diabetes mellitus (disorder)"
+        },
+        {
+          "code": "140121000119100",
+          "term": "Hypertension in chronic kidney disease stage 3 due to type 2 diabetes mellitus (disorder)"
+        },
+        {
+          "code": "140131000119102",
+          "term": "Hypertension in chronic kidney disease stage 2 due to type 2 diabetes mellitus (disorder)"
+        },
+        {
+          "code": "140381000119104",
+          "term": "Neuropathic ulcer of toe due to type 2 diabetes mellitus (disorder)"
+        },
+        {
+          "code": "140531000119105",
+          "term": "Neuropathic ulcer of foot due to type 2 diabetes mellitus (disorder)"
+        },
+        {
+          "code": "157141000119108",
+          "term": "Proteinuria due to type 2 diabetes mellitus (disorder)"
+        },
+        {
+          "code": "18521000119106",
+          "term": "Microalbuminuria due to type 1 diabetes mellitus (disorder)"
+        },
+        {
+          "code": "193350004",
+          "term": "Advanced maculopathy due to diabetes mellitus"
+        },
+        {
+          "code": "237620003",
+          "term": "Abnormal metabolic state due to diabetes mellitus"
+        },
+        {
+          "code": "311782002",
+          "term": "Advanced retinal disease due to diabetes mellitus"
+        },
+        {
+          "code": "420715001",
+          "term": "Persistent microalbuminuria due to type 2 diabetes mellitus (disorder)"
+        },
+        {
+          "code": "700449008",
+          "term": "Non-diabetic hyperglycemia (disorder)"
+        },
+        {
+          "code": "71421000119105",
+          "term": "Hypertension in chronic kidney disease due to type 2 diabetes mellitus (disorder)"
+        },
+        {
+          "code": "71701000119105",
+          "term": "Hypertension in chronic kidney disease due to type 1 diabetes mellitus (disorder)"
+        },
+        {
+          "code": "721283000",
+          "term": "Acidosis due to type 1 diabetes mellitus"
+        },
+        {
+          "code": "721284006",
+          "term": "Acidosis due to type 2 diabetes mellitus"
+        },
+        {
+          "code": "735200002",
+          "term": "Absence of lower limb due to diabetes mellitus"
+        },
+        {
+          "code": "762489000",
+          "term": "Acute complication due to diabetes mellitus"
+        },
+        {
+          "code": "763007002",
+          "term": "Assessment using congestive heart failure, hypertension, age 75 years or older, diabetes mellitus and previous stroke or transient ischemic attack score (procedure)"
+        },
+        {
+          "code": "789569005",
+          "term": "Neuropathic ulcer of heel due to type 2 diabetes mellitus (disorder)"
+        },
+        {
+          "code": "791000119109",
+          "term": "Angina due to type 2 diabetes mellitus (disorder)"
+        },
+        {
+          "code": "90781000119102",
+          "term": "Microalbuminuria due to type 2 diabetes mellitus (disorder)"
+        },
+        {
+          "code": "9859006",
+          "term": "Acanthosis nigricans due to type 2 diabetes mellitus"
+        }
+      ],
+      "fn_codes": [
+        {
+          "code": "1222660008",
+          "term": "Pancreatic agenesis, holoprosencephaly syndrome"
+        },
+        {
+          "code": "127012008",
+          "term": "Lipoatrophic diabetes"
+        },
+        {
+          "code": "237604008",
+          "term": "Maturity onset diabetes of the young, type 2"
+        },
+        {
+          "code": "237618001",
+          "term": "Insulin-dependent diabetes mellitus secretory diarrhea syndrome"
+        },
+        {
+          "code": "237619009",
+          "term": "Maternally inherited diabetes and deafness"
+        },
+        {
+          "code": "268519009",
+          "term": "Diabetic - poor control"
+        },
+        {
+          "code": "314904008",
+          "term": "Type II diabetes mellitus with neuropathic arthropathy"
+        },
+        {
+          "code": "609561005",
+          "term": "Maturity-onset diabetes of the young"
+        },
+        {
+          "code": "609562003",
+          "term": "Maturity onset diabetes of the young, type 1"
+        },
+        {
+          "code": "609572000",
+          "term": "Maturity-onset diabetes of the young, type 5"
+        },
+        {
+          "code": "70694009",
+          "term": "Wolfram syndrome"
+        },
+        {
+          "code": "816067005",
+          "term": "Diabetes, hypogonadism, deafness, intellectual disability syndrome"
+        }
+      ]
+    },
+    "included_only": {
+      "codelist_name": "included_only",
+      "n_ref_codes": 86,
+      "n_output_codes": 95,
+      "recall": 0.8256,
+      "precision": 0.7474,
+      "f1": 0.7845,
+      "tp_count": 71,
+      "fp_count": 24,
+      "fn_count": 15,
+      "tp_codes": [
+        {
+          "code": "111552007",
+          "term": "Diabetes mellitus without complication"
+        },
+        {
+          "code": "112991000000101",
+          "term": "Lipoatrophic diabetes mellitus without complication"
+        },
+        {
+          "code": "1142044000",
+          "term": "Pre-existing malnutrition-related diabetes mellitus in pregnancy"
+        },
+        {
+          "code": "11530004",
+          "term": "Brittle diabetes mellitus"
+        },
+        {
+          "code": "1196922005",
+          "term": "Neovascular glaucoma due to diabetes mellitus type 2"
+        },
+        {
+          "code": "1196923000",
+          "term": "Neovascular glaucoma due to diabetes mellitus type 1"
+        },
+        {
+          "code": "1217044000",
+          "term": "Ketosis-resistant diabetes mellitus"
+        },
+        {
+          "code": "1217068008",
+          "term": "Fulminant type 1 diabetes mellitus"
+        },
+        {
+          "code": "1217674007",
+          "term": "Neurotrophic keratitis due to diabetes mellitus"
+        },
+        {
+          "code": "1255271005",
+          "term": "Type 1 diabetes mellitus, central and peripheral neurodegeneration syndrome"
+        },
+        {
+          "code": "127013003",
+          "term": "Disorder of kidney due to diabetes mellitus"
+        },
+        {
+          "code": "127014009",
+          "term": "Peripheral angiopathy due to diabetes mellitus"
+        },
+        {
+          "code": "1481000119100",
+          "term": "Diabetes mellitus type 2 without retinopathy"
+        },
+        {
+          "code": "190368000",
+          "term": "Type I diabetes mellitus with ulcer"
+        },
+        {
+          "code": "190369008",
+          "term": "Type I diabetes mellitus with gangrene"
+        },
+        {
+          "code": "190372001",
+          "term": "Type I diabetes mellitus maturity onset"
+        },
+        {
+          "code": "190388001",
+          "term": "Multiple complications due to type 2 diabetes mellitus"
+        },
+        {
+          "code": "190389009",
+          "term": "Type II diabetes mellitus with ulcer"
+        },
+        {
+          "code": "190390000",
+          "term": "Type II diabetes mellitus with gangrene"
+        },
+        {
+          "code": "201724008",
+          "term": "Neuropathic arthropathy due to diabetes mellitus"
+        },
+        {
+          "code": "230577008",
+          "term": "Mononeuropathy due to diabetes mellitus"
+        },
+        {
+          "code": "237599002",
+          "term": "Insulin treated type 2 diabetes mellitus"
+        },
+        {
+          "code": "237601000",
+          "term": "Secondary endocrine diabetes mellitus"
+        },
+        {
+          "code": "237612000",
+          "term": "Photomyoclonus, diabetes mellitus, deafness, nephropathy and cerebral dysfunction"
+        },
+        {
+          "code": "290002008",
+          "term": "Brittle type 1 diabetes mellitus"
+        },
+        {
+          "code": "313435000",
+          "term": "Type I diabetes mellitus without complication"
+        },
+        {
+          "code": "313436004",
+          "term": "Type II diabetes mellitus without complication"
+        },
+        {
+          "code": "314771006",
+          "term": "Type I diabetes mellitus with hypoglycemic coma"
+        },
+        {
+          "code": "314893005",
+          "term": "Arthropathy due to type 1 diabetes mellitus"
+        },
+        {
+          "code": "314902007",
+          "term": "Peripheral angiopathy due to type 2 diabetes mellitus"
+        },
+        {
+          "code": "314903002",
+          "term": "Arthropathy due to type 2 diabetes mellitus"
+        },
+        {
+          "code": "335621000000101",
+          "term": "Maternally inherited diabetes mellitus"
+        },
+        {
+          "code": "368711000119106",
+          "term": "Mild nonproliferative retinopathy due to secondary diabetes mellitus"
+        },
+        {
+          "code": "385041000000108",
+          "term": "Diabetes mellitus with multiple complications"
+        },
+        {
+          "code": "395204000",
+          "term": "Hyperosmolar non-ketotic state due to type 2 diabetes mellitus"
+        },
+        {
+          "code": "401110002",
+          "term": "Type 1 diabetes mellitus with persistent microalbuminuria"
+        },
+        {
+          "code": "408540003",
+          "term": "Diabetes mellitus caused by non-steroid drugs"
+        },
+        {
+          "code": "413183008",
+          "term": "Diabetes mellitus caused by non-steroid drugs without complication"
+        },
+        {
+          "code": "420270002",
+          "term": "Ketoacidosis due to type 1 diabetes mellitus"
+        },
+        {
+          "code": "420825003",
+          "term": "Gangrene due to type 1 diabetes mellitus"
+        },
+        {
+          "code": "420868002",
+          "term": "Disorder due to type 1 diabetes mellitus"
+        },
+        {
+          "code": "421075007",
+          "term": "Ketoacidotic coma due to type 1 diabetes mellitus"
+        },
+        {
+          "code": "421305000",
+          "term": "Persistent microalbuminuria due to type 1 diabetes mellitus"
+        },
+        {
+          "code": "421437000",
+          "term": "Hypoglycemic coma due to type 1 diabetes mellitus"
+        },
+        {
+          "code": "421631007",
+          "term": "Gangrene due to type 2 diabetes mellitus"
+        },
+        {
+          "code": "421750000",
+          "term": "Ketoacidosis due to type 2 diabetes mellitus"
+        },
+        {
+          "code": "421847006",
+          "term": "Ketoacidotic coma due to type 2 diabetes mellitus"
+        },
+        {
+          "code": "422014003",
+          "term": "Disorder due to type 2 diabetes mellitus"
+        },
+        {
+          "code": "422228004",
+          "term": "Multiple complications due to type 1 diabetes mellitus"
+        },
+        {
+          "code": "426705001",
+          "term": "Diabetes mellitus co-occurrent and due to cystic fibrosis"
+        },
+        {
+          "code": "426875007",
+          "term": "Latent autoimmune diabetes mellitus in adult"
+        },
+        {
+          "code": "427089005",
+          "term": "Diabetes mellitus due to cystic fibrosis"
+        },
+        {
+          "code": "44054006",
+          "term": "Diabetes mellitus type 2"
+        },
+        {
+          "code": "443694000",
+          "term": "Uncontrolled type 2 diabetes mellitus"
+        },
+        {
+          "code": "444073006",
+          "term": "Uncontrolled type 1 diabetes mellitus"
+        },
+        {
+          "code": "445353002",
+          "term": "Brittle type 2 diabetes mellitus"
+        },
+        {
+          "code": "46635009",
+          "term": "Diabetes mellitus type 1"
+        },
+        {
+          "code": "4855003",
+          "term": "Retinopathy due to diabetes mellitus"
+        },
+        {
+          "code": "49455004",
+          "term": "Polyneuropathy due to diabetes mellitus"
+        },
+        {
+          "code": "51002006",
+          "term": "Diabetes mellitus associated with pancreatic disease"
+        },
+        {
+          "code": "5368009",
+          "term": "Drug-induced diabetes mellitus"
+        },
+        {
+          "code": "5969009",
+          "term": "Diabetes mellitus associated with genetic syndrome"
+        },
+        {
+          "code": "73211009",
+          "term": "Diabetes mellitus"
+        },
+        {
+          "code": "737212004",
+          "term": "Diabetes mellitus caused by chemical"
+        },
+        {
+          "code": "739681000",
+          "term": "Disorder of eye due to type 1 diabetes mellitus"
+        },
+        {
+          "code": "75682002",
+          "term": "Diabetes mellitus caused by insulin receptor antibodies"
+        },
+        {
+          "code": "768792007",
+          "term": "Cataract of right eye due to diabetes mellitus"
+        },
+        {
+          "code": "768793002",
+          "term": "Cataract of left eye due to diabetes mellitus"
+        },
+        {
+          "code": "768794008",
+          "term": "Cataract of bilateral eyes due to diabetes mellitus"
+        },
+        {
+          "code": "82581000119105",
+          "term": "Rubeosis iridis due to type 1 diabetes mellitus"
+        },
+        {
+          "code": "8801005",
+          "term": "Secondary diabetes mellitus"
+        }
+      ],
+      "fp_codes": [
+        {
+          "code": "127991000119101",
+          "term": "Hypertension concurrent and due to end stage renal disease on dialysis due to type 2 diabetes mellitus (disorder)"
+        },
+        {
+          "code": "128001000119105",
+          "term": "Hypertension concurrent and due to end stage renal disease on dialysis due to type 1 diabetes mellitus (disorder)"
+        },
+        {
+          "code": "140101000119109",
+          "term": "Hypertension in chronic kidney disease stage 5 due to type 2 diabetes mellitus (disorder)"
+        },
+        {
+          "code": "140111000119107",
+          "term": "Hypertension in chronic kidney disease stage 4 due to type 2 diabetes mellitus (disorder)"
+        },
+        {
+          "code": "140121000119100",
+          "term": "Hypertension in chronic kidney disease stage 3 due to type 2 diabetes mellitus (disorder)"
+        },
+        {
+          "code": "140131000119102",
+          "term": "Hypertension in chronic kidney disease stage 2 due to type 2 diabetes mellitus (disorder)"
+        },
+        {
+          "code": "140381000119104",
+          "term": "Neuropathic ulcer of toe due to type 2 diabetes mellitus (disorder)"
+        },
+        {
+          "code": "140531000119105",
+          "term": "Neuropathic ulcer of foot due to type 2 diabetes mellitus (disorder)"
+        },
+        {
+          "code": "157141000119108",
+          "term": "Proteinuria due to type 2 diabetes mellitus (disorder)"
+        },
+        {
+          "code": "18521000119106",
+          "term": "Microalbuminuria due to type 1 diabetes mellitus (disorder)"
+        },
+        {
+          "code": "193350004",
+          "term": "Advanced maculopathy due to diabetes mellitus"
+        },
+        {
+          "code": "237620003",
+          "term": "Abnormal metabolic state due to diabetes mellitus"
+        },
+        {
+          "code": "311782002",
+          "term": "Advanced retinal disease due to diabetes mellitus"
+        },
+        {
+          "code": "420715001",
+          "term": "Persistent microalbuminuria due to type 2 diabetes mellitus (disorder)"
+        },
+        {
+          "code": "71421000119105",
+          "term": "Hypertension in chronic kidney disease due to type 2 diabetes mellitus (disorder)"
+        },
+        {
+          "code": "71701000119105",
+          "term": "Hypertension in chronic kidney disease due to type 1 diabetes mellitus (disorder)"
+        },
+        {
+          "code": "721283000",
+          "term": "Acidosis due to type 1 diabetes mellitus"
+        },
+        {
+          "code": "721284006",
+          "term": "Acidosis due to type 2 diabetes mellitus"
+        },
+        {
+          "code": "735200002",
+          "term": "Absence of lower limb due to diabetes mellitus"
+        },
+        {
+          "code": "762489000",
+          "term": "Acute complication due to diabetes mellitus"
+        },
+        {
+          "code": "789569005",
+          "term": "Neuropathic ulcer of heel due to type 2 diabetes mellitus (disorder)"
+        },
+        {
+          "code": "791000119109",
+          "term": "Angina due to type 2 diabetes mellitus (disorder)"
+        },
+        {
+          "code": "90781000119102",
+          "term": "Microalbuminuria due to type 2 diabetes mellitus (disorder)"
+        },
+        {
+          "code": "9859006",
+          "term": "Acanthosis nigricans due to type 2 diabetes mellitus"
+        }
+      ],
+      "fn_codes": [
+        {
+          "code": "1222660008",
+          "term": "Pancreatic agenesis, holoprosencephaly syndrome"
+        },
+        {
+          "code": "127012008",
+          "term": "Lipoatrophic diabetes"
+        },
+        {
+          "code": "237604008",
+          "term": "Maturity onset diabetes of the young, type 2"
+        },
+        {
+          "code": "237618001",
+          "term": "Insulin-dependent diabetes mellitus secretory diarrhea syndrome"
+        },
+        {
+          "code": "237619009",
+          "term": "Maternally inherited diabetes and deafness"
+        },
+        {
+          "code": "268519009",
+          "term": "Diabetic - poor control"
+        },
+        {
+          "code": "314904008",
+          "term": "Type II diabetes mellitus with neuropathic arthropathy"
+        },
+        {
+          "code": "609561005",
+          "term": "Maturity-onset diabetes of the young"
+        },
+        {
+          "code": "609562003",
+          "term": "Maturity onset diabetes of the young, type 1"
+        },
+        {
+          "code": "609572000",
+          "term": "Maturity-onset diabetes of the young, type 5"
+        },
+        {
+          "code": "703136005",
+          "term": "Diabetes mellitus in remission"
+        },
+        {
+          "code": "703137001",
+          "term": "Type I diabetes mellitus in remission"
+        },
+        {
+          "code": "703138006",
+          "term": "Type II diabetes mellitus in remission"
+        },
+        {
+          "code": "70694009",
+          "term": "Wolfram syndrome"
+        },
+        {
+          "code": "816067005",
+          "term": "Diabetes, hypogonadism, deafness, intellectual disability syndrome"
+        }
+      ]
+    },
+    "included_plus_uncertain": {
+      "codelist_name": "included_plus_uncertain",
+      "n_ref_codes": 86,
+      "n_output_codes": 95,
+      "recall": 0.8256,
+      "precision": 0.7474,
+      "f1": 0.7845,
+      "tp_count": 71,
+      "fp_count": 24,
+      "fn_count": 15,
+      "tp_codes": [
+        {
+          "code": "111552007",
+          "term": "Diabetes mellitus without complication"
+        },
+        {
+          "code": "112991000000101",
+          "term": "Lipoatrophic diabetes mellitus without complication"
+        },
+        {
+          "code": "1142044000",
+          "term": "Pre-existing malnutrition-related diabetes mellitus in pregnancy"
+        },
+        {
+          "code": "11530004",
+          "term": "Brittle diabetes mellitus"
+        },
+        {
+          "code": "1196922005",
+          "term": "Neovascular glaucoma due to diabetes mellitus type 2"
+        },
+        {
+          "code": "1196923000",
+          "term": "Neovascular glaucoma due to diabetes mellitus type 1"
+        },
+        {
+          "code": "1217044000",
+          "term": "Ketosis-resistant diabetes mellitus"
+        },
+        {
+          "code": "1217068008",
+          "term": "Fulminant type 1 diabetes mellitus"
+        },
+        {
+          "code": "1217674007",
+          "term": "Neurotrophic keratitis due to diabetes mellitus"
+        },
+        {
+          "code": "1255271005",
+          "term": "Type 1 diabetes mellitus, central and peripheral neurodegeneration syndrome"
+        },
+        {
+          "code": "127013003",
+          "term": "Disorder of kidney due to diabetes mellitus"
+        },
+        {
+          "code": "127014009",
+          "term": "Peripheral angiopathy due to diabetes mellitus"
+        },
+        {
+          "code": "1481000119100",
+          "term": "Diabetes mellitus type 2 without retinopathy"
+        },
+        {
+          "code": "190368000",
+          "term": "Type I diabetes mellitus with ulcer"
+        },
+        {
+          "code": "190369008",
+          "term": "Type I diabetes mellitus with gangrene"
+        },
+        {
+          "code": "190372001",
+          "term": "Type I diabetes mellitus maturity onset"
+        },
+        {
+          "code": "190388001",
+          "term": "Multiple complications due to type 2 diabetes mellitus"
+        },
+        {
+          "code": "190389009",
+          "term": "Type II diabetes mellitus with ulcer"
+        },
+        {
+          "code": "190390000",
+          "term": "Type II diabetes mellitus with gangrene"
+        },
+        {
+          "code": "201724008",
+          "term": "Neuropathic arthropathy due to diabetes mellitus"
+        },
+        {
+          "code": "230577008",
+          "term": "Mononeuropathy due to diabetes mellitus"
+        },
+        {
+          "code": "237599002",
+          "term": "Insulin treated type 2 diabetes mellitus"
+        },
+        {
+          "code": "237601000",
+          "term": "Secondary endocrine diabetes mellitus"
+        },
+        {
+          "code": "237612000",
+          "term": "Photomyoclonus, diabetes mellitus, deafness, nephropathy and cerebral dysfunction"
+        },
+        {
+          "code": "290002008",
+          "term": "Brittle type 1 diabetes mellitus"
+        },
+        {
+          "code": "313435000",
+          "term": "Type I diabetes mellitus without complication"
+        },
+        {
+          "code": "313436004",
+          "term": "Type II diabetes mellitus without complication"
+        },
+        {
+          "code": "314771006",
+          "term": "Type I diabetes mellitus with hypoglycemic coma"
+        },
+        {
+          "code": "314893005",
+          "term": "Arthropathy due to type 1 diabetes mellitus"
+        },
+        {
+          "code": "314902007",
+          "term": "Peripheral angiopathy due to type 2 diabetes mellitus"
+        },
+        {
+          "code": "314903002",
+          "term": "Arthropathy due to type 2 diabetes mellitus"
+        },
+        {
+          "code": "335621000000101",
+          "term": "Maternally inherited diabetes mellitus"
+        },
+        {
+          "code": "368711000119106",
+          "term": "Mild nonproliferative retinopathy due to secondary diabetes mellitus"
+        },
+        {
+          "code": "385041000000108",
+          "term": "Diabetes mellitus with multiple complications"
+        },
+        {
+          "code": "395204000",
+          "term": "Hyperosmolar non-ketotic state due to type 2 diabetes mellitus"
+        },
+        {
+          "code": "401110002",
+          "term": "Type 1 diabetes mellitus with persistent microalbuminuria"
+        },
+        {
+          "code": "408540003",
+          "term": "Diabetes mellitus caused by non-steroid drugs"
+        },
+        {
+          "code": "413183008",
+          "term": "Diabetes mellitus caused by non-steroid drugs without complication"
+        },
+        {
+          "code": "420270002",
+          "term": "Ketoacidosis due to type 1 diabetes mellitus"
+        },
+        {
+          "code": "420825003",
+          "term": "Gangrene due to type 1 diabetes mellitus"
+        },
+        {
+          "code": "420868002",
+          "term": "Disorder due to type 1 diabetes mellitus"
+        },
+        {
+          "code": "421075007",
+          "term": "Ketoacidotic coma due to type 1 diabetes mellitus"
+        },
+        {
+          "code": "421305000",
+          "term": "Persistent microalbuminuria due to type 1 diabetes mellitus"
+        },
+        {
+          "code": "421437000",
+          "term": "Hypoglycemic coma due to type 1 diabetes mellitus"
+        },
+        {
+          "code": "421631007",
+          "term": "Gangrene due to type 2 diabetes mellitus"
+        },
+        {
+          "code": "421750000",
+          "term": "Ketoacidosis due to type 2 diabetes mellitus"
+        },
+        {
+          "code": "421847006",
+          "term": "Ketoacidotic coma due to type 2 diabetes mellitus"
+        },
+        {
+          "code": "422014003",
+          "term": "Disorder due to type 2 diabetes mellitus"
+        },
+        {
+          "code": "422228004",
+          "term": "Multiple complications due to type 1 diabetes mellitus"
+        },
+        {
+          "code": "426705001",
+          "term": "Diabetes mellitus co-occurrent and due to cystic fibrosis"
+        },
+        {
+          "code": "426875007",
+          "term": "Latent autoimmune diabetes mellitus in adult"
+        },
+        {
+          "code": "427089005",
+          "term": "Diabetes mellitus due to cystic fibrosis"
+        },
+        {
+          "code": "44054006",
+          "term": "Diabetes mellitus type 2"
+        },
+        {
+          "code": "443694000",
+          "term": "Uncontrolled type 2 diabetes mellitus"
+        },
+        {
+          "code": "444073006",
+          "term": "Uncontrolled type 1 diabetes mellitus"
+        },
+        {
+          "code": "445353002",
+          "term": "Brittle type 2 diabetes mellitus"
+        },
+        {
+          "code": "46635009",
+          "term": "Diabetes mellitus type 1"
+        },
+        {
+          "code": "4855003",
+          "term": "Retinopathy due to diabetes mellitus"
+        },
+        {
+          "code": "49455004",
+          "term": "Polyneuropathy due to diabetes mellitus"
+        },
+        {
+          "code": "51002006",
+          "term": "Diabetes mellitus associated with pancreatic disease"
+        },
+        {
+          "code": "5368009",
+          "term": "Drug-induced diabetes mellitus"
+        },
+        {
+          "code": "5969009",
+          "term": "Diabetes mellitus associated with genetic syndrome"
+        },
+        {
+          "code": "73211009",
+          "term": "Diabetes mellitus"
+        },
+        {
+          "code": "737212004",
+          "term": "Diabetes mellitus caused by chemical"
+        },
+        {
+          "code": "739681000",
+          "term": "Disorder of eye due to type 1 diabetes mellitus"
+        },
+        {
+          "code": "75682002",
+          "term": "Diabetes mellitus caused by insulin receptor antibodies"
+        },
+        {
+          "code": "768792007",
+          "term": "Cataract of right eye due to diabetes mellitus"
+        },
+        {
+          "code": "768793002",
+          "term": "Cataract of left eye due to diabetes mellitus"
+        },
+        {
+          "code": "768794008",
+          "term": "Cataract of bilateral eyes due to diabetes mellitus"
+        },
+        {
+          "code": "82581000119105",
+          "term": "Rubeosis iridis due to type 1 diabetes mellitus"
+        },
+        {
+          "code": "8801005",
+          "term": "Secondary diabetes mellitus"
+        }
+      ],
+      "fp_codes": [
+        {
+          "code": "127991000119101",
+          "term": "Hypertension concurrent and due to end stage renal disease on dialysis due to type 2 diabetes mellitus (disorder)"
+        },
+        {
+          "code": "128001000119105",
+          "term": "Hypertension concurrent and due to end stage renal disease on dialysis due to type 1 diabetes mellitus (disorder)"
+        },
+        {
+          "code": "140101000119109",
+          "term": "Hypertension in chronic kidney disease stage 5 due to type 2 diabetes mellitus (disorder)"
+        },
+        {
+          "code": "140111000119107",
+          "term": "Hypertension in chronic kidney disease stage 4 due to type 2 diabetes mellitus (disorder)"
+        },
+        {
+          "code": "140121000119100",
+          "term": "Hypertension in chronic kidney disease stage 3 due to type 2 diabetes mellitus (disorder)"
+        },
+        {
+          "code": "140131000119102",
+          "term": "Hypertension in chronic kidney disease stage 2 due to type 2 diabetes mellitus (disorder)"
+        },
+        {
+          "code": "140381000119104",
+          "term": "Neuropathic ulcer of toe due to type 2 diabetes mellitus (disorder)"
+        },
+        {
+          "code": "140531000119105",
+          "term": "Neuropathic ulcer of foot due to type 2 diabetes mellitus (disorder)"
+        },
+        {
+          "code": "157141000119108",
+          "term": "Proteinuria due to type 2 diabetes mellitus (disorder)"
+        },
+        {
+          "code": "18521000119106",
+          "term": "Microalbuminuria due to type 1 diabetes mellitus (disorder)"
+        },
+        {
+          "code": "193350004",
+          "term": "Advanced maculopathy due to diabetes mellitus"
+        },
+        {
+          "code": "237620003",
+          "term": "Abnormal metabolic state due to diabetes mellitus"
+        },
+        {
+          "code": "311782002",
+          "term": "Advanced retinal disease due to diabetes mellitus"
+        },
+        {
+          "code": "420715001",
+          "term": "Persistent microalbuminuria due to type 2 diabetes mellitus (disorder)"
+        },
+        {
+          "code": "71421000119105",
+          "term": "Hypertension in chronic kidney disease due to type 2 diabetes mellitus (disorder)"
+        },
+        {
+          "code": "71701000119105",
+          "term": "Hypertension in chronic kidney disease due to type 1 diabetes mellitus (disorder)"
+        },
+        {
+          "code": "721283000",
+          "term": "Acidosis due to type 1 diabetes mellitus"
+        },
+        {
+          "code": "721284006",
+          "term": "Acidosis due to type 2 diabetes mellitus"
+        },
+        {
+          "code": "735200002",
+          "term": "Absence of lower limb due to diabetes mellitus"
+        },
+        {
+          "code": "762489000",
+          "term": "Acute complication due to diabetes mellitus"
+        },
+        {
+          "code": "789569005",
+          "term": "Neuropathic ulcer of heel due to type 2 diabetes mellitus (disorder)"
+        },
+        {
+          "code": "791000119109",
+          "term": "Angina due to type 2 diabetes mellitus (disorder)"
+        },
+        {
+          "code": "90781000119102",
+          "term": "Microalbuminuria due to type 2 diabetes mellitus (disorder)"
+        },
+        {
+          "code": "9859006",
+          "term": "Acanthosis nigricans due to type 2 diabetes mellitus"
+        }
+      ],
+      "fn_codes": [
+        {
+          "code": "1222660008",
+          "term": "Pancreatic agenesis, holoprosencephaly syndrome"
+        },
+        {
+          "code": "127012008",
+          "term": "Lipoatrophic diabetes"
+        },
+        {
+          "code": "237604008",
+          "term": "Maturity onset diabetes of the young, type 2"
+        },
+        {
+          "code": "237618001",
+          "term": "Insulin-dependent diabetes mellitus secretory diarrhea syndrome"
+        },
+        {
+          "code": "237619009",
+          "term": "Maternally inherited diabetes and deafness"
+        },
+        {
+          "code": "268519009",
+          "term": "Diabetic - poor control"
+        },
+        {
+          "code": "314904008",
+          "term": "Type II diabetes mellitus with neuropathic arthropathy"
+        },
+        {
+          "code": "609561005",
+          "term": "Maturity-onset diabetes of the young"
+        },
+        {
+          "code": "609562003",
+          "term": "Maturity onset diabetes of the young, type 1"
+        },
+        {
+          "code": "609572000",
+          "term": "Maturity-onset diabetes of the young, type 5"
+        },
+        {
+          "code": "703136005",
+          "term": "Diabetes mellitus in remission"
+        },
+        {
+          "code": "703137001",
+          "term": "Type I diabetes mellitus in remission"
+        },
+        {
+          "code": "703138006",
+          "term": "Type II diabetes mellitus in remission"
+        },
+        {
+          "code": "70694009",
+          "term": "Wolfram syndrome"
+        },
+        {
+          "code": "816067005",
+          "term": "Diabetes, hypogonadism, deafness, intellectual disability syndrome"
+        }
+      ]
+    }
+  },
+  "false_exclusions": {
+    "count": 3,
+    "codes": [
+      {
+        "code": "703136005",
+        "term": "Diabetes mellitus in remission (disorder)",
+        "rationale": "Diabetes mellitus in remission indicates resolved disease and does not confirm active diabetes mellitus."
+      },
+      {
+        "code": "703137001",
+        "term": "Type I diabetes mellitus in remission (disorder)",
+        "rationale": "Type 1 diabetes mellitus in remission indicates resolved disease and does not confirm active diabetes mellitus."
+      },
+      {
+        "code": "703138006",
+        "term": "Type II diabetes mellitus in remission (disorder)",
+        "rationale": "Type 2 diabetes mellitus in remission indicates resolved disease and does not confirm active diabetes mellitus."
+      }
+    ]
+  },
+  "uncertain_in_reference": {
+    "count": 0,
+    "codes": []
+  },
+  "summary": "Recall: 82.6% (71 of 86 reference codes retrieved). Precision: 74.7%. F1: 78.5%. 3 reference codes were incorrectly excluded.",
+  "elapsed_seconds": 39.94,
+  "pipeline_results_count": 100,
+  "scored_codes": [
+    {
+      "code": "73211009",
+      "term": "Diabetes mellitus (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 1.0,
+      "rationale": "This is the generic diabetes mellitus code and directly represents the primary condition being queried.",
+      "sources": [
+        "ChromaDB",
+        "OpenCodelists (Bennett Institute)",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 1.0,
+      "usage_frequency": null
+    },
+    {
+      "code": "111552007",
+      "term": "Diabetes mellitus without complication (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.99,
+      "rationale": "Diabetes mellitus without complication is a core diagnostic code for the primary condition.",
+      "sources": [
+        "ChromaDB",
+        "OpenCodelists (Bennett Institute)",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.99,
+      "usage_frequency": null
+    },
+    {
+      "code": "313435000",
+      "term": "Type I diabetes mellitus without complication (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.99,
+      "rationale": "Type 1 diabetes mellitus without complication is a core diagnostic code for type 1 diabetes.",
+      "sources": [
+        "ChromaDB",
+        "OpenCodelists (Bennett Institute)",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.99,
+      "usage_frequency": null
+    },
+    {
+      "code": "313436004",
+      "term": "Type II diabetes mellitus without complication (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.99,
+      "rationale": "Type 2 diabetes mellitus without complication is a core diagnostic code for type 2 diabetes.",
+      "sources": [
+        "ChromaDB",
+        "OpenCodelists (Bennett Institute)",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.99,
+      "usage_frequency": null
+    },
+    {
+      "code": "127013003",
+      "term": "Disorder of kidney due to diabetes mellitus (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.97,
+      "rationale": "Diabetic kidney disease is a major direct complication of diabetes mellitus.",
+      "sources": [
+        "OpenCodelists (Bennett Institute)",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.97,
+      "usage_frequency": null
+    },
+    {
+      "code": "127014009",
+      "term": "Peripheral angiopathy due to diabetes mellitus (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.97,
+      "rationale": "Peripheral angiopathy due to diabetes mellitus is a major direct vascular complication of diabetes.",
+      "sources": [
+        "OpenCodelists (Bennett Institute)",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.97,
+      "usage_frequency": null
+    },
+    {
+      "code": "1481000119100",
+      "term": "Diabetes mellitus type 2 without retinopathy (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.97,
+      "rationale": "Type 2 diabetes mellitus without retinopathy is a core diagnostic code for type 2 diabetes.",
+      "sources": [
+        "ChromaDB",
+        "OpenCodelists (Bennett Institute)",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.97,
+      "usage_frequency": null
+    },
+    {
+      "code": "237599002",
+      "term": "Insulin treated type 2 diabetes mellitus (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.97,
+      "rationale": "Insulin treated type 2 diabetes mellitus is a recognized treatment variant of type 2 diabetes.",
+      "sources": [
+        "ChromaDB",
+        "OpenCodelists (Bennett Institute)",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.97,
+      "usage_frequency": null
+    },
+    {
+      "code": "140381000119104",
+      "term": "Neuropathic ulcer of toe due to type 2 diabetes mellitus (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.96,
+      "rationale": "Neuropathic ulcer of toe due to type 2 diabetes is a direct diabetic foot complication.",
+      "sources": [
+        "OpenCodelists (Bennett Institute)",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.96,
+      "usage_frequency": null
+    },
+    {
+      "code": "140531000119105",
+      "term": "Neuropathic ulcer of foot due to type 2 diabetes mellitus (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.96,
+      "rationale": "Neuropathic ulcer of foot due to type 2 diabetes is a direct diabetic foot complication.",
+      "sources": [
+        "ChromaDB",
+        "OpenCodelists (Bennett Institute)",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.96,
+      "usage_frequency": null
+    },
+    {
+      "code": "157141000119108",
+      "term": "Proteinuria due to type 2 diabetes mellitus (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.96,
+      "rationale": "Proteinuria due to type 2 diabetes is a direct manifestation of diabetic kidney disease.",
+      "sources": [
+        "ChromaDB",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.96,
+      "usage_frequency": null
+    },
+    {
+      "code": "18521000119106",
+      "term": "Microalbuminuria due to type 1 diabetes mellitus (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.96,
+      "rationale": "Microalbuminuria due to type 1 diabetes is a direct manifestation of diabetic kidney disease.",
+      "sources": [
+        "ChromaDB",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.96,
+      "usage_frequency": null
+    },
+    {
+      "code": "190368000",
+      "term": "Type I diabetes mellitus with ulcer (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.96,
+      "rationale": "Type 1 diabetes mellitus with ulcer is a direct diabetic foot complication.",
+      "sources": [
+        "ChromaDB",
+        "OpenCodelists (Bennett Institute)",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.96,
+      "usage_frequency": null
+    },
+    {
+      "code": "190369008",
+      "term": "Type I diabetes mellitus with gangrene",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.96,
+      "rationale": "Type 1 diabetes mellitus with gangrene is a severe direct diabetic foot complication.",
+      "sources": [
+        "ChromaDB",
+        "OpenCodelists (Bennett Institute)"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.96,
+      "usage_frequency": null
+    },
+    {
+      "code": "190388001",
+      "term": "Multiple complications due to type 2 diabetes mellitus",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.96,
+      "rationale": "Multiple complications due to type 2 diabetes confirms the primary condition with complications.",
+      "sources": [
+        "ChromaDB",
+        "OpenCodelists (Bennett Institute)"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.96,
+      "usage_frequency": null
+    },
+    {
+      "code": "190389009",
+      "term": "Type II diabetes mellitus with ulcer (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.96,
+      "rationale": "Type 2 diabetes mellitus with ulcer is a direct diabetic foot complication.",
+      "sources": [
+        "ChromaDB",
+        "OpenCodelists (Bennett Institute)",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.96,
+      "usage_frequency": null
+    },
+    {
+      "code": "190390000",
+      "term": "Type II diabetes mellitus with gangrene",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.96,
+      "rationale": "Type 2 diabetes mellitus with gangrene is a severe direct diabetic foot complication.",
+      "sources": [
+        "ChromaDB",
+        "OpenCodelists (Bennett Institute)"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.96,
+      "usage_frequency": null
+    },
+    {
+      "code": "201724008",
+      "term": "Neuropathic arthropathy due to diabetes mellitus (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.96,
+      "rationale": "Neuropathic arthropathy due to diabetes mellitus is a direct diabetic neuropathy complication.",
+      "sources": [
+        "OpenCodelists (Bennett Institute)",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.96,
+      "usage_frequency": null
+    },
+    {
+      "code": "230577008",
+      "term": "Mononeuropathy due to diabetes mellitus (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.96,
+      "rationale": "Mononeuropathy due to diabetes mellitus is a direct diabetic neuropathy complication.",
+      "sources": [
+        "ChromaDB",
+        "OpenCodelists (Bennett Institute)",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.96,
+      "usage_frequency": null
+    },
+    {
+      "code": "237601000",
+      "term": "Secondary endocrine diabetes mellitus (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.96,
+      "rationale": "Secondary endocrine diabetes mellitus is a recognized clinical subtype of diabetes mellitus.",
+      "sources": [
+        "ChromaDB",
+        "OpenCodelists (Bennett Institute)",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.96,
+      "usage_frequency": null
+    },
+    {
+      "code": "112991000000101",
+      "term": "Lipoatrophic diabetes mellitus without complication (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Lipoatrophic diabetes mellitus is a recognized clinical subtype of diabetes mellitus.",
+      "sources": [
+        "ChromaDB",
+        "OpenCodelists (Bennett Institute)",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "1196922005",
+      "term": "Neovascular glaucoma due to diabetes mellitus type 2 (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Neovascular glaucoma due to diabetes mellitus type 2 is a direct complication confirming diabetes.",
+      "sources": [
+        "OpenCodelists (Bennett Institute)",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "1196923000",
+      "term": "Neovascular glaucoma due to diabetes mellitus type 1 (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Neovascular glaucoma due to diabetes mellitus type 1 is a direct complication confirming diabetes.",
+      "sources": [
+        "OpenCodelists (Bennett Institute)",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "193350004",
+      "term": "Advanced maculopathy due to diabetes mellitus",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Advanced maculopathy due to diabetes mellitus is a direct diabetic retinopathy complication.",
+      "sources": [
+        "OMOPHub"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "311782002",
+      "term": "Advanced retinal disease due to diabetes mellitus",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Advanced retinal disease due to diabetes mellitus is a direct diabetic retinopathy complication.",
+      "sources": [
+        "OMOPHub"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "314771006",
+      "term": "Type I diabetes mellitus with hypoglycemic coma",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Type 1 diabetes with hypoglycemic coma is a direct complication of type 1 diabetes mellitus and confirms the diagnosis.",
+      "sources": [
+        "ChromaDB",
+        "OpenCodelists (Bennett Institute)"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "314893005",
+      "term": "Arthropathy due to type 1 diabetes mellitus (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Arthropathy due to type 1 diabetes is a direct manifestation of diabetes mellitus and confirms the diagnosis.",
+      "sources": [
+        "OpenCodelists (Bennett Institute)",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "314902007",
+      "term": "Peripheral angiopathy due to type 2 diabetes mellitus (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Peripheral angiopathy due to type 2 diabetes is a direct vascular complication of diabetes mellitus.",
+      "sources": [
+        "ChromaDB",
+        "OpenCodelists (Bennett Institute)",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "314903002",
+      "term": "Arthropathy due to type 2 diabetes mellitus (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Arthropathy due to type 2 diabetes is a direct manifestation of diabetes mellitus.",
+      "sources": [
+        "OMOPHub",
+        "OpenCodelists (Bennett Institute)",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "385041000000108",
+      "term": "Diabetes mellitus with multiple complications (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Diabetes mellitus with multiple complications directly confirms the presence of diabetes mellitus.",
+      "sources": [
+        "ChromaDB",
+        "OpenCodelists (Bennett Institute)",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "395204000",
+      "term": "Hyperosmolar non-ketotic state due to type 2 diabetes mellitus (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Hyperosmolar non-ketotic state is a direct acute complication of type 2 diabetes mellitus.",
+      "sources": [
+        "OpenCodelists (Bennett Institute)",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "401110002",
+      "term": "Type 1 diabetes mellitus with persistent microalbuminuria",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Type 1 diabetes with persistent microalbuminuria is a direct renal complication of type 1 diabetes.",
+      "sources": [
+        "ChromaDB",
+        "OpenCodelists (Bennett Institute)"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "420270002",
+      "term": "Ketoacidosis due to type 1 diabetes mellitus (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Ketoacidosis due to type 1 diabetes is a direct acute complication of type 1 diabetes mellitus.",
+      "sources": [
+        "ChromaDB",
+        "OpenCodelists (Bennett Institute)",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "420715001",
+      "term": "Persistent microalbuminuria due to type 2 diabetes mellitus (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Persistent microalbuminuria due to type 2 diabetes is a direct renal complication of type 2 diabetes.",
+      "sources": [
+        "ChromaDB",
+        "OpenCodelists (Bennett Institute)",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "420825003",
+      "term": "Gangrene due to type 1 diabetes mellitus (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Gangrene due to type 1 diabetes is a direct vascular/tissue complication of type 1 diabetes.",
+      "sources": [
+        "ChromaDB",
+        "OpenCodelists (Bennett Institute)",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "420868002",
+      "term": "Disorder due to type 1 diabetes mellitus (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Disorder due to type 1 diabetes mellitus is a general category confirming type 1 diabetes complications.",
+      "sources": [
+        "ChromaDB",
+        "OpenCodelists (Bennett Institute)",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "421075007",
+      "term": "Ketoacidotic coma due to type 1 diabetes mellitus (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Ketoacidotic coma due to type 1 diabetes is a direct acute complication of type 1 diabetes.",
+      "sources": [
+        "OpenCodelists (Bennett Institute)",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "421305000",
+      "term": "Persistent microalbuminuria due to type 1 diabetes mellitus (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Persistent microalbuminuria due to type 1 diabetes is a direct renal complication of type 1 diabetes.",
+      "sources": [
+        "ChromaDB",
+        "OpenCodelists (Bennett Institute)",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "421437000",
+      "term": "Hypoglycemic coma due to type 1 diabetes mellitus (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Hypoglycemic coma due to type 1 diabetes is a direct acute complication of type 1 diabetes.",
+      "sources": [
+        "ChromaDB",
+        "OpenCodelists (Bennett Institute)",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "421631007",
+      "term": "Gangrene due to type 2 diabetes mellitus (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Gangrene due to type 2 diabetes is a direct vascular/tissue complication of type 2 diabetes.",
+      "sources": [
+        "ChromaDB",
+        "OpenCodelists (Bennett Institute)",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "421750000",
+      "term": "Ketoacidosis due to type 2 diabetes mellitus (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Ketoacidosis due to type 2 diabetes is a direct acute complication of type 2 diabetes mellitus.",
+      "sources": [
+        "ChromaDB",
+        "OpenCodelists (Bennett Institute)",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "421847006",
+      "term": "Ketoacidotic coma due to type 2 diabetes mellitus (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Ketoacidotic coma due to type 2 diabetes is a direct acute complication of type 2 diabetes.",
+      "sources": [
+        "OpenCodelists (Bennett Institute)",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "422014003",
+      "term": "Disorder due to type 2 diabetes mellitus (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Disorder due to type 2 diabetes mellitus is a general category confirming type 2 diabetes complications.",
+      "sources": [
+        "ChromaDB",
+        "OpenCodelists (Bennett Institute)",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "422228004",
+      "term": "Multiple complications due to type 1 diabetes mellitus",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Multiple complications due to type 1 diabetes directly confirms the presence of type 1 diabetes.",
+      "sources": [
+        "ChromaDB",
+        "OpenCodelists (Bennett Institute)"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "44054006",
+      "term": "Diabetes mellitus type 2 (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Type 2 diabetes mellitus is a primary subtype of diabetes mellitus.",
+      "sources": [
+        "ChromaDB",
+        "OpenCodelists (Bennett Institute)",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "443694000",
+      "term": "Type II diabetes mellitus uncontrolled (finding)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Type 2 diabetes mellitus uncontrolled is a severity variant of type 2 diabetes mellitus.",
+      "sources": [
+        "ChromaDB",
+        "OpenCodelists (Bennett Institute)",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "444073006",
+      "term": "Type I diabetes mellitus uncontrolled (finding)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Type 1 diabetes mellitus uncontrolled is a severity variant of type 1 diabetes mellitus.",
+      "sources": [
+        "ChromaDB",
+        "OpenCodelists (Bennett Institute)",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "445353002",
+      "term": "Brittle type II diabetes mellitus (finding)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Brittle type 2 diabetes mellitus is a severity variant of type 2 diabetes mellitus.",
+      "sources": [
+        "ChromaDB",
+        "OpenCodelists (Bennett Institute)",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "46635009",
+      "term": "Diabetes mellitus type 1 (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Type 1 diabetes mellitus is a primary subtype of diabetes mellitus.",
+      "sources": [
+        "ChromaDB",
+        "OpenCodelists (Bennett Institute)",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "4855003",
+      "term": "Retinopathy due to diabetes mellitus (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Retinopathy due to diabetes mellitus is a direct ocular complication of diabetes mellitus.",
+      "sources": [
+        "ChromaDB",
+        "OpenCodelists (Bennett Institute)",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "49455004",
+      "term": "Polyneuropathy due to diabetes mellitus (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Polyneuropathy due to diabetes mellitus is a direct neurological complication of diabetes mellitus.",
+      "sources": [
+        "ChromaDB",
+        "OpenCodelists (Bennett Institute)",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "71421000119105",
+      "term": "Hypertension in chronic kidney disease due to type 2 diabetes mellitus (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Hypertension in chronic kidney disease due to type 2 diabetes is a direct complication of diabetes mellitus and confirms the patient has the condition.",
+      "sources": [
+        "OpenCodelists (Bennett Institute)",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "71701000119105",
+      "term": "Hypertension in chronic kidney disease due to type 1 diabetes mellitus (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Hypertension in chronic kidney disease due to type 1 diabetes is a direct complication of diabetes mellitus and confirms the patient has the condition.",
+      "sources": [
+        "OpenCodelists (Bennett Institute)",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "721283000",
+      "term": "Acidosis due to type 1 diabetes mellitus",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Acidosis due to type 1 diabetes mellitus is a direct acute complication of diabetes and confirms the patient has the condition.",
+      "sources": [
+        "OMOPHub"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "721284006",
+      "term": "Acidosis due to type 2 diabetes mellitus",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Acidosis due to type 2 diabetes mellitus is a direct acute complication of diabetes and confirms the patient has the condition.",
+      "sources": [
+        "OMOPHub"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "739681000",
+      "term": "Disorder of eye due to type 1 diabetes mellitus (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Disorder of eye due to type 1 diabetes mellitus is a direct complication of diabetes (diabetic retinopathy/eye disease) and confirms the patient has the condition.",
+      "sources": [
+        "ChromaDB",
+        "OpenCodelists (Bennett Institute)",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "762489000",
+      "term": "Acute complication due to diabetes mellitus",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Acute complication due to diabetes mellitus is a direct manifestation of diabetes and confirms the patient has the condition.",
+      "sources": [
+        "OMOPHub"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "768792007",
+      "term": "Cataract of right eye due to diabetes mellitus (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Cataract of right eye due to diabetes mellitus is a direct complication of diabetes and confirms the patient has the condition.",
+      "sources": [
+        "OpenCodelists (Bennett Institute)",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "768793002",
+      "term": "Cataract of left eye due to diabetes mellitus (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Cataract of left eye due to diabetes mellitus is a direct complication of diabetes and confirms the patient has the condition.",
+      "sources": [
+        "OpenCodelists (Bennett Institute)",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "768794008",
+      "term": "Cataract of bilateral eyes due to diabetes mellitus (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Cataract of bilateral eyes due to diabetes mellitus is a direct complication of diabetes and confirms the patient has the condition.",
+      "sources": [
+        "OpenCodelists (Bennett Institute)",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "789569005",
+      "term": "Neuropathic ulcer of heel due to type 2 diabetes mellitus (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Neuropathic ulcer of heel due to type 2 diabetes mellitus is a direct complication of diabetes (diabetic foot) and confirms the patient has the condition.",
+      "sources": [
+        "OpenCodelists (Bennett Institute)",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "82581000119105",
+      "term": "Rubeosis iridis due to type 1 diabetes mellitus (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Rubeosis iridis due to type 1 diabetes mellitus is a direct ocular complication of diabetes and confirms the patient has the condition.",
+      "sources": [
+        "OpenCodelists (Bennett Institute)",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "8801005",
+      "term": "Secondary diabetes mellitus (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Secondary diabetes mellitus is a clinical subtype of diabetes mellitus and confirms the patient has the condition.",
+      "sources": [
+        "ChromaDB",
+        "OpenCodelists (Bennett Institute)",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "90781000119102",
+      "term": "Microalbuminuria due to type 2 diabetes mellitus (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Microalbuminuria due to type 2 diabetes mellitus is a direct renal complication of diabetes and confirms the patient has the condition.",
+      "sources": [
+        "ChromaDB",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "1217674007",
+      "term": "Neurotrophic keratitis due to diabetes mellitus (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.94,
+      "rationale": "Neurotrophic keratitis due to diabetes mellitus is a direct ocular complication of diabetes.",
+      "sources": [
+        "OpenCodelists (Bennett Institute)",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.94,
+      "usage_frequency": null
+    },
+    {
+      "code": "1217068008",
+      "term": "Fulminant type 1 diabetes mellitus (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.93,
+      "rationale": "Fulminant type 1 diabetes mellitus is a recognized clinical subtype of type 1 diabetes.",
+      "sources": [
+        "ChromaDB",
+        "OpenCodelists (Bennett Institute)",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.93,
+      "usage_frequency": null
+    },
+    {
+      "code": "127991000119101",
+      "term": "Hypertension concurrent and due to end stage renal disease on dialysis due to type 2 diabetes mellitus (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.93,
+      "rationale": "Hypertension due to end-stage renal disease from type 2 diabetes is a direct complication chain of diabetes.",
+      "sources": [
+        "OpenCodelists (Bennett Institute)",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.93,
+      "usage_frequency": null
+    },
+    {
+      "code": "128001000119105",
+      "term": "Hypertension concurrent and due to end stage renal disease on dialysis due to type 1 diabetes mellitus (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.93,
+      "rationale": "Hypertension due to end-stage renal disease from type 1 diabetes is a direct complication chain of diabetes.",
+      "sources": [
+        "OpenCodelists (Bennett Institute)",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.93,
+      "usage_frequency": null
+    },
+    {
+      "code": "11530004",
+      "term": "Brittle diabetes mellitus (finding)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.92,
+      "rationale": "Brittle diabetes mellitus is a recognized severity variant of diabetes mellitus.",
+      "sources": [
+        "ChromaDB",
+        "OpenCodelists (Bennett Institute)",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.92,
+      "usage_frequency": null
+    },
+    {
+      "code": "1217044000",
+      "term": "Ketosis-resistant diabetes mellitus (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.92,
+      "rationale": "Ketosis-resistant diabetes mellitus is a recognized clinical subtype of diabetes mellitus.",
+      "sources": [
+        "ChromaDB",
+        "OpenCodelists (Bennett Institute)",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.92,
+      "usage_frequency": null
+    },
+    {
+      "code": "140101000119109",
+      "term": "Hypertension in chronic kidney disease stage 5 due to type 2 diabetes mellitus (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.92,
+      "rationale": "Hypertension in CKD stage 5 due to type 2 diabetes is a direct complication of diabetes.",
+      "sources": [
+        "OpenCodelists (Bennett Institute)",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.92,
+      "usage_frequency": null
+    },
+    {
+      "code": "140111000119107",
+      "term": "Hypertension in chronic kidney disease stage 4 due to type 2 diabetes mellitus (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.92,
+      "rationale": "Hypertension in CKD stage 4 due to type 2 diabetes is a direct complication of diabetes.",
+      "sources": [
+        "OpenCodelists (Bennett Institute)",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.92,
+      "usage_frequency": null
+    },
+    {
+      "code": "140121000119100",
+      "term": "Hypertension in chronic kidney disease stage 3 due to type 2 diabetes mellitus (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.92,
+      "rationale": "Hypertension in CKD stage 3 due to type 2 diabetes is a direct complication of diabetes.",
+      "sources": [
+        "OpenCodelists (Bennett Institute)",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.92,
+      "usage_frequency": null
+    },
+    {
+      "code": "140131000119102",
+      "term": "Hypertension in chronic kidney disease stage 2 due to type 2 diabetes mellitus (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.92,
+      "rationale": "Hypertension in CKD stage 2 due to type 2 diabetes is a direct complication of diabetes.",
+      "sources": [
+        "OpenCodelists (Bennett Institute)",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.92,
+      "usage_frequency": null
+    },
+    {
+      "code": "290002008",
+      "term": "Brittle type I diabetes mellitus (finding)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.92,
+      "rationale": "Brittle type 1 diabetes mellitus is a recognized severity variant of type 1 diabetes.",
+      "sources": [
+        "ChromaDB",
+        "OpenCodelists (Bennett Institute)",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.92,
+      "usage_frequency": null
+    },
+    {
+      "code": "1142044000",
+      "term": "Pre-existing malnutrition-related diabetes mellitus in pregnancy (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.9,
+      "rationale": "Malnutrition-related diabetes mellitus is a recognized clinical subtype of diabetes mellitus.",
+      "sources": [
+        "OpenCodelists (Bennett Institute)",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.9,
+      "usage_frequency": null
+    },
+    {
+      "code": "237620003",
+      "term": "Abnormal metabolic state due to diabetes mellitus",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.9,
+      "rationale": "Abnormal metabolic state due to diabetes mellitus is a direct manifestation of diabetes.",
+      "sources": [
+        "OMOPHub"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.9,
+      "usage_frequency": null
+    },
+    {
+      "code": "335621000000101",
+      "term": "Maternally inherited diabetes mellitus (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.9,
+      "rationale": "Maternally inherited diabetes mellitus is a specific subtype of diabetes mellitus and confirms the diagnosis.",
+      "sources": [
+        "OpenCodelists (Bennett Institute)",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.9,
+      "usage_frequency": null
+    },
+    {
+      "code": "368711000119106",
+      "term": "Mild nonproliferative retinopathy due to secondary diabetes mellitus (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.9,
+      "rationale": "Retinopathy due to secondary diabetes mellitus is a direct complication of diabetes mellitus.",
+      "sources": [
+        "OpenCodelists (Bennett Institute)",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.9,
+      "usage_frequency": null
+    },
+    {
+      "code": "408540003",
+      "term": "Diabetes mellitus caused by non-steroid drugs (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.9,
+      "rationale": "Drug-induced diabetes mellitus is a specific subtype of diabetes mellitus caused by non-steroid drugs.",
+      "sources": [
+        "OpenCodelists (Bennett Institute)",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.9,
+      "usage_frequency": null
+    },
+    {
+      "code": "413183008",
+      "term": "Diabetes mellitus caused by non-steroid drugs without complication (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.9,
+      "rationale": "Drug-induced diabetes mellitus without complication is a specific subtype of diabetes mellitus.",
+      "sources": [
+        "OpenCodelists (Bennett Institute)",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.9,
+      "usage_frequency": null
+    },
+    {
+      "code": "426705001",
+      "term": "Diabetes mellitus co-occurrent and due to cystic fibrosis (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.9,
+      "rationale": "Diabetes mellitus co-occurrent and due to cystic fibrosis is a specific secondary diabetes subtype.",
+      "sources": [
+        "OpenCodelists (Bennett Institute)",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.9,
+      "usage_frequency": null
+    },
+    {
+      "code": "426875007",
+      "term": "Latent autoimmune diabetes mellitus in adult (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.9,
+      "rationale": "Latent autoimmune diabetes mellitus in adult (LADA) is a specific subtype of diabetes mellitus.",
+      "sources": [
+        "OpenCodelists (Bennett Institute)",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.9,
+      "usage_frequency": null
+    },
+    {
+      "code": "427089005",
+      "term": "Diabetes mellitus due to cystic fibrosis (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.9,
+      "rationale": "Diabetes mellitus due to cystic fibrosis is a specific secondary diabetes subtype.",
+      "sources": [
+        "OpenCodelists (Bennett Institute)",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.9,
+      "usage_frequency": null
+    },
+    {
+      "code": "51002006",
+      "term": "Diabetes mellitus associated with pancreatic disease (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.9,
+      "rationale": "Diabetes mellitus associated with pancreatic disease is a specific secondary diabetes subtype.",
+      "sources": [
+        "ChromaDB",
+        "OpenCodelists (Bennett Institute)",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.9,
+      "usage_frequency": null
+    },
+    {
+      "code": "5368009",
+      "term": "Drug-induced diabetes mellitus (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.9,
+      "rationale": "Drug-induced diabetes mellitus is a specific secondary diabetes subtype.",
+      "sources": [
+        "ChromaDB",
+        "OpenCodelists (Bennett Institute)",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.9,
+      "usage_frequency": null
+    },
+    {
+      "code": "5969009",
+      "term": "Diabetes mellitus associated with genetic syndrome (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.9,
+      "rationale": "Diabetes mellitus associated with genetic syndrome is a specific secondary diabetes subtype.",
+      "sources": [
+        "OpenCodelists (Bennett Institute)",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.9,
+      "usage_frequency": null
+    },
+    {
+      "code": "735200002",
+      "term": "Absence of lower limb due to diabetes mellitus",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.9,
+      "rationale": "Absence of lower limb due to diabetes mellitus is a severe complication (amputation) directly caused by diabetes and confirms the patient has the condition.",
+      "sources": [
+        "OMOPHub"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.9,
+      "usage_frequency": null
+    },
+    {
+      "code": "737212004",
+      "term": "Diabetes mellitus caused by chemical (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.9,
+      "rationale": "Diabetes mellitus caused by chemical is a clinical subtype of diabetes mellitus and confirms the patient has the condition.",
+      "sources": [
+        "OpenCodelists (Bennett Institute)",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.9,
+      "usage_frequency": null
+    },
+    {
+      "code": "75682002",
+      "term": "Diabetes mellitus caused by insulin receptor antibodies (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.9,
+      "rationale": "Diabetes mellitus caused by insulin receptor antibodies is a clinical subtype of diabetes mellitus and confirms the patient has the condition.",
+      "sources": [
+        "OpenCodelists (Bennett Institute)",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.9,
+      "usage_frequency": null
+    },
+    {
+      "code": "791000119109",
+      "term": "Angina due to type 2 diabetes mellitus (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.9,
+      "rationale": "Angina due to type 2 diabetes mellitus is a direct cardiovascular complication of diabetes and confirms the patient has the condition.",
+      "sources": [
+        "ChromaDB",
+        "OMOPHub",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.9,
+      "usage_frequency": null
+    },
+    {
+      "code": "1255271005",
+      "term": "Juvenile-onset diabetes mellitus, central and peripheral neurodegeneration syndrome (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.88,
+      "rationale": "Juvenile-onset diabetes mellitus with neurodegeneration syndrome is a recognized diabetes subtype.",
+      "sources": [
+        "OpenCodelists (Bennett Institute)",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.88,
+      "usage_frequency": null
+    },
+    {
+      "code": "237612000",
+      "term": "Photomyoclonus, diabetes mellitus, deafness, nephropathy and cerebral dysfunction (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.88,
+      "rationale": "Photomyoclonus, diabetes mellitus, deafness, nephropathy and cerebral dysfunction is a recognized syndromic form of diabetes.",
+      "sources": [
+        "OpenCodelists (Bennett Institute)",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.88,
+      "usage_frequency": null
+    },
+    {
+      "code": "190372001",
+      "term": "Type I diabetes mellitus maturity onset (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.85,
+      "rationale": "Type 1 diabetes mellitus maturity onset is a recognized clinical subtype, though terminology is somewhat ambiguous.",
+      "sources": [
+        "OpenCodelists (Bennett Institute)",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.85,
+      "usage_frequency": null
+    },
+    {
+      "code": "9859006",
+      "term": "Acanthosis nigricans due to type 2 diabetes mellitus",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.85,
+      "rationale": "Acanthosis nigricans due to type 2 diabetes mellitus is a dermatological manifestation of diabetes and confirms the patient has the condition.",
+      "sources": [
+        "OMOPHub"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.85,
+      "usage_frequency": null
+    },
+    {
+      "code": "700449008",
+      "term": "Non-diabetic hyperglycemia (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.95,
+      "rationale": "Non-diabetic hyperglycemia is not diabetes mellitus and does not confirm the diagnosis.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "763007002",
+      "term": "Assessment using congestive heart failure, hypertension, age 75 years or older, diabetes mellitus and previous stroke or transient ischemic attack score (procedure)",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.95,
+      "rationale": "This is an administrative/assessment procedure code (CHA2DS2-VASc score) that does not confirm the patient has diabetes; it is a screening or risk assessment tool.",
+      "sources": [
+        "OMOPHub",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "703136005",
+      "term": "Diabetes mellitus in remission (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.85,
+      "rationale": "Diabetes mellitus in remission indicates resolved disease and does not confirm active diabetes mellitus.",
+      "sources": [
+        "OpenCodelists (Bennett Institute)",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.85,
+      "usage_frequency": null
+    },
+    {
+      "code": "703137001",
+      "term": "Type I diabetes mellitus in remission (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.85,
+      "rationale": "Type 1 diabetes mellitus in remission indicates resolved disease and does not confirm active diabetes mellitus.",
+      "sources": [
+        "OpenCodelists (Bennett Institute)",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.85,
+      "usage_frequency": null
+    },
+    {
+      "code": "703138006",
+      "term": "Type II diabetes mellitus in remission (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.85,
+      "rationale": "Type 2 diabetes mellitus in remission indicates resolved disease and does not confirm active diabetes mellitus.",
+      "sources": [
+        "ChromaDB",
+        "OpenCodelists (Bennett Institute)",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.85,
+      "usage_frequency": null
+    }
+  ],
+  "pipeline": "rag"
+}

@@ -1,0 +1,22 @@
+[
+  {
+    "Entry_no": 5,
+    "Ref_link": "https://www.opencodelists.org/codelist/reducehf/atrial-fibrillation-and-flutter-icd10/0cfc2f94/",
+    "Ref_reviewer": "OpenCodelists",
+    "Ref_review_FLAG": "published",
+    "Source_creation_date": "",
+    "Research_question": "Atrial Fibrillation and Flutter - ICD10",
+    "Codelist_vocabulary": "ICD-10",
+    "Codelist": "I48;I480;I481;I482;I483;I484;I489",
+    "Codelist_terms": "Atrial fibrillation and flutter;Paroxysmal atrial fibrillation;Persistent atrial fibrillation;Chronic atrial fibrillation;Typical atrial flutter;Atypical atrial flutter;Atrial fibrillation and atrial flutter, unspecified",
+    "Terms_count": 7,
+    "Codes_count": 7,
+    "Diff_FLAG": "N",
+    "Benchmark_meta": {
+      "short_name": "atrial_fib_icd10",
+      "condition_area": "cardiometabolic",
+      "organisation": "reducehf",
+      "opencodelists_version": "reducehf/atrial-fibrillation-and-flutter-icd10/0cfc2f94"
+    }
+  }
+]
