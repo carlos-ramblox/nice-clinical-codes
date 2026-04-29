@@ -24,7 +24,3 @@ def put(search_id: str, query: str, codes: list[dict]) -> None:
 def get(search_id: str) -> dict | None:
     """Returns {'query', 'codes'} or None if missing/evicted."""
     return _entries.get(search_id)
-
-
-def size() -> int:
-    return len(_entries)

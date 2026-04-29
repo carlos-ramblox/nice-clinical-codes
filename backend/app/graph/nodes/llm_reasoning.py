@@ -107,7 +107,6 @@ class BatchDecisions(BaseModel):
 
 def _score_batch(
     structured_llm,
-    query: str,
     conditions: list[dict],
     codes: list[dict],
 ) -> list[dict]:
@@ -151,7 +150,6 @@ def score_codes(state: dict) -> dict:
     """
     codes = state.get("enriched_codes", [])
     conditions = state.get("parsed_conditions", [])
-    query = state.get("raw_query", "")
 
     # stabilise order so batches are identical across runs
     # (UMLS ThreadPoolExecutor returns results in non-deterministic order)
@@ -176,7 +174,7 @@ def score_codes(state: dict) -> dict:
     for i in range(0, len(codes), BATCH_SIZE):
         batch = codes[i:i + BATCH_SIZE]
         logger.info("Scoring batch %d-%d of %d codes", i + 1, min(i + BATCH_SIZE, len(codes)), len(codes))
-        decisions = _score_batch(structured_llm, query, conditions, batch)
+        decisions = _score_batch(structured_llm, conditions, batch)
         all_decisions.extend(decisions)
 
     # match decisions back to codes by position (batches preserve order)

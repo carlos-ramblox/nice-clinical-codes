@@ -308,11 +308,13 @@ def _build_view(selection: list[dict], suffix: str) -> dict | None:
     """
     rows = []
     for s in selection:
-        ts = json.load(open(BENCH / f"{s['short']}.json", encoding="utf-8"))
+        with open(BENCH / f"{s['short']}.json", encoding="utf-8") as f:
+            ts = json.load(f)
         res_path = BENCH / f"{s['short']}.{suffix}.json"
         if not res_path.exists():
             continue
-        result = json.load(open(res_path, encoding="utf-8"))
+        with open(res_path, encoding="utf-8") as f:
+            result = json.load(f)
         if "scored_codes" not in result:
             continue
         both = evaluate_one(ts, result)
@@ -425,7 +427,7 @@ def _write_legacy_outputs(view: dict | None) -> None:
     if view is None:
         return
     (BENCH / "_aggregate.json").write_text(
-        json.dumps({k: v for k, v in view.items()}, indent=2), encoding="utf-8"
+        json.dumps(view, indent=2), encoding="utf-8"
     )
     fields = ["short", "name", "vocabulary", "area", "organisation",
               "n_ref", "n_out", "tp", "fp", "fn", "precision", "recall", "f1",
@@ -484,7 +486,8 @@ def _write_v2_outputs(views: dict[str, dict], mcnemar_results: dict | None = Non
 
 
 def main():
-    selection = json.load(open(SELECTION, encoding="utf-8"))
+    with open(SELECTION, encoding="utf-8") as f:
+        selection = json.load(f)
 
     views = {
         "pre_fix":   _build_view(selection, "result"),

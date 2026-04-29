@@ -250,9 +250,3 @@ def _extract_cui(uri: str) -> str:
         if part.startswith("C") and part[1:].isdigit():
             return part
     return parts[-1] if parts else ""
-
-
-def enrich_codes(omophub_df: pd.DataFrame, api_key: str | None = None) -> pd.DataFrame:
-    """Standalone entry point for enriching OMOPHub results."""
-    enricher = UMLSEnricher(api_key=api_key)
-    return enricher.enrich(omophub_df)
