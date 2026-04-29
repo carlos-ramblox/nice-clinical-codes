@@ -29,9 +29,13 @@ data/raw/*.xlsm
 data/raw/*.xlsx
 data/raw/*.csv
 data/raw/*.zip
+data/raw/opencodelists/
 chromadb_data/
 *.db
+*.db-shm
+*.db-wal
 *.sqlite3
+backend/data/
 
 # ML artifacts
 *.joblib
@@ -74,10 +78,7 @@ docker-compose.override.yml
 # AI agent configs
 AGENTS.md
 CLAUDE.md
-
-# AI agent configs
-AGENTS.md
-CLAUDE.md
+.claude/
 
 # Jupyter
 .ipynb_checkpoints/

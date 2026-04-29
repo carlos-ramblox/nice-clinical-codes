@@ -33,7 +33,6 @@ User → Frontend (Next.js)
          │
          ├─→ Result Merger + Dedup
          ├─→ UMLS Enrichment (synonyms, narrower, siblings)
-         ├─→ ML Classifier (scikit-learn)
          ├─→ LLM Reasoning (Claude API)
          ├─→ Human Review Gate
          └─→ Output Assembly
@@ -48,7 +47,7 @@ User → Frontend (Next.js)
 - **Frontend:** Next.js 16, TypeScript, Tailwind CSS
 - **Vector DB:** ChromaDB with PubMedBERT biomedical embeddings
 - **Knowledge graph:** UMLS Metathesaurus (synonym, narrower, sibling expansion)
-- **Data sources:** QOF Business Rules, OpenCodelists, OPCS-4, OMOPHub, UMLS (35K+ codes)
+- **Data sources:** QOF Business Rules, OpenCodelists, OPCS-4, NHS TRUD ICD-10 5th Edition, OMOPHub, UMLS (53K+ codes ingested locally)
 - **Deployment:** AWS ECS Fargate, ECR, ALB, ACM, Route 53. Live at [clinicalcodes.uk](https://clinicalcodes.uk)
 - **Cost:** per-query cost dominated by the LLM scoring step; tracked at request time but not currently benchmarked against a fixed test set
 
@@ -58,7 +57,7 @@ The pipeline aims for the same query at time T to yield the same candidate codel
 
 **Deterministic by construction:**
 
-- **Both LLM stages run at `temperature=0`:** query parsing with Claude Sonnet 4 (`backend/app/graph/nodes/query_parser.py`) and per-code scoring with Claude Haiku 4.5 (`backend/app/graph/nodes/llm_reasoning.py`). Candidates are sorted by `(vocabulary, code)` before batching (`llm_reasoning.py:108`), so identical input yields identical prompt batches across runs.
+- **Both LLM stages run at `temperature=0`:** query parsing with Claude Sonnet 4 (`backend/app/graph/nodes/query_parser.py`) and per-code scoring with Claude Haiku 4.5 (`backend/app/graph/nodes/llm_reasoning.py`). Candidates are sorted by `(vocabulary, code)` before batching (`llm_reasoning.py:158`), so identical input yields identical prompt batches across runs.
 - **Model identifiers are pinned** to date-stamped IDs in `backend/app/config.py`: `claude-sonnet-4-20250514` for query parsing and `claude-haiku-4-5-20251001` for per-code scoring. Floating aliases such as "latest" are not used.
 - **File-based sources are versioned snapshots:** QOF Business Rules (`Business_Rules_Combined_Change_Log_QOF+2024-25_v49.1.xlsm`), OPCS-4 (`OPCS411 CodesAndTitles Nov 2025 V1.0.xml`) and the OpenCodelists CSVs committed alongside the code under `data/raw/opencodelists/`.
 - **Embedding model is pinned** to `NeuML/pubmedbert-base-embeddings`, and ChromaDB is rebuilt from the versioned sources above during the Docker build (`backend/Dockerfile`, `ingest` stage) rather than pulled from a remote artefact.
@@ -117,7 +116,7 @@ cd backend
 python -m app.ingestion.run_all --data-dir ../data
 ```
 
-This populates SQLite and ChromaDB with QOF business rules (23K SNOMED codes), OpenCodelists (681 codes), and OPCS-4 procedures (12K codes).
+This populates SQLite and ChromaDB with QOF business rules (23K SNOMED codes), OpenCodelists (681 codes), OPCS-4 procedures (12K codes), and NHS TRUD ICD-10 5th Edition (~17.9K codes).
 
 6. Run both services:
 
@@ -181,12 +180,12 @@ The Docker build runs data ingestion automatically, no manual step needed. SQLit
 ├── backend/
 │   ├── app/
 │   │   ├── api/            # FastAPI routes
+│   │   ├── baseline/       # OpenRouter-based baseline LLM scoring
 │   │   ├── graph/          # LangGraph pipeline
 │   │   │   ├── nodes/      # Pipeline nodes (retrievers, reasoning, etc.)
 │   │   │   └── state.py    # Typed pipeline state
 │   │   ├── db/             # ChromaDB and SQLite
-│   │   ├── ingestion/      # Data source parsers
-│   │   ├── ml/             # Classifier training and inference
+│   │   ├── ingestion/      # Data source parsers (QOF, OPCS-4, ICD-10)
 │   │   └── evaluation/     # Metrics (P/R/F1)
 │   ├── Dockerfile
 │   └── requirements.txt
@@ -228,4 +227,4 @@ University of Cambridge Data Science (PACE), developed in collaboration with NIC
 - **Anna Desalvo** | Evaluation Lead, Data Analysis | [LinkedIn](https://linkedin.com/in/anna-desalvo-data-scientist)
 ## License
 
-MIT
+Apache License 2.0 — see [LICENSE](./LICENSE) and [NOTICE](./NOTICE).

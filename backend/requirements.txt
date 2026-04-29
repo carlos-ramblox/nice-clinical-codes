@@ -18,10 +18,6 @@ pandas>=2.2.0
 openpyxl>=3.1.0
 numpy>=1.26.0
 
-# ML
-scikit-learn>=1.5.0
-joblib>=1.4.0
-
 # HTTP clients
 requests>=2.32.0
 httpx>=0.27.0
