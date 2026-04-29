@@ -8,8 +8,8 @@ clinical areas (cardiometabolic, cerebrovascular, respiratory, mental
 health, neurology, oncology, infection) and two vocabularies (13 SNOMED
 CT, 2 ICD-10). This is the second pass of the benchmark: an initial run
 on 2026-04-27 surfaced four failure modes, four targeted code changes
-(Fixes B, C, E, F — see §5.5) were deployed to production, and the
-benchmark was re-run end-to-end.
+(Fixes B, C, E, F — see *Iteration history* below) were deployed to
+production, and the benchmark was re-run end-to-end.
 
 Headline result on the strict view (15 codelists, included-only stage,
 mean ± 95 % BCa bootstrap CI):
@@ -601,6 +601,11 @@ This is the second pass of the benchmark.
   - **Fix F**: result-merger vocabulary-constraint filter applied
     *before* the source-count cap, so explicitly-requested
     vocabulary candidates aren't outranked by other-vocab noise.
+  - **Fix D**: cold-start mode — `?cold_start=true` query parameter
+    on `/api/search` and `/api/evaluate` disables the OpenCodelists
+    retriever for that request. Methodological enabler for the
+    cold-start view (§2.5) rather than a numeric fix; included
+    here for completeness.
 - **2026-04-27 (evening)**: re-run, three-view aggregation, this
   document.
 - **2026-04-29**: post-v2 structural fix — NHS TRUD ICD-10 5th

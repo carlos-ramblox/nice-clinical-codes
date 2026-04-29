@@ -12,7 +12,7 @@ Bennett's example: "ocular hypertension" being mistakenly included in a hyperten
 
 **How the pipeline addresses this.** Each candidate is scored by Claude Haiku 4.5, which returns an `include`/`exclude`/`uncertain` decision, a confidence score, and a one-sentence rationale; all three are stored in the audit log. The scoring prompt explicitly instructs the model to exclude codes for unrelated comorbidities and to mark ambiguous cases as `uncertain` rather than silently including them. Candidate provenance (which retriever surfaced the code, how many sources support it) is preserved through to review, so a reviewer can see at a glance whether a code is corroborated by multiple vocabularies.
 
-**Residual risk and gaps.** The LLM rationale is a heuristic, not a proof; the pipeline does not formally guarantee that similar-sounding unrelated codes are excluded. There is no curated adversarial test set specifically targeting this failure mode — the planned EVALUATION.md compares against published OpenCodelists, which does not isolate this class of error. The reviewer must still verify exclusions manually.
+**Residual risk and gaps.** The LLM rationale is a heuristic, not a proof; the pipeline does not formally guarantee that similar-sounding unrelated codes are excluded. There is no curated adversarial test set specifically targeting this failure mode — the [EVALUATION.md](./EVALUATION.md) benchmark compares against published OpenCodelists, which does not isolate this class of error. The reviewer must still verify exclusions manually.
 
 ## Failure mode 2: Omitting synonyms
 
