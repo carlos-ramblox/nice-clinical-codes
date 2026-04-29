@@ -1,6 +1,7 @@
 import logging
 
 from app.config import MAX_CANDIDATES
+from app.graph.vocab_matching import requested_vocab_set
 
 logger = logging.getLogger(__name__)
 
@@ -10,6 +11,14 @@ def merge_and_dedup(state: dict) -> dict:
     LangGraph node: merge retrieved_codes from all parallel retrievers,
     deduplicate by (code, vocabulary), and tag each code with all sources
     that returned it.
+
+    When the parsed query pins a single vocabulary (e.g. user typed
+    "Myocardial infarction (ICD10)"), candidates whose vocabulary doesn't
+    match are filtered out *before* the source_count-based cap. Without
+    this filter, single-source candidates in the requested vocabulary
+    can be ranked below multi-source candidates in unrequested
+    vocabularies and pushed past the cap, surfacing as a downstream
+    empty result.
     """
     codes = state.get("retrieved_codes", [])
     if not codes:
@@ -56,6 +65,20 @@ def merge_and_dedup(state: dict) -> dict:
                 existing["term"] = c["term"]
 
     deduped = list(merged.values())
+
+    # Vocabulary-constraint filter (pairs with output_assembly's filter).
+    # Only triggers when every parsed condition shares a single
+    # coding_system; multi-vocab queries pass through unfiltered.
+    conditions = state.get("parsed_conditions", [])
+    allowed_vocabs = requested_vocab_set(conditions)
+    if allowed_vocabs:
+        before = len(deduped)
+        deduped = [d for d in deduped if d.get("vocabulary", "") in allowed_vocabs]
+        logger.info(
+            "Vocabulary constraint: kept %d of %d candidates matching %s "
+            "(parsed coding_systems pin a single vocabulary)",
+            len(deduped), before, allowed_vocabs,
+        )
 
     # sort: more sources first, then by similarity score
     deduped.sort(

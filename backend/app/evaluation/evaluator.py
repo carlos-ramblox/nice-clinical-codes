@@ -37,12 +37,22 @@ def evaluate_codelist(
     output_codes: list of {"code": "...", "term": "...", ...}
 
     Returns EvalMetrics with recall, precision, F1, TP/FP/FN lists.
-    """
-    ref_set = {c["code"].strip().rstrip(".") for c in ref_codes}
-    out_set = {c["code"].strip().rstrip(".") for c in output_codes}
 
-    ref_lookup = {c["code"].strip().rstrip("."): c.get("term", "") for c in ref_codes}
-    out_lookup = {c["code"].strip().rstrip("."): c.get("term", "") for c in output_codes}
+    Code normalization strips all dots before comparison so that
+    "I48.0" (ICD-10 with separator) matches "I480" (compact form).
+    The same transformation is applied to both reference and output
+    codes, so OPCS-4 codes (which carry dots like "K40.1") are
+    mutated symmetrically and set membership is preserved. SNOMED CT
+    contains no dots, so the strip is a no-op for SNOMED.
+    """
+    def _norm(code: str) -> str:
+        return code.strip().replace(".", "")
+
+    ref_set = {_norm(c["code"]) for c in ref_codes}
+    out_set = {_norm(c["code"]) for c in output_codes}
+
+    ref_lookup = {_norm(c["code"]): c.get("term", "") for c in ref_codes}
+    out_lookup = {_norm(c["code"]): c.get("term", "") for c in output_codes}
 
     tp = ref_set & out_set
     fp = out_set - ref_set
@@ -87,7 +97,7 @@ def run_evaluation(
         codes_raw = entry.get("Codelist", "")
         terms_raw = entry.get("Codelist_terms", "")
 
-        codes = [c.strip().rstrip(".") for c in str(codes_raw).split(";") if c.strip()]
+        codes = [c.strip().replace(".", "") for c in str(codes_raw).split(";") if c.strip()]
         terms = [t.strip() for t in str(terms_raw).split(";") if t.strip()]
 
         # zip codes with terms, pad terms with "" if fewer
@@ -139,15 +149,17 @@ def run_evaluation(
     results["stages"]["included_plus_uncertain"] = _metrics_to_dict(m_inc_unc)
 
     # Check excluded codes that were in reference (false exclusions)
-    ref_set = {c["code"].strip().rstrip(".") for c in ref_codes}
-    false_exclusions = [c for c in excluded if c.get("code", "").strip().rstrip(".") in ref_set]
+    # Match the dot-stripping convention used in evaluate_codelist._norm
+    # so diagnostic surfaces don't miss ICD-10/OPCS-4 matches.
+    ref_set = {c["code"].strip().replace(".", "") for c in ref_codes}
+    false_exclusions = [c for c in excluded if c.get("code", "").strip().replace(".", "") in ref_set]
     results["false_exclusions"] = {
         "count": len(false_exclusions),
         "codes": [{"code": c["code"], "term": c["term"], "rationale": c.get("rationale", "")} for c in false_exclusions],
     }
 
     # Check uncertain codes that were in reference
-    uncertain_in_ref = [c for c in uncertain if c.get("code", "").strip().rstrip(".") in ref_set]
+    uncertain_in_ref = [c for c in uncertain if c.get("code", "").strip().replace(".", "") in ref_set]
     results["uncertain_in_reference"] = {
         "count": len(uncertain_in_ref),
         "codes": [{"code": c["code"], "term": c["term"], "rationale": c.get("rationale", "")} for c in uncertain_in_ref],

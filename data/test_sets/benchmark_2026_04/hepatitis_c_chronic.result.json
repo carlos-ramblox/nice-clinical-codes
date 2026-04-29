@@ -1,0 +1,3044 @@
+{
+  "reference_count": 20,
+  "query": "Chronic hepatitis C codes",
+  "vocabulary": "SNOMED CT",
+  "stages": {
+    "retrieved_raw": {
+      "codelist_name": "retrieved_raw",
+      "n_ref_codes": 20,
+      "n_output_codes": 84,
+      "recall": 1.0,
+      "precision": 0.2381,
+      "f1": 0.3846,
+      "tp_count": 20,
+      "fp_count": 64,
+      "fn_count": 0,
+      "tp_codes": [
+        {
+          "code": "1197150002",
+          "term": "Recurrent hepatitis C virus induced liver disease following liver transplant"
+        },
+        {
+          "code": "128302006",
+          "term": "Chronic hepatitis C"
+        },
+        {
+          "code": "128971000119101",
+          "term": "Cryoglobulinemia due to chronic hepatitis C"
+        },
+        {
+          "code": "146371000119104",
+          "term": "Hepatic coma due to chronic hepatitis C"
+        },
+        {
+          "code": "16623921000119105",
+          "term": "Viral hepatitis C in mother during pregnancy"
+        },
+        {
+          "code": "186640001",
+          "term": "Chronic viral hepatitis C"
+        },
+        {
+          "code": "347891000119103",
+          "term": "Chronic hepatitis C with stage 3 fibrosis"
+        },
+        {
+          "code": "702969000",
+          "term": "Reactivation of hepatitis C viral hepatitis"
+        },
+        {
+          "code": "703866000",
+          "term": "Chronic hepatitis C with stage 2 fibrosis"
+        },
+        {
+          "code": "708198006",
+          "term": "Chronic active hepatitis C"
+        },
+        {
+          "code": "767809001",
+          "term": "Chronic hepatitis C caused by hepatitis C virus genotype 6"
+        },
+        {
+          "code": "767810006",
+          "term": "Chronic hepatitis C caused by hepatitis C virus genotype 5"
+        },
+        {
+          "code": "768006009",
+          "term": "Chronic hepatitis C caused by Hepatitis C virus genotype 3"
+        },
+        {
+          "code": "768125005",
+          "term": "Chronic hepatitis C caused by Hepatitis C virus genotype 2"
+        },
+        {
+          "code": "768126006",
+          "term": "Chronic hepatitis C caused by Hepatitis C virus genotype 4"
+        },
+        {
+          "code": "768127002",
+          "term": "Chronic hepatitis C caused by Hepatitis C virus genotype 1"
+        },
+        {
+          "code": "768288001",
+          "term": "Chronic hepatitis C caused by Hepatitis C virus genotype 1b"
+        },
+        {
+          "code": "768289009",
+          "term": "Chronic hepatitis C caused by Hepatitis C virus genotype 1a"
+        },
+        {
+          "code": "831000119103",
+          "term": "Cirrhosis of liver due to chronic hepatitis C"
+        },
+        {
+          "code": "838377003",
+          "term": "Chronic hepatitis C co-occurrent with human immunodeficiency virus infection"
+        }
+      ],
+      "fp_codes": [
+        {
+          "code": "109841003",
+          "term": "Liver cell carcinoma (disorder)"
+        },
+        {
+          "code": "109842005",
+          "term": "Intrahepatic bile duct carcinoma (disorder)"
+        },
+        {
+          "code": "1116000",
+          "term": "Chronic aggressive type B viral hepatitis"
+        },
+        {
+          "code": "1144891007",
+          "term": "Primary cholangiocarcinoma of extrahepatic bile duct (disorder)"
+        },
+        {
+          "code": "1162855005",
+          "term": "Carcinoma of gallbladder and extrahepatic biliary tract (disorder)"
+        },
+        {
+          "code": "1186612004",
+          "term": "Metastatic hepatocellular carcinoma (disorder)"
+        },
+        {
+          "code": "1186629001",
+          "term": "Primary fibrolamellar hepatocellular carcinoma (disorder)"
+        },
+        {
+          "code": "1186630006",
+          "term": "Primary liver cell carcinoma (disorder)"
+        },
+        {
+          "code": "1186631005",
+          "term": "Primary combined hepatocellular carcinoma and cholangiocarcinoma (disorder)"
+        },
+        {
+          "code": "1196846002",
+          "term": "Primary cystadenocarcinoma of intrahepatic bile duct (disorder)"
+        },
+        {
+          "code": "1197204009",
+          "term": "Adult hepatocellular carcinoma (disorder)"
+        },
+        {
+          "code": "1208349005",
+          "term": "Pediatric hepatocellular carcinoma (disorder)"
+        },
+        {
+          "code": "1230342001",
+          "term": "Hepatitis B reinfection following transplantation of liver"
+        },
+        {
+          "code": "1240370001",
+          "term": "Metastatic squamous cell carcinoma to liver and intrahepatic biliary tract (disorder)"
+        },
+        {
+          "code": "1259313008",
+          "term": "Primary intrahepatic bile duct carcinoma (disorder)"
+        },
+        {
+          "code": "1259518000",
+          "term": "Primary carcinoma of extrahepatic bile duct (disorder)"
+        },
+        {
+          "code": "1259602004",
+          "term": "Primary carcinoma liver and/or biliary system (disorder)"
+        },
+        {
+          "code": "1260050006",
+          "term": "Cholangiocarcinoma of intrahepatic biliary tract (disorder)"
+        },
+        {
+          "code": "1268390002",
+          "term": "Metastatic undifferentiated carcinoma to liver and intrahepatic biliary tract (disorder)"
+        },
+        {
+          "code": "1268391003",
+          "term": "Primary undifferentiated carcinoma of liver and intrahepatic biliary tract (disorder)"
+        },
+        {
+          "code": "1268541001",
+          "term": "Primary squamous cell carcinoma of liver and intrahepatic biliary tract (disorder)"
+        },
+        {
+          "code": "1268544009",
+          "term": "Primary carcinoma of gallbladder and extrahepatic biliary tract (disorder)"
+        },
+        {
+          "code": "1268711001",
+          "term": "Primary hepatoblastoma of liver (disorder)"
+        },
+        {
+          "code": "1296659009",
+          "term": "Acute exacerbation of chronic heart failure"
+        },
+        {
+          "code": "13645005",
+          "term": "Chronic obstructive lung disease (disorder)"
+        },
+        {
+          "code": "153091000119109",
+          "term": "Hepatic coma due to chronic hepatitis B with delta agent"
+        },
+        {
+          "code": "16859701000119109",
+          "term": "Chronic hepatitis B during pregnancy"
+        },
+        {
+          "code": "186638006",
+          "term": "Chronic viral hepatitis B with hepatitis D"
+        },
+        {
+          "code": "186639003",
+          "term": "Chronic viral hepatitis B without delta-agent"
+        },
+        {
+          "code": "187769009",
+          "term": "Primary carcinoma of liver (disorder)"
+        },
+        {
+          "code": "187776004",
+          "term": "Malignant neoplasm of intrahepatic canaliculi (disorder)"
+        },
+        {
+          "code": "195949008",
+          "term": "Chronic asthmatic bronchitis"
+        },
+        {
+          "code": "235869004",
+          "term": "Chronic viral hepatitis B with hepatitis D"
+        },
+        {
+          "code": "253018005",
+          "term": "Fibrolamellar hepatocellular carcinoma (disorder)"
+        },
+        {
+          "code": "255086002",
+          "term": "Carcinoma common bile duct (disorder)"
+        },
+        {
+          "code": "274902006",
+          "term": "Combined hepatocellular carcinoma and cholangiocarcinoma (disorder)"
+        },
+        {
+          "code": "286887005",
+          "term": "Carcinoma liver and/or biliary system (disorder)"
+        },
+        {
+          "code": "313297008",
+          "term": "Moderate chronic obstructive pulmonary disease (disorder)"
+        },
+        {
+          "code": "313299006",
+          "term": "Severe chronic obstructive pulmonary disease (disorder)"
+        },
+        {
+          "code": "372101000",
+          "term": "Carcinoma of extrahepatic bile duct (disorder)"
+        },
+        {
+          "code": "38662009",
+          "term": "Chronic persistent type B viral hepatitis"
+        },
+        {
+          "code": "424340000",
+          "term": "Hepatic coma due to chronic hepatitis B"
+        },
+        {
+          "code": "425748003",
+          "term": "Acute exacerbation of chronic bronchitis (disorder)"
+        },
+        {
+          "code": "433144002",
+          "term": "Chronic kidney disease stage 3 (disorder)"
+        },
+        {
+          "code": "441530006",
+          "term": "Chronic diastolic heart failure"
+        },
+        {
+          "code": "445406001",
+          "term": "Hepatosplenic T-cell lymphoma (disorder)"
+        },
+        {
+          "code": "48447003",
+          "term": "Chronic heart failure"
+        },
+        {
+          "code": "50167007",
+          "term": "Chronic active type B viral hepatitis"
+        },
+        {
+          "code": "52571006",
+          "term": "Chronic tracheobronchitis (disorder)"
+        },
+        {
+          "code": "61977001",
+          "term": "Chronic type B viral hepatitis"
+        },
+        {
+          "code": "63480004",
+          "term": "Chronic bronchitis (disorder)"
+        },
+        {
+          "code": "699657009",
+          "term": "Hepatosplenic gamma-delta cell lymphoma (disorder)"
+        },
+        {
+          "code": "713966008",
+          "term": "Occult chronic type B viral hepatitis"
+        },
+        {
+          "code": "721716004",
+          "term": "Primary cholangiocarcinoma of intrahepatic biliary tract (disorder)"
+        },
+        {
+          "code": "721847002",
+          "term": "Joubert syndrome with congenital hepatic fibrosis (disorder)"
+        },
+        {
+          "code": "766978002",
+          "term": "Squamous cell carcinoma of gallbladder and extrahepatic biliary tract (disorder)"
+        },
+        {
+          "code": "770684008",
+          "term": "Squamous cell carcinoma of liver and intrahepatic biliary tract (disorder)"
+        },
+        {
+          "code": "770685009",
+          "term": "Undifferentiated carcinoma of liver and intrahepatic biliary tract (disorder)"
+        },
+        {
+          "code": "787091002",
+          "term": "Adenocarcinoma of liver and intrahepatic biliary tract (disorder)"
+        },
+        {
+          "code": "838380002",
+          "term": "Chronic hepatitis B co-occurrent with hepatitis C and hepatitis D"
+        },
+        {
+          "code": "847091000000104",
+          "term": "Acute non-infective exacerbation of chronic obstructive pulmonary disease (disorder)"
+        },
+        {
+          "code": "875211000000105",
+          "term": "Chronic viral hepatitis B"
+        },
+        {
+          "code": "88805009",
+          "term": "Chronic congestive heart failure"
+        },
+        {
+          "code": "941201000000103",
+          "term": "Chronic obstructive pulmonary disease resolved (finding)"
+        }
+      ],
+      "fn_codes": []
+    },
+    "merged_enriched": {
+      "codelist_name": "merged_enriched",
+      "n_ref_codes": 20,
+      "n_output_codes": 100,
+      "recall": 1.0,
+      "precision": 0.2,
+      "f1": 0.3333,
+      "tp_count": 20,
+      "fp_count": 80,
+      "fn_count": 0,
+      "tp_codes": [
+        {
+          "code": "1197150002",
+          "term": "Recurrent hepatitis C virus induced liver disease following liver transplant"
+        },
+        {
+          "code": "128302006",
+          "term": "Chronic hepatitis C"
+        },
+        {
+          "code": "128971000119101",
+          "term": "Cryoglobulinemia due to chronic hepatitis C"
+        },
+        {
+          "code": "146371000119104",
+          "term": "Hepatic coma due to chronic hepatitis C"
+        },
+        {
+          "code": "16623921000119105",
+          "term": "Viral hepatitis C in mother during pregnancy"
+        },
+        {
+          "code": "186640001",
+          "term": "Chronic viral hepatitis C"
+        },
+        {
+          "code": "347891000119103",
+          "term": "Chronic hepatitis C with stage 3 fibrosis"
+        },
+        {
+          "code": "702969000",
+          "term": "Reactivation of hepatitis C viral hepatitis"
+        },
+        {
+          "code": "703866000",
+          "term": "Chronic hepatitis C with stage 2 fibrosis"
+        },
+        {
+          "code": "708198006",
+          "term": "Chronic active hepatitis C"
+        },
+        {
+          "code": "767809001",
+          "term": "Chronic hepatitis C caused by hepatitis C virus genotype 6"
+        },
+        {
+          "code": "767810006",
+          "term": "Chronic hepatitis C caused by hepatitis C virus genotype 5"
+        },
+        {
+          "code": "768006009",
+          "term": "Chronic hepatitis C caused by Hepatitis C virus genotype 3"
+        },
+        {
+          "code": "768125005",
+          "term": "Chronic hepatitis C caused by Hepatitis C virus genotype 2"
+        },
+        {
+          "code": "768126006",
+          "term": "Chronic hepatitis C caused by Hepatitis C virus genotype 4"
+        },
+        {
+          "code": "768127002",
+          "term": "Chronic hepatitis C caused by Hepatitis C virus genotype 1"
+        },
+        {
+          "code": "768288001",
+          "term": "Chronic hepatitis C caused by Hepatitis C virus genotype 1b"
+        },
+        {
+          "code": "768289009",
+          "term": "Chronic hepatitis C caused by Hepatitis C virus genotype 1a"
+        },
+        {
+          "code": "831000119103",
+          "term": "Cirrhosis of liver due to chronic hepatitis C"
+        },
+        {
+          "code": "838377003",
+          "term": "Chronic hepatitis C co-occurrent with human immunodeficiency virus infection"
+        }
+      ],
+      "fp_codes": [
+        {
+          "code": "109841003",
+          "term": "Liver cell carcinoma (disorder)"
+        },
+        {
+          "code": "109842005",
+          "term": "Intrahepatic bile duct carcinoma (disorder)"
+        },
+        {
+          "code": "1116000",
+          "term": "Chronic aggressive type B viral hepatitis"
+        },
+        {
+          "code": "1144891007",
+          "term": "Primary cholangiocarcinoma of extrahepatic bile duct (disorder)"
+        },
+        {
+          "code": "1162855005",
+          "term": "Carcinoma of gallbladder and extrahepatic biliary tract (disorder)"
+        },
+        {
+          "code": "1186612004",
+          "term": "Metastatic hepatocellular carcinoma (disorder)"
+        },
+        {
+          "code": "1186629001",
+          "term": "Primary fibrolamellar hepatocellular carcinoma (disorder)"
+        },
+        {
+          "code": "1186630006",
+          "term": "Primary liver cell carcinoma (disorder)"
+        },
+        {
+          "code": "1186631005",
+          "term": "Primary combined hepatocellular carcinoma and cholangiocarcinoma (disorder)"
+        },
+        {
+          "code": "1196846002",
+          "term": "Primary cystadenocarcinoma of intrahepatic bile duct (disorder)"
+        },
+        {
+          "code": "1197204009",
+          "term": "Adult hepatocellular carcinoma (disorder)"
+        },
+        {
+          "code": "1208349005",
+          "term": "Pediatric hepatocellular carcinoma (disorder)"
+        },
+        {
+          "code": "1230342001",
+          "term": "Hepatitis B reinfection following transplantation of liver"
+        },
+        {
+          "code": "1240370001",
+          "term": "Metastatic squamous cell carcinoma to liver and intrahepatic biliary tract (disorder)"
+        },
+        {
+          "code": "1259313008",
+          "term": "Primary intrahepatic bile duct carcinoma (disorder)"
+        },
+        {
+          "code": "1259518000",
+          "term": "Primary carcinoma of extrahepatic bile duct (disorder)"
+        },
+        {
+          "code": "1259602004",
+          "term": "Primary carcinoma liver and/or biliary system (disorder)"
+        },
+        {
+          "code": "1260050006",
+          "term": "Cholangiocarcinoma of intrahepatic biliary tract (disorder)"
+        },
+        {
+          "code": "1268390002",
+          "term": "Metastatic undifferentiated carcinoma to liver and intrahepatic biliary tract (disorder)"
+        },
+        {
+          "code": "1268391003",
+          "term": "Primary undifferentiated carcinoma of liver and intrahepatic biliary tract (disorder)"
+        },
+        {
+          "code": "1268541001",
+          "term": "Primary squamous cell carcinoma of liver and intrahepatic biliary tract (disorder)"
+        },
+        {
+          "code": "1268544009",
+          "term": "Primary carcinoma of gallbladder and extrahepatic biliary tract (disorder)"
+        },
+        {
+          "code": "1268711001",
+          "term": "Primary hepatoblastoma of liver (disorder)"
+        },
+        {
+          "code": "1296659009",
+          "term": "Acute exacerbation of chronic heart failure"
+        },
+        {
+          "code": "13645005",
+          "term": "Chronic obstructive lung disease (disorder)"
+        },
+        {
+          "code": "153091000119109",
+          "term": "Hepatic coma due to chronic hepatitis B with delta agent"
+        },
+        {
+          "code": "16859701000119109",
+          "term": "Chronic hepatitis B during pregnancy"
+        },
+        {
+          "code": "186638006",
+          "term": "Chronic viral hepatitis B with hepatitis D"
+        },
+        {
+          "code": "186639003",
+          "term": "Chronic viral hepatitis B without delta-agent"
+        },
+        {
+          "code": "187769009",
+          "term": "Primary carcinoma of liver (disorder)"
+        },
+        {
+          "code": "187776004",
+          "term": "Malignant neoplasm of intrahepatic canaliculi (disorder)"
+        },
+        {
+          "code": "195949008",
+          "term": "Chronic asthmatic bronchitis"
+        },
+        {
+          "code": "235869004",
+          "term": "Chronic viral hepatitis B with hepatitis D"
+        },
+        {
+          "code": "253018005",
+          "term": "Fibrolamellar hepatocellular carcinoma (disorder)"
+        },
+        {
+          "code": "255086002",
+          "term": "Carcinoma common bile duct (disorder)"
+        },
+        {
+          "code": "274902006",
+          "term": "Combined hepatocellular carcinoma and cholangiocarcinoma (disorder)"
+        },
+        {
+          "code": "286887005",
+          "term": "Carcinoma liver and/or biliary system (disorder)"
+        },
+        {
+          "code": "313297008",
+          "term": "Moderate chronic obstructive pulmonary disease (disorder)"
+        },
+        {
+          "code": "313299006",
+          "term": "Severe chronic obstructive pulmonary disease (disorder)"
+        },
+        {
+          "code": "372101000",
+          "term": "Carcinoma of extrahepatic bile duct (disorder)"
+        },
+        {
+          "code": "38662009",
+          "term": "Chronic persistent type B viral hepatitis"
+        },
+        {
+          "code": "424340000",
+          "term": "Hepatic coma due to chronic hepatitis B"
+        },
+        {
+          "code": "425748003",
+          "term": "Acute exacerbation of chronic bronchitis (disorder)"
+        },
+        {
+          "code": "433144002",
+          "term": "Chronic kidney disease stage 3 (disorder)"
+        },
+        {
+          "code": "441530006",
+          "term": "Chronic diastolic heart failure"
+        },
+        {
+          "code": "445406001",
+          "term": "Hepatosplenic T-cell lymphoma (disorder)"
+        },
+        {
+          "code": "48447003",
+          "term": "Chronic heart failure"
+        },
+        {
+          "code": "50167007",
+          "term": "Chronic active type B viral hepatitis"
+        },
+        {
+          "code": "52571006",
+          "term": "Chronic tracheobronchitis (disorder)"
+        },
+        {
+          "code": "61977001",
+          "term": "Chronic type B viral hepatitis"
+        },
+        {
+          "code": "63480004",
+          "term": "Chronic bronchitis (disorder)"
+        },
+        {
+          "code": "699657009",
+          "term": "Hepatosplenic gamma-delta cell lymphoma (disorder)"
+        },
+        {
+          "code": "713966008",
+          "term": "Occult chronic type B viral hepatitis"
+        },
+        {
+          "code": "721716004",
+          "term": "Primary cholangiocarcinoma of intrahepatic biliary tract (disorder)"
+        },
+        {
+          "code": "721847002",
+          "term": "Joubert syndrome with congenital hepatic fibrosis (disorder)"
+        },
+        {
+          "code": "766978002",
+          "term": "Squamous cell carcinoma of gallbladder and extrahepatic biliary tract (disorder)"
+        },
+        {
+          "code": "770684008",
+          "term": "Squamous cell carcinoma of liver and intrahepatic biliary tract (disorder)"
+        },
+        {
+          "code": "770685009",
+          "term": "Undifferentiated carcinoma of liver and intrahepatic biliary tract (disorder)"
+        },
+        {
+          "code": "787091002",
+          "term": "Adenocarcinoma of liver and intrahepatic biliary tract (disorder)"
+        },
+        {
+          "code": "838380002",
+          "term": "Chronic hepatitis B co-occurrent with hepatitis C and hepatitis D"
+        },
+        {
+          "code": "847091000000104",
+          "term": "Acute non-infective exacerbation of chronic obstructive pulmonary disease (disorder)"
+        },
+        {
+          "code": "875211000000105",
+          "term": "Chronic viral hepatitis B"
+        },
+        {
+          "code": "88805009",
+          "term": "Chronic congestive heart failure"
+        },
+        {
+          "code": "941201000000103",
+          "term": "Chronic obstructive pulmonary disease resolved (finding)"
+        },
+        {
+          "code": "C0524910",
+          "term": "Hepatitis C, Chronic"
+        },
+        {
+          "code": "C3662136",
+          "term": "Cirrhosis of liver due to chronic hepatitis C"
+        },
+        {
+          "code": "C3839238",
+          "term": "Chronic hepatitis C with stage 3 fibrosis"
+        },
+        {
+          "code": "C3839750",
+          "term": "Chronic hepatitis C with stage 2 fibrosis"
+        },
+        {
+          "code": "C3875173",
+          "term": "Cryoglobulinemia due to chronic hepatitis C"
+        },
+        {
+          "code": "C4041238",
+          "term": "Hepatic coma due to chronic hepatitis C"
+        },
+        {
+          "code": "C4708423",
+          "term": "Chronic hepatitis C caused by hepatitis C virus genotype 6"
+        },
+        {
+          "code": "C4708424",
+          "term": "Chronic hepatitis C caused by hepatitis C virus genotype 5"
+        },
+        {
+          "code": "C4708467",
+          "term": "Chronic hepatitis C caused by Hepatitis C virus genotype 3"
+        },
+        {
+          "code": "C4708468",
+          "term": "Chronic hepatitis C caused by Hepatitis C virus genotype 2"
+        },
+        {
+          "code": "C4708469",
+          "term": "Chronic hepatitis C caused by Hepatitis C virus genotype 4"
+        },
+        {
+          "code": "C4708470",
+          "term": "Chronic hepatitis C caused by Hepatitis C virus genotype 1"
+        },
+        {
+          "code": "C4708478",
+          "term": "Chronic hepatitis C caused by Hepatitis C virus genotype 1b"
+        },
+        {
+          "code": "C4708479",
+          "term": "Chronic hepatitis C caused by Hepatitis C virus genotype 1a"
+        },
+        {
+          "code": "C5397535",
+          "term": "Chronic hepatitis C co-occurrent with human immunodeficiency virus infection"
+        },
+        {
+          "code": "C5568517",
+          "term": "Primary combined hepatocellular carcinoma and cholangiocarcinoma"
+        }
+      ],
+      "fn_codes": []
+    },
+    "all_scored": {
+      "codelist_name": "all_scored",
+      "n_ref_codes": 20,
+      "n_output_codes": 100,
+      "recall": 1.0,
+      "precision": 0.2,
+      "f1": 0.3333,
+      "tp_count": 20,
+      "fp_count": 80,
+      "fn_count": 0,
+      "tp_codes": [
+        {
+          "code": "1197150002",
+          "term": "Recurrent hepatitis C virus induced liver disease following liver transplant"
+        },
+        {
+          "code": "128302006",
+          "term": "Chronic hepatitis C"
+        },
+        {
+          "code": "128971000119101",
+          "term": "Cryoglobulinemia due to chronic hepatitis C"
+        },
+        {
+          "code": "146371000119104",
+          "term": "Hepatic coma due to chronic hepatitis C"
+        },
+        {
+          "code": "16623921000119105",
+          "term": "Viral hepatitis C in mother during pregnancy"
+        },
+        {
+          "code": "186640001",
+          "term": "Chronic viral hepatitis C"
+        },
+        {
+          "code": "347891000119103",
+          "term": "Chronic hepatitis C with stage 3 fibrosis"
+        },
+        {
+          "code": "702969000",
+          "term": "Reactivation of hepatitis C viral hepatitis"
+        },
+        {
+          "code": "703866000",
+          "term": "Chronic hepatitis C with stage 2 fibrosis"
+        },
+        {
+          "code": "708198006",
+          "term": "Chronic active hepatitis C"
+        },
+        {
+          "code": "767809001",
+          "term": "Chronic hepatitis C caused by hepatitis C virus genotype 6"
+        },
+        {
+          "code": "767810006",
+          "term": "Chronic hepatitis C caused by hepatitis C virus genotype 5"
+        },
+        {
+          "code": "768006009",
+          "term": "Chronic hepatitis C caused by Hepatitis C virus genotype 3"
+        },
+        {
+          "code": "768125005",
+          "term": "Chronic hepatitis C caused by Hepatitis C virus genotype 2"
+        },
+        {
+          "code": "768126006",
+          "term": "Chronic hepatitis C caused by Hepatitis C virus genotype 4"
+        },
+        {
+          "code": "768127002",
+          "term": "Chronic hepatitis C caused by Hepatitis C virus genotype 1"
+        },
+        {
+          "code": "768288001",
+          "term": "Chronic hepatitis C caused by Hepatitis C virus genotype 1b"
+        },
+        {
+          "code": "768289009",
+          "term": "Chronic hepatitis C caused by Hepatitis C virus genotype 1a"
+        },
+        {
+          "code": "831000119103",
+          "term": "Cirrhosis of liver due to chronic hepatitis C"
+        },
+        {
+          "code": "838377003",
+          "term": "Chronic hepatitis C co-occurrent with human immunodeficiency virus infection"
+        }
+      ],
+      "fp_codes": [
+        {
+          "code": "109841003",
+          "term": "Liver cell carcinoma (disorder)"
+        },
+        {
+          "code": "109842005",
+          "term": "Intrahepatic bile duct carcinoma (disorder)"
+        },
+        {
+          "code": "1116000",
+          "term": "Chronic aggressive type B viral hepatitis"
+        },
+        {
+          "code": "1144891007",
+          "term": "Primary cholangiocarcinoma of extrahepatic bile duct (disorder)"
+        },
+        {
+          "code": "1162855005",
+          "term": "Carcinoma of gallbladder and extrahepatic biliary tract (disorder)"
+        },
+        {
+          "code": "1186612004",
+          "term": "Metastatic hepatocellular carcinoma (disorder)"
+        },
+        {
+          "code": "1186629001",
+          "term": "Primary fibrolamellar hepatocellular carcinoma (disorder)"
+        },
+        {
+          "code": "1186630006",
+          "term": "Primary liver cell carcinoma (disorder)"
+        },
+        {
+          "code": "1186631005",
+          "term": "Primary combined hepatocellular carcinoma and cholangiocarcinoma (disorder)"
+        },
+        {
+          "code": "1196846002",
+          "term": "Primary cystadenocarcinoma of intrahepatic bile duct (disorder)"
+        },
+        {
+          "code": "1197204009",
+          "term": "Adult hepatocellular carcinoma (disorder)"
+        },
+        {
+          "code": "1208349005",
+          "term": "Pediatric hepatocellular carcinoma (disorder)"
+        },
+        {
+          "code": "1230342001",
+          "term": "Hepatitis B reinfection following transplantation of liver"
+        },
+        {
+          "code": "1240370001",
+          "term": "Metastatic squamous cell carcinoma to liver and intrahepatic biliary tract (disorder)"
+        },
+        {
+          "code": "1259313008",
+          "term": "Primary intrahepatic bile duct carcinoma (disorder)"
+        },
+        {
+          "code": "1259518000",
+          "term": "Primary carcinoma of extrahepatic bile duct (disorder)"
+        },
+        {
+          "code": "1259602004",
+          "term": "Primary carcinoma liver and/or biliary system (disorder)"
+        },
+        {
+          "code": "1260050006",
+          "term": "Cholangiocarcinoma of intrahepatic biliary tract (disorder)"
+        },
+        {
+          "code": "1268390002",
+          "term": "Metastatic undifferentiated carcinoma to liver and intrahepatic biliary tract (disorder)"
+        },
+        {
+          "code": "1268391003",
+          "term": "Primary undifferentiated carcinoma of liver and intrahepatic biliary tract (disorder)"
+        },
+        {
+          "code": "1268541001",
+          "term": "Primary squamous cell carcinoma of liver and intrahepatic biliary tract (disorder)"
+        },
+        {
+          "code": "1268544009",
+          "term": "Primary carcinoma of gallbladder and extrahepatic biliary tract (disorder)"
+        },
+        {
+          "code": "1268711001",
+          "term": "Primary hepatoblastoma of liver (disorder)"
+        },
+        {
+          "code": "1296659009",
+          "term": "Acute exacerbation of chronic heart failure"
+        },
+        {
+          "code": "13645005",
+          "term": "Chronic obstructive lung disease (disorder)"
+        },
+        {
+          "code": "153091000119109",
+          "term": "Hepatic coma due to chronic hepatitis B with delta agent"
+        },
+        {
+          "code": "16859701000119109",
+          "term": "Chronic hepatitis B during pregnancy"
+        },
+        {
+          "code": "186638006",
+          "term": "Chronic viral hepatitis B with hepatitis D"
+        },
+        {
+          "code": "186639003",
+          "term": "Chronic viral hepatitis B without delta-agent"
+        },
+        {
+          "code": "187769009",
+          "term": "Primary carcinoma of liver (disorder)"
+        },
+        {
+          "code": "187776004",
+          "term": "Malignant neoplasm of intrahepatic canaliculi (disorder)"
+        },
+        {
+          "code": "195949008",
+          "term": "Chronic asthmatic bronchitis"
+        },
+        {
+          "code": "235869004",
+          "term": "Chronic viral hepatitis B with hepatitis D"
+        },
+        {
+          "code": "253018005",
+          "term": "Fibrolamellar hepatocellular carcinoma (disorder)"
+        },
+        {
+          "code": "255086002",
+          "term": "Carcinoma common bile duct (disorder)"
+        },
+        {
+          "code": "274902006",
+          "term": "Combined hepatocellular carcinoma and cholangiocarcinoma (disorder)"
+        },
+        {
+          "code": "286887005",
+          "term": "Carcinoma liver and/or biliary system (disorder)"
+        },
+        {
+          "code": "313297008",
+          "term": "Moderate chronic obstructive pulmonary disease (disorder)"
+        },
+        {
+          "code": "313299006",
+          "term": "Severe chronic obstructive pulmonary disease (disorder)"
+        },
+        {
+          "code": "372101000",
+          "term": "Carcinoma of extrahepatic bile duct (disorder)"
+        },
+        {
+          "code": "38662009",
+          "term": "Chronic persistent type B viral hepatitis"
+        },
+        {
+          "code": "424340000",
+          "term": "Hepatic coma due to chronic hepatitis B"
+        },
+        {
+          "code": "425748003",
+          "term": "Acute exacerbation of chronic bronchitis (disorder)"
+        },
+        {
+          "code": "433144002",
+          "term": "Chronic kidney disease stage 3 (disorder)"
+        },
+        {
+          "code": "441530006",
+          "term": "Chronic diastolic heart failure"
+        },
+        {
+          "code": "445406001",
+          "term": "Hepatosplenic T-cell lymphoma (disorder)"
+        },
+        {
+          "code": "48447003",
+          "term": "Chronic heart failure"
+        },
+        {
+          "code": "50167007",
+          "term": "Chronic active type B viral hepatitis"
+        },
+        {
+          "code": "52571006",
+          "term": "Chronic tracheobronchitis (disorder)"
+        },
+        {
+          "code": "61977001",
+          "term": "Chronic type B viral hepatitis"
+        },
+        {
+          "code": "63480004",
+          "term": "Chronic bronchitis (disorder)"
+        },
+        {
+          "code": "699657009",
+          "term": "Hepatosplenic gamma-delta cell lymphoma (disorder)"
+        },
+        {
+          "code": "713966008",
+          "term": "Occult chronic type B viral hepatitis"
+        },
+        {
+          "code": "721716004",
+          "term": "Primary cholangiocarcinoma of intrahepatic biliary tract (disorder)"
+        },
+        {
+          "code": "721847002",
+          "term": "Joubert syndrome with congenital hepatic fibrosis (disorder)"
+        },
+        {
+          "code": "766978002",
+          "term": "Squamous cell carcinoma of gallbladder and extrahepatic biliary tract (disorder)"
+        },
+        {
+          "code": "770684008",
+          "term": "Squamous cell carcinoma of liver and intrahepatic biliary tract (disorder)"
+        },
+        {
+          "code": "770685009",
+          "term": "Undifferentiated carcinoma of liver and intrahepatic biliary tract (disorder)"
+        },
+        {
+          "code": "787091002",
+          "term": "Adenocarcinoma of liver and intrahepatic biliary tract (disorder)"
+        },
+        {
+          "code": "838380002",
+          "term": "Chronic hepatitis B co-occurrent with hepatitis C and hepatitis D"
+        },
+        {
+          "code": "847091000000104",
+          "term": "Acute non-infective exacerbation of chronic obstructive pulmonary disease (disorder)"
+        },
+        {
+          "code": "875211000000105",
+          "term": "Chronic viral hepatitis B"
+        },
+        {
+          "code": "88805009",
+          "term": "Chronic congestive heart failure"
+        },
+        {
+          "code": "941201000000103",
+          "term": "Chronic obstructive pulmonary disease resolved (finding)"
+        },
+        {
+          "code": "C0524910",
+          "term": "Hepatitis C, Chronic"
+        },
+        {
+          "code": "C3662136",
+          "term": "Cirrhosis of liver due to chronic hepatitis C"
+        },
+        {
+          "code": "C3839238",
+          "term": "Chronic hepatitis C with stage 3 fibrosis"
+        },
+        {
+          "code": "C3839750",
+          "term": "Chronic hepatitis C with stage 2 fibrosis"
+        },
+        {
+          "code": "C3875173",
+          "term": "Cryoglobulinemia due to chronic hepatitis C"
+        },
+        {
+          "code": "C4041238",
+          "term": "Hepatic coma due to chronic hepatitis C"
+        },
+        {
+          "code": "C4708423",
+          "term": "Chronic hepatitis C caused by hepatitis C virus genotype 6"
+        },
+        {
+          "code": "C4708424",
+          "term": "Chronic hepatitis C caused by hepatitis C virus genotype 5"
+        },
+        {
+          "code": "C4708467",
+          "term": "Chronic hepatitis C caused by Hepatitis C virus genotype 3"
+        },
+        {
+          "code": "C4708468",
+          "term": "Chronic hepatitis C caused by Hepatitis C virus genotype 2"
+        },
+        {
+          "code": "C4708469",
+          "term": "Chronic hepatitis C caused by Hepatitis C virus genotype 4"
+        },
+        {
+          "code": "C4708470",
+          "term": "Chronic hepatitis C caused by Hepatitis C virus genotype 1"
+        },
+        {
+          "code": "C4708478",
+          "term": "Chronic hepatitis C caused by Hepatitis C virus genotype 1b"
+        },
+        {
+          "code": "C4708479",
+          "term": "Chronic hepatitis C caused by Hepatitis C virus genotype 1a"
+        },
+        {
+          "code": "C5397535",
+          "term": "Chronic hepatitis C co-occurrent with human immunodeficiency virus infection"
+        },
+        {
+          "code": "C5568517",
+          "term": "Primary combined hepatocellular carcinoma and cholangiocarcinoma"
+        }
+      ],
+      "fn_codes": []
+    },
+    "included_only": {
+      "codelist_name": "included_only",
+      "n_ref_codes": 20,
+      "n_output_codes": 49,
+      "recall": 1.0,
+      "precision": 0.4082,
+      "f1": 0.5797,
+      "tp_count": 20,
+      "fp_count": 29,
+      "fn_count": 0,
+      "tp_codes": [
+        {
+          "code": "1197150002",
+          "term": "Recurrent hepatitis C virus induced liver disease following liver transplant"
+        },
+        {
+          "code": "128302006",
+          "term": "Chronic hepatitis C"
+        },
+        {
+          "code": "128971000119101",
+          "term": "Cryoglobulinemia due to chronic hepatitis C"
+        },
+        {
+          "code": "146371000119104",
+          "term": "Hepatic coma due to chronic hepatitis C"
+        },
+        {
+          "code": "16623921000119105",
+          "term": "Viral hepatitis C in mother during pregnancy"
+        },
+        {
+          "code": "186640001",
+          "term": "Chronic viral hepatitis C"
+        },
+        {
+          "code": "347891000119103",
+          "term": "Chronic hepatitis C with stage 3 fibrosis"
+        },
+        {
+          "code": "702969000",
+          "term": "Reactivation of hepatitis C viral hepatitis"
+        },
+        {
+          "code": "703866000",
+          "term": "Chronic hepatitis C with stage 2 fibrosis"
+        },
+        {
+          "code": "708198006",
+          "term": "Chronic active hepatitis C"
+        },
+        {
+          "code": "767809001",
+          "term": "Chronic hepatitis C caused by hepatitis C virus genotype 6"
+        },
+        {
+          "code": "767810006",
+          "term": "Chronic hepatitis C caused by hepatitis C virus genotype 5"
+        },
+        {
+          "code": "768006009",
+          "term": "Chronic hepatitis C caused by Hepatitis C virus genotype 3"
+        },
+        {
+          "code": "768125005",
+          "term": "Chronic hepatitis C caused by Hepatitis C virus genotype 2"
+        },
+        {
+          "code": "768126006",
+          "term": "Chronic hepatitis C caused by Hepatitis C virus genotype 4"
+        },
+        {
+          "code": "768127002",
+          "term": "Chronic hepatitis C caused by Hepatitis C virus genotype 1"
+        },
+        {
+          "code": "768288001",
+          "term": "Chronic hepatitis C caused by Hepatitis C virus genotype 1b"
+        },
+        {
+          "code": "768289009",
+          "term": "Chronic hepatitis C caused by Hepatitis C virus genotype 1a"
+        },
+        {
+          "code": "831000119103",
+          "term": "Cirrhosis of liver due to chronic hepatitis C"
+        },
+        {
+          "code": "838377003",
+          "term": "Chronic hepatitis C co-occurrent with human immunodeficiency virus infection"
+        }
+      ],
+      "fp_codes": [
+        {
+          "code": "109841003",
+          "term": "Liver cell carcinoma (disorder)"
+        },
+        {
+          "code": "109842005",
+          "term": "Intrahepatic bile duct carcinoma (disorder)"
+        },
+        {
+          "code": "1186612004",
+          "term": "Metastatic hepatocellular carcinoma (disorder)"
+        },
+        {
+          "code": "1186629001",
+          "term": "Primary fibrolamellar hepatocellular carcinoma (disorder)"
+        },
+        {
+          "code": "1186630006",
+          "term": "Primary liver cell carcinoma (disorder)"
+        },
+        {
+          "code": "1186631005",
+          "term": "Primary combined hepatocellular carcinoma and cholangiocarcinoma (disorder)"
+        },
+        {
+          "code": "1197204009",
+          "term": "Adult hepatocellular carcinoma (disorder)"
+        },
+        {
+          "code": "1208349005",
+          "term": "Pediatric hepatocellular carcinoma (disorder)"
+        },
+        {
+          "code": "1259313008",
+          "term": "Primary intrahepatic bile duct carcinoma (disorder)"
+        },
+        {
+          "code": "1259602004",
+          "term": "Primary carcinoma liver and/or biliary system (disorder)"
+        },
+        {
+          "code": "1260050006",
+          "term": "Cholangiocarcinoma of intrahepatic biliary tract (disorder)"
+        },
+        {
+          "code": "187769009",
+          "term": "Primary carcinoma of liver (disorder)"
+        },
+        {
+          "code": "187776004",
+          "term": "Malignant neoplasm of intrahepatic canaliculi (disorder)"
+        },
+        {
+          "code": "253018005",
+          "term": "Fibrolamellar hepatocellular carcinoma (disorder)"
+        },
+        {
+          "code": "C0524910",
+          "term": "Hepatitis C, Chronic"
+        },
+        {
+          "code": "C3662136",
+          "term": "Cirrhosis of liver due to chronic hepatitis C"
+        },
+        {
+          "code": "C3839238",
+          "term": "Chronic hepatitis C with stage 3 fibrosis"
+        },
+        {
+          "code": "C3839750",
+          "term": "Chronic hepatitis C with stage 2 fibrosis"
+        },
+        {
+          "code": "C3875173",
+          "term": "Cryoglobulinemia due to chronic hepatitis C"
+        },
+        {
+          "code": "C4041238",
+          "term": "Hepatic coma due to chronic hepatitis C"
+        },
+        {
+          "code": "C4708423",
+          "term": "Chronic hepatitis C caused by hepatitis C virus genotype 6"
+        },
+        {
+          "code": "C4708424",
+          "term": "Chronic hepatitis C caused by hepatitis C virus genotype 5"
+        },
+        {
+          "code": "C4708467",
+          "term": "Chronic hepatitis C caused by Hepatitis C virus genotype 3"
+        },
+        {
+          "code": "C4708468",
+          "term": "Chronic hepatitis C caused by Hepatitis C virus genotype 2"
+        },
+        {
+          "code": "C4708469",
+          "term": "Chronic hepatitis C caused by Hepatitis C virus genotype 4"
+        },
+        {
+          "code": "C4708470",
+          "term": "Chronic hepatitis C caused by Hepatitis C virus genotype 1"
+        },
+        {
+          "code": "C4708478",
+          "term": "Chronic hepatitis C caused by Hepatitis C virus genotype 1b"
+        },
+        {
+          "code": "C4708479",
+          "term": "Chronic hepatitis C caused by Hepatitis C virus genotype 1a"
+        },
+        {
+          "code": "C5397535",
+          "term": "Chronic hepatitis C co-occurrent with human immunodeficiency virus infection"
+        }
+      ],
+      "fn_codes": []
+    },
+    "included_plus_uncertain": {
+      "codelist_name": "included_plus_uncertain",
+      "n_ref_codes": 20,
+      "n_output_codes": 49,
+      "recall": 1.0,
+      "precision": 0.4082,
+      "f1": 0.5797,
+      "tp_count": 20,
+      "fp_count": 29,
+      "fn_count": 0,
+      "tp_codes": [
+        {
+          "code": "1197150002",
+          "term": "Recurrent hepatitis C virus induced liver disease following liver transplant"
+        },
+        {
+          "code": "128302006",
+          "term": "Chronic hepatitis C"
+        },
+        {
+          "code": "128971000119101",
+          "term": "Cryoglobulinemia due to chronic hepatitis C"
+        },
+        {
+          "code": "146371000119104",
+          "term": "Hepatic coma due to chronic hepatitis C"
+        },
+        {
+          "code": "16623921000119105",
+          "term": "Viral hepatitis C in mother during pregnancy"
+        },
+        {
+          "code": "186640001",
+          "term": "Chronic viral hepatitis C"
+        },
+        {
+          "code": "347891000119103",
+          "term": "Chronic hepatitis C with stage 3 fibrosis"
+        },
+        {
+          "code": "702969000",
+          "term": "Reactivation of hepatitis C viral hepatitis"
+        },
+        {
+          "code": "703866000",
+          "term": "Chronic hepatitis C with stage 2 fibrosis"
+        },
+        {
+          "code": "708198006",
+          "term": "Chronic active hepatitis C"
+        },
+        {
+          "code": "767809001",
+          "term": "Chronic hepatitis C caused by hepatitis C virus genotype 6"
+        },
+        {
+          "code": "767810006",
+          "term": "Chronic hepatitis C caused by hepatitis C virus genotype 5"
+        },
+        {
+          "code": "768006009",
+          "term": "Chronic hepatitis C caused by Hepatitis C virus genotype 3"
+        },
+        {
+          "code": "768125005",
+          "term": "Chronic hepatitis C caused by Hepatitis C virus genotype 2"
+        },
+        {
+          "code": "768126006",
+          "term": "Chronic hepatitis C caused by Hepatitis C virus genotype 4"
+        },
+        {
+          "code": "768127002",
+          "term": "Chronic hepatitis C caused by Hepatitis C virus genotype 1"
+        },
+        {
+          "code": "768288001",
+          "term": "Chronic hepatitis C caused by Hepatitis C virus genotype 1b"
+        },
+        {
+          "code": "768289009",
+          "term": "Chronic hepatitis C caused by Hepatitis C virus genotype 1a"
+        },
+        {
+          "code": "831000119103",
+          "term": "Cirrhosis of liver due to chronic hepatitis C"
+        },
+        {
+          "code": "838377003",
+          "term": "Chronic hepatitis C co-occurrent with human immunodeficiency virus infection"
+        }
+      ],
+      "fp_codes": [
+        {
+          "code": "109841003",
+          "term": "Liver cell carcinoma (disorder)"
+        },
+        {
+          "code": "109842005",
+          "term": "Intrahepatic bile duct carcinoma (disorder)"
+        },
+        {
+          "code": "1186612004",
+          "term": "Metastatic hepatocellular carcinoma (disorder)"
+        },
+        {
+          "code": "1186629001",
+          "term": "Primary fibrolamellar hepatocellular carcinoma (disorder)"
+        },
+        {
+          "code": "1186630006",
+          "term": "Primary liver cell carcinoma (disorder)"
+        },
+        {
+          "code": "1186631005",
+          "term": "Primary combined hepatocellular carcinoma and cholangiocarcinoma (disorder)"
+        },
+        {
+          "code": "1197204009",
+          "term": "Adult hepatocellular carcinoma (disorder)"
+        },
+        {
+          "code": "1208349005",
+          "term": "Pediatric hepatocellular carcinoma (disorder)"
+        },
+        {
+          "code": "1259313008",
+          "term": "Primary intrahepatic bile duct carcinoma (disorder)"
+        },
+        {
+          "code": "1259602004",
+          "term": "Primary carcinoma liver and/or biliary system (disorder)"
+        },
+        {
+          "code": "1260050006",
+          "term": "Cholangiocarcinoma of intrahepatic biliary tract (disorder)"
+        },
+        {
+          "code": "187769009",
+          "term": "Primary carcinoma of liver (disorder)"
+        },
+        {
+          "code": "187776004",
+          "term": "Malignant neoplasm of intrahepatic canaliculi (disorder)"
+        },
+        {
+          "code": "253018005",
+          "term": "Fibrolamellar hepatocellular carcinoma (disorder)"
+        },
+        {
+          "code": "C0524910",
+          "term": "Hepatitis C, Chronic"
+        },
+        {
+          "code": "C3662136",
+          "term": "Cirrhosis of liver due to chronic hepatitis C"
+        },
+        {
+          "code": "C3839238",
+          "term": "Chronic hepatitis C with stage 3 fibrosis"
+        },
+        {
+          "code": "C3839750",
+          "term": "Chronic hepatitis C with stage 2 fibrosis"
+        },
+        {
+          "code": "C3875173",
+          "term": "Cryoglobulinemia due to chronic hepatitis C"
+        },
+        {
+          "code": "C4041238",
+          "term": "Hepatic coma due to chronic hepatitis C"
+        },
+        {
+          "code": "C4708423",
+          "term": "Chronic hepatitis C caused by hepatitis C virus genotype 6"
+        },
+        {
+          "code": "C4708424",
+          "term": "Chronic hepatitis C caused by hepatitis C virus genotype 5"
+        },
+        {
+          "code": "C4708467",
+          "term": "Chronic hepatitis C caused by Hepatitis C virus genotype 3"
+        },
+        {
+          "code": "C4708468",
+          "term": "Chronic hepatitis C caused by Hepatitis C virus genotype 2"
+        },
+        {
+          "code": "C4708469",
+          "term": "Chronic hepatitis C caused by Hepatitis C virus genotype 4"
+        },
+        {
+          "code": "C4708470",
+          "term": "Chronic hepatitis C caused by Hepatitis C virus genotype 1"
+        },
+        {
+          "code": "C4708478",
+          "term": "Chronic hepatitis C caused by Hepatitis C virus genotype 1b"
+        },
+        {
+          "code": "C4708479",
+          "term": "Chronic hepatitis C caused by Hepatitis C virus genotype 1a"
+        },
+        {
+          "code": "C5397535",
+          "term": "Chronic hepatitis C co-occurrent with human immunodeficiency virus infection"
+        }
+      ],
+      "fn_codes": []
+    }
+  },
+  "false_exclusions": {
+    "count": 0,
+    "codes": []
+  },
+  "uncertain_in_reference": {
+    "count": 0,
+    "codes": []
+  },
+  "summary": "Recall: 100.0% (20 of 20 reference codes retrieved). Precision: 40.8%. F1: 58.0%. 0 reference codes were incorrectly excluded.",
+  "elapsed_seconds": 43.28,
+  "pipeline_results_count": 100,
+  "scored_codes": [
+    {
+      "code": "128302006",
+      "term": "Chronic hepatitis C",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 1.0,
+      "rationale": "This is the primary code for chronic hepatitis C and must be included.",
+      "sources": [
+        "OMOPHub",
+        "OpenCodelists (nhsd-primary-care-domain-refsets)"
+      ],
+      "classifier_score": null,
+      "llm_score": 1.0,
+      "usage_frequency": null
+    },
+    {
+      "code": "186640001",
+      "term": "Chronic viral hepatitis C",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 1.0,
+      "rationale": "This is an alternative code for chronic viral hepatitis C and should be included.",
+      "sources": [
+        "OpenCodelists (nhsd-primary-care-domain-refsets)"
+      ],
+      "classifier_score": null,
+      "llm_score": 1.0,
+      "usage_frequency": null
+    },
+    {
+      "code": "C0524910",
+      "term": "Hepatitis C, Chronic",
+      "vocabulary": "UMLS",
+      "decision": "include",
+      "confidence": 0.99,
+      "rationale": "This is the primary diagnosis code for chronic hepatitis C and directly matches the query.",
+      "sources": [
+        "UMLS (synonym)"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.99,
+      "usage_frequency": null
+    },
+    {
+      "code": "347891000119103",
+      "term": "Chronic hepatitis C with stage 3 fibrosis",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.98,
+      "rationale": "Chronic hepatitis C with stage 3 fibrosis is a direct manifestation and severity variant of chronic hepatitis C.",
+      "sources": [
+        "OMOPHub",
+        "OpenCodelists (nhsd-primary-care-domain-refsets)"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.98,
+      "usage_frequency": null
+    },
+    {
+      "code": "703866000",
+      "term": "Chronic hepatitis C with stage 2 fibrosis",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.98,
+      "rationale": "Chronic hepatitis C with stage 2 fibrosis is a direct manifestation and severity variant of chronic hepatitis C.",
+      "sources": [
+        "OMOPHub",
+        "OpenCodelists (nhsd-primary-care-domain-refsets)"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.98,
+      "usage_frequency": null
+    },
+    {
+      "code": "708198006",
+      "term": "Chronic active hepatitis C",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.98,
+      "rationale": "Chronic active hepatitis C is a clinical subtype and manifestation of chronic hepatitis C.",
+      "sources": [
+        "OpenCodelists (nhsd-primary-care-domain-refsets)"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.98,
+      "usage_frequency": null
+    },
+    {
+      "code": "767809001",
+      "term": "Chronic hepatitis C caused by hepatitis C virus genotype 6",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.98,
+      "rationale": "Chronic hepatitis C caused by hepatitis C virus genotype 6 is a clinical subtype of chronic hepatitis C.",
+      "sources": [
+        "OMOPHub",
+        "OpenCodelists (nhsd-primary-care-domain-refsets)"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.98,
+      "usage_frequency": null
+    },
+    {
+      "code": "767810006",
+      "term": "Chronic hepatitis C caused by hepatitis C virus genotype 5",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.98,
+      "rationale": "Chronic hepatitis C caused by hepatitis C virus genotype 5 is a clinical subtype of chronic hepatitis C.",
+      "sources": [
+        "OMOPHub",
+        "OpenCodelists (nhsd-primary-care-domain-refsets)"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.98,
+      "usage_frequency": null
+    },
+    {
+      "code": "768006009",
+      "term": "Chronic hepatitis C caused by Hepatitis C virus genotype 3",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.98,
+      "rationale": "Chronic hepatitis C caused by hepatitis C virus genotype 3 is a clinical subtype of chronic hepatitis C.",
+      "sources": [
+        "OMOPHub",
+        "OpenCodelists (nhsd-primary-care-domain-refsets)"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.98,
+      "usage_frequency": null
+    },
+    {
+      "code": "768125005",
+      "term": "Chronic hepatitis C caused by Hepatitis C virus genotype 2",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.98,
+      "rationale": "Chronic hepatitis C caused by hepatitis C virus genotype 2 is a clinical subtype of chronic hepatitis C.",
+      "sources": [
+        "OMOPHub",
+        "OpenCodelists (nhsd-primary-care-domain-refsets)"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.98,
+      "usage_frequency": null
+    },
+    {
+      "code": "768126006",
+      "term": "Chronic hepatitis C caused by Hepatitis C virus genotype 4",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.98,
+      "rationale": "Chronic hepatitis C caused by hepatitis C virus genotype 4 is a clinical subtype of chronic hepatitis C.",
+      "sources": [
+        "OMOPHub",
+        "OpenCodelists (nhsd-primary-care-domain-refsets)"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.98,
+      "usage_frequency": null
+    },
+    {
+      "code": "768127002",
+      "term": "Chronic hepatitis C caused by Hepatitis C virus genotype 1",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.98,
+      "rationale": "Chronic hepatitis C caused by hepatitis C virus genotype 1 is a clinical subtype of chronic hepatitis C.",
+      "sources": [
+        "OMOPHub",
+        "OpenCodelists (nhsd-primary-care-domain-refsets)"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.98,
+      "usage_frequency": null
+    },
+    {
+      "code": "768288001",
+      "term": "Chronic hepatitis C caused by Hepatitis C virus genotype 1b",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.98,
+      "rationale": "Chronic hepatitis C caused by hepatitis C virus genotype 1b is a clinical subtype of chronic hepatitis C.",
+      "sources": [
+        "OMOPHub",
+        "OpenCodelists (nhsd-primary-care-domain-refsets)"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.98,
+      "usage_frequency": null
+    },
+    {
+      "code": "768289009",
+      "term": "Chronic hepatitis C caused by Hepatitis C virus genotype 1a",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.98,
+      "rationale": "Chronic hepatitis C caused by hepatitis C virus genotype 1a is a clinical subtype of chronic hepatitis C.",
+      "sources": [
+        "OMOPHub",
+        "OpenCodelists (nhsd-primary-care-domain-refsets)"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.98,
+      "usage_frequency": null
+    },
+    {
+      "code": "831000119103",
+      "term": "Cirrhosis of liver due to chronic hepatitis C",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.98,
+      "rationale": "Cirrhosis of liver due to chronic hepatitis C is a direct complication and manifestation of chronic hepatitis C.",
+      "sources": [
+        "OMOPHub",
+        "OpenCodelists (nhsd-primary-care-domain-refsets)"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.98,
+      "usage_frequency": null
+    },
+    {
+      "code": "702969000",
+      "term": "Reactivation of hepatitis C viral hepatitis",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Reactivation of hepatitis C viral hepatitis is a clinical manifestation of chronic hepatitis C disease.",
+      "sources": [
+        "OpenCodelists (nhsd-primary-care-domain-refsets)"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "838377003",
+      "term": "Chronic hepatitis C co-occurrent with human immunodeficiency virus infection",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Chronic hepatitis C co-occurrent with HIV infection is a clinical manifestation of chronic hepatitis C with comorbidity.",
+      "sources": [
+        "OMOPHub",
+        "OpenCodelists (nhsd-primary-care-domain-refsets)"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "C3662136",
+      "term": "Cirrhosis of liver due to chronic hepatitis C",
+      "vocabulary": "UMLS",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Cirrhosis due to chronic hepatitis C is a direct complication of the condition and confirms the patient has chronic hepatitis C.",
+      "sources": [
+        "UMLS (synonym)"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "C3839238",
+      "term": "Chronic hepatitis C with stage 3 fibrosis",
+      "vocabulary": "UMLS",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Chronic hepatitis C with stage 3 fibrosis is a severity variant of the condition and confirms chronic hepatitis C diagnosis.",
+      "sources": [
+        "UMLS (synonym)"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "C3839750",
+      "term": "Chronic hepatitis C with stage 2 fibrosis",
+      "vocabulary": "UMLS",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Chronic hepatitis C with stage 2 fibrosis is a severity variant of the condition and confirms chronic hepatitis C diagnosis.",
+      "sources": [
+        "UMLS (synonym)"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "C4708423",
+      "term": "Chronic hepatitis C caused by hepatitis C virus genotype 6",
+      "vocabulary": "UMLS",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Chronic hepatitis C with genotype 6 is a clinical subtype of chronic hepatitis C and confirms the diagnosis.",
+      "sources": [
+        "UMLS (synonym)"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "C4708424",
+      "term": "Chronic hepatitis C caused by hepatitis C virus genotype 5",
+      "vocabulary": "UMLS",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Chronic hepatitis C with genotype 5 is a clinical subtype of chronic hepatitis C and confirms the diagnosis.",
+      "sources": [
+        "UMLS (synonym)"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "C4708467",
+      "term": "Chronic hepatitis C caused by Hepatitis C virus genotype 3",
+      "vocabulary": "UMLS",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Chronic hepatitis C with genotype 3 is a clinical subtype of chronic hepatitis C and confirms the diagnosis.",
+      "sources": [
+        "UMLS (synonym)"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "C4708468",
+      "term": "Chronic hepatitis C caused by Hepatitis C virus genotype 2",
+      "vocabulary": "UMLS",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Chronic hepatitis C with genotype 2 is a clinical subtype of chronic hepatitis C and confirms the diagnosis.",
+      "sources": [
+        "UMLS (synonym)"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "C4708469",
+      "term": "Chronic hepatitis C caused by Hepatitis C virus genotype 4",
+      "vocabulary": "UMLS",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Chronic hepatitis C with genotype 4 is a clinical subtype of chronic hepatitis C and confirms the diagnosis.",
+      "sources": [
+        "UMLS (synonym)"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "C4708470",
+      "term": "Chronic hepatitis C caused by Hepatitis C virus genotype 1",
+      "vocabulary": "UMLS",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Chronic hepatitis C with genotype 1 is a clinical subtype of chronic hepatitis C and confirms the diagnosis.",
+      "sources": [
+        "UMLS (synonym)"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "C4708478",
+      "term": "Chronic hepatitis C caused by Hepatitis C virus genotype 1b",
+      "vocabulary": "UMLS",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Chronic hepatitis C with genotype 1b is a clinical subtype of chronic hepatitis C and confirms the diagnosis.",
+      "sources": [
+        "UMLS (synonym)"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "C4708479",
+      "term": "Chronic hepatitis C caused by Hepatitis C virus genotype 1a",
+      "vocabulary": "UMLS",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Chronic hepatitis C with genotype 1a is a clinical subtype of chronic hepatitis C and confirms the diagnosis.",
+      "sources": [
+        "UMLS (synonym)"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "1197150002",
+      "term": "Recurrent hepatitis C virus induced liver disease following liver transplant",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.9,
+      "rationale": "Recurrent hepatitis C virus induced liver disease following liver transplant is a direct manifestation of chronic hepatitis C.",
+      "sources": [
+        "OpenCodelists (nhsd-primary-care-domain-refsets)"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.9,
+      "usage_frequency": null
+    },
+    {
+      "code": "128971000119101",
+      "term": "Cryoglobulinemia due to chronic hepatitis C",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.9,
+      "rationale": "Cryoglobulinemia due to chronic hepatitis C is a direct manifestation of the condition.",
+      "sources": [
+        "OMOPHub",
+        "OpenCodelists (nhsd-primary-care-domain-refsets)"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.9,
+      "usage_frequency": null
+    },
+    {
+      "code": "146371000119104",
+      "term": "Hepatic coma due to chronic hepatitis C",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.9,
+      "rationale": "Hepatic coma due to chronic hepatitis C is a direct complication that confirms the patient has the condition.",
+      "sources": [
+        "OMOPHub",
+        "OpenCodelists (nhsd-primary-care-domain-refsets)"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.9,
+      "usage_frequency": null
+    },
+    {
+      "code": "C3875173",
+      "term": "Cryoglobulinemia due to chronic hepatitis C",
+      "vocabulary": "UMLS",
+      "decision": "include",
+      "confidence": 0.9,
+      "rationale": "Cryoglobulinemia is a direct manifestation/complication of chronic hepatitis C and confirms the patient has the condition.",
+      "sources": [
+        "UMLS (synonym)"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.9,
+      "usage_frequency": null
+    },
+    {
+      "code": "C4041238",
+      "term": "Hepatic coma due to chronic hepatitis C",
+      "vocabulary": "UMLS",
+      "decision": "include",
+      "confidence": 0.9,
+      "rationale": "Hepatic coma due to chronic hepatitis C is a serious complication directly caused by the condition.",
+      "sources": [
+        "UMLS (synonym)"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.9,
+      "usage_frequency": null
+    },
+    {
+      "code": "C5397535",
+      "term": "Chronic hepatitis C co-occurrent with human immunodeficiency virus infection",
+      "vocabulary": "UMLS",
+      "decision": "include",
+      "confidence": 0.9,
+      "rationale": "Chronic hepatitis C co-occurring with HIV is a clinical variant that confirms chronic hepatitis C diagnosis in the context of comorbidity.",
+      "sources": [
+        "UMLS (synonym)"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.9,
+      "usage_frequency": null
+    },
+    {
+      "code": "109841003",
+      "term": "Liver cell carcinoma (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.85,
+      "rationale": "Liver cell carcinoma is a well-established complication of chronic hepatitis C that confirms the patient has the condition.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.85,
+      "usage_frequency": null
+    },
+    {
+      "code": "1186612004",
+      "term": "Metastatic hepatocellular carcinoma (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.85,
+      "rationale": "Metastatic hepatocellular carcinoma is a complication of chronic hepatitis C that confirms the patient has the condition.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.85,
+      "usage_frequency": null
+    },
+    {
+      "code": "1186630006",
+      "term": "Primary liver cell carcinoma (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.85,
+      "rationale": "Primary liver cell carcinoma is a major complication of chronic hepatitis C that confirms the patient has the condition.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.85,
+      "usage_frequency": null
+    },
+    {
+      "code": "1197204009",
+      "term": "Adult hepatocellular carcinoma (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.85,
+      "rationale": "Adult hepatocellular carcinoma is a complication of chronic hepatitis C that confirms the patient has the condition.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.85,
+      "usage_frequency": null
+    },
+    {
+      "code": "16623921000119105",
+      "term": "Viral hepatitis C in mother during pregnancy",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.85,
+      "rationale": "Viral hepatitis C in mother during pregnancy is a manifestation of chronic hepatitis C in a pregnant patient.",
+      "sources": [
+        "OpenCodelists (nhsd-primary-care-domain-refsets)"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.85,
+      "usage_frequency": null
+    },
+    {
+      "code": "187769009",
+      "term": "Primary carcinoma of liver (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.85,
+      "rationale": "Primary carcinoma of liver is a major complication of chronic hepatitis C that confirms the patient has the condition.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.85,
+      "usage_frequency": null
+    },
+    {
+      "code": "109842005",
+      "term": "Intrahepatic bile duct carcinoma (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.8,
+      "rationale": "Intrahepatic bile duct carcinoma is a hepatic malignancy associated with chronic hepatitis C.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.8,
+      "usage_frequency": null
+    },
+    {
+      "code": "1186629001",
+      "term": "Primary fibrolamellar hepatocellular carcinoma (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.8,
+      "rationale": "Primary fibrolamellar hepatocellular carcinoma is a hepatic malignancy that can develop in chronic hepatitis C.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.8,
+      "usage_frequency": null
+    },
+    {
+      "code": "1186631005",
+      "term": "Primary combined hepatocellular carcinoma and cholangiocarcinoma (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.8,
+      "rationale": "Primary combined hepatocellular carcinoma and cholangiocarcinoma is a hepatic malignancy associated with chronic hepatitis C.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.8,
+      "usage_frequency": null
+    },
+    {
+      "code": "1259313008",
+      "term": "Primary intrahepatic bile duct carcinoma (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.8,
+      "rationale": "Primary intrahepatic bile duct carcinoma is a hepatic malignancy associated with chronic hepatitis C.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.8,
+      "usage_frequency": null
+    },
+    {
+      "code": "1259602004",
+      "term": "Primary carcinoma liver and/or biliary system (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.8,
+      "rationale": "Primary carcinoma liver and/or biliary system is a broad category that includes hepatic malignancies associated with chronic hepatitis C.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.8,
+      "usage_frequency": null
+    },
+    {
+      "code": "1260050006",
+      "term": "Cholangiocarcinoma of intrahepatic biliary tract (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.8,
+      "rationale": "Cholangiocarcinoma of intrahepatic biliary tract is a hepatic malignancy associated with chronic hepatitis C.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.8,
+      "usage_frequency": null
+    },
+    {
+      "code": "187776004",
+      "term": "Malignant neoplasm of intrahepatic canaliculi (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.8,
+      "rationale": "Malignant neoplasm of intrahepatic canaliculi is a hepatic malignancy associated with chronic hepatitis C.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.8,
+      "usage_frequency": null
+    },
+    {
+      "code": "253018005",
+      "term": "Fibrolamellar hepatocellular carcinoma (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.8,
+      "rationale": "Fibrolamellar hepatocellular carcinoma is a hepatic malignancy that can develop in chronic hepatitis C.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.8,
+      "usage_frequency": null
+    },
+    {
+      "code": "1208349005",
+      "term": "Pediatric hepatocellular carcinoma (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.75,
+      "rationale": "Pediatric hepatocellular carcinoma can develop in children with chronic hepatitis C.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.75,
+      "usage_frequency": null
+    },
+    {
+      "code": "847091000000104",
+      "term": "Acute non-infective exacerbation of chronic obstructive pulmonary disease (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.99,
+      "rationale": "Acute exacerbation of COPD is unrelated to chronic hepatitis C and does not belong in this code list.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.99,
+      "usage_frequency": null
+    },
+    {
+      "code": "875211000000105",
+      "term": "Chronic viral hepatitis B",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.99,
+      "rationale": "Chronic hepatitis B is a different viral hepatitis condition and should not be included in a chronic hepatitis C code list.",
+      "sources": [
+        "OpenCodelists (nhsd-primary-care-domain-refsets)"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.99,
+      "usage_frequency": null
+    },
+    {
+      "code": "88805009",
+      "term": "Chronic congestive heart failure",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.99,
+      "rationale": "Chronic congestive heart failure is an unrelated comorbidity and does not confirm chronic hepatitis C.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.99,
+      "usage_frequency": null
+    },
+    {
+      "code": "941201000000103",
+      "term": "Chronic obstructive pulmonary disease resolved (finding)",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.99,
+      "rationale": "This code indicates resolved COPD, which is unrelated to chronic hepatitis C.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.99,
+      "usage_frequency": null
+    },
+    {
+      "code": "313297008",
+      "term": "Moderate chronic obstructive pulmonary disease (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.98,
+      "rationale": "Moderate COPD is an unrelated respiratory condition with no direct connection to chronic hepatitis C.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.98,
+      "usage_frequency": null
+    },
+    {
+      "code": "313299006",
+      "term": "Severe chronic obstructive pulmonary disease (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.98,
+      "rationale": "Severe COPD is an unrelated respiratory condition with no direct connection to chronic hepatitis C.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.98,
+      "usage_frequency": null
+    },
+    {
+      "code": "38662009",
+      "term": "Chronic persistent type B viral hepatitis",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.98,
+      "rationale": "Chronic persistent type B viral hepatitis is a different viral hepatitis condition (hepatitis B, not C).",
+      "sources": [
+        "OpenCodelists (nhsd-primary-care-domain-refsets)"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.98,
+      "usage_frequency": null
+    },
+    {
+      "code": "424340000",
+      "term": "Hepatic coma due to chronic hepatitis B",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.98,
+      "rationale": "Hepatic coma due to chronic hepatitis B is specific to hepatitis B, not hepatitis C.",
+      "sources": [
+        "OpenCodelists (nhsd-primary-care-domain-refsets)"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.98,
+      "usage_frequency": null
+    },
+    {
+      "code": "425748003",
+      "term": "Acute exacerbation of chronic bronchitis (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.98,
+      "rationale": "Acute exacerbation of chronic bronchitis is an unrelated respiratory condition.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.98,
+      "usage_frequency": null
+    },
+    {
+      "code": "433144002",
+      "term": "Chronic kidney disease stage 3 (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.98,
+      "rationale": "Chronic kidney disease stage 3 is an unrelated renal condition that may co-occur but does not confirm hepatitis C.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.98,
+      "usage_frequency": null
+    },
+    {
+      "code": "441530006",
+      "term": "Chronic diastolic heart failure",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.98,
+      "rationale": "Chronic diastolic heart failure is an unrelated cardiac condition.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.98,
+      "usage_frequency": null
+    },
+    {
+      "code": "48447003",
+      "term": "Chronic heart failure",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.98,
+      "rationale": "Chronic heart failure is an unrelated cardiac condition.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.98,
+      "usage_frequency": null
+    },
+    {
+      "code": "50167007",
+      "term": "Chronic active type B viral hepatitis",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.98,
+      "rationale": "Chronic active type B viral hepatitis is specific to hepatitis B, not hepatitis C.",
+      "sources": [
+        "OpenCodelists (nhsd-primary-care-domain-refsets)"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.98,
+      "usage_frequency": null
+    },
+    {
+      "code": "52571006",
+      "term": "Chronic tracheobronchitis (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.98,
+      "rationale": "Chronic tracheobronchitis is an unrelated respiratory condition.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.98,
+      "usage_frequency": null
+    },
+    {
+      "code": "61977001",
+      "term": "Chronic type B viral hepatitis",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.98,
+      "rationale": "Chronic type B viral hepatitis is specific to hepatitis B, not hepatitis C.",
+      "sources": [
+        "OpenCodelists (nhsd-primary-care-domain-refsets)"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.98,
+      "usage_frequency": null
+    },
+    {
+      "code": "63480004",
+      "term": "Chronic bronchitis (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.98,
+      "rationale": "Chronic bronchitis is an unrelated respiratory condition.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.98,
+      "usage_frequency": null
+    },
+    {
+      "code": "713966008",
+      "term": "Occult chronic type B viral hepatitis",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.98,
+      "rationale": "Occult chronic type B viral hepatitis is specific to hepatitis B, not hepatitis C.",
+      "sources": [
+        "OpenCodelists (nhsd-primary-care-domain-refsets)"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.98,
+      "usage_frequency": null
+    },
+    {
+      "code": "721847002",
+      "term": "Joubert syndrome with congenital hepatic fibrosis (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.98,
+      "rationale": "Joubert syndrome with congenital hepatic fibrosis is a congenital genetic disorder unrelated to chronic hepatitis C.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.98,
+      "usage_frequency": null
+    },
+    {
+      "code": "838380002",
+      "term": "Chronic hepatitis B co-occurrent with hepatitis C and hepatitis D",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.98,
+      "rationale": "Chronic hepatitis B co-occurrent with hepatitis C and D is primarily a hepatitis B condition, not chronic hepatitis C as the primary condition.",
+      "sources": [
+        "OpenCodelists (nhsd-primary-care-domain-refsets)"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.98,
+      "usage_frequency": null
+    },
+    {
+      "code": "1116000",
+      "term": "Chronic aggressive type B viral hepatitis",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.95,
+      "rationale": "This code is for chronic hepatitis B, not hepatitis C, and is therefore not relevant to the query.",
+      "sources": [
+        "OpenCodelists (nhsd-primary-care-domain-refsets)"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "1230342001",
+      "term": "Hepatitis B reinfection following transplantation of liver",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.95,
+      "rationale": "This code is for hepatitis B reinfection following transplantation, not hepatitis C.",
+      "sources": [
+        "OpenCodelists (nhsd-primary-care-domain-refsets)"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "1296659009",
+      "term": "Acute exacerbation of chronic heart failure",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.95,
+      "rationale": "Acute exacerbation of chronic heart failure is an unrelated comorbidity not caused by chronic hepatitis C.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "13645005",
+      "term": "Chronic obstructive lung disease (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.95,
+      "rationale": "Chronic obstructive lung disease is an unrelated comorbidity not caused by chronic hepatitis C.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "153091000119109",
+      "term": "Hepatic coma due to chronic hepatitis B with delta agent",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.95,
+      "rationale": "This code is for hepatitis B with delta agent, not hepatitis C.",
+      "sources": [
+        "OpenCodelists (nhsd-primary-care-domain-refsets)"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "16859701000119109",
+      "term": "Chronic hepatitis B during pregnancy",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.95,
+      "rationale": "This code is for chronic hepatitis B during pregnancy, not hepatitis C.",
+      "sources": [
+        "OpenCodelists (nhsd-primary-care-domain-refsets)"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "186638006",
+      "term": "Chronic viral hepatitis B with hepatitis D",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.95,
+      "rationale": "This code is for chronic viral hepatitis B with hepatitis D, not hepatitis C.",
+      "sources": [
+        "OpenCodelists (nhsd-primary-care-domain-refsets)"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "186639003",
+      "term": "Chronic viral hepatitis B without delta-agent",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.95,
+      "rationale": "This code is for chronic viral hepatitis B without delta-agent, not hepatitis C.",
+      "sources": [
+        "OpenCodelists (nhsd-primary-care-domain-refsets)"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "195949008",
+      "term": "Chronic asthmatic bronchitis",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.95,
+      "rationale": "Chronic asthmatic bronchitis is an unrelated respiratory condition not caused by chronic hepatitis C.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "235869004",
+      "term": "Chronic viral hepatitis B with hepatitis D",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.95,
+      "rationale": "This code is for chronic viral hepatitis B with hepatitis D, not hepatitis C.",
+      "sources": [
+        "OpenCodelists (nhsd-primary-care-domain-refsets)"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "255086002",
+      "term": "Carcinoma common bile duct (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.95,
+      "rationale": "Carcinoma of common bile duct is a complication of chronic hepatitis C but is a separate malignancy, not a manifestation that confirms the primary condition.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "274902006",
+      "term": "Combined hepatocellular carcinoma and cholangiocarcinoma (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.95,
+      "rationale": "Combined hepatocellular and cholangiocarcinoma is a malignancy that may result from chronic hepatitis C but is a distinct disease entity, not a direct manifestation.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "372101000",
+      "term": "Carcinoma of extrahepatic bile duct (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.95,
+      "rationale": "Carcinoma of extrahepatic bile duct is a malignancy that may complicate chronic hepatitis C but is a distinct disease entity.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "445406001",
+      "term": "Hepatosplenic T-cell lymphoma (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.95,
+      "rationale": "Hepatosplenic T-cell lymphoma may be associated with chronic hepatitis C but is a distinct malignancy, not a direct manifestation.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "699657009",
+      "term": "Hepatosplenic gamma-delta cell lymphoma (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.95,
+      "rationale": "Hepatosplenic gamma-delta cell lymphoma may be associated with chronic hepatitis C but is a distinct malignancy, not a direct manifestation.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "721716004",
+      "term": "Primary cholangiocarcinoma of intrahepatic biliary tract (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.95,
+      "rationale": "Primary cholangiocarcinoma of intrahepatic biliary tract is a malignancy that may complicate chronic hepatitis C but is a distinct disease entity.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "766978002",
+      "term": "Squamous cell carcinoma of gallbladder and extrahepatic biliary tract (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.95,
+      "rationale": "Squamous cell carcinoma of gallbladder and extrahepatic biliary tract is a malignancy that may complicate chronic hepatitis C but is a distinct disease entity.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "770684008",
+      "term": "Squamous cell carcinoma of liver and intrahepatic biliary tract (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.95,
+      "rationale": "Squamous cell carcinoma of liver and intrahepatic biliary tract is a malignancy that may complicate chronic hepatitis C but is a distinct disease entity.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "770685009",
+      "term": "Undifferentiated carcinoma of liver and intrahepatic biliary tract (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.95,
+      "rationale": "Undifferentiated carcinoma of liver and intrahepatic biliary tract is a malignancy that may complicate chronic hepatitis C but is a distinct disease entity.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "787091002",
+      "term": "Adenocarcinoma of liver and intrahepatic biliary tract (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.95,
+      "rationale": "Adenocarcinoma of liver and intrahepatic biliary tract is a malignancy that may complicate chronic hepatitis C but is a distinct disease entity.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "1144891007",
+      "term": "Primary cholangiocarcinoma of extrahepatic bile duct (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.9,
+      "rationale": "Primary cholangiocarcinoma of extrahepatic bile duct is not a direct complication of chronic hepatitis C.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.9,
+      "usage_frequency": null
+    },
+    {
+      "code": "1162855005",
+      "term": "Carcinoma of gallbladder and extrahepatic biliary tract (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.9,
+      "rationale": "Carcinoma of gallbladder and extrahepatic biliary tract is not a direct complication of chronic hepatitis C.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.9,
+      "usage_frequency": null
+    },
+    {
+      "code": "1240370001",
+      "term": "Metastatic squamous cell carcinoma to liver and intrahepatic biliary tract (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.9,
+      "rationale": "Metastatic squamous cell carcinoma to liver is not a direct complication of chronic hepatitis C.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.9,
+      "usage_frequency": null
+    },
+    {
+      "code": "1259518000",
+      "term": "Primary carcinoma of extrahepatic bile duct (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.9,
+      "rationale": "Primary carcinoma of extrahepatic bile duct is not a direct complication of chronic hepatitis C.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.9,
+      "usage_frequency": null
+    },
+    {
+      "code": "1268390002",
+      "term": "Metastatic undifferentiated carcinoma to liver and intrahepatic biliary tract (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.9,
+      "rationale": "Metastatic undifferentiated carcinoma to liver is not a direct complication of chronic hepatitis C.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.9,
+      "usage_frequency": null
+    },
+    {
+      "code": "1268544009",
+      "term": "Primary carcinoma of gallbladder and extrahepatic biliary tract (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.9,
+      "rationale": "Primary carcinoma of gallbladder and extrahepatic biliary tract is not a direct complication of chronic hepatitis C.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.9,
+      "usage_frequency": null
+    },
+    {
+      "code": "1268711001",
+      "term": "Primary hepatoblastoma of liver (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.9,
+      "rationale": "Primary hepatoblastoma is a pediatric tumor not specifically associated with chronic hepatitis C.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.9,
+      "usage_frequency": null
+    },
+    {
+      "code": "286887005",
+      "term": "Carcinoma liver and/or biliary system (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.9,
+      "rationale": "Carcinoma of liver and/or biliary system is a broad malignancy category that may complicate chronic hepatitis C but represents a separate disease process.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.9,
+      "usage_frequency": null
+    },
+    {
+      "code": "1196846002",
+      "term": "Primary cystadenocarcinoma of intrahepatic bile duct (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.85,
+      "rationale": "Primary cystadenocarcinoma of intrahepatic bile duct is a rare hepatic malignancy not specifically associated with chronic hepatitis C.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.85,
+      "usage_frequency": null
+    },
+    {
+      "code": "1268391003",
+      "term": "Primary undifferentiated carcinoma of liver and intrahepatic biliary tract (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.85,
+      "rationale": "Primary undifferentiated carcinoma of liver and intrahepatic biliary tract is not specifically associated with chronic hepatitis C.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.85,
+      "usage_frequency": null
+    },
+    {
+      "code": "1268541001",
+      "term": "Primary squamous cell carcinoma of liver and intrahepatic biliary tract (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.85,
+      "rationale": "Primary squamous cell carcinoma of liver and intrahepatic biliary tract is not specifically associated with chronic hepatitis C.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.85,
+      "usage_frequency": null
+    },
+    {
+      "code": "C5568517",
+      "term": "Primary combined hepatocellular carcinoma and cholangiocarcinoma",
+      "vocabulary": "UMLS",
+      "decision": "exclude",
+      "confidence": 0.85,
+      "rationale": "Primary combined hepatocellular carcinoma and cholangiocarcinoma is a malignancy that may be a complication of chronic hepatitis C but the code does not specify hepatitis C etiology, making it ambiguous.",
+      "sources": [
+        "UMLS (synonym)"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.85,
+      "usage_frequency": null
+    }
+  ],
+  "pipeline": "rag"
+}

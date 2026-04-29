@@ -1,0 +1,22 @@
+[
+  {
+    "Entry_no": 1,
+    "Ref_link": "https://www.opencodelists.org/codelist/nhsd-primary-care-domain-refsets/hf_cod/20250912/",
+    "Ref_reviewer": "OpenCodelists",
+    "Ref_review_FLAG": "published",
+    "Source_creation_date": "",
+    "Research_question": "Heart failure codes",
+    "Codelist_vocabulary": "SNOMED CT",
+    "Codelist": "10335000;10633002;111283005;1204200007;1204203009;1204204003;1204206001;1204462004;1204468000;1208843003;1208846006;1208848007;1208850004;128404006;1296659009;153941000119100;16838951000119100;195111005;195112003;195114002;233924009;314206003;367363000;42343007;426611007;43736008;441481004;441530006;446221000;48447003;5375005;56675007;66989003;703272007;788950000;82523003;84114007;85232009;871617000;88805009;898208007;92506005",
+    "Codelist_terms": "Chronic right-sided heart failure;Acute congestive heart failure;Chronic left-sided heart failure;Left ventricular failure with normal ejection fraction due to valvular heart disease;Left ventricular failure with normal ejection fraction due to coronary arteriosclerosis;Left ventricular failure with normal ejection fraction due to myocarditis;Left ventricular failure with normal ejection fraction due to cardiomyopathy;Left ventricular failure with sepsis;Right ventricular failure with sepsis;Right ventricular failure due to heart valve disorder;Right ventricular failure due to disorder of lung;Right ventricular failure due to disorder of pulmonary circulation;Right ventricular failure due to right ventricular infarction;Right heart failure;Acute exacerbation of chronic heart failure;Chronic combined systolic and diastolic heart failure;Acute on chronic right-sided congestive heart failure;Decompensated cardiac failure;Compensated cardiac failure;Acute left ventricular failure;Heart failure as a complication of care;Refractory heart failure;Right ventricular failure;Congestive heart failure;Congestive heart failure due to valvular disease;Rheumatic left ventricular failure;Chronic systolic heart failure;Chronic diastolic heart failure;Heart failure with normal ejection fraction;Chronic heart failure;Chronic left-sided congestive heart failure;Acute heart failure;Chronic right-sided congestive heart failure;Heart failure with reduced ejection fraction;Heart failure with mid range ejection fraction;Congestive rheumatic heart failure;Heart failure;Left heart failure;Low output heart failure due to and following Fontan operation;Chronic congestive heart failure;Heart failure due to thyrotoxicosis;Biventricular congestive heart failure",
+    "Terms_count": 42,
+    "Codes_count": 42,
+    "Diff_FLAG": "N",
+    "Benchmark_meta": {
+      "short_name": "heart_failure",
+      "condition_area": "cardiometabolic",
+      "organisation": "nhsd-primary-care-domain-refsets",
+      "opencodelists_version": "nhsd-primary-care-domain-refsets/hf_cod/20250912"
+    }
+  }
+]

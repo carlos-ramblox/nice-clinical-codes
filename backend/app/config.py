@@ -44,4 +44,5 @@ OMOPHUB_PAGE_SIZE = int(os.getenv("OMOPHUB_PAGE_SIZE", "20"))
 OMOPHUB_VOCABULARIES = {
     "SNOMED": "SNOMED CT",
     "ICD10": "ICD-10 (WHO)",
+    "OPCS4": "OPCS-4",
 }

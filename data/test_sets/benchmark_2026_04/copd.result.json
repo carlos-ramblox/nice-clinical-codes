@@ -1,0 +1,3373 @@
+{
+  "reference_count": 56,
+  "query": "Chronic obstructive pulmonary disease (COPD) codes",
+  "vocabulary": "SNOMED CT",
+  "stages": {
+    "retrieved_raw": {
+      "codelist_name": "retrieved_raw",
+      "n_ref_codes": 56,
+      "n_output_codes": 99,
+      "recall": 0.9107,
+      "precision": 0.5152,
+      "f1": 0.6581,
+      "tp_count": 51,
+      "fp_count": 48,
+      "fn_count": 5,
+      "tp_codes": [
+        {
+          "code": "1010333003",
+          "term": "Emphysema of left lung"
+        },
+        {
+          "code": "1010334009",
+          "term": "Emphysema of right lung"
+        },
+        {
+          "code": "106001000119101",
+          "term": "Chronic obstructive pulmonary disease with acute bronchitis"
+        },
+        {
+          "code": "10692761000119107",
+          "term": "Asthma-chronic obstructive pulmonary disease overlap syndrome"
+        },
+        {
+          "code": "135836000",
+          "term": "End stage chronic obstructive pulmonary disease"
+        },
+        {
+          "code": "13645005",
+          "term": "Chronic obstructive pulmonary disease"
+        },
+        {
+          "code": "16003001",
+          "term": "Giant bullous emphysema"
+        },
+        {
+          "code": "16846004",
+          "term": "Obstructive emphysema"
+        },
+        {
+          "code": "1751000119100",
+          "term": "Acute exacerbation of chronic obstructive pulmonary disease with asthma"
+        },
+        {
+          "code": "185086009",
+          "term": "Chronic obstructive bronchitis"
+        },
+        {
+          "code": "195949008",
+          "term": "Chronic asthmatic bronchitis"
+        },
+        {
+          "code": "195951007",
+          "term": "Acute exacerbation of chronic obstructive pulmonary disease"
+        },
+        {
+          "code": "195953005",
+          "term": "Mixed simple and mucopurulent chronic bronchitis"
+        },
+        {
+          "code": "195957006",
+          "term": "Chronic bullous emphysema"
+        },
+        {
+          "code": "195958001",
+          "term": "Segmental bullous emphysema"
+        },
+        {
+          "code": "195959009",
+          "term": "Zonal bullous emphysema"
+        },
+        {
+          "code": "196001008",
+          "term": "Chronic obstructive pulmonary disease with acute lower respiratory infection"
+        },
+        {
+          "code": "196026004",
+          "term": "Chronic emphysema caused by chemical fumes"
+        },
+        {
+          "code": "233674008",
+          "term": "Pulmonary emphysema in alpha-1 primary immunodeficiency deficiency"
+        },
+        {
+          "code": "233675009",
+          "term": "Toxic emphysema"
+        },
+        {
+          "code": "233677001",
+          "term": "Scar emphysema"
+        },
+        {
+          "code": "23958009",
+          "term": "Vanishing lung"
+        },
+        {
+          "code": "266355005",
+          "term": "Bullous emphysema with collapse"
+        },
+        {
+          "code": "266356006",
+          "term": "Atrophic (senile) emphysema"
+        },
+        {
+          "code": "285381006",
+          "term": "Acute infective exacerbation of chronic obstructive pulmonary disease"
+        },
+        {
+          "code": "293241000119100",
+          "term": "Acute exacerbation of chronic obstructive bronchitis"
+        },
+        {
+          "code": "293991000000106",
+          "term": "Very severe chronic obstructive pulmonary disease"
+        },
+        {
+          "code": "313296004",
+          "term": "Mild chronic obstructive pulmonary disease"
+        },
+        {
+          "code": "313297008",
+          "term": "Moderate chronic obstructive pulmonary disease"
+        },
+        {
+          "code": "313299006",
+          "term": "Severe chronic obstructive pulmonary disease"
+        },
+        {
+          "code": "31898008",
+          "term": "Paraseptal emphysema"
+        },
+        {
+          "code": "425748003",
+          "term": "Acute exacerbation of chronic bronchitis"
+        },
+        {
+          "code": "47895001",
+          "term": "Congenital emphysema"
+        },
+        {
+          "code": "49691004",
+          "term": "Occupational bronchitis"
+        },
+        {
+          "code": "4981000",
+          "term": "Panacinar emphysema"
+        },
+        {
+          "code": "52571006",
+          "term": "Chronic tracheobronchitis"
+        },
+        {
+          "code": "60805002",
+          "term": "Hemolytic anemia with emphysema AND cutis laxa"
+        },
+        {
+          "code": "61937009",
+          "term": "Simple chronic bronchitis"
+        },
+        {
+          "code": "63480004",
+          "term": "Chronic bronchitis"
+        },
+        {
+          "code": "66987001",
+          "term": "Congenital lobar emphysema"
+        },
+        {
+          "code": "68328006",
+          "term": "Centriacinar emphysema"
+        },
+        {
+          "code": "70756004",
+          "term": "Bronchial atresia with segmental pulmonary emphysema"
+        },
+        {
+          "code": "708030004",
+          "term": "Pulmonary emphysema co-occurrent with fibrosis of lung"
+        },
+        {
+          "code": "74417001",
+          "term": "Mucopurulent chronic bronchitis"
+        },
+        {
+          "code": "785736001",
+          "term": "Chronic bronchitis co-occurrent with wheeze"
+        },
+        {
+          "code": "836477007",
+          "term": "Chronic emphysema caused by vapor"
+        },
+        {
+          "code": "840493007",
+          "term": "Congenital lobar emphysema of bilateral lungs"
+        },
+        {
+          "code": "84409004",
+          "term": "Fetid chronic bronchitis"
+        },
+        {
+          "code": "847091000000104",
+          "term": "Acute non-infective exacerbation of chronic obstructive pulmonary disease"
+        },
+        {
+          "code": "87433001",
+          "term": "Pulmonary emphysema"
+        },
+        {
+          "code": "89549007",
+          "term": "Catarrhal bronchitis"
+        }
+      ],
+      "fp_codes": [
+        {
+          "code": "1066231000000103",
+          "term": "Chronic obstructive pulmonary disease monitoring email invitation (procedure)"
+        },
+        {
+          "code": "1066281000000104",
+          "term": "Chronic obstructive pulmonary disease monitoring short message service text message invitation (procedure)"
+        },
+        {
+          "code": "1066821000000101",
+          "term": "Chronic obstructive pulmonary disease monitoring short message service text message first invitation (procedure)"
+        },
+        {
+          "code": "1066841000000108",
+          "term": "Chronic obstructive pulmonary disease monitoring short message service text message second invitation (procedure)"
+        },
+        {
+          "code": "1066851000000106",
+          "term": "Chronic obstructive pulmonary disease monitoring short message service text message third invitation (procedure)"
+        },
+        {
+          "code": "10692721000119102",
+          "term": "Chronic obstructive asthma co-occurrent with acute exacerbation of asthma"
+        },
+        {
+          "code": "10692761000119108",
+          "term": "Asthma-chronic obstructive pulmonary disease overlap syndrome (disorder)"
+        },
+        {
+          "code": "10713006",
+          "term": "Diffuse interstitial rheumatoid disease of lung (disorder)"
+        },
+        {
+          "code": "1108721000000102",
+          "term": "Excepted from chronic obstructive pulmonary disease quality indicators - service unavailable (finding)"
+        },
+        {
+          "code": "1110861000000102",
+          "term": "Quality and Outcomes Framework chronic obstructive pulmonary disease quality indicator-related care invitation (procedure)"
+        },
+        {
+          "code": "143371000000104",
+          "term": "Quality and Outcomes Framework chronic obstructive pulmonary disease quality indicator-related care invitation using preferred method of communication (procedure)"
+        },
+        {
+          "code": "371611000000107",
+          "term": "Chronic obstructive pulmonary disease patient unsuitable for pulmonary rehabilitation (finding)"
+        },
+        {
+          "code": "383611000000102",
+          "term": "At risk of chronic obstructive pulmonary disease exacerbation"
+        },
+        {
+          "code": "394703002",
+          "term": "Chronic obstructive pulmonary disease annual review (regime/therapy)"
+        },
+        {
+          "code": "398726004",
+          "term": "Rheumatoid lung disease (disorder)"
+        },
+        {
+          "code": "401200002",
+          "term": "At increased risk of chronic obstructive pulmonary disease"
+        },
+        {
+          "code": "413845009",
+          "term": "Chronic obstructive pulmonary disease accident and emergency attendance since last visit"
+        },
+        {
+          "code": "442025000",
+          "term": "Acute exacerbation of chronic asthmatic bronchitis"
+        },
+        {
+          "code": "445602009",
+          "term": "Assessment using clinical chronic obstructive pulmonary disease questionnaire"
+        },
+        {
+          "code": "445811006",
+          "term": "Assessment using chronic obstructive pulmonary disease assessment test"
+        },
+        {
+          "code": "446660005",
+          "term": "Chronic obstructive pulmonary disease assessment test score"
+        },
+        {
+          "code": "57671000052108",
+          "term": "Chronic Obstructive Pulmonary Disease Assessment Test scale"
+        },
+        {
+          "code": "704120002",
+          "term": "Change in chronic obstructive pulmonary disease management plan"
+        },
+        {
+          "code": "707447008",
+          "term": "Exacerbation of severe persistent asthma"
+        },
+        {
+          "code": "707979007",
+          "term": "Acute severe exacerbation of severe persistent asthma"
+        },
+        {
+          "code": "708090002",
+          "term": "Acute severe exacerbation of asthma"
+        },
+        {
+          "code": "711431000000109",
+          "term": "Chronic obstructive pulmonary disease monitoring invitation (procedure)"
+        },
+        {
+          "code": "716241000000106",
+          "term": "Chronic obstructive pulmonary disease monitoring first letter (procedure)"
+        },
+        {
+          "code": "716281000000103",
+          "term": "Chronic obstructive pulmonary disease monitoring verbal invitation (procedure)"
+        },
+        {
+          "code": "716291000000101",
+          "term": "Excepted from chronic obstructive pulmonary disease quality indicators - informed dissent (finding)"
+        },
+        {
+          "code": "716311000000100",
+          "term": "Excepted from chronic obstructive pulmonary disease quality indicators - patient unsuitable (finding)"
+        },
+        {
+          "code": "716901000000101",
+          "term": "Chronic obstructive pulmonary disease monitoring telephone invitation (procedure)"
+        },
+        {
+          "code": "717021000000106",
+          "term": "Chronic obstructive pulmonary disease monitoring second letter (procedure)"
+        },
+        {
+          "code": "717521000000104",
+          "term": "Chronic obstructive pulmonary disease monitoring third letter (procedure)"
+        },
+        {
+          "code": "723245007",
+          "term": "Number of chronic obstructive pulmonary disease exacerbations in past year (observable entity)"
+        },
+        {
+          "code": "736365000",
+          "term": "Acute exacerbation of chronic obstructive pulmonary disease care plan"
+        },
+        {
+          "code": "760601000000107",
+          "term": "Chronic obstructive pulmonary disease 3 monthly review (regime/therapy)"
+        },
+        {
+          "code": "760621000000103",
+          "term": "Chronic obstructive pulmonary disease 6 monthly review (regime/therapy)"
+        },
+        {
+          "code": "848431000000106",
+          "term": "Chronic obstructive pulmonary disease care pathway"
+        },
+        {
+          "code": "859431000000102",
+          "term": "Chronic obstructive pulmonary disease care assessment"
+        },
+        {
+          "code": "866881000000101",
+          "term": "Chronic asthma with fixed airflow obstruction"
+        },
+        {
+          "code": "89099002",
+          "term": "Chronic allergic bronchitis"
+        },
+        {
+          "code": "941201000000103",
+          "term": "Chronic obstructive pulmonary disease resolved (finding)"
+        },
+        {
+          "code": "J44",
+          "term": "Other chronic obstructive pulmonary disease"
+        },
+        {
+          "code": "J44.0",
+          "term": "Chronic obstructive pulmonary disease with acute lower respiratory infection"
+        },
+        {
+          "code": "J44.1",
+          "term": "Chronic obstructive pulmonary disease with acute exacerbation, unspecified"
+        },
+        {
+          "code": "J44.8",
+          "term": "Other specified chronic obstructive pulmonary disease"
+        },
+        {
+          "code": "J44.9",
+          "term": "Chronic obstructive pulmonary disease, unspecified"
+        }
+      ],
+      "fn_codes": [
+        {
+          "code": "1287820006",
+          "term": "Chronic respiratory disease originating in perinatal period"
+        },
+        {
+          "code": "195963002",
+          "term": "Acute vesicular emphysema"
+        },
+        {
+          "code": "360470001",
+          "term": "Chronic mucus hypersecretion"
+        },
+        {
+          "code": "45145000",
+          "term": "Unilateral emphysema"
+        },
+        {
+          "code": "66110007",
+          "term": "Chronic diffuse emphysema caused by inhalation of chemical fumes AND/OR vapors"
+        }
+      ]
+    },
+    "merged_enriched": {
+      "codelist_name": "merged_enriched",
+      "n_ref_codes": 56,
+      "n_output_codes": 100,
+      "recall": 0.9107,
+      "precision": 0.51,
+      "f1": 0.6538,
+      "tp_count": 51,
+      "fp_count": 49,
+      "fn_count": 5,
+      "tp_codes": [
+        {
+          "code": "1010333003",
+          "term": "Emphysema of left lung"
+        },
+        {
+          "code": "1010334009",
+          "term": "Emphysema of right lung"
+        },
+        {
+          "code": "106001000119101",
+          "term": "Chronic obstructive pulmonary disease with acute bronchitis"
+        },
+        {
+          "code": "10692761000119107",
+          "term": "Asthma-chronic obstructive pulmonary disease overlap syndrome"
+        },
+        {
+          "code": "135836000",
+          "term": "End stage chronic obstructive pulmonary disease"
+        },
+        {
+          "code": "13645005",
+          "term": "Chronic obstructive pulmonary disease"
+        },
+        {
+          "code": "16003001",
+          "term": "Giant bullous emphysema"
+        },
+        {
+          "code": "16846004",
+          "term": "Obstructive emphysema"
+        },
+        {
+          "code": "1751000119100",
+          "term": "Acute exacerbation of chronic obstructive pulmonary disease with asthma"
+        },
+        {
+          "code": "185086009",
+          "term": "Chronic obstructive bronchitis"
+        },
+        {
+          "code": "195949008",
+          "term": "Chronic asthmatic bronchitis"
+        },
+        {
+          "code": "195951007",
+          "term": "Acute exacerbation of chronic obstructive pulmonary disease"
+        },
+        {
+          "code": "195953005",
+          "term": "Mixed simple and mucopurulent chronic bronchitis"
+        },
+        {
+          "code": "195957006",
+          "term": "Chronic bullous emphysema"
+        },
+        {
+          "code": "195958001",
+          "term": "Segmental bullous emphysema"
+        },
+        {
+          "code": "195959009",
+          "term": "Zonal bullous emphysema"
+        },
+        {
+          "code": "196001008",
+          "term": "Chronic obstructive pulmonary disease with acute lower respiratory infection"
+        },
+        {
+          "code": "196026004",
+          "term": "Chronic emphysema caused by chemical fumes"
+        },
+        {
+          "code": "233674008",
+          "term": "Pulmonary emphysema in alpha-1 primary immunodeficiency deficiency"
+        },
+        {
+          "code": "233675009",
+          "term": "Toxic emphysema"
+        },
+        {
+          "code": "233677001",
+          "term": "Scar emphysema"
+        },
+        {
+          "code": "23958009",
+          "term": "Vanishing lung"
+        },
+        {
+          "code": "266355005",
+          "term": "Bullous emphysema with collapse"
+        },
+        {
+          "code": "266356006",
+          "term": "Atrophic (senile) emphysema"
+        },
+        {
+          "code": "285381006",
+          "term": "Acute infective exacerbation of chronic obstructive pulmonary disease"
+        },
+        {
+          "code": "293241000119100",
+          "term": "Acute exacerbation of chronic obstructive bronchitis"
+        },
+        {
+          "code": "293991000000106",
+          "term": "Very severe chronic obstructive pulmonary disease"
+        },
+        {
+          "code": "313296004",
+          "term": "Mild chronic obstructive pulmonary disease"
+        },
+        {
+          "code": "313297008",
+          "term": "Moderate chronic obstructive pulmonary disease"
+        },
+        {
+          "code": "313299006",
+          "term": "Severe chronic obstructive pulmonary disease"
+        },
+        {
+          "code": "31898008",
+          "term": "Paraseptal emphysema"
+        },
+        {
+          "code": "425748003",
+          "term": "Acute exacerbation of chronic bronchitis"
+        },
+        {
+          "code": "47895001",
+          "term": "Congenital emphysema"
+        },
+        {
+          "code": "49691004",
+          "term": "Occupational bronchitis"
+        },
+        {
+          "code": "4981000",
+          "term": "Panacinar emphysema"
+        },
+        {
+          "code": "52571006",
+          "term": "Chronic tracheobronchitis"
+        },
+        {
+          "code": "60805002",
+          "term": "Hemolytic anemia with emphysema AND cutis laxa"
+        },
+        {
+          "code": "61937009",
+          "term": "Simple chronic bronchitis"
+        },
+        {
+          "code": "63480004",
+          "term": "Chronic bronchitis"
+        },
+        {
+          "code": "66987001",
+          "term": "Congenital lobar emphysema"
+        },
+        {
+          "code": "68328006",
+          "term": "Centriacinar emphysema"
+        },
+        {
+          "code": "70756004",
+          "term": "Bronchial atresia with segmental pulmonary emphysema"
+        },
+        {
+          "code": "708030004",
+          "term": "Pulmonary emphysema co-occurrent with fibrosis of lung"
+        },
+        {
+          "code": "74417001",
+          "term": "Mucopurulent chronic bronchitis"
+        },
+        {
+          "code": "785736001",
+          "term": "Chronic bronchitis co-occurrent with wheeze"
+        },
+        {
+          "code": "836477007",
+          "term": "Chronic emphysema caused by vapor"
+        },
+        {
+          "code": "840493007",
+          "term": "Congenital lobar emphysema of bilateral lungs"
+        },
+        {
+          "code": "84409004",
+          "term": "Fetid chronic bronchitis"
+        },
+        {
+          "code": "847091000000104",
+          "term": "Acute non-infective exacerbation of chronic obstructive pulmonary disease"
+        },
+        {
+          "code": "87433001",
+          "term": "Pulmonary emphysema"
+        },
+        {
+          "code": "89549007",
+          "term": "Catarrhal bronchitis"
+        }
+      ],
+      "fp_codes": [
+        {
+          "code": "1066231000000103",
+          "term": "Chronic obstructive pulmonary disease monitoring email invitation (procedure)"
+        },
+        {
+          "code": "1066281000000104",
+          "term": "Chronic obstructive pulmonary disease monitoring short message service text message invitation (procedure)"
+        },
+        {
+          "code": "1066821000000101",
+          "term": "Chronic obstructive pulmonary disease monitoring short message service text message first invitation (procedure)"
+        },
+        {
+          "code": "1066841000000108",
+          "term": "Chronic obstructive pulmonary disease monitoring short message service text message second invitation (procedure)"
+        },
+        {
+          "code": "1066851000000106",
+          "term": "Chronic obstructive pulmonary disease monitoring short message service text message third invitation (procedure)"
+        },
+        {
+          "code": "10692721000119102",
+          "term": "Chronic obstructive asthma co-occurrent with acute exacerbation of asthma"
+        },
+        {
+          "code": "10692761000119108",
+          "term": "Asthma-chronic obstructive pulmonary disease overlap syndrome (disorder)"
+        },
+        {
+          "code": "10713006",
+          "term": "Diffuse interstitial rheumatoid disease of lung (disorder)"
+        },
+        {
+          "code": "1108721000000102",
+          "term": "Excepted from chronic obstructive pulmonary disease quality indicators - service unavailable (finding)"
+        },
+        {
+          "code": "1110861000000102",
+          "term": "Quality and Outcomes Framework chronic obstructive pulmonary disease quality indicator-related care invitation (procedure)"
+        },
+        {
+          "code": "143371000000104",
+          "term": "Quality and Outcomes Framework chronic obstructive pulmonary disease quality indicator-related care invitation using preferred method of communication (procedure)"
+        },
+        {
+          "code": "371611000000107",
+          "term": "Chronic obstructive pulmonary disease patient unsuitable for pulmonary rehabilitation (finding)"
+        },
+        {
+          "code": "383611000000102",
+          "term": "At risk of chronic obstructive pulmonary disease exacerbation"
+        },
+        {
+          "code": "394703002",
+          "term": "Chronic obstructive pulmonary disease annual review (regime/therapy)"
+        },
+        {
+          "code": "398726004",
+          "term": "Rheumatoid lung disease (disorder)"
+        },
+        {
+          "code": "401200002",
+          "term": "At increased risk of chronic obstructive pulmonary disease"
+        },
+        {
+          "code": "413845009",
+          "term": "Chronic obstructive pulmonary disease accident and emergency attendance since last visit"
+        },
+        {
+          "code": "442025000",
+          "term": "Acute exacerbation of chronic asthmatic bronchitis"
+        },
+        {
+          "code": "445602009",
+          "term": "Assessment using clinical chronic obstructive pulmonary disease questionnaire"
+        },
+        {
+          "code": "445811006",
+          "term": "Assessment using chronic obstructive pulmonary disease assessment test"
+        },
+        {
+          "code": "446660005",
+          "term": "Chronic obstructive pulmonary disease assessment test score"
+        },
+        {
+          "code": "57671000052108",
+          "term": "Chronic Obstructive Pulmonary Disease Assessment Test scale"
+        },
+        {
+          "code": "704120002",
+          "term": "Change in chronic obstructive pulmonary disease management plan"
+        },
+        {
+          "code": "707447008",
+          "term": "Exacerbation of severe persistent asthma"
+        },
+        {
+          "code": "707979007",
+          "term": "Acute severe exacerbation of severe persistent asthma"
+        },
+        {
+          "code": "708090002",
+          "term": "Acute severe exacerbation of asthma"
+        },
+        {
+          "code": "711431000000109",
+          "term": "Chronic obstructive pulmonary disease monitoring invitation (procedure)"
+        },
+        {
+          "code": "716241000000106",
+          "term": "Chronic obstructive pulmonary disease monitoring first letter (procedure)"
+        },
+        {
+          "code": "716281000000103",
+          "term": "Chronic obstructive pulmonary disease monitoring verbal invitation (procedure)"
+        },
+        {
+          "code": "716291000000101",
+          "term": "Excepted from chronic obstructive pulmonary disease quality indicators - informed dissent (finding)"
+        },
+        {
+          "code": "716311000000100",
+          "term": "Excepted from chronic obstructive pulmonary disease quality indicators - patient unsuitable (finding)"
+        },
+        {
+          "code": "716901000000101",
+          "term": "Chronic obstructive pulmonary disease monitoring telephone invitation (procedure)"
+        },
+        {
+          "code": "717021000000106",
+          "term": "Chronic obstructive pulmonary disease monitoring second letter (procedure)"
+        },
+        {
+          "code": "717521000000104",
+          "term": "Chronic obstructive pulmonary disease monitoring third letter (procedure)"
+        },
+        {
+          "code": "723245007",
+          "term": "Number of chronic obstructive pulmonary disease exacerbations in past year (observable entity)"
+        },
+        {
+          "code": "736365000",
+          "term": "Acute exacerbation of chronic obstructive pulmonary disease care plan"
+        },
+        {
+          "code": "760601000000107",
+          "term": "Chronic obstructive pulmonary disease 3 monthly review (regime/therapy)"
+        },
+        {
+          "code": "760621000000103",
+          "term": "Chronic obstructive pulmonary disease 6 monthly review (regime/therapy)"
+        },
+        {
+          "code": "848431000000106",
+          "term": "Chronic obstructive pulmonary disease care pathway"
+        },
+        {
+          "code": "859431000000102",
+          "term": "Chronic obstructive pulmonary disease care assessment"
+        },
+        {
+          "code": "866881000000101",
+          "term": "Chronic asthma with fixed airflow obstruction"
+        },
+        {
+          "code": "89099002",
+          "term": "Chronic allergic bronchitis"
+        },
+        {
+          "code": "941201000000103",
+          "term": "Chronic obstructive pulmonary disease resolved (finding)"
+        },
+        {
+          "code": "C1273972",
+          "term": "Chronic obstructive pulmonary disease annual review"
+        },
+        {
+          "code": "J44",
+          "term": "Other chronic obstructive pulmonary disease"
+        },
+        {
+          "code": "J44.0",
+          "term": "Chronic obstructive pulmonary disease with acute lower respiratory infection"
+        },
+        {
+          "code": "J44.1",
+          "term": "Chronic obstructive pulmonary disease with acute exacerbation, unspecified"
+        },
+        {
+          "code": "J44.8",
+          "term": "Other specified chronic obstructive pulmonary disease"
+        },
+        {
+          "code": "J44.9",
+          "term": "Chronic obstructive pulmonary disease, unspecified"
+        }
+      ],
+      "fn_codes": [
+        {
+          "code": "1287820006",
+          "term": "Chronic respiratory disease originating in perinatal period"
+        },
+        {
+          "code": "195963002",
+          "term": "Acute vesicular emphysema"
+        },
+        {
+          "code": "360470001",
+          "term": "Chronic mucus hypersecretion"
+        },
+        {
+          "code": "45145000",
+          "term": "Unilateral emphysema"
+        },
+        {
+          "code": "66110007",
+          "term": "Chronic diffuse emphysema caused by inhalation of chemical fumes AND/OR vapors"
+        }
+      ]
+    },
+    "all_scored": {
+      "codelist_name": "all_scored",
+      "n_ref_codes": 56,
+      "n_output_codes": 100,
+      "recall": 0.9107,
+      "precision": 0.51,
+      "f1": 0.6538,
+      "tp_count": 51,
+      "fp_count": 49,
+      "fn_count": 5,
+      "tp_codes": [
+        {
+          "code": "1010333003",
+          "term": "Emphysema of left lung"
+        },
+        {
+          "code": "1010334009",
+          "term": "Emphysema of right lung"
+        },
+        {
+          "code": "106001000119101",
+          "term": "Chronic obstructive pulmonary disease with acute bronchitis"
+        },
+        {
+          "code": "10692761000119107",
+          "term": "Asthma-chronic obstructive pulmonary disease overlap syndrome"
+        },
+        {
+          "code": "135836000",
+          "term": "End stage chronic obstructive pulmonary disease"
+        },
+        {
+          "code": "13645005",
+          "term": "Chronic obstructive pulmonary disease"
+        },
+        {
+          "code": "16003001",
+          "term": "Giant bullous emphysema"
+        },
+        {
+          "code": "16846004",
+          "term": "Obstructive emphysema"
+        },
+        {
+          "code": "1751000119100",
+          "term": "Acute exacerbation of chronic obstructive pulmonary disease with asthma"
+        },
+        {
+          "code": "185086009",
+          "term": "Chronic obstructive bronchitis"
+        },
+        {
+          "code": "195949008",
+          "term": "Chronic asthmatic bronchitis"
+        },
+        {
+          "code": "195951007",
+          "term": "Acute exacerbation of chronic obstructive pulmonary disease"
+        },
+        {
+          "code": "195953005",
+          "term": "Mixed simple and mucopurulent chronic bronchitis"
+        },
+        {
+          "code": "195957006",
+          "term": "Chronic bullous emphysema"
+        },
+        {
+          "code": "195958001",
+          "term": "Segmental bullous emphysema"
+        },
+        {
+          "code": "195959009",
+          "term": "Zonal bullous emphysema"
+        },
+        {
+          "code": "196001008",
+          "term": "Chronic obstructive pulmonary disease with acute lower respiratory infection"
+        },
+        {
+          "code": "196026004",
+          "term": "Chronic emphysema caused by chemical fumes"
+        },
+        {
+          "code": "233674008",
+          "term": "Pulmonary emphysema in alpha-1 primary immunodeficiency deficiency"
+        },
+        {
+          "code": "233675009",
+          "term": "Toxic emphysema"
+        },
+        {
+          "code": "233677001",
+          "term": "Scar emphysema"
+        },
+        {
+          "code": "23958009",
+          "term": "Vanishing lung"
+        },
+        {
+          "code": "266355005",
+          "term": "Bullous emphysema with collapse"
+        },
+        {
+          "code": "266356006",
+          "term": "Atrophic (senile) emphysema"
+        },
+        {
+          "code": "285381006",
+          "term": "Acute infective exacerbation of chronic obstructive pulmonary disease"
+        },
+        {
+          "code": "293241000119100",
+          "term": "Acute exacerbation of chronic obstructive bronchitis"
+        },
+        {
+          "code": "293991000000106",
+          "term": "Very severe chronic obstructive pulmonary disease"
+        },
+        {
+          "code": "313296004",
+          "term": "Mild chronic obstructive pulmonary disease"
+        },
+        {
+          "code": "313297008",
+          "term": "Moderate chronic obstructive pulmonary disease"
+        },
+        {
+          "code": "313299006",
+          "term": "Severe chronic obstructive pulmonary disease"
+        },
+        {
+          "code": "31898008",
+          "term": "Paraseptal emphysema"
+        },
+        {
+          "code": "425748003",
+          "term": "Acute exacerbation of chronic bronchitis"
+        },
+        {
+          "code": "47895001",
+          "term": "Congenital emphysema"
+        },
+        {
+          "code": "49691004",
+          "term": "Occupational bronchitis"
+        },
+        {
+          "code": "4981000",
+          "term": "Panacinar emphysema"
+        },
+        {
+          "code": "52571006",
+          "term": "Chronic tracheobronchitis"
+        },
+        {
+          "code": "60805002",
+          "term": "Hemolytic anemia with emphysema AND cutis laxa"
+        },
+        {
+          "code": "61937009",
+          "term": "Simple chronic bronchitis"
+        },
+        {
+          "code": "63480004",
+          "term": "Chronic bronchitis"
+        },
+        {
+          "code": "66987001",
+          "term": "Congenital lobar emphysema"
+        },
+        {
+          "code": "68328006",
+          "term": "Centriacinar emphysema"
+        },
+        {
+          "code": "70756004",
+          "term": "Bronchial atresia with segmental pulmonary emphysema"
+        },
+        {
+          "code": "708030004",
+          "term": "Pulmonary emphysema co-occurrent with fibrosis of lung"
+        },
+        {
+          "code": "74417001",
+          "term": "Mucopurulent chronic bronchitis"
+        },
+        {
+          "code": "785736001",
+          "term": "Chronic bronchitis co-occurrent with wheeze"
+        },
+        {
+          "code": "836477007",
+          "term": "Chronic emphysema caused by vapor"
+        },
+        {
+          "code": "840493007",
+          "term": "Congenital lobar emphysema of bilateral lungs"
+        },
+        {
+          "code": "84409004",
+          "term": "Fetid chronic bronchitis"
+        },
+        {
+          "code": "847091000000104",
+          "term": "Acute non-infective exacerbation of chronic obstructive pulmonary disease"
+        },
+        {
+          "code": "87433001",
+          "term": "Pulmonary emphysema"
+        },
+        {
+          "code": "89549007",
+          "term": "Catarrhal bronchitis"
+        }
+      ],
+      "fp_codes": [
+        {
+          "code": "1066231000000103",
+          "term": "Chronic obstructive pulmonary disease monitoring email invitation (procedure)"
+        },
+        {
+          "code": "1066281000000104",
+          "term": "Chronic obstructive pulmonary disease monitoring short message service text message invitation (procedure)"
+        },
+        {
+          "code": "1066821000000101",
+          "term": "Chronic obstructive pulmonary disease monitoring short message service text message first invitation (procedure)"
+        },
+        {
+          "code": "1066841000000108",
+          "term": "Chronic obstructive pulmonary disease monitoring short message service text message second invitation (procedure)"
+        },
+        {
+          "code": "1066851000000106",
+          "term": "Chronic obstructive pulmonary disease monitoring short message service text message third invitation (procedure)"
+        },
+        {
+          "code": "10692721000119102",
+          "term": "Chronic obstructive asthma co-occurrent with acute exacerbation of asthma"
+        },
+        {
+          "code": "10692761000119108",
+          "term": "Asthma-chronic obstructive pulmonary disease overlap syndrome (disorder)"
+        },
+        {
+          "code": "10713006",
+          "term": "Diffuse interstitial rheumatoid disease of lung (disorder)"
+        },
+        {
+          "code": "1108721000000102",
+          "term": "Excepted from chronic obstructive pulmonary disease quality indicators - service unavailable (finding)"
+        },
+        {
+          "code": "1110861000000102",
+          "term": "Quality and Outcomes Framework chronic obstructive pulmonary disease quality indicator-related care invitation (procedure)"
+        },
+        {
+          "code": "143371000000104",
+          "term": "Quality and Outcomes Framework chronic obstructive pulmonary disease quality indicator-related care invitation using preferred method of communication (procedure)"
+        },
+        {
+          "code": "371611000000107",
+          "term": "Chronic obstructive pulmonary disease patient unsuitable for pulmonary rehabilitation (finding)"
+        },
+        {
+          "code": "383611000000102",
+          "term": "At risk of chronic obstructive pulmonary disease exacerbation"
+        },
+        {
+          "code": "394703002",
+          "term": "Chronic obstructive pulmonary disease annual review (regime/therapy)"
+        },
+        {
+          "code": "398726004",
+          "term": "Rheumatoid lung disease (disorder)"
+        },
+        {
+          "code": "401200002",
+          "term": "At increased risk of chronic obstructive pulmonary disease"
+        },
+        {
+          "code": "413845009",
+          "term": "Chronic obstructive pulmonary disease accident and emergency attendance since last visit"
+        },
+        {
+          "code": "442025000",
+          "term": "Acute exacerbation of chronic asthmatic bronchitis"
+        },
+        {
+          "code": "445602009",
+          "term": "Assessment using clinical chronic obstructive pulmonary disease questionnaire"
+        },
+        {
+          "code": "445811006",
+          "term": "Assessment using chronic obstructive pulmonary disease assessment test"
+        },
+        {
+          "code": "446660005",
+          "term": "Chronic obstructive pulmonary disease assessment test score"
+        },
+        {
+          "code": "57671000052108",
+          "term": "Chronic Obstructive Pulmonary Disease Assessment Test scale"
+        },
+        {
+          "code": "704120002",
+          "term": "Change in chronic obstructive pulmonary disease management plan"
+        },
+        {
+          "code": "707447008",
+          "term": "Exacerbation of severe persistent asthma"
+        },
+        {
+          "code": "707979007",
+          "term": "Acute severe exacerbation of severe persistent asthma"
+        },
+        {
+          "code": "708090002",
+          "term": "Acute severe exacerbation of asthma"
+        },
+        {
+          "code": "711431000000109",
+          "term": "Chronic obstructive pulmonary disease monitoring invitation (procedure)"
+        },
+        {
+          "code": "716241000000106",
+          "term": "Chronic obstructive pulmonary disease monitoring first letter (procedure)"
+        },
+        {
+          "code": "716281000000103",
+          "term": "Chronic obstructive pulmonary disease monitoring verbal invitation (procedure)"
+        },
+        {
+          "code": "716291000000101",
+          "term": "Excepted from chronic obstructive pulmonary disease quality indicators - informed dissent (finding)"
+        },
+        {
+          "code": "716311000000100",
+          "term": "Excepted from chronic obstructive pulmonary disease quality indicators - patient unsuitable (finding)"
+        },
+        {
+          "code": "716901000000101",
+          "term": "Chronic obstructive pulmonary disease monitoring telephone invitation (procedure)"
+        },
+        {
+          "code": "717021000000106",
+          "term": "Chronic obstructive pulmonary disease monitoring second letter (procedure)"
+        },
+        {
+          "code": "717521000000104",
+          "term": "Chronic obstructive pulmonary disease monitoring third letter (procedure)"
+        },
+        {
+          "code": "723245007",
+          "term": "Number of chronic obstructive pulmonary disease exacerbations in past year (observable entity)"
+        },
+        {
+          "code": "736365000",
+          "term": "Acute exacerbation of chronic obstructive pulmonary disease care plan"
+        },
+        {
+          "code": "760601000000107",
+          "term": "Chronic obstructive pulmonary disease 3 monthly review (regime/therapy)"
+        },
+        {
+          "code": "760621000000103",
+          "term": "Chronic obstructive pulmonary disease 6 monthly review (regime/therapy)"
+        },
+        {
+          "code": "848431000000106",
+          "term": "Chronic obstructive pulmonary disease care pathway"
+        },
+        {
+          "code": "859431000000102",
+          "term": "Chronic obstructive pulmonary disease care assessment"
+        },
+        {
+          "code": "866881000000101",
+          "term": "Chronic asthma with fixed airflow obstruction"
+        },
+        {
+          "code": "89099002",
+          "term": "Chronic allergic bronchitis"
+        },
+        {
+          "code": "941201000000103",
+          "term": "Chronic obstructive pulmonary disease resolved (finding)"
+        },
+        {
+          "code": "C1273972",
+          "term": "Chronic obstructive pulmonary disease annual review"
+        },
+        {
+          "code": "J44",
+          "term": "Other chronic obstructive pulmonary disease"
+        },
+        {
+          "code": "J44.0",
+          "term": "Chronic obstructive pulmonary disease with acute lower respiratory infection"
+        },
+        {
+          "code": "J44.1",
+          "term": "Chronic obstructive pulmonary disease with acute exacerbation, unspecified"
+        },
+        {
+          "code": "J44.8",
+          "term": "Other specified chronic obstructive pulmonary disease"
+        },
+        {
+          "code": "J44.9",
+          "term": "Chronic obstructive pulmonary disease, unspecified"
+        }
+      ],
+      "fn_codes": [
+        {
+          "code": "1287820006",
+          "term": "Chronic respiratory disease originating in perinatal period"
+        },
+        {
+          "code": "195963002",
+          "term": "Acute vesicular emphysema"
+        },
+        {
+          "code": "360470001",
+          "term": "Chronic mucus hypersecretion"
+        },
+        {
+          "code": "45145000",
+          "term": "Unilateral emphysema"
+        },
+        {
+          "code": "66110007",
+          "term": "Chronic diffuse emphysema caused by inhalation of chemical fumes AND/OR vapors"
+        }
+      ]
+    },
+    "included_only": {
+      "codelist_name": "included_only",
+      "n_ref_codes": 56,
+      "n_output_codes": 45,
+      "recall": 0.6964,
+      "precision": 0.8667,
+      "f1": 0.7723,
+      "tp_count": 39,
+      "fp_count": 6,
+      "fn_count": 17,
+      "tp_codes": [
+        {
+          "code": "1010333003",
+          "term": "Emphysema of left lung"
+        },
+        {
+          "code": "1010334009",
+          "term": "Emphysema of right lung"
+        },
+        {
+          "code": "106001000119101",
+          "term": "Chronic obstructive pulmonary disease with acute bronchitis"
+        },
+        {
+          "code": "10692761000119107",
+          "term": "Asthma-chronic obstructive pulmonary disease overlap syndrome"
+        },
+        {
+          "code": "135836000",
+          "term": "End stage chronic obstructive pulmonary disease"
+        },
+        {
+          "code": "13645005",
+          "term": "Chronic obstructive pulmonary disease"
+        },
+        {
+          "code": "16003001",
+          "term": "Giant bullous emphysema"
+        },
+        {
+          "code": "16846004",
+          "term": "Obstructive emphysema"
+        },
+        {
+          "code": "1751000119100",
+          "term": "Acute exacerbation of chronic obstructive pulmonary disease with asthma"
+        },
+        {
+          "code": "185086009",
+          "term": "Chronic obstructive bronchitis"
+        },
+        {
+          "code": "195949008",
+          "term": "Chronic asthmatic bronchitis"
+        },
+        {
+          "code": "195951007",
+          "term": "Acute exacerbation of chronic obstructive pulmonary disease"
+        },
+        {
+          "code": "195953005",
+          "term": "Mixed simple and mucopurulent chronic bronchitis"
+        },
+        {
+          "code": "195957006",
+          "term": "Chronic bullous emphysema"
+        },
+        {
+          "code": "195958001",
+          "term": "Segmental bullous emphysema"
+        },
+        {
+          "code": "195959009",
+          "term": "Zonal bullous emphysema"
+        },
+        {
+          "code": "196001008",
+          "term": "Chronic obstructive pulmonary disease with acute lower respiratory infection"
+        },
+        {
+          "code": "196026004",
+          "term": "Chronic emphysema caused by chemical fumes"
+        },
+        {
+          "code": "233674008",
+          "term": "Pulmonary emphysema in alpha-1 primary immunodeficiency deficiency"
+        },
+        {
+          "code": "233675009",
+          "term": "Toxic emphysema"
+        },
+        {
+          "code": "233677001",
+          "term": "Scar emphysema"
+        },
+        {
+          "code": "23958009",
+          "term": "Vanishing lung"
+        },
+        {
+          "code": "266355005",
+          "term": "Bullous emphysema with collapse"
+        },
+        {
+          "code": "266356006",
+          "term": "Atrophic (senile) emphysema"
+        },
+        {
+          "code": "285381006",
+          "term": "Acute infective exacerbation of chronic obstructive pulmonary disease"
+        },
+        {
+          "code": "293241000119100",
+          "term": "Acute exacerbation of chronic obstructive bronchitis"
+        },
+        {
+          "code": "293991000000106",
+          "term": "Very severe chronic obstructive pulmonary disease"
+        },
+        {
+          "code": "313296004",
+          "term": "Mild chronic obstructive pulmonary disease"
+        },
+        {
+          "code": "313297008",
+          "term": "Moderate chronic obstructive pulmonary disease"
+        },
+        {
+          "code": "313299006",
+          "term": "Severe chronic obstructive pulmonary disease"
+        },
+        {
+          "code": "425748003",
+          "term": "Acute exacerbation of chronic bronchitis"
+        },
+        {
+          "code": "52571006",
+          "term": "Chronic tracheobronchitis"
+        },
+        {
+          "code": "61937009",
+          "term": "Simple chronic bronchitis"
+        },
+        {
+          "code": "63480004",
+          "term": "Chronic bronchitis"
+        },
+        {
+          "code": "74417001",
+          "term": "Mucopurulent chronic bronchitis"
+        },
+        {
+          "code": "785736001",
+          "term": "Chronic bronchitis co-occurrent with wheeze"
+        },
+        {
+          "code": "84409004",
+          "term": "Fetid chronic bronchitis"
+        },
+        {
+          "code": "847091000000104",
+          "term": "Acute non-infective exacerbation of chronic obstructive pulmonary disease"
+        },
+        {
+          "code": "87433001",
+          "term": "Pulmonary emphysema"
+        }
+      ],
+      "fp_codes": [
+        {
+          "code": "10692761000119108",
+          "term": "Asthma-chronic obstructive pulmonary disease overlap syndrome (disorder)"
+        },
+        {
+          "code": "J44",
+          "term": "Other chronic obstructive pulmonary disease"
+        },
+        {
+          "code": "J44.0",
+          "term": "Chronic obstructive pulmonary disease with acute lower respiratory infection"
+        },
+        {
+          "code": "J44.1",
+          "term": "Chronic obstructive pulmonary disease with acute exacerbation, unspecified"
+        },
+        {
+          "code": "J44.8",
+          "term": "Other specified chronic obstructive pulmonary disease"
+        },
+        {
+          "code": "J44.9",
+          "term": "Chronic obstructive pulmonary disease, unspecified"
+        }
+      ],
+      "fn_codes": [
+        {
+          "code": "1287820006",
+          "term": "Chronic respiratory disease originating in perinatal period"
+        },
+        {
+          "code": "195963002",
+          "term": "Acute vesicular emphysema"
+        },
+        {
+          "code": "31898008",
+          "term": "Paraseptal emphysema"
+        },
+        {
+          "code": "360470001",
+          "term": "Chronic mucus hypersecretion"
+        },
+        {
+          "code": "45145000",
+          "term": "Unilateral emphysema"
+        },
+        {
+          "code": "47895001",
+          "term": "Congenital emphysema"
+        },
+        {
+          "code": "49691004",
+          "term": "Occupational bronchitis"
+        },
+        {
+          "code": "4981000",
+          "term": "Panacinar emphysema"
+        },
+        {
+          "code": "60805002",
+          "term": "Hemolytic anemia with emphysema AND cutis laxa"
+        },
+        {
+          "code": "66110007",
+          "term": "Chronic diffuse emphysema caused by inhalation of chemical fumes AND/OR vapors"
+        },
+        {
+          "code": "66987001",
+          "term": "Congenital lobar emphysema"
+        },
+        {
+          "code": "68328006",
+          "term": "Centriacinar emphysema"
+        },
+        {
+          "code": "70756004",
+          "term": "Bronchial atresia with segmental pulmonary emphysema"
+        },
+        {
+          "code": "708030004",
+          "term": "Pulmonary emphysema co-occurrent with fibrosis of lung"
+        },
+        {
+          "code": "836477007",
+          "term": "Chronic emphysema caused by vapor"
+        },
+        {
+          "code": "840493007",
+          "term": "Congenital lobar emphysema of bilateral lungs"
+        },
+        {
+          "code": "89549007",
+          "term": "Catarrhal bronchitis"
+        }
+      ]
+    },
+    "included_plus_uncertain": {
+      "codelist_name": "included_plus_uncertain",
+      "n_ref_codes": 56,
+      "n_output_codes": 52,
+      "recall": 0.8036,
+      "precision": 0.8654,
+      "f1": 0.8333,
+      "tp_count": 45,
+      "fp_count": 7,
+      "fn_count": 11,
+      "tp_codes": [
+        {
+          "code": "1010333003",
+          "term": "Emphysema of left lung"
+        },
+        {
+          "code": "1010334009",
+          "term": "Emphysema of right lung"
+        },
+        {
+          "code": "106001000119101",
+          "term": "Chronic obstructive pulmonary disease with acute bronchitis"
+        },
+        {
+          "code": "10692761000119107",
+          "term": "Asthma-chronic obstructive pulmonary disease overlap syndrome"
+        },
+        {
+          "code": "135836000",
+          "term": "End stage chronic obstructive pulmonary disease"
+        },
+        {
+          "code": "13645005",
+          "term": "Chronic obstructive pulmonary disease"
+        },
+        {
+          "code": "16003001",
+          "term": "Giant bullous emphysema"
+        },
+        {
+          "code": "16846004",
+          "term": "Obstructive emphysema"
+        },
+        {
+          "code": "1751000119100",
+          "term": "Acute exacerbation of chronic obstructive pulmonary disease with asthma"
+        },
+        {
+          "code": "185086009",
+          "term": "Chronic obstructive bronchitis"
+        },
+        {
+          "code": "195949008",
+          "term": "Chronic asthmatic bronchitis"
+        },
+        {
+          "code": "195951007",
+          "term": "Acute exacerbation of chronic obstructive pulmonary disease"
+        },
+        {
+          "code": "195953005",
+          "term": "Mixed simple and mucopurulent chronic bronchitis"
+        },
+        {
+          "code": "195957006",
+          "term": "Chronic bullous emphysema"
+        },
+        {
+          "code": "195958001",
+          "term": "Segmental bullous emphysema"
+        },
+        {
+          "code": "195959009",
+          "term": "Zonal bullous emphysema"
+        },
+        {
+          "code": "196001008",
+          "term": "Chronic obstructive pulmonary disease with acute lower respiratory infection"
+        },
+        {
+          "code": "196026004",
+          "term": "Chronic emphysema caused by chemical fumes"
+        },
+        {
+          "code": "233674008",
+          "term": "Pulmonary emphysema in alpha-1 primary immunodeficiency deficiency"
+        },
+        {
+          "code": "233675009",
+          "term": "Toxic emphysema"
+        },
+        {
+          "code": "233677001",
+          "term": "Scar emphysema"
+        },
+        {
+          "code": "23958009",
+          "term": "Vanishing lung"
+        },
+        {
+          "code": "266355005",
+          "term": "Bullous emphysema with collapse"
+        },
+        {
+          "code": "266356006",
+          "term": "Atrophic (senile) emphysema"
+        },
+        {
+          "code": "285381006",
+          "term": "Acute infective exacerbation of chronic obstructive pulmonary disease"
+        },
+        {
+          "code": "293241000119100",
+          "term": "Acute exacerbation of chronic obstructive bronchitis"
+        },
+        {
+          "code": "293991000000106",
+          "term": "Very severe chronic obstructive pulmonary disease"
+        },
+        {
+          "code": "313296004",
+          "term": "Mild chronic obstructive pulmonary disease"
+        },
+        {
+          "code": "313297008",
+          "term": "Moderate chronic obstructive pulmonary disease"
+        },
+        {
+          "code": "313299006",
+          "term": "Severe chronic obstructive pulmonary disease"
+        },
+        {
+          "code": "31898008",
+          "term": "Paraseptal emphysema"
+        },
+        {
+          "code": "425748003",
+          "term": "Acute exacerbation of chronic bronchitis"
+        },
+        {
+          "code": "49691004",
+          "term": "Occupational bronchitis"
+        },
+        {
+          "code": "4981000",
+          "term": "Panacinar emphysema"
+        },
+        {
+          "code": "52571006",
+          "term": "Chronic tracheobronchitis"
+        },
+        {
+          "code": "61937009",
+          "term": "Simple chronic bronchitis"
+        },
+        {
+          "code": "63480004",
+          "term": "Chronic bronchitis"
+        },
+        {
+          "code": "68328006",
+          "term": "Centriacinar emphysema"
+        },
+        {
+          "code": "708030004",
+          "term": "Pulmonary emphysema co-occurrent with fibrosis of lung"
+        },
+        {
+          "code": "74417001",
+          "term": "Mucopurulent chronic bronchitis"
+        },
+        {
+          "code": "785736001",
+          "term": "Chronic bronchitis co-occurrent with wheeze"
+        },
+        {
+          "code": "836477007",
+          "term": "Chronic emphysema caused by vapor"
+        },
+        {
+          "code": "84409004",
+          "term": "Fetid chronic bronchitis"
+        },
+        {
+          "code": "847091000000104",
+          "term": "Acute non-infective exacerbation of chronic obstructive pulmonary disease"
+        },
+        {
+          "code": "87433001",
+          "term": "Pulmonary emphysema"
+        }
+      ],
+      "fp_codes": [
+        {
+          "code": "10692761000119108",
+          "term": "Asthma-chronic obstructive pulmonary disease overlap syndrome (disorder)"
+        },
+        {
+          "code": "442025000",
+          "term": "Acute exacerbation of chronic asthmatic bronchitis"
+        },
+        {
+          "code": "J44",
+          "term": "Other chronic obstructive pulmonary disease"
+        },
+        {
+          "code": "J44.0",
+          "term": "Chronic obstructive pulmonary disease with acute lower respiratory infection"
+        },
+        {
+          "code": "J44.1",
+          "term": "Chronic obstructive pulmonary disease with acute exacerbation, unspecified"
+        },
+        {
+          "code": "J44.8",
+          "term": "Other specified chronic obstructive pulmonary disease"
+        },
+        {
+          "code": "J44.9",
+          "term": "Chronic obstructive pulmonary disease, unspecified"
+        }
+      ],
+      "fn_codes": [
+        {
+          "code": "1287820006",
+          "term": "Chronic respiratory disease originating in perinatal period"
+        },
+        {
+          "code": "195963002",
+          "term": "Acute vesicular emphysema"
+        },
+        {
+          "code": "360470001",
+          "term": "Chronic mucus hypersecretion"
+        },
+        {
+          "code": "45145000",
+          "term": "Unilateral emphysema"
+        },
+        {
+          "code": "47895001",
+          "term": "Congenital emphysema"
+        },
+        {
+          "code": "60805002",
+          "term": "Hemolytic anemia with emphysema AND cutis laxa"
+        },
+        {
+          "code": "66110007",
+          "term": "Chronic diffuse emphysema caused by inhalation of chemical fumes AND/OR vapors"
+        },
+        {
+          "code": "66987001",
+          "term": "Congenital lobar emphysema"
+        },
+        {
+          "code": "70756004",
+          "term": "Bronchial atresia with segmental pulmonary emphysema"
+        },
+        {
+          "code": "840493007",
+          "term": "Congenital lobar emphysema of bilateral lungs"
+        },
+        {
+          "code": "89549007",
+          "term": "Catarrhal bronchitis"
+        }
+      ]
+    }
+  },
+  "false_exclusions": {
+    "count": 6,
+    "codes": [
+      {
+        "code": "60805002",
+        "term": "Hemolytic anemia with emphysema AND cutis laxa (disorder)",
+        "rationale": "Hemolytic anemia with emphysema and cutis laxa is a rare genetic syndrome, not a manifestation of primary COPD."
+      },
+      {
+        "code": "47895001",
+        "term": "Congenital emphysema (disorder)",
+        "rationale": "Congenital emphysema is a distinct congenital condition, not a manifestation of primary COPD."
+      },
+      {
+        "code": "66987001",
+        "term": "Congenital lobar emphysema (disorder)",
+        "rationale": "Congenital lobar emphysema is a distinct congenital condition, not a manifestation of primary COPD."
+      },
+      {
+        "code": "70756004",
+        "term": "Bronchial atresia with segmental pulmonary emphysema (disorder)",
+        "rationale": "Bronchial atresia with segmental pulmonary emphysema is a congenital condition, not a manifestation of primary COPD."
+      },
+      {
+        "code": "840493007",
+        "term": "Congenital lobar emphysema of bilateral lungs (disorder)",
+        "rationale": "Congenital lobar emphysema is a congenital condition distinct from acquired COPD and should not be included in a primary COPD list."
+      },
+      {
+        "code": "89549007",
+        "term": "Catarrhal bronchitis (disorder)",
+        "rationale": "Catarrhal bronchitis is a non-obstructive form of chronic bronchitis and does not confirm COPD (which requires airflow obstruction)."
+      }
+    ]
+  },
+  "uncertain_in_reference": {
+    "count": 6,
+    "codes": [
+      {
+        "code": "4981000",
+        "term": "Panacinar emphysema (disorder)",
+        "rationale": "Panacinar emphysema is a pathological subtype that may be associated with COPD but could represent a distinct condition; clinical context needed."
+      },
+      {
+        "code": "49691004",
+        "term": "Occupational bronchitis (disorder)",
+        "rationale": "Occupational bronchitis may be a subtype or cause of COPD but could also be a distinct occupational disease; clinical context needed."
+      },
+      {
+        "code": "68328006",
+        "term": "Centriacinar emphysema (disorder)",
+        "rationale": "Centriacinar emphysema is a pathological subtype that may be associated with COPD but could represent a distinct condition; clinical context needed."
+      },
+      {
+        "code": "708030004",
+        "term": "Pulmonary emphysema co-occurrent with fibrosis of lung (disorder)",
+        "rationale": "Pulmonary emphysema with lung fibrosis may represent COPD with comorbid pulmonary fibrosis or a distinct condition; clinical context needed."
+      },
+      {
+        "code": "836477007",
+        "term": "Chronic emphysema caused by vapor (disorder)",
+        "rationale": "Chronic emphysema caused by vapor is a specific etiology; unclear if this represents primary COPD or a distinct occupational/environmental condition."
+      },
+      {
+        "code": "31898008",
+        "term": "Paraseptal emphysema (disorder)",
+        "rationale": "Paraseptal emphysema is a pathological subtype that may be associated with COPD but could also be a distinct condition; clinical context needed."
+      }
+    ]
+  },
+  "summary": "Recall: 69.6% (39 of 56 reference codes retrieved). Precision: 86.7%. F1: 77.2%. 6 reference codes were incorrectly excluded.",
+  "elapsed_seconds": 43.58,
+  "pipeline_results_count": 100,
+  "scored_codes": [
+    {
+      "code": "J44",
+      "term": "Other chronic obstructive pulmonary disease",
+      "vocabulary": "ICD-10 (WHO)",
+      "decision": "include",
+      "confidence": 1.0,
+      "rationale": "This is the primary ICD-10 code for chronic obstructive pulmonary disease, directly matching the query.",
+      "sources": [
+        "OMOPHub"
+      ],
+      "classifier_score": null,
+      "llm_score": 1.0,
+      "usage_frequency": null
+    },
+    {
+      "code": "J44.0",
+      "term": "Chronic obstructive pulmonary disease with acute lower respiratory infection",
+      "vocabulary": "ICD-10 (WHO)",
+      "decision": "include",
+      "confidence": 1.0,
+      "rationale": "This is a clinically relevant subtype of COPD with acute lower respiratory infection, a direct manifestation of the condition.",
+      "sources": [
+        "OMOPHub"
+      ],
+      "classifier_score": null,
+      "llm_score": 1.0,
+      "usage_frequency": null
+    },
+    {
+      "code": "J44.1",
+      "term": "Chronic obstructive pulmonary disease with acute exacerbation, unspecified",
+      "vocabulary": "ICD-10 (WHO)",
+      "decision": "include",
+      "confidence": 1.0,
+      "rationale": "This represents acute exacerbation of COPD, a direct manifestation and complication of the primary condition.",
+      "sources": [
+        "OMOPHub"
+      ],
+      "classifier_score": null,
+      "llm_score": 1.0,
+      "usage_frequency": null
+    },
+    {
+      "code": "J44.8",
+      "term": "Other specified chronic obstructive pulmonary disease",
+      "vocabulary": "ICD-10 (WHO)",
+      "decision": "include",
+      "confidence": 1.0,
+      "rationale": "This is a specified variant of COPD and should be included as a clinical subtype.",
+      "sources": [
+        "OMOPHub"
+      ],
+      "classifier_score": null,
+      "llm_score": 1.0,
+      "usage_frequency": null
+    },
+    {
+      "code": "J44.9",
+      "term": "Chronic obstructive pulmonary disease, unspecified",
+      "vocabulary": "ICD-10 (WHO)",
+      "decision": "include",
+      "confidence": 1.0,
+      "rationale": "This is the unspecified COPD code, representing the condition when specific subtype is not documented.",
+      "sources": [
+        "OMOPHub"
+      ],
+      "classifier_score": null,
+      "llm_score": 1.0,
+      "usage_frequency": null
+    },
+    {
+      "code": "13645005",
+      "term": "Chronic obstructive lung disease (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 1.0,
+      "rationale": "Chronic obstructive lung disease is a direct synonym for COPD and a primary diagnostic code.",
+      "sources": [
+        "ChromaDB",
+        "OMOPHub",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 1.0,
+      "usage_frequency": null
+    },
+    {
+      "code": "195951007",
+      "term": "Acute exacerbation of chronic obstructive airways disease (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 1.0,
+      "rationale": "Acute exacerbation of chronic obstructive airways disease is a direct manifestation of COPD.",
+      "sources": [
+        "ChromaDB",
+        "OMOPHub",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 1.0,
+      "usage_frequency": null
+    },
+    {
+      "code": "196001008",
+      "term": "Chronic obstructive pulmonary disease with acute lower respiratory infection (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 1.0,
+      "rationale": "COPD with acute lower respiratory infection is a direct manifestation and complication of COPD.",
+      "sources": [
+        "ChromaDB",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 1.0,
+      "usage_frequency": null
+    },
+    {
+      "code": "1010333003",
+      "term": "Emphysema of left lung (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Emphysema of left lung is a clinical manifestation and subtype of COPD.",
+      "sources": [
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "1010334009",
+      "term": "Emphysema of right lung (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Emphysema of right lung is a clinical manifestation and subtype of COPD.",
+      "sources": [
+        "ChromaDB",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "106001000119101",
+      "term": "Chronic obstructive lung disease co-occurrent with acute bronchitis (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "COPD co-occurring with acute bronchitis represents a direct complication/manifestation of COPD.",
+      "sources": [
+        "ChromaDB",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "135836000",
+      "term": "End stage chronic obstructive airways disease (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "End stage COPD is a severity variant of COPD and should be included as a clinical subtype.",
+      "sources": [
+        "ChromaDB",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "16003001",
+      "term": "Giant bullous emphysema (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Giant bullous emphysema is a clinical manifestation and subtype of emphysema-related COPD.",
+      "sources": [
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "16846004",
+      "term": "Obstructive emphysema (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Obstructive emphysema is a clinical manifestation and subtype of COPD.",
+      "sources": [
+        "ChromaDB",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "185086009",
+      "term": "Chronic obstructive bronchitis (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Chronic obstructive bronchitis is a clinical subtype and manifestation of COPD.",
+      "sources": [
+        "ChromaDB",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "195953005",
+      "term": "Mixed simple and mucopurulent chronic bronchitis (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Mixed simple and mucopurulent chronic bronchitis is a clinical subtype of COPD.",
+      "sources": [
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "195957006",
+      "term": "Chronic bullous emphysema (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Chronic bullous emphysema is a clinical manifestation and subtype of COPD.",
+      "sources": [
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "195958001",
+      "term": "Segmental bullous emphysema (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Segmental bullous emphysema is a clinical manifestation and subtype of COPD.",
+      "sources": [
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "195959009",
+      "term": "Zonal bullous emphysema (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Zonal bullous emphysema is a clinical manifestation and subtype of COPD.",
+      "sources": [
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "196026004",
+      "term": "Chronic emphysema caused by chemical fumes (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Chronic emphysema caused by chemical fumes is a clinical subtype of COPD with identified etiology.",
+      "sources": [
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "233674008",
+      "term": "Pulmonary emphysema in alpha-1 primary immunodeficiency deficiency (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Pulmonary emphysema in alpha-1 primary immunodeficiency is a clinical subtype of COPD with identified etiology.",
+      "sources": [
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "233675009",
+      "term": "Toxic emphysema (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Toxic emphysema is a clinical subtype of COPD with identified etiology.",
+      "sources": [
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "233677001",
+      "term": "Scar emphysema (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Scar emphysema is a clinical subtype of COPD with identified etiology.",
+      "sources": [
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "23958009",
+      "term": "Vanishing lung (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Vanishing lung is a clinical manifestation and severe subtype of emphysema-related COPD.",
+      "sources": [
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "266355005",
+      "term": "Bullous emphysema with collapse (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Bullous emphysema with collapse is a clinical manifestation and complication of COPD.",
+      "sources": [
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "266356006",
+      "term": "Atrophic (senile) emphysema (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Atrophic (senile) emphysema is a clinical subtype of COPD.",
+      "sources": [
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "285381006",
+      "term": "Acute infective exacerbation of chronic obstructive airways disease (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Acute infective exacerbation of COPD is a direct manifestation of the underlying chronic obstructive pulmonary disease condition.",
+      "sources": [
+        "ChromaDB",
+        "OMOPHub",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "293241000119100",
+      "term": "Acute exacerbation of chronic obstructive bronchitis (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Acute exacerbation of chronic obstructive bronchitis is a manifestation of COPD and confirms the patient has the condition.",
+      "sources": [
+        "ChromaDB",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "293991000000106",
+      "term": "Very severe chronic obstructive pulmonary disease (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Very severe COPD is a severity variant of the primary condition and should be included.",
+      "sources": [
+        "ChromaDB",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "313296004",
+      "term": "Mild chronic obstructive pulmonary disease (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Mild COPD is a severity variant of the primary condition and should be included.",
+      "sources": [
+        "ChromaDB",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "313297008",
+      "term": "Moderate chronic obstructive pulmonary disease (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Moderate COPD is a severity variant of the primary condition and should be included.",
+      "sources": [
+        "ChromaDB",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "313299006",
+      "term": "Severe chronic obstructive pulmonary disease (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Severe COPD is a severity variant of the primary condition and should be included.",
+      "sources": [
+        "ChromaDB",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "425748003",
+      "term": "Acute exacerbation of chronic bronchitis (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Acute exacerbation of chronic bronchitis is a manifestation of COPD and confirms the patient has the condition.",
+      "sources": [
+        "ChromaDB",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "63480004",
+      "term": "Chronic bronchitis (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Chronic bronchitis is a core manifestation of COPD and confirms the patient has the condition.",
+      "sources": [
+        "ChromaDB",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "74417001",
+      "term": "Mucopurulent chronic bronchitis (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Mucopurulent chronic bronchitis is a clinical subtype/manifestation of COPD and confirms the patient has the condition.",
+      "sources": [
+        "ChromaDB",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "847091000000104",
+      "term": "Acute non-infective exacerbation of chronic obstructive pulmonary disease (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Acute non-infective exacerbation of COPD is a direct complication/manifestation of COPD and confirms the patient has the condition.",
+      "sources": [
+        "ChromaDB",
+        "OMOPHub",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "87433001",
+      "term": "Pulmonary emphysema (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Pulmonary emphysema is a core pathological component and clinical manifestation of COPD.",
+      "sources": [
+        "ChromaDB",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "10692761000119107",
+      "term": "Asthma-chronic obstructive pulmonary disease overlap syndrome",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.9,
+      "rationale": "Asthma-COPD overlap syndrome is a recognized clinical entity where COPD is a primary component.",
+      "sources": [
+        "ChromaDB",
+        "OMOPHub",
+        "OpenCodelists (Bennett Institute)"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.9,
+      "usage_frequency": null
+    },
+    {
+      "code": "10692761000119108",
+      "term": "Asthma-chronic obstructive pulmonary disease overlap syndrome (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.9,
+      "rationale": "Asthma-COPD overlap syndrome (disorder) is a recognized clinical entity where COPD is a primary component.",
+      "sources": [
+        "ChromaDB",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.9,
+      "usage_frequency": null
+    },
+    {
+      "code": "1751000119100",
+      "term": "Acute exacerbation of chronic obstructive pulmonary disease with asthma",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.9,
+      "rationale": "Acute exacerbation of COPD with asthma represents a direct complication/manifestation of COPD.",
+      "sources": [
+        "ChromaDB",
+        "OMOPHub",
+        "OpenCodelists (Bennett Institute)"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.9,
+      "usage_frequency": null
+    },
+    {
+      "code": "195949008",
+      "term": "Chronic asthmatic bronchitis",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.9,
+      "rationale": "Chronic asthmatic bronchitis is a clinical variant that overlaps with COPD presentation.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.9,
+      "usage_frequency": null
+    },
+    {
+      "code": "52571006",
+      "term": "Chronic tracheobronchitis (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.9,
+      "rationale": "Chronic tracheobronchitis is a manifestation of COPD and confirms the patient has the condition.",
+      "sources": [
+        "ChromaDB",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.9,
+      "usage_frequency": null
+    },
+    {
+      "code": "61937009",
+      "term": "Simple chronic bronchitis (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.9,
+      "rationale": "Simple chronic bronchitis is a manifestation of COPD and confirms the patient has the condition.",
+      "sources": [
+        "ChromaDB",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.9,
+      "usage_frequency": null
+    },
+    {
+      "code": "785736001",
+      "term": "Chronic bronchitis co-occurrent with wheeze (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.9,
+      "rationale": "Chronic bronchitis with wheeze is a clinical manifestation/subtype of COPD and confirms the patient has the condition.",
+      "sources": [
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.9,
+      "usage_frequency": null
+    },
+    {
+      "code": "84409004",
+      "term": "Fetid chronic bronchitis (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.85,
+      "rationale": "Fetid chronic bronchitis is a clinical subtype of chronic bronchitis, a key component of COPD.",
+      "sources": [
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.85,
+      "usage_frequency": null
+    },
+    {
+      "code": "4981000",
+      "term": "Panacinar emphysema (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "uncertain",
+      "confidence": 0.65,
+      "rationale": "Panacinar emphysema is a pathological subtype that may be associated with COPD but could represent a distinct condition; clinical context needed.",
+      "sources": [
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.65,
+      "usage_frequency": null
+    },
+    {
+      "code": "49691004",
+      "term": "Occupational bronchitis (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "uncertain",
+      "confidence": 0.6,
+      "rationale": "Occupational bronchitis may be a subtype or cause of COPD but could also be a distinct occupational disease; clinical context needed.",
+      "sources": [
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.6,
+      "usage_frequency": null
+    },
+    {
+      "code": "68328006",
+      "term": "Centriacinar emphysema (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "uncertain",
+      "confidence": 0.6,
+      "rationale": "Centriacinar emphysema is a pathological subtype that may be associated with COPD but could represent a distinct condition; clinical context needed.",
+      "sources": [
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.6,
+      "usage_frequency": null
+    },
+    {
+      "code": "708030004",
+      "term": "Pulmonary emphysema co-occurrent with fibrosis of lung (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "uncertain",
+      "confidence": 0.6,
+      "rationale": "Pulmonary emphysema with lung fibrosis may represent COPD with comorbid pulmonary fibrosis or a distinct condition; clinical context needed.",
+      "sources": [
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.6,
+      "usage_frequency": null
+    },
+    {
+      "code": "836477007",
+      "term": "Chronic emphysema caused by vapor (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "uncertain",
+      "confidence": 0.6,
+      "rationale": "Chronic emphysema caused by vapor is a specific etiology; unclear if this represents primary COPD or a distinct occupational/environmental condition.",
+      "sources": [
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.6,
+      "usage_frequency": null
+    },
+    {
+      "code": "442025000",
+      "term": "Acute exacerbation of chronic asthmatic bronchitis",
+      "vocabulary": "SNOMED CT",
+      "decision": "uncertain",
+      "confidence": 0.55,
+      "rationale": "Acute exacerbation of chronic asthmatic bronchitis may overlap with COPD but could represent asthma-COPD overlap or pure asthma; clinical context needed.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.55,
+      "usage_frequency": null
+    },
+    {
+      "code": "31898008",
+      "term": "Paraseptal emphysema (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "uncertain",
+      "confidence": 0.5,
+      "rationale": "Paraseptal emphysema is a pathological subtype that may be associated with COPD but could also be a distinct condition; clinical context needed.",
+      "sources": [
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.5,
+      "usage_frequency": null
+    },
+    {
+      "code": "1066231000000103",
+      "term": "Chronic obstructive pulmonary disease monitoring email invitation (procedure)",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.95,
+      "rationale": "This is an administrative invitation code for COPD monitoring, not a clinical diagnosis code.",
+      "sources": [
+        "ChromaDB",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "1066281000000104",
+      "term": "Chronic obstructive pulmonary disease monitoring short message service text message invitation (procedure)",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.95,
+      "rationale": "This is an administrative SMS invitation code for COPD monitoring, not a clinical diagnosis code.",
+      "sources": [
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "1066821000000101",
+      "term": "Chronic obstructive pulmonary disease monitoring short message service text message first invitation (procedure)",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.95,
+      "rationale": "This is an administrative SMS invitation code (first invitation), not a clinical diagnosis code.",
+      "sources": [
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "1066841000000108",
+      "term": "Chronic obstructive pulmonary disease monitoring short message service text message second invitation (procedure)",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.95,
+      "rationale": "This is an administrative SMS invitation code (second invitation), not a clinical diagnosis code.",
+      "sources": [
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "1066851000000106",
+      "term": "Chronic obstructive pulmonary disease monitoring short message service text message third invitation (procedure)",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.95,
+      "rationale": "This is an administrative SMS invitation code (third invitation), not a clinical diagnosis code.",
+      "sources": [
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "10713006",
+      "term": "Diffuse interstitial rheumatoid disease of lung (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.95,
+      "rationale": "Diffuse interstitial rheumatoid disease of lung is a distinct pulmonary condition unrelated to COPD.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "1108721000000102",
+      "term": "Excepted from chronic obstructive pulmonary disease quality indicators - service unavailable (finding)",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.95,
+      "rationale": "This is an administrative exception code indicating service unavailability, not a clinical diagnosis code.",
+      "sources": [
+        "ChromaDB",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "1110861000000102",
+      "term": "Quality and Outcomes Framework chronic obstructive pulmonary disease quality indicator-related care invitation (procedure)",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.95,
+      "rationale": "This is an administrative QOF care invitation code, not a clinical diagnosis code.",
+      "sources": [
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "143371000000104",
+      "term": "Quality and Outcomes Framework chronic obstructive pulmonary disease quality indicator-related care invitation using preferred method of communication (procedure)",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.95,
+      "rationale": "This is an administrative QOF care invitation code using preferred communication method, not a clinical diagnosis code.",
+      "sources": [
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "711431000000109",
+      "term": "Chronic obstructive pulmonary disease monitoring invitation (procedure)",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.95,
+      "rationale": "This is an administrative invitation code for monitoring, not a clinical confirmation of COPD diagnosis.",
+      "sources": [
+        "ChromaDB",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "716241000000106",
+      "term": "Chronic obstructive pulmonary disease monitoring first letter (procedure)",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.95,
+      "rationale": "This is an administrative code for a monitoring letter, not a clinical confirmation of COPD diagnosis.",
+      "sources": [
+        "ChromaDB",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "716281000000103",
+      "term": "Chronic obstructive pulmonary disease monitoring verbal invitation (procedure)",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.95,
+      "rationale": "This is an administrative code for a verbal invitation, not a clinical confirmation of COPD diagnosis.",
+      "sources": [
+        "ChromaDB",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "716291000000101",
+      "term": "Excepted from chronic obstructive pulmonary disease quality indicators - informed dissent (finding)",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.95,
+      "rationale": "This is an administrative exception code for quality indicators, not a clinical confirmation of COPD diagnosis.",
+      "sources": [
+        "ChromaDB",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "716311000000100",
+      "term": "Excepted from chronic obstructive pulmonary disease quality indicators - patient unsuitable (finding)",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.95,
+      "rationale": "This is an administrative exception code for quality indicators, not a clinical confirmation of COPD diagnosis.",
+      "sources": [
+        "ChromaDB",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "716901000000101",
+      "term": "Chronic obstructive pulmonary disease monitoring telephone invitation (procedure)",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.95,
+      "rationale": "This is an administrative code for a telephone invitation, not a clinical confirmation of COPD diagnosis.",
+      "sources": [
+        "ChromaDB",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "717021000000106",
+      "term": "Chronic obstructive pulmonary disease monitoring second letter (procedure)",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.95,
+      "rationale": "This is an administrative monitoring procedure code, not a clinical diagnosis or manifestation of COPD itself.",
+      "sources": [
+        "ChromaDB",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "717521000000104",
+      "term": "Chronic obstructive pulmonary disease monitoring third letter (procedure)",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.95,
+      "rationale": "This is an administrative monitoring procedure code, not a clinical diagnosis or manifestation of COPD itself.",
+      "sources": [
+        "ChromaDB",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "760601000000107",
+      "term": "Chronic obstructive pulmonary disease 3 monthly review (regime/therapy)",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.95,
+      "rationale": "This is an administrative review regime code, not a clinical diagnosis or manifestation of COPD.",
+      "sources": [
+        "ChromaDB",
+        "OMOPHub",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "760621000000103",
+      "term": "Chronic obstructive pulmonary disease 6 monthly review (regime/therapy)",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.95,
+      "rationale": "This is an administrative review regime code, not a clinical diagnosis or manifestation of COPD.",
+      "sources": [
+        "ChromaDB",
+        "OMOPHub",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "848431000000106",
+      "term": "Chronic obstructive pulmonary disease care pathway",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.95,
+      "rationale": "This is an administrative care pathway code, not a clinical diagnosis or manifestation of COPD.",
+      "sources": [
+        "OMOPHub"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "859431000000102",
+      "term": "Chronic obstructive pulmonary disease care assessment",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.95,
+      "rationale": "This is an administrative care assessment code, not a clinical diagnosis or manifestation of COPD.",
+      "sources": [
+        "OMOPHub"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "941201000000103",
+      "term": "Chronic obstructive pulmonary disease resolved (finding)",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.95,
+      "rationale": "A 'resolved' COPD code indicates the condition is no longer present and should not be included in a code list confirming active COPD.",
+      "sources": [
+        "ChromaDB",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "C1273972",
+      "term": "Chronic obstructive pulmonary disease annual review",
+      "vocabulary": "UMLS",
+      "decision": "exclude",
+      "confidence": 0.95,
+      "rationale": "This is an administrative annual review code, not a clinical diagnosis or manifestation of COPD.",
+      "sources": [
+        "UMLS (synonym)"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "394703002",
+      "term": "Chronic obstructive pulmonary disease annual review (regime/therapy)",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.9,
+      "rationale": "This is an administrative/procedural code for annual review, not a clinical confirmation of COPD diagnosis.",
+      "sources": [
+        "ChromaDB",
+        "OMOPHub",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.9,
+      "usage_frequency": null
+    },
+    {
+      "code": "445602009",
+      "term": "Assessment using clinical chronic obstructive pulmonary disease questionnaire",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.9,
+      "rationale": "This is an assessment/screening code for a questionnaire, not a clinical confirmation of COPD diagnosis.",
+      "sources": [
+        "OMOPHub"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.9,
+      "usage_frequency": null
+    },
+    {
+      "code": "445811006",
+      "term": "Assessment using chronic obstructive pulmonary disease assessment test",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.9,
+      "rationale": "This is an assessment/screening code for a questionnaire, not a clinical confirmation of COPD diagnosis.",
+      "sources": [
+        "OMOPHub"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.9,
+      "usage_frequency": null
+    },
+    {
+      "code": "446660005",
+      "term": "Chronic obstructive pulmonary disease assessment test score",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.9,
+      "rationale": "This is a test score result code, not a clinical confirmation of COPD diagnosis.",
+      "sources": [
+        "OMOPHub"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.9,
+      "usage_frequency": null
+    },
+    {
+      "code": "57671000052108",
+      "term": "Chronic Obstructive Pulmonary Disease Assessment Test scale",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.9,
+      "rationale": "This is a scale/assessment tool code, not a clinical confirmation of COPD diagnosis.",
+      "sources": [
+        "OMOPHub"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.9,
+      "usage_frequency": null
+    },
+    {
+      "code": "60805002",
+      "term": "Hemolytic anemia with emphysema AND cutis laxa (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.9,
+      "rationale": "Hemolytic anemia with emphysema and cutis laxa is a rare genetic syndrome, not a manifestation of primary COPD.",
+      "sources": [
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.9,
+      "usage_frequency": null
+    },
+    {
+      "code": "707447008",
+      "term": "Exacerbation of severe persistent asthma",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.9,
+      "rationale": "Exacerbation of severe persistent asthma is an asthma-related code, not a manifestation of primary COPD.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.9,
+      "usage_frequency": null
+    },
+    {
+      "code": "707979007",
+      "term": "Acute severe exacerbation of severe persistent asthma",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.9,
+      "rationale": "Acute severe exacerbation of severe persistent asthma is an asthma-related code, not a manifestation of primary COPD.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.9,
+      "usage_frequency": null
+    },
+    {
+      "code": "708090002",
+      "term": "Acute severe exacerbation of asthma",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.9,
+      "rationale": "Acute severe exacerbation of asthma is an asthma-related code, not a manifestation of primary COPD.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.9,
+      "usage_frequency": null
+    },
+    {
+      "code": "723245007",
+      "term": "Number of chronic obstructive pulmonary disease exacerbations in past year (observable entity)",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.9,
+      "rationale": "This is an observable entity for counting exacerbations rather than a clinical diagnosis code confirming COPD presence.",
+      "sources": [
+        "ChromaDB",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.9,
+      "usage_frequency": null
+    },
+    {
+      "code": "736365000",
+      "term": "Acute exacerbation of chronic obstructive pulmonary disease care plan",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.9,
+      "rationale": "This is a care plan code for acute exacerbations, which is administrative rather than a clinical diagnosis confirming COPD.",
+      "sources": [
+        "OMOPHub"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.9,
+      "usage_frequency": null
+    },
+    {
+      "code": "10692721000119102",
+      "term": "Chronic obstructive asthma co-occurrent with acute exacerbation of asthma",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.85,
+      "rationale": "This code describes chronic obstructive asthma with acute exacerbation, which is primarily an asthma condition, not COPD.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.85,
+      "usage_frequency": null
+    },
+    {
+      "code": "371611000000107",
+      "term": "Chronic obstructive pulmonary disease patient unsuitable for pulmonary rehabilitation (finding)",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.85,
+      "rationale": "This is an administrative finding about suitability for rehabilitation, not a clinical confirmation of COPD itself.",
+      "sources": [
+        "ChromaDB",
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.85,
+      "usage_frequency": null
+    },
+    {
+      "code": "398726004",
+      "term": "Rheumatoid lung disease (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.85,
+      "rationale": "Rheumatoid lung disease is a distinct condition associated with rheumatoid arthritis, not a manifestation of primary COPD.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.85,
+      "usage_frequency": null
+    },
+    {
+      "code": "413845009",
+      "term": "Chronic obstructive pulmonary disease accident and emergency attendance since last visit",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.85,
+      "rationale": "This is an administrative code tracking A&E attendance, not a clinical confirmation of COPD.",
+      "sources": [
+        "OMOPHub"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.85,
+      "usage_frequency": null
+    },
+    {
+      "code": "47895001",
+      "term": "Congenital emphysema (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.85,
+      "rationale": "Congenital emphysema is a distinct congenital condition, not a manifestation of primary COPD.",
+      "sources": [
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.85,
+      "usage_frequency": null
+    },
+    {
+      "code": "66987001",
+      "term": "Congenital lobar emphysema (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.85,
+      "rationale": "Congenital lobar emphysema is a distinct congenital condition, not a manifestation of primary COPD.",
+      "sources": [
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.85,
+      "usage_frequency": null
+    },
+    {
+      "code": "704120002",
+      "term": "Change in chronic obstructive pulmonary disease management plan",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.85,
+      "rationale": "This is an administrative code for management plan changes, not a clinical confirmation of COPD diagnosis.",
+      "sources": [
+        "OMOPHub"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.85,
+      "usage_frequency": null
+    },
+    {
+      "code": "70756004",
+      "term": "Bronchial atresia with segmental pulmonary emphysema (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.85,
+      "rationale": "Bronchial atresia with segmental pulmonary emphysema is a congenital condition, not a manifestation of primary COPD.",
+      "sources": [
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.85,
+      "usage_frequency": null
+    },
+    {
+      "code": "840493007",
+      "term": "Congenital lobar emphysema of bilateral lungs (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.85,
+      "rationale": "Congenital lobar emphysema is a congenital condition distinct from acquired COPD and should not be included in a primary COPD list.",
+      "sources": [
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.85,
+      "usage_frequency": null
+    },
+    {
+      "code": "866881000000101",
+      "term": "Chronic asthma with fixed airflow obstruction",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.85,
+      "rationale": "Chronic asthma with fixed airflow obstruction is primarily an asthma diagnosis; while it may overlap with COPD, it is a distinct condition and should not be included in a primary COPD list.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.85,
+      "usage_frequency": null
+    },
+    {
+      "code": "383611000000102",
+      "term": "At risk of chronic obstructive pulmonary disease exacerbation",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.8,
+      "rationale": "This is a risk assessment code, not a confirmation of COPD diagnosis; it indicates potential for exacerbation rather than the condition itself.",
+      "sources": [
+        "OMOPHub"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.8,
+      "usage_frequency": null
+    },
+    {
+      "code": "401200002",
+      "term": "At increased risk of chronic obstructive pulmonary disease",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.8,
+      "rationale": "This is a risk assessment code indicating increased risk, not a confirmation of COPD diagnosis.",
+      "sources": [
+        "OMOPHub"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.8,
+      "usage_frequency": null
+    },
+    {
+      "code": "89099002",
+      "term": "Chronic allergic bronchitis",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.8,
+      "rationale": "Chronic allergic bronchitis is primarily an allergic condition distinct from COPD, though it may co-occur.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.8,
+      "usage_frequency": null
+    },
+    {
+      "code": "89549007",
+      "term": "Catarrhal bronchitis (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.75,
+      "rationale": "Catarrhal bronchitis is a non-obstructive form of chronic bronchitis and does not confirm COPD (which requires airflow obstruction).",
+      "sources": [
+        "QOF Business Rules 2024-25"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.75,
+      "usage_frequency": null
+    }
+  ],
+  "pipeline": "rag"
+}

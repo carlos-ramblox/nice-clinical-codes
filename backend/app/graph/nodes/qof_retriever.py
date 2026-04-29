@@ -22,7 +22,11 @@ def retrieve_from_qof(state: dict) -> dict:
             continue
 
         rows = search_by_condition(name)
-        for r in rows:
+        # search_by_condition is a SQLite-wide LIKE search across all
+        # ingested sources; filter to QOF-only here so we don't surface
+        # OpenCodelists / OPCS-4 / ICD-10 rows under a "QOF" tag.
+        qof_rows = [r for r in rows if r.get("source") == "QOF Business Rules 2024-25"]
+        for r in qof_rows:
             all_codes.append({
                 "code": r["code"],
                 "term": r["term"],
@@ -33,7 +37,7 @@ def retrieve_from_qof(state: dict) -> dict:
                 "usage_frequency": None,
             })
 
-        logger.info("QOF: '%s' returned %d codes", name, len(rows))
+        logger.info("QOF: '%s' returned %d codes (%d total before source filter)", name, len(qof_rows), len(rows))
 
     return {
         "retrieved_codes": all_codes,

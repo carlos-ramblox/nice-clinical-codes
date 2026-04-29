@@ -14,7 +14,9 @@ class ParsedCondition(TypedDict):
 class RetrievedCode(TypedDict):
     code: str
     term: str
-    vocabulary: str  # "SNOMED CT", "ICD-10"
+    vocabulary: str  # canonical names from config.OMOPHUB_VOCABULARIES:
+                     # "SNOMED CT", "ICD-10 (WHO)", "OPCS-4" (also "UMLS"
+                     # for codes added by the enrichment node)
     source: str  # "OMOPHub", "QOF", "OpenCodelists", "ChromaDB"
     domain: str  # "Condition", "Drug", "Procedure"
     similarity_score: float | None
@@ -60,6 +62,12 @@ class PipelineState(TypedDict):
 
     # Query understanding
     parsed_conditions: list[ParsedCondition]
+    # Vocabulary constraints extracted from the query string. Recognised
+    # values are "SNOMED", "ICD10", "OPCS4" (the same set the
+    # Condition.coding_systems Literal accepts). Empty when the query
+    # doesn't pin a vocabulary; non-empty values flow through to
+    # retriever fan-out and to output filtering.
+    vocabulary_cues: list[str]
 
     # Retrieval — reducer merges parallel results
     retrieved_codes: Annotated[list[RetrievedCode], add]

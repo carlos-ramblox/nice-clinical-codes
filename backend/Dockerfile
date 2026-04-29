@@ -10,7 +10,9 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     && rm -rf /var/lib/apt/lists/*
 
 COPY backend/requirements.txt .
-RUN pip install --no-cache-dir -r requirements.txt
+RUN pip install --no-cache-dir --no-compile -r requirements.txt \
+    && find /usr/local/lib/python3.12/site-packages -name "*.pyc" -delete \
+    && find /usr/local/lib/python3.12/site-packages -name "__pycache__" -type d -exec rm -rf {} + 2>/dev/null || true
 
 # --- Ingestion stage: build SQLite + ChromaDB from source data ---
 FROM base AS ingest
@@ -22,6 +24,7 @@ ENV HF_HOME=/app/hf_cache
 COPY backend/app/ app/
 COPY data/raw/ data/raw/
 COPY data/opcs/ data/opcs/
+COPY data/icd10/ data/icd10/
 
 RUN python -m app.ingestion.run_all --data-dir data
 

@@ -1,0 +1,2950 @@
+{
+  "reference_count": 20,
+  "query": "Chronic hepatitis C codes",
+  "vocabulary": "SNOMED CT",
+  "stages": {
+    "retrieved_raw": {
+      "codelist_name": "retrieved_raw",
+      "n_ref_codes": 20,
+      "n_output_codes": 84,
+      "recall": 1.0,
+      "precision": 0.2381,
+      "f1": 0.3846,
+      "tp_count": 20,
+      "fp_count": 64,
+      "fn_count": 0,
+      "tp_codes": [
+        {
+          "code": "1197150002",
+          "term": "Recurrent hepatitis C virus induced liver disease following liver transplant"
+        },
+        {
+          "code": "128302006",
+          "term": "Chronic hepatitis C"
+        },
+        {
+          "code": "128971000119101",
+          "term": "Cryoglobulinemia due to chronic hepatitis C"
+        },
+        {
+          "code": "146371000119104",
+          "term": "Hepatic coma due to chronic hepatitis C"
+        },
+        {
+          "code": "16623921000119105",
+          "term": "Viral hepatitis C in mother during pregnancy"
+        },
+        {
+          "code": "186640001",
+          "term": "Chronic viral hepatitis C"
+        },
+        {
+          "code": "347891000119103",
+          "term": "Chronic hepatitis C with stage 3 fibrosis"
+        },
+        {
+          "code": "702969000",
+          "term": "Reactivation of hepatitis C viral hepatitis"
+        },
+        {
+          "code": "703866000",
+          "term": "Chronic hepatitis C with stage 2 fibrosis"
+        },
+        {
+          "code": "708198006",
+          "term": "Chronic active hepatitis C"
+        },
+        {
+          "code": "767809001",
+          "term": "Chronic hepatitis C caused by hepatitis C virus genotype 6"
+        },
+        {
+          "code": "767810006",
+          "term": "Chronic hepatitis C caused by hepatitis C virus genotype 5"
+        },
+        {
+          "code": "768006009",
+          "term": "Chronic hepatitis C caused by Hepatitis C virus genotype 3"
+        },
+        {
+          "code": "768125005",
+          "term": "Chronic hepatitis C caused by Hepatitis C virus genotype 2"
+        },
+        {
+          "code": "768126006",
+          "term": "Chronic hepatitis C caused by Hepatitis C virus genotype 4"
+        },
+        {
+          "code": "768127002",
+          "term": "Chronic hepatitis C caused by Hepatitis C virus genotype 1"
+        },
+        {
+          "code": "768288001",
+          "term": "Chronic hepatitis C caused by Hepatitis C virus genotype 1b"
+        },
+        {
+          "code": "768289009",
+          "term": "Chronic hepatitis C caused by Hepatitis C virus genotype 1a"
+        },
+        {
+          "code": "831000119103",
+          "term": "Cirrhosis of liver due to chronic hepatitis C"
+        },
+        {
+          "code": "838377003",
+          "term": "Chronic hepatitis C co-occurrent with human immunodeficiency virus infection"
+        }
+      ],
+      "fp_codes": [
+        {
+          "code": "111283005",
+          "term": "Chronic left-sided heart failure"
+        },
+        {
+          "code": "1116000",
+          "term": "Chronic aggressive type B viral hepatitis"
+        },
+        {
+          "code": "1230342001",
+          "term": "Hepatitis B reinfection following transplantation of liver"
+        },
+        {
+          "code": "1296659009",
+          "term": "Acute exacerbation of chronic heart failure"
+        },
+        {
+          "code": "13645005",
+          "term": "Chronic obstructive lung disease (disorder)"
+        },
+        {
+          "code": "140111000119107",
+          "term": "Hypertension in chronic kidney disease stage 4 due to type 2 diabetes mellitus"
+        },
+        {
+          "code": "140121000119100",
+          "term": "Hypertension in chronic kidney disease stage 3 due to type 2 diabetes mellitus"
+        },
+        {
+          "code": "153091000119109",
+          "term": "Hepatic coma due to chronic hepatitis B with delta agent"
+        },
+        {
+          "code": "153941000119100",
+          "term": "Chronic combined systolic and diastolic heart failure"
+        },
+        {
+          "code": "16859701000119109",
+          "term": "Chronic hepatitis B during pregnancy"
+        },
+        {
+          "code": "1751000119100",
+          "term": "Acute exacerbation of chronic obstructive pulmonary disease with asthma"
+        },
+        {
+          "code": "185086009",
+          "term": "Chronic obstructive bronchitis (disorder)"
+        },
+        {
+          "code": "186638006",
+          "term": "Chronic viral hepatitis B with hepatitis D"
+        },
+        {
+          "code": "186639003",
+          "term": "Chronic viral hepatitis B without delta-agent"
+        },
+        {
+          "code": "195949008",
+          "term": "Chronic asthmatic bronchitis"
+        },
+        {
+          "code": "196001008",
+          "term": "Chronic obstructive pulmonary disease with acute lower respiratory infection (disorder)"
+        },
+        {
+          "code": "198431000000105",
+          "term": "Harmful alcohol use (finding)"
+        },
+        {
+          "code": "235869004",
+          "term": "Chronic viral hepatitis B with hepatitis D"
+        },
+        {
+          "code": "293241000119100",
+          "term": "Acute exacerbation of chronic obstructive bronchitis (disorder)"
+        },
+        {
+          "code": "293991000000106",
+          "term": "Very severe chronic obstructive pulmonary disease (disorder)"
+        },
+        {
+          "code": "304603007",
+          "term": "Variant Creutzfeldt-Jakob disease (disorder)"
+        },
+        {
+          "code": "313296004",
+          "term": "Mild chronic obstructive pulmonary disease (disorder)"
+        },
+        {
+          "code": "313297008",
+          "term": "Moderate chronic obstructive pulmonary disease (disorder)"
+        },
+        {
+          "code": "313299006",
+          "term": "Severe chronic obstructive pulmonary disease (disorder)"
+        },
+        {
+          "code": "324251000000105",
+          "term": "Chronic kidney disease stage 3 with proteinuria (disorder)"
+        },
+        {
+          "code": "324281000000104",
+          "term": "Chronic kidney disease stage 3 without proteinuria (disorder)"
+        },
+        {
+          "code": "324341000000100",
+          "term": "Chronic kidney disease stage 3A without proteinuria (disorder)"
+        },
+        {
+          "code": "324411000000105",
+          "term": "Chronic kidney disease stage 3B without proteinuria (disorder)"
+        },
+        {
+          "code": "38662009",
+          "term": "Chronic persistent type B viral hepatitis"
+        },
+        {
+          "code": "424340000",
+          "term": "Hepatic coma due to chronic hepatitis B"
+        },
+        {
+          "code": "425748003",
+          "term": "Acute exacerbation of chronic bronchitis (disorder)"
+        },
+        {
+          "code": "426749004",
+          "term": "Chronic atrial fibrillation"
+        },
+        {
+          "code": "431856006",
+          "term": "Chronic kidney disease stage 2 (disorder)"
+        },
+        {
+          "code": "431857002",
+          "term": "Chronic kidney disease stage 4 (disorder)"
+        },
+        {
+          "code": "433144002",
+          "term": "Chronic kidney disease stage 3 (disorder)"
+        },
+        {
+          "code": "441481004",
+          "term": "Chronic systolic heart failure"
+        },
+        {
+          "code": "441530006",
+          "term": "Chronic diastolic heart failure"
+        },
+        {
+          "code": "442025000",
+          "term": "Acute exacerbation of chronic asthmatic bronchitis"
+        },
+        {
+          "code": "48447003",
+          "term": "Chronic heart failure"
+        },
+        {
+          "code": "50167007",
+          "term": "Chronic active type B viral hepatitis"
+        },
+        {
+          "code": "52571006",
+          "term": "Chronic tracheobronchitis (disorder)"
+        },
+        {
+          "code": "5375005",
+          "term": "Chronic left-sided congestive heart failure"
+        },
+        {
+          "code": "61937009",
+          "term": "Simple chronic bronchitis (disorder)"
+        },
+        {
+          "code": "61977001",
+          "term": "Chronic type B viral hepatitis"
+        },
+        {
+          "code": "63480004",
+          "term": "Chronic bronchitis (disorder)"
+        },
+        {
+          "code": "700378005",
+          "term": "Chronic kidney disease stage 3A (disorder)"
+        },
+        {
+          "code": "700379002",
+          "term": "Chronic kidney disease stage 3B (disorder)"
+        },
+        {
+          "code": "711000119100",
+          "term": "Chronic kidney disease stage 5 due to type 2 diabetes mellitus (disorder)"
+        },
+        {
+          "code": "713966008",
+          "term": "Occult chronic type B viral hepatitis"
+        },
+        {
+          "code": "71421000119105",
+          "term": "Hypertension in chronic kidney disease due to type 2 diabetes mellitus"
+        },
+        {
+          "code": "721000119107",
+          "term": "Chronic kidney disease stage 4 due to type 2 diabetes mellitus (disorder)"
+        },
+        {
+          "code": "731000119105",
+          "term": "Chronic kidney disease stage 3 due to type 2 diabetes mellitus (disorder)"
+        },
+        {
+          "code": "741000119101",
+          "term": "Chronic kidney disease stage 2 due to type 2 diabetes mellitus (disorder)"
+        },
+        {
+          "code": "838380002",
+          "term": "Chronic hepatitis B co-occurrent with hepatitis C and hepatitis D"
+        },
+        {
+          "code": "847091000000104",
+          "term": "Acute non-infective exacerbation of chronic obstructive pulmonary disease (disorder)"
+        },
+        {
+          "code": "875211000000105",
+          "term": "Chronic viral hepatitis B"
+        },
+        {
+          "code": "88805009",
+          "term": "Chronic congestive heart failure"
+        },
+        {
+          "code": "89099002",
+          "term": "Chronic allergic bronchitis"
+        },
+        {
+          "code": "90741000119107",
+          "term": "Chronic kidney disease stage 3 due to type 1 diabetes mellitus (disorder)"
+        },
+        {
+          "code": "90751000119109",
+          "term": "Chronic kidney disease stage 4 due to type 1 diabetes mellitus (disorder)"
+        },
+        {
+          "code": "90761000119106",
+          "term": "Chronic kidney disease stage 5 due to type 1 diabetes mellitus (disorder)"
+        },
+        {
+          "code": "939211000000104",
+          "term": "Chronic kidney disease resolved (finding)"
+        },
+        {
+          "code": "941201000000103",
+          "term": "Chronic obstructive pulmonary disease resolved (finding)"
+        },
+        {
+          "code": "96731000119100",
+          "term": "Hypertensive heart AND chronic kidney disease stage 3 (disorder)"
+        }
+      ],
+      "fn_codes": []
+    },
+    "merged_enriched": {
+      "codelist_name": "merged_enriched",
+      "n_ref_codes": 20,
+      "n_output_codes": 100,
+      "recall": 1.0,
+      "precision": 0.2,
+      "f1": 0.3333,
+      "tp_count": 20,
+      "fp_count": 80,
+      "fn_count": 0,
+      "tp_codes": [
+        {
+          "code": "1197150002",
+          "term": "Recurrent hepatitis C virus induced liver disease following liver transplant"
+        },
+        {
+          "code": "128302006",
+          "term": "Chronic hepatitis C"
+        },
+        {
+          "code": "128971000119101",
+          "term": "Cryoglobulinemia due to chronic hepatitis C"
+        },
+        {
+          "code": "146371000119104",
+          "term": "Hepatic coma due to chronic hepatitis C"
+        },
+        {
+          "code": "16623921000119105",
+          "term": "Viral hepatitis C in mother during pregnancy"
+        },
+        {
+          "code": "186640001",
+          "term": "Chronic viral hepatitis C"
+        },
+        {
+          "code": "347891000119103",
+          "term": "Chronic hepatitis C with stage 3 fibrosis"
+        },
+        {
+          "code": "702969000",
+          "term": "Reactivation of hepatitis C viral hepatitis"
+        },
+        {
+          "code": "703866000",
+          "term": "Chronic hepatitis C with stage 2 fibrosis"
+        },
+        {
+          "code": "708198006",
+          "term": "Chronic active hepatitis C"
+        },
+        {
+          "code": "767809001",
+          "term": "Chronic hepatitis C caused by hepatitis C virus genotype 6"
+        },
+        {
+          "code": "767810006",
+          "term": "Chronic hepatitis C caused by hepatitis C virus genotype 5"
+        },
+        {
+          "code": "768006009",
+          "term": "Chronic hepatitis C caused by Hepatitis C virus genotype 3"
+        },
+        {
+          "code": "768125005",
+          "term": "Chronic hepatitis C caused by Hepatitis C virus genotype 2"
+        },
+        {
+          "code": "768126006",
+          "term": "Chronic hepatitis C caused by Hepatitis C virus genotype 4"
+        },
+        {
+          "code": "768127002",
+          "term": "Chronic hepatitis C caused by Hepatitis C virus genotype 1"
+        },
+        {
+          "code": "768288001",
+          "term": "Chronic hepatitis C caused by Hepatitis C virus genotype 1b"
+        },
+        {
+          "code": "768289009",
+          "term": "Chronic hepatitis C caused by Hepatitis C virus genotype 1a"
+        },
+        {
+          "code": "831000119103",
+          "term": "Cirrhosis of liver due to chronic hepatitis C"
+        },
+        {
+          "code": "838377003",
+          "term": "Chronic hepatitis C co-occurrent with human immunodeficiency virus infection"
+        }
+      ],
+      "fp_codes": [
+        {
+          "code": "111283005",
+          "term": "Chronic left-sided heart failure"
+        },
+        {
+          "code": "1116000",
+          "term": "Chronic aggressive type B viral hepatitis"
+        },
+        {
+          "code": "1230342001",
+          "term": "Hepatitis B reinfection following transplantation of liver"
+        },
+        {
+          "code": "1296659009",
+          "term": "Acute exacerbation of chronic heart failure"
+        },
+        {
+          "code": "13645005",
+          "term": "Chronic obstructive lung disease (disorder)"
+        },
+        {
+          "code": "140111000119107",
+          "term": "Hypertension in chronic kidney disease stage 4 due to type 2 diabetes mellitus"
+        },
+        {
+          "code": "140121000119100",
+          "term": "Hypertension in chronic kidney disease stage 3 due to type 2 diabetes mellitus"
+        },
+        {
+          "code": "153091000119109",
+          "term": "Hepatic coma due to chronic hepatitis B with delta agent"
+        },
+        {
+          "code": "153941000119100",
+          "term": "Chronic combined systolic and diastolic heart failure"
+        },
+        {
+          "code": "16859701000119109",
+          "term": "Chronic hepatitis B during pregnancy"
+        },
+        {
+          "code": "1751000119100",
+          "term": "Acute exacerbation of chronic obstructive pulmonary disease with asthma"
+        },
+        {
+          "code": "185086009",
+          "term": "Chronic obstructive bronchitis (disorder)"
+        },
+        {
+          "code": "186638006",
+          "term": "Chronic viral hepatitis B with hepatitis D"
+        },
+        {
+          "code": "186639003",
+          "term": "Chronic viral hepatitis B without delta-agent"
+        },
+        {
+          "code": "195949008",
+          "term": "Chronic asthmatic bronchitis"
+        },
+        {
+          "code": "196001008",
+          "term": "Chronic obstructive pulmonary disease with acute lower respiratory infection (disorder)"
+        },
+        {
+          "code": "198431000000105",
+          "term": "Harmful alcohol use (finding)"
+        },
+        {
+          "code": "235869004",
+          "term": "Chronic viral hepatitis B with hepatitis D"
+        },
+        {
+          "code": "293241000119100",
+          "term": "Acute exacerbation of chronic obstructive bronchitis (disorder)"
+        },
+        {
+          "code": "293991000000106",
+          "term": "Very severe chronic obstructive pulmonary disease (disorder)"
+        },
+        {
+          "code": "304603007",
+          "term": "Variant Creutzfeldt-Jakob disease (disorder)"
+        },
+        {
+          "code": "313296004",
+          "term": "Mild chronic obstructive pulmonary disease (disorder)"
+        },
+        {
+          "code": "313297008",
+          "term": "Moderate chronic obstructive pulmonary disease (disorder)"
+        },
+        {
+          "code": "313299006",
+          "term": "Severe chronic obstructive pulmonary disease (disorder)"
+        },
+        {
+          "code": "324251000000105",
+          "term": "Chronic kidney disease stage 3 with proteinuria (disorder)"
+        },
+        {
+          "code": "324281000000104",
+          "term": "Chronic kidney disease stage 3 without proteinuria (disorder)"
+        },
+        {
+          "code": "324341000000100",
+          "term": "Chronic kidney disease stage 3A without proteinuria (disorder)"
+        },
+        {
+          "code": "324411000000105",
+          "term": "Chronic kidney disease stage 3B without proteinuria (disorder)"
+        },
+        {
+          "code": "38662009",
+          "term": "Chronic persistent type B viral hepatitis"
+        },
+        {
+          "code": "424340000",
+          "term": "Hepatic coma due to chronic hepatitis B"
+        },
+        {
+          "code": "425748003",
+          "term": "Acute exacerbation of chronic bronchitis (disorder)"
+        },
+        {
+          "code": "426749004",
+          "term": "Chronic atrial fibrillation"
+        },
+        {
+          "code": "431856006",
+          "term": "Chronic kidney disease stage 2 (disorder)"
+        },
+        {
+          "code": "431857002",
+          "term": "Chronic kidney disease stage 4 (disorder)"
+        },
+        {
+          "code": "433144002",
+          "term": "Chronic kidney disease stage 3 (disorder)"
+        },
+        {
+          "code": "441481004",
+          "term": "Chronic systolic heart failure"
+        },
+        {
+          "code": "441530006",
+          "term": "Chronic diastolic heart failure"
+        },
+        {
+          "code": "442025000",
+          "term": "Acute exacerbation of chronic asthmatic bronchitis"
+        },
+        {
+          "code": "48447003",
+          "term": "Chronic heart failure"
+        },
+        {
+          "code": "50167007",
+          "term": "Chronic active type B viral hepatitis"
+        },
+        {
+          "code": "52571006",
+          "term": "Chronic tracheobronchitis (disorder)"
+        },
+        {
+          "code": "5375005",
+          "term": "Chronic left-sided congestive heart failure"
+        },
+        {
+          "code": "61937009",
+          "term": "Simple chronic bronchitis (disorder)"
+        },
+        {
+          "code": "61977001",
+          "term": "Chronic type B viral hepatitis"
+        },
+        {
+          "code": "63480004",
+          "term": "Chronic bronchitis (disorder)"
+        },
+        {
+          "code": "700378005",
+          "term": "Chronic kidney disease stage 3A (disorder)"
+        },
+        {
+          "code": "700379002",
+          "term": "Chronic kidney disease stage 3B (disorder)"
+        },
+        {
+          "code": "711000119100",
+          "term": "Chronic kidney disease stage 5 due to type 2 diabetes mellitus (disorder)"
+        },
+        {
+          "code": "713966008",
+          "term": "Occult chronic type B viral hepatitis"
+        },
+        {
+          "code": "71421000119105",
+          "term": "Hypertension in chronic kidney disease due to type 2 diabetes mellitus"
+        },
+        {
+          "code": "721000119107",
+          "term": "Chronic kidney disease stage 4 due to type 2 diabetes mellitus (disorder)"
+        },
+        {
+          "code": "731000119105",
+          "term": "Chronic kidney disease stage 3 due to type 2 diabetes mellitus (disorder)"
+        },
+        {
+          "code": "741000119101",
+          "term": "Chronic kidney disease stage 2 due to type 2 diabetes mellitus (disorder)"
+        },
+        {
+          "code": "838380002",
+          "term": "Chronic hepatitis B co-occurrent with hepatitis C and hepatitis D"
+        },
+        {
+          "code": "847091000000104",
+          "term": "Acute non-infective exacerbation of chronic obstructive pulmonary disease (disorder)"
+        },
+        {
+          "code": "875211000000105",
+          "term": "Chronic viral hepatitis B"
+        },
+        {
+          "code": "88805009",
+          "term": "Chronic congestive heart failure"
+        },
+        {
+          "code": "89099002",
+          "term": "Chronic allergic bronchitis"
+        },
+        {
+          "code": "90741000119107",
+          "term": "Chronic kidney disease stage 3 due to type 1 diabetes mellitus (disorder)"
+        },
+        {
+          "code": "90751000119109",
+          "term": "Chronic kidney disease stage 4 due to type 1 diabetes mellitus (disorder)"
+        },
+        {
+          "code": "90761000119106",
+          "term": "Chronic kidney disease stage 5 due to type 1 diabetes mellitus (disorder)"
+        },
+        {
+          "code": "939211000000104",
+          "term": "Chronic kidney disease resolved (finding)"
+        },
+        {
+          "code": "941201000000103",
+          "term": "Chronic obstructive pulmonary disease resolved (finding)"
+        },
+        {
+          "code": "96731000119100",
+          "term": "Hypertensive heart AND chronic kidney disease stage 3 (disorder)"
+        },
+        {
+          "code": "C0524910",
+          "term": "Hepatitis C, Chronic"
+        },
+        {
+          "code": "C3662136",
+          "term": "Cirrhosis of liver due to chronic hepatitis C"
+        },
+        {
+          "code": "C3839238",
+          "term": "Chronic hepatitis C with stage 3 fibrosis"
+        },
+        {
+          "code": "C3839750",
+          "term": "Chronic hepatitis C with stage 2 fibrosis"
+        },
+        {
+          "code": "C3875173",
+          "term": "Cryoglobulinemia due to chronic hepatitis C"
+        },
+        {
+          "code": "C4041238",
+          "term": "Hepatic coma due to chronic hepatitis C"
+        },
+        {
+          "code": "C4087508",
+          "term": "Acute exacerbation of chronic heart failure"
+        },
+        {
+          "code": "C4708423",
+          "term": "Chronic hepatitis C caused by hepatitis C virus genotype 6"
+        },
+        {
+          "code": "C4708424",
+          "term": "Chronic hepatitis C caused by hepatitis C virus genotype 5"
+        },
+        {
+          "code": "C4708467",
+          "term": "Chronic hepatitis C caused by Hepatitis C virus genotype 3"
+        },
+        {
+          "code": "C4708468",
+          "term": "Chronic hepatitis C caused by Hepatitis C virus genotype 2"
+        },
+        {
+          "code": "C4708469",
+          "term": "Chronic hepatitis C caused by Hepatitis C virus genotype 4"
+        },
+        {
+          "code": "C4708470",
+          "term": "Chronic hepatitis C caused by Hepatitis C virus genotype 1"
+        },
+        {
+          "code": "C4708478",
+          "term": "Chronic hepatitis C caused by Hepatitis C virus genotype 1b"
+        },
+        {
+          "code": "C4708479",
+          "term": "Chronic hepatitis C caused by Hepatitis C virus genotype 1a"
+        },
+        {
+          "code": "C5397535",
+          "term": "Chronic hepatitis C co-occurrent with human immunodeficiency virus infection"
+        }
+      ],
+      "fn_codes": []
+    },
+    "all_scored": {
+      "codelist_name": "all_scored",
+      "n_ref_codes": 20,
+      "n_output_codes": 100,
+      "recall": 1.0,
+      "precision": 0.2,
+      "f1": 0.3333,
+      "tp_count": 20,
+      "fp_count": 80,
+      "fn_count": 0,
+      "tp_codes": [
+        {
+          "code": "1197150002",
+          "term": "Recurrent hepatitis C virus induced liver disease following liver transplant"
+        },
+        {
+          "code": "128302006",
+          "term": "Chronic hepatitis C"
+        },
+        {
+          "code": "128971000119101",
+          "term": "Cryoglobulinemia due to chronic hepatitis C"
+        },
+        {
+          "code": "146371000119104",
+          "term": "Hepatic coma due to chronic hepatitis C"
+        },
+        {
+          "code": "16623921000119105",
+          "term": "Viral hepatitis C in mother during pregnancy"
+        },
+        {
+          "code": "186640001",
+          "term": "Chronic viral hepatitis C"
+        },
+        {
+          "code": "347891000119103",
+          "term": "Chronic hepatitis C with stage 3 fibrosis"
+        },
+        {
+          "code": "702969000",
+          "term": "Reactivation of hepatitis C viral hepatitis"
+        },
+        {
+          "code": "703866000",
+          "term": "Chronic hepatitis C with stage 2 fibrosis"
+        },
+        {
+          "code": "708198006",
+          "term": "Chronic active hepatitis C"
+        },
+        {
+          "code": "767809001",
+          "term": "Chronic hepatitis C caused by hepatitis C virus genotype 6"
+        },
+        {
+          "code": "767810006",
+          "term": "Chronic hepatitis C caused by hepatitis C virus genotype 5"
+        },
+        {
+          "code": "768006009",
+          "term": "Chronic hepatitis C caused by Hepatitis C virus genotype 3"
+        },
+        {
+          "code": "768125005",
+          "term": "Chronic hepatitis C caused by Hepatitis C virus genotype 2"
+        },
+        {
+          "code": "768126006",
+          "term": "Chronic hepatitis C caused by Hepatitis C virus genotype 4"
+        },
+        {
+          "code": "768127002",
+          "term": "Chronic hepatitis C caused by Hepatitis C virus genotype 1"
+        },
+        {
+          "code": "768288001",
+          "term": "Chronic hepatitis C caused by Hepatitis C virus genotype 1b"
+        },
+        {
+          "code": "768289009",
+          "term": "Chronic hepatitis C caused by Hepatitis C virus genotype 1a"
+        },
+        {
+          "code": "831000119103",
+          "term": "Cirrhosis of liver due to chronic hepatitis C"
+        },
+        {
+          "code": "838377003",
+          "term": "Chronic hepatitis C co-occurrent with human immunodeficiency virus infection"
+        }
+      ],
+      "fp_codes": [
+        {
+          "code": "111283005",
+          "term": "Chronic left-sided heart failure"
+        },
+        {
+          "code": "1116000",
+          "term": "Chronic aggressive type B viral hepatitis"
+        },
+        {
+          "code": "1230342001",
+          "term": "Hepatitis B reinfection following transplantation of liver"
+        },
+        {
+          "code": "1296659009",
+          "term": "Acute exacerbation of chronic heart failure"
+        },
+        {
+          "code": "13645005",
+          "term": "Chronic obstructive lung disease (disorder)"
+        },
+        {
+          "code": "140111000119107",
+          "term": "Hypertension in chronic kidney disease stage 4 due to type 2 diabetes mellitus"
+        },
+        {
+          "code": "140121000119100",
+          "term": "Hypertension in chronic kidney disease stage 3 due to type 2 diabetes mellitus"
+        },
+        {
+          "code": "153091000119109",
+          "term": "Hepatic coma due to chronic hepatitis B with delta agent"
+        },
+        {
+          "code": "153941000119100",
+          "term": "Chronic combined systolic and diastolic heart failure"
+        },
+        {
+          "code": "16859701000119109",
+          "term": "Chronic hepatitis B during pregnancy"
+        },
+        {
+          "code": "1751000119100",
+          "term": "Acute exacerbation of chronic obstructive pulmonary disease with asthma"
+        },
+        {
+          "code": "185086009",
+          "term": "Chronic obstructive bronchitis (disorder)"
+        },
+        {
+          "code": "186638006",
+          "term": "Chronic viral hepatitis B with hepatitis D"
+        },
+        {
+          "code": "186639003",
+          "term": "Chronic viral hepatitis B without delta-agent"
+        },
+        {
+          "code": "195949008",
+          "term": "Chronic asthmatic bronchitis"
+        },
+        {
+          "code": "196001008",
+          "term": "Chronic obstructive pulmonary disease with acute lower respiratory infection (disorder)"
+        },
+        {
+          "code": "198431000000105",
+          "term": "Harmful alcohol use (finding)"
+        },
+        {
+          "code": "235869004",
+          "term": "Chronic viral hepatitis B with hepatitis D"
+        },
+        {
+          "code": "293241000119100",
+          "term": "Acute exacerbation of chronic obstructive bronchitis (disorder)"
+        },
+        {
+          "code": "293991000000106",
+          "term": "Very severe chronic obstructive pulmonary disease (disorder)"
+        },
+        {
+          "code": "304603007",
+          "term": "Variant Creutzfeldt-Jakob disease (disorder)"
+        },
+        {
+          "code": "313296004",
+          "term": "Mild chronic obstructive pulmonary disease (disorder)"
+        },
+        {
+          "code": "313297008",
+          "term": "Moderate chronic obstructive pulmonary disease (disorder)"
+        },
+        {
+          "code": "313299006",
+          "term": "Severe chronic obstructive pulmonary disease (disorder)"
+        },
+        {
+          "code": "324251000000105",
+          "term": "Chronic kidney disease stage 3 with proteinuria (disorder)"
+        },
+        {
+          "code": "324281000000104",
+          "term": "Chronic kidney disease stage 3 without proteinuria (disorder)"
+        },
+        {
+          "code": "324341000000100",
+          "term": "Chronic kidney disease stage 3A without proteinuria (disorder)"
+        },
+        {
+          "code": "324411000000105",
+          "term": "Chronic kidney disease stage 3B without proteinuria (disorder)"
+        },
+        {
+          "code": "38662009",
+          "term": "Chronic persistent type B viral hepatitis"
+        },
+        {
+          "code": "424340000",
+          "term": "Hepatic coma due to chronic hepatitis B"
+        },
+        {
+          "code": "425748003",
+          "term": "Acute exacerbation of chronic bronchitis (disorder)"
+        },
+        {
+          "code": "426749004",
+          "term": "Chronic atrial fibrillation"
+        },
+        {
+          "code": "431856006",
+          "term": "Chronic kidney disease stage 2 (disorder)"
+        },
+        {
+          "code": "431857002",
+          "term": "Chronic kidney disease stage 4 (disorder)"
+        },
+        {
+          "code": "433144002",
+          "term": "Chronic kidney disease stage 3 (disorder)"
+        },
+        {
+          "code": "441481004",
+          "term": "Chronic systolic heart failure"
+        },
+        {
+          "code": "441530006",
+          "term": "Chronic diastolic heart failure"
+        },
+        {
+          "code": "442025000",
+          "term": "Acute exacerbation of chronic asthmatic bronchitis"
+        },
+        {
+          "code": "48447003",
+          "term": "Chronic heart failure"
+        },
+        {
+          "code": "50167007",
+          "term": "Chronic active type B viral hepatitis"
+        },
+        {
+          "code": "52571006",
+          "term": "Chronic tracheobronchitis (disorder)"
+        },
+        {
+          "code": "5375005",
+          "term": "Chronic left-sided congestive heart failure"
+        },
+        {
+          "code": "61937009",
+          "term": "Simple chronic bronchitis (disorder)"
+        },
+        {
+          "code": "61977001",
+          "term": "Chronic type B viral hepatitis"
+        },
+        {
+          "code": "63480004",
+          "term": "Chronic bronchitis (disorder)"
+        },
+        {
+          "code": "700378005",
+          "term": "Chronic kidney disease stage 3A (disorder)"
+        },
+        {
+          "code": "700379002",
+          "term": "Chronic kidney disease stage 3B (disorder)"
+        },
+        {
+          "code": "711000119100",
+          "term": "Chronic kidney disease stage 5 due to type 2 diabetes mellitus (disorder)"
+        },
+        {
+          "code": "713966008",
+          "term": "Occult chronic type B viral hepatitis"
+        },
+        {
+          "code": "71421000119105",
+          "term": "Hypertension in chronic kidney disease due to type 2 diabetes mellitus"
+        },
+        {
+          "code": "721000119107",
+          "term": "Chronic kidney disease stage 4 due to type 2 diabetes mellitus (disorder)"
+        },
+        {
+          "code": "731000119105",
+          "term": "Chronic kidney disease stage 3 due to type 2 diabetes mellitus (disorder)"
+        },
+        {
+          "code": "741000119101",
+          "term": "Chronic kidney disease stage 2 due to type 2 diabetes mellitus (disorder)"
+        },
+        {
+          "code": "838380002",
+          "term": "Chronic hepatitis B co-occurrent with hepatitis C and hepatitis D"
+        },
+        {
+          "code": "847091000000104",
+          "term": "Acute non-infective exacerbation of chronic obstructive pulmonary disease (disorder)"
+        },
+        {
+          "code": "875211000000105",
+          "term": "Chronic viral hepatitis B"
+        },
+        {
+          "code": "88805009",
+          "term": "Chronic congestive heart failure"
+        },
+        {
+          "code": "89099002",
+          "term": "Chronic allergic bronchitis"
+        },
+        {
+          "code": "90741000119107",
+          "term": "Chronic kidney disease stage 3 due to type 1 diabetes mellitus (disorder)"
+        },
+        {
+          "code": "90751000119109",
+          "term": "Chronic kidney disease stage 4 due to type 1 diabetes mellitus (disorder)"
+        },
+        {
+          "code": "90761000119106",
+          "term": "Chronic kidney disease stage 5 due to type 1 diabetes mellitus (disorder)"
+        },
+        {
+          "code": "939211000000104",
+          "term": "Chronic kidney disease resolved (finding)"
+        },
+        {
+          "code": "941201000000103",
+          "term": "Chronic obstructive pulmonary disease resolved (finding)"
+        },
+        {
+          "code": "96731000119100",
+          "term": "Hypertensive heart AND chronic kidney disease stage 3 (disorder)"
+        },
+        {
+          "code": "C0524910",
+          "term": "Hepatitis C, Chronic"
+        },
+        {
+          "code": "C3662136",
+          "term": "Cirrhosis of liver due to chronic hepatitis C"
+        },
+        {
+          "code": "C3839238",
+          "term": "Chronic hepatitis C with stage 3 fibrosis"
+        },
+        {
+          "code": "C3839750",
+          "term": "Chronic hepatitis C with stage 2 fibrosis"
+        },
+        {
+          "code": "C3875173",
+          "term": "Cryoglobulinemia due to chronic hepatitis C"
+        },
+        {
+          "code": "C4041238",
+          "term": "Hepatic coma due to chronic hepatitis C"
+        },
+        {
+          "code": "C4087508",
+          "term": "Acute exacerbation of chronic heart failure"
+        },
+        {
+          "code": "C4708423",
+          "term": "Chronic hepatitis C caused by hepatitis C virus genotype 6"
+        },
+        {
+          "code": "C4708424",
+          "term": "Chronic hepatitis C caused by hepatitis C virus genotype 5"
+        },
+        {
+          "code": "C4708467",
+          "term": "Chronic hepatitis C caused by Hepatitis C virus genotype 3"
+        },
+        {
+          "code": "C4708468",
+          "term": "Chronic hepatitis C caused by Hepatitis C virus genotype 2"
+        },
+        {
+          "code": "C4708469",
+          "term": "Chronic hepatitis C caused by Hepatitis C virus genotype 4"
+        },
+        {
+          "code": "C4708470",
+          "term": "Chronic hepatitis C caused by Hepatitis C virus genotype 1"
+        },
+        {
+          "code": "C4708478",
+          "term": "Chronic hepatitis C caused by Hepatitis C virus genotype 1b"
+        },
+        {
+          "code": "C4708479",
+          "term": "Chronic hepatitis C caused by Hepatitis C virus genotype 1a"
+        },
+        {
+          "code": "C5397535",
+          "term": "Chronic hepatitis C co-occurrent with human immunodeficiency virus infection"
+        }
+      ],
+      "fn_codes": []
+    },
+    "included_only": {
+      "codelist_name": "included_only",
+      "n_ref_codes": 20,
+      "n_output_codes": 27,
+      "recall": 0.7,
+      "precision": 0.5185,
+      "f1": 0.5957,
+      "tp_count": 14,
+      "fp_count": 13,
+      "fn_count": 6,
+      "tp_codes": [
+        {
+          "code": "128302006",
+          "term": "Chronic hepatitis C"
+        },
+        {
+          "code": "186640001",
+          "term": "Chronic viral hepatitis C"
+        },
+        {
+          "code": "347891000119103",
+          "term": "Chronic hepatitis C with stage 3 fibrosis"
+        },
+        {
+          "code": "703866000",
+          "term": "Chronic hepatitis C with stage 2 fibrosis"
+        },
+        {
+          "code": "708198006",
+          "term": "Chronic active hepatitis C"
+        },
+        {
+          "code": "767809001",
+          "term": "Chronic hepatitis C caused by hepatitis C virus genotype 6"
+        },
+        {
+          "code": "767810006",
+          "term": "Chronic hepatitis C caused by hepatitis C virus genotype 5"
+        },
+        {
+          "code": "768006009",
+          "term": "Chronic hepatitis C caused by Hepatitis C virus genotype 3"
+        },
+        {
+          "code": "768125005",
+          "term": "Chronic hepatitis C caused by Hepatitis C virus genotype 2"
+        },
+        {
+          "code": "768126006",
+          "term": "Chronic hepatitis C caused by Hepatitis C virus genotype 4"
+        },
+        {
+          "code": "768127002",
+          "term": "Chronic hepatitis C caused by Hepatitis C virus genotype 1"
+        },
+        {
+          "code": "768288001",
+          "term": "Chronic hepatitis C caused by Hepatitis C virus genotype 1b"
+        },
+        {
+          "code": "768289009",
+          "term": "Chronic hepatitis C caused by Hepatitis C virus genotype 1a"
+        },
+        {
+          "code": "838377003",
+          "term": "Chronic hepatitis C co-occurrent with human immunodeficiency virus infection"
+        }
+      ],
+      "fp_codes": [
+        {
+          "code": "713966008",
+          "term": "Occult chronic type B viral hepatitis"
+        },
+        {
+          "code": "C0524910",
+          "term": "Hepatitis C, Chronic"
+        },
+        {
+          "code": "C3839238",
+          "term": "Chronic hepatitis C with stage 3 fibrosis"
+        },
+        {
+          "code": "C3839750",
+          "term": "Chronic hepatitis C with stage 2 fibrosis"
+        },
+        {
+          "code": "C4708423",
+          "term": "Chronic hepatitis C caused by hepatitis C virus genotype 6"
+        },
+        {
+          "code": "C4708424",
+          "term": "Chronic hepatitis C caused by hepatitis C virus genotype 5"
+        },
+        {
+          "code": "C4708467",
+          "term": "Chronic hepatitis C caused by Hepatitis C virus genotype 3"
+        },
+        {
+          "code": "C4708468",
+          "term": "Chronic hepatitis C caused by Hepatitis C virus genotype 2"
+        },
+        {
+          "code": "C4708469",
+          "term": "Chronic hepatitis C caused by Hepatitis C virus genotype 4"
+        },
+        {
+          "code": "C4708470",
+          "term": "Chronic hepatitis C caused by Hepatitis C virus genotype 1"
+        },
+        {
+          "code": "C4708478",
+          "term": "Chronic hepatitis C caused by Hepatitis C virus genotype 1b"
+        },
+        {
+          "code": "C4708479",
+          "term": "Chronic hepatitis C caused by Hepatitis C virus genotype 1a"
+        },
+        {
+          "code": "C5397535",
+          "term": "Chronic hepatitis C co-occurrent with human immunodeficiency virus infection"
+        }
+      ],
+      "fn_codes": [
+        {
+          "code": "1197150002",
+          "term": "Recurrent hepatitis C virus induced liver disease following liver transplant"
+        },
+        {
+          "code": "128971000119101",
+          "term": "Cryoglobulinemia due to chronic hepatitis C"
+        },
+        {
+          "code": "146371000119104",
+          "term": "Hepatic coma due to chronic hepatitis C"
+        },
+        {
+          "code": "16623921000119105",
+          "term": "Viral hepatitis C in mother during pregnancy"
+        },
+        {
+          "code": "702969000",
+          "term": "Reactivation of hepatitis C viral hepatitis"
+        },
+        {
+          "code": "831000119103",
+          "term": "Cirrhosis of liver due to chronic hepatitis C"
+        }
+      ]
+    },
+    "included_plus_uncertain": {
+      "codelist_name": "included_plus_uncertain",
+      "n_ref_codes": 20,
+      "n_output_codes": 27,
+      "recall": 0.7,
+      "precision": 0.5185,
+      "f1": 0.5957,
+      "tp_count": 14,
+      "fp_count": 13,
+      "fn_count": 6,
+      "tp_codes": [
+        {
+          "code": "128302006",
+          "term": "Chronic hepatitis C"
+        },
+        {
+          "code": "186640001",
+          "term": "Chronic viral hepatitis C"
+        },
+        {
+          "code": "347891000119103",
+          "term": "Chronic hepatitis C with stage 3 fibrosis"
+        },
+        {
+          "code": "703866000",
+          "term": "Chronic hepatitis C with stage 2 fibrosis"
+        },
+        {
+          "code": "708198006",
+          "term": "Chronic active hepatitis C"
+        },
+        {
+          "code": "767809001",
+          "term": "Chronic hepatitis C caused by hepatitis C virus genotype 6"
+        },
+        {
+          "code": "767810006",
+          "term": "Chronic hepatitis C caused by hepatitis C virus genotype 5"
+        },
+        {
+          "code": "768006009",
+          "term": "Chronic hepatitis C caused by Hepatitis C virus genotype 3"
+        },
+        {
+          "code": "768125005",
+          "term": "Chronic hepatitis C caused by Hepatitis C virus genotype 2"
+        },
+        {
+          "code": "768126006",
+          "term": "Chronic hepatitis C caused by Hepatitis C virus genotype 4"
+        },
+        {
+          "code": "768127002",
+          "term": "Chronic hepatitis C caused by Hepatitis C virus genotype 1"
+        },
+        {
+          "code": "768288001",
+          "term": "Chronic hepatitis C caused by Hepatitis C virus genotype 1b"
+        },
+        {
+          "code": "768289009",
+          "term": "Chronic hepatitis C caused by Hepatitis C virus genotype 1a"
+        },
+        {
+          "code": "838377003",
+          "term": "Chronic hepatitis C co-occurrent with human immunodeficiency virus infection"
+        }
+      ],
+      "fp_codes": [
+        {
+          "code": "713966008",
+          "term": "Occult chronic type B viral hepatitis"
+        },
+        {
+          "code": "C0524910",
+          "term": "Hepatitis C, Chronic"
+        },
+        {
+          "code": "C3839238",
+          "term": "Chronic hepatitis C with stage 3 fibrosis"
+        },
+        {
+          "code": "C3839750",
+          "term": "Chronic hepatitis C with stage 2 fibrosis"
+        },
+        {
+          "code": "C4708423",
+          "term": "Chronic hepatitis C caused by hepatitis C virus genotype 6"
+        },
+        {
+          "code": "C4708424",
+          "term": "Chronic hepatitis C caused by hepatitis C virus genotype 5"
+        },
+        {
+          "code": "C4708467",
+          "term": "Chronic hepatitis C caused by Hepatitis C virus genotype 3"
+        },
+        {
+          "code": "C4708468",
+          "term": "Chronic hepatitis C caused by Hepatitis C virus genotype 2"
+        },
+        {
+          "code": "C4708469",
+          "term": "Chronic hepatitis C caused by Hepatitis C virus genotype 4"
+        },
+        {
+          "code": "C4708470",
+          "term": "Chronic hepatitis C caused by Hepatitis C virus genotype 1"
+        },
+        {
+          "code": "C4708478",
+          "term": "Chronic hepatitis C caused by Hepatitis C virus genotype 1b"
+        },
+        {
+          "code": "C4708479",
+          "term": "Chronic hepatitis C caused by Hepatitis C virus genotype 1a"
+        },
+        {
+          "code": "C5397535",
+          "term": "Chronic hepatitis C co-occurrent with human immunodeficiency virus infection"
+        }
+      ],
+      "fn_codes": [
+        {
+          "code": "1197150002",
+          "term": "Recurrent hepatitis C virus induced liver disease following liver transplant"
+        },
+        {
+          "code": "128971000119101",
+          "term": "Cryoglobulinemia due to chronic hepatitis C"
+        },
+        {
+          "code": "146371000119104",
+          "term": "Hepatic coma due to chronic hepatitis C"
+        },
+        {
+          "code": "16623921000119105",
+          "term": "Viral hepatitis C in mother during pregnancy"
+        },
+        {
+          "code": "702969000",
+          "term": "Reactivation of hepatitis C viral hepatitis"
+        },
+        {
+          "code": "831000119103",
+          "term": "Cirrhosis of liver due to chronic hepatitis C"
+        }
+      ]
+    }
+  },
+  "false_exclusions": {
+    "count": 6,
+    "codes": [
+      {
+        "code": "1197150002",
+        "term": "Recurrent hepatitis C virus induced liver disease following liver transplant",
+        "rationale": "This represents recurrent hepatitis C after transplant, which is a post-transplant complication rather than primary chronic hepatitis C."
+      },
+      {
+        "code": "16623921000119105",
+        "term": "Viral hepatitis C in mother during pregnancy",
+        "rationale": "Viral hepatitis C in pregnancy is a contextual variant; the query specifies primary chronic hepatitis C without pregnancy context."
+      },
+      {
+        "code": "702969000",
+        "term": "Reactivation of hepatitis C viral hepatitis",
+        "rationale": "Reactivation of hepatitis C is a specific clinical event distinct from chronic hepatitis C itself and represents a change in disease status rather than the primary condition."
+      },
+      {
+        "code": "831000119103",
+        "term": "Cirrhosis of liver due to chronic hepatitis C",
+        "rationale": "Cirrhosis of liver due to chronic hepatitis C is a complication of chronic hepatitis C, not an instance of chronic hepatitis C itself; the term does not name the primary condition."
+      },
+      {
+        "code": "128971000119101",
+        "term": "Cryoglobulinemia due to chronic hepatitis C",
+        "rationale": "Cryoglobulinemia is a complication of chronic hepatitis C; the term does not name the queried condition itself."
+      },
+      {
+        "code": "146371000119104",
+        "term": "Hepatic coma due to chronic hepatitis C",
+        "rationale": "Hepatic coma due to chronic hepatitis C is a severe complication, not an instance of the primary condition itself."
+      }
+    ]
+  },
+  "uncertain_in_reference": {
+    "count": 0,
+    "codes": []
+  },
+  "summary": "Recall: 70.0% (14 of 20 reference codes retrieved). Precision: 51.8%. F1: 59.6%. 6 reference codes were incorrectly excluded.",
+  "elapsed_seconds": 42.4,
+  "pipeline_results_count": 100,
+  "scored_codes": [
+    {
+      "code": "128302006",
+      "term": "Chronic hepatitis C",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.99,
+      "rationale": "This is the direct SNOMED code for chronic hepatitis C and clearly matches the query.",
+      "sources": [
+        "OMOPHub",
+        "OpenCodelists (nhsd-primary-care-domain-refsets)"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.99,
+      "usage_frequency": null
+    },
+    {
+      "code": "186640001",
+      "term": "Chronic viral hepatitis C",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.99,
+      "rationale": "This is a SNOMED code for chronic viral hepatitis C and directly matches the query.",
+      "sources": [
+        "OpenCodelists (nhsd-primary-care-domain-refsets)"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.99,
+      "usage_frequency": null
+    },
+    {
+      "code": "C0524910",
+      "term": "Hepatitis C, Chronic",
+      "vocabulary": "UMLS",
+      "decision": "include",
+      "confidence": 0.99,
+      "rationale": "This is a direct synonym for chronic hepatitis C and clearly represents the queried condition.",
+      "sources": [
+        "UMLS (synonym)"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.99,
+      "usage_frequency": null
+    },
+    {
+      "code": "767809001",
+      "term": "Chronic hepatitis C caused by hepatitis C virus genotype 6",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.98,
+      "rationale": "Chronic hepatitis C caused by hepatitis C virus genotype 6 is a clinical subtype of chronic hepatitis C that explicitly names the condition and represents a genotype-specific variant.",
+      "sources": [
+        "OMOPHub",
+        "OpenCodelists (nhsd-primary-care-domain-refsets)"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.98,
+      "usage_frequency": null
+    },
+    {
+      "code": "767810006",
+      "term": "Chronic hepatitis C caused by hepatitis C virus genotype 5",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.98,
+      "rationale": "Chronic hepatitis C caused by hepatitis C virus genotype 5 is a clinical subtype of chronic hepatitis C that explicitly names the condition and represents a genotype-specific variant.",
+      "sources": [
+        "OMOPHub",
+        "OpenCodelists (nhsd-primary-care-domain-refsets)"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.98,
+      "usage_frequency": null
+    },
+    {
+      "code": "768006009",
+      "term": "Chronic hepatitis C caused by Hepatitis C virus genotype 3",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.98,
+      "rationale": "Chronic hepatitis C caused by Hepatitis C virus genotype 3 is a clinical subtype of chronic hepatitis C that explicitly names the condition and represents a genotype-specific variant.",
+      "sources": [
+        "OMOPHub",
+        "OpenCodelists (nhsd-primary-care-domain-refsets)"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.98,
+      "usage_frequency": null
+    },
+    {
+      "code": "768125005",
+      "term": "Chronic hepatitis C caused by Hepatitis C virus genotype 2",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.98,
+      "rationale": "Chronic hepatitis C caused by Hepatitis C virus genotype 2 is a clinical subtype of chronic hepatitis C that explicitly names the condition and represents a genotype-specific variant.",
+      "sources": [
+        "OMOPHub",
+        "OpenCodelists (nhsd-primary-care-domain-refsets)"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.98,
+      "usage_frequency": null
+    },
+    {
+      "code": "768126006",
+      "term": "Chronic hepatitis C caused by Hepatitis C virus genotype 4",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.98,
+      "rationale": "Chronic hepatitis C caused by Hepatitis C virus genotype 4 is a clinical subtype of chronic hepatitis C that explicitly names the condition and represents a genotype-specific variant.",
+      "sources": [
+        "OMOPHub",
+        "OpenCodelists (nhsd-primary-care-domain-refsets)"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.98,
+      "usage_frequency": null
+    },
+    {
+      "code": "768127002",
+      "term": "Chronic hepatitis C caused by Hepatitis C virus genotype 1",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.98,
+      "rationale": "Chronic hepatitis C caused by Hepatitis C virus genotype 1 is a clinical subtype of chronic hepatitis C that explicitly names the condition and represents a genotype-specific variant.",
+      "sources": [
+        "OMOPHub",
+        "OpenCodelists (nhsd-primary-care-domain-refsets)"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.98,
+      "usage_frequency": null
+    },
+    {
+      "code": "768288001",
+      "term": "Chronic hepatitis C caused by Hepatitis C virus genotype 1b",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.98,
+      "rationale": "Chronic hepatitis C caused by Hepatitis C virus genotype 1b is a clinical subtype of chronic hepatitis C that explicitly names the condition and represents a genotype-specific variant.",
+      "sources": [
+        "OMOPHub",
+        "OpenCodelists (nhsd-primary-care-domain-refsets)"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.98,
+      "usage_frequency": null
+    },
+    {
+      "code": "768289009",
+      "term": "Chronic hepatitis C caused by Hepatitis C virus genotype 1a",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.98,
+      "rationale": "Chronic hepatitis C caused by Hepatitis C virus genotype 1a is a clinical subtype of chronic hepatitis C that explicitly names the condition and represents a genotype-specific variant.",
+      "sources": [
+        "OMOPHub",
+        "OpenCodelists (nhsd-primary-care-domain-refsets)"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.98,
+      "usage_frequency": null
+    },
+    {
+      "code": "347891000119103",
+      "term": "Chronic hepatitis C with stage 3 fibrosis",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Chronic hepatitis C with stage 3 fibrosis is a clinical subtype/severity variant of chronic hepatitis C and should be included.",
+      "sources": [
+        "OMOPHub",
+        "OpenCodelists (nhsd-primary-care-domain-refsets)"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "703866000",
+      "term": "Chronic hepatitis C with stage 2 fibrosis",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Chronic hepatitis C with stage 2 fibrosis is a clinical subtype of chronic hepatitis C that explicitly names the condition and represents a severity variant.",
+      "sources": [
+        "OMOPHub",
+        "OpenCodelists (nhsd-primary-care-domain-refsets)"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "708198006",
+      "term": "Chronic active hepatitis C",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Chronic active hepatitis C is a clinical subtype of chronic hepatitis C that explicitly names the condition and represents an instance of chronic hepatitis C.",
+      "sources": [
+        "OpenCodelists (nhsd-primary-care-domain-refsets)"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "C3839238",
+      "term": "Chronic hepatitis C with stage 3 fibrosis",
+      "vocabulary": "UMLS",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Chronic hepatitis C with stage 3 fibrosis is a clinical subtype/severity variant of chronic hepatitis C and should be included.",
+      "sources": [
+        "UMLS (synonym)"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "C3839750",
+      "term": "Chronic hepatitis C with stage 2 fibrosis",
+      "vocabulary": "UMLS",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Chronic hepatitis C with stage 2 fibrosis is a clinical subtype/severity variant of chronic hepatitis C and should be included.",
+      "sources": [
+        "UMLS (synonym)"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "C4708423",
+      "term": "Chronic hepatitis C caused by hepatitis C virus genotype 6",
+      "vocabulary": "UMLS",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Chronic hepatitis C caused by hepatitis C virus genotype 6 is a clinical subtype of chronic hepatitis C and should be included.",
+      "sources": [
+        "UMLS (synonym)"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "C4708424",
+      "term": "Chronic hepatitis C caused by hepatitis C virus genotype 5",
+      "vocabulary": "UMLS",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Chronic hepatitis C caused by hepatitis C virus genotype 5 is a clinical subtype of chronic hepatitis C and should be included.",
+      "sources": [
+        "UMLS (synonym)"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "C4708467",
+      "term": "Chronic hepatitis C caused by Hepatitis C virus genotype 3",
+      "vocabulary": "UMLS",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Chronic hepatitis C caused by hepatitis C virus genotype 3 is a clinical subtype of chronic hepatitis C and should be included.",
+      "sources": [
+        "UMLS (synonym)"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "C4708468",
+      "term": "Chronic hepatitis C caused by Hepatitis C virus genotype 2",
+      "vocabulary": "UMLS",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Chronic hepatitis C caused by hepatitis C virus genotype 2 is a clinical subtype of chronic hepatitis C and should be included.",
+      "sources": [
+        "UMLS (synonym)"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "C4708469",
+      "term": "Chronic hepatitis C caused by Hepatitis C virus genotype 4",
+      "vocabulary": "UMLS",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Chronic hepatitis C caused by hepatitis C virus genotype 4 is a clinical subtype of chronic hepatitis C and should be included.",
+      "sources": [
+        "UMLS (synonym)"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "C4708470",
+      "term": "Chronic hepatitis C caused by Hepatitis C virus genotype 1",
+      "vocabulary": "UMLS",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Chronic hepatitis C caused by hepatitis C virus genotype 1 is a clinical subtype of chronic hepatitis C and should be included.",
+      "sources": [
+        "UMLS (synonym)"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "C4708478",
+      "term": "Chronic hepatitis C caused by Hepatitis C virus genotype 1b",
+      "vocabulary": "UMLS",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Chronic hepatitis C caused by hepatitis C virus genotype 1b is a clinical subtype of chronic hepatitis C and should be included.",
+      "sources": [
+        "UMLS (synonym)"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "C4708479",
+      "term": "Chronic hepatitis C caused by Hepatitis C virus genotype 1a",
+      "vocabulary": "UMLS",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Chronic hepatitis C caused by hepatitis C virus genotype 1a is a clinical subtype of chronic hepatitis C and should be included.",
+      "sources": [
+        "UMLS (synonym)"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "713966008",
+      "term": "Occult chronic type B viral hepatitis",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.9,
+      "rationale": "Occult chronic type B viral hepatitis is hepatitis B, not hepatitis C; however, this appears to be a data error as it should be type C for inclusion in a hepatitis C list.",
+      "sources": [
+        "OpenCodelists (nhsd-primary-care-domain-refsets)"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.9,
+      "usage_frequency": null
+    },
+    {
+      "code": "838377003",
+      "term": "Chronic hepatitis C co-occurrent with human immunodeficiency virus infection",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.9,
+      "rationale": "Chronic hepatitis C co-occurrent with human immunodeficiency virus infection explicitly names chronic hepatitis C and represents a clinical variant with comorbid HIV.",
+      "sources": [
+        "OMOPHub",
+        "OpenCodelists (nhsd-primary-care-domain-refsets)"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.9,
+      "usage_frequency": null
+    },
+    {
+      "code": "C5397535",
+      "term": "Chronic hepatitis C co-occurrent with human immunodeficiency virus infection",
+      "vocabulary": "UMLS",
+      "decision": "include",
+      "confidence": 0.9,
+      "rationale": "Chronic hepatitis C co-occurring with HIV infection is a clinical variant of chronic hepatitis C and should be included as it represents the condition itself.",
+      "sources": [
+        "UMLS (synonym)"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.9,
+      "usage_frequency": null
+    },
+    {
+      "code": "111283005",
+      "term": "Chronic left-sided heart failure",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.99,
+      "rationale": "Chronic left-sided heart failure is unrelated to hepatitis C and represents a different organ system comorbidity.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.99,
+      "usage_frequency": null
+    },
+    {
+      "code": "1116000",
+      "term": "Chronic aggressive type B viral hepatitis",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.99,
+      "rationale": "This code is for chronic hepatitis B, not hepatitis C, and does not match the query for chronic hepatitis C.",
+      "sources": [
+        "OpenCodelists (nhsd-primary-care-domain-refsets)"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.99,
+      "usage_frequency": null
+    },
+    {
+      "code": "1230342001",
+      "term": "Hepatitis B reinfection following transplantation of liver",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.99,
+      "rationale": "This code is for hepatitis B reinfection post-transplant, not chronic hepatitis C.",
+      "sources": [
+        "OpenCodelists (nhsd-primary-care-domain-refsets)"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.99,
+      "usage_frequency": null
+    },
+    {
+      "code": "1296659009",
+      "term": "Acute exacerbation of chronic heart failure",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.99,
+      "rationale": "Acute exacerbation of chronic heart failure is unrelated to hepatitis C.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.99,
+      "usage_frequency": null
+    },
+    {
+      "code": "13645005",
+      "term": "Chronic obstructive lung disease (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.99,
+      "rationale": "Chronic obstructive lung disease is unrelated to hepatitis C.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.99,
+      "usage_frequency": null
+    },
+    {
+      "code": "140111000119107",
+      "term": "Hypertension in chronic kidney disease stage 4 due to type 2 diabetes mellitus",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.99,
+      "rationale": "Hypertension in chronic kidney disease due to type 2 diabetes is unrelated to hepatitis C.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.99,
+      "usage_frequency": null
+    },
+    {
+      "code": "140121000119100",
+      "term": "Hypertension in chronic kidney disease stage 3 due to type 2 diabetes mellitus",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.99,
+      "rationale": "Hypertension in chronic kidney disease due to type 2 diabetes is unrelated to hepatitis C.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.99,
+      "usage_frequency": null
+    },
+    {
+      "code": "153091000119109",
+      "term": "Hepatic coma due to chronic hepatitis B with delta agent",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.99,
+      "rationale": "This code is for hepatitis B with delta agent, not hepatitis C.",
+      "sources": [
+        "OpenCodelists (nhsd-primary-care-domain-refsets)"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.99,
+      "usage_frequency": null
+    },
+    {
+      "code": "153941000119100",
+      "term": "Chronic combined systolic and diastolic heart failure",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.99,
+      "rationale": "Chronic combined systolic and diastolic heart failure is unrelated to hepatitis C.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.99,
+      "usage_frequency": null
+    },
+    {
+      "code": "16859701000119109",
+      "term": "Chronic hepatitis B during pregnancy",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.99,
+      "rationale": "This code is for chronic hepatitis B during pregnancy, not hepatitis C.",
+      "sources": [
+        "OpenCodelists (nhsd-primary-care-domain-refsets)"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.99,
+      "usage_frequency": null
+    },
+    {
+      "code": "1751000119100",
+      "term": "Acute exacerbation of chronic obstructive pulmonary disease with asthma",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.99,
+      "rationale": "Acute exacerbation of chronic obstructive pulmonary disease with asthma is unrelated to hepatitis C.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.99,
+      "usage_frequency": null
+    },
+    {
+      "code": "185086009",
+      "term": "Chronic obstructive bronchitis (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.99,
+      "rationale": "Chronic obstructive bronchitis is unrelated to hepatitis C.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.99,
+      "usage_frequency": null
+    },
+    {
+      "code": "186638006",
+      "term": "Chronic viral hepatitis B with hepatitis D",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.99,
+      "rationale": "This code is for chronic hepatitis B with hepatitis D, not hepatitis C.",
+      "sources": [
+        "OpenCodelists (nhsd-primary-care-domain-refsets)"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.99,
+      "usage_frequency": null
+    },
+    {
+      "code": "186639003",
+      "term": "Chronic viral hepatitis B without delta-agent",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.99,
+      "rationale": "This code is for chronic hepatitis B without delta-agent, not hepatitis C.",
+      "sources": [
+        "OpenCodelists (nhsd-primary-care-domain-refsets)"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.99,
+      "usage_frequency": null
+    },
+    {
+      "code": "195949008",
+      "term": "Chronic asthmatic bronchitis",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.99,
+      "rationale": "Chronic asthmatic bronchitis is unrelated to hepatitis C.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.99,
+      "usage_frequency": null
+    },
+    {
+      "code": "196001008",
+      "term": "Chronic obstructive pulmonary disease with acute lower respiratory infection (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.99,
+      "rationale": "Chronic obstructive pulmonary disease with acute lower respiratory infection is unrelated to hepatitis C.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.99,
+      "usage_frequency": null
+    },
+    {
+      "code": "198431000000105",
+      "term": "Harmful alcohol use (finding)",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.99,
+      "rationale": "Harmful alcohol use is a risk factor for hepatitis C but not an instance of the condition itself.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.99,
+      "usage_frequency": null
+    },
+    {
+      "code": "235869004",
+      "term": "Chronic viral hepatitis B with hepatitis D",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.99,
+      "rationale": "This code is for chronic hepatitis B with hepatitis D, not hepatitis C.",
+      "sources": [
+        "OpenCodelists (nhsd-primary-care-domain-refsets)"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.99,
+      "usage_frequency": null
+    },
+    {
+      "code": "293241000119100",
+      "term": "Acute exacerbation of chronic obstructive bronchitis (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.99,
+      "rationale": "Acute exacerbation of chronic obstructive bronchitis is unrelated to hepatitis C.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.99,
+      "usage_frequency": null
+    },
+    {
+      "code": "293991000000106",
+      "term": "Very severe chronic obstructive pulmonary disease (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.99,
+      "rationale": "Very severe chronic obstructive pulmonary disease is unrelated to hepatitis C.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.99,
+      "usage_frequency": null
+    },
+    {
+      "code": "304603007",
+      "term": "Variant Creutzfeldt-Jakob disease (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.99,
+      "rationale": "Variant Creutzfeldt-Jakob disease is unrelated to hepatitis C.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.99,
+      "usage_frequency": null
+    },
+    {
+      "code": "313296004",
+      "term": "Mild chronic obstructive pulmonary disease (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.99,
+      "rationale": "Mild chronic obstructive pulmonary disease is unrelated to hepatitis C.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.99,
+      "usage_frequency": null
+    },
+    {
+      "code": "313297008",
+      "term": "Moderate chronic obstructive pulmonary disease (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.99,
+      "rationale": "Moderate chronic obstructive pulmonary disease is unrelated to hepatitis C.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.99,
+      "usage_frequency": null
+    },
+    {
+      "code": "313299006",
+      "term": "Severe chronic obstructive pulmonary disease (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.99,
+      "rationale": "Severe chronic obstructive pulmonary disease is unrelated to hepatitis C.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.99,
+      "usage_frequency": null
+    },
+    {
+      "code": "324251000000105",
+      "term": "Chronic kidney disease stage 3 with proteinuria (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.99,
+      "rationale": "Chronic kidney disease stage 3 with proteinuria is unrelated to hepatitis C.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.99,
+      "usage_frequency": null
+    },
+    {
+      "code": "324281000000104",
+      "term": "Chronic kidney disease stage 3 without proteinuria (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.99,
+      "rationale": "Chronic kidney disease stage 3 without proteinuria is unrelated to hepatitis C.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.99,
+      "usage_frequency": null
+    },
+    {
+      "code": "324341000000100",
+      "term": "Chronic kidney disease stage 3A without proteinuria (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.99,
+      "rationale": "Chronic kidney disease stage 3A without proteinuria is unrelated to hepatitis C.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.99,
+      "usage_frequency": null
+    },
+    {
+      "code": "324411000000105",
+      "term": "Chronic kidney disease stage 3B without proteinuria (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.99,
+      "rationale": "Chronic kidney disease stage 3B without proteinuria is unrelated to hepatitis C.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.99,
+      "usage_frequency": null
+    },
+    {
+      "code": "38662009",
+      "term": "Chronic persistent type B viral hepatitis",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.99,
+      "rationale": "This code is for chronic persistent type B viral hepatitis, not hepatitis C.",
+      "sources": [
+        "OpenCodelists (nhsd-primary-care-domain-refsets)"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.99,
+      "usage_frequency": null
+    },
+    {
+      "code": "424340000",
+      "term": "Hepatic coma due to chronic hepatitis B",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.99,
+      "rationale": "This code is for hepatic coma due to chronic hepatitis B, not hepatitis C.",
+      "sources": [
+        "OpenCodelists (nhsd-primary-care-domain-refsets)"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.99,
+      "usage_frequency": null
+    },
+    {
+      "code": "425748003",
+      "term": "Acute exacerbation of chronic bronchitis (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.99,
+      "rationale": "Acute exacerbation of chronic bronchitis is unrelated to hepatitis C.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.99,
+      "usage_frequency": null
+    },
+    {
+      "code": "426749004",
+      "term": "Chronic atrial fibrillation",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.99,
+      "rationale": "Chronic atrial fibrillation is unrelated to hepatitis C.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.99,
+      "usage_frequency": null
+    },
+    {
+      "code": "431856006",
+      "term": "Chronic kidney disease stage 2 (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.99,
+      "rationale": "Chronic kidney disease stage 2 is unrelated to hepatitis C.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.99,
+      "usage_frequency": null
+    },
+    {
+      "code": "431857002",
+      "term": "Chronic kidney disease stage 4 (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.99,
+      "rationale": "Chronic kidney disease stage 4 is a comorbidity unrelated to hepatitis C and does not represent an instance of chronic hepatitis C.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.99,
+      "usage_frequency": null
+    },
+    {
+      "code": "433144002",
+      "term": "Chronic kidney disease stage 3 (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.99,
+      "rationale": "Chronic kidney disease stage 3 is a comorbidity unrelated to hepatitis C and does not represent an instance of chronic hepatitis C.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.99,
+      "usage_frequency": null
+    },
+    {
+      "code": "441481004",
+      "term": "Chronic systolic heart failure",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.99,
+      "rationale": "Chronic systolic heart failure is a comorbidity unrelated to hepatitis C and does not represent an instance of chronic hepatitis C.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.99,
+      "usage_frequency": null
+    },
+    {
+      "code": "441530006",
+      "term": "Chronic diastolic heart failure",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.99,
+      "rationale": "Chronic diastolic heart failure is a comorbidity unrelated to hepatitis C and does not represent an instance of chronic hepatitis C.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.99,
+      "usage_frequency": null
+    },
+    {
+      "code": "442025000",
+      "term": "Acute exacerbation of chronic asthmatic bronchitis",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.99,
+      "rationale": "Acute exacerbation of chronic asthmatic bronchitis is unrelated to hepatitis C and does not represent an instance of chronic hepatitis C.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.99,
+      "usage_frequency": null
+    },
+    {
+      "code": "48447003",
+      "term": "Chronic heart failure",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.99,
+      "rationale": "Chronic heart failure is a comorbidity unrelated to hepatitis C and does not represent an instance of chronic hepatitis C.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.99,
+      "usage_frequency": null
+    },
+    {
+      "code": "50167007",
+      "term": "Chronic active type B viral hepatitis",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.99,
+      "rationale": "Chronic active type B viral hepatitis is hepatitis B, not hepatitis C, and does not belong in a chronic hepatitis C code list.",
+      "sources": [
+        "OpenCodelists (nhsd-primary-care-domain-refsets)"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.99,
+      "usage_frequency": null
+    },
+    {
+      "code": "52571006",
+      "term": "Chronic tracheobronchitis (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.99,
+      "rationale": "Chronic tracheobronchitis is unrelated to hepatitis C and does not represent an instance of chronic hepatitis C.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.99,
+      "usage_frequency": null
+    },
+    {
+      "code": "5375005",
+      "term": "Chronic left-sided congestive heart failure",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.99,
+      "rationale": "Chronic left-sided congestive heart failure is a comorbidity unrelated to hepatitis C and does not represent an instance of chronic hepatitis C.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.99,
+      "usage_frequency": null
+    },
+    {
+      "code": "61937009",
+      "term": "Simple chronic bronchitis (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.99,
+      "rationale": "Simple chronic bronchitis is unrelated to hepatitis C and does not represent an instance of chronic hepatitis C.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.99,
+      "usage_frequency": null
+    },
+    {
+      "code": "61977001",
+      "term": "Chronic type B viral hepatitis",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.99,
+      "rationale": "Chronic type B viral hepatitis is hepatitis B, not hepatitis C, and does not belong in a chronic hepatitis C code list.",
+      "sources": [
+        "OpenCodelists (nhsd-primary-care-domain-refsets)"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.99,
+      "usage_frequency": null
+    },
+    {
+      "code": "63480004",
+      "term": "Chronic bronchitis (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.99,
+      "rationale": "Chronic bronchitis is unrelated to hepatitis C and does not represent an instance of chronic hepatitis C.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.99,
+      "usage_frequency": null
+    },
+    {
+      "code": "700378005",
+      "term": "Chronic kidney disease stage 3A (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.99,
+      "rationale": "Chronic kidney disease stage 3A is a comorbidity unrelated to hepatitis C and does not represent an instance of chronic hepatitis C.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.99,
+      "usage_frequency": null
+    },
+    {
+      "code": "700379002",
+      "term": "Chronic kidney disease stage 3B (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.99,
+      "rationale": "Chronic kidney disease stage 3B is a comorbidity unrelated to hepatitis C and does not represent an instance of chronic hepatitis C.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.99,
+      "usage_frequency": null
+    },
+    {
+      "code": "711000119100",
+      "term": "Chronic kidney disease stage 5 due to type 2 diabetes mellitus (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.99,
+      "rationale": "Chronic kidney disease stage 5 due to type 2 diabetes mellitus is unrelated to hepatitis C and does not represent an instance of chronic hepatitis C.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.99,
+      "usage_frequency": null
+    },
+    {
+      "code": "71421000119105",
+      "term": "Hypertension in chronic kidney disease due to type 2 diabetes mellitus",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.99,
+      "rationale": "Hypertension in chronic kidney disease due to type 2 diabetes mellitus is unrelated to hepatitis C and does not represent an instance of chronic hepatitis C.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.99,
+      "usage_frequency": null
+    },
+    {
+      "code": "721000119107",
+      "term": "Chronic kidney disease stage 4 due to type 2 diabetes mellitus (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.99,
+      "rationale": "Chronic kidney disease stage 4 due to type 2 diabetes mellitus is unrelated to hepatitis C and does not represent an instance of chronic hepatitis C.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.99,
+      "usage_frequency": null
+    },
+    {
+      "code": "731000119105",
+      "term": "Chronic kidney disease stage 3 due to type 2 diabetes mellitus (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.99,
+      "rationale": "Chronic kidney disease stage 3 due to type 2 diabetes mellitus is unrelated to hepatitis C and does not represent an instance of chronic hepatitis C.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.99,
+      "usage_frequency": null
+    },
+    {
+      "code": "741000119101",
+      "term": "Chronic kidney disease stage 2 due to type 2 diabetes mellitus (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.99,
+      "rationale": "Chronic kidney disease stage 2 due to type 2 diabetes mellitus is unrelated to hepatitis C and does not represent an instance of chronic hepatitis C.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.99,
+      "usage_frequency": null
+    },
+    {
+      "code": "838380002",
+      "term": "Chronic hepatitis B co-occurrent with hepatitis C and hepatitis D",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.99,
+      "rationale": "Chronic hepatitis B co-occurrent with hepatitis C and hepatitis D is primarily a hepatitis B code and does not represent chronic hepatitis C as the primary condition.",
+      "sources": [
+        "OpenCodelists (nhsd-primary-care-domain-refsets)"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.99,
+      "usage_frequency": null
+    },
+    {
+      "code": "847091000000104",
+      "term": "Acute non-infective exacerbation of chronic obstructive pulmonary disease (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.99,
+      "rationale": "Acute non-infective exacerbation of chronic obstructive pulmonary disease is unrelated to hepatitis C and does not represent an instance of chronic hepatitis C.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.99,
+      "usage_frequency": null
+    },
+    {
+      "code": "875211000000105",
+      "term": "Chronic viral hepatitis B",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.99,
+      "rationale": "Chronic viral hepatitis B is hepatitis B, not hepatitis C, and does not belong in a chronic hepatitis C code list.",
+      "sources": [
+        "OpenCodelists (nhsd-primary-care-domain-refsets)"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.99,
+      "usage_frequency": null
+    },
+    {
+      "code": "88805009",
+      "term": "Chronic congestive heart failure",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.99,
+      "rationale": "Chronic congestive heart failure is a comorbidity unrelated to hepatitis C and does not represent an instance of chronic hepatitis C.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.99,
+      "usage_frequency": null
+    },
+    {
+      "code": "89099002",
+      "term": "Chronic allergic bronchitis",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.99,
+      "rationale": "Chronic allergic bronchitis is unrelated to hepatitis C and does not represent an instance of chronic hepatitis C.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.99,
+      "usage_frequency": null
+    },
+    {
+      "code": "90741000119107",
+      "term": "Chronic kidney disease stage 3 due to type 1 diabetes mellitus (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.99,
+      "rationale": "Chronic kidney disease stage 3 due to type 1 diabetes mellitus is unrelated to hepatitis C and does not represent an instance of chronic hepatitis C.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.99,
+      "usage_frequency": null
+    },
+    {
+      "code": "90751000119109",
+      "term": "Chronic kidney disease stage 4 due to type 1 diabetes mellitus (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.99,
+      "rationale": "Chronic kidney disease stage 4 due to type 1 diabetes mellitus is unrelated to hepatitis C and does not represent an instance of chronic hepatitis C.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.99,
+      "usage_frequency": null
+    },
+    {
+      "code": "90761000119106",
+      "term": "Chronic kidney disease stage 5 due to type 1 diabetes mellitus (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.99,
+      "rationale": "Chronic kidney disease due to type 1 diabetes is unrelated to chronic hepatitis C and does not belong in a hepatitis C code list.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.99,
+      "usage_frequency": null
+    },
+    {
+      "code": "939211000000104",
+      "term": "Chronic kidney disease resolved (finding)",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.99,
+      "rationale": "Resolved chronic kidney disease is a past condition and does not represent an active instance of chronic hepatitis C.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.99,
+      "usage_frequency": null
+    },
+    {
+      "code": "941201000000103",
+      "term": "Chronic obstructive pulmonary disease resolved (finding)",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.99,
+      "rationale": "Resolved chronic obstructive pulmonary disease is unrelated to chronic hepatitis C and does not belong in this code list.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.99,
+      "usage_frequency": null
+    },
+    {
+      "code": "96731000119100",
+      "term": "Hypertensive heart AND chronic kidney disease stage 3 (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.99,
+      "rationale": "Hypertensive heart and chronic kidney disease is unrelated to chronic hepatitis C and does not belong in this code list.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.99,
+      "usage_frequency": null
+    },
+    {
+      "code": "C4087508",
+      "term": "Acute exacerbation of chronic heart failure",
+      "vocabulary": "UMLS",
+      "decision": "exclude",
+      "confidence": 0.99,
+      "rationale": "Acute exacerbation of chronic heart failure is unrelated to chronic hepatitis C and does not belong in this code list.",
+      "sources": [
+        "UMLS (synonym)"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.99,
+      "usage_frequency": null
+    },
+    {
+      "code": "1197150002",
+      "term": "Recurrent hepatitis C virus induced liver disease following liver transplant",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.95,
+      "rationale": "This represents recurrent hepatitis C after transplant, which is a post-transplant complication rather than primary chronic hepatitis C.",
+      "sources": [
+        "OpenCodelists (nhsd-primary-care-domain-refsets)"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "16623921000119105",
+      "term": "Viral hepatitis C in mother during pregnancy",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.95,
+      "rationale": "Viral hepatitis C in pregnancy is a contextual variant; the query specifies primary chronic hepatitis C without pregnancy context.",
+      "sources": [
+        "OpenCodelists (nhsd-primary-care-domain-refsets)"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "702969000",
+      "term": "Reactivation of hepatitis C viral hepatitis",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.95,
+      "rationale": "Reactivation of hepatitis C is a specific clinical event distinct from chronic hepatitis C itself and represents a change in disease status rather than the primary condition.",
+      "sources": [
+        "OpenCodelists (nhsd-primary-care-domain-refsets)"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "831000119103",
+      "term": "Cirrhosis of liver due to chronic hepatitis C",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.95,
+      "rationale": "Cirrhosis of liver due to chronic hepatitis C is a complication of chronic hepatitis C, not an instance of chronic hepatitis C itself; the term does not name the primary condition.",
+      "sources": [
+        "OMOPHub",
+        "OpenCodelists (nhsd-primary-care-domain-refsets)"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "C3662136",
+      "term": "Cirrhosis of liver due to chronic hepatitis C",
+      "vocabulary": "UMLS",
+      "decision": "exclude",
+      "confidence": 0.95,
+      "rationale": "Cirrhosis of liver due to chronic hepatitis C is a complication/sequela of chronic hepatitis C, not an instance of the condition itself.",
+      "sources": [
+        "UMLS (synonym)"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.95,
+      "usage_frequency": null
+    },
+    {
+      "code": "128971000119101",
+      "term": "Cryoglobulinemia due to chronic hepatitis C",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.9,
+      "rationale": "Cryoglobulinemia is a complication of chronic hepatitis C; the term does not name the queried condition itself.",
+      "sources": [
+        "OMOPHub",
+        "OpenCodelists (nhsd-primary-care-domain-refsets)"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.9,
+      "usage_frequency": null
+    },
+    {
+      "code": "C3875173",
+      "term": "Cryoglobulinemia due to chronic hepatitis C",
+      "vocabulary": "UMLS",
+      "decision": "exclude",
+      "confidence": 0.9,
+      "rationale": "Cryoglobulinemia due to chronic hepatitis C is a complication of chronic hepatitis C, not an instance of the condition itself.",
+      "sources": [
+        "UMLS (synonym)"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.9,
+      "usage_frequency": null
+    },
+    {
+      "code": "C4041238",
+      "term": "Hepatic coma due to chronic hepatitis C",
+      "vocabulary": "UMLS",
+      "decision": "exclude",
+      "confidence": 0.9,
+      "rationale": "Hepatic coma due to chronic hepatitis C is a complication/sequela of chronic hepatitis C, not an instance of the condition itself.",
+      "sources": [
+        "UMLS (synonym)"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.9,
+      "usage_frequency": null
+    },
+    {
+      "code": "146371000119104",
+      "term": "Hepatic coma due to chronic hepatitis C",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.85,
+      "rationale": "Hepatic coma due to chronic hepatitis C is a severe complication, not an instance of the primary condition itself.",
+      "sources": [
+        "OMOPHub",
+        "OpenCodelists (nhsd-primary-care-domain-refsets)"
+      ],
+      "classifier_score": null,
+      "llm_score": 0.85,
+      "usage_frequency": null
+    }
+  ],
+  "pipeline": "rag",
+  "cold_start": false
+}

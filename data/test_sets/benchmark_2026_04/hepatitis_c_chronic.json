@@ -1,0 +1,22 @@
+[
+  {
+    "Entry_no": 14,
+    "Ref_link": "https://www.opencodelists.org/codelist/nhsd-primary-care-domain-refsets/hepcchron_cod/20250912/",
+    "Ref_reviewer": "OpenCodelists",
+    "Ref_review_FLAG": "published",
+    "Source_creation_date": "",
+    "Research_question": "Chronic hepatitis C codes",
+    "Codelist_vocabulary": "SNOMED CT",
+    "Codelist": "1197150002;128302006;128971000119101;146371000119104;16623921000119105;186640001;347891000119103;702969000;703866000;708198006;767809001;767810006;768006009;768125005;768126006;768127002;768288001;768289009;831000119103;838377003",
+    "Codelist_terms": "Recurrent hepatitis C virus induced liver disease following liver transplant;Chronic hepatitis C;Cryoglobulinemia due to chronic hepatitis C;Hepatic coma due to chronic hepatitis C;Viral hepatitis C in mother during pregnancy;Chronic viral hepatitis C;Chronic hepatitis C with stage 3 fibrosis;Reactivation of hepatitis C viral hepatitis;Chronic hepatitis C with stage 2 fibrosis;Chronic active hepatitis C;Chronic hepatitis C caused by hepatitis C virus genotype 6;Chronic hepatitis C caused by hepatitis C virus genotype 5;Chronic hepatitis C caused by Hepatitis C virus genotype 3;Chronic hepatitis C caused by Hepatitis C virus genotype 2;Chronic hepatitis C caused by Hepatitis C virus genotype 4;Chronic hepatitis C caused by Hepatitis C virus genotype 1;Chronic hepatitis C caused by Hepatitis C virus genotype 1b;Chronic hepatitis C caused by Hepatitis C virus genotype 1a;Cirrhosis of liver due to chronic hepatitis C;Chronic hepatitis C co-occurrent with human immunodeficiency virus infection",
+    "Terms_count": 20,
+    "Codes_count": 20,
+    "Diff_FLAG": "N",
+    "Benchmark_meta": {
+      "short_name": "hepatitis_c_chronic",
+      "condition_area": "infection",
+      "organisation": "nhsd-primary-care-domain-refsets",
+      "opencodelists_version": "nhsd-primary-care-domain-refsets/hepcchron_cod/20250912"
+    }
+  }
+]
