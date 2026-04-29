@@ -11,8 +11,8 @@
             0.9697
           ],
           "ci95": [
-            0.5424,
-            0.854
+            0.5389,
+            0.8502
           ],
           "min": 0.0,
           "max": 1.0
@@ -25,8 +25,8 @@
             0.8256
           ],
           "ci95": [
-            0.3455,
-            0.6874
+            0.3512,
+            0.682
           ],
           "min": 0.0,
           "max": 1.0
@@ -39,8 +39,8 @@
             0.7304
           ],
           "ci95": [
-            0.3465,
-            0.6217
+            0.3637,
+            0.619
           ],
           "min": 0.0,
           "max": 0.861
@@ -55,8 +55,8 @@
             1.0
           ],
           "ci95": [
-            0.6812,
-            0.9458
+            0.634,
+            0.9283
           ],
           "min": 0.0,
           "max": 1.0
@@ -69,8 +69,8 @@
             0.8256
           ],
           "ci95": [
-            0.3455,
-            0.6874
+            0.3512,
+            0.682
           ],
           "min": 0.0,
           "max": 1.0
@@ -83,8 +83,8 @@
             0.7845
           ],
           "ci95": [
-            0.4121,
-            0.6985
+            0.4049,
+            0.6892
           ],
           "min": 0.0,
           "max": 1.0
@@ -12351,8 +12351,8 @@
             1.0
           ],
           "ci95": [
-            0.7993,
-            0.9513
+            0.7849,
+            0.9436
           ],
           "min": 0.5185,
           "max": 1.0
@@ -12365,8 +12365,8 @@
             0.7
           ],
           "ci95": [
-            0.3602,
-            0.6343
+            0.3517,
+            0.6192
           ],
           "min": 0.0123,
           "max": 1.0
@@ -12379,8 +12379,8 @@
             0.7368
           ],
           "ci95": [
-            0.4369,
-            0.6905
+            0.4426,
+            0.6797
           ],
           "min": 0.0244,
           "max": 1.0
@@ -12395,8 +12395,8 @@
             1.0
           ],
           "ci95": [
-            0.8812,
-            0.9829
+            0.8603,
+            0.9768
           ],
           "min": 0.6167,
           "max": 1.0
@@ -12409,8 +12409,8 @@
             0.7
           ],
           "ci95": [
-            0.3602,
-            0.6343
+            0.3517,
+            0.6192
           ],
           "min": 0.0123,
           "max": 1.0
@@ -12423,8 +12423,8 @@
             0.8
           ],
           "ci95": [
-            0.4522,
-            0.7115
+            0.4524,
+            0.6952
           ],
           "min": 0.0244,
           "max": 1.0
@@ -23545,8 +23545,8 @@
             1.0
           ],
           "ci95": [
-            0.8268,
-            0.9599
+            0.8143,
+            0.9495
           ],
           "min": 0.5873,
           "max": 1.0
@@ -23559,8 +23559,8 @@
             0.6628
           ],
           "ci95": [
-            0.3378,
-            0.6116
+            0.3394,
+            0.6071
           ],
           "min": 0.0123,
           "max": 1.0
@@ -23573,8 +23573,8 @@
             0.7368
           ],
           "ci95": [
-            0.4315,
-            0.6891
+            0.4282,
+            0.6758
           ],
           "min": 0.0244,
           "max": 1.0
@@ -23589,8 +23589,8 @@
             1.0
           ],
           "ci95": [
-            0.8896,
-            0.9884
+            0.8639,
+            0.9808
           ],
           "min": 0.6167,
           "max": 1.0
@@ -23603,8 +23603,8 @@
             0.6628
           ],
           "ci95": [
-            0.3378,
-            0.6116
+            0.3394,
+            0.6071
           ],
           "min": 0.0123,
           "max": 1.0
@@ -23617,8 +23617,8 @@
             0.7368
           ],
           "ci95": [
-            0.4377,
-            0.6927
+            0.4341,
+            0.684
           ],
           "min": 0.0244,
           "max": 1.0
@@ -34714,5 +34714,211 @@
         "fp_codes_filtered": []
       }
     ]
+  },
+  "mcnemar": {
+    "post_fix_vs_pre_fix": {
+      "n_pairs_compared": 2769,
+      "concordant_a_both_right": 691,
+      "concordant_d_both_wrong": 1714,
+      "discordant_b_pre_right_post_wrong": 119,
+      "discordant_c_pre_wrong_post_right": 245,
+      "test": "chi-squared with continuity correction",
+      "statistic": 42.9258,
+      "pvalue": 5.6855173975844844e-11,
+      "per_list": [
+        {
+          "short": "heart_failure",
+          "regressions_b": 10,
+          "improvements_c": 10,
+          "net_c_minus_b": 0
+        },
+        {
+          "short": "diabetes_mellitus",
+          "regressions_b": 13,
+          "improvements_c": 24,
+          "net_c_minus_b": 11
+        },
+        {
+          "short": "hypertension",
+          "regressions_b": 3,
+          "improvements_c": 3,
+          "net_c_minus_b": 0
+        },
+        {
+          "short": "mi_icd10",
+          "regressions_b": 0,
+          "improvements_c": 100,
+          "net_c_minus_b": 100
+        },
+        {
+          "short": "atrial_fib_icd10",
+          "regressions_b": 0,
+          "improvements_c": 54,
+          "net_c_minus_b": 54
+        },
+        {
+          "short": "stroke",
+          "regressions_b": 0,
+          "improvements_c": 0,
+          "net_c_minus_b": 0
+        },
+        {
+          "short": "asthma_pincer",
+          "regressions_b": 41,
+          "improvements_c": 0,
+          "net_c_minus_b": -41
+        },
+        {
+          "short": "copd",
+          "regressions_b": 1,
+          "improvements_c": 0,
+          "net_c_minus_b": -1
+        },
+        {
+          "short": "depression",
+          "regressions_b": 3,
+          "improvements_c": 0,
+          "net_c_minus_b": -3
+        },
+        {
+          "short": "psychosis_schiz_bipolar",
+          "regressions_b": 1,
+          "improvements_c": 5,
+          "net_c_minus_b": 4
+        },
+        {
+          "short": "dementia",
+          "regressions_b": 14,
+          "improvements_c": 5,
+          "net_c_minus_b": -9
+        },
+        {
+          "short": "epilepsy",
+          "regressions_b": 1,
+          "improvements_c": 1,
+          "net_c_minus_b": 0
+        },
+        {
+          "short": "lung_cancer",
+          "regressions_b": 0,
+          "improvements_c": 0,
+          "net_c_minus_b": 0
+        },
+        {
+          "short": "hepatitis_c_chronic",
+          "regressions_b": 7,
+          "improvements_c": 17,
+          "net_c_minus_b": 10
+        },
+        {
+          "short": "hiv",
+          "regressions_b": 25,
+          "improvements_c": 26,
+          "net_c_minus_b": 1
+        }
+      ]
+    },
+    "coldstart_vs_pre_fix": {
+      "n_pairs_compared": 2790,
+      "concordant_a_both_right": 618,
+      "concordant_d_both_wrong": 1659,
+      "discordant_b_pre_right_post_wrong": 213,
+      "discordant_c_pre_wrong_post_right": 300,
+      "test": "chi-squared with continuity correction",
+      "statistic": 14.4172,
+      "pvalue": 0.00014646206710776542,
+      "per_list": [
+        {
+          "short": "heart_failure",
+          "regressions_b": 10,
+          "improvements_c": 10,
+          "net_c_minus_b": 0
+        },
+        {
+          "short": "diabetes_mellitus",
+          "regressions_b": 14,
+          "improvements_c": 22,
+          "net_c_minus_b": 8
+        },
+        {
+          "short": "hypertension",
+          "regressions_b": 13,
+          "improvements_c": 3,
+          "net_c_minus_b": -10
+        },
+        {
+          "short": "mi_icd10",
+          "regressions_b": 0,
+          "improvements_c": 100,
+          "net_c_minus_b": 100
+        },
+        {
+          "short": "atrial_fib_icd10",
+          "regressions_b": 0,
+          "improvements_c": 54,
+          "net_c_minus_b": 54
+        },
+        {
+          "short": "stroke",
+          "regressions_b": 28,
+          "improvements_c": 28,
+          "net_c_minus_b": 0
+        },
+        {
+          "short": "asthma_pincer",
+          "regressions_b": 35,
+          "improvements_c": 4,
+          "net_c_minus_b": -31
+        },
+        {
+          "short": "copd",
+          "regressions_b": 1,
+          "improvements_c": 0,
+          "net_c_minus_b": -1
+        },
+        {
+          "short": "depression",
+          "regressions_b": 13,
+          "improvements_c": 10,
+          "net_c_minus_b": -3
+        },
+        {
+          "short": "psychosis_schiz_bipolar",
+          "regressions_b": 15,
+          "improvements_c": 7,
+          "net_c_minus_b": -8
+        },
+        {
+          "short": "dementia",
+          "regressions_b": 7,
+          "improvements_c": 4,
+          "net_c_minus_b": -3
+        },
+        {
+          "short": "epilepsy",
+          "regressions_b": 1,
+          "improvements_c": 1,
+          "net_c_minus_b": 0
+        },
+        {
+          "short": "lung_cancer",
+          "regressions_b": 42,
+          "improvements_c": 2,
+          "net_c_minus_b": -40
+        },
+        {
+          "short": "hepatitis_c_chronic",
+          "regressions_b": 9,
+          "improvements_c": 29,
+          "net_c_minus_b": 20
+        },
+        {
+          "short": "hiv",
+          "regressions_b": 25,
+          "improvements_c": 26,
+          "net_c_minus_b": 1
+        }
+      ]
+    }
   }
 }

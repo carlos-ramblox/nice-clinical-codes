@@ -32,9 +32,12 @@ from __future__ import annotations
 
 import csv
 import json
-import random
 import statistics
 from pathlib import Path
+
+import numpy as np
+from scipy.stats import bootstrap as scipy_bootstrap
+from statsmodels.stats.contingency_tables import mcnemar
 
 ROOT = Path(__file__).resolve().parents[3]
 BENCH = ROOT / "data" / "test_sets" / "benchmark_2026_04"
@@ -143,19 +146,144 @@ def evaluate_one(test_set: list[dict], result: dict) -> dict:
     return {"strict": strict, "vocab_filtered": filtered}
 
 
-def bootstrap_ci(values: list[float], n_resamples: int = 1000, seed: int = 7) -> tuple[float, float]:
+def bootstrap_ci(values: list[float], n_resamples: int = 1000, seed: int = 7,
+                 method: str = "BCa") -> tuple[float, float]:
+    """95 % CI on the mean via SciPy's bootstrap.
+
+    Default method is BCa (bias-corrected and accelerated; Efron 1987),
+    which adjusts both the bias and the skewness of the bootstrap
+    sampling distribution and typically produces tighter, less biased
+    intervals than the percentile method on small samples (n=15 here).
+
+    Falls back to a degenerate point interval when the sample has zero
+    variance — BCa requires non-zero variance to compute the
+    acceleration term via the jackknife.
+    """
     if not values:
         return 0.0, 0.0
-    rng = random.Random(seed)
-    means = []
-    n = len(values)
-    for _ in range(n_resamples):
-        sample = [values[rng.randrange(n)] for _ in range(n)]
-        means.append(sum(sample) / n)
-    means.sort()
-    lo = means[int(0.025 * n_resamples)]
-    hi = means[int(0.975 * n_resamples)]
+    arr = np.asarray(values, dtype=float)
+    if len(arr) < 2 or float(arr.std(ddof=1)) == 0.0:
+        v = round(float(arr[0]) if len(arr) else 0.0, 4)
+        return v, v
+    rng = np.random.default_rng(seed)
+    res = scipy_bootstrap(
+        (arr,),
+        np.mean,
+        n_resamples=n_resamples,
+        method=method,
+        confidence_level=0.95,
+        rng=rng,
+    )
+    lo = float(res.confidence_interval.low)
+    hi = float(res.confidence_interval.high)
     return round(lo, 4), round(hi, 4)
+
+
+def _mcnemar_pre_post(pre_view: dict | None, post_view: dict | None) -> dict | None:
+    """McNemar's test on per-code paired (pre-fix, post-fix) correctness.
+
+    For every (codelist, code) pair where the code appears in either the
+    reference list or the included output of either run, we record:
+      truth        = code is in the reference list
+      pre_correct  = (code in pre-fix output) == truth
+      post_correct = (code in post-fix output) == truth
+    The 2x2 contingency over (pre_correct, post_correct) feeds McNemar's
+    test. Codes correctly handled by both runs (concordant "both right")
+    drop into the diagonal and don't affect the test statistic; only the
+    discordant pairs (b: pre right / post wrong; c: pre wrong /
+    post right) carry information about the change.
+
+    Reports both the chi-squared form with continuity correction
+    (Edwards 1948) and the binomial-exact form, choosing the exact form
+    when ``b + c < 25`` (where the chi-squared approximation is poor).
+    """
+    if pre_view is None or post_view is None:
+        return None
+
+    pre_lookup = {r["short"]: r for r in pre_view["per_list"]}
+    post_lookup = {r["short"]: r for r in post_view["per_list"]}
+
+    a = b = c = d = 0  # both right / pre right post wrong / pre wrong post right / both wrong
+    per_list_breakdown: list[dict] = []
+
+    def _norm_codes(items: list[dict]) -> set[str]:
+        return {normalize_code(it["code"], "") for it in items}
+
+    for short, pre_row in pre_lookup.items():
+        post_row = post_lookup.get(short)
+        if post_row is None:
+            continue
+
+        # Reference is fixed by the test-set file, so pre and post must
+        # produce the same gold standard. Assert it; silently unioning
+        # would turn a schema-divergence bug into mis-attributed
+        # regressions on the McNemar contingency.
+        ref_pre = _norm_codes(pre_row["tp_codes"]) | _norm_codes(pre_row["fn_codes"])
+        ref_post = _norm_codes(post_row["tp_codes"]) | _norm_codes(post_row["fn_codes"])
+        if ref_pre != ref_post:
+            raise ValueError(
+                f"Reference set diverges between pre and post for codelist "
+                f"{short!r}: |pre|={len(ref_pre)}, |post|={len(ref_post)}, "
+                f"symmetric difference={len(ref_pre ^ ref_post)}. "
+                f"Check that both result files were scored against the same test-set."
+            )
+        ref = ref_pre
+
+        out_pre = _norm_codes(pre_row["tp_codes"]) | _norm_codes(pre_row["fp_codes"])
+        out_post = _norm_codes(post_row["tp_codes"]) | _norm_codes(post_row["fp_codes"])
+        universe = ref | out_pre | out_post
+
+        list_b = list_c = 0
+        for code in universe:
+            truth = code in ref
+            pre_correct = (code in out_pre) == truth
+            post_correct = (code in out_post) == truth
+            if pre_correct and post_correct:
+                a += 1
+            elif pre_correct and not post_correct:
+                b += 1
+                list_b += 1
+            elif post_correct and not pre_correct:
+                c += 1
+                list_c += 1
+            else:
+                d += 1
+
+        per_list_breakdown.append({
+            "short": short,
+            "regressions_b": list_b,
+            "improvements_c": list_c,
+            "net_c_minus_b": list_c - list_b,
+        })
+
+    if b + c == 0:
+        return {
+            "n_pairs_compared": a + b + c + d,
+            "concordant_a_both_right": a,
+            "concordant_d_both_wrong": d,
+            "discordant_b_pre_right_post_wrong": b,
+            "discordant_c_pre_wrong_post_right": c,
+            "test": "no discordant pairs",
+            "statistic": 0.0,
+            "pvalue": 1.0,
+            "per_list": per_list_breakdown,
+        }
+
+    table = np.array([[a, b], [c, d]])
+    use_exact = (b + c) < 25
+    res = mcnemar(table, exact=use_exact, correction=not use_exact)
+
+    return {
+        "n_pairs_compared": a + b + c + d,
+        "concordant_a_both_right": a,
+        "concordant_d_both_wrong": d,
+        "discordant_b_pre_right_post_wrong": b,
+        "discordant_c_pre_wrong_post_right": c,
+        "test": "binomial exact" if use_exact else "chi-squared with continuity correction",
+        "statistic": round(float(res.statistic), 4),
+        "pvalue": float(res.pvalue),
+        "per_list": per_list_breakdown,
+    }
 
 
 def iqr(values: list[float]) -> tuple[float, float]:
@@ -311,10 +439,12 @@ def _write_legacy_outputs(view: dict | None) -> None:
             w.writerow({k: r[k] for k in fields})
 
 
-def _write_v2_outputs(views: dict[str, dict]) -> None:
+def _write_v2_outputs(views: dict[str, dict], mcnemar_results: dict | None = None) -> None:
     """Write the three-view aggregate JSON and a wide per-list CSV with
     pre/post/cold columns side-by-side."""
-    payload = {name: view for name, view in views.items() if view is not None}
+    payload: dict = {name: view for name, view in views.items() if view is not None}
+    if mcnemar_results:
+        payload["mcnemar"] = {k: v for k, v in mcnemar_results.items() if v is not None}
     (BENCH / "_aggregate_v2.json").write_text(json.dumps(payload, indent=2), encoding="utf-8")
 
     # Build wide CSV: one row per codelist with columns for each view.
@@ -362,10 +492,19 @@ def main():
         "coldstart": _build_view(selection, "result_coldstart"),
     }
 
+    # Paired McNemar's tests on per-code (pre, post) correctness — the
+    # principled paired-comparison test for the headline pre→post lift.
+    # Overlapping CIs is a known-conservative substitute for this
+    # (Schenker & Gentleman, 2001), so we report McNemar alongside.
+    mcnemar_results = {
+        "post_fix_vs_pre_fix": _mcnemar_pre_post(views["pre_fix"], views["post_fix"]),
+        "coldstart_vs_pre_fix": _mcnemar_pre_post(views["pre_fix"], views["coldstart"]),
+    }
+
     # Legacy v1 outputs continue to reflect the pre-fix baseline so the
     # original EVALUATION.md numbers stay reproducible from the same files.
     _write_legacy_outputs(views["pre_fix"])
-    _write_v2_outputs(views)
+    _write_v2_outputs(views, mcnemar_results)
 
     # Concise stdout summary so callers can eyeball headline deltas.
     for name, view in views.items():
@@ -378,7 +517,17 @@ def main():
               f"R_mean={agg['recall']['mean']:.3f}  "
               f"F1_mean={agg['f1']['mean']:.3f}  "
               f"F1_med={agg['f1']['median']:.3f}  "
-              f"F1_CI=[{agg['f1']['ci95'][0]:.3f},{agg['f1']['ci95'][1]:.3f}]")
+              f"F1_BCa95=[{agg['f1']['ci95'][0]:.3f},{agg['f1']['ci95'][1]:.3f}]")
+
+    for label, mc in mcnemar_results.items():
+        if mc is None:
+            continue
+        print(
+            f"\nMcNemar ({label}): n_pairs={mc['n_pairs_compared']}  "
+            f"a={mc['concordant_a_both_right']} d={mc['concordant_d_both_wrong']} "
+            f"b={mc['discordant_b_pre_right_post_wrong']} c={mc['discordant_c_pre_wrong_post_right']}\n"
+            f"  test={mc['test']}  statistic={mc['statistic']}  p={mc['pvalue']:.4g}"
+        )
 
 
 if __name__ == "__main__":

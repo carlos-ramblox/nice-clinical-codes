@@ -12,13 +12,13 @@ on 2026-04-27 surfaced four failure modes, four targeted code changes
 benchmark was re-run end-to-end.
 
 Headline result on the strict view (15 codelists, included-only stage,
-mean ± 95 % bootstrap CI):
+mean ± 95 % BCa bootstrap CI):
 
 | View | Mean P | Mean R | Mean F1 | Median F1 | F1 95 % CI |
 |---|---|---|---|---|---|
-| Pre-fix (Apr-27 baseline) | 0.71 | 0.51 | **0.49** | 0.53 | [0.35, 0.62] |
-| Post-fix default | 0.88 | 0.49 | **0.57** | 0.67 | [0.44, 0.69] |
-| Post-fix cold-start | 0.90 | 0.47 | **0.56** | 0.70 | [0.43, 0.69] |
+| Pre-fix (Apr-27 baseline) | 0.71 | 0.51 | **0.49** | 0.53 | [0.36, 0.62] |
+| Post-fix default | 0.88 | 0.49 | **0.57** | 0.67 | [0.44, 0.68] |
+| Post-fix cold-start | 0.90 | 0.47 | **0.56** | 0.70 | [0.43, 0.68] |
 
 Mean F1 lifted from 0.49 to 0.57 (+0.08) and median F1 from 0.53 to 0.67
 (+0.14). The bigger move on median than mean reflects that the lift was
@@ -26,6 +26,15 @@ concentrated on previously-failing cases — both ICD-10 codelists went
 from F1 < 0.21 to F1 ≥ 0.74, while several already-passing SNOMED lists
 moved by less than 0.05. Two SNOMED-CT codelists regressed (asthma
 −0.19, HIV −0.16 — see §4 cases 6 and 7).
+
+The pre-vs-post-fix lift is significant under a paired McNemar's test
+on per-code (pre, post) correctness aggregated across the 15 lists:
+**χ² = 42.93, p = 5.7 × 10⁻¹¹** (b = 119 regressions, c = 245
+improvements; n = 2 769 paired code observations). The cold-start view
+is also significant against pre-fix: χ² = 14.42, p = 1.5 × 10⁻⁴
+(b = 213, c = 300; n = 2 790). Overlapping CIs is a known-conservative
+substitute for the paired test (Schenker & Gentleman 2001) so we
+report McNemar alongside the BCa intervals.
 
 The cold-start view differs from the default view by less than the CI
 width — the OpenCodelists retriever's marginal contribution to mean F1
@@ -146,9 +155,36 @@ We report two views per list:
 
 For each metric (P, R, F1), aggregate point estimates are simple
 arithmetic means across the 15 lists. 95 % confidence intervals are
-non-parametric bootstrap (1000 resamples, seed 7). Median and IQR
-are reported alongside the mean to surface skew. Stratified
-breakdowns are unweighted means within each stratum.
+bias-corrected and accelerated (BCa) non-parametric bootstrap
+(1 000 resamples, seed 7) computed via `scipy.stats.bootstrap`. BCa
+adjusts for both bias and skewness in the bootstrap sampling
+distribution and is preferred over the basic percentile method on
+small samples (Efron 1987). On this n = 15 sample BCa shifts each
+F1 interval bound by up to ~1.5 percentage points relative to a
+naive percentile interval — mostly correcting upward bias on the
+lower limit (pre-fix) and right-skew on the upper limit (post-fix
+and cold-start) — rather than uniformly narrowing the interval.
+Median and IQR are reported alongside the mean to surface skew.
+Stratified breakdowns are unweighted means within each stratum.
+
+The pre-vs-post-fix comparison is paired by codelist and code, so the
+appropriate significance test is McNemar's test on per-code
+(pre-correct, post-correct) outcomes — not a comparison of overlap
+between the pre and post CIs (which is known-conservative; Schenker &
+Gentleman 2001). For each codelist we form the universe of codes
+appearing in the reference list or in either run's included output;
+each such code contributes one row to a 2 × 2 contingency. The
+chi-squared form with continuity correction is used when discordant
+pairs `b + c ≥ 25`, the binomial-exact form otherwise.
+
+Each (codelist, code) pair is treated as an independent paired
+observation. Codes within a codelist are clinically correlated
+(shared concept, shared retrieval and prompt context), so the
+chi-squared p-values reported here are anti-conservative under any
+realistic dependence structure. The magnitude of the post-fix lift
+(p ≈ 5.7 × 10⁻¹¹) survives any plausible correction; reporting
+McNemar with this caveat is more defensible than the overlapping-CI
+substitute it replaces.
 
 ### Sensitivity analysis: default vs. cold-start
 
@@ -190,19 +226,25 @@ UMLS-vocabulary noise pattern).
 
 #### Strict view
 
+CIs are 95 % BCa bootstrap (1 000 resamples, seed 7).
+
 | View | Mean P | Mean R | Mean F1 | Median F1 | F1 IQR | F1 95 % CI |
 |---|---|---|---|---|---|---|
-| Pre-fix | 0.71 | 0.51 | **0.49** | 0.53 | [0.21, 0.73] | [0.35, 0.62] |
-| Post-fix default | 0.88 | 0.49 | **0.57** | 0.67 | [0.32, 0.74] | [0.44, 0.69] |
-| Post-fix cold-start | 0.90 | 0.47 | **0.56** | 0.70 | [0.31, 0.74] | [0.43, 0.69] |
+| Pre-fix | 0.71 | 0.51 | **0.49** | 0.53 | [0.21, 0.73] | [0.36, 0.62] |
+| Post-fix default | 0.88 | 0.49 | **0.57** | 0.67 | [0.32, 0.74] | [0.44, 0.68] |
+| Post-fix cold-start | 0.90 | 0.47 | **0.56** | 0.70 | [0.31, 0.74] | [0.43, 0.68] |
+
+Paired McNemar's test on per-code (pre, post) correctness:
+post-fix vs. pre-fix χ² = 42.93, p = 5.7 × 10⁻¹¹;
+cold-start vs. pre-fix χ² = 14.42, p = 1.5 × 10⁻⁴.
 
 #### Vocabulary-filtered view (supplementary)
 
 | View | Mean P | Mean R | Mean F1 | Median F1 | F1 95 % CI |
 |---|---|---|---|---|---|
-| Pre-fix | 0.83 | 0.51 | 0.56 | 0.65 | [0.41, 0.70] |
-| Post-fix default | 0.94 | 0.49 | 0.59 | 0.67 | [0.45, 0.71] |
-| Post-fix cold-start | 0.95 | 0.47 | 0.57 | 0.70 | [0.44, 0.69] |
+| Pre-fix | 0.83 | 0.51 | 0.56 | 0.65 | [0.40, 0.69] |
+| Post-fix default | 0.94 | 0.49 | 0.59 | 0.67 | [0.45, 0.70] |
+| Post-fix cold-start | 0.95 | 0.47 | 0.57 | 0.70 | [0.43, 0.68] |
 
 Filtering raises precision (cross-vocabulary equivalents aren't
 counted as FPs), but the post-fix default and cold-start strict
@@ -630,7 +672,15 @@ used in Watson et al. (2017), *Identifying clinical features in
 primary care electronic health record studies: methods for codelist
 development*, BMJ Open 7:e019637, and the FAIR-publication
 conventions Williams et al. (2019) outlined for codelist sharing
-(PLoS ONE 14:e0212291). It differs from Aslam et al. (2025)'s
+(PLoS ONE 14:e0212291). The BCa bootstrap follows Efron (1987),
+*Better Bootstrap Confidence Intervals*, JASA 82:171–185;
+the McNemar paired-comparison framing follows Dietterich (1998),
+*Approximate Statistical Tests for Comparing Supervised
+Classification Learning Algorithms*, Neural Computation 10:1895–1923;
+the cautionary note on overlapping-CI inference follows Schenker &
+Gentleman (2001), *On Judging the Significance of Differences by
+Examining the Overlap Between Confidence Intervals*, The American
+Statistician 55:182–186. It differs from Aslam et al. (2025)'s
 clinician-rater design — we benchmark against curated artefacts
 (OpenCodelists) rather than a clinician panel, which trades inter-
 rater reliability for scale. The failure-mode taxonomy in §4 follows
