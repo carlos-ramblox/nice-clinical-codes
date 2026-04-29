@@ -574,6 +574,49 @@ the system minus the OpenCodelists retriever, which means the
 overlap between *"the retrieval source"* and *"the reference"* is
 removed by construction.
 
+### §5.7 Future methods work
+
+The following directions emerged from the v2 benchmark and from
+independent reviews of the pipeline. They are listed as topics
+worth discussing rather than commitments.
+
+**Retrieval ranking and fusion**
+Replace the merger's source-count ordering with weighted Reciprocal
+Rank Fusion (RRF, k=60) so heterogeneous retriever score scales
+combine properly. Add a cross-encoder reranking step (e.g.
+BAAI/bge-reranker-v2-m3) over the merged top-N before LLM scoring.
+
+**LLM confidence calibration**
+Verbalised LLM confidences are currently recorded but unused.
+Post-hoc isotonic calibration on the 15-codelist benchmark labels
+would yield trustworthy probabilities and a reliability diagram.
+The calibrated confidence supports active-learning prioritisation
+of the human review queue.
+
+**Hierarchical SNOMED expansion**
+The recall ceiling on long lists (stroke, dementia, epilepsy)
+reflects a structural retrieval breadth cap. SNOMED ECL `<<`
+walks from the parent concepts the pipeline already finds would
+surface the long tail of post-coordinated SNOMED expressions.
+OpenCodelists supports ECL natively, so this aligns with existing
+Bennett tooling.
+
+**ICD-10 corpus ingestion**
+ICD-10 retrieval is currently single-sourced through OMOPHub.
+Ingesting NHS TRUD's ICD-10 5th Edition into ChromaDB would
+remove the single-source dependency.
+
+**Run-to-run variance**
+The pipeline runs at temperature=0 but Anthropic provides no
+seed; production batched inference has measurable run-to-run
+variance. K=5 reruns per codelist would replace the single-run
+caveat with measured noise.
+
+**Faithfulness / groundedness metrics**
+The current evaluation is set-based (P/R/F1). RAGAS-style
+faithfulness and context-relevance metrics, applied offline to
+the benchmark, would extend the evaluation beyond set membership.
+
 ## Limitations
 
 - **Sample size**. 15 of 3,735 published lists is a 0.4 % sample.
