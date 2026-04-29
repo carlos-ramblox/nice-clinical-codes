@@ -10,7 +10,15 @@
 
 # Clinical Code Discovery - Multi-source clinical codelist generation with LLM-assisted scoring and human review
 
-**Live:** [clinicalcodes.uk](https://clinicalcodes.uk)
+<p align="center">
+  <a href="LICENSE"><img src="https://img.shields.io/badge/license-Apache%202.0-blue.svg" alt="License: Apache 2.0"></a>
+  <img src="https://img.shields.io/badge/python-3.12+-blue.svg" alt="Python 3.12+">
+  <img src="https://img.shields.io/badge/node-20+-43853d.svg" alt="Node 20+">
+  <img src="https://img.shields.io/badge/status-research%20prototype-orange.svg" alt="Status: research prototype">
+  <a href="https://github.com/carlos-ramblox/nice-clinical-codes/commits/main"><img src="https://img.shields.io/github/last-commit/carlos-ramblox/nice-clinical-codes" alt="Last commit"></a>
+</p>
+
+> **Try it without installing anything at [clinicalcodes.uk](https://clinicalcodes.uk).** No account required for a single demo query; clinician sign-in is needed for the human-review workflow.
 
 Multi-source pipeline that **discovers** candidate clinical codes (SNOMED CT, ICD-10, OPCS-4) via four parallel retrievers across UK clinical vocabularies, **enriches** them through UMLS-based synonym expansion, and supports **validation** through per-code LLM scoring (Claude Haiku 4.5) and a human review gate. Developed as part of the University of Cambridge (PACE) Data Science programme, in collaboration with NICE stakeholders.
 
@@ -30,15 +38,15 @@ User → Frontend (Next.js)
          ├─→ Query Parser (Claude API)
          │
          ├─→ Retrievers (parallel)
-         │     ├── OMOPHub (SNOMED/ICD-10)
-         │     ├── QOF Business Rules
-         │     ├── OpenCodelists
-         │     └── ChromaDB (semantic search)
+         │     ├── OMOPHub (SNOMED/ICD-10, live API)
+         │     ├── QOF Business Rules (SQLite)
+         │     ├── OpenCodelists (SQLite)
+         │     └── ChromaDB (semantic search over SQLite corpus)
          │
          ├─→ Result Merger + Dedup
-         ├─→ UMLS Enrichment (synonyms, narrower, siblings)
+         ├─→ UMLS Enrichment (synonyms, narrower, siblings - live API)
          ├─→ LLM Reasoning (Claude API)
-         ├─→ Human Review Gate
+         ├─→ Human Review Gate (writes audit_log → SQLite)
          └─→ Output Assembly
 ```
 
@@ -50,6 +58,7 @@ User → Frontend (Next.js)
 - **Backend:** Python, FastAPI, async pipeline execution
 - **Frontend:** Next.js 16, TypeScript, Tailwind CSS
 - **Vector DB:** ChromaDB with PubMedBERT biomedical embeddings
+- **Relational store:** SQLite — ingested code corpus (`backend/app/db/code_store.py`, ~53K rows across QOF, OPCS-4, ICD-10, OpenCodelists) and HITL workflow tables (`hitl_store.py`: codelists, decisions, audit log with tamper-evident SHA-256 signatures)
 - **Knowledge graph:** UMLS Metathesaurus (synonym, narrower, sibling expansion)
 - **Data sources:** QOF Business Rules, OpenCodelists, OPCS-4, NHS TRUD ICD-10 5th Edition, OMOPHub, UMLS (53K+ codes ingested locally)
 - **Deployment:** AWS ECS Fargate, ECR, ALB, ACM, Route 53. Live at [clinicalcodes.uk](https://clinicalcodes.uk)
@@ -241,4 +250,4 @@ University of Cambridge Data Science (PACE), developed in collaboration with NIC
 - **Anna Desalvo** | Evaluation Lead, Data Analysis | [LinkedIn](https://linkedin.com/in/anna-desalvo-data-scientist)
 ## License
 
-Apache License 2.0 — see [LICENSE](./LICENSE) and [NOTICE](./NOTICE).
+Apache License 2.0 - see [LICENSE](./LICENSE) and [NOTICE](./NOTICE).

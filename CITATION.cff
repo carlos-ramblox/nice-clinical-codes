@@ -1,0 +1,31 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it using the metadata below."
+title: "Clinical Code Discovery (clinicalcodes.uk)"
+abstract: >-
+  A multi-source pipeline that discovers candidate clinical codes
+  (SNOMED CT, ICD-10, OPCS-4) via parallel retrievers across UK
+  clinical vocabularies, enriches them through UMLS-based synonym
+  expansion, and supports validation through per-code LLM scoring
+  (Claude Haiku 4.5) and a human review gate. Output format is
+  compatible with OpenCodelists.
+type: software
+authors:
+  - family-names: Ramirez
+    given-names: Carlos
+    affiliation: "University of Cambridge (PACE)"
+repository-code: "https://github.com/carlos-ramblox/nice-clinical-codes"
+url: "https://clinicalcodes.uk"
+license: Apache-2.0
+keywords:
+  - clinical codes
+  - codelist generation
+  - SNOMED CT
+  - ICD-10
+  - OPCS-4
+  - UMLS
+  - retrieval-augmented generation
+  - human-in-the-loop
+  - electronic health records
+  - NHS
+date-released: 2026-04-29
+version: "0.1.0"
