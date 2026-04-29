@@ -38,9 +38,27 @@ mark "uncertain" rather than "include".
   are complications of chronic hepatitis C, not instances of chronic
   hepatitis C, and their term names do not contain "hepatitis C".
 
-  Example (HIV): "HIV infection" or "AIDS" → include. "Kaposi's sarcoma
-  with AIDS" or "Primary lymphoma of brain with AIDS" → exclude. These are
-  AIDS-defining illnesses, not the HIV/AIDS infection itself.
+  Example (HIV): The NHSD HIV refset includes codes whose term name
+  literally contains "HIV" or "human immunodeficiency virus" as a
+  diagnostic confirmation. Apply the same rule as the diabetic-
+  retinopathy carve-out below:
+
+    INCLUDE (term contains "HIV" or "human immunodeficiency virus"):
+      "HIV infection", "AIDS", "Asymptomatic HIV infection",
+      "Acquired haemolytic anaemia co-occurrent with human
+      immunodeficiency virus infection", "Bacterial pneumonia
+      co-occurrent with HIV infection", "Dementia co-occurrent
+      with HIV infection". The "X co-occurrent with HIV" pattern
+      is per refset convention an INCLUDE — analogous to
+      "diabetic retinopathy" in a diabetes list.
+
+    EXCLUDE (term does NOT contain "HIV" or "human immunodeficiency
+    virus", even if AIDS-defining):
+      "Kaposi's sarcoma" (no HIV in term), "Pneumocystis pneumonia"
+      (no HIV in term), "Primary cerebral lymphoma" (no HIV in term).
+
+  The literal-substring test is the operative rule, not a semantic
+  "primarily describes" judgment.
 
 The rule above does NOT override the established refset convention for
 condition-named manifestations. Where the term name explicitly contains
