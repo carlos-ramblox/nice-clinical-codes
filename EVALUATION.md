@@ -379,12 +379,14 @@ rule (Fix C). This is a Bennett 2023 mode 3 disagreement
 I22 as part of the MI register; the model chose to exclude
 "subsequent" as a temporally distinct concept.
 
-The deeper structural issue — that ICD-10 retrieval is single-sourced
-through OMOPHub, with no ingested ICD-10 corpus to fall back on —
-remains. Two follow-up paths: (1) extend the prefix expansion to
-additional clinical qualifiers (recurrent, prior, history-of); (2)
-ingest an ICD-10 corpus into ChromaDB to remove the single-source
-dependency.
+The deeper structural issue flagged at v2 — that ICD-10 retrieval was
+single-sourced through OMOPHub, with no ingested ICD-10 corpus to
+fall back on — has since been addressed (see §5.8). NHS TRUD's
+ICD-10 5th Edition corpus is now ingested into ChromaDB under the
+canonical vocabulary string `ICD-10 (WHO)`, so the system has a
+local fallback when OMOPHub does not surface a query. The remaining
+five-code I22 miss is therefore the study-intent disagreement
+(Bennett 2023 mode 3) only — not a corpus or retrieval gap.
 
 ### 2. atrial_fib_icd10 — multi-vocabulary expansion (resolved)
 
@@ -601,6 +603,9 @@ This is the second pass of the benchmark.
     vocabulary candidates aren't outranked by other-vocab noise.
 - **2026-04-27 (evening)**: re-run, three-view aggregation, this
   document.
+- **2026-04-29**: post-v2 structural fix — NHS TRUD ICD-10 5th
+  Edition ingested into ChromaDB. Closes the single-source-OMOPHub
+  dependency flagged in §4 case 1; full write-up in §5.8.
 
 The fixes were not blind to the failures they address — every fix
 was designed to address a specific case identified in the morning
@@ -637,10 +642,9 @@ surface the long tail of post-coordinated SNOMED expressions.
 OpenCodelists supports ECL natively, so this aligns with existing
 Bennett tooling.
 
-**ICD-10 corpus ingestion**
-ICD-10 retrieval is currently single-sourced through OMOPHub.
-Ingesting NHS TRUD's ICD-10 5th Edition into ChromaDB would
-remove the single-source dependency.
+**ICD-10 corpus ingestion** *(completed 2026-04-29; see §5.8)*
+ICD-10 retrieval is no longer single-sourced through OMOPHub —
+NHS TRUD's ICD-10 5th Edition has been ingested into ChromaDB.
 
 **Run-to-run variance**
 The pipeline runs at temperature=0 but Anthropic provides no
@@ -652,6 +656,37 @@ caveat with measured noise.
 The current evaluation is set-based (P/R/F1). RAGAS-style
 faithfulness and context-relevance metrics, applied offline to
 the benchmark, would extend the evaluation beyond set membership.
+
+### §5.8 Structural improvement (post-v2): ICD-10 corpus ingestion
+
+Following the v2 benchmark, NHS TRUD's ICD-10 5th Edition corpus was
+ingested into ChromaDB (17,934 codes, see `data/icd10/`) under the
+canonical vocabulary string `ICD-10 (WHO)`. ICD-10 retrieval no
+longer depends on OMOPHub's index keying — the system has a local
+corpus to fall back on. mi_icd10 cold-start F1: pre-change 0.7368
+(OMOPHub-only); post-change 0.7368 (corpus-only after disabling
+OMOPHub for the test). The single-source ICD-10 dependency flagged
+in §4 case 1 is now resolved.
+
+The headline F1 is unchanged because the bottleneck on this list
+was never retrieval — at v2 the I21 family was already retrieved
+and the I22 family was excluded by the LLM scorer under the
+"instance vs. association" rule (Bennett 2023 mode 3). What the
+ingestion changes is the *failure mode under OMOPHub outage or
+keying gaps*: instead of returning zero ICD-10 codes, the
+ChromaDB retriever now produces the same I21 family from the
+local index. The 4th- and 5th-character meanings carried in the
+TRUD `MODIFIER_4` / `MODIFIER_5` attributes are folded into the
+embedded term so sibling codes (e.g. the `E11.x` family) embed
+distinctly rather than collapsing to the parent description.
+
+Verification artefacts:
+- `data/test_sets/benchmark_2026_04/mi_icd10.result_v3.json`
+  (cold-start, OMOPHub on) — F1 0.7368
+- `data/test_sets/benchmark_2026_04/atrial_fib_icd10.result_v3.json`
+  (cold-start, OMOPHub on) — F1 1.0000
+- `data/test_sets/benchmark_2026_04/icd10_corpus_only_isolation.json`
+  (OMOPHub disabled, ChromaDB-only) — F1 0.7368 / 1.0000
 
 ## Limitations
 

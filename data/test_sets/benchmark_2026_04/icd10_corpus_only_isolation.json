@@ -1,0 +1,24 @@
+{
+  "mi_icd10": {
+    "codelist_name": "included_only",
+    "n_ref_codes": 12,
+    "n_output_codes": 7,
+    "recall": 0.5833,
+    "precision": 1.0,
+    "f1": 0.7368,
+    "tp_count": 7,
+    "fp_count": 0,
+    "fn_count": 5
+  },
+  "atrial_fib_icd10": {
+    "codelist_name": "included_only",
+    "n_ref_codes": 7,
+    "n_output_codes": 7,
+    "recall": 1.0,
+    "precision": 1.0,
+    "f1": 1.0,
+    "tp_count": 7,
+    "fp_count": 0,
+    "fn_count": 0
+  }
+}
