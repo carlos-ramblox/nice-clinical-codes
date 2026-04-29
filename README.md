@@ -1,10 +1,14 @@
 <p align="center">
+  <img src="assets/hero.png" alt="Clinical Code Discovery — multi-source pipeline with LLM-assisted scoring and human review" width="100%">
+</p>
+
+<p align="center">
   <img src="assets/logo-cam-pace.svg" alt="University of Cambridge" height="70">
   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
   <img src="assets/logo-nice.png" alt="NICE" height="60">
 </p>
 
-# Clinical Code Discovery — Multi-source clinical codelist generation with LLM-assisted scoring and human review
+# Clinical Code Discovery - Multi-source clinical codelist generation with LLM-assisted scoring and human review
 
 **Live:** [clinicalcodes.uk](https://clinicalcodes.uk)
 
@@ -50,6 +54,16 @@ User → Frontend (Next.js)
 - **Data sources:** QOF Business Rules, OpenCodelists, OPCS-4, NHS TRUD ICD-10 5th Edition, OMOPHub, UMLS (53K+ codes ingested locally)
 - **Deployment:** AWS ECS Fargate, ECR, ALB, ACM, Route 53. Live at [clinicalcodes.uk](https://clinicalcodes.uk)
 - **Cost:** per-query cost dominated by the LLM scoring step; tracked at request time but not currently benchmarked against a fixed test set
+
+## Evaluation
+
+Benchmarked against 15 published OpenCodelists reference codelists (strict view, included-only stage). Mean F1 0.49 → 0.57 (+0.08); paired McNemar χ² = 42.9, p = 5.7×10⁻¹¹. Full methodology, per-codelist breakdown, and failure-case analysis in [EVALUATION.md](EVALUATION.md).
+
+<p align="center">
+  <img src="assets/three_view_f1.png" alt="Three-view F1 evaluation across 15 NHS reference codelists" width="100%">
+</p>
+
+<sub>Numbers are from the v2 (post-fix) benchmark on 2026-04-27. The HIV regression visible at F1 = 0.02 was subsequently tuned to F1 = 0.20 on 2026-04-29 — see [EVALUATION.md](EVALUATION.md) §4 case 7. For the clinical-safety mapping (DCB0129 / DCB0160) see [CLINICAL_SAFETY.md](CLINICAL_SAFETY.md).</sub>
 
 ## Reproducibility
 
