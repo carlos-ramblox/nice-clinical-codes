@@ -1,23 +1,22 @@
 """Parse ICD-10 5th Edition (NHS TRUD) XML codes and load into SQLite + ChromaDB.
 
-NHS TRUD's ICD-10 5th Edition release is distributed as ClaML (Classification
-Markup Language) XML. The relevant structure for our purposes:
+NHS TRUD's ICD-10 5th Edition release is distributed as a flat NHS-namespaced
+XML where each code is a single element:
 
-    <ClaML>
-      <Class code="I21" kind="category">
-        <Rubric kind="preferred">
-          <Label>Acute myocardial infarction</Label>
-        </Rubric>
-      </Class>
+    <DSV xmlns="urn:nhs-org:icd-10">
+      <CLASS CODE="I21"   ALT_CODE="I21"  USAGE="DEFAULT" USAGE_UK="3"
+             DESCRIPTION="Acute myocardial infarction" />
+      <CLASS CODE="I21.0" ALT_CODE="I210" USAGE="DEFAULT" USAGE_UK="3"
+             DESCRIPTION="Acute transmural myocardial infarction of anterior wall" />
       ...
-    </ClaML>
+    </DSV>
 
-We extract every ``<Class kind="category">`` (the actual diagnosis codes like
-``I21``, ``I21.0``) and skip ``chapter`` / ``block`` (groupings used for
-navigation, not coding). The preferred-rubric label is the term we embed.
+USAGE distinguishes the dagger/asterisk system (DEFAULT vs DAGGER vs
+ASTERISK). All three are valid ICD-10 codes used in clinical coding, so we
+ingest all of them.
 
-A defensive fallback also accepts the OPCS-style flat ``<code CODE="..."
-TITLE="..."/>`` schema, in case TRUD ever ships ICD-10 in that format.
+A defensive fallback also accepts the OPCS-style ``<code CODE="..."
+TITLE="..."/>`` schema in case TRUD ever ships a different XML shape.
 """
 
 import logging
@@ -34,49 +33,38 @@ SOURCE_TAG = "ICD-10 5th Edition (NHS TRUD)"
 
 
 def _strip_ns(tag: str) -> str:
-    """Drop XML namespace prefix (``{ns}Class`` -> ``Class``)."""
+    """Drop XML namespace prefix (``{ns}CLASS`` -> ``CLASS``)."""
     return tag.rsplit("}", 1)[-1] if "}" in tag else tag
 
 
-def _preferred_label(class_elem: ET.Element) -> str:
-    """Return the text of ``<Rubric kind="preferred">/<Label>`` for a Class.
+def _compose_term(desc: str, mod4: str | None, mod5: str | None) -> str:
+    """Fold MODIFIER_4 / MODIFIER_5 into the term.
 
-    ClaML allows multiple Rubrics per Class (preferred, inclusion, exclusion,
-    note, …). We only want the preferred term.
+    TRUD ICD-10 stores the 4th- and 5th-character meanings as separate
+    attributes (DESCRIPTION = parent term). Without folding them in,
+    sibling codes are indistinguishable for semantic retrieval — e.g.
+    every ``E11.x`` code would embed as just "Type 2 diabetes mellitus".
     """
-    for rubric in class_elem.iter():
-        if _strip_ns(rubric.tag) != "Rubric":
-            continue
-        if rubric.get("kind") != "preferred":
-            continue
-        for child in rubric.iter():
-            if _strip_ns(child.tag) == "Label":
-                # Label may contain mixed inline tags (Term, Reference, Fragment).
-                # ``itertext`` flattens them into a single readable string.
-                text = "".join(child.itertext()).strip()
-                if text:
-                    return text
-    return ""
+    parts = [desc]
+    if mod4:
+        parts.append(mod4.strip())
+    if mod5:
+        parts.append(mod5.strip())
+    return ", ".join(p for p in parts if p)
 
 
-def _parse_claml(root: ET.Element) -> list[dict]:
-    """Extract ICD-10 diagnosis codes from a ClaML root element."""
+def _parse_nhs_flat(root: ET.Element) -> list[dict]:
+    """Extract codes from the NHS TRUD ``<CLASS CODE="..." DESCRIPTION="..."/>`` schema."""
     records: list[dict] = []
     seen: set[str] = set()
-    for cls in root.iter():
-        if _strip_ns(cls.tag) != "Class":
+    for elem in root.iter():
+        if _strip_ns(elem.tag) != "CLASS":
             continue
-        kind = cls.get("kind", "")
-        # chapters and blocks are navigational groupings (e.g. "I00-I99",
-        # "I20-I25"); only "category" is an actual ICD-10 diagnosis code.
-        if kind != "category":
+        code = (elem.get("CODE") or "").strip()
+        desc = (elem.get("DESCRIPTION") or "").strip()
+        if not code or not desc or code in seen:
             continue
-        code = (cls.get("code") or "").strip()
-        if not code or code in seen:
-            continue
-        term = _preferred_label(cls)
-        if not term:
-            continue
+        term = _compose_term(desc, elem.get("MODIFIER_4"), elem.get("MODIFIER_5"))
         seen.add(code)
         records.append({
             "code": code,
@@ -91,8 +79,8 @@ def _parse_claml(root: ET.Element) -> list[dict]:
     return records
 
 
-def _parse_flat(root: ET.Element) -> list[dict]:
-    """Fallback: OPCS-style flat ``<code CODE="..." TITLE="..."/>`` XML."""
+def _parse_opcs_style(root: ET.Element) -> list[dict]:
+    """Fallback: OPCS-style ``<code CODE="..." TITLE="..."/>`` XML."""
     records: list[dict] = []
     seen: set[str] = set()
     for elem in root.iter():
@@ -125,24 +113,36 @@ def parse_icd10_xml(filepath: str | Path) -> list[dict]:
 
     tree = ET.parse(path)
     root = tree.getroot()
-    root_tag = _strip_ns(root.tag)
 
-    if root_tag == "ClaML":
-        records = _parse_claml(root)
-        schema = "ClaML"
-    else:
-        records = _parse_flat(root)
-        schema = f"flat ({root_tag})"
+    records = _parse_nhs_flat(root)
+    schema = "NHS-flat (CLASS/DESCRIPTION)"
+    if not records:
+        records = _parse_opcs_style(root)
+        schema = "OPCS-style (code/TITLE)"
 
     logger.info("Parsed %d ICD-10 codes from %s [%s]", len(records), path.name, schema)
     return records
 
 
 def ingest_icd10(filepath: str | Path) -> dict:
-    """Parse ICD-10 XML and load into SQLite + ChromaDB."""
+    """Parse ICD-10 XML and load into SQLite + ChromaDB.
+
+    Idempotent: deletes any existing rows for this source before inserting
+    so re-runs pick up term changes (e.g. when MODIFIER_4/5 folding was
+    added). ChromaDB's ``upsert`` already replaces docs by ID.
+    """
     records = parse_icd10_xml(filepath)
     if not records:
         return {"sqlite": 0, "chroma": 0}
+
+    from app.db.code_store import get_connection
+    conn = get_connection()
+    deleted = conn.execute(
+        "DELETE FROM codes WHERE source = ?", (SOURCE_TAG,)
+    ).rowcount
+    conn.commit()
+    if deleted:
+        logger.info("Cleared %d stale ICD-10 rows from SQLite before re-ingest", deleted)
 
     sqlite_count = insert_codes(records)
 
@@ -157,16 +157,30 @@ def ingest_icd10(filepath: str | Path) -> dict:
     return {"sqlite": sqlite_count, "chroma": chroma_count}
 
 
+def _find_icd10_xml(data_dir: Path) -> Path | None:
+    """Locate the codes-and-titles XML inside data/icd10/.
+
+    Walks the directory recursively because the TRUD release unzips into a
+    nested ``ICD10_Edition5_XML_<date>/Content/`` folder. We pick the file
+    whose name contains ``CodesAndTitles`` to avoid the equivalence tables
+    that ship in the same release.
+    """
+    candidates = [p for p in data_dir.rglob("*.xml") if "CodesAndTitles" in p.name]
+    if candidates:
+        return sorted(candidates)[0]
+    fallback = sorted(data_dir.rglob("*.xml"))
+    return fallback[0] if fallback else None
+
+
 if __name__ == "__main__":
     import sys
     logging.basicConfig(level=logging.INFO)
     if len(sys.argv) > 1:
-        path = sys.argv[1]
+        path: str | Path = sys.argv[1]
     else:
-        # default: pick the first XML in data/icd10/
-        candidates = sorted(Path("data/icd10").glob("*.xml"))
-        if not candidates:
+        found = _find_icd10_xml(Path("data/icd10"))
+        if not found:
             print("No ICD-10 XML found in data/icd10/. Pass a path as the first argument.")
             sys.exit(1)
-        path = str(candidates[0])
+        path = found
     print(ingest_icd10(path))

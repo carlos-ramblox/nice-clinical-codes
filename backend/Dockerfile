@@ -24,6 +24,7 @@ ENV HF_HOME=/app/hf_cache
 COPY backend/app/ app/
 COPY data/raw/ data/raw/
 COPY data/opcs/ data/opcs/
+COPY data/icd10/ data/icd10/
 
 RUN python -m app.ingestion.run_all --data-dir data
 

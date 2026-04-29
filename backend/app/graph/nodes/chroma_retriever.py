@@ -13,11 +13,10 @@ def retrieve_from_chromadb(state: dict) -> dict:
 
     Vocabulary filter strings come from :data:`config.OMOPHUB_VOCABULARIES`
     so that ChromaDB and OMOPHub use the same canonical vocabulary names.
-    Today ChromaDB only contains SNOMED CT (via QOF + OpenCodelists ingest)
-    and OPCS-4 (via ingest_opcs); both are written under the same strings
-    OMOPHub uses for its labels. No ICD-10 corpus is ingested locally,
-    so an ICD-10-only query returns 0 codes from this retriever — the
-    filter is still correct so no SNOMED/OPCS rows leak through.
+    ChromaDB contains SNOMED CT (QOF + OpenCodelists), OPCS-4 (ingest_opcs),
+    and ICD-10 5th Edition (ingest_icd10) — all written under the same
+    strings OMOPHub uses for its labels, so the system has a local
+    fallback when OMOPHub doesn't surface a query.
     """
     conditions = state.get("parsed_conditions", [])
     if not conditions:

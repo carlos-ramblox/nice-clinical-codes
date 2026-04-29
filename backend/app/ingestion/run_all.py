@@ -46,14 +46,18 @@ def run_all(data_dir: str = "data") -> dict:
     else:
         logger.warning("No OPCS XML found in %s/opcs/", base)
 
-    # ICD-10 XML (NHS TRUD 5th Edition)
-    icd10_files = list((base / "icd10").glob("*.xml")) if (base / "icd10").exists() else []
-    if icd10_files:
-        from app.ingestion.ingest_icd10 import ingest_icd10
-        logger.info("Ingesting ICD-10: %s", icd10_files[0].name)
-        results["icd10"] = ingest_icd10(icd10_files[0])
+    # ICD-10 XML (NHS TRUD 5th Edition) — release unzips into a nested
+    # ICD10_Edition5_XML_<date>/Content/ folder, so search recursively.
+    if (base / "icd10").exists():
+        from app.ingestion.ingest_icd10 import _find_icd10_xml, ingest_icd10
+        icd10_xml = _find_icd10_xml(base / "icd10")
+        if icd10_xml:
+            logger.info("Ingesting ICD-10: %s", icd10_xml.name)
+            results["icd10"] = ingest_icd10(icd10_xml)
+        else:
+            logger.warning("No ICD-10 XML found in %s/icd10/", base)
     else:
-        logger.warning("No ICD-10 XML found in %s/icd10/", base)
+        logger.warning("No ICD-10 directory at %s/icd10/", base)
 
     elapsed = round(time.time() - t0, 1)
 
