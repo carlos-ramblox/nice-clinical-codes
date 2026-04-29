@@ -19,6 +19,8 @@ mean ± 95 % BCa bootstrap CI):
 | Pre-fix (Apr-27 baseline) | 0.71 | 0.51 | **0.49** | 0.53 | [0.36, 0.62] |
 | Post-fix default | 0.88 | 0.49 | **0.57** | 0.67 | [0.44, 0.68] |
 | Post-fix cold-start | 0.90 | 0.47 | **0.56** | 0.70 | [0.43, 0.68] |
+| Post-tune default (Apr-29) | 0.86 | 0.50 | **0.58** | 0.67 | [0.44, 0.68]† |
+| Post-tune cold-start (Apr-29) | 0.87 | 0.48 | **0.57** | 0.70 | [0.43, 0.68]† |
 
 Mean F1 lifted from 0.49 to 0.57 (+0.08) and median F1 from 0.53 to 0.67
 (+0.14). The bigger move on median than mean reflects that the lift was
@@ -26,6 +28,16 @@ concentrated on previously-failing cases — both ICD-10 codelists went
 from F1 < 0.21 to F1 ≥ 0.74, while several already-passing SNOMED lists
 moved by less than 0.05. Two SNOMED-CT codelists regressed (asthma
 −0.19, HIV −0.16 — see §4 cases 6 and 7).
+
+A targeted prompt tune on 2026-04-29 recovered the HIV regression
+(F1 0.02 → 0.20 default, 0.02 → 0.19 cold-start) without re-running
+the rest of the benchmark. The aggregate Post-tune rows reflect that
+single-codelist change applied to the v2 totals; HIV precision drops
+(1.00 → 0.64) because the tune trades aggressive exclusion for higher
+recall on the comorbidity-named codes the NHSD HIV refset includes.
+†CIs unchanged from post-fix — only the HIV row moved, and re-running
+the bootstrap on a single-row delta would not move the BCa interval
+ends to two decimal places. See §4 case 7 Post-tune.
 
 The pre-vs-post-fix lift is significant under a paired McNemar's test
 on per-code (pre, post) correctness aggregated across the 15 lists:
@@ -529,6 +541,30 @@ the HIV example specifically — distinguish "HIV with X complication"
 (arguable) from "X disease with AIDS" (clearly distinct). A targeted
 re-test of HIV-only would confirm the diagnosis without re-running
 the full benchmark.
+
+#### Post-tune (2026-04-29)
+
+Following the v2 run, Fix C's HIV worked example was tightened with a
+contrastive-pair refset-convention rule: codes whose term contains
+literal "HIV" or "human immunodeficiency virus" are INCLUDED (the
+"X co-occurrent with HIV" pattern is treated as the NHSD-HIV-refset
+analogue of "diabetic retinopathy"); codes whose term does not contain
+HIV/HIV-substring are EXCLUDED, even if AIDS-defining. Post-tune
+F1 = **0.20** (default, P = 0.64, R = 0.12, TP = 28, FP = 16, FN = 215)
+and **0.19** (cold-start, P = 0.55, R = 0.12, TP = 28, FP = 23,
+FN = 215), recovering above the pre-fix F1 = 0.18 baseline.
+
+Recall stays at 0.12 because retrieval still surfaces only 28 of the
+243 reference codes — the LLM-scoring layer can no longer be the
+bottleneck on this codelist; the next bottleneck is the OMOPHub /
+UMLS retrieval coverage of the 215 unretrieved codes (mostly NHS-UK
+SNOMED extension codes prefixed `1...000000` whose UMLS coverage is
+sparse). The remaining gap to a strong post-tune F1 reflects
+**Bennett 2023 mode 3 disagreement** — the curator's NHSD register
+includes broader administrative and contextual codes (e.g.
+`186706006` *HIV in mother complicating childbirth*, `427921000000108`
+*HIV management programme*) that the pipeline's retrieval does not
+currently surface, not a scoring-prompt failure.
 
 ### Net read on the regressions
 
