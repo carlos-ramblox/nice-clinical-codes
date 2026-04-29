@@ -97,7 +97,7 @@ def run_evaluation(
         codes_raw = entry.get("Codelist", "")
         terms_raw = entry.get("Codelist_terms", "")
 
-        codes = [c.strip().rstrip(".") for c in str(codes_raw).split(";") if c.strip()]
+        codes = [c.strip().replace(".", "") for c in str(codes_raw).split(";") if c.strip()]
         terms = [t.strip() for t in str(terms_raw).split(";") if t.strip()]
 
         # zip codes with terms, pad terms with "" if fewer
@@ -149,15 +149,17 @@ def run_evaluation(
     results["stages"]["included_plus_uncertain"] = _metrics_to_dict(m_inc_unc)
 
     # Check excluded codes that were in reference (false exclusions)
-    ref_set = {c["code"].strip().rstrip(".") for c in ref_codes}
-    false_exclusions = [c for c in excluded if c.get("code", "").strip().rstrip(".") in ref_set]
+    # Match the dot-stripping convention used in evaluate_codelist._norm
+    # so diagnostic surfaces don't miss ICD-10/OPCS-4 matches.
+    ref_set = {c["code"].strip().replace(".", "") for c in ref_codes}
+    false_exclusions = [c for c in excluded if c.get("code", "").strip().replace(".", "") in ref_set]
     results["false_exclusions"] = {
         "count": len(false_exclusions),
         "codes": [{"code": c["code"], "term": c["term"], "rationale": c.get("rationale", "")} for c in false_exclusions],
     }
 
     # Check uncertain codes that were in reference
-    uncertain_in_ref = [c for c in uncertain if c.get("code", "").strip().rstrip(".") in ref_set]
+    uncertain_in_ref = [c for c in uncertain if c.get("code", "").strip().replace(".", "") in ref_set]
     results["uncertain_in_reference"] = {
         "count": len(uncertain_in_ref),
         "codes": [{"code": c["code"], "term": c["term"], "rationale": c.get("rationale", "")} for c in uncertain_in_ref],
