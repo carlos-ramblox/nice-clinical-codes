@@ -17,10 +17,51 @@ _COLD_START_DESCRIPTION = (
     "reference and bias recall upward."
 )
 
+# Per-retriever opt-in disable flags. Production callers leave them at the
+# default (False); the per-retriever ablation runner (see
+# backend/app/evaluation/run_ablation.py) sets them to isolate one
+# retriever at a time. Production behaviour is unchanged.
+_DISABLE_OMOPHUB_DESCRIPTION = (
+    "Evaluation-only flag. When true, disables the OMOPHub retriever for "
+    "this request; used by the per-retriever ablation."
+)
+_DISABLE_QOF_DESCRIPTION = (
+    "Evaluation-only flag. When true, disables the QOF Business Rules "
+    "retriever for this request; used by the per-retriever ablation."
+)
+_DISABLE_CHROMA_DESCRIPTION = (
+    "Evaluation-only flag. When true, disables the ChromaDB semantic "
+    "retriever for this request; used by the per-retriever ablation."
+)
+
 from app.graph.graph import run_pipeline
 from app.evaluation.evaluator import run_evaluation
 from app.baseline.llm_client import run_baseline
 from app.api import _search_cache
+
+
+def _disabled_retrievers(
+    cold_start: bool,
+    disable_omophub: bool,
+    disable_qof: bool,
+    disable_chroma: bool,
+) -> set[str] | None:
+    """Translate the four opt-in retriever-disable flags into the
+    ``disabled_retrievers`` set that ``run_pipeline`` accepts.
+
+    Returns ``None`` (rather than an empty set) when no flag is set, so
+    the cached default-graph branch in ``_get_pipeline`` is hit.
+    """
+    disabled: set[str] = set()
+    if cold_start:
+        disabled.add("opencodelists")
+    if disable_omophub:
+        disabled.add("omophub")
+    if disable_qof:
+        disabled.add("qof")
+    if disable_chroma:
+        disabled.add("chroma")
+    return disabled or None
 
 logger = logging.getLogger(__name__)
 
@@ -67,6 +108,9 @@ class SearchResponse(BaseModel):
 async def search_codes(
     request: SearchRequest,
     cold_start: bool = Query(False, description=_COLD_START_DESCRIPTION),
+    disable_omophub: bool = Query(False, description=_DISABLE_OMOPHUB_DESCRIPTION),
+    disable_qof: bool = Query(False, description=_DISABLE_QOF_DESCRIPTION),
+    disable_chroma: bool = Query(False, description=_DISABLE_CHROMA_DESCRIPTION),
 ):
     """Search for clinical codes matching a condition query.
 
@@ -79,6 +123,12 @@ async def search_codes(
         compare against an OpenCodelists-derived reference list, where
         leaving the retriever live would bias recall upward by surfacing
         the very list the run is meant to compare against.
+    disable_omophub, disable_qof, disable_chroma : bool, default False
+        Evaluation-only opt-in flags that disable the named retriever for
+        this request. Mirror ``cold_start`` so the per-retriever ablation
+        runner can isolate one retriever at a time. Production callers
+        leave these at the default; the merger requires at least one
+        active retriever, so disabling all four is rejected upstream.
 
     Example::
 
@@ -87,7 +137,7 @@ async def search_codes(
              -d '{"query": "type 2 diabetes"}'
     """
     t0 = time.time()
-    disabled = {"opencodelists"} if cold_start else None
+    disabled = _disabled_retrievers(cold_start, disable_omophub, disable_qof, disable_chroma)
 
     try:
         result = await asyncio.to_thread(run_pipeline, request.query, disabled)
@@ -179,6 +229,9 @@ class EvaluateRequest(BaseModel):
 async def evaluate_codes(
     request: EvaluateRequest,
     cold_start: bool = Query(False, description=_COLD_START_DESCRIPTION),
+    disable_omophub: bool = Query(False, description=_DISABLE_OMOPHUB_DESCRIPTION),
+    disable_qof: bool = Query(False, description=_DISABLE_QOF_DESCRIPTION),
+    disable_chroma: bool = Query(False, description=_DISABLE_CHROMA_DESCRIPTION),
 ):
     """Run the pipeline on a test set query and evaluate against the gold standard.
 
@@ -189,6 +242,10 @@ async def evaluate_codes(
         evaluation run. Use this when the reference codelist comes from
         OpenCodelists itself, so the retriever cannot surface the
         reference and bias recall upward by construction.
+    disable_omophub, disable_qof, disable_chroma : bool, default False
+        Evaluation-only opt-in flags that disable the named retriever for
+        this request. Mirror ``cold_start`` so the per-retriever ablation
+        runner can isolate one retriever at a time.
 
     Example::
 
@@ -205,7 +262,7 @@ async def evaluate_codes(
         raise HTTPException(status_code=400, detail="No Research_question found in test set")
 
     t0 = time.time()
-    disabled = {"opencodelists"} if cold_start else None
+    disabled = _disabled_retrievers(cold_start, disable_omophub, disable_qof, disable_chroma)
 
     try:
         pipeline_result = await asyncio.to_thread(run_pipeline, query, disabled)
