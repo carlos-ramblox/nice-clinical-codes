@@ -22,7 +22,7 @@
 
 Multi-source pipeline that **discovers** candidate clinical codes (SNOMED CT, ICD-10, OPCS-4) via four parallel retrievers across UK clinical vocabularies, **enriches** them through UMLS-based synonym expansion, and supports **validation** through per-code LLM scoring (Claude Haiku 4.5) and a human review gate. Developed as part of the University of Cambridge (PACE) Data Science programme, in collaboration with NICE stakeholders.
 
-Given a clinical condition (e.g. "type 2 diabetes with hypertension"), the pipeline returns a candidate codelist with full provenance — every code carries its source(s), an LLM-generated rationale, and a confidence score. Human reviewers then accept, reject or edit individual codes before the codelist is exported. The output format is compatible with OpenCodelists. End-to-end latency for a representative single-condition query is on the order of tens of seconds, dominated by per-code LLM scoring and subject to model availability and source-API response time; we have not yet characterised median or worst-case latency on a fixed test set (see [LIMITATIONS.md](LIMITATIONS.md)). The published comparator for manual codelist construction is months of clinician time (Aslam et al., 2025).
+Given a clinical condition (e.g. "type 2 diabetes with hypertension"), the pipeline returns a candidate codelist with full provenance — every code carries its source(s), an LLM-generated rationale, and a confidence score. Human reviewers then accept, reject or edit individual codes before the codelist is exported. The output format is compatible with OpenCodelists. End-to-end latency for a representative single-condition query is on the order of tens of seconds, dominated by per-code LLM scoring and subject to model availability and source-API response time; we have not yet characterised median or worst-case latency on a fixed test set (see [LIMITATIONS.md](LIMITATIONS.md)). The published comparator for manual codelist construction is months of clinician time, reduced to 7-9 hours under Aslam et al. 2025's automation framework on the DynAIRx multi-long-term-conditions cohort.
 
 ## Architecture
 
@@ -58,7 +58,7 @@ User → Frontend (Next.js)
 - **Backend:** Python, FastAPI, async pipeline execution
 - **Frontend:** Next.js 16, TypeScript, Tailwind CSS
 - **Vector DB:** ChromaDB with PubMedBERT biomedical embeddings
-- **Relational store:** SQLite — ingested code corpus (`backend/app/db/code_store.py`, ~53K rows across QOF, OPCS-4, ICD-10, OpenCodelists) and HITL workflow tables (`hitl_store.py`: codelists, decisions, audit log with tamper-evident SHA-256 signatures)
+- **Relational store:** SQLite — ingested code corpus (`backend/app/db/code_store.py`, ~53K rows across QOF, OPCS-4, ICD-10, OpenCodelists) and HITL workflow tables (`hitl_store.py`: codelists, decisions, audit log with deterministic SHA-256 content-hash that detects post-approval edits)
 - **Knowledge graph:** UMLS Metathesaurus (synonym, narrower, sibling expansion)
 - **Data sources:** QOF Business Rules, OpenCodelists, OPCS-4, NHS TRUD ICD-10 5th Edition, OMOPHub, UMLS (53K+ codes ingested locally)
 - **Deployment:** AWS ECS Fargate, ECR, ALB, ACM, Route 53. Live at [clinicalcodes.uk](https://clinicalcodes.uk)
@@ -66,7 +66,7 @@ User → Frontend (Next.js)
 
 ## Evaluation
 
-Benchmarked against 15 published OpenCodelists reference codelists (strict view, included-only stage). Mean F1 0.49 → 0.57 (+0.08); paired McNemar χ² = 42.9, p = 5.7×10⁻¹¹. Full methodology, per-codelist breakdown, and failure-case analysis in [EVALUATION.md](EVALUATION.md).
+Benchmarked against the three-stage codelist construction workflow set out in [Watson et al. 2017 (BMJ Open)](https://pmc.ncbi.nlm.nih.gov/articles/PMC5719324/), one of the standard methodology references in this field. clinicalcodes.uk **addresses Stage 2** (multi-vocabulary code assembly across SNOMED CT, ICD-10, OPCS-4 and UMLS, returned in tens of seconds). It supports rather than replaces Stage 1 (clinician definition) and Stage 3 (Delphi-style adjudication), via free-text query input and an audited human-review gate. As a supplementary methodological view, strict-view F1 against 15 published OpenCodelists references is 0.49 → 0.57 (+0.08); paired McNemar χ² = 42.93, p = 5.7×10⁻¹¹. Per-retriever ablation (marginal contribution of each retriever and of the LLM scoring step) is reported in [EVALUATION.md §Per-retriever ablation](EVALUATION.md#per-retriever-ablation). Full methodology, per-codelist breakdown, and failure-case analysis in [EVALUATION.md](EVALUATION.md).
 
 <p align="center">
   <img src="assets/three_view_f1.png" alt="Three-view F1 evaluation across 15 NHS reference codelists" width="100%">
@@ -132,14 +132,21 @@ cp .env.example .env
 # Edit .env and add your API keys
 ```
 
-5. Ingest data (one-time, ~8 minutes):
+5. Download source data into `data/raw/` **before** running ingest. The repository does not redistribute these files; each must be obtained from its original source under that source's licence terms:
 
-```bash
-cd backend
-python -m app.ingestion.run_all --data-dir ../data
-```
+   - **QOF Business Rules**: download `Business_Rules_Combined_Change_Log_QOF+2024-25_v49.1.xlsm` (or current version) from [NHS Digital — Quality and Outcomes Framework](https://digital.nhs.uk/data-and-information/data-collections-and-data-sets/data-collections/quality-and-outcomes-framework-qof) and place at `data/raw/`.
+   - **OpenCodelists CSVs**: download the codelists referenced in `data/raw/opencodelists/selection.json` from [opencodelists.org](https://www.opencodelists.org/) and place each under `data/raw/opencodelists/csv/<short>/<version>/`.
+   - **OPCS-4**: download `OPCS411 CodesAndTitles Nov 2025 V1.0.xml` (or current version) from [NHS TRUD — OPCS-4](https://isd.digital.nhs.uk/trud/users/guest/filters/0/categories/3/items/119/releases) and place at `data/raw/`. Free TRUD account required.
+   - **NHS TRUD ICD-10 5th Edition** (`ICD10_Edition5_CodesAndTitlesAndMetadata_GB_*.xml`): download from [NHS TRUD — ICD-10](https://isd.digital.nhs.uk/trud/users/guest/filters/0/categories/28/items/259/releases) and place at `data/icd10/`. **Subscription-licensed; redistribution restricted.**
 
-This populates SQLite and ChromaDB with QOF business rules (23K SNOMED codes), OpenCodelists (681 codes), OPCS-4 procedures (12K codes), and NHS TRUD ICD-10 5th Edition (~17.9K codes).
+   Then run:
+
+   ```bash
+   cd backend
+   python -m app.ingestion.run_all --data-dir ../data
+   ```
+
+   This populates SQLite and ChromaDB with QOF business rules (~23K SNOMED codes), OpenCodelists (~681 codes), OPCS-4 procedures (~12K codes), and ICD-10 (~17.9K codes). Ingestion is silent on missing source files — if a step is skipped, the corresponding retriever will return zero results at query time. Verify each source ingested by checking the row counts in the SQLite database after the run.
 
 6. Run both services:
 
@@ -174,7 +181,8 @@ The Docker build runs data ingestion automatically, no manual step needed. SQLit
 |----------|------------|----------|
 | `OMOPHUB_API_KEY` | OMOPHub API key for SNOMED/ICD-10 queries | Yes |
 | `UMLS_API_KEY` | UMLS Metathesaurus API key | Yes |
-| `ANTHROPIC_API_KEY` | Anthropic Claude API key | Yes |
+| `ANTHROPIC_API_KEY` | Anthropic Claude API key (Sonnet 4 + Haiku 4.5) | Yes |
+| `OPENROUTER_API_KEY` | OpenRouter API key (only needed for the optional `POST /api/baseline` endpoint) | No |
 | `BACKEND_HOST` | Backend bind address | No (default: 0.0.0.0) |
 | `BACKEND_PORT` | Backend server port | No (default: 8000) |
 | `CORS_ORIGINS` | Allowed CORS origins | No (default: http://localhost:3000) |
@@ -182,8 +190,10 @@ The Docker build runs data ingestion automatically, no manual step needed. SQLit
 | `CHROMA_COLLECTION_NAME` | ChromaDB collection name | No (default: clinical_codes) |
 | `DATABASE_URL` | SQLite database path | No (default: sqlite:///./data/codes.db) |
 | `EMBEDDING_MODEL` | Sentence transformer model | No (default: NeuML/pubmedbert-base-embeddings) |
-| `LLM_MODEL` | Claude model ID | No (default: claude-sonnet-4-20250514) |
+| `LLM_MODEL` | Claude model ID for query parsing | No (default: claude-sonnet-4-20250514) |
+| `LLM_SCORING_MODEL` | Claude model ID for per-code scoring | No (default: claude-haiku-4-5-20251001) |
 | `RETRIEVAL_TOP_K` | Max results per retrieval source | No (default: 50) |
+| `MAX_CANDIDATES` | Cap on candidates entering the merger | No (default: 100) |
 | `CONFIDENCE_THRESHOLD` | Min confidence for auto-include | No (default: 0.5) |
 | `UMLS_EXPAND` | Enable UMLS enrichment | No (default: yes) |
 

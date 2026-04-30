@@ -11,8 +11,81 @@ on 2026-04-27 surfaced four failure modes, four targeted code changes
 (Fixes B, C, E, F — see *Iteration history* below) were deployed to
 production, and the benchmark was re-run end-to-end.
 
-Headline result on the strict view (15 codelists, included-only stage,
-mean ± 95 % BCa bootstrap CI):
+## Primary result: positioning against the canonical workflow
+
+A widely-cited description of clinician codelist construction is the
+three-stage workflow set out in Watson et al. 2017
+([BMJ Open](https://pmc.ncbi.nlm.nih.gov/articles/PMC5719324/)):
+
+1. **Definition.** The clinician articulates the clinical feature
+   *a priori* using authoritative resources (BMJ Best Practice, NICE
+   guidelines, ICD-10, MeSH).
+2. **Code assembly.** The researcher searches all available medical
+   codes across the relevant vocabularies, using statistical
+   software (Stata/R), regex against lookup files, and exhaustive
+   synonym expansion.
+3. **Modified Delphi review.** Multiple clinicians independently
+   categorise each code as *definitely include*, *uncertain*, or
+   *definitely exclude*. Consensus is reached over multiple rounds.
+
+In practice, application of this workflow ranges from rigorous
+full-panel Delphi (as in published methods papers) to lighter
+informal review by a single clinician. Watson et al. themselves
+note that *"using multiple clinicians in a Delphi panel reviewing
+codes may be unfeasible and inefficient for studies with large
+numbers of codes"*. The comparison below positions clinicalcodes.uk
+against the rigorous end of that spectrum, which is the workflow the
+wider methods literature treats as the standard.
+
+Aslam et al. 2025 ([BMC Med Res Methodol](https://link.springer.com/article/10.1186/s12874-025-02541-1))
+quantify the burden under existing methods at the cohort scale:
+*"months"* of clinician time, reduced to *7 to 9 hours* using their
+DynAIRx-specific automation framework.
+
+clinicalcodes.uk addresses Stage 2 directly, and supports rather
+than replaces Stages 1 and 3.
+
+| Stage | Watson 2017 manual workflow | clinicalcodes.uk |
+|---|---|---|
+| 1. Definition | Clinician articulates concept and scope using authoritative sources | Same. The clinician supplies a free-text query and any vocabulary constraint. |
+| 2. Code assembly | Researcher search across SNOMED CT, ICD-10, OPCS-4, UMLS using Stata or R lookups, regex on description files, hand-curated synonym lists | **Parallel retrieval (OMOPHub, OpenCodelists, QOF, ChromaDB) plus UMLS enrichment, returned in tens of seconds.** Per-code rationale and source provenance are generated automatically. |
+| 3. Modified Delphi review | Multiple clinicians independently adjudicate each code; consensus over rounds | HITL review gate captures per-code accept/reject/override with reviewer rationale. Audit log preserves the chain. SHA-256 signature is applied on approval. The system does not replace clinician adjudication; it makes adjudication auditable, asynchronous, and reproducible. |
+
+The contribution is concentrated in Stage 2, the
+researcher-time-intensive search step that Watson et al. describe
+and Aslam et al. quantify. Stages 1 and 3 remain clinician work by
+design. Total clinician time per single-condition codelist within
+the HITL review step is not yet characterised; this is the next
+step under any funded follow-on study.
+
+### On the "human-curated F1" question
+
+A common probe is *"what F1 would a clinician score if they
+re-curated the same codelist?"*. The OpenCodelists references used
+below are themselves human-curated. A clinician asked to reproduce
+a reference against itself would score about 1.0 by construction.
+The informative form of this question is **inter-rater agreement**:
+two independent clinicians, blind to each other and to the
+OpenCodelists reference, each producing a codelist for the same
+query, then computing pairwise F1. This is out of scope for the
+current pilot (it requires clinician hours not available within a
+capstone budget) but is the next step under any funded follow-on
+study.
+
+## Supplementary result: F1 against published OpenCodelists references
+
+Watson et al. do not prescribe a quantitative comparator and the
+NIHR codelist-construction checklist (Matthewman et al. 2024) leaves
+metric choice to the researcher. As a *supplementary* methodological
+view we benchmark the Stage-2 candidate set against 15 published
+codelists from OpenCodelists (Bennett Institute), reporting per-code
+P / R / F1 with bootstrap CIs and a paired McNemar's test. The
+comparison is more quantitative than the field standard but
+addresses a different question: correctness of the produced set,
+rather than effort to produce it.
+
+Strict view (15 codelists, included-only stage, mean ± 95 % BCa
+bootstrap CI):
 
 | View | Mean P | Mean R | Mean F1 | Median F1 | F1 95 % CI |
 |---|---|---|---|---|---|
@@ -50,7 +123,8 @@ report McNemar alongside the BCa intervals.
 
 The cold-start view differs from the default view by less than the CI
 width — the OpenCodelists retriever's marginal contribution to mean F1
-is small. See §2.5 for the framing.
+is small. See *Methodology → Sensitivity analysis: default vs.
+cold-start* for the framing.
 
 ## Methodology
 
@@ -120,6 +194,17 @@ organisation. These are the SNOMED CT cluster lists used to define
 QOF (Quality and Outcomes Framework) registers; they share a curating
 organisation but each represents a distinct, independently-derived
 clinical concept. Two come from REDUCEHF and one from PINCER.
+
+**Selection-bias caveat.** The recency rule (≥ 2024-04-27) and the
+single-canonical-condition rule together tilt the sample toward
+`nhsd-primary-care-domain-refsets` because that organisation is the
+most actively-curated source of recently-published SNOMED register
+codelists on OpenCodelists. The QOF retriever in our pipeline is
+built from the same NHS QOF Business Rules that those refsets are
+derived from, so the sample is favourable to QOF retrieval and may
+overstate the QOF retriever's marginal contribution at scale. We
+report this here so the per-retriever ablation numbers below are read
+with this compositional effect in mind.
 
 ### Test set construction
 
@@ -217,12 +302,26 @@ different conditions of source availability:
   when starting from raw vocabularies, simulating queries with no
   curated list available.
 
+**Caveat: cold-start is a partial ablation, not a full one.** The
+OpenCodelists CSVs at `data/raw/opencodelists/csv/` are ingested
+into both SQLite *and* ChromaDB at build time
+(`backend/app/graph/nodes/opencodelists_retriever.py:59`,
+`add_to_chroma`). Cold-start disables the OpenCodelists retriever
+node, but the same codes remain reachable via the ChromaDB semantic
+retriever, which indexes the OpenCodelists corpus alongside QOF,
+OPCS-4, and ICD-10. A clean contamination ablation would require
+rebuilding ChromaDB without the 15 benchmark CSVs and is out of
+scope for v2. The cold-start view is therefore best read as a
+*sensitivity check on the OpenCodelists retriever specifically*
+rather than as a full corpus ablation.
+
 This is a RAG system, not a trained model — there is no
-train/test contamination to worry about. The default view is not a
-biased measurement; it measures something different from the
-cold-start view. Both are valid measures of different capabilities,
-and the delta between them characterises the marginal contribution of
-the OpenCodelists retriever to the system's output.
+train/test contamination to worry about in the model-training sense.
+The default view is not a biased measurement; it measures something
+different from the cold-start view. Both are valid measures of
+different capabilities, and the delta between them characterises the
+marginal contribution of the OpenCodelists retriever to the
+system's output, with the caveat above.
 
 In practice, the mean F1 delta is small (+0.005, default over
 cold-start, well within bootstrap CI) — the OpenCodelists retriever
@@ -268,7 +367,7 @@ cases pre-fix; those are now resolved, so the gap has narrowed.
 
 | Codelist | Vocab | N(ref) | Pre-F1 | Post-F1 | Cold-F1 | Δ Pre→Post |
 |---|---|---|---|---|---|---|
-| heart_failure | SNOMED CT | 42 | 0.73 | 0.71 | 0.71 | −0.03 |
+| heart_failure | SNOMED CT | 42 | 0.73 | 0.70 | 0.70 | −0.03 |
 | diabetes_mellitus | SNOMED CT | 86 | 0.78 | 0.81 | 0.79 | +0.03 |
 | hypertension | SNOMED CT | 117 | 0.53 | 0.53 | 0.43 | +0.00 |
 | mi_icd10 | ICD-10 | 12 | 0.00 | **0.74** | 0.74 | **+0.74** |
@@ -333,7 +432,7 @@ and Fix B+E+F resolved them. The large-list stratum is unchanged: the
 recall ceiling on long reference lists (see case 3) was not a target
 of this iteration.
 
-## Failure case analysis
+## §4 Failure case analysis
 
 The cases below are chosen to span the four Bennett (2023) failure
 modes catalogued in LIMITATIONS.md, plus the tool-specific
@@ -578,7 +677,139 @@ regressions — but a faithful reading is that *Fix C is the right
 direction with the wrong calibration*, and the next iteration should
 tune its examples rather than expand the scope.
 
-## Iteration history
+## Per-retriever ablation
+
+We decompose the pipeline to characterise the marginal contribution
+of each retriever and of the LLM scoring step. All runs use the same
+15 reference codelists as the headline benchmark (see *Methodology →
+Sample selection*) and the same dot-stripping normalisation rule
+(`evaluator._norm`, `benchmark_aggregate.normalize_code`). Aggregate
+means are unweighted across the 15 lists; 95 % CIs are BCa bootstrap
+(1 000 resamples, seed 7).
+
+Configs 1–4 isolate one retriever at a time and evaluate **raw
+retriever output without LLM scoring**, so the contribution of each
+retriever can be read directly. Configs 5 and 6 add the merger and
+the merger + UMLS expansion respectively, still without LLM scoring,
+so the rows below them isolate the marginal lift from each enrichment
+step. Configs 7 and 8 are the full-pipeline numbers from the headline
+benchmark (post-tune defaults; cold-start = OpenCodelists retriever
+disabled). Per-retriever runs were obtained by calling each retriever
+node function directly with the parsed conditions (in-process), which
+exercises the same code path the production graph uses minus the
+merger filter, UMLS expansion, and LLM scoring. The merger row was
+obtained by calling `result_merger.merge_and_dedup` on the union of
+the four retrievers' outputs with `parsed_conditions` so the
+vocabulary-constraint filter (Fix F) fires the same way as in
+production. Configs 6–8 are read from the persisted `result_postfix`
+/ `result_coldstart` JSON files to keep them aligned with the v2
+headline; for the HIV codelist the post-tune (Apr-29) result file is
+used in preference, matching the *Post-tune* row of the supplementary
+result above.
+
+| Configuration             | Mean P | Mean R | Mean F1 | Median F1 | F1 95 % CI |
+|---|---|---|---|---|---|
+| OMOPHub only              | 0.14   | 0.07   | **0.09**| 0.00      | [0.02, 0.27] |
+| QOF only                  | 0.53   | 0.54   | **0.44**| 0.66      | [0.27, 0.63] |
+| OpenCodelists only        | 0.64   | 0.61   | **0.46**| 0.28      | [0.26, 0.68] |
+| ChromaDB only             | 0.34   | 0.40   | **0.30**| 0.31      | [0.22, 0.38] |
+| Merger (raw retrieval)    | 0.52   | 0.50   | **0.42**| 0.39      | [0.31, 0.56] |
+| Merger + UMLS (no LLM)    | 0.62   | 0.62   | **0.52**| 0.59      | [0.42, 0.62] |
+| Full pipeline (default)   | 0.86   | 0.50   | **0.58**| 0.67      | [0.47, 0.68] |
+| Cold-start (no OpenCodel) | 0.87   | 0.48   | **0.57**| 0.70      | [0.45, 0.68] |
+
+The full-pipeline and cold-start CIs above are recomputed by the
+ablation aggregator over the same per-list rows used for the means
+(post-fix v2 results, with the post-tune HIV substitution applied).
+They are within 3 percentage points of the post-fix BCa intervals
+quoted in the supplementary result above; the small upward shift in
+the lower bound reflects HIV moving from F1 = 0.02 (post-fix) to
+F1 ≈ 0.20 (post-tune). The headline row keeps the post-fix CI for
+the reasons given in the †footnote there.
+
+<p align="center">
+  <img src="assets/ablation_f1.png" alt="Per-retriever ablation across 15 NHS reference codelists" width="100%">
+</p>
+
+### Interpretation
+
+**Recall is carried by QOF and OpenCodelists; OMOPHub alone is the
+weakest single retriever.** OpenCodelists alone achieves the highest
+mean recall (0.61) and mean F1 (0.46) among the four retrievers, with
+a strongly bimodal distribution. The median F1 of 0.28 is well below
+the mean, reflecting that OpenCodelists is either authoritative
+(F1 = 1.00 on stroke, lung_cancer; F1 ≈ 0.99 on hypertension) or
+near-absent (F1 < 0.10 on copd, dementia, epilepsy, hiv, atrial_fib_icd10
+where the slug is not in the local corpus and the live scrape either
+returns nothing or returns codes from related slugs that drop
+precision and recall together). QOF is the most consistent contributor (mean F1 = 0.44,
+median 0.66), with the distinct strength of recovering the
+NHS-specific SNOMED extension codes that OMOPHub's index does not
+surface. OMOPHub alone, by contrast, registers F1 = 0.09 and median
+F1 = 0.00. It returns zero relevant codes on 9 of 15 lists. The
+weakness is not that OMOPHub is broken; it is that OMOPHub's SNOMED
+index is keyed on internationally-published concepts and the QOF
+refset codelists used here include a long tail of NHS-UK extension
+codes (`1...000000` family) that OMOPHub does not return for the
+free-text query alone. ICD-10 retrieval through OMOPHub is also zero
+on the two ICD-10 cases under raw retrieval. The Fix E "Acute X" /
+"Chronic X" expansion that surfaces I21/I22 only fires once the
+vocabulary cue has been propagated, which is a downstream
+post-merger effect.
+
+**The merger's source-count cap costs F1 in this benchmark.** Mean F1
+of *Merger (raw retrieval)* (0.42) is *lower* than two of the
+individual retrievers (QOF 0.44, OpenCodelists 0.46), because the
+production cap of 100 candidates plus the source-count sort dilutes
+high-precision retriever output with low-precision ChromaDB and
+OMOPHub candidates. UMLS expansion lifts mean F1 to 0.52
+(+0.10 absolute), driven mostly by precision (0.52 → 0.62). UMLS
+adds CUI-vocabulary synonyms that line up cleanly with the SNOMED
+references for some codelists (and creates the noise pattern the
+hepatitis C case in *Failure case analysis* documents). The LLM scoring step adds a further
++0.06 mean F1 (0.52 → 0.58). Its contribution is almost entirely a
+precision lift (0.62 → 0.86) at a recall cost (0.62 → 0.50): the LLM
+acts as a per-code precision filter, not a recall booster.
+
+**Cold-start is indistinguishable from default at the aggregate.**
+The default vs cold-start delta is +0.005 mean F1 (within the BCa
+interval). This corroborates the *Sensitivity analysis* finding from
+the headline benchmark. Most OpenCodelists-retrieved codes are also
+returned by QOF or ChromaDB, so disabling OpenCodelists shifts a few
+specific codelists (hypertension, lung_cancer drop;
+hepatitis_c_chronic improves) without moving the aggregate. Cold-start F1
+of 0.57 is reported as a useful sensitivity check on the
+OpenCodelists retriever node, with the partial-ablation caveat in
+*Methodology → Sensitivity analysis: default vs. cold-start* (the
+OpenCodelists CSVs remain indexed in ChromaDB at build time, so
+cold-start does not fully ablate the corpus-overlap path). Read
+against the raw-retrieval baseline of 0.42 and the merger + UMLS
+baseline of 0.52, the LLM scoring step contributes +0.05 in
+cold-start mode (compared with +0.06 in default, above): a precision
+step in both views, not a substitute for retrieval coverage.
+
+The main finding is that the four retrievers are not interchangeable:
+QOF and OpenCodelists carry recall on the QOF-curated NHSD refset
+queries that dominate the sample, ChromaDB carries recall on the
+ICD-10 cases (it is the only retriever with non-zero raw F1 on
+`atrial_fib_icd10` and the highest raw F1 on `mi_icd10`, from the
+NHS TRUD ICD-10 5th Edition ingestion documented in §5.8 of
+*Iteration history*), and OMOPHub's contribution under raw retrieval
+is effectively zero on this benchmark. Its value to the system is
+concentrated in queries where
+the parser pins ICD-10 and the Fix E "Acute X" expansion fires
+(`mi_icd10` lifts to F1 = 0.74 under the full pipeline). The
+ablation does not separate that effect from the pipeline's other
+downstream filters; isolating it would require a per-retriever ×
+per-vocabulary-cue breakdown which is left to a future iteration.
+
+The numbers above are reproducible with
+`python -m app.evaluation.run_ablation` (writes
+`data/test_sets/benchmark_2026_04/_ablation.json`) and
+`python backend/app/evaluation/plot_ablation.py` (writes
+`assets/ablation_f1.png`).
+
+## §5 Iteration history
 
 This is the second pass of the benchmark.
 
@@ -604,7 +835,7 @@ This is the second pass of the benchmark.
   - **Fix D**: cold-start mode — `?cold_start=true` query parameter
     on `/api/search` and `/api/evaluate` disables the OpenCodelists
     retriever for that request. Methodological enabler for the
-    cold-start view (§2.5) rather than a numeric fix; included
+    cold-start view (see *Methodology → Sensitivity analysis: default vs. cold-start*) rather than a numeric fix; included
     here for completeness.
 - **2026-04-27 (evening)**: re-run, three-view aggregation, this
   document.
@@ -614,11 +845,13 @@ This is the second pass of the benchmark.
 
 The fixes were not blind to the failures they address — every fix
 was designed to address a specific case identified in the morning
-run. The cold-start view is therefore the most methodologically
-defensible single number: it measures the discovery capability of
-the system minus the OpenCodelists retriever, which means the
-overlap between *"the retrieval source"* and *"the reference"* is
-removed by construction.
+run. The cold-start view is therefore a useful sensitivity check on
+the OpenCodelists retriever's marginal contribution: it measures the
+discovery capability of the system minus the OpenCodelists retriever
+node. Note that the OpenCodelists CSVs remain indexed in ChromaDB,
+so cold-start is a partial ablation of the corpus-overlap path
+rather than a full one (see *Methodology → Sensitivity analysis:
+default vs. cold-start*).
 
 ### §5.7 Future methods work
 
@@ -708,9 +941,10 @@ Verification artefacts:
 - **Iteration disclosure**. This benchmark reports both pre-fix and
   post-fix views. Fixes B, C, E, F were applied between runs and
   were *not blind* to the failures they address. The cold-start view
-  is the most methodologically defensible single number we report —
-  by ablating one retriever we measure the discovery capability of
-  the remaining stack.
+  is reported as a sensitivity check on the OpenCodelists retriever
+  node specifically, not as a full corpus ablation — the OpenCodelists
+  CSVs remain indexed in ChromaDB at build time. See *Methodology →
+  Sensitivity analysis: default vs. cold-start* for the full caveat.
 - **Test/train leakage**. The single development test set used while
   building the evaluation framework was `Source_entry_7.json`
   (intracranial hypertension), which is not among the 15 codelists
@@ -718,7 +952,9 @@ Verification artefacts:
   tuned against any of these 15 lists at development time. The
   OpenCodelists retriever ingests published codelists into ChromaDB
   at build time, so a list present in the ingested corpus can be
-  retrieved verbatim — the cold-start view ablates this exact path.
+  retrieved verbatim. Cold-start disables the OpenCodelists retriever
+  node but does not rebuild ChromaDB without those CSVs, so it is a
+  partial ablation of this contamination path rather than a full one.
 - **Single-rater ground truth**. The OpenCodelists curation is
   treated as authoritative without independent re-validation. Some
   reference lists themselves contain debatable inclusions (e.g.
