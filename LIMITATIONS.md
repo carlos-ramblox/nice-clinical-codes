@@ -2,7 +2,7 @@
 
 ## Framework
 
-The Bennett Institute for Applied Data Science published a blog post in September 2023 titled [*What Are Codelists and How Are They Constructed?*](https://www.bennett.ox.ac.uk/blog/2023/09/what-are-codelists-and-how-are-they-constructed/), in which four common failure modes in codelist construction are identified. This document maps the clinicalcodes.uk pipeline against each of those failure modes. It is intended as an honest account of where the pipeline mitigates the risk and, more importantly, where it does not.
+Wood and Higgins (Bennett Institute for Applied Data Science) published a blog post in September 2023 titled [*What Are Codelists and How Are They Constructed?*](https://www.bennett.ox.ac.uk/blog/2023/09/what-are-codelists-and-how-are-they-constructed/), in which four common failure modes in codelist construction are identified. This document maps the clinicalcodes.uk pipeline against each of those failure modes. It is intended as an honest account of where the pipeline mitigates the risk and, more importantly, where it does not.
 
 The pipeline parses a natural-language query into structured conditions, runs four retrievers in parallel (OMOPHub, OpenCodelists, QOF Business Rules, and a ChromaDB semantic index over ingested vocabulary), enriches the merged candidate set against UMLS Metathesaurus relationships, scores each candidate with Claude Haiku 4.5 at temperature 0, and routes the result through a clinician review gate before any artefact is signed and exported.
 
@@ -40,6 +40,9 @@ Bennett's example: "sore throat" indicates Group A Streptococcus but also many o
 
 ## Limitations beyond the Bennett framework
 
+- Evaluation reference sets are derived from existing OpenCodelists curations, but the mapping between each reference codelist and the corresponding test query was interpreted by a single non-clinician evaluator; no independent peer validation of that selection has been performed. The F1 numbers in [EVALUATION.md](./EVALUATION.md) should be read as pilot-tier signal on n = 15 codelists rather than a peer-reviewed methods evaluation.
+- Sample composition is skewed toward `nhsd-primary-care-domain-refsets` (12 of 15 codelists). The QOF retriever is built from the same NHS QOF Business Rules from which those refsets are derived, so the sample is favourable to QOF retrieval and may overstate QOF's marginal contribution at scale. Full caveat in [EVALUATION.md → Methodology → Sample selection](./EVALUATION.md#sample-selection).
+- Recall is the system's primary current weakness. Mean recall across the 15 reference codelists is 0.50; the LLM scoring step trades recall for precision (precision 0.62 → 0.86; recall 0.62 → 0.50). The recall ceiling is set by the four retrievers' joint coverage on each query and is decomposed by retriever in [EVALUATION.md §Per-retriever ablation](./EVALUATION.md#per-retriever-ablation). Improving recall is the next research direction (retrieval reranking, query reformulation, additional retrievers).
 - Codelists are point-in-time. SNOMED releases, QOF rule changes, and OpenCodelists edits do not trigger automatic re-validation of previously approved codelists.
 - No multi-condition cohort composition (for example, "diabetes AND hypertension AND age > 65" as a structured query).
 - Authentication is a demo mechanism; NHS OAuth/SAML and NHS Identity integration are not yet implemented.
@@ -55,4 +58,4 @@ Bennett's example: "sore throat" indicates Group A Streptococcus but also many o
 
 ## Citation
 
-Bennett Institute for Applied Data Science. (2023, 27 September). *What Are Codelists and How Are They Constructed?* https://www.bennett.ox.ac.uk/blog/2023/09/what-are-codelists-and-how-are-they-constructed/
+Wood, C., & Higgins, R. (2023, 27 September). *What Are Codelists and How Are They Constructed?* Bennett Institute for Applied Data Science, University of Oxford. https://www.bennett.ox.ac.uk/blog/2023/09/what-are-codelists-and-how-are-they-constructed/
