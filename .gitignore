@@ -24,12 +24,17 @@ env/
 *.pem
 *.key
 
-# Data (large files, download separately)
+# Data (large files / licence-restricted, download separately)
 data/raw/*.xlsm
 data/raw/*.xlsx
 data/raw/*.csv
 data/raw/*.zip
 data/raw/opencodelists/
+# NHS TRUD ICD-10 XML is subscription-licensed and not redistributed
+data/icd10/*.xml
+data/icd10/*.zip
+data/opcs/*.xml
+data/opcs/*.zip
 chromadb_data/
 *.db
 *.db-shm
