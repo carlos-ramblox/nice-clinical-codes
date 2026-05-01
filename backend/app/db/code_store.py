@@ -74,7 +74,15 @@ def insert_codes(codes: list[dict]) -> int:
 
 
 def search_by_condition(condition: str, vocabulary: str | None = None) -> list[dict]:
-    """Search codes by cluster description or term. Uses LIKE for fuzzy matching."""
+    """Search codes by cluster description or term. Uses LIKE for fuzzy matching.
+
+    Results are ordered by ``(vocabulary, code)`` so the row sequence is a
+    function of the matched code text, not the SQLite rowid (insertion
+    order). Determinism across DB rebuilds matters for any future
+    merger-side rank fusion: without an explicit ORDER BY, re-ingesting
+    the same source files in a different order would shuffle the
+    per-source rank assigned to each retrieved code.
+    """
     conn = get_connection()
     query = "SELECT * FROM codes WHERE (cluster_description LIKE ? OR term LIKE ?)"
     params: list = [f"%{condition}%", f"%{condition}%"]
@@ -83,7 +91,7 @@ def search_by_condition(condition: str, vocabulary: str | None = None) -> list[d
         query += " AND vocabulary = ?"
         params.append(vocabulary)
 
-    query += " AND active = 1"
+    query += " AND active = 1 ORDER BY vocabulary, code"
 
     rows = conn.execute(query, params).fetchall()
     return [dict(r) for r in rows]
