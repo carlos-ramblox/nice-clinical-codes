@@ -37,10 +37,21 @@ def retrieve_from_chromadb(state: dict) -> dict:
             if vocab is None:
                 logger.warning("Unknown coding system '%s', searching unfiltered", sys_key)
             results = search(name, top_k=RETRIEVAL_TOP_K, vocabulary=vocab)
-            # tag source as ChromaDB so the merger can track which retriever found it
-            for r in results:
+            # Tag source as ChromaDB so the merger can track which retriever
+            # found this code. The rank field is the 1-based position within
+            # *this* search() call's similarity-descending output — reset
+            # per sub-query, not accumulated across (system, query) pairs.
+            # The accumulated form (a previous version's bug) made the
+            # second coding system's rank-1 hit report as rank 51+ and
+            # systematically biased downstream rank-fusion toward whichever
+            # system was searched first. The current merger does not yet
+            # consume rank, but populating it correctly here keeps the
+            # field meaningful for future rank-fusion work — see
+            # _planning/T01_rrf_diagnostic.md and the deferred T01.
+            for i, r in enumerate(results, start=1):
                 r["source"] = "ChromaDB"
-            all_codes.extend(results)
+                r["rank"] = i
+                all_codes.append(r)
 
         logger.info("ChromaDB: '%s' returned %d codes", name, len(all_codes) - before)
 
