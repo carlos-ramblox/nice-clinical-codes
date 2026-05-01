@@ -21,6 +21,16 @@ class RetrievedCode(TypedDict):
     domain: str  # "Condition", "Drug", "Procedure"
     similarity_score: float | None
     usage_frequency: int | None
+    # 1-based rank within the source retriever's native ordering.
+    # Currently only ChromaDB populates this (per sub-query, after T25);
+    # other retrievers do not yet emit a rank because their rank fields
+    # would be rowid-order (QOF, OpenCodelists) and therefore not
+    # relevance-meaningful — see _planning/T01_rrf_diagnostic.md.
+    # 0 means "no rank assigned"; consumers must treat 0 as absent.
+    # Reserved here so a future re-introduction of the rank-fusion
+    # merger (deferred T01, blocked on T23/T24) does not need to
+    # change the typed state shape again.
+    rank: int
 
 
 class EnrichedCode(TypedDict):
