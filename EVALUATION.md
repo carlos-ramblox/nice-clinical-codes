@@ -860,10 +860,31 @@ independent reviews of the pipeline. They are listed as topics
 worth discussing rather than commitments.
 
 **Retrieval ranking and fusion**
-Replace the merger's source-count ordering with weighted Reciprocal
-Rank Fusion (RRF, k=60) so heterogeneous retriever score scales
-combine properly. Add a cross-encoder reranking step (e.g.
-BAAI/bge-reranker-v2-m3) over the merged top-N before LLM scoring.
+Replacing the merger's source-count ordering with weighted Reciprocal
+Rank Fusion (RRF, k=60) was investigated end-to-end on 2026-05-01.
+Four configurations (pure RRF + equal weights, pure RRF + tuned
+weights, hybrid `source_count` + RRF tiebreaker with tuned weights,
+and hybrid + per-sub-query ChromaDB rank reset with equal weights)
+were each evaluated against the 15-codelist benchmark in default and
+cold-start views. All four crossed the pre-stated stop threshold on
+the cold-start view (mean F1 regression past −0.02 or per-codelist
+regression past −0.20), so RRF was reverted. Root cause: three of the
+four retrievers (QOF, OpenCodelists, ChromaDB) emit a rank field that
+does not encode within-retriever relevance — QOF/OpenCodelists rank is
+SQLite rowid order, ChromaDB rank accumulated across the multi-system
+inner loop. Weight tuning could not save it because no weight makes
+1/(k+rowid) a meaningful signal. The retriever-side fix for ChromaDB
+(rank reset per sub-query) and a deterministic `ORDER BY` on the
+SQLite-LIKE retrieval path were kept on this branch as preparatory
+work; the merger remains on `(source_count, similarity_score)`.
+Re-introducing rank fusion is gated on giving QOF and OpenCodelists
+a relevance-meaningful rank (BM25 or equivalent), with the caveat
+that both retrievers are fundamentally set-membership lookups, so
+BM25 is a proxy and may not be sufficient.
+
+A cross-encoder reranking step (e.g. BAAI/bge-reranker-v2-m3) over
+the merged top-N before LLM scoring is independent of the rank-fusion
+question and remains worth pursuing separately.
 
 **LLM confidence calibration**
 Verbalised LLM confidences are currently recorded but unused.
