@@ -12,13 +12,13 @@ const PAGE_SIZE = 20;
 
 const LOADING_STEPS = [
   { label: "Parsing your query...", delay: 0 },
-  { label: "Searching OMOPHub for SNOMED and ICD-10 codes...", delay: 3000 },
-  { label: "Querying QOF business rules...", delay: 6000 },
-  { label: "Checking published code lists on OpenCodelists...", delay: 9000 },
-  { label: "Running semantic search across embedded codes...", delay: 12000 },
-  { label: "Merging and deduplicating results...", delay: 18000 },
-  { label: "Scoring codes with LLM reasoning...", delay: 22000 },
-  { label: "Almost done — assembling final results...", delay: 35000 },
+  { label: "Searching OMOPHub for SNOMED and ICD-10 codes...", delay: 1500 },
+  { label: "Querying QOF business rules...", delay: 3000 },
+  { label: "Checking published code lists on OpenCodelists...", delay: 5000 },
+  { label: "Running semantic search across embedded codes...", delay: 7000 },
+  { label: "Merging and deduplicating results...", delay: 10000 },
+  { label: "Scoring codes with LLM reasoning...", delay: 13000 },
+  { label: "Almost done — assembling final results...", delay: 21000 },
 ];
 
 function DecisionBadge({ decision }: { decision: string }) {
@@ -51,7 +51,7 @@ function LoadingProgress() {
     return () => clearInterval(timer);
   }, []);
 
-  const progress = Math.min((elapsed / 42000) * 100, 95);
+  const progress = Math.min((elapsed / 25000) * 100, 95);
 
   return (
     <div className="max-w-xl mx-auto py-16">
