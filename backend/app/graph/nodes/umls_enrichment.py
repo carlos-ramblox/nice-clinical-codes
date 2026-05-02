@@ -1,8 +1,6 @@
 import time
-import datetime
 import logging
 from concurrent.futures import ThreadPoolExecutor, as_completed
-from threading import Lock
 
 import requests
 import pandas as pd
@@ -37,7 +35,6 @@ class UMLSEnricher:
         self._cui_cache: dict[str, dict] = {}
         self._rel_cache: dict[str, list] = {}
         self._atom_cache: dict[str, list] = {}
-        self._cache_lock = Lock()
 
     def _enrich_one(self, row: dict) -> list[dict]:
         """Look up one concept in UMLS and return suggestion rows for it."""

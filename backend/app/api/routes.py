@@ -89,7 +89,6 @@ class CodeResult(BaseModel):
     rationale: str
     sources: list[str]
     usage_frequency: int | None = None
-    classifier_score: float | None = None
 
 
 class SearchResponse(BaseModel):
@@ -165,7 +164,6 @@ async def search_codes(
                 rationale=c["rationale"],
                 sources=c.get("sources", []),
                 usage_frequency=c.get("usage_frequency"),
-                classifier_score=c.get("classifier_score"),
             )
             for c in final_codes
         ],
@@ -328,18 +326,3 @@ async def baseline_evaluate(request: BaselineRequest):
     eval_result["scored_codes"] = codes
 
     return eval_result
-
-
-class ReviewRequest(BaseModel):
-    search_id: str
-    decisions: dict[str, str] = Field(
-        ...,
-        description="Map of code -> decision (include/exclude) for uncertain codes",
-    )
-
-
-@router.post("/review")
-async def review_codes(request: ReviewRequest):
-    """Submit human review decisions for uncertain codes."""
-    # TODO: human-in-the-loop resume (NICE-033)
-    raise HTTPException(status_code=501, detail="Not implemented yet")
