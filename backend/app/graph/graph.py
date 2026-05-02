@@ -143,19 +143,25 @@ def _get_pipeline(disabled_retrievers: set[str] | None = None):
     return _GRAPH_CACHE[key]
 
 
-def run_pipeline(query: str, disabled_retrievers: set[str] | None = None) -> dict:
+async def run_pipeline(query: str, disabled_retrievers: set[str] | None = None) -> dict:
     """Run the full pipeline with a raw query string.
 
     ``disabled_retrievers`` is forwarded to ``build_graph`` (via a
     memoised cache). When non-empty, the named retrievers are skipped —
     use this for cold-start evaluation runs where the OpenCodelists
     retriever overlaps with the reference set.
+
+    The graph is invoked via ``ainvoke`` because the LLM-scoring node
+    is async (it gathers per-batch ``ainvoke`` calls in parallel).
+    LangGraph runs the remaining sync nodes in its own thread pool, so
+    the FastAPI handler can simply ``await`` this without an extra
+    ``asyncio.to_thread`` shim.
     """
     if disabled_retrievers:
         logger.info("Running pipeline (disabled retrievers: %s) for: %s", sorted(disabled_retrievers), query)
     else:
         logger.info("Running pipeline for: %s", query)
     pipe = _get_pipeline(disabled_retrievers)
-    result = pipe.invoke({"raw_query": query})
+    result = await pipe.ainvoke({"raw_query": query})
     logger.info("Pipeline complete: %d codes in final list", len(result.get("final_code_list", [])))
     return result
