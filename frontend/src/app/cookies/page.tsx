@@ -1,4 +1,12 @@
+import type { Metadata } from "next";
 import Link from "next/link";
+
+export const metadata: Metadata = {
+  title: "Cookies",
+  description:
+    "Cookies statement for Clinical Code Discovery (clinicalcodes.uk). This page is under development.",
+  alternates: { canonical: "/cookies" },
+};
 
 export default function Page() {
   return (
