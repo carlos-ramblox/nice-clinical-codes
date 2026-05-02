@@ -277,6 +277,15 @@ def submit_review(
     Apply reviewer decisions, flip status to approved/rejected, compute
     signature on approve. Each decision dict: {id, human_decision, override_comment}.
     """
+    # TODO(T26): wrap this in BEGIN IMMEDIATE / SELECT ... FOR UPDATE.
+    # Two reviewers approving the same cid concurrently can both pass
+    # the existence check below, both UPDATE codelist_decisions, and
+    # write conflicting signature_hash values — last-writer-wins on the
+    # codelist row but both leave audit entries. WAL mode permits the
+    # concurrent reads but does not serialise this read-modify-write.
+    # Deferred: only manifests under multi-reviewer concurrent load,
+    # which the demo deployment doesn't have. Revisit when an NHS
+    # Trust pilot lands.
     if action not in ("approve", "reject"):
         raise ValueError(f"unknown action: {action}")
 

@@ -82,6 +82,14 @@ def enrich_with_umls(state: dict) -> dict:
         })
 
     if new_codes:
+        # UMLSEnricher.enrich() returns suggestions in
+        # ThreadPoolExecutor.as_completed order, so without a stable
+        # sort here the MAX_CANDIDATES re-cap below would drop a
+        # thread-scheduling-dependent subset of suggestions, breaking
+        # the temperature=0 reproducibility claim. Sort by
+        # (cui, term) before the concat so identical inputs always
+        # yield identical batches downstream.
+        new_codes.sort(key=lambda c: (c.get("code") or "", c.get("term") or ""))
         updated = codes + new_codes
         # re-cap to MAX_CANDIDATES so LLM scoring stays affordable
         if len(updated) > MAX_CANDIDATES:

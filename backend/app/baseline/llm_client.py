@@ -111,8 +111,6 @@ def run_baseline(condition: str, model: str = DEFAULT_MODEL) -> list[dict]:
             "rationale": c.get("rationale", "baseline LLM (no retrieval)"),
             "sources": [source_tag],
             "usage_frequency": None,
-            "classifier_score": None,
-            "llm_score": conf,
         })
 
     logger.info("Baseline model=%s returned %d codes", model, len(normalised))

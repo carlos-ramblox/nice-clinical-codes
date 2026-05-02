@@ -11,8 +11,6 @@ UMLS_API_KEY = os.getenv("UMLS_API_KEY", "")
 ANTHROPIC_API_KEY = os.getenv("ANTHROPIC_API_KEY", "")
 
 # App
-BACKEND_HOST = os.getenv("BACKEND_HOST", "0.0.0.0")
-BACKEND_PORT = int(os.getenv("BACKEND_PORT", "8000"))
 CORS_ORIGINS = os.getenv("CORS_ORIGINS", "http://localhost:3000").split(",")
 
 # ChromaDB
@@ -36,7 +34,6 @@ LLM_MODEL = os.getenv("LLM_MODEL", "claude-sonnet-4-20250514")
 LLM_SCORING_MODEL = os.getenv("LLM_SCORING_MODEL", "claude-haiku-4-5-20251001")
 RETRIEVAL_TOP_K = int(os.getenv("RETRIEVAL_TOP_K", "50"))
 MAX_CANDIDATES = int(os.getenv("MAX_CANDIDATES", "100"))
-CONFIDENCE_THRESHOLD = float(os.getenv("CONFIDENCE_THRESHOLD", "0.5"))
 UMLS_EXPAND = os.getenv("UMLS_EXPAND", "yes").strip().lower() == "yes"
 
 # OMOPHub

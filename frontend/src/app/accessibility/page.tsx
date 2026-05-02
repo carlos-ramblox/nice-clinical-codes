@@ -1,4 +1,12 @@
+import type { Metadata } from "next";
 import Link from "next/link";
+
+export const metadata: Metadata = {
+  title: "Accessibility",
+  description:
+    "Accessibility statement for Clinical Code Discovery (clinicalcodes.uk). This page is under development.",
+  alternates: { canonical: "/accessibility" },
+};
 
 export default function Page() {
   return (

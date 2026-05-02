@@ -199,8 +199,6 @@ def score_codes(state: dict) -> dict:
             "confidence": d.get("confidence", 0.0),
             "rationale": d.get("rationale", "No LLM response for this code"),
             "sources": c.get("sources", [c.get("source", "")]),
-            "classifier_score": None,  # filled by ML classifier node later
-            "llm_score": d.get("confidence", 0.0),
             "usage_frequency": c.get("usage_frequency"),
         }
 

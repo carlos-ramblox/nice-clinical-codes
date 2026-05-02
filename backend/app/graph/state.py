@@ -53,8 +53,6 @@ class ScoredCode(TypedDict):
     confidence: float
     rationale: str
     sources: list[str]
-    classifier_score: float | None
-    llm_score: float | None
     usage_frequency: int | None
 
 
