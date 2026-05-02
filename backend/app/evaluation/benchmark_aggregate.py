@@ -179,6 +179,79 @@ def bootstrap_ci(values: list[float], n_resamples: int = 1000, seed: int = 7,
     return round(lo, 4), round(hi, 4)
 
 
+def stratified_bootstrap_ci(values: list[float], strata: list,
+                            n_resamples: int = 1000, seed: int = 7) -> tuple[float, float]:
+    """95 % percentile CI on the mean, resampling with replacement
+    *within* each stratum.
+
+    Stratification preserves the (vocabulary, condition_area) composition
+    of the original sample on every resample. The unstratified bootstrap
+    can produce all-SNOMED or all-ICD-10 resamples by chance with the
+    13/2 split, inflating CI width on the common-population mean.
+
+    Reports a percentile interval (not BCa) for the stratified view: BCa
+    requires a jackknife acceleration estimate over the full sample, and
+    with strata of size 2 the per-stratum jackknife is unstable. The
+    primary aggregate `ci95` uses BCa on the full sample; this stratified
+    interval is a secondary view focused on the (vocab, area) composition
+    rather than tail-skew correction.
+    """
+    if not values:
+        return 0.0, 0.0
+    arr = np.asarray(values, dtype=float)
+    if len(arr) < 2 or float(arr.std(ddof=1)) == 0.0:
+        v = round(float(arr[0]) if len(arr) else 0.0, 4)
+        return v, v
+
+    by_stratum: dict = {}
+    for i, key in enumerate(strata):
+        by_stratum.setdefault(key, []).append(i)
+
+    rng = np.random.default_rng(seed)
+    means = np.empty(n_resamples, dtype=float)
+    for k in range(n_resamples):
+        sampled: list[int] = []
+        for idx_list in by_stratum.values():
+            sampled.extend(rng.choice(idx_list, size=len(idx_list), replace=True).tolist())
+        means[k] = arr[sampled].mean()
+
+    lo = float(np.percentile(means, 2.5))
+    hi = float(np.percentile(means, 97.5))
+    return round(lo, 4), round(hi, 4)
+
+
+def multi_seed_ci_variance(values: list[float], n_seeds: int = 10,
+                           n_resamples: int = 1000) -> dict:
+    """Seed-to-seed variability of the BCa interval bounds.
+
+    With n = 15 and 1000 resamples, the Monte-Carlo error on the 2.5 %
+    and 97.5 % bootstrap percentiles is non-trivial — re-running the
+    same BCa call with different seeds shifts the reported bounds. We
+    re-run the BCa bootstrap with `n_seeds` distinct seeds and report
+    the std and min/max of each bound across seeds, so the headline
+    interval is read with its bootstrap-MC noise floor visible.
+    """
+    if not values or len(values) < 2:
+        return {"lo_std": 0.0, "hi_std": 0.0, "n_seeds": 0}
+    arr = np.asarray(values, dtype=float)
+    if float(arr.std(ddof=1)) == 0.0:
+        return {"lo_std": 0.0, "hi_std": 0.0, "n_seeds": n_seeds}
+
+    los: list[float] = []
+    his: list[float] = []
+    for s in range(n_seeds):
+        lo, hi = bootstrap_ci(values, n_resamples=n_resamples, seed=s)
+        los.append(lo)
+        his.append(hi)
+    return {
+        "lo_std": round(float(np.std(los, ddof=1)), 4),
+        "hi_std": round(float(np.std(his, ddof=1)), 4),
+        "lo_range": [round(min(los), 4), round(max(los), 4)],
+        "hi_range": [round(min(his), 4), round(max(his), 4)],
+        "n_seeds": n_seeds,
+    }
+
+
 def _mcnemar_pre_post(pre_view: dict | None, post_view: dict | None) -> dict | None:
     """McNemar's test on per-code paired (pre-fix, post-fix) correctness.
 
@@ -351,6 +424,8 @@ def _build_view(selection: list[dict], suffix: str) -> dict | None:
     if not rows:
         return None
 
+    strata_keys = [(r["vocabulary"], r["area"]) for r in rows]
+
     def agg(field):
         vals = [r[field] for r in rows]
         return {
@@ -358,6 +433,8 @@ def _build_view(selection: list[dict], suffix: str) -> dict | None:
             "median": round(statistics.median(vals), 4),
             "iqr": iqr(vals),
             "ci95": bootstrap_ci(vals),
+            "ci95_stratified": stratified_bootstrap_ci(vals, strata_keys),
+            "ci95_seed_variance": multi_seed_ci_variance(vals),
             "min": round(min(vals), 4),
             "max": round(max(vals), 4),
         }
@@ -515,12 +592,15 @@ def main():
             print(f"{name}: <no result files>")
             continue
         agg = view["aggregate"]["strict"]
+        f1_sv = agg["f1"]["ci95_seed_variance"]
         print(f"{name:10s}  n={view['aggregate']['n']:2d}  "
               f"P_mean={agg['precision']['mean']:.3f}  "
               f"R_mean={agg['recall']['mean']:.3f}  "
               f"F1_mean={agg['f1']['mean']:.3f}  "
               f"F1_med={agg['f1']['median']:.3f}  "
-              f"F1_BCa95=[{agg['f1']['ci95'][0]:.3f},{agg['f1']['ci95'][1]:.3f}]")
+              f"F1_BCa95=[{agg['f1']['ci95'][0]:.3f},{agg['f1']['ci95'][1]:.3f}]  "
+              f"F1_strat95=[{agg['f1']['ci95_stratified'][0]:.3f},{agg['f1']['ci95_stratified'][1]:.3f}]  "
+              f"F1_seed_std=({f1_sv['lo_std']:.4f},{f1_sv['hi_std']:.4f})")
 
     for label, mc in mcnemar_results.items():
         if mc is None:

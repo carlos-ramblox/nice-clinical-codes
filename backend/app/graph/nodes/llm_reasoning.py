@@ -1,3 +1,4 @@
+import asyncio
 import logging
 from typing import Literal
 
@@ -105,7 +106,18 @@ class BatchDecisions(BaseModel):
     decisions: list[CodeDecision] = Field(description="Decisions for each code in the batch")
 
 
-def _score_batch(
+def _uncertain_for_batch(codes: list[dict], reason: str) -> list[dict]:
+    """Fail-toward-review fallback: every code in the batch comes back as
+    uncertain/0.0 with ``reason`` as the rationale. Centralising this keeps
+    the per-batch try/except and the gather-level exception handler in
+    score_codes producing identical output."""
+    return [
+        {"code": c["code"], "decision": "uncertain", "confidence": 0.0, "rationale": reason}
+        for c in codes
+    ]
+
+
+async def _score_batch(
     structured_llm,
     conditions: list[dict],
     codes: list[dict],
@@ -129,24 +141,32 @@ def _score_batch(
 Evaluate each code for inclusion in the code list for the above condition(s)."""
 
     try:
-        result = structured_llm.invoke([
+        result = await structured_llm.ainvoke([
             {"role": "system", "content": SYSTEM_PROMPT},
             {"role": "user", "content": user_message},
         ])
         return [d.model_dump() for d in result.decisions]
     except Exception as exc:
         logger.error("LLM scoring failed for batch: %s", exc)
-        # return uncertain for all codes in this batch
-        return [
-            {"code": c["code"], "decision": "uncertain", "confidence": 0.0, "rationale": f"LLM error: {exc}"}
-            for c in codes
-        ]
+        return _uncertain_for_batch(codes, f"LLM error: {exc}")
 
 
-def score_codes(state: dict) -> dict:
+async def score_codes(state: dict) -> dict:
     """
     LangGraph node: use Claude to score each enriched code as
     include/exclude/uncertain with confidence and rationale.
+
+    Batches run in parallel via asyncio.gather. Per-batch failures are
+    contained inside _score_batch (returns uncertain for the whole
+    batch); gather is called with return_exceptions=True so any unexpected
+    raise that escapes _score_batch still resolves to uncertain rather
+    than tearing down the whole scoring step.
+
+    Caller contract: this is an async LangGraph node, so any graph that
+    wires it must be invoked via ``ainvoke`` (not ``invoke``). The other
+    nodes in the pipeline are sync; LangGraph runs them in its own thread
+    pool when ``ainvoke`` is used, so callers do not need a separate
+    ``asyncio.to_thread`` shim around ``run_pipeline``.
     """
     codes = state.get("enriched_codes", [])
     conditions = state.get("parsed_conditions", [])
@@ -169,13 +189,21 @@ def score_codes(state: dict) -> dict:
     )
     structured_llm = llm.with_structured_output(BatchDecisions)
 
-    # process in batches
-    all_decisions = []
-    for i in range(0, len(codes), BATCH_SIZE):
-        batch = codes[i:i + BATCH_SIZE]
-        logger.info("Scoring batch %d-%d of %d codes", i + 1, min(i + BATCH_SIZE, len(codes)), len(codes))
-        decisions = _score_batch(structured_llm, conditions, batch)
-        all_decisions.extend(decisions)
+    batches = [codes[i:i + BATCH_SIZE] for i in range(0, len(codes), BATCH_SIZE)]
+    logger.info("Scoring %d codes in %d parallel batches", len(codes), len(batches))
+
+    batch_results = await asyncio.gather(
+        *[_score_batch(structured_llm, conditions, batch) for batch in batches],
+        return_exceptions=True,
+    )
+
+    all_decisions: list[dict] = []
+    for batch, result in zip(batches, batch_results):
+        if isinstance(result, BaseException):
+            logger.error("LLM scoring raised past _score_batch fallback: %s", result)
+            all_decisions.extend(_uncertain_for_batch(batch, f"LLM error: {result}"))
+        else:
+            all_decisions.extend(result)
 
     # match decisions back to codes by position (batches preserve order)
     # pad with fallback if LLM returned fewer decisions than expected

@@ -196,6 +196,24 @@ The Docker build runs data ingestion automatically, no manual step needed. SQLit
 | `MAX_CANDIDATES` | Cap on candidates entering the merger | No (default: 100) |
 | `CONFIDENCE_THRESHOLD` | Min confidence for auto-include | No (default: 0.5) |
 | `UMLS_EXPAND` | Enable UMLS enrichment | No (default: yes) |
+| `LANGCHAIN_TRACING_V2` | Opt-in LangSmith tracing for the LangGraph pipeline | No (default: false) |
+| `LANGCHAIN_API_KEY` | LangSmith API key — required when `LANGCHAIN_TRACING_V2=true` | No |
+| `LANGCHAIN_PROJECT` | LangSmith project name | No (default: clinicalcodes-dev) |
+| `LANGCHAIN_ENDPOINT` | LangSmith API endpoint — set to `https://eu.api.smith.langchain.com` for EU projects | No (default: US) |
+
+## Observability
+
+Optional: tracing via LangSmith. Set:
+
+```
+LANGCHAIN_TRACING_V2=true
+LANGCHAIN_API_KEY=<your-langsmith-key>
+LANGCHAIN_PROJECT=clinicalcodes-dev
+# EU-region projects only:
+LANGCHAIN_ENDPOINT=https://eu.api.smith.langchain.com
+```
+
+The LangGraph pipeline is auto-instrumented; each `/api/search` produces a trace tree at smith.langchain.com showing per-node timing, prompts, and completions. If your LangSmith workspace is in the EU region you must set `LANGCHAIN_ENDPOINT` as shown — otherwise traces are sent to the US endpoint and never appear in the EU dashboard. The newer `LANGSMITH_TRACING` / `LANGSMITH_API_KEY` / `LANGSMITH_PROJECT` / `LANGSMITH_ENDPOINT` aliases are also recognised by the `langsmith` client and by our startup guard; pick one prefix and stick with it. For self-hosted observability, swap to LangFuse — see their [LangChain integration docs](https://langfuse.com/docs/integrations/langchain). Tracing is off by default; do not enable it in production deployments without confirming that captured payloads contain no reviewer-identifying audit data (the LangGraph state in `backend/app/graph/state.py` carries no HITL fields, but verify if you change it).
 
 ## Data Sources
 

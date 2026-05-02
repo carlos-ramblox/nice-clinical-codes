@@ -151,7 +151,7 @@ async def search_codes(
     disabled = _disabled_retrievers(cold_start, disable_omophub, disable_qof, disable_chroma)
 
     try:
-        result = await asyncio.to_thread(run_pipeline, request.query, disabled)
+        result = await run_pipeline(request.query, disabled)
     except Exception as exc:
         logger.error("Pipeline failed: %s", exc)
         raise HTTPException(status_code=500, detail="Pipeline processing failed")
@@ -275,7 +275,7 @@ async def evaluate_codes(
     disabled = _disabled_retrievers(cold_start, disable_omophub, disable_qof, disable_chroma)
 
     try:
-        pipeline_result = await asyncio.to_thread(run_pipeline, query, disabled)
+        pipeline_result = await run_pipeline(query, disabled)
     except Exception as exc:
         logger.error("Evaluation pipeline failed: %s", exc)
         raise HTTPException(status_code=500, detail="Pipeline processing failed")
