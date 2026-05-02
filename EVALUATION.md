@@ -264,6 +264,30 @@ and cold-start) — rather than uniformly narrowing the interval.
 Median and IQR are reported alongside the mean to surface skew.
 Stratified breakdowns are unweighted means within each stratum.
 
+A stratified bootstrap is reported as a secondary view alongside the
+headline BCa interval. Resampling is restricted to within
+`(vocabulary, condition_area)` cells so every resample preserves the
+13 SNOMED / 2 ICD-10 split (and the per-area composition) of the
+original sample; the unstratified bootstrap can otherwise produce
+all-SNOMED or all-ICD-10 resamples by chance and inflate the CI on
+the common-population mean. The stratified view uses a percentile
+interval rather than BCa: the (ICD-10, cardiometabolic) stratum has
+n = 2 and the per-stratum jackknife required for BCa's acceleration
+estimate is unstable at that size. Several (vocab, area) cells are of
+size 1 in this sample (e.g. the single SNOMED cerebrovascular and
+oncology lists), and a size-1 stratum contributes zero resample
+variance — the tightening of the stratified interval relative to the
+unstratified BCa interval is therefore partly a mechanical consequence
+of the small-stratum composition, not a strictly stronger statement
+about the underlying mean. The stratified view should be read as a
+*composition-preserved* secondary view rather than a tighter version
+of the headline BCa interval. To characterise the
+bootstrap-Monte-Carlo error of the headline BCa bounds, the BCa
+bootstrap is also re-run with 10 distinct seeds and the std and
+range of each bound across seeds is reported alongside as
+`ci95_seed_variance` (typical seed-to-seed std on this sample is
+≤ 0.01 — below the two-decimal precision of the reported intervals).
+
 The pre-vs-post-fix comparison is paired by codelist and code, so the
 appropriate significance test is McNemar's test on per-code
 (pre-correct, post-correct) outcomes — not a comparison of overlap
@@ -337,13 +361,15 @@ UMLS-vocabulary noise pattern).
 
 #### Strict view
 
-CIs are 95 % BCa bootstrap (1 000 resamples, seed 7).
+CIs are 95 % BCa bootstrap (1 000 resamples, seed 7). The stratified
+column resamples within (vocabulary, area) cells (percentile interval —
+see *Methodology → Statistical methodology*).
 
-| View | Mean P | Mean R | Mean F1 | Median F1 | F1 IQR | F1 95 % CI |
-|---|---|---|---|---|---|---|
-| Pre-fix | 0.71 | 0.51 | **0.49** | 0.53 | [0.21, 0.73] | [0.36, 0.62] |
-| Post-fix default | 0.88 | 0.49 | **0.57** | 0.67 | [0.32, 0.74] | [0.44, 0.68] |
-| Post-fix cold-start | 0.90 | 0.47 | **0.56** | 0.70 | [0.31, 0.74] | [0.43, 0.68] |
+| View | Mean P | Mean R | Mean F1 | Median F1 | F1 IQR | F1 BCa CI | F1 stratified CI |
+|---|---|---|---|---|---|---|---|
+| Pre-fix | 0.71 | 0.51 | **0.49** | 0.53 | [0.21, 0.73] | [0.36, 0.62] | [0.44, 0.54] |
+| Post-fix default | 0.88 | 0.49 | **0.57** | 0.67 | [0.32, 0.74] | [0.44, 0.68] | [0.50, 0.63] |
+| Post-fix cold-start | 0.90 | 0.47 | **0.56** | 0.70 | [0.31, 0.74] | [0.43, 0.68] | [0.49, 0.64] |
 
 Paired McNemar's test on per-code (pre, post) correctness:
 post-fix vs. pre-fix χ² = 42.93, p = 5.7 × 10⁻¹¹;
