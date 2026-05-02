@@ -50,7 +50,10 @@ def _disabled_retrievers(
     ``disabled_retrievers`` set that ``run_pipeline`` accepts.
 
     Returns ``None`` (rather than an empty set) when no flag is set, so
-    the cached default-graph branch in ``_get_pipeline`` is hit.
+    the cached default-graph branch in ``_get_pipeline`` is hit. Raises
+    HTTP 400 when all four flags are set — without this, ``build_graph``
+    raises ``ValueError`` deep in the pipeline and the route's catch-all
+    surfaces it as an opaque 500.
     """
     disabled: set[str] = set()
     if cold_start:
@@ -61,6 +64,15 @@ def _disabled_retrievers(
         disabled.add("qof")
     if disable_chroma:
         disabled.add("chroma")
+    if len(disabled) >= 4:
+        raise HTTPException(
+            status_code=400,
+            detail=(
+                "Cannot disable all retrievers; the merger has no upstream input. "
+                "Leave at least one of cold_start / disable_omophub / disable_qof / "
+                "disable_chroma at the default."
+            ),
+        )
     return disabled or None
 
 logger = logging.getLogger(__name__)
