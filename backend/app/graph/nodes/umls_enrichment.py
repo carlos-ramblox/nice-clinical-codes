@@ -132,10 +132,22 @@ class UMLSEnricher:
         return suggestions_df
 
     def _get(self, url: str, params: dict) -> dict | None:
-        """GET with API key injection, error handling, and rate limiting."""
-        params["apiKey"] = self.api_key
+        """GET with API key injection, error handling, and rate limiting.
+
+        The apiKey is injected into a *copy* of ``params`` so it never
+        leaks back to the caller's dict, and the catch-all branch logs
+        only the exception type and the bare URL. The ``requests``
+        connection-failure exceptions (ConnectTimeout, ConnectionError,
+        SSLError) include the full request URL — query string and all —
+        in their ``str()`` form, so logging the exception object
+        directly would write the apiKey to whatever sink picks up the
+        warning logs (CloudWatch in prod). The HTTPError branch is
+        already safe because it logs only ``status_code`` and the
+        bare URL.
+        """
+        request_params = {**params, "apiKey": self.api_key}
         try:
-            resp = requests.get(url, params=params, timeout=10)
+            resp = requests.get(url, params=request_params, timeout=10)
             resp.raise_for_status()
             time.sleep(REQUEST_GAP_SECS)
             return resp.json()
@@ -145,7 +157,7 @@ class UMLSEnricher:
             logger.warning("UMLS HTTP %d for %s", resp.status_code, url)
             return None
         except Exception as exc:
-            logger.warning("UMLS request failed: %s", exc)
+            logger.warning("UMLS request failed (%s) for %s", type(exc).__name__, url)
             return None
 
     def _normalise(self, concept_name: str) -> tuple[str, str]:
