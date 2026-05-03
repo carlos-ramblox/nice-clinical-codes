@@ -132,6 +132,49 @@ def _row(r: sqlite3.Row | None) -> dict | None:
     return dict(r) if r is not None else None
 
 
+# --- review-queue ordering --------------------------------------------------
+
+def _review_queue_sort_key(d: dict) -> tuple:
+    """Uncertainty-sampling order (Settles 2009, *Active Learning Literature
+    Survey*): the codes the LLM is least sure about should reach the
+    reviewer first, since a human label there has the highest information
+    value.
+
+    Sort tuple:
+        (0 if ai_decision == 'uncertain' else 1,   # explicit-uncertain to top
+         |2 * ai_confidence - 1|,                  # ascending → least sure first
+         code,                                     # human-readable tiebreaker
+         id)                                       # full determinism on dup codes
+
+    The schema does not enforce ``UNIQUE(codelist_id, code)``, so two rows
+    can share a code; ``id`` (the decision PK) guarantees a deterministic
+    order in that case. Missing/non-numeric confidence is treated as 0.5
+    (maximum uncertainty), which surfaces unknown-confidence rows
+    alongside the genuinely uncertain — the safer default for a clinical
+    review queue.
+    """
+    raw_conf = d.get("ai_confidence")
+    try:
+        conf = float(raw_conf) if raw_conf is not None else 0.5
+    except (TypeError, ValueError):
+        conf = 0.5
+    margin = abs(2.0 * conf - 1.0)
+    return (
+        0 if d.get("ai_decision") == "uncertain" else 1,
+        margin,
+        d.get("code") or "",
+        d.get("id") or 0,
+    )
+
+
+def sort_review_queue(decisions: list[dict]) -> list[dict]:
+    """Return ``decisions`` reordered for HITL review by uncertainty.
+
+    See ``_review_queue_sort_key`` for the ordering definition.
+    """
+    return sorted(decisions, key=_review_queue_sort_key)
+
+
 # --- user ops ---------------------------------------------------------------
 
 def list_users() -> list[dict]:
@@ -229,8 +272,7 @@ def get_codelist(cid: str) -> dict | None:
         """SELECT id, code, term, vocabulary,
                   ai_decision, ai_confidence, ai_rationale,
                   human_decision, override_comment, sources, is_umls_suggestion
-             FROM codelist_decisions WHERE codelist_id = ?
-             ORDER BY id""",
+             FROM codelist_decisions WHERE codelist_id = ?""",
         (cid,),
     )]
     for d in decisions:
@@ -238,7 +280,7 @@ def get_codelist(cid: str) -> dict | None:
             d["sources"] = json.loads(d["sources"]) if d["sources"] else []
         except (TypeError, ValueError):
             d["sources"] = []
-    result["decisions"] = decisions
+    result["decisions"] = sort_review_queue(decisions)
     return result
 
 

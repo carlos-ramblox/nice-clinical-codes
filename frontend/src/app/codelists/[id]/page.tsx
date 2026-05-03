@@ -15,6 +15,11 @@ import { ConfirmModal } from "../../ConfirmModal";
 
 type HumanDecision = "include" | "exclude" | "uncertain";
 
+// Server returns decisions in uncertainty-sampling order (Settles 2009):
+// LLM-flagged `uncertain` first, then ascending |2*confidence - 1|. The
+// reviewer can override that with the column-header sort below.
+type SortMode = "uncertainty" | "code" | "decision" | "confidence";
+
 interface DraftState {
   human_decision: HumanDecision;
   override_comment: string;
@@ -30,6 +35,43 @@ const decisionColor: Record<HumanDecision, string> = {
   exclude: "bg-red-100 text-red-800 border-red-300",
   uncertain: "bg-amber-100 text-amber-800 border-amber-300",
 };
+
+function SortableTh({
+  label,
+  mode,
+  active,
+  onClick,
+  title,
+}: {
+  label: string;
+  mode: SortMode;
+  active: SortMode;
+  onClick: (m: SortMode) => void;
+  title?: string;
+}) {
+  const isActive = active === mode;
+  return (
+    <th
+      scope="col"
+      className="px-3 py-2"
+      aria-sort={isActive ? "ascending" : "none"}
+    >
+      <button
+        type="button"
+        onClick={() => onClick(mode)}
+        title={title}
+        className={`tracking-wide ${
+          isActive ? "text-[#00436C] font-semibold" : "text-gray-600 hover:text-[#00436C]"
+        }`}
+      >
+        {label}
+        <span className="ml-1 text-[10px]" aria-hidden="true">
+          {isActive ? "↑" : "↕"}
+        </span>
+      </button>
+    </th>
+  );
+}
 
 export default function CodelistReviewPage({
   params,
@@ -50,6 +92,7 @@ export default function CodelistReviewPage({
   const [submitting, setSubmitting] = useState(false);
   const [confirmAction, setConfirmAction] = useState<"approve" | "reject" | null>(null);
   const [filter, setFilter] = useState<"all" | HumanDecision>("all");
+  const [sortMode, setSortMode] = useState<SortMode>("uncertainty");
 
   useEffect(() => {
     if (!userLoading && !user) {
@@ -104,13 +147,41 @@ export default function CodelistReviewPage({
     return c;
   }, [codelist, drafts]);
 
-  const filteredDecisions = useMemo(() => {
+  const sortedDecisions = useMemo(() => {
     if (!codelist) return [];
-    if (filter === "all") return codelist.decisions;
-    return codelist.decisions.filter(
-      (d) => (drafts[d.id]?.human_decision ?? d.human_decision) === filter
+    // Default: trust the server's uncertainty-first order (cheaper than
+    // recomputing |2c-1| client-side and keeps a single source of truth).
+    if (sortMode === "uncertainty") return codelist.decisions;
+    const arr = [...codelist.decisions];
+    if (sortMode === "code") {
+      arr.sort((a, b) => a.code.localeCompare(b.code));
+    } else if (sortMode === "confidence") {
+      arr.sort(
+        (a, b) =>
+          a.ai_confidence - b.ai_confidence || a.code.localeCompare(b.code),
+      );
+    } else if (sortMode === "decision") {
+      // Sort against the persisted human_decision, not the reviewer's
+      // in-progress draft. Two reasons: rows don't jump out from under
+      // the cursor as the reviewer changes them; and the memo doesn't
+      // need `drafts` as a dep, so override-comment keystrokes don't
+      // trigger an O(n log n) re-sort.
+      const order: Record<HumanDecision, number> = { include: 0, exclude: 1, uncertain: 2 };
+      arr.sort(
+        (a, b) =>
+          order[a.human_decision] - order[b.human_decision]
+          || a.code.localeCompare(b.code),
+      );
+    }
+    return arr;
+  }, [codelist, sortMode]);
+
+  const filteredDecisions = useMemo(() => {
+    if (filter === "all") return sortedDecisions;
+    return sortedDecisions.filter(
+      (d) => (drafts[d.id]?.human_decision ?? d.human_decision) === filter,
     );
-  }, [codelist, drafts, filter]);
+  }, [sortedDecisions, drafts, filter]);
 
   const isTerminal =
     codelist?.status === "approved" || codelist?.status === "rejected";
@@ -267,15 +338,59 @@ export default function CodelistReviewPage({
         ))}
       </div>
 
+      {/* Sort indicator (default order is uncertainty-first per Settles 2009) */}
+      <div className="flex items-center justify-between text-xs text-gray-500 mb-1">
+        <span>
+          Sort:{" "}
+          <span className="font-medium text-gray-700">
+            {sortMode === "uncertainty"
+              ? "Uncertainty (least sure first)"
+              : sortMode === "code"
+              ? "Code (A→Z)"
+              : sortMode === "confidence"
+              ? "Confidence (low→high)"
+              : "Decision (include first)"}
+          </span>
+        </span>
+        {sortMode !== "uncertainty" && (
+          <button
+            type="button"
+            onClick={() => setSortMode("uncertainty")}
+            className="text-[#00436C] hover:underline"
+          >
+            Reset to uncertainty order
+          </button>
+        )}
+      </div>
+
       {/* Decisions table */}
       <div className="border border-gray-200 rounded overflow-hidden mb-6">
         <table className="w-full text-sm">
           <thead className="bg-gray-50 text-left text-xs uppercase text-gray-600">
             <tr>
-              <th scope="col" className="px-3 py-2">Code</th>
+              <SortableTh
+                label="Code"
+                mode="code"
+                active={sortMode}
+                onClick={setSortMode}
+                title="Sort alphabetically by code."
+              />
               <th scope="col" className="px-3 py-2">Term</th>
               <th scope="col" className="px-3 py-2">AI</th>
-              <th scope="col" className="px-3 py-2">Decision</th>
+              <SortableTh
+                label="Conf"
+                mode="confidence"
+                active={sortMode}
+                onClick={setSortMode}
+                title="Sort by LLM confidence ascending. Default order is uncertainty-first (|2c−1| ascending), which is the active-learning sampling rule (Settles 2009)."
+              />
+              <SortableTh
+                label="Decision"
+                mode="decision"
+                active={sortMode}
+                onClick={setSortMode}
+                title="Sort by current decision: include → exclude → review."
+              />
               <th scope="col" className="px-3 py-2">Rationale / override</th>
             </tr>
           </thead>
@@ -302,9 +417,9 @@ export default function CodelistReviewPage({
                     >
                       {decisionLabel[d.ai_decision as HumanDecision]}
                     </span>
-                    <div className="text-[10px] text-gray-500 mt-0.5">
-                      {Math.round(d.ai_confidence * 100)}%
-                    </div>
+                  </td>
+                  <td className="px-3 py-2 font-mono text-xs text-gray-700 tabular-nums">
+                    {Math.round(d.ai_confidence * 100)}%
                   </td>
                   <td className="px-3 py-2">
                     <div className="flex gap-1">

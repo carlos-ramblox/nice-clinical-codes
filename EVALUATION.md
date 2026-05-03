@@ -919,6 +919,23 @@ would yield trustworthy probabilities and a reliability diagram.
 The calibrated confidence supports active-learning prioritisation
 of the human review queue.
 
+**HITL review-queue ordering** *(completed 2026-05-03; T06)*
+The clinician review queue is now ordered by uncertainty sampling:
+the LLM's verbalised `confidence` per code is mapped to a margin
+`|2·confidence − 1|` and the queue is sorted by that ascending, so
+the codes the model is least sure about (confidence near 0.5) reach
+the reviewer first. Codes the LLM marks `uncertain` are pinned at
+the top regardless of margin — they are already explicitly flagged.
+This is the canonical *uncertainty sampling* objective from Settles
+(2009, *Active Learning Literature Survey*, U Wisconsin–Madison TR
+1648): a human label has the highest information value where the
+model is least sure. F1 is unchanged (the *content* of the codelist
+is identical), but the reviewer reaches a defensible list faster
+and the audit trail demonstrably attends to the difficult cases —
+material for a DCB0129/0160 clinical-safety case. Once the
+calibration step above lands, the same ordering will run on
+calibrated probabilities rather than verbalised ones.
+
 **Hierarchical SNOMED expansion**
 The recall ceiling on long lists (stroke, dementia, epilepsy)
 reflects a structural retrieval breadth cap. SNOMED ECL `<<`
