@@ -48,6 +48,7 @@ Bennett's example: "sore throat" indicates Group A Streptococcus but also many o
 - Codelists are point-in-time. SNOMED releases, QOF rule changes, and OpenCodelists edits do not trigger automatic re-validation of previously approved codelists.
 - OpenCodelists has no documented public REST API. The pipeline ingests OpenCodelists content via stable URL/CSV permalinks committed under `data/raw/opencodelists/`. This works in practice but there is no formal contract from OpenCodelists guaranteeing permalink stability; integration is best-effort and may need adjustment if OpenCodelists changes their URL schema.
 - No multi-condition cohort composition (for example, "diabetes AND hypertension AND age > 65" as a structured query).
+- HDR UK Phenotype Library integration is deliberately scoped to read-mode only (discovery sidebar + post-hoc cross-reference, T34 + T35); it is not a parallel retriever. See [EVALUATION.md §5.7 → HDR UK retriever-shape mismatch](./EVALUATION.md) for the negative-result write-up that established that integration shape.
 - Authentication is a demo mechanism; NHS OAuth/SAML and NHS Identity integration are not yet implemented.
 - No clinical safety case has been written. The system is a research and development prototype.
 - FAIR-compliance of generated codelists has not been formally evaluated against the criteria set out in Williams et al. (2019).

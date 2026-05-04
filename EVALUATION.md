@@ -987,6 +987,50 @@ A cross-encoder reranking step (e.g. BAAI/bge-reranker-v2-m3) over
 the merged top-N before LLM scoring is independent of the rank-fusion
 question and remains worth pursuing separately.
 
+**HDR UK Phenotype Library: retriever-shape mismatch (T36 reframe)** *(reverted 2026-05-04; T36)*
+T13 (May 2026) shipped HDR UK as a fifth parallel retriever in the
+LangGraph fan-out: search the public `/api/v1/phenotypes/` endpoint
+with the parsed condition name, take the top-3 phenotypes by
+relevance, and flatten their codelists into the merger. A follow-on
+canonical-vocab filter restricted output to SNOMED CT / ICD-10 /
+OPCS-4, and a persona-driven LLM scope-fit judge (Haiku 4.5)
+filtered the candidate phenotype list before code-fetching to guard
+against HDR UK's documented full-text search-quality failure mode
+(e.g. an "HIV" query returning paediatric Asthma phenotypes by
+metadata keyword overlap).
+
+Today-vs-today benchmark on the 15 v2 codelists: HDR UK + judge
+net-regressed mean F1 from 0.547 to 0.534 default and from 0.426 to
+0.435 cold-start — both within the K=5 run-to-run noise band but
+trending down. The cause is structural, not model-quality. Each HDR
+UK phenotype is a curated codelist for a specific study question
+(e.g. paediatric asthma in CPRD GOLD, BREATHE collection), not a
+generic concept index. Pooling multiple phenotypes' codes into the
+merger mixes incompatible curation contexts. Hypertension regressed
+−0.156 default even with the judge admitting only 2/3 phenotypes the
+LLM judged scope-relevant — those phenotypes' codes are valid
+hypertension codes for *their* study questions but disagree with the
+OpenCodelists hypertension reference. The persona audit
+(`_planning/persona_audit_2026_05_04.md`) and the [JAMIA Open 2024
+phenotype-library paper](https://academic.oup.com/jamiaopen/article/7/2/ooae049/7695197)
+both name the workflow shape: **browse-and-adjudicate**, not
+retrieve-and-merge.
+
+T36 reverted the retriever wiring, relocated the persona-judge to
+`backend/app/services/phenotype_discovery.py`, and reframed the
+integration as T34 (discovery sidebar — read-mode, cite-able
+phenotype links, no code-mixing) and T35 (post-hoc cross-reference —
+overlap measurement against published phenotypes for
+citation-traceability). Same LLM scope-fit logic, read-side consumer
+instead of write-side. T36 also introduces a **persona-pre-flight
+pattern** (`_planning/t34_persona_preflight.md`) as a process gate:
+a 1-page persona + workflow-evidence + concrete-expectations
+document is written before any future ticket of this scope is
+implemented. T13's mistake was treating workflow-domain validation
+as something to do after shipping, not before. Cited: Watson 2017
+(Stage 2 codelist construction); [Bennett 2023](https://www.bennett.ox.ac.uk/blog/2023/09/what-are-codelists-and-how-are-they-constructed/)
+(failure mode 3, study-intent ambiguity); JAMIA Open 2024 above.
+
 **LLM confidence calibration**
 Verbalised LLM confidences are currently recorded but unused.
 Post-hoc isotonic calibration on the 15-codelist benchmark labels
