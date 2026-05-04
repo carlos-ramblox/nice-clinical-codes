@@ -4,13 +4,13 @@
     "omophub_only": {
       "label": "OMOPHub only",
       "n": 15,
-      "precision_mean": 0.1434,
-      "recall_mean": 0.071,
-      "f1_mean": 0.0873,
+      "precision_mean": 0.291,
+      "recall_mean": 0.1426,
+      "f1_mean": 0.1652,
       "f1_median": 0.0,
       "f1_ci95": [
-        0.0218,
-        0.2715
+        0.0442,
+        0.3881
       ]
     },
     "qof_only": {
@@ -52,13 +52,13 @@
     "merger_raw": {
       "label": "Merger (raw retrieval)",
       "n": 15,
-      "precision_mean": 0.5157,
-      "recall_mean": 0.5038,
-      "f1_mean": 0.4228,
+      "precision_mean": 0.501,
+      "recall_mean": 0.4914,
+      "f1_mean": 0.4094,
       "f1_median": 0.3871,
       "f1_ci95": [
-        0.3079,
-        0.5596
+        0.2983,
+        0.5273
       ]
     },
     "merger_umls": {
@@ -105,39 +105,39 @@
         "vocabulary": "SNOMED CT",
         "area": "cardiometabolic",
         "n_ref": 42,
-        "precision": 0.1471,
-        "recall": 0.119,
-        "f1": 0.1316,
-        "tp": 5,
-        "fp": 29,
-        "fn": 37,
-        "n_out": 34
+        "precision": 0.1429,
+        "recall": 0.0952,
+        "f1": 0.1143,
+        "tp": 4,
+        "fp": 24,
+        "fn": 38,
+        "n_out": 28
       },
       {
         "short": "diabetes_mellitus",
         "vocabulary": "SNOMED CT",
         "area": "cardiometabolic",
         "n_ref": 86,
-        "precision": 0.025,
-        "recall": 0.0116,
-        "f1": 0.0159,
-        "tp": 1,
-        "fp": 39,
-        "fn": 85,
-        "n_out": 40
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "tp": 0,
+        "fp": 0,
+        "fn": 86,
+        "n_out": 0
       },
       {
         "short": "hypertension",
         "vocabulary": "SNOMED CT",
         "area": "cardiometabolic",
         "n_ref": 117,
-        "precision": 0.175,
-        "recall": 0.0598,
-        "f1": 0.0892,
-        "tp": 7,
-        "fp": 33,
-        "fn": 110,
-        "n_out": 40
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "tp": 0,
+        "fp": 0,
+        "fn": 117,
+        "n_out": 0
       },
       {
         "short": "mi_icd10",
@@ -157,13 +157,13 @@
         "vocabulary": "ICD-10",
         "area": "cardiometabolic",
         "n_ref": 7,
-        "precision": 0.0,
-        "recall": 0.0,
-        "f1": 0.0,
-        "tp": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "tp": 7,
         "fp": 0,
-        "fn": 7,
-        "n_out": 0
+        "fn": 0,
+        "n_out": 7
       },
       {
         "short": "stroke",
@@ -183,13 +183,13 @@
         "vocabulary": "SNOMED CT",
         "area": "respiratory",
         "n_ref": 124,
-        "precision": 0.0,
-        "recall": 0.0,
-        "f1": 0.0,
-        "tp": 0,
-        "fp": 0,
-        "fn": 124,
-        "n_out": 0
+        "precision": 0.5667,
+        "recall": 0.1371,
+        "f1": 0.2208,
+        "tp": 17,
+        "fp": 13,
+        "fn": 107,
+        "n_out": 30
       },
       {
         "short": "copd",
@@ -222,13 +222,13 @@
         "vocabulary": "SNOMED CT",
         "area": "mental_health",
         "n_ref": 198,
-        "precision": 0.5294,
-        "recall": 0.0909,
-        "f1": 0.1552,
-        "tp": 18,
-        "fp": 16,
-        "fn": 180,
-        "n_out": 34
+        "precision": 0.381,
+        "recall": 0.0404,
+        "f1": 0.0731,
+        "tp": 8,
+        "fp": 13,
+        "fn": 190,
+        "n_out": 21
       },
       {
         "short": "dementia",
@@ -287,13 +287,13 @@
         "vocabulary": "SNOMED CT",
         "area": "infection",
         "n_ref": 243,
-        "precision": 0.0,
-        "recall": 0.0,
-        "f1": 0.0,
-        "tp": 0,
+        "precision": 1.0,
+        "recall": 0.0823,
+        "f1": 0.1521,
+        "tp": 20,
         "fp": 0,
-        "fn": 243,
-        "n_out": 0
+        "fn": 223,
+        "n_out": 20
       }
     ],
     "qof_only": [
@@ -919,12 +919,12 @@
         "vocabulary": "SNOMED CT",
         "area": "cardiometabolic",
         "n_ref": 117,
-        "precision": 0.97,
-        "recall": 0.8291,
-        "f1": 0.894,
-        "tp": 97,
-        "fp": 3,
-        "fn": 20,
+        "precision": 0.78,
+        "recall": 0.6667,
+        "f1": 0.7189,
+        "tp": 78,
+        "fp": 22,
+        "fn": 39,
         "n_out": 100
       },
       {
@@ -971,12 +971,12 @@
         "vocabulary": "SNOMED CT",
         "area": "respiratory",
         "n_ref": 124,
-        "precision": 0.78,
-        "recall": 0.629,
-        "f1": 0.6964,
-        "tp": 78,
-        "fp": 22,
-        "fn": 46,
+        "precision": 0.75,
+        "recall": 0.6048,
+        "f1": 0.6696,
+        "tp": 75,
+        "fp": 25,
+        "fn": 49,
         "n_out": 100
       },
       {
