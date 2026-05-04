@@ -43,9 +43,11 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           pip install -r backend/requirements.txt
-          # Pin lint tooling so a tool-side default change cannot break
-          # CI under our feet. Bump deliberately.
-          pip install ruff==0.15.12 pip-audit==2.10.0
+          # Pin dev/CI tooling so a tool-side default change cannot
+          # break CI under our feet. Bump deliberately. pytest lives
+          # here (not requirements.txt) because the production container
+          # never runs the test suite.
+          pip install ruff==0.15.12 pip-audit==2.10.0 pytest==8.4.0
 
       - name: Lint (ruff)
         run: ruff check backend/
