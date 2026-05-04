@@ -11,6 +11,7 @@
 # Clinical Code Discovery - Multi-source clinical codelist generation with LLM-assisted scoring and human review
 
 <p align="center">
+  <a href="https://github.com/carlos-ramblox/nice-clinical-codes/actions/workflows/ci.yml"><img src="https://github.com/carlos-ramblox/nice-clinical-codes/actions/workflows/ci.yml/badge.svg?branch=main" alt="CI"></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/license-Apache%202.0-blue.svg" alt="License: Apache 2.0"></a>
   <img src="https://img.shields.io/badge/python-3.12+-blue.svg" alt="Python 3.12+">
   <img src="https://img.shields.io/badge/node-20+-43853d.svg" alt="Node 20+">

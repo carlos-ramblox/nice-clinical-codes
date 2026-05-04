@@ -751,7 +751,7 @@ def main():
             f"flip_rate={variance_view['aggregate_flip_rate']:.4f} "
             f"({variance_view['total_flipped']}/{variance_view['total_pairs']} pairs)"
         )
-        print(f"  per-list F1_mean ± std (n_runs):")
+        print("  per-list F1_mean ± std (n_runs):")
         for r in variance_view["per_list"]:
             print(f"    {r['short']:<28s} {r['f1_mean']:.3f} ± {r['f1_std']:.3f}  "
                   f"(n={r['n_runs']}, range [{r['f1_min']:.3f}, {r['f1_max']:.3f}], "
