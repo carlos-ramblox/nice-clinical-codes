@@ -1,12 +1,22 @@
 import sqlite3
 import logging
+import threading
 from pathlib import Path
 
 from app.config import DATABASE_URL
 
 logger = logging.getLogger(__name__)
 
-_conn: sqlite3.Connection | None = None
+# Per-thread connections. The graph's parallel retriever fan-out runs
+# QOF and OpenCodelists in separate threadpool workers (LangGraph wraps
+# sync nodes via run_in_executor); a single shared sqlite3.Connection
+# raises ``InterfaceError: bad parameter or other API misuse`` when
+# those threads issue overlapping execute() calls. SQLite connections
+# are not thread-safe even with check_same_thread=False — that flag
+# only suppresses the safety assertion, it does not make the
+# underlying C handle reentrant. One connection per thread is the
+# canonical fix.
+_local = threading.local()
 
 
 def _get_db_path() -> str:
@@ -15,15 +25,16 @@ def _get_db_path() -> str:
 
 
 def get_connection() -> sqlite3.Connection:
-    global _conn
-    if _conn is None:
+    conn = getattr(_local, "conn", None)
+    if conn is None:
         db_path = _get_db_path()
         Path(db_path).parent.mkdir(parents=True, exist_ok=True)
-        _conn = sqlite3.connect(db_path, check_same_thread=False)
-        _conn.row_factory = sqlite3.Row
-        _init_tables(_conn)
-        logger.info("SQLite connected: %s", db_path)
-    return _conn
+        conn = sqlite3.connect(db_path, check_same_thread=False)
+        conn.row_factory = sqlite3.Row
+        _init_tables(conn)
+        _local.conn = conn
+        logger.info("SQLite connected: %s (thread=%s)", db_path, threading.get_ident())
+    return conn
 
 
 def _init_tables(conn: sqlite3.Connection):
