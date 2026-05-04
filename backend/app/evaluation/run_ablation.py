@@ -8,24 +8,25 @@ For each codelist this script:
 
 * Parses the query once (one Claude Sonnet 4 call) and obtains the
   ``parsed_conditions`` the retriever nodes consume.
-* Runs each of the four retriever nodes (``omophub``, ``qof``,
-  ``chroma``, ``opencodelists``) in isolation against those parsed
-  conditions and evaluates the raw, un-merged, un-enriched, un-scored
-  retriever output against the reference list. This is configs 1--4.
+* Runs each of the five retriever nodes (``omophub``, ``qof``,
+  ``chroma``, ``opencodelists``, ``hdruk``) in isolation against those
+  parsed conditions and evaluates the raw, un-merged, un-enriched,
+  un-scored retriever output against the reference list. This is
+  configs 1--5.
 * Reuses the existing ``result_postfix.json`` files (which were
-  produced under the same v2 benchmark conditions) for configs 5
-  (``stages.retrieved_raw``), 6 (``stages.merged_enriched``) and 7
+  produced under the same benchmark conditions) for configs 6
+  (``stages.retrieved_raw``), 7 (``stages.merged_enriched``) and 8
   (``stages.included_only``), and the corresponding
-  ``result_coldstart.json`` files for config 8.
+  ``result_coldstart.json`` files for config 9.
 
 Why this isolated path rather than re-invoking the full graph with
 ``disabled_retrievers={a, b, c}`` per ablation:
 
 * Cost. The full graph runs UMLS enrichment and Claude Haiku 4.5
-  per-code scoring on every request. Configs 1--6 want the
+  per-code scoring on every request. Configs 1--7 want the
   *retriever's* output, not the model's verdict on it, so paying for
   scoring would be a waste of budget.
-* Methodological cleanliness. Configs 1--4 are defined in
+* Methodological cleanliness. Configs 1--5 are defined in
   EVALUATION.md as **raw retriever output without LLM scoring** so
   the contribution of each retriever can be read directly. Calling
   the retriever node functions in-process gives that exactly --
@@ -52,6 +53,7 @@ from typing import Callable
 
 from app.evaluation.benchmark_aggregate import bootstrap_ci, normalize_code
 from app.graph.nodes.chroma_retriever import retrieve_from_chromadb
+from app.graph.nodes.hdruk_retriever import retrieve_from_hdruk
 from app.graph.nodes.omophub_retriever import omophub_to_retrieved_codes, search_omophub
 from app.graph.nodes.opencodelists_retriever import retrieve_from_opencodelists
 from app.graph.nodes.qof_retriever import retrieve_from_qof
@@ -100,6 +102,7 @@ _RETRIEVER_RUNNERS: dict[str, Callable[[list[dict]], list[dict]]] = {
     "qof":           lambda pc: _node_in_isolation(retrieve_from_qof, pc),
     "chroma":        lambda pc: _node_in_isolation(retrieve_from_chromadb, pc),
     "opencodelists": lambda pc: _node_in_isolation(retrieve_from_opencodelists, pc),
+    "hdruk":         lambda pc: _node_in_isolation(retrieve_from_hdruk, pc),
 }
 
 # Display names for the table. The order here is the order they will
@@ -109,6 +112,7 @@ _CONFIG_LABELS: dict[str, str] = {
     "qof_only":           "QOF only",
     "opencodelists_only": "OpenCodelists only",
     "chromadb_only":      "ChromaDB only",
+    "hdruk_only":         "HDR UK only",
     "merger_raw":         "Merger (raw retrieval)",
     "merger_umls":        "Merger + UMLS (no LLM)",
     "full_pipeline":      "Full pipeline (default)",
@@ -198,13 +202,14 @@ def run() -> dict:
         parsed = parse_query(query)
         parsed_conditions = parsed["conditions"]
 
-        # Configs 1-4: per-retriever, raw output
+        # Configs 1-5: per-retriever, raw output
         per_retriever_metrics: dict[str, dict] = {}
         retriever_to_config = {
             "omophub":       "omophub_only",
             "qof":           "qof_only",
             "chroma":        "chromadb_only",
             "opencodelists": "opencodelists_only",
+            "hdruk":         "hdruk_only",
         }
         for retriever_name, runner in _RETRIEVER_RUNNERS.items():
             try:
@@ -224,8 +229,8 @@ def run() -> dict:
                 cfg, m["n_out"], m["precision"], m["recall"], m["f1"],
             )
 
-        # Config 5 (Merger raw): run the production merger directly on the
-        # union of all four retrievers' raw output, with parsed_conditions
+        # Config 6 (Merger raw): run the production merger directly on the
+        # union of all five retrievers' raw output, with parsed_conditions
         # so the merger's vocabulary-constraint filter (Fix F) fires the
         # same way as in the live pipeline. UMLS and LLM scoring are
         # skipped. This is the cleanest "all retrievers, no UMLS, no LLM"
@@ -329,15 +334,15 @@ def run() -> dict:
         "configs": aggregate,
         "per_codelist": rows_by_config,
         "notes": (
-            "Configs 1-4 are raw retriever output (no merger filter, "
-            "no UMLS, no LLM scoring). Config 5 (merger_raw) is "
+            "Configs 1-5 are raw retriever output (no merger filter, "
+            "no UMLS, no LLM scoring). Config 6 (merger_raw) is "
             "produced by calling result_merger.merge_and_dedup directly "
-            "on the union of the four retrievers' raw outputs, with "
+            "on the union of the five retrievers' raw outputs, with "
             "parsed_conditions, so the merger's Fix-F vocabulary filter "
             "fires the same way as in the production graph -- post-merger "
-            "but pre-UMLS, pre-LLM. Config 6 (merger_umls) is read from "
-            "the existing post-fix v2 result files' stages.merged_enriched "
-            "(post-merger + UMLS, pre-LLM). Configs 7 and 8 are read from "
+            "but pre-UMLS, pre-LLM. Config 7 (merger_umls) is read from "
+            "the existing post-fix result files' stages.merged_enriched "
+            "(post-merger + UMLS, pre-LLM). Configs 8 and 9 are read from "
             "the same files' stages.included_only (post-fix default and "
             "post-fix cold-start). For the HIV codelist where a post-tune "
             "result exists (Apr-29), the v2 file is used in preference, "

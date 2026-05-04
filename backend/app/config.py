@@ -43,3 +43,9 @@ OMOPHUB_VOCABULARIES = {
     "ICD10": "ICD-10 (WHO)",
     "OPCS4": "OPCS-4",
 }
+
+# HDR UK Phenotype Library — anonymous public read, no API key required.
+# Override the base URL only for testing against a mirror; default is the
+# canonical hosted endpoint.
+HDR_UK_BASE_URL = os.getenv("HDR_UK_BASE_URL", "https://phenotypes.healthdatagateway.org")
+HDR_UK_TOP_K_PHENOTYPES = int(os.getenv("HDR_UK_TOP_K_PHENOTYPES", "3"))

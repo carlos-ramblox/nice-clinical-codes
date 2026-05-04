@@ -12,6 +12,7 @@ from app.graph.nodes.omophub_retriever import search_omophub, omophub_to_retriev
 from app.graph.nodes.chroma_retriever import retrieve_from_chromadb
 from app.graph.nodes.qof_retriever import retrieve_from_qof
 from app.graph.nodes.opencodelists_retriever import retrieve_from_opencodelists
+from app.graph.nodes.hdruk_retriever import retrieve_from_hdruk
 from app.graph.nodes.result_merger import merge_and_dedup
 from app.graph.nodes.umls_enrichment_node import enrich_with_umls
 from app.graph.nodes.llm_reasoning import score_codes
@@ -63,6 +64,7 @@ _RETRIEVERS: dict[str, tuple[str, Callable]] = {
     "chroma":        ("chroma_retriever",        retrieve_from_chromadb),
     "qof":           ("qof_retriever",           retrieve_from_qof),
     "opencodelists": ("opencodelists_retriever", retrieve_from_opencodelists),
+    "hdruk":         ("hdruk_retriever",         retrieve_from_hdruk),
 }
 
 
@@ -74,9 +76,9 @@ def build_graph(disabled_retrievers: set[str] | None = None) -> StateGraph:
     disabled_retrievers
         Optional set of retriever names to skip. Recognised values are the
         keys of ``_RETRIEVERS`` (``"omophub"``, ``"chroma"``, ``"qof"``,
-        ``"opencodelists"``). The named retrievers are not added to the
-        graph and are not wired to the merger; the rest of the pipeline
-        is unchanged.
+        ``"opencodelists"``, ``"hdruk"``). The named retrievers are not
+        added to the graph and are not wired to the merger; the rest of
+        the pipeline is unchanged.
 
         The intended use case is the cold-start evaluation benchmark
         where ``{"opencodelists"}`` is passed so the retriever cannot
@@ -131,8 +133,8 @@ pipeline = build_graph()
 
 # Memoised compiled graphs keyed by frozenset of disabled retrievers.
 # Construction is cheap but not free, so we avoid rebuilding on every
-# request. The cache is small (at most one entry per subset of four
-# retrievers) so unbounded growth is not a concern.
+# request. The cache is small (at most one entry per subset of the
+# active retrievers) so unbounded growth is not a concern.
 _GRAPH_CACHE: dict[frozenset[str], object] = {frozenset(): pipeline}
 
 

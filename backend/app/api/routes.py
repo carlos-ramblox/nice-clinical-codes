@@ -33,6 +33,10 @@ _DISABLE_CHROMA_DESCRIPTION = (
     "Evaluation-only flag. When true, disables the ChromaDB semantic "
     "retriever for this request; used by the per-retriever ablation."
 )
+_DISABLE_HDRUK_DESCRIPTION = (
+    "Evaluation-only flag. When true, disables the HDR UK Phenotype "
+    "Library retriever for this request; used by the per-retriever ablation."
+)
 
 from app.graph.graph import run_pipeline
 from app.evaluation.evaluator import run_evaluation
@@ -45,13 +49,14 @@ def _disabled_retrievers(
     disable_omophub: bool,
     disable_qof: bool,
     disable_chroma: bool,
+    disable_hdruk: bool,
 ) -> set[str] | None:
-    """Translate the four opt-in retriever-disable flags into the
+    """Translate the five opt-in retriever-disable flags into the
     ``disabled_retrievers`` set that ``run_pipeline`` accepts.
 
     Returns ``None`` (rather than an empty set) when no flag is set, so
     the cached default-graph branch in ``_get_pipeline`` is hit. Raises
-    HTTP 400 when all four flags are set — without this, ``build_graph``
+    HTTP 400 when all five flags are set — without this, ``build_graph``
     raises ``ValueError`` deep in the pipeline and the route's catch-all
     surfaces it as an opaque 500.
     """
@@ -64,13 +69,15 @@ def _disabled_retrievers(
         disabled.add("qof")
     if disable_chroma:
         disabled.add("chroma")
-    if len(disabled) >= 4:
+    if disable_hdruk:
+        disabled.add("hdruk")
+    if len(disabled) >= 5:
         raise HTTPException(
             status_code=400,
             detail=(
                 "Cannot disable all retrievers; the merger has no upstream input. "
                 "Leave at least one of cold_start / disable_omophub / disable_qof / "
-                "disable_chroma at the default."
+                "disable_chroma / disable_hdruk at the default."
             ),
         )
     return disabled or None
@@ -122,6 +129,7 @@ async def search_codes(
     disable_omophub: bool = Query(False, description=_DISABLE_OMOPHUB_DESCRIPTION),
     disable_qof: bool = Query(False, description=_DISABLE_QOF_DESCRIPTION),
     disable_chroma: bool = Query(False, description=_DISABLE_CHROMA_DESCRIPTION),
+    disable_hdruk: bool = Query(False, description=_DISABLE_HDRUK_DESCRIPTION),
 ):
     """Search for clinical codes matching a condition query.
 
@@ -129,17 +137,18 @@ async def search_codes(
     ----------------
     cold_start : bool, default False
         When ``True``, the OpenCodelists retriever is disabled for this
-        request. The other three retrievers (OMOPHub, ChromaDB, QOF) and
-        UMLS enrichment remain active. Intended for evaluation runs that
-        compare against an OpenCodelists-derived reference list, where
-        leaving the retriever live would bias recall upward by surfacing
-        the very list the run is meant to compare against.
-    disable_omophub, disable_qof, disable_chroma : bool, default False
+        request. The other four retrievers (OMOPHub, ChromaDB, QOF,
+        HDR UK) and UMLS enrichment remain active. Intended for
+        evaluation runs that compare against an OpenCodelists-derived
+        reference list, where leaving the retriever live would bias
+        recall upward by surfacing the very list the run is meant to
+        compare against.
+    disable_omophub, disable_qof, disable_chroma, disable_hdruk : bool, default False
         Evaluation-only opt-in flags that disable the named retriever for
         this request. Mirror ``cold_start`` so the per-retriever ablation
         runner can isolate one retriever at a time. Production callers
         leave these at the default; the merger requires at least one
-        active retriever, so disabling all four is rejected upstream.
+        active retriever, so disabling all five is rejected upstream.
 
     Example::
 
@@ -148,7 +157,7 @@ async def search_codes(
              -d '{"query": "type 2 diabetes"}'
     """
     t0 = time.time()
-    disabled = _disabled_retrievers(cold_start, disable_omophub, disable_qof, disable_chroma)
+    disabled = _disabled_retrievers(cold_start, disable_omophub, disable_qof, disable_chroma, disable_hdruk)
 
     try:
         result = await run_pipeline(request.query, disabled)
@@ -242,6 +251,7 @@ async def evaluate_codes(
     disable_omophub: bool = Query(False, description=_DISABLE_OMOPHUB_DESCRIPTION),
     disable_qof: bool = Query(False, description=_DISABLE_QOF_DESCRIPTION),
     disable_chroma: bool = Query(False, description=_DISABLE_CHROMA_DESCRIPTION),
+    disable_hdruk: bool = Query(False, description=_DISABLE_HDRUK_DESCRIPTION),
 ):
     """Run the pipeline on a test set query and evaluate against the gold standard.
 
@@ -252,7 +262,7 @@ async def evaluate_codes(
         evaluation run. Use this when the reference codelist comes from
         OpenCodelists itself, so the retriever cannot surface the
         reference and bias recall upward by construction.
-    disable_omophub, disable_qof, disable_chroma : bool, default False
+    disable_omophub, disable_qof, disable_chroma, disable_hdruk : bool, default False
         Evaluation-only opt-in flags that disable the named retriever for
         this request. Mirror ``cold_start`` so the per-retriever ablation
         runner can isolate one retriever at a time.
@@ -272,7 +282,7 @@ async def evaluate_codes(
         raise HTTPException(status_code=400, detail="No Research_question found in test set")
 
     t0 = time.time()
-    disabled = _disabled_retrievers(cold_start, disable_omophub, disable_qof, disable_chroma)
+    disabled = _disabled_retrievers(cold_start, disable_omophub, disable_qof, disable_chroma, disable_hdruk)
 
     try:
         pipeline_result = await run_pipeline(query, disabled)
