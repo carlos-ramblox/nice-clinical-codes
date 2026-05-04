@@ -1031,6 +1031,31 @@ as something to do after shipping, not before. Cited: Watson 2017
 (Stage 2 codelist construction); [Bennett 2023](https://www.bennett.ox.ac.uk/blog/2023/09/what-are-codelists-and-how-are-they-constructed/)
 (failure mode 3, study-intent ambiguity); JAMIA Open 2024 above.
 
+**HDR UK Phenotype Library: discovery sidebar** *(shipped 2026-05-04)*
+The reframed integration is now live as a discovery sidebar on the
+search page. The persona-driven scope-fit judge ranks 3-5 candidate
+phenotypes whose clinical scope fits the user's free-text query;
+each row links out to the authoritative HDR UK detail page
+(`https://phenotypes.healthdatagateway.org/phenotypes/{id}`) and
+surfaces the judge's one-line rationale as a visible caption (not a
+tooltip), so the clinician reads the rationale before deciding
+whether the row deserves a click-through. **No code-mixing** —
+the sidebar is read-mode only; phenotype codes are not pulled into
+the user's generated codelist by default. Empty-result state is
+explicit: when discovery returns nothing the sidebar shows a
+one-line "click Search to generate fresh" hint instead of
+disappearing silently, telegraphing the dual-path to less-expert
+users. The persona-pre-flight pattern (a 1-page persona +
+workflow-evidence + concrete-expectations document, written before
+code is scoped) introduced after the retriever-shape mismatch is
+the design input for this work and is the standing process gate
+for future work of this scope. Two follow-ups build on the same
+discovery service: an explicit "use this phenotype" action that
+records the adopted phenotype id in the user's codelist provenance,
+and a post-hoc cross-reference panel that measures code overlap
+between the generated codelist and candidate phenotypes for
+citation-traceability.
+
 **LLM confidence calibration**
 Verbalised LLM confidences are currently recorded but unused.
 Post-hoc isotonic calibration on the 15-codelist benchmark labels

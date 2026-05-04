@@ -183,30 +183,21 @@ def _format_phenotype_for_judge(phenotype: dict) -> str:
     return "\n".join(lines)
 
 
-def judge_phenotype_relevance(query: str, phenotypes: list[dict]) -> list[dict]:
-    """Filter ``phenotypes`` to those whose clinical scope fits ``query``.
+def _call_judge(query: str, phenotypes: list[dict]) -> dict[str, _PhenotypeRelevance] | None:
+    """Run the LLM scope-fit judge once. Returns ``decisions_by_id`` or
+    ``None`` when the judge is skipped (disabled / no API key) or fails
+    (LLM error). The caller decides what to do with the None case --
+    both public surfaces below choose to fall through to the unfiltered
+    input rather than admit a black-hole HDR UK contribution.
 
-    Returns a subset of the input list, preserving original order. Falls
-    through to the input unchanged if:
-
-    * The judge is disabled via ``HDR_UK_USE_JUDGE=no``.
-    * No Anthropic key is configured.
-    * The Haiku call raises (network blip, parse failure, etc.) -- better
-      to over-include than to silently drop the whole HDR UK contribution.
-
-    The fallback semantics intentionally favour availability over
-    precision: a single bad judge call is less damaging than a black-hole
-    discovery panel, and the F1 cost of over-inclusion is bounded by the
-    user's own browse-and-adjudicate review (T34/T35 are read-mode, not
-    auto-merge).
+    Internal helper that both the simple filter and the verbose surface
+    delegate to so we make at most one Haiku call per discovery request.
     """
-    if not phenotypes:
-        return []
     if not HDR_UK_USE_JUDGE:
-        return phenotypes
+        return None
     if not ANTHROPIC_API_KEY:
         logger.info("HDR UK judge: ANTHROPIC_API_KEY not set; passing %d phenotype(s) through", len(phenotypes))
-        return phenotypes
+        return None
 
     block = "\n".join(_format_phenotype_for_judge(p) for p in phenotypes)
     user_message = (
@@ -229,21 +220,60 @@ def judge_phenotype_relevance(query: str, phenotypes: list[dict]) -> list[dict]:
         ])
     except Exception as exc:
         logger.warning("HDR UK judge call failed (%s); passing %d phenotype(s) through", exc, len(phenotypes))
-        return phenotypes
+        return None
+    return {d.phenotype_id: d for d in result.decisions}
 
-    decisions_by_id: dict[str, _PhenotypeRelevance] = {d.phenotype_id: d for d in result.decisions}
-    kept: list[dict] = []
+
+def rank_phenotypes_with_rationale(
+    query: str,
+    phenotypes: list[dict],
+) -> list[tuple[dict, _PhenotypeRelevance | None]]:
+    """Return ``(phenotype, decision)`` pairs for phenotypes that pass the judge.
+
+    ``decision`` is the judge's ``_PhenotypeRelevance`` verdict for kept
+    phenotypes whose id appeared in the model's structured response.
+    ``decision`` is ``None`` when the judge was skipped (disabled / no
+    API key / LLM error) **or** when the judge silently omitted that id
+    from its output -- in both fall-through cases the phenotype is
+    admitted as a soft pass.
+
+    Phenotypes the judge marked ``relevant=False`` are dropped.
+
+    This is the verbose surface T34's discovery sidebar consumes: the
+    endpoint surfaces ``decision.reason`` to the user as the "matches
+    because..." caption, so the simple filter (which discards the
+    rationale) costs UI signal.
+    """
+    if not phenotypes:
+        return []
+    decisions = _call_judge(query, phenotypes)
+    if decisions is None:
+        return [(p, None) for p in phenotypes]
+    kept: list[tuple[dict, _PhenotypeRelevance | None]] = []
     for p in phenotypes:
         pid = p.get("phenotype_id", "")
-        decision = decisions_by_id.get(pid)
+        decision = decisions.get(pid)
         if decision is None:
-            # Judge silently dropped this phenotype id from its output --
-            # treat as a soft pass-through rather than a covert reject so
-            # we do not punish the user for the model omitting an item.
-            kept.append(p)
+            kept.append((p, None))
             continue
         if decision.relevant:
-            kept.append(p)
+            kept.append((p, decision))
         else:
             logger.info("HDR UK judge: dropping %s (%s) -- %s", pid, p.get("name", "?"), decision.reason)
     return kept
+
+
+def judge_phenotype_relevance(query: str, phenotypes: list[dict]) -> list[dict]:
+    """Thin filter wrapper: drops phenotypes the judge marks irrelevant.
+
+    Falls through to the input unchanged when the judge is disabled (the
+    return is the caller's exact list reference) or when the LLM call
+    fails / no API key (the return is a fresh list with the same
+    contents). T34's discovery endpoint uses :func:`rank_phenotypes_with_rationale`
+    instead so it can surface the judge's per-row reason; this wrapper
+    keeps the 6 ``test_phenotype_discovery.py`` tests green and is
+    available for future callers that just want the filtered list.
+    """
+    if not HDR_UK_USE_JUDGE:
+        return phenotypes
+    return [p for p, _ in rank_phenotypes_with_rationale(query, phenotypes)]

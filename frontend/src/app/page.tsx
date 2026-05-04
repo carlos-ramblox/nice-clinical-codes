@@ -2,8 +2,8 @@
 
 import { useState, useEffect, useMemo } from "react";
 import { useRouter } from "next/navigation";
-import { searchCodes, exportCodes, createCodelist } from "@/lib/api";
-import type { CodeResult, SearchResponse } from "@/lib/api";
+import { searchCodes, exportCodes, createCodelist, discoverPhenotypes } from "@/lib/api";
+import type { CodeResult, SearchResponse, PhenotypeDiscoveryResult } from "@/lib/api";
 import { useUser } from "@/lib/useUser";
 import { getRecent, pushRecent, formatAgo, type RecentSearch } from "@/lib/recentSearches";
 import { ConfirmModal } from "./ConfirmModal";
@@ -96,6 +96,120 @@ function LoadingProgress() {
   );
 }
 
+function PhenotypeDiscoverySidebar({ rows }: { rows: PhenotypeDiscoveryResult[] }) {
+  // Read-mode panel: surfaces 3-5 candidate HDR UK phenotypes whose
+  // clinical scope fits the user's query. Each row links out to the
+  // authoritative HDR UK detail page; the rationale is shown as a
+  // visible caption (not a tooltip) so the persona can decide whether
+  // a row deserves the click-through. No "use this phenotype" action,
+  // no auto-import — that's deferred to T34b / T35.
+  //
+  // Empty state: when discovery has fetched but found nothing, render
+  // a one-line hint that tells the user the dual-path explicitly
+  // ("none matched, click Search to generate fresh"). This is the
+  // alternative we surface so a less-expert user doesn't read the
+  // silent disappearance of the sidebar as a failure.
+  if (rows.length === 0) {
+    return (
+      <aside
+        aria-label="No HDR UK phenotypes matched"
+        className="max-w-5xl mx-auto mb-6 border border-gray-200 bg-gray-50 px-4 py-3 text-xs text-gray-600"
+      >
+        No published HDR UK phenotypes match this query &mdash; click <span className="font-medium">Search</span> to
+        generate a fresh codelist from the multi-source pipeline.
+      </aside>
+    );
+  }
+  return (
+    <aside
+      aria-label="Related HDR UK phenotypes"
+      className="max-w-5xl mx-auto mb-6 border border-gray-200 bg-white"
+    >
+      <div className="px-4 py-2.5 border-b border-gray-200">
+        <h3 className="font-[family-name:var(--font-lora)] text-sm font-semibold text-[#00436C]">
+          Related HDR UK phenotypes
+        </h3>
+        <p className="text-[11px] text-gray-500 mt-0.5">
+          Found {rows.length} published {rows.length === 1 ? "codelist" : "codelists"} that may answer your question.
+          {" "}None fit? Click <span className="font-medium">Search</span> to generate a fresh codelist instead.
+        </p>
+      </div>
+      <ul className="divide-y divide-gray-100">
+        {rows.map((row) => (
+          <li key={row.phenotype_id} className="px-4 py-3">
+            <div className="flex items-start justify-between gap-3">
+              <a
+                href={row.hdruk_url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[#005EA5] hover:underline font-medium text-sm"
+              >
+                {row.name}{" "}
+                <span className="text-gray-400 font-normal">({row.phenotype_id})</span>
+                <svg
+                  className="inline-block ml-1 -mt-0.5"
+                  width="11"
+                  height="11"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  aria-hidden="true"
+                >
+                  <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6" />
+                  <path d="M15 3h6v6" />
+                  <path d="M10 14L21 3" />
+                </svg>
+              </a>
+              <span
+                className={`shrink-0 text-[10px] px-1.5 py-0.5 rounded uppercase tracking-wide ${
+                  row.relevance_verdict === "relevant"
+                    ? "bg-green-50 text-green-700 border border-green-200"
+                    : "bg-amber-50 text-amber-700 border border-amber-200"
+                }`}
+              >
+                {row.relevance_verdict}
+              </span>
+            </div>
+            {(row.type.length > 0 || row.coding_systems.length > 0 || row.data_sources.length > 0) && (
+              <div className="mt-1 flex flex-wrap gap-1 text-[11px]">
+                {row.type.map((t) => (
+                  <span key={`t-${t}`} className="px-1.5 py-0.5 bg-gray-100 text-gray-700 rounded">
+                    {t}
+                  </span>
+                ))}
+                {row.coding_systems.slice(0, 4).map((c) => (
+                  <span key={`c-${c}`} className="px-1.5 py-0.5 bg-blue-50 text-blue-700 rounded">
+                    {c}
+                  </span>
+                ))}
+                {row.data_sources.slice(0, 3).map((d) => (
+                  <span key={`d-${d}`} className="px-1.5 py-0.5 bg-gray-50 text-gray-600 rounded">
+                    {d}
+                  </span>
+                ))}
+              </div>
+            )}
+            <p className="mt-1.5 text-xs text-gray-600 italic">
+              {row.relevance_rationale}
+            </p>
+            {row.first_publication && (
+              <p className="mt-1 text-[11px] text-gray-400 line-clamp-2">
+                {row.first_publication}
+              </p>
+            )}
+          </li>
+        ))}
+      </ul>
+      <div className="px-4 py-2 border-t border-gray-100 text-[11px] text-gray-400">
+        These phenotypes are surfaced for citation and adjudication, not auto-merged into
+        your generated codelist.
+      </div>
+    </aside>
+  );
+}
+
+
 function DecisionFilter({
   filter,
   onChange,
@@ -151,6 +265,44 @@ export default function Home() {
 
   const [recent, setRecent] = useState<RecentSearch[]>([]);
   useEffect(() => { setRecent(getRecent()); }, []);
+
+  // HDR UK phenotype discovery (T34): surface candidate published
+  // phenotypes from the HDR UK Phenotype Library as the user types,
+  // before they commit to running the pipeline. Debounced 300 ms;
+  // gate at >=3 chars so we don't spam Haiku on partial words.
+  //
+  // Tri-state: null = not yet fetched (or query too short, or the
+  // fetch errored — we don't want to mis-attribute "no matches" on a
+  // transient HDR UK 500). [] = fetched and the judge admitted
+  // nothing — render the explicit "none matched, click Search"
+  // hint. Non-empty array = fetched with results — render the full
+  // sidebar. The render condition further hides the sidebar during
+  // a pipeline run and once results are showing.
+  const [discoveryRows, setDiscoveryRows] = useState<PhenotypeDiscoveryResult[] | null>(null);
+  useEffect(() => {
+    const trimmed = query.trim();
+    if (trimmed.length < 3) {
+      setDiscoveryRows(null);
+      return;
+    }
+    const ctrl = new AbortController();
+    const timer = setTimeout(async () => {
+      try {
+        const data = await discoverPhenotypes(trimmed, 5, ctrl.signal);
+        setDiscoveryRows(data);
+      } catch {
+        // Transient HDR UK / Haiku failure: hide the sidebar entirely
+        // (set to null, not []) so the user does not read the empty
+        // hint as authoritative. The main Search affordance is
+        // unaffected.
+        setDiscoveryRows(null);
+      }
+    }, 300);
+    return () => {
+      clearTimeout(timer);
+      ctrl.abort();
+    };
+  }, [query]);
 
   const SAMPLE_QUERIES = [
     "Type 2 diabetes",
@@ -317,11 +469,24 @@ export default function Home() {
               disabled={loading || !query.trim()}
               className="px-4 sm:px-8 bg-[#005EA5] text-white font-medium hover:bg-[#00436C] disabled:opacity-50 transition-colors whitespace-nowrap"
             >
-              {loading ? "Searching..." : "Search"}
+              {/* When discovery surfaced published phenotypes, the button
+                  morphs to "Generate fresh codelist" so the user reads
+                  it as the alternative-path-action rather than the only
+                  thing to click. Otherwise stays as plain "Search". */}
+              {loading
+                ? "Searching..."
+                : (discoveryRows && discoveryRows.length > 0)
+                  ? "Generate fresh codelist"
+                  : "Search"}
             </button>
           </div>
         </form>
       </div>
+
+      {/* HDR UK phenotype discovery sidebar (T34) */}
+      {!loading && !results && discoveryRows !== null && (
+        <PhenotypeDiscoverySidebar rows={discoveryRows} />
+      )}
 
       {/* Loading */}
       {loading && <LoadingProgress />}

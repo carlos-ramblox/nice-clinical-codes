@@ -39,6 +39,40 @@ export async function searchCodes(
   return res.json();
 }
 
+// --- HDR UK phenotype discovery (T34) --------------------------------------
+
+export interface PhenotypeDiscoveryResult {
+  phenotype_id: string;
+  name: string;
+  type: string[];
+  coding_systems: string[];
+  data_sources: string[];
+  first_publication: string;
+  hdruk_url: string;
+  relevance_rationale: string;
+  relevance_verdict: "relevant" | "uncertain";
+}
+
+export async function discoverPhenotypes(
+  query: string,
+  topK: number = 5,
+  signal?: AbortSignal,
+): Promise<PhenotypeDiscoveryResult[]> {
+  const params = new URLSearchParams({ query, top_k: String(topK) });
+  const res = await fetch(`${API_BASE}/phenotypes/discover?${params.toString()}`, {
+    ...AUTH_FETCH,
+    signal,
+  });
+  if (!res.ok) {
+    // Discovery is supplementary; surface the error to the caller but
+    // the calling component should hide the sidebar rather than
+    // showing a red banner — this is "browse-mode" content, not the
+    // main search result the user clicked for.
+    throw new Error(`Discover failed: ${res.status}`);
+  }
+  return res.json();
+}
+
 export async function exportCodes(
   searchId: string,
   outputFormat: "csv" | "xlsx" = "csv"

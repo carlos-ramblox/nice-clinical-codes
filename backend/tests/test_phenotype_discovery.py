@@ -142,6 +142,55 @@ def test_judge_prompt_includes_phenotype_type_and_metadata():
     assert "first_publication: BNF prescription codes" in block
 
 
+def test_rank_returns_decision_with_reason_for_kept_phenotypes():
+    # Verbose surface: the discovery sidebar consumes (phenotype, decision)
+    # tuples to surface the judge's "matches because..." reason as the
+    # row caption. Pin the contract: kept phenotypes carry a non-None
+    # _PhenotypeRelevance; dropped phenotypes are not in the output.
+    phenos = [_phenotype("PH12", "Asthma"), _phenotype("PH99", "Other")]
+    decisions = {
+        "PH12": {"relevant": True,  "reason": "primary scope is asthma in adults"},
+        "PH99": {"relevant": False, "reason": "different condition"},
+    }
+    fake = _FakeStructuredLLM(decisions)
+    with _patch_judge_llm(fake), \
+         patch.object(pd, "HDR_UK_USE_JUDGE", True), \
+         patch.object(pd, "ANTHROPIC_API_KEY", "dummy"):
+        ranked = pd.rank_phenotypes_with_rationale("asthma", phenos)
+    assert [p["phenotype_id"] for p, _ in ranked] == ["PH12"]
+    assert ranked[0][1] is not None
+    assert ranked[0][1].reason == "primary scope is asthma in adults"
+
+
+def test_rank_silent_omission_passes_through_with_none_decision():
+    # If the LLM omits a phenotype id from its structured output (e.g.
+    # token-budget truncation), the verbose surface admits the row with
+    # decision=None rather than covertly rejecting it. The endpoint then
+    # surfaces this as a "judge skipped this row" caption.
+    phenos = [_phenotype("PH12", "Asthma"), _phenotype("PH99", "Other")]
+    decisions = {"PH12": {"relevant": True, "reason": "matches"}}  # PH99 silently omitted
+    fake = _FakeStructuredLLM(decisions)
+    with _patch_judge_llm(fake), \
+         patch.object(pd, "HDR_UK_USE_JUDGE", True), \
+         patch.object(pd, "ANTHROPIC_API_KEY", "dummy"):
+        ranked = pd.rank_phenotypes_with_rationale("asthma", phenos)
+    by_id = {p["phenotype_id"]: dec for p, dec in ranked}
+    assert sorted(by_id) == ["PH12", "PH99"]
+    assert by_id["PH12"] is not None
+    assert by_id["PH99"] is None  # silent-omission soft pass
+
+
+def test_rank_judge_disabled_returns_pairs_with_none_decisions():
+    # When the judge is disabled the verbose surface admits everything
+    # with decision=None (the simple wrapper preserves identity; verbose
+    # cannot, since it constructs tuples).
+    phenos = [_phenotype("PH12", "Asthma"), _phenotype("PH99", "Other")]
+    with patch.object(pd, "HDR_UK_USE_JUDGE", False):
+        ranked = pd.rank_phenotypes_with_rationale("asthma", phenos)
+    assert [p["phenotype_id"] for p, _ in ranked] == ["PH12", "PH99"]
+    assert all(dec is None for _, dec in ranked)
+
+
 def test_judge_drops_drug_phenotype_when_query_is_a_condition():
     # End-to-end check that when the LLM (mocked here) marks a Drug
     # phenotype as irrelevant for a condition query, it gets dropped while
