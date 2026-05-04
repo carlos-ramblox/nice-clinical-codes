@@ -14,6 +14,8 @@ Bennett's example: "ocular hypertension" being mistakenly included in a hyperten
 
 **Residual risk and gaps.** The LLM rationale is a heuristic, not a proof; the pipeline does not formally guarantee that similar-sounding unrelated codes are excluded. There is no curated adversarial test set specifically targeting this failure mode — the [EVALUATION.md](./EVALUATION.md) benchmark compares against published OpenCodelists, which does not isolate this class of error. The reviewer must still verify exclusions manually.
 
+**Closest current proxy: offline RAGAS-style faithfulness check (T11).** The set-based F1 metric in [EVALUATION.md](./EVALUATION.md) does not detect a wrong-but-similar-sounding inclusion when the wrong code happens to share a term substring with the queried condition. As the closest available proxy for this failure mode, an offline LLM-as-judge groundedness check is run across all 1,329 (codelist × scored code) pairs in the v2 benchmark; see [EVALUATION.md → §Faithfulness](./EVALUATION.md#faithfulness). Mean groundedness 83.5 %; 2.2 % of rationales are flagged `unfounded` by the judge. The check is offline-only (not on the live `/api/search` path), is single-judge (Haiku 4.5; carries the self-preference caveat documented in §Faithfulness → *Known biases*), and is not a substitute for a curated adversarial test set or for clinician review. It is reported as the most direct quantitative signal currently available against this failure mode.
+
 ## Failure mode 2: Omitting synonyms
 
 Bennett's example: a sore-throat codelist failing to include codes for pharyngitis.

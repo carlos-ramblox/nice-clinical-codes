@@ -1023,10 +1023,11 @@ Bennett tooling.
 ICD-10 retrieval is no longer single-sourced through OMOPHub —
 NHS TRUD's ICD-10 5th Edition has been ingested into ChromaDB.
 
-**Faithfulness / groundedness metrics**
-The current evaluation is set-based (P/R/F1). RAGAS-style
-faithfulness and context-relevance metrics, applied offline to
-the benchmark, would extend the evaluation beyond set membership.
+**Faithfulness / groundedness metrics** *(implemented; see §Faithfulness)*
+The headline P/R/F1 numbers are set-based and silent on whether the
+per-code rationale is grounded in the term and the queried condition.
+A RAGAS-style offline groundedness check now runs across all 1,329
+(codelist × scored code) pairs in the v2 benchmark.
 
 ### §5.8 Structural improvement (post-v2): ICD-10 corpus ingestion
 
@@ -1058,6 +1059,158 @@ Verification artefacts:
   (cold-start, OMOPHub on) — F1 1.0000
 - `data/test_sets/benchmark_2026_04/icd10_corpus_only_isolation.json`
   (OMOPHub disabled, ChromaDB-only) — F1 0.7368 / 1.0000
+
+## Faithfulness
+
+The headline P/R/F1 in this document evaluates *answer correctness* —
+whether the produced set of codes matches the OpenCodelists reference.
+It is silent on whether the per-code rationale the pipeline emits is
+*grounded* in the code term and the queried condition, or hallucinated.
+Bennett 2023 failure mode 1 (similar-sounding unrelated codes) and
+mode 3 (study-intent ambiguity) both surface as ungrounded rationales
+before they surface as F1 drops, so a faithfulness check is the
+closest dimension we currently report against those modes; see the
+cross-reference in [LIMITATIONS.md](./LIMITATIONS.md) §"Failure mode 1".
+
+### Methodology
+
+Following the RAGAS faithfulness framing
+([Es et al. 2024](https://docs.ragas.io/en/latest/concepts/metrics/available_metrics/faithfulness/))
+and the TruLens RAG triad
+([groundedness](https://www.trulens.org/getting_started/core_concepts/rag_triad/)),
+we run an offline LLM-as-judge over every scored code in the 15-codelist
+benchmark. For each (query, term, rationale) tuple, Claude Haiku 4.5
+returns one of `grounded` / `partial` / `unfounded` plus a one-sentence
+reason. The check is hand-rolled rather than via the RAGAS library,
+because our rationales are one-sentence verdicts on a single (term, query)
+pair and the RAGAS claim-decomposition step is structurally redundant
+for that input shape.
+
+The judge prompt, verbatim:
+
+```
+Given:
+ - Query Q: {query}
+ - Code term T: {term}
+ - Rationale R: {rationale}
+Does R make a claim that is grounded in T and the queried condition Q?
+Answer one of: 'grounded', 'partial', 'unfounded'.
+One-sentence reason.
+```
+
+Implementation: `backend/app/evaluation/faithfulness.py`. Persisted
+verdicts: `data/test_sets/benchmark_2026_04/_faithfulness.json`. The
+judge is invoked at `temperature=0` with structured output (Pydantic
+enum). It is **not** wired into the live `/api/search` path; adding
+it there would double per-request LLM cost for no user-facing gain.
+The check is run once per benchmark cut and the verdicts are committed
+alongside the F1 numbers. Total wall-clock across 1,329 pairs at
+concurrency 10: **~3 minutes**; estimated cost on Haiku 4.5: **<$2**.
+
+### Headline result
+
+Across all 1,329 (codelist × scored code) pairs in the post-fix v2
+benchmark:
+
+| Verdict | n | Share |
+|---|---:|---:|
+| Grounded | 1,109 | **83.5 %** |
+| Partial | 191 | 14.4 % |
+| Unfounded | 29 | 2.2 % |
+
+The pipeline emits a fully grounded rationale on roughly five-in-six
+codes; a strict-unfounded ("the rationale references the wrong concept
+or contradicts the term") verdict is rare (2.2 %). The 14.4 % `partial`
+share is methodologically the most interesting bucket: these are
+rationales the judge accepts as on-topic but flags as missing or
+overstating part of the claim.
+
+### Per-codelist breakdown
+
+Sorted by groundedness rate, descending:
+
+| Codelist | n | Grounded | Partial | Unfounded | Groundedness |
+|---|---:|---:|---:|---:|---:|
+| atrial_fib_icd10 | 7 | 7 | 0 | 0 | 1.000 |
+| asthma_pincer | 100 | 97 | 3 | 0 | 0.970 |
+| hepatitis_c_chronic | 100 | 95 | 4 | 1 | 0.950 |
+| lung_cancer | 100 | 95 | 4 | 1 | 0.950 |
+| stroke | 100 | 94 | 6 | 0 | 0.940 |
+| diabetes_mellitus | 100 | 92 | 7 | 1 | 0.920 |
+| dementia | 100 | 87 | 11 | 2 | 0.870 |
+| psychosis_schiz_bipolar | 100 | 87 | 13 | 0 | 0.870 |
+| epilepsy | 100 | 86 | 13 | 1 | 0.860 |
+| depression | 100 | 84 | 15 | 1 | 0.840 |
+| heart_failure | 100 | 82 | 18 | 0 | 0.820 |
+| mi_icd10 | 22 | 18 | 1 | 3 | 0.818 |
+| copd | 100 | 74 | 26 | 0 | 0.740 |
+| hypertension | 100 | 66 | 34 | 0 | 0.660 |
+| hiv | 100 | 45 | 36 | 19 | **0.450** |
+
+The HIV outlier (0.45 grounded; 19 unfounded) and the hypertension
+result (0.66 grounded; 34 partial) align with the manually-identified
+failure modes in §4 cases 4 and 7 of this document — the
+"AIDS-defining illness vs. instance of HIV infection" carve-out and
+the "secondary hypertension" boundary respectively. The judge thus
+converges, independently, on the same two cases the F1 view already
+flagged as the residual weak points of the post-fix prompt; this is
+useful corroboration but it is also a reminder that LLM judges tend
+to reproduce the same blind spots their peers do (see *Known biases*
+below). copd at 0.74 is a new finding the F1 view did not surface
+on its own.
+
+### Known biases of the LLM-as-judge protocol
+
+LLM-as-judge has well-documented systematic biases
+([Justice or Prejudice? — Chen et al., 2024](https://arxiv.org/abs/2410.02736);
+[Self-Preference Bias — Wataoka et al., 2024](https://arxiv.org/abs/2410.21819);
+[A Survey on LLM-as-a-Judge — Gu et al., 2024](https://arxiv.org/abs/2411.15594)).
+The ones relevant to this protocol, and how each is or is not
+mitigated:
+
+- **Self-preference bias.** The pipeline's scoring step and the
+  judge are the same family (Haiku 4.5). The judge may rate
+  Haiku-produced rationales more leniently than rationales from a
+  different model. We do not currently cross-validate with a non-
+  Anthropic judge; the absolute groundedness numbers should be read
+  with this caveat.
+- **Verbosity bias.** Pipeline rationales are constrained to one
+  sentence by the scoring prompt, so the judge cannot reward
+  longer rationales over shorter ones; the input distribution is
+  effectively flat on length. Mitigated by construction.
+- **Position bias.** This protocol is single-response (verdict on
+  one rationale at a time), not pairwise comparison, so position
+  bias does not apply.
+- **Sentiment / sycophancy bias.** The fixed three-way enum output
+  and the explicit instruction to choose one of `grounded` /
+  `partial` / `unfounded` constrain the judge against the typical
+  "answer is generally good" sycophancy failure mode. The structured-
+  output schema also rejects free-text non-answers.
+- **Domain coverage.** Haiku 4.5 has not been evaluated for
+  clinical-coding-specific judgment; some `unfounded` verdicts
+  (e.g. *"Kaposi sarcoma not associated with AIDS"* in the HIV
+  list) reflect a debatable clinical-judgment call rather than a
+  mechanical hallucination. A clinician panel review of a stratified
+  sample of judge verdicts would be the appropriate next step.
+
+These caveats apply to the absolute numbers; the relative ranking
+across the 15 codelists, and the convergence with the manually-
+identified §4 failure cases, are more robust to single-judge bias.
+
+### What this section does NOT claim
+
+- The 83.5 % groundedness rate is not a calibrated correctness
+  number. It is a self-consistency rate: how often Haiku 4.5
+  judges a Haiku 4.5 rationale to be grounded.
+- A rationale being `grounded` does not imply the include/exclude
+  decision is *clinically* correct, only that the rationale
+  semantically tracks the term and the query. A grounded rationale
+  for a wrong inclusion is still a wrong inclusion; the F1 view
+  remains the primary correctness signal.
+- The check is offline. The live `/api/search` path does not
+  evaluate faithfulness; if a clinician sees the rationale during
+  review, that is the only faithfulness check applied at request
+  time.
 
 ## Limitations
 
@@ -1141,6 +1294,9 @@ benchmark are committed to the repository:
   `_per_list_v2.csv`
 - Aggregator script: `backend/app/evaluation/benchmark_aggregate.py`
 - K=5 variance runner script: `backend/app/evaluation/run_variance_k5.py`
+- Faithfulness verdicts (T11):
+  `data/test_sets/benchmark_2026_04/_faithfulness.json`
+- Faithfulness runner: `backend/app/evaluation/faithfulness.py`
 
 To reproduce against the same OpenCodelists versions:
 
@@ -1151,6 +1307,10 @@ python -m app.evaluation.benchmark_aggregate
 # Re-run the K=5 variance protocol (in-process, ~30 min, < $1 on
 # Haiku 4.5). Resumable: existing per-(codelist, k) files are skipped.
 python -m app.evaluation.run_variance_k5 --runs 5 --cap-usd 20
+
+# Re-run the offline faithfulness judge (~3 min, < $2 on Haiku 4.5).
+# Resumable: previously-judged (codelist, code) pairs are skipped.
+python -m app.evaluation.faithfulness --concurrency 10
 
 # To re-run the live API end-to-end (requires network access):
 #   POST each data/test_sets/benchmark_2026_04/<short>.json to
