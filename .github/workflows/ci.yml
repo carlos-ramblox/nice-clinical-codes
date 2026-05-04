@@ -23,10 +23,13 @@ jobs:
       matrix:
         python-version: ["3.12"]
     env:
-      # Tests stub the Anthropic client; a placeholder satisfies the
-      # ANTHROPIC_API_KEY presence checks in app.config without making
-      # any real API calls.
+      # Tests patch the underlying clients; placeholders satisfy the
+      # presence checks in app.config and at the top of each retriever
+      # module without making any real API calls.
       ANTHROPIC_API_KEY: dummy-test-key
+      OMOPHUB_API_KEY: dummy-test-key
+      UMLS_API_KEY: dummy-test-key
+      SESSION_SECRET: dummy-test-secret
 
     steps:
       - name: Checkout
