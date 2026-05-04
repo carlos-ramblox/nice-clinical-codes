@@ -307,6 +307,73 @@ realistic dependence structure. The magnitude of the post-fix lift
 McNemar with this caveat is more defensible than the overlapping-CI
 substitute it replaces.
 
+#### Run-to-run variance (K=5 protocol)
+
+The pipeline calls Claude Haiku 4.5 at temperature = 0 for code
+scoring. Anthropic provides no `seed` parameter and explicitly notes
+that temperature = 0 is not strictly deterministic — floating-point
+non-associativity in batched GPU inference produces ~1–3 % decision
+flips per call on identical prompts. To characterise the resulting
+F1 noise, each of the 15 codelists is run K = 5 times via
+`backend/app/evaluation/run_variance_k5.py`, persisting each run to
+`data/test_sets/benchmark_2026_04/<short>.result_runK_<k>.json`. The
+aggregator (`benchmark_aggregate.py`) reports per-codelist mean ±
+std of strict F1 and an aggregate decision-flip rate over every
+`(codelist, code)` pair seen in the K runs.
+
+Measured headlines:
+
+- Mean per-codelist F1 std: **0.012**
+- Maximum per-codelist F1 std: **0.025** (`hypertension`)
+- Aggregate decision-flip rate: **6.9 %** (97 of 1,411 pairs flipped
+  on at least two of K = 5 runs)
+
+The std numbers fall inside the ±0.01–0.02 band predicted from the
+1–3 %-per-call literature; the slightly higher aggregate flip rate
+reflects cumulative compounding across 5 runs and includes a small
+amount of retrieve-side variance (occasional OMOPHub 429 throttling
+shrinks the candidate set on a given run, and UMLS suggestions vary
+across calls).
+
+K=5 results were produced via in-process invocation of `run_pipeline`
+against `develop` on 2026-05-03. The single-run `Post-F1` and
+`Cold-F1` columns were produced against deployed image `ad7ccad-dirty`
+via the live `/api/evaluate` endpoint on 2026-04-27. The behavioural
+deltas between those code states are async parallelism in per-batch
+scoring (T04, output bit-equivalent to the sequential for-loop modulo
+this same temperature-0 noise) and passive observability (T05);
+neither affects scored decisions. Pure run-to-run variance therefore
+predicts a ≤ 0.02 drift between the single-run `Post-F1` value and
+the K=5 mean for any given codelist.
+
+Several codelists exceed that prediction by 4–14 σ: `copd` drifts
+from 0.76 → 0.54 (~14 σ), `hepatitis_c_chronic` from 0.60 → 0.79
+(~10 σ), `heart_failure` from 0.70 → 0.78 (~4 σ), and
+`diabetes_mellitus` from 0.81 → 0.73 (~4 σ). These gaps are not
+explainable as temperature-0 noise. The most plausible attribution is
+**environmental drift in the upstream knowledge sources between the
+two run dates** — UMLS REST suggestions evolve (the production
+service is not pinned), OMOPHub returns vary as their index is
+re-ingested, and OpenCodelists cluster_descriptions can change as
+NHSD republishes. A second, secondary contribution is **local
+ChromaDB / SQLite snapshot drift on `develop` relative to the
+deployed image's baked-in data**, since the K=5 sweep ran against
+`develop`'s local data dir while the single-run baseline ran against
+the `ad7ccad-dirty` image's pinned content. The mixed direction of
+drift (two codelists up, two down) is more consistent with the
+live-API attribution than with a pure-data-snapshot bug, which
+would skew more directionally; the local-data alternative is named
+here for completeness.
+
+Both columns are point measurements answering different questions:
+the single-run `Post-F1` is n = 1 against pinned-image data on
+2026-04-27 and remains the anchor for the §4 case discussion
+(which references specific TP/FP/FN code lists from that snapshot);
+the K=5 column is n = 5 against current `develop` code + data on
+2026-05-03 and is the better noise-characterised number for the
+current state of the system. Future per-codelist comparisons should
+use the K=5 column.
+
 ### Sensitivity analysis: default vs. cold-start
 
 clinicalcodes.uk uses OpenCodelists as one of its four retrievers
@@ -391,23 +458,31 @@ cases pre-fix; those are now resolved, so the gap has narrowed.
 
 ### Per-codelist (strict view, all three views side-by-side)
 
-| Codelist | Vocab | N(ref) | Pre-F1 | Post-F1 | Cold-F1 | Δ Pre→Post |
-|---|---|---|---|---|---|---|
-| heart_failure | SNOMED CT | 42 | 0.73 | 0.70 | 0.70 | −0.03 |
-| diabetes_mellitus | SNOMED CT | 86 | 0.78 | 0.81 | 0.79 | +0.03 |
-| hypertension | SNOMED CT | 117 | 0.53 | 0.53 | 0.43 | +0.00 |
-| mi_icd10 | ICD-10 | 12 | 0.00 | **0.74** | 0.74 | **+0.74** |
-| atrial_fib_icd10 | ICD-10 | 7 | 0.21 | **1.00** | 1.00 | **+0.79** |
-| stroke | SNOMED CT | 266 | 0.52 | 0.52 | 0.52 | +0.00 |
-| asthma_pincer | SNOMED CT | 124 | 0.86 | **0.67** | 0.72 | **−0.19** |
-| copd | SNOMED CT | 56 | 0.77 | 0.76 | 0.76 | −0.01 |
-| depression | SNOMED CT | 106 | 0.72 | 0.69 | 0.70 | −0.02 |
-| psychosis_schiz_bipolar | SNOMED CT | 198 | 0.65 | 0.67 | 0.61 | +0.02 |
-| dementia | SNOMED CT | 325 | 0.33 | 0.28 | 0.31 | −0.05 |
-| epilepsy | SNOMED CT | 476 | 0.20 | 0.20 | 0.20 | +0.00 |
-| lung_cancer | SNOMED CT | 363 | 0.32 | 0.32 | 0.24 | +0.00 |
-| hepatitis_c_chronic | SNOMED CT | 20 | 0.58 | 0.60 | **0.71** | +0.02 |
-| hiv | SNOMED CT | 243 | 0.18 | **0.02** | 0.02 | **−0.16** |
+The `Post-F1 (K=5)` column reports the K=5 mean ± std measured under
+the protocol described in §Statistical methodology / *Run-to-run
+variance*. The single-run `Post-F1` and `Cold-F1` columns are the
+2026-04-27 numbers and remain the anchor for §4 Failure case analysis;
+where the K=5 mean drifts noticeably from the single-run value the gap
+is **not** explained by the measured std (see the K=5 paragraph for
+attribution).
+
+| Codelist | Vocab | N(ref) | Pre-F1 | Post-F1 | Post-F1 (K=5) | Cold-F1 | Δ Pre→Post |
+|---|---|---|---|---|---|---|---|
+| heart_failure | SNOMED CT | 42 | 0.73 | 0.70 | 0.78 ± 0.02 | 0.70 | −0.03 |
+| diabetes_mellitus | SNOMED CT | 86 | 0.78 | 0.81 | 0.73 ± 0.02 | 0.79 | +0.03 |
+| hypertension | SNOMED CT | 117 | 0.53 | 0.53 | 0.46 ± 0.03 | 0.43 | +0.00 |
+| mi_icd10 | ICD-10 | 12 | 0.00 | **0.74** | 0.74 ± 0.00 | 0.74 | **+0.74** |
+| atrial_fib_icd10 | ICD-10 | 7 | 0.21 | **1.00** | 1.00 ± 0.00 | 1.00 | **+0.79** |
+| stroke | SNOMED CT | 266 | 0.52 | 0.52 | 0.48 ± 0.02 | 0.52 | +0.00 |
+| asthma_pincer | SNOMED CT | 124 | 0.86 | **0.67** | 0.62 ± 0.01 | 0.72 | **−0.19** |
+| copd | SNOMED CT | 56 | 0.77 | 0.76 | 0.54 ± 0.02 | 0.76 | −0.01 |
+| depression | SNOMED CT | 106 | 0.72 | 0.69 | 0.64 ± 0.00 | 0.70 | −0.02 |
+| psychosis_schiz_bipolar | SNOMED CT | 198 | 0.65 | 0.67 | 0.65 ± 0.02 | 0.61 | +0.02 |
+| dementia | SNOMED CT | 325 | 0.33 | 0.28 | 0.24 ± 0.01 | 0.31 | −0.05 |
+| epilepsy | SNOMED CT | 476 | 0.20 | 0.20 | 0.19 ± 0.00 | 0.20 | +0.00 |
+| lung_cancer | SNOMED CT | 363 | 0.32 | 0.32 | 0.24 ± 0.01 | 0.24 | +0.00 |
+| hepatitis_c_chronic | SNOMED CT | 20 | 0.58 | 0.60 | 0.79 ± 0.02 | **0.71** | +0.02 |
+| hiv | SNOMED CT | 243 | 0.18 | **0.02** | 0.02 ± 0.01 | 0.02 | **−0.16** |
 
 Bold rows are the largest movers. ICD-10 cases (mi, atrial_fib) are
 the post-fix headlines; the asthma and HIV regressions are the
@@ -948,12 +1023,6 @@ Bennett tooling.
 ICD-10 retrieval is no longer single-sourced through OMOPHub —
 NHS TRUD's ICD-10 5th Edition has been ingested into ChromaDB.
 
-**Run-to-run variance**
-The pipeline runs at temperature=0 but Anthropic provides no
-seed; production batched inference has measurable run-to-run
-variance. K=5 reruns per codelist would replace the single-run
-caveat with measured noise.
-
 **Faithfulness / groundedness metrics**
 The current evaluation is set-based (P/R/F1). RAGAS-style
 faithfulness and context-relevance metrics, applied offline to
@@ -1028,10 +1097,14 @@ Verification artefacts:
   next step before claiming any of the F1 numbers as a measure of
   *clinical correctness* rather than *reproduction of curated
   artefacts*.
-- **Single run, no temperature sweep**. The pipeline's LLM scoring
-  is non-deterministic at default temperature. Numbers in this
-  document are from a single run on 2026-04-27 (per view). Run-to-
-  run variance is unmeasured; a 5-run average would be more honest.
+- **No temperature sweep**. The pipeline's LLM scoring is
+  non-deterministic at temperature = 0 (no seed parameter, batched
+  GPU FP non-associativity); the K=5 protocol described in
+  §Statistical methodology / *Run-to-run variance* characterises this
+  noise (mean per-codelist F1 std 0.012, aggregate flip rate 6.9 %).
+  A wider temperature sweep — sampling at e.g. T ∈ {0.0, 0.3, 0.7}
+  to characterise sensitivity to the temperature setting itself —
+  remains future work.
 - **Static reference vocabulary**. Reference codelists were pulled
   on 2026-04-27. The OpenCodelists list versions used here can
   change as curators republish; the `version` slug pinned in the
@@ -1057,18 +1130,27 @@ benchmark are committed to the repository:
   `data/test_sets/benchmark_2026_04/<short>.result_postfix.json`
 - Raw API responses (post-fix cold-start):
   `data/test_sets/benchmark_2026_04/<short>.result_coldstart.json`
+- Raw responses for the K=5 variance protocol (run 2026-05-03 against
+  the `develop` SHA via `run_variance_k5.py`, in-process):
+  `data/test_sets/benchmark_2026_04/<short>.result_runK_<k>.json`
+  (k = 1..5)
 - Aggregate output (v1, pre-fix only):
   `_aggregate.json`, `_per_list.csv`
 - Aggregate output (v2, three views):
   `data/test_sets/benchmark_2026_04/_aggregate_v2.json`,
   `_per_list_v2.csv`
 - Aggregator script: `backend/app/evaluation/benchmark_aggregate.py`
+- K=5 variance runner script: `backend/app/evaluation/run_variance_k5.py`
 
 To reproduce against the same OpenCodelists versions:
 
 ```bash
 # Recompute aggregates from the persisted .result*.json files
 python -m app.evaluation.benchmark_aggregate
+
+# Re-run the K=5 variance protocol (in-process, ~30 min, < $1 on
+# Haiku 4.5). Resumable: existing per-(codelist, k) files are skipped.
+python -m app.evaluation.run_variance_k5 --runs 5 --cap-usd 20
 
 # To re-run the live API end-to-end (requires network access):
 #   POST each data/test_sets/benchmark_2026_04/<short>.json to

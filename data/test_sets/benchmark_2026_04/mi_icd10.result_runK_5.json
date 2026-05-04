@@ -1,0 +1,2302 @@
+{
+  "reference_count": 12,
+  "query": "Myocardial infarction (ICD10)",
+  "vocabulary": "ICD-10",
+  "stages": {
+    "retrieved_raw": {
+      "codelist_name": "retrieved_raw",
+      "n_ref_codes": 12,
+      "n_output_codes": 233,
+      "recall": 1.0,
+      "precision": 0.0515,
+      "f1": 0.098,
+      "tp_count": 12,
+      "fp_count": 221,
+      "fn_count": 0,
+      "tp_codes": [
+        {
+          "code": "I21",
+          "term": "Acute myocardial infarction"
+        },
+        {
+          "code": "I210",
+          "term": "Acute transmural myocardial infarction of anterior wall"
+        },
+        {
+          "code": "I211",
+          "term": "Acute transmural myocardial infarction of inferior wall"
+        },
+        {
+          "code": "I212",
+          "term": "Acute transmural myocardial infarction of other sites"
+        },
+        {
+          "code": "I213",
+          "term": "Acute transmural myocardial infarction of unspecified site"
+        },
+        {
+          "code": "I214",
+          "term": "Acute subendocardial myocardial infarction"
+        },
+        {
+          "code": "I219",
+          "term": "Acute myocardial infarction, unspecified"
+        },
+        {
+          "code": "I22",
+          "term": "Subsequent myocardial infarction"
+        },
+        {
+          "code": "I220",
+          "term": "Subsequent myocardial infarction of anterior wall"
+        },
+        {
+          "code": "I221",
+          "term": "Subsequent myocardial infarction of inferior wall"
+        },
+        {
+          "code": "I228",
+          "term": "Subsequent myocardial infarction of other sites"
+        },
+        {
+          "code": "I229",
+          "term": "Subsequent myocardial infarction of unspecified site"
+        }
+      ],
+      "fp_codes": [
+        {
+          "code": "10273003",
+          "term": "Acute infarction of papillary muscle"
+        },
+        {
+          "code": "103011000119106",
+          "term": "Coronary arteriosclerosis in patient with history of previous myocardial infarction (situation)"
+        },
+        {
+          "code": "1077002",
+          "term": "Septal infarction by electrocardiogram"
+        },
+        {
+          "code": "1089431000000107",
+          "term": "Postoperative nontransmural myocardial infarction (disorder)"
+        },
+        {
+          "code": "1089441000000103",
+          "term": "Postoperative transmural myocardial infarction (disorder)"
+        },
+        {
+          "code": "1089451000000100",
+          "term": "Acute nontransmural myocardial infarction (disorder)"
+        },
+        {
+          "code": "1089471000000109",
+          "term": "Acute transmural myocardial infarction (disorder)"
+        },
+        {
+          "code": "1142308000",
+          "term": "Mitral valve regurgitation due to acute myocardial infarction"
+        },
+        {
+          "code": "1163420005",
+          "term": "Pericardial effusion following myocardial infarction (disorder)"
+        },
+        {
+          "code": "1163440003",
+          "term": "Postoperative acute myocardial infarction (disorder)"
+        },
+        {
+          "code": "1204151009",
+          "term": "Acute inferior non-ST segment elevation myocardial infarction of right ventricle (disorder)"
+        },
+        {
+          "code": "1204152002",
+          "term": "Acute inferior non-ST segment elevation myocardial infarction (disorder)"
+        },
+        {
+          "code": "1204154001",
+          "term": "Acute anterior non-ST segment elevation myocardial infarction with right ventricular involvement (disorder)"
+        },
+        {
+          "code": "1204155000",
+          "term": "Acute anterior non-ST segment elevation myocardial infarction (disorder)"
+        },
+        {
+          "code": "1204222000",
+          "term": "Acute non-ST segment elevation myocardial infarction of right ventricle (disorder)"
+        },
+        {
+          "code": "1208867006",
+          "term": "Ventricular thrombus following acute myocardial infarction (disorder)"
+        },
+        {
+          "code": "1208872002",
+          "term": "Subsequent anterior non-ST segment elevation myocardial infarction (disorder)"
+        },
+        {
+          "code": "1208873007",
+          "term": "Subsequent inferior non-ST segment elevation myocardial infarction (disorder)"
+        },
+        {
+          "code": "12238111000119106",
+          "term": "Acute ST segment elevation myocardial infarction of inferolateral wall (disorder)"
+        },
+        {
+          "code": "12238151000119107",
+          "term": "Acute ST segment elevation myocardial infarction of inferoposterior wall"
+        },
+        {
+          "code": "12238151000119108",
+          "term": "Acute ST segment elevation myocardial infarction of inferoposterior wall (disorder)"
+        },
+        {
+          "code": "129574000",
+          "term": "Postoperative myocardial infarction (disorder)"
+        },
+        {
+          "code": "15712841000119100",
+          "term": "Acute ST segment elevation myocardial infarction of posterolateral wall (disorder)"
+        },
+        {
+          "code": "15712881000119104",
+          "term": "Acute ST segment elevation myocardial infarction of anterolateral wall (disorder)"
+        },
+        {
+          "code": "15712881000119105",
+          "term": "Acute ST segment elevation myocardial infarction of anterolateral wall"
+        },
+        {
+          "code": "15712921000119103",
+          "term": "Acute ST segment elevation myocardial infarction of lateral wall"
+        },
+        {
+          "code": "15712921000119104",
+          "term": "Acute ST segment elevation myocardial infarction of lateral wall (disorder)"
+        },
+        {
+          "code": "15712961000119108",
+          "term": "Acute ST segment elevation myocardial infarction of anteroseptal wall (disorder)"
+        },
+        {
+          "code": "15713001000119100",
+          "term": "Acute ST segment elevation myocardial infarction of atrium (disorder)"
+        },
+        {
+          "code": "15713041000119103",
+          "term": "Acute ST segment elevation myocardial infarction of posterior wall"
+        },
+        {
+          "code": "15713041000119104",
+          "term": "Acute ST segment elevation myocardial infarction of posterior wall (disorder)"
+        },
+        {
+          "code": "15713081000119108",
+          "term": "Acute ST segment elevation myocardial infarction due to left coronary artery occlusion (disorder)"
+        },
+        {
+          "code": "15713121000119104",
+          "term": "Acute ST segment elevation myocardial infarction due to right coronary artery occlusion (disorder)"
+        },
+        {
+          "code": "15713121000119105",
+          "term": "Acute ST segment elevation myocardial infarction due to right coronary artery occlusion"
+        },
+        {
+          "code": "15713161000119100",
+          "term": "Acute ST segment elevation myocardial infarction of septum (disorder)"
+        },
+        {
+          "code": "15713201000119104",
+          "term": "Acute ST segment elevation myocardial infarction of posterobasal wall (disorder)"
+        },
+        {
+          "code": "15713201000119105",
+          "term": "Acute ST segment elevation myocardial infarction of posterobasal wall"
+        },
+        {
+          "code": "15960981000119104",
+          "term": "Mural thrombus of left ventricle following acute myocardial infarction (disorder)"
+        },
+        {
+          "code": "15960981000119105",
+          "term": "Mural thrombus of left ventricle following acute myocardial infarction"
+        },
+        {
+          "code": "15990001",
+          "term": "Acute myocardial infarction of posterolateral wall (disorder)"
+        },
+        {
+          "code": "16415081000119104",
+          "term": "Supraventricular tachycardia following acute myocardial infarction (disorder)"
+        },
+        {
+          "code": "16528621000119102",
+          "term": "Rupture of interventricular septum following acute myocardial infarction"
+        },
+        {
+          "code": "16837681000119104",
+          "term": "Myocardial infarction due to demand ischemia (disorder)"
+        },
+        {
+          "code": "17531000119105",
+          "term": "Acute myocardial infarction due to left coronary artery occlusion (disorder)"
+        },
+        {
+          "code": "1755008",
+          "term": "Old myocardial infarction (disorder)"
+        },
+        {
+          "code": "194802003",
+          "term": "True posterior myocardial infarction (disorder)"
+        },
+        {
+          "code": "194809007",
+          "term": "Acute atrial infarction"
+        },
+        {
+          "code": "194821006",
+          "term": "Coronary thrombosis not resulting in myocardial infarction (disorder)"
+        },
+        {
+          "code": "194856005",
+          "term": "Subsequent myocardial infarction (disorder)"
+        },
+        {
+          "code": "194857001",
+          "term": "Subsequent myocardial infarction of anterior wall (disorder)"
+        },
+        {
+          "code": "194858006",
+          "term": "Subsequent myocardial infarction of inferior wall (disorder)"
+        },
+        {
+          "code": "194862000",
+          "term": "Hemopericardium due to and following acute myocardial infarction (disorder)"
+        },
+        {
+          "code": "194863005",
+          "term": "Atrial septal defect due to and following acute myocardial infarction (disorder)"
+        },
+        {
+          "code": "194865003",
+          "term": "Rupture of cardiac wall without hemopericardium as current complication following acute myocardial infarction (disorder)"
+        },
+        {
+          "code": "194866002",
+          "term": "Rupture of chordae tendinae due to and following acute myocardial infarction (disorder)"
+        },
+        {
+          "code": "194867006",
+          "term": "Rupture of papillary muscle as current complication following acute myocardial infarction (disorder)"
+        },
+        {
+          "code": "194868001",
+          "term": "Thrombosis of atrium, auricular appendage, and ventricle due to and following acute myocardial infarction (disorder)"
+        },
+        {
+          "code": "22298006",
+          "term": "Myocardial infarction (disorder)"
+        },
+        {
+          "code": "23311000119105",
+          "term": "Acute myocardial infarction due to right coronary artery occlusion (disorder)"
+        },
+        {
+          "code": "233825009",
+          "term": "Acute Q wave infarction - anteroseptal"
+        },
+        {
+          "code": "233826005",
+          "term": "Acute non-Q wave infarction - anteroseptal"
+        },
+        {
+          "code": "233827001",
+          "term": "Acute Q wave infarction - anterolateral"
+        },
+        {
+          "code": "233828006",
+          "term": "Acute non-Q wave infarction - anterolateral"
+        },
+        {
+          "code": "233829003",
+          "term": "Acute Q wave infarction - inferior"
+        },
+        {
+          "code": "233830008",
+          "term": "Acute non-Q wave infarction - inferior"
+        },
+        {
+          "code": "233831007",
+          "term": "Acute Q wave infarction - inferolateral"
+        },
+        {
+          "code": "233832000",
+          "term": "Acute non-Q wave infarction - inferolateral"
+        },
+        {
+          "code": "233833005",
+          "term": "Acute Q wave infarction - lateral"
+        },
+        {
+          "code": "233834004",
+          "term": "Acute non-Q wave infarction - lateral"
+        },
+        {
+          "code": "233835003",
+          "term": "Acute widespread myocardial infarction (disorder)"
+        },
+        {
+          "code": "233836002",
+          "term": "Acute Q wave infarction - widespread"
+        },
+        {
+          "code": "233837006",
+          "term": "Acute non-Q wave infarction - widespread"
+        },
+        {
+          "code": "233838001",
+          "term": "Acute posterior myocardial infarction (disorder)"
+        },
+        {
+          "code": "233839009",
+          "term": "Old anterior myocardial infarction (disorder)"
+        },
+        {
+          "code": "233840006",
+          "term": "Old inferior myocardial infarction (disorder)"
+        },
+        {
+          "code": "233841005",
+          "term": "Old lateral myocardial infarction (disorder)"
+        },
+        {
+          "code": "233842003",
+          "term": "Old posterior myocardial infarction (disorder)"
+        },
+        {
+          "code": "233843008",
+          "term": "Silent myocardial infarction (disorder)"
+        },
+        {
+          "code": "233846000",
+          "term": "Post-infarction ventricular septal defect"
+        },
+        {
+          "code": "233847009",
+          "term": "Cardiac rupture due to and following acute myocardial infarction (disorder)"
+        },
+        {
+          "code": "233885007",
+          "term": "Post-infarction pericarditis"
+        },
+        {
+          "code": "282006",
+          "term": "Acute myocardial infarction of basal-lateral wall (disorder)"
+        },
+        {
+          "code": "285721000119104",
+          "term": "History of acute ST segment elevation myocardial infarction (situation)"
+        },
+        {
+          "code": "285981000119103",
+          "term": "Acute ST segment elevation myocardial infarction involving left anterior descending coronary artery (disorder)"
+        },
+        {
+          "code": "285991000119100",
+          "term": "Acute ST segment elevation myocardial infarction involving left main coronary artery"
+        },
+        {
+          "code": "30277009",
+          "term": "Rupture of ventricle due to acute myocardial infarction (disorder)"
+        },
+        {
+          "code": "304914007",
+          "term": "Acute Q wave myocardial infarction (disorder)"
+        },
+        {
+          "code": "307140009",
+          "term": "Acute non-Q wave infarction"
+        },
+        {
+          "code": "308065005",
+          "term": "History of myocardial infarction in last year (situation)"
+        },
+        {
+          "code": "311792005",
+          "term": "Postoperative transmural myocardial infarction of anterior wall (disorder)"
+        },
+        {
+          "code": "311793000",
+          "term": "Postoperative transmural myocardial infarction of inferior wall (disorder)"
+        },
+        {
+          "code": "311796008",
+          "term": "Postoperative subendocardial myocardial infarction (disorder)"
+        },
+        {
+          "code": "314207007",
+          "term": "Non-Q wave myocardial infarction (disorder)"
+        },
+        {
+          "code": "315287002",
+          "term": "Diabetes mellitus insulin-glucose infusion in acute myocardial infarction (procedure)"
+        },
+        {
+          "code": "32574007",
+          "term": "Past myocardial infarction diagnosed on electrocardiogram AND/OR other special investigation, but currently presenting no symptoms (disorder)"
+        },
+        {
+          "code": "35401000087106",
+          "term": "Old infarct of myocardium of apex of heart"
+        },
+        {
+          "code": "35411000087108",
+          "term": "Old infarct of myocardium of anterolateral region"
+        },
+        {
+          "code": "35421000087100",
+          "term": "Old infarct of myocardium of inferolateral region"
+        },
+        {
+          "code": "35431000087103",
+          "term": "Old infarct of high lateral wall of myocardium"
+        },
+        {
+          "code": "35441000087109",
+          "term": "Old infarct of myocardium of posterolateral region"
+        },
+        {
+          "code": "35451000087107",
+          "term": "Old infarct of myocardium of ventricular septum"
+        },
+        {
+          "code": "371068009",
+          "term": "Myocardial infarction with complication"
+        },
+        {
+          "code": "387785661000119104",
+          "term": "History of myocardial infarction due to atherothrombotic coronary artery disease (situation)"
+        },
+        {
+          "code": "387785661000119105",
+          "term": "History of myocardial infarction due to atherothrombotic coronary artery disease"
+        },
+        {
+          "code": "394659003",
+          "term": "Acute coronary syndrome"
+        },
+        {
+          "code": "394710008",
+          "term": "First myocardial infarction (disorder)"
+        },
+        {
+          "code": "399211009",
+          "term": "History of myocardial infarction (situation)"
+        },
+        {
+          "code": "401303003",
+          "term": "Acute ST segment elevation myocardial infarction (disorder)"
+        },
+        {
+          "code": "401314000",
+          "term": "Acute non-ST segment elevation myocardial infarction (disorder)"
+        },
+        {
+          "code": "413444003",
+          "term": "Acute myocardial ischemia"
+        },
+        {
+          "code": "418044006",
+          "term": "Myocardial infarction in recovery phase (disorder)"
+        },
+        {
+          "code": "42531007",
+          "term": "Microinfarct of heart"
+        },
+        {
+          "code": "428196007",
+          "term": "Mixed myocardial ischemia and infarction"
+        },
+        {
+          "code": "428752002",
+          "term": "Recent myocardial infarction (situation)"
+        },
+        {
+          "code": "429391004",
+          "term": "New myocardial infarction compared to prior study (finding)"
+        },
+        {
+          "code": "44811000087108",
+          "term": "Acute ST segment elevation myocardial infarction due to occlusion of distal portion of circumflex branch of left coronary artery (disorder)"
+        },
+        {
+          "code": "44821000087100",
+          "term": "Acute ST segment elevation myocardial infarction due to occlusion of mid portion of circumflex branch of left coronary artery (disorder)"
+        },
+        {
+          "code": "44831000087103",
+          "term": "Acute ST segment elevation myocardial infarction due to occlusion of obtuse marginal branch of circumflex branch of left coronary artery (disorder)"
+        },
+        {
+          "code": "44841000087109",
+          "term": "Acute ST segment elevation myocardial infarction due to occlusion of posterior lateral branch of circumflex branch of left coronary artery (disorder)"
+        },
+        {
+          "code": "44851000087107",
+          "term": "Acute ST segment elevation myocardial infarction due to occlusion of proximal portion of circumflex branch of left coronary artery (disorder)"
+        },
+        {
+          "code": "461000119108",
+          "term": "History of myocardial infarction in last eight weeks (situation)"
+        },
+        {
+          "code": "52035003",
+          "term": "Acute anteroapical myocardial infarction (disorder)"
+        },
+        {
+          "code": "54329005",
+          "term": "Acute myocardial infarction of anterior wall (disorder)"
+        },
+        {
+          "code": "57054005",
+          "term": "Acute myocardial infarction (disorder)"
+        },
+        {
+          "code": "58612006",
+          "term": "Acute myocardial infarction of lateral wall (disorder)"
+        },
+        {
+          "code": "59063002",
+          "term": "Acute myocardial infarction of apical-lateral wall (disorder)"
+        },
+        {
+          "code": "62695002",
+          "term": "Acute anteroseptal myocardial infarction (disorder)"
+        },
+        {
+          "code": "64627002",
+          "term": "Acute myocardial infarction of high lateral wall (disorder)"
+        },
+        {
+          "code": "65547006",
+          "term": "Acute myocardial infarction of inferolateral wall (disorder)"
+        },
+        {
+          "code": "66189004",
+          "term": "Postmyocardial infarction syndrome"
+        },
+        {
+          "code": "698593009",
+          "term": "History of non-ST segment elevation myocardial infarction (situation)"
+        },
+        {
+          "code": "70211005",
+          "term": "Acute myocardial infarction of anterolateral wall (disorder)"
+        },
+        {
+          "code": "703164000",
+          "term": "Acute ST segment elevation myocardial infarction of anterior wall (disorder)"
+        },
+        {
+          "code": "703165004",
+          "term": "Acute ST segment elevation myocardial infarction of anterior wall involving right ventricle (disorder)"
+        },
+        {
+          "code": "703209002",
+          "term": "Subsequent ST segment elevation myocardial infarction of inferior wall (disorder)"
+        },
+        {
+          "code": "703210007",
+          "term": "Subsequent ST segment elevation myocardial infarction of anterior wall (disorder)"
+        },
+        {
+          "code": "703211006",
+          "term": "Subsequent ST segment elevation myocardial infarction (disorder)"
+        },
+        {
+          "code": "703212004",
+          "term": "Acute myocardial infarction during procedure (disorder)"
+        },
+        {
+          "code": "703213009",
+          "term": "Acute ST segment elevation myocardial infarction of inferior wall (disorder)"
+        },
+        {
+          "code": "703251009",
+          "term": "Acute myocardial infarction of inferior wall involving right ventricle (disorder)"
+        },
+        {
+          "code": "703252002",
+          "term": "Acute myocardial infarction of anterior wall involving right ventricle (disorder)"
+        },
+        {
+          "code": "703253007",
+          "term": "Acute ST segment elevation myocardial infarction of inferior wall involving right ventricle (disorder)"
+        },
+        {
+          "code": "703326006",
+          "term": "Mitral valve regurgitation due to and following acute myocardial infarction"
+        },
+        {
+          "code": "703328007",
+          "term": "Mitral valve regurgitation due to acute myocardial infarction without papillary muscle and chordal rupture (disorder)"
+        },
+        {
+          "code": "703330009",
+          "term": "Mitral valve regurgitation due to acute myocardial infarction with papillary muscle and chordal rupture (disorder)"
+        },
+        {
+          "code": "703360004",
+          "term": "Subsequent non-ST segment elevation myocardial infarction (disorder)"
+        },
+        {
+          "code": "70422006",
+          "term": "Acute subendocardial infarction"
+        },
+        {
+          "code": "70998009",
+          "term": "Acute myocardial infarction of basal inferior segment of left ventricle (disorder)"
+        },
+        {
+          "code": "71023004",
+          "term": "Pericarditis due to acute myocardial infarction (disorder)"
+        },
+        {
+          "code": "723858002",
+          "term": "Ventricular aneurysm due to and following acute myocardial infarction (disorder)"
+        },
+        {
+          "code": "723859005",
+          "term": "Pulmonary embolism due to and following acute myocardial infarction (disorder)"
+        },
+        {
+          "code": "723860000",
+          "term": "Arrhythmia due to and following acute myocardial infarction (disorder)"
+        },
+        {
+          "code": "726499301000119040",
+          "term": "Myocardial infarction due to atherothrombotic coronary artery disease (disorder)"
+        },
+        {
+          "code": "726499301000119105",
+          "term": "Myocardial infarction due to atherothrombotic coronary artery disease"
+        },
+        {
+          "code": "736978009",
+          "term": "Mural thrombus of right ventricle following acute myocardial infarction (disorder)"
+        },
+        {
+          "code": "73795002",
+          "term": "Acute myocardial infarction of inferior wall (disorder)"
+        },
+        {
+          "code": "76593002",
+          "term": "Acute myocardial infarction of inferoposterior wall (disorder)"
+        },
+        {
+          "code": "776219771000119040",
+          "term": "History of myocardial infarction due to demand ischemia (situation)"
+        },
+        {
+          "code": "78741000119103",
+          "term": "Acute coronary artery occlusion not resulting in myocardial infarction (disorder)"
+        },
+        {
+          "code": "79009004",
+          "term": "Acute myocardial infarction of septum (disorder)"
+        },
+        {
+          "code": "827163002",
+          "term": "Early postmyocardial infarction pericarditis (disorder)"
+        },
+        {
+          "code": "827164008",
+          "term": "Delayed postmyocardial infarction pericarditis (disorder)"
+        },
+        {
+          "code": "836293000",
+          "term": "Acute myocardial infarction of right ventricle (disorder)"
+        },
+        {
+          "code": "836294006",
+          "term": "Acute myocardial infarction of apex of heart (disorder)"
+        },
+        {
+          "code": "836295007",
+          "term": "Acute myocardial infarction of inferolateral wall with posterior extension (disorder)"
+        },
+        {
+          "code": "840309000",
+          "term": "Acute ST segment elevation myocardial infarction due to occlusion of proximal portion of anterior descending branch of left coronary artery (disorder)"
+        },
+        {
+          "code": "840312002",
+          "term": "Acute ST segment elevation myocardial infarction due to occlusion of mid portion of anterior descending branch of left coronary artery (disorder)"
+        },
+        {
+          "code": "840316004",
+          "term": "Acute ST segment elevation myocardial infarction due to occlusion of distal portion of anterior descending branch of left coronary artery (disorder)"
+        },
+        {
+          "code": "840609007",
+          "term": "Acute ST segment elevation myocardial infarction due to occlusion of anterior descending branch of left coronary artery (disorder)"
+        },
+        {
+          "code": "840680009",
+          "term": "Acute ST segment elevation myocardial infarction due to occlusion of septal branch of anterior descending branch of left coronary artery (disorder)"
+        },
+        {
+          "code": "846668006",
+          "term": "Acute ST segment elevation myocardial infarction due to occlusion of diagonal branch of anterior descending branch of left coronary artery (disorder)"
+        },
+        {
+          "code": "846683001",
+          "term": "Acute ST segment elevation myocardial infarction due to occlusion of intermediate artery (disorder)"
+        },
+        {
+          "code": "868214006",
+          "term": "Acute ST segment elevation myocardial infarction due to occlusion of proximal portion of right coronary artery (disorder)"
+        },
+        {
+          "code": "868217004",
+          "term": "Acute ST segment elevation myocardial infarction due to occlusion of distal portion of right coronary artery (disorder)"
+        },
+        {
+          "code": "868220007",
+          "term": "Acute ST segment elevation myocardial infarction due to occlusion of mid portion of right coronary artery (disorder)"
+        },
+        {
+          "code": "868224003",
+          "term": "Acute ST segment elevation myocardial infarction due to occlusion of marginal branch of right coronary artery (disorder)"
+        },
+        {
+          "code": "868225002",
+          "term": "Acute ST segment elevation myocardial infarction due to occlusion of posterior descending branch of right coronary artery (disorder)"
+        },
+        {
+          "code": "868226001",
+          "term": "Acute ST segment elevation myocardial infarction due to occlusion of posterior lateral branch of right coronary artery (disorder)"
+        },
+        {
+          "code": "879955009",
+          "term": "Myocardial infarction with non-obstructive coronary artery (disorder)"
+        },
+        {
+          "code": "896689003",
+          "term": "Acute myocardial infarction due to occlusion of circumflex branch of left coronary artery (disorder)"
+        },
+        {
+          "code": "896691006",
+          "term": "Acute ST segment elevation myocardial infarction due to occlusion of circumflex branch of left coronary artery (disorder)"
+        },
+        {
+          "code": "896696001",
+          "term": "Acute ST segment elevation myocardial infarction of apex of heart (disorder)"
+        },
+        {
+          "code": "896697005",
+          "term": "Acute ST segment elevation myocardial infarction of right ventricle (disorder)"
+        },
+        {
+          "code": "F011",
+          "term": "Multi-infarct dementia"
+        },
+        {
+          "code": "I20",
+          "term": "Angina pectoris"
+        },
+        {
+          "code": "I200",
+          "term": "Unstable angina"
+        },
+        {
+          "code": "I201",
+          "term": "Angina pectoris with documented spasm"
+        },
+        {
+          "code": "I23",
+          "term": "Certain current complications following acute myocardial infarction"
+        },
+        {
+          "code": "I230",
+          "term": "Haemopericardium as current complication following acute myocardial infarction"
+        },
+        {
+          "code": "I231",
+          "term": "Atrial septal defect as current complication following acute myocardial infarction"
+        },
+        {
+          "code": "I232",
+          "term": "Ventricular septal defect as current complication following acute myocardial infarction"
+        },
+        {
+          "code": "I233",
+          "term": "Rupture of cardiac wall without haemopericardium as current complication following acute myocardial infarction"
+        },
+        {
+          "code": "I234",
+          "term": "Rupture of chordae tendineae as current complication following acute myocardial infarction"
+        },
+        {
+          "code": "I235",
+          "term": "Rupture of papillary muscle as current complication following acute myocardial infarction"
+        },
+        {
+          "code": "I236",
+          "term": "Thrombosis of atrium, auricular appendage, and ventricle as current complications following acute myocardial infarction"
+        },
+        {
+          "code": "I238",
+          "term": "Other current complications following acute myocardial infarction"
+        },
+        {
+          "code": "I240",
+          "term": "Coronary thrombosis not resulting in myocardial infarction"
+        },
+        {
+          "code": "I252",
+          "term": "Old myocardial infarction"
+        },
+        {
+          "code": "I255",
+          "term": "Ischaemic cardiomyopathy"
+        },
+        {
+          "code": "I256",
+          "term": "Silent myocardial ischaemia"
+        },
+        {
+          "code": "I40",
+          "term": "Acute myocarditis"
+        },
+        {
+          "code": "I401",
+          "term": "Isolated myocarditis"
+        },
+        {
+          "code": "I408",
+          "term": "Other acute myocarditis"
+        },
+        {
+          "code": "I42",
+          "term": "Cardiomyopathy"
+        },
+        {
+          "code": "I515",
+          "term": "Myocardial degeneration"
+        },
+        {
+          "code": "I63",
+          "term": "Cerebral infarction"
+        },
+        {
+          "code": "I638",
+          "term": "Other cerebral infarction"
+        },
+        {
+          "code": "I693",
+          "term": "Sequelae of cerebral infarction"
+        },
+        {
+          "code": "K763",
+          "term": "Infarction of liver"
+        },
+        {
+          "code": "M622",
+          "term": "Ischaemic infarction of muscle"
+        },
+        {
+          "code": "M6220",
+          "term": "Ischaemic infarction of muscle, Multiple sites"
+        },
+        {
+          "code": "M6221",
+          "term": "Ischaemic infarction of muscle, Shoulder region"
+        },
+        {
+          "code": "M6223",
+          "term": "Ischaemic infarction of muscle, Forearm"
+        },
+        {
+          "code": "M6224",
+          "term": "Ischaemic infarction of muscle, Hand"
+        },
+        {
+          "code": "M6226",
+          "term": "Ischaemic infarction of muscle, Lower leg"
+        },
+        {
+          "code": "M6228",
+          "term": "Ischaemic infarction of muscle, Other"
+        },
+        {
+          "code": "M6229",
+          "term": "Ischaemic infarction of muscle, Site unspecified"
+        },
+        {
+          "code": "N280",
+          "term": "Ischaemia and infarction of kidney"
+        },
+        {
+          "code": "P294",
+          "term": "Transient myocardial ischaemia of newborn"
+        },
+        {
+          "code": "S26",
+          "term": "Injury of heart"
+        },
+        {
+          "code": "Z034",
+          "term": "Observation for suspected myocardial infarction"
+        }
+      ],
+      "fn_codes": []
+    },
+    "merged_enriched": {
+      "codelist_name": "merged_enriched",
+      "n_ref_codes": 12,
+      "n_output_codes": 81,
+      "recall": 1.0,
+      "precision": 0.1481,
+      "f1": 0.2581,
+      "tp_count": 12,
+      "fp_count": 69,
+      "fn_count": 0,
+      "tp_codes": [
+        {
+          "code": "I21",
+          "term": "Acute myocardial infarction"
+        },
+        {
+          "code": "I210",
+          "term": "Acute transmural myocardial infarction of anterior wall"
+        },
+        {
+          "code": "I211",
+          "term": "Acute transmural myocardial infarction of inferior wall"
+        },
+        {
+          "code": "I212",
+          "term": "Acute transmural myocardial infarction of other sites"
+        },
+        {
+          "code": "I213",
+          "term": "Acute transmural myocardial infarction of unspecified site"
+        },
+        {
+          "code": "I214",
+          "term": "Acute subendocardial myocardial infarction"
+        },
+        {
+          "code": "I219",
+          "term": "Acute myocardial infarction, unspecified"
+        },
+        {
+          "code": "I22",
+          "term": "Subsequent myocardial infarction"
+        },
+        {
+          "code": "I220",
+          "term": "Subsequent myocardial infarction of anterior wall"
+        },
+        {
+          "code": "I221",
+          "term": "Subsequent myocardial infarction of inferior wall"
+        },
+        {
+          "code": "I228",
+          "term": "Subsequent myocardial infarction of other sites"
+        },
+        {
+          "code": "I229",
+          "term": "Subsequent myocardial infarction of unspecified site"
+        }
+      ],
+      "fp_codes": [
+        {
+          "code": "A99",
+          "term": "Disease/condition of unspecified nature/site"
+        },
+        {
+          "code": "C0002965",
+          "term": "Angina, Unstable"
+        },
+        {
+          "code": "C0007785",
+          "term": "Cerebral Infarction"
+        },
+        {
+          "code": "C0019064",
+          "term": "Hemopericardium"
+        },
+        {
+          "code": "C0027046",
+          "term": "Myocardial degeneration"
+        },
+        {
+          "code": "C0155626",
+          "term": "Acute myocardial infarction"
+        },
+        {
+          "code": "C0155668",
+          "term": "Old myocardial infarction"
+        },
+        {
+          "code": "C0340291",
+          "term": "Silent myocardial ischemia"
+        },
+        {
+          "code": "C0340325",
+          "term": "Coronary thrombosis not resulting in myocardial infarction"
+        },
+        {
+          "code": "C0340331",
+          "term": "Post-infarction ventricular septal defect"
+        },
+        {
+          "code": "C0348589",
+          "term": "Other current complications following acute myocardial infarction"
+        },
+        {
+          "code": "C0348591",
+          "term": "Acute transmural myocardial infarction of unspecified site"
+        },
+        {
+          "code": "C0348592",
+          "term": "Subsequent myocardial infarction of other sites"
+        },
+        {
+          "code": "C0348593",
+          "term": "Subsequent myocardial infarction"
+        },
+        {
+          "code": "C0348862",
+          "term": "Subsequent myocardial infarction of anterior wall"
+        },
+        {
+          "code": "C0348863",
+          "term": "Subsequent myocardial infarction of inferior wall"
+        },
+        {
+          "code": "C0348864",
+          "term": "Certain current complications following acute myocardial infarction"
+        },
+        {
+          "code": "C0348865",
+          "term": "Hemopericardium due to and following acute myocardial infarction"
+        },
+        {
+          "code": "C0348866",
+          "term": "Atrial septal defect due to and following acute myocardial infarction"
+        },
+        {
+          "code": "C0348867",
+          "term": "Rupture of cardiac wall without hemopericardium as current complication following acute myocardial infarction"
+        },
+        {
+          "code": "C0348876",
+          "term": "Thrombosis of atrium, auricular appendage, and ventricle due to and following acute myocardial infarction"
+        },
+        {
+          "code": "C0349074",
+          "term": "Rupture of chordae tendinae due to and following acute myocardial infarction"
+        },
+        {
+          "code": "C0473768",
+          "term": "Ischemic infarction of muscle"
+        },
+        {
+          "code": "C0476718",
+          "term": "Observation for suspected myocardial infarction"
+        },
+        {
+          "code": "C0494577",
+          "term": "Acute transmural myocardial infarction of anterior wall"
+        },
+        {
+          "code": "C0494578",
+          "term": "Acute transmural myocardial infarction of inferior wall"
+        },
+        {
+          "code": "C0494579",
+          "term": "Acute transmural myocardial infarction of other sites"
+        },
+        {
+          "code": "C0494580",
+          "term": "Acute subendocardial myocardial infarction"
+        },
+        {
+          "code": "C0838975",
+          "term": "Ischemic infarction of muscle, other site"
+        },
+        {
+          "code": "C3665604",
+          "term": "Rupture of papillary muscle as current complication following acute myocardial infarction"
+        },
+        {
+          "code": "F011",
+          "term": "Multi-infarct dementia"
+        },
+        {
+          "code": "I20",
+          "term": "Angina pectoris"
+        },
+        {
+          "code": "I200",
+          "term": "Unstable angina"
+        },
+        {
+          "code": "I201",
+          "term": "Angina pectoris with documented spasm"
+        },
+        {
+          "code": "I23",
+          "term": "Certain current complications following acute myocardial infarction"
+        },
+        {
+          "code": "I230",
+          "term": "Haemopericardium as current complication following acute myocardial infarction"
+        },
+        {
+          "code": "I231",
+          "term": "Atrial septal defect as current complication following acute myocardial infarction"
+        },
+        {
+          "code": "I232",
+          "term": "Ventricular septal defect as current complication following acute myocardial infarction"
+        },
+        {
+          "code": "I233",
+          "term": "Rupture of cardiac wall without haemopericardium as current complication following acute myocardial infarction"
+        },
+        {
+          "code": "I234",
+          "term": "Rupture of chordae tendineae as current complication following acute myocardial infarction"
+        },
+        {
+          "code": "I235",
+          "term": "Rupture of papillary muscle as current complication following acute myocardial infarction"
+        },
+        {
+          "code": "I236",
+          "term": "Thrombosis of atrium, auricular appendage, and ventricle as current complications following acute myocardial infarction"
+        },
+        {
+          "code": "I238",
+          "term": "Other current complications following acute myocardial infarction"
+        },
+        {
+          "code": "I240",
+          "term": "Coronary thrombosis not resulting in myocardial infarction"
+        },
+        {
+          "code": "I252",
+          "term": "Old myocardial infarction"
+        },
+        {
+          "code": "I255",
+          "term": "Ischaemic cardiomyopathy"
+        },
+        {
+          "code": "I256",
+          "term": "Silent myocardial ischaemia"
+        },
+        {
+          "code": "I40",
+          "term": "Acute myocarditis"
+        },
+        {
+          "code": "I401",
+          "term": "Isolated myocarditis"
+        },
+        {
+          "code": "I408",
+          "term": "Other acute myocarditis"
+        },
+        {
+          "code": "I42",
+          "term": "Cardiomyopathy"
+        },
+        {
+          "code": "I515",
+          "term": "Myocardial degeneration"
+        },
+        {
+          "code": "I63",
+          "term": "Cerebral infarction"
+        },
+        {
+          "code": "I638",
+          "term": "Other cerebral infarction"
+        },
+        {
+          "code": "I693",
+          "term": "Sequelae of cerebral infarction"
+        },
+        {
+          "code": "K75",
+          "term": "Acute myocardial infarction"
+        },
+        {
+          "code": "K763",
+          "term": "Infarction of liver"
+        },
+        {
+          "code": "M622",
+          "term": "Ischaemic infarction of muscle"
+        },
+        {
+          "code": "M6220",
+          "term": "Ischaemic infarction of muscle, Multiple sites"
+        },
+        {
+          "code": "M6221",
+          "term": "Ischaemic infarction of muscle, Shoulder region"
+        },
+        {
+          "code": "M6223",
+          "term": "Ischaemic infarction of muscle, Forearm"
+        },
+        {
+          "code": "M6224",
+          "term": "Ischaemic infarction of muscle, Hand"
+        },
+        {
+          "code": "M6226",
+          "term": "Ischaemic infarction of muscle, Lower leg"
+        },
+        {
+          "code": "M6228",
+          "term": "Ischaemic infarction of muscle, Other"
+        },
+        {
+          "code": "M6229",
+          "term": "Ischaemic infarction of muscle, Site unspecified"
+        },
+        {
+          "code": "N280",
+          "term": "Ischaemia and infarction of kidney"
+        },
+        {
+          "code": "P294",
+          "term": "Transient myocardial ischaemia of newborn"
+        },
+        {
+          "code": "S26",
+          "term": "Injury of heart"
+        },
+        {
+          "code": "Z034",
+          "term": "Observation for suspected myocardial infarction"
+        }
+      ],
+      "fn_codes": []
+    },
+    "all_scored": {
+      "codelist_name": "all_scored",
+      "n_ref_codes": 12,
+      "n_output_codes": 50,
+      "recall": 1.0,
+      "precision": 0.24,
+      "f1": 0.3871,
+      "tp_count": 12,
+      "fp_count": 38,
+      "fn_count": 0,
+      "tp_codes": [
+        {
+          "code": "I21",
+          "term": "Acute myocardial infarction"
+        },
+        {
+          "code": "I210",
+          "term": "Acute transmural myocardial infarction of anterior wall"
+        },
+        {
+          "code": "I211",
+          "term": "Acute transmural myocardial infarction of inferior wall"
+        },
+        {
+          "code": "I212",
+          "term": "Acute transmural myocardial infarction of other sites"
+        },
+        {
+          "code": "I213",
+          "term": "Acute transmural myocardial infarction of unspecified site"
+        },
+        {
+          "code": "I214",
+          "term": "Acute subendocardial myocardial infarction"
+        },
+        {
+          "code": "I219",
+          "term": "Acute myocardial infarction, unspecified"
+        },
+        {
+          "code": "I22",
+          "term": "Subsequent myocardial infarction"
+        },
+        {
+          "code": "I220",
+          "term": "Subsequent myocardial infarction of anterior wall"
+        },
+        {
+          "code": "I221",
+          "term": "Subsequent myocardial infarction of inferior wall"
+        },
+        {
+          "code": "I228",
+          "term": "Subsequent myocardial infarction of other sites"
+        },
+        {
+          "code": "I229",
+          "term": "Subsequent myocardial infarction of unspecified site"
+        }
+      ],
+      "fp_codes": [
+        {
+          "code": "F011",
+          "term": "Multi-infarct dementia"
+        },
+        {
+          "code": "I20",
+          "term": "Angina pectoris"
+        },
+        {
+          "code": "I200",
+          "term": "Unstable angina"
+        },
+        {
+          "code": "I201",
+          "term": "Angina pectoris with documented spasm"
+        },
+        {
+          "code": "I23",
+          "term": "Certain current complications following acute myocardial infarction"
+        },
+        {
+          "code": "I230",
+          "term": "Haemopericardium as current complication following acute myocardial infarction"
+        },
+        {
+          "code": "I231",
+          "term": "Atrial septal defect as current complication following acute myocardial infarction"
+        },
+        {
+          "code": "I232",
+          "term": "Ventricular septal defect as current complication following acute myocardial infarction"
+        },
+        {
+          "code": "I233",
+          "term": "Rupture of cardiac wall without haemopericardium as current complication following acute myocardial infarction"
+        },
+        {
+          "code": "I234",
+          "term": "Rupture of chordae tendineae as current complication following acute myocardial infarction"
+        },
+        {
+          "code": "I235",
+          "term": "Rupture of papillary muscle as current complication following acute myocardial infarction"
+        },
+        {
+          "code": "I236",
+          "term": "Thrombosis of atrium, auricular appendage, and ventricle as current complications following acute myocardial infarction"
+        },
+        {
+          "code": "I238",
+          "term": "Other current complications following acute myocardial infarction"
+        },
+        {
+          "code": "I240",
+          "term": "Coronary thrombosis not resulting in myocardial infarction"
+        },
+        {
+          "code": "I252",
+          "term": "Old myocardial infarction"
+        },
+        {
+          "code": "I255",
+          "term": "Ischaemic cardiomyopathy"
+        },
+        {
+          "code": "I256",
+          "term": "Silent myocardial ischaemia"
+        },
+        {
+          "code": "I40",
+          "term": "Acute myocarditis"
+        },
+        {
+          "code": "I401",
+          "term": "Isolated myocarditis"
+        },
+        {
+          "code": "I408",
+          "term": "Other acute myocarditis"
+        },
+        {
+          "code": "I42",
+          "term": "Cardiomyopathy"
+        },
+        {
+          "code": "I515",
+          "term": "Myocardial degeneration"
+        },
+        {
+          "code": "I63",
+          "term": "Cerebral infarction"
+        },
+        {
+          "code": "I638",
+          "term": "Other cerebral infarction"
+        },
+        {
+          "code": "I693",
+          "term": "Sequelae of cerebral infarction"
+        },
+        {
+          "code": "K763",
+          "term": "Infarction of liver"
+        },
+        {
+          "code": "M622",
+          "term": "Ischaemic infarction of muscle"
+        },
+        {
+          "code": "M6220",
+          "term": "Ischaemic infarction of muscle, Multiple sites"
+        },
+        {
+          "code": "M6221",
+          "term": "Ischaemic infarction of muscle, Shoulder region"
+        },
+        {
+          "code": "M6223",
+          "term": "Ischaemic infarction of muscle, Forearm"
+        },
+        {
+          "code": "M6224",
+          "term": "Ischaemic infarction of muscle, Hand"
+        },
+        {
+          "code": "M6226",
+          "term": "Ischaemic infarction of muscle, Lower leg"
+        },
+        {
+          "code": "M6228",
+          "term": "Ischaemic infarction of muscle, Other"
+        },
+        {
+          "code": "M6229",
+          "term": "Ischaemic infarction of muscle, Site unspecified"
+        },
+        {
+          "code": "N280",
+          "term": "Ischaemia and infarction of kidney"
+        },
+        {
+          "code": "P294",
+          "term": "Transient myocardial ischaemia of newborn"
+        },
+        {
+          "code": "S26",
+          "term": "Injury of heart"
+        },
+        {
+          "code": "Z034",
+          "term": "Observation for suspected myocardial infarction"
+        }
+      ],
+      "fn_codes": []
+    },
+    "included_only": {
+      "codelist_name": "included_only",
+      "n_ref_codes": 12,
+      "n_output_codes": 7,
+      "recall": 0.5833,
+      "precision": 1.0,
+      "f1": 0.7368,
+      "tp_count": 7,
+      "fp_count": 0,
+      "fn_count": 5,
+      "tp_codes": [
+        {
+          "code": "I21",
+          "term": "Acute myocardial infarction"
+        },
+        {
+          "code": "I210",
+          "term": "Acute transmural myocardial infarction of anterior wall"
+        },
+        {
+          "code": "I211",
+          "term": "Acute transmural myocardial infarction of inferior wall"
+        },
+        {
+          "code": "I212",
+          "term": "Acute transmural myocardial infarction of other sites"
+        },
+        {
+          "code": "I213",
+          "term": "Acute transmural myocardial infarction of unspecified site"
+        },
+        {
+          "code": "I214",
+          "term": "Acute subendocardial myocardial infarction"
+        },
+        {
+          "code": "I219",
+          "term": "Acute myocardial infarction, unspecified"
+        }
+      ],
+      "fp_codes": [],
+      "fn_codes": [
+        {
+          "code": "I22",
+          "term": "Subsequent myocardial infarction"
+        },
+        {
+          "code": "I220",
+          "term": "Subsequent myocardial infarction of anterior wall"
+        },
+        {
+          "code": "I221",
+          "term": "Subsequent myocardial infarction of inferior wall"
+        },
+        {
+          "code": "I228",
+          "term": "Subsequent myocardial infarction of other sites"
+        },
+        {
+          "code": "I229",
+          "term": "Subsequent myocardial infarction of unspecified site"
+        }
+      ]
+    },
+    "included_plus_uncertain": {
+      "codelist_name": "included_plus_uncertain",
+      "n_ref_codes": 12,
+      "n_output_codes": 7,
+      "recall": 0.5833,
+      "precision": 1.0,
+      "f1": 0.7368,
+      "tp_count": 7,
+      "fp_count": 0,
+      "fn_count": 5,
+      "tp_codes": [
+        {
+          "code": "I21",
+          "term": "Acute myocardial infarction"
+        },
+        {
+          "code": "I210",
+          "term": "Acute transmural myocardial infarction of anterior wall"
+        },
+        {
+          "code": "I211",
+          "term": "Acute transmural myocardial infarction of inferior wall"
+        },
+        {
+          "code": "I212",
+          "term": "Acute transmural myocardial infarction of other sites"
+        },
+        {
+          "code": "I213",
+          "term": "Acute transmural myocardial infarction of unspecified site"
+        },
+        {
+          "code": "I214",
+          "term": "Acute subendocardial myocardial infarction"
+        },
+        {
+          "code": "I219",
+          "term": "Acute myocardial infarction, unspecified"
+        }
+      ],
+      "fp_codes": [],
+      "fn_codes": [
+        {
+          "code": "I22",
+          "term": "Subsequent myocardial infarction"
+        },
+        {
+          "code": "I220",
+          "term": "Subsequent myocardial infarction of anterior wall"
+        },
+        {
+          "code": "I221",
+          "term": "Subsequent myocardial infarction of inferior wall"
+        },
+        {
+          "code": "I228",
+          "term": "Subsequent myocardial infarction of other sites"
+        },
+        {
+          "code": "I229",
+          "term": "Subsequent myocardial infarction of unspecified site"
+        }
+      ]
+    }
+  },
+  "false_exclusions": {
+    "count": 5,
+    "codes": [
+      {
+        "code": "I22",
+        "term": "Subsequent myocardial infarction",
+        "rationale": "Subsequent myocardial infarction represents a recurrent event after the primary infarction; the query specifies 'primary' myocardial infarction."
+      },
+      {
+        "code": "I22.0",
+        "term": "Subsequent myocardial infarction of anterior wall",
+        "rationale": "Subsequent myocardial infarction of anterior wall is a recurrent event, not a primary myocardial infarction as specified in the query."
+      },
+      {
+        "code": "I22.1",
+        "term": "Subsequent myocardial infarction of inferior wall",
+        "rationale": "Subsequent myocardial infarction of inferior wall is a recurrent event, not a primary myocardial infarction as specified in the query."
+      },
+      {
+        "code": "I22.8",
+        "term": "Subsequent myocardial infarction of other sites",
+        "rationale": "Subsequent myocardial infarction of other sites is a recurrent event, not a primary myocardial infarction as specified in the query."
+      },
+      {
+        "code": "I22.9",
+        "term": "Subsequent myocardial infarction of unspecified site",
+        "rationale": "Subsequent myocardial infarction of unspecified site is a recurrent event, not a primary myocardial infarction as specified in the query."
+      }
+    ]
+  },
+  "uncertain_in_reference": {
+    "count": 0,
+    "codes": []
+  },
+  "summary": "Recall: 58.3% (7 of 12 reference codes retrieved). Precision: 100.0%. F1: 73.7%. 5 reference codes were incorrectly excluded.",
+  "elapsed_seconds": 26.69,
+  "pipeline_results_count": 50,
+  "scored_codes": [
+    {
+      "code": "I21",
+      "term": "Acute myocardial infarction",
+      "vocabulary": "ICD-10 (WHO)",
+      "decision": "include",
+      "confidence": 1.0,
+      "rationale": "Acute myocardial infarction is the direct instance of the queried condition.",
+      "sources": [
+        "ChromaDB",
+        "OMOPHub"
+      ],
+      "usage_frequency": null
+    },
+    {
+      "code": "I21.0",
+      "term": "Acute transmural myocardial infarction of anterior wall",
+      "vocabulary": "ICD-10 (WHO)",
+      "decision": "include",
+      "confidence": 1.0,
+      "rationale": "This is a specific anatomical subtype of acute myocardial infarction (anterior wall), directly representing the queried condition.",
+      "sources": [
+        "ChromaDB",
+        "OMOPHub"
+      ],
+      "usage_frequency": null
+    },
+    {
+      "code": "I21.1",
+      "term": "Acute transmural myocardial infarction of inferior wall",
+      "vocabulary": "ICD-10 (WHO)",
+      "decision": "include",
+      "confidence": 1.0,
+      "rationale": "This is a specific anatomical subtype of acute myocardial infarction (inferior wall), directly representing the queried condition.",
+      "sources": [
+        "ChromaDB",
+        "OMOPHub"
+      ],
+      "usage_frequency": null
+    },
+    {
+      "code": "I21.2",
+      "term": "Acute transmural myocardial infarction of other sites",
+      "vocabulary": "ICD-10 (WHO)",
+      "decision": "include",
+      "confidence": 1.0,
+      "rationale": "This is a specific anatomical subtype of acute myocardial infarction (other sites), directly representing the queried condition.",
+      "sources": [
+        "ChromaDB",
+        "OMOPHub"
+      ],
+      "usage_frequency": null
+    },
+    {
+      "code": "I21.3",
+      "term": "Acute transmural myocardial infarction of unspecified site",
+      "vocabulary": "ICD-10 (WHO)",
+      "decision": "include",
+      "confidence": 1.0,
+      "rationale": "This is a specific anatomical subtype of acute myocardial infarction (unspecified site), directly representing the queried condition.",
+      "sources": [
+        "ChromaDB",
+        "OMOPHub"
+      ],
+      "usage_frequency": null
+    },
+    {
+      "code": "I21.4",
+      "term": "Acute subendocardial myocardial infarction",
+      "vocabulary": "ICD-10 (WHO)",
+      "decision": "include",
+      "confidence": 1.0,
+      "rationale": "Acute subendocardial myocardial infarction is a specific pathological subtype of acute myocardial infarction.",
+      "sources": [
+        "ChromaDB",
+        "OMOPHub"
+      ],
+      "usage_frequency": null
+    },
+    {
+      "code": "I21.9",
+      "term": "Acute myocardial infarction, unspecified",
+      "vocabulary": "ICD-10 (WHO)",
+      "decision": "include",
+      "confidence": 1.0,
+      "rationale": "Acute myocardial infarction, unspecified is a direct instance of the queried condition.",
+      "sources": [
+        "ChromaDB",
+        "OMOPHub"
+      ],
+      "usage_frequency": null
+    },
+    {
+      "code": "F01.1",
+      "term": "Multi-infarct dementia",
+      "vocabulary": "ICD-10 (WHO)",
+      "decision": "exclude",
+      "confidence": 0.99,
+      "rationale": "Multi-infarct dementia is a neurological complication of cerebral infarction, not an instance of myocardial infarction.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "usage_frequency": null
+    },
+    {
+      "code": "I20",
+      "term": "Angina pectoris",
+      "vocabulary": "ICD-10 (WHO)",
+      "decision": "exclude",
+      "confidence": 0.99,
+      "rationale": "Angina pectoris is a precursor condition and risk factor for myocardial infarction, not an instance of it.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "usage_frequency": null
+    },
+    {
+      "code": "I20.0",
+      "term": "Unstable angina",
+      "vocabulary": "ICD-10 (WHO)",
+      "decision": "exclude",
+      "confidence": 0.99,
+      "rationale": "Unstable angina is a precursor condition and risk factor for myocardial infarction, not an instance of it.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "usage_frequency": null
+    },
+    {
+      "code": "I20.1",
+      "term": "Angina pectoris with documented spasm",
+      "vocabulary": "ICD-10 (WHO)",
+      "decision": "exclude",
+      "confidence": 0.99,
+      "rationale": "Angina pectoris with documented spasm is a precursor condition, not an instance of myocardial infarction.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "usage_frequency": null
+    },
+    {
+      "code": "I24.0",
+      "term": "Coronary thrombosis not resulting in myocardial infarction",
+      "vocabulary": "ICD-10 (WHO)",
+      "decision": "exclude",
+      "confidence": 0.99,
+      "rationale": "Coronary thrombosis not resulting in myocardial infarction is explicitly defined as not causing infarction, so it is not an instance of myocardial infarction.",
+      "sources": [
+        "ChromaDB",
+        "OMOPHub"
+      ],
+      "usage_frequency": null
+    },
+    {
+      "code": "I25.6",
+      "term": "Silent myocardial ischaemia",
+      "vocabulary": "ICD-10 (WHO)",
+      "decision": "exclude",
+      "confidence": 0.99,
+      "rationale": "Silent myocardial ischaemia is a precursor state without actual infarction, not an instance of myocardial infarction.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "usage_frequency": null
+    },
+    {
+      "code": "I40",
+      "term": "Acute myocarditis",
+      "vocabulary": "ICD-10 (WHO)",
+      "decision": "exclude",
+      "confidence": 0.99,
+      "rationale": "Acute myocarditis is inflammation of the myocardium, a distinct condition from myocardial infarction (necrosis due to ischaemia).",
+      "sources": [
+        "ChromaDB"
+      ],
+      "usage_frequency": null
+    },
+    {
+      "code": "I40.1",
+      "term": "Isolated myocarditis",
+      "vocabulary": "ICD-10 (WHO)",
+      "decision": "exclude",
+      "confidence": 0.99,
+      "rationale": "Isolated myocarditis is a distinct inflammatory condition, not myocardial infarction.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "usage_frequency": null
+    },
+    {
+      "code": "I40.8",
+      "term": "Other acute myocarditis",
+      "vocabulary": "ICD-10 (WHO)",
+      "decision": "exclude",
+      "confidence": 0.99,
+      "rationale": "Other acute myocarditis is a distinct inflammatory condition, not myocardial infarction.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "usage_frequency": null
+    },
+    {
+      "code": "I42",
+      "term": "Cardiomyopathy",
+      "vocabulary": "ICD-10 (WHO)",
+      "decision": "exclude",
+      "confidence": 0.99,
+      "rationale": "Cardiomyopathy is a distinct condition affecting myocardial function, not myocardial infarction.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "usage_frequency": null
+    },
+    {
+      "code": "I51.5",
+      "term": "Myocardial degeneration",
+      "vocabulary": "ICD-10 (WHO)",
+      "decision": "exclude",
+      "confidence": 0.99,
+      "rationale": "Myocardial degeneration is a distinct pathological process, not myocardial infarction.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "usage_frequency": null
+    },
+    {
+      "code": "I63",
+      "term": "Cerebral infarction",
+      "vocabulary": "ICD-10 (WHO)",
+      "decision": "exclude",
+      "confidence": 0.99,
+      "rationale": "Cerebral infarction is infarction of the brain, not the myocardium; it is a different organ system.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "usage_frequency": null
+    },
+    {
+      "code": "I63.8",
+      "term": "Other cerebral infarction",
+      "vocabulary": "ICD-10 (WHO)",
+      "decision": "exclude",
+      "confidence": 0.99,
+      "rationale": "Other cerebral infarction is infarction of the brain, not the myocardium; it is a different organ system.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "usage_frequency": null
+    },
+    {
+      "code": "I69.3",
+      "term": "Sequelae of cerebral infarction",
+      "vocabulary": "ICD-10 (WHO)",
+      "decision": "exclude",
+      "confidence": 0.99,
+      "rationale": "Sequelae of cerebral infarction is a long-term consequence of brain infarction, not myocardial infarction.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "usage_frequency": null
+    },
+    {
+      "code": "K76.3",
+      "term": "Infarction of liver",
+      "vocabulary": "ICD-10 (WHO)",
+      "decision": "exclude",
+      "confidence": 0.99,
+      "rationale": "Infarction of liver is infarction of a different organ system, not myocardial infarction.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "usage_frequency": null
+    },
+    {
+      "code": "M62.2",
+      "term": "Ischaemic infarction of muscle",
+      "vocabulary": "ICD-10 (WHO)",
+      "decision": "exclude",
+      "confidence": 0.99,
+      "rationale": "Ischaemic infarction of muscle is infarction of skeletal muscle, not the myocardium.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "usage_frequency": null
+    },
+    {
+      "code": "M62.20",
+      "term": "Ischaemic infarction of muscle, Multiple sites",
+      "vocabulary": "ICD-10 (WHO)",
+      "decision": "exclude",
+      "confidence": 0.99,
+      "rationale": "Ischaemic infarction of muscle at multiple sites is infarction of skeletal muscle, not the myocardium.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "usage_frequency": null
+    },
+    {
+      "code": "I22",
+      "term": "Subsequent myocardial infarction",
+      "vocabulary": "ICD-10 (WHO)",
+      "decision": "exclude",
+      "confidence": 0.95,
+      "rationale": "Subsequent myocardial infarction represents a recurrent event after the primary infarction; the query specifies 'primary' myocardial infarction.",
+      "sources": [
+        "ChromaDB",
+        "OMOPHub"
+      ],
+      "usage_frequency": null
+    },
+    {
+      "code": "I22.0",
+      "term": "Subsequent myocardial infarction of anterior wall",
+      "vocabulary": "ICD-10 (WHO)",
+      "decision": "exclude",
+      "confidence": 0.95,
+      "rationale": "Subsequent myocardial infarction of anterior wall is a recurrent event, not a primary myocardial infarction as specified in the query.",
+      "sources": [
+        "ChromaDB",
+        "OMOPHub"
+      ],
+      "usage_frequency": null
+    },
+    {
+      "code": "I22.1",
+      "term": "Subsequent myocardial infarction of inferior wall",
+      "vocabulary": "ICD-10 (WHO)",
+      "decision": "exclude",
+      "confidence": 0.95,
+      "rationale": "Subsequent myocardial infarction of inferior wall is a recurrent event, not a primary myocardial infarction as specified in the query.",
+      "sources": [
+        "ChromaDB",
+        "OMOPHub"
+      ],
+      "usage_frequency": null
+    },
+    {
+      "code": "I22.8",
+      "term": "Subsequent myocardial infarction of other sites",
+      "vocabulary": "ICD-10 (WHO)",
+      "decision": "exclude",
+      "confidence": 0.95,
+      "rationale": "Subsequent myocardial infarction of other sites is a recurrent event, not a primary myocardial infarction as specified in the query.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "usage_frequency": null
+    },
+    {
+      "code": "I22.9",
+      "term": "Subsequent myocardial infarction of unspecified site",
+      "vocabulary": "ICD-10 (WHO)",
+      "decision": "exclude",
+      "confidence": 0.95,
+      "rationale": "Subsequent myocardial infarction of unspecified site is a recurrent event, not a primary myocardial infarction as specified in the query.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "usage_frequency": null
+    },
+    {
+      "code": "I23",
+      "term": "Certain current complications following acute myocardial infarction",
+      "vocabulary": "ICD-10 (WHO)",
+      "decision": "exclude",
+      "confidence": 0.95,
+      "rationale": "This code represents acute complications following myocardial infarction, not the myocardial infarction itself; complications are downstream effects.",
+      "sources": [
+        "ChromaDB",
+        "OMOPHub"
+      ],
+      "usage_frequency": null
+    },
+    {
+      "code": "I23.0",
+      "term": "Haemopericardium as current complication following acute myocardial infarction",
+      "vocabulary": "ICD-10 (WHO)",
+      "decision": "exclude",
+      "confidence": 0.95,
+      "rationale": "Haemopericardium is a complication following acute myocardial infarction, not an instance of the primary condition.",
+      "sources": [
+        "ChromaDB",
+        "OMOPHub"
+      ],
+      "usage_frequency": null
+    },
+    {
+      "code": "I23.1",
+      "term": "Atrial septal defect as current complication following acute myocardial infarction",
+      "vocabulary": "ICD-10 (WHO)",
+      "decision": "exclude",
+      "confidence": 0.95,
+      "rationale": "Atrial septal defect as a complication is a downstream effect of myocardial infarction, not the primary condition itself.",
+      "sources": [
+        "ChromaDB",
+        "OMOPHub"
+      ],
+      "usage_frequency": null
+    },
+    {
+      "code": "I23.2",
+      "term": "Ventricular septal defect as current complication following acute myocardial infarction",
+      "vocabulary": "ICD-10 (WHO)",
+      "decision": "exclude",
+      "confidence": 0.95,
+      "rationale": "Ventricular septal defect as a complication is a downstream effect of myocardial infarction, not the primary condition itself.",
+      "sources": [
+        "ChromaDB",
+        "OMOPHub"
+      ],
+      "usage_frequency": null
+    },
+    {
+      "code": "I23.3",
+      "term": "Rupture of cardiac wall without haemopericardium as current complication following acute myocardial infarction",
+      "vocabulary": "ICD-10 (WHO)",
+      "decision": "exclude",
+      "confidence": 0.95,
+      "rationale": "Rupture of cardiac wall is a complication following acute myocardial infarction, not the primary condition.",
+      "sources": [
+        "ChromaDB",
+        "OMOPHub"
+      ],
+      "usage_frequency": null
+    },
+    {
+      "code": "I23.4",
+      "term": "Rupture of chordae tendineae as current complication following acute myocardial infarction",
+      "vocabulary": "ICD-10 (WHO)",
+      "decision": "exclude",
+      "confidence": 0.95,
+      "rationale": "Rupture of chordae tendineae is a complication following acute myocardial infarction, not the primary condition.",
+      "sources": [
+        "ChromaDB",
+        "OMOPHub"
+      ],
+      "usage_frequency": null
+    },
+    {
+      "code": "I23.5",
+      "term": "Rupture of papillary muscle as current complication following acute myocardial infarction",
+      "vocabulary": "ICD-10 (WHO)",
+      "decision": "exclude",
+      "confidence": 0.95,
+      "rationale": "Rupture of papillary muscle is a complication following acute myocardial infarction, not the primary condition.",
+      "sources": [
+        "ChromaDB",
+        "OMOPHub"
+      ],
+      "usage_frequency": null
+    },
+    {
+      "code": "I23.6",
+      "term": "Thrombosis of atrium, auricular appendage, and ventricle as current complications following acute myocardial infarction",
+      "vocabulary": "ICD-10 (WHO)",
+      "decision": "exclude",
+      "confidence": 0.95,
+      "rationale": "Thrombosis as a current complication is a downstream effect of acute myocardial infarction, not the primary condition.",
+      "sources": [
+        "ChromaDB",
+        "OMOPHub"
+      ],
+      "usage_frequency": null
+    },
+    {
+      "code": "I23.8",
+      "term": "Other current complications following acute myocardial infarction",
+      "vocabulary": "ICD-10 (WHO)",
+      "decision": "exclude",
+      "confidence": 0.95,
+      "rationale": "Other current complications following acute myocardial infarction are downstream effects, not the primary condition.",
+      "sources": [
+        "ChromaDB",
+        "OMOPHub"
+      ],
+      "usage_frequency": null
+    },
+    {
+      "code": "I25.2",
+      "term": "Old myocardial infarction",
+      "vocabulary": "ICD-10 (WHO)",
+      "decision": "exclude",
+      "confidence": 0.95,
+      "rationale": "Old myocardial infarction represents a resolved/healed prior event, not a primary acute myocardial infarction.",
+      "sources": [
+        "ChromaDB",
+        "OMOPHub"
+      ],
+      "usage_frequency": null
+    },
+    {
+      "code": "I25.5",
+      "term": "Ischaemic cardiomyopathy",
+      "vocabulary": "ICD-10 (WHO)",
+      "decision": "exclude",
+      "confidence": 0.95,
+      "rationale": "Ischaemic cardiomyopathy is a long-term sequela and complication of myocardial infarction, not the primary condition itself.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "usage_frequency": null
+    },
+    {
+      "code": "M62.21",
+      "term": "Ischaemic infarction of muscle, Shoulder region",
+      "vocabulary": "ICD-10 (WHO)",
+      "decision": "exclude",
+      "confidence": 0.95,
+      "rationale": "Ischaemic infarction of skeletal muscle in shoulder region is not myocardial infarction; it affects skeletal muscle, not cardiac muscle.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "usage_frequency": null
+    },
+    {
+      "code": "M62.23",
+      "term": "Ischaemic infarction of muscle, Forearm",
+      "vocabulary": "ICD-10 (WHO)",
+      "decision": "exclude",
+      "confidence": 0.95,
+      "rationale": "Ischaemic infarction of skeletal muscle in forearm is not myocardial infarction; it affects skeletal muscle, not cardiac muscle.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "usage_frequency": null
+    },
+    {
+      "code": "M62.24",
+      "term": "Ischaemic infarction of muscle, Hand",
+      "vocabulary": "ICD-10 (WHO)",
+      "decision": "exclude",
+      "confidence": 0.95,
+      "rationale": "Ischaemic infarction of skeletal muscle in hand is not myocardial infarction; it affects skeletal muscle, not cardiac muscle.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "usage_frequency": null
+    },
+    {
+      "code": "M62.26",
+      "term": "Ischaemic infarction of muscle, Lower leg",
+      "vocabulary": "ICD-10 (WHO)",
+      "decision": "exclude",
+      "confidence": 0.95,
+      "rationale": "Ischaemic infarction of skeletal muscle in lower leg is not myocardial infarction; it affects skeletal muscle, not cardiac muscle.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "usage_frequency": null
+    },
+    {
+      "code": "M62.28",
+      "term": "Ischaemic infarction of muscle, Other",
+      "vocabulary": "ICD-10 (WHO)",
+      "decision": "exclude",
+      "confidence": 0.95,
+      "rationale": "Ischaemic infarction of skeletal muscle in other sites is not myocardial infarction; it affects skeletal muscle, not cardiac muscle.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "usage_frequency": null
+    },
+    {
+      "code": "M62.29",
+      "term": "Ischaemic infarction of muscle, Site unspecified",
+      "vocabulary": "ICD-10 (WHO)",
+      "decision": "exclude",
+      "confidence": 0.95,
+      "rationale": "Ischaemic infarction of skeletal muscle at unspecified site is not myocardial infarction; it affects skeletal muscle, not cardiac muscle.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "usage_frequency": null
+    },
+    {
+      "code": "N28.0",
+      "term": "Ischaemia and infarction of kidney",
+      "vocabulary": "ICD-10 (WHO)",
+      "decision": "exclude",
+      "confidence": 0.95,
+      "rationale": "Ischaemia and infarction of kidney is a separate organ system condition, not myocardial infarction.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "usage_frequency": null
+    },
+    {
+      "code": "S26",
+      "term": "Injury of heart",
+      "vocabulary": "ICD-10 (WHO)",
+      "decision": "exclude",
+      "confidence": 0.95,
+      "rationale": "Injury of heart is a traumatic injury code, not myocardial infarction from coronary artery disease.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "usage_frequency": null
+    },
+    {
+      "code": "Z03.4",
+      "term": "Observation for suspected myocardial infarction",
+      "vocabulary": "ICD-10 (WHO)",
+      "decision": "exclude",
+      "confidence": 0.95,
+      "rationale": "Observation for suspected myocardial infarction is an administrative/screening code indicating suspicion, not confirmation of myocardial infarction.",
+      "sources": [
+        "ChromaDB",
+        "OMOPHub"
+      ],
+      "usage_frequency": null
+    },
+    {
+      "code": "P29.4",
+      "term": "Transient myocardial ischaemia of newborn",
+      "vocabulary": "ICD-10 (WHO)",
+      "decision": "exclude",
+      "confidence": 0.9,
+      "rationale": "Transient myocardial ischaemia of newborn is a perinatal condition with different pathophysiology and clinical significance than primary myocardial infarction in older populations.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "usage_frequency": null
+    }
+  ],
+  "pipeline": "rag",
+  "cold_start": false
+}

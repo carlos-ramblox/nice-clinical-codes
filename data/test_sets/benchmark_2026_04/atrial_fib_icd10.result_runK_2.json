@@ -1,0 +1,1943 @@
+{
+  "reference_count": 7,
+  "query": "Atrial Fibrillation and Flutter - ICD10",
+  "vocabulary": "ICD-10",
+  "stages": {
+    "retrieved_raw": {
+      "codelist_name": "retrieved_raw",
+      "n_ref_codes": 7,
+      "n_output_codes": 103,
+      "recall": 1.0,
+      "precision": 0.068,
+      "f1": 0.1273,
+      "tp_count": 7,
+      "fp_count": 96,
+      "fn_count": 0,
+      "tp_codes": [
+        {
+          "code": "I48",
+          "term": "Atrial fibrillation and flutter"
+        },
+        {
+          "code": "I480",
+          "term": "Paroxysmal atrial fibrillation"
+        },
+        {
+          "code": "I481",
+          "term": "Persistent atrial fibrillation"
+        },
+        {
+          "code": "I482",
+          "term": "Chronic atrial fibrillation"
+        },
+        {
+          "code": "I483",
+          "term": "Typical atrial flutter"
+        },
+        {
+          "code": "I484",
+          "term": "Atypical atrial flutter"
+        },
+        {
+          "code": "I489",
+          "term": "Atrial fibrillation and atrial flutter, unspecified"
+        }
+      ],
+      "fp_codes": [
+        {
+          "code": "1010405004",
+          "term": "Paroxysmal atrial fibrillation with rapid ventricular response (disorder)"
+        },
+        {
+          "code": "1105331000000106",
+          "term": "Blood pressure measurement using oscillometric monitoring device with opportunistic atrial fibrillation detection (procedure)"
+        },
+        {
+          "code": "1109921000000106",
+          "term": "Quality and Outcomes Framework quality indicator-related care invitation (procedure)"
+        },
+        {
+          "code": "1110851000000100",
+          "term": "Quality and Outcomes Framework atrial fibrillation quality indicator-related care invitation (procedure)"
+        },
+        {
+          "code": "120041000119109",
+          "term": "Atrial fibrillation with rapid ventricular response (disorder)"
+        },
+        {
+          "code": "133111000000106",
+          "term": "Quality and Outcomes Framework atrial fibrillation quality indicator-related care invitation using preferred method of communication (procedure)"
+        },
+        {
+          "code": "15964901000119107",
+          "term": "Atypical atrial flutter"
+        },
+        {
+          "code": "15964901000119108",
+          "term": "Atypical atrial flutter (disorder)"
+        },
+        {
+          "code": "195080001",
+          "term": "Atrial fibrillation and flutter (disorder)"
+        },
+        {
+          "code": "196371000000102",
+          "term": "Atrial fibrillation resolved (finding)"
+        },
+        {
+          "code": "233910005",
+          "term": "Lone atrial fibrillation (disorder)"
+        },
+        {
+          "code": "233911009",
+          "term": "Non-rheumatic atrial fibrillation (disorder)"
+        },
+        {
+          "code": "280797561000119104",
+          "term": "Permanent atrial fibrillation due to heart valve disorder (disorder)"
+        },
+        {
+          "code": "280797561000119107",
+          "term": "Permanent atrial fibrillation due to heart valve disorder"
+        },
+        {
+          "code": "282825002",
+          "term": "Paroxysmal atrial fibrillation (disorder)"
+        },
+        {
+          "code": "300996004",
+          "term": "Controlled atrial fibrillation (disorder)"
+        },
+        {
+          "code": "313377641000119104",
+          "term": "Atrial fibrillation due to heart valve disorder (disorder)"
+        },
+        {
+          "code": "313377641000119105",
+          "term": "Atrial fibrillation due to heart valve disorder"
+        },
+        {
+          "code": "314208002",
+          "term": "Rapid atrial fibrillation (disorder)"
+        },
+        {
+          "code": "425615007",
+          "term": "Chronic atrial flutter (disorder)"
+        },
+        {
+          "code": "426749004",
+          "term": "Chronic atrial fibrillation (disorder)"
+        },
+        {
+          "code": "426814001",
+          "term": "Transient cerebral ischemia due to atrial fibrillation (disorder)"
+        },
+        {
+          "code": "427665004",
+          "term": "Paroxysmal atrial flutter (disorder)"
+        },
+        {
+          "code": "440028005",
+          "term": "Permanent atrial fibrillation (disorder)"
+        },
+        {
+          "code": "440059007",
+          "term": "Persistent atrial fibrillation (disorder)"
+        },
+        {
+          "code": "467643831000119104",
+          "term": "Paroxysmal atrial fibrillation due to heart valve disorder (disorder)"
+        },
+        {
+          "code": "467643831000119105",
+          "term": "Paroxysmal atrial fibrillation due to heart valve disorder"
+        },
+        {
+          "code": "489609371000119104",
+          "term": "Persistent atrial fibrillation due to heart valve disorder (disorder)"
+        },
+        {
+          "code": "49436004",
+          "term": "Atrial fibrillation (disorder)"
+        },
+        {
+          "code": "5370000",
+          "term": "Atrial flutter (disorder)"
+        },
+        {
+          "code": "706923002",
+          "term": "Longstanding persistent atrial fibrillation (disorder)"
+        },
+        {
+          "code": "711411000000101",
+          "term": "Atrial fibrillation monitoring invitation (procedure)"
+        },
+        {
+          "code": "715395008",
+          "term": "Familial atrial fibrillation (disorder)"
+        },
+        {
+          "code": "715941000000109",
+          "term": "Excepted from atrial fibrillation quality indicators - patient unsuitable (finding)"
+        },
+        {
+          "code": "716181000000109",
+          "term": "Atrial fibrillation monitoring third letter (procedure)"
+        },
+        {
+          "code": "716721000000107",
+          "term": "Atrial fibrillation monitoring telephone invitation (procedure)"
+        },
+        {
+          "code": "716981000000106",
+          "term": "Atrial fibrillation monitoring second letter (procedure)"
+        },
+        {
+          "code": "717011000000100",
+          "term": "Atrial fibrillation monitoring verbal invitation (procedure)"
+        },
+        {
+          "code": "717221000000101",
+          "term": "Atrial fibrillation monitoring first letter (procedure)"
+        },
+        {
+          "code": "717381000000109",
+          "term": "Excepted from atrial fibrillation quality indicators - informed dissent (finding)"
+        },
+        {
+          "code": "720448006",
+          "term": "Typical atrial flutter (disorder)"
+        },
+        {
+          "code": "762247006",
+          "term": "Preexcited atrial fibrillation (disorder)"
+        },
+        {
+          "code": "A38",
+          "term": "Scarlet fever"
+        },
+        {
+          "code": "B664",
+          "term": "Paragonimiasis"
+        },
+        {
+          "code": "B665",
+          "term": "Fasciolopsiasis"
+        },
+        {
+          "code": "F845",
+          "term": "Asperger syndrome"
+        },
+        {
+          "code": "G731",
+          "term": "Lambert-Eaton syndrome"
+        },
+        {
+          "code": "I011",
+          "term": "Acute rheumatic endocarditis"
+        },
+        {
+          "code": "I231",
+          "term": "Atrial septal defect as current complication following acute myocardial infarction"
+        },
+        {
+          "code": "I236",
+          "term": "Thrombosis of atrium, auricular appendage, and ventricle as current complications following acute myocardial infarction"
+        },
+        {
+          "code": "I33",
+          "term": "Acute and subacute endocarditis"
+        },
+        {
+          "code": "I330",
+          "term": "Acute and subacute infective endocarditis"
+        },
+        {
+          "code": "I339",
+          "term": "Acute endocarditis, unspecified"
+        },
+        {
+          "code": "I424",
+          "term": "Endocardial fibroelastosis"
+        },
+        {
+          "code": "I44",
+          "term": "Atrioventricular and left bundle-branch block"
+        },
+        {
+          "code": "I440",
+          "term": "Atrioventricular block, first degree"
+        },
+        {
+          "code": "I441",
+          "term": "Atrioventricular block, second degree"
+        },
+        {
+          "code": "I442",
+          "term": "Atrioventricular block, complete"
+        },
+        {
+          "code": "I443",
+          "term": "Other and unspecified atrioventricular block"
+        },
+        {
+          "code": "I444",
+          "term": "Left anterior fascicular block"
+        },
+        {
+          "code": "I445",
+          "term": "Left posterior fascicular block"
+        },
+        {
+          "code": "I446",
+          "term": "Other and unspecified fascicular block"
+        },
+        {
+          "code": "I447",
+          "term": "Left bundle-branch block, unspecified"
+        },
+        {
+          "code": "I450",
+          "term": "Right fascicular block"
+        },
+        {
+          "code": "I452",
+          "term": "Bifascicular block"
+        },
+        {
+          "code": "I453",
+          "term": "Trifascicular block"
+        },
+        {
+          "code": "I455",
+          "term": "Other specified heart block"
+        },
+        {
+          "code": "I456",
+          "term": "Pre-excitation syndrome"
+        },
+        {
+          "code": "I47",
+          "term": "Paroxysmal tachycardia"
+        },
+        {
+          "code": "I470",
+          "term": "Re-entry ventricular arrhythmia"
+        },
+        {
+          "code": "I471",
+          "term": "Supraventricular tachycardia"
+        },
+        {
+          "code": "I472",
+          "term": "Ventricular tachycardia"
+        },
+        {
+          "code": "I479",
+          "term": "Paroxysmal tachycardia, unspecified"
+        },
+        {
+          "code": "I49",
+          "term": "Other cardiac arrhythmias"
+        },
+        {
+          "code": "I490",
+          "term": "Ventricular fibrillation and flutter"
+        },
+        {
+          "code": "I491",
+          "term": "Atrial premature depolarization"
+        },
+        {
+          "code": "I493",
+          "term": "Ventricular premature depolarization"
+        },
+        {
+          "code": "I498",
+          "term": "Other specified cardiac arrhythmias"
+        },
+        {
+          "code": "I499",
+          "term": "Cardiac arrhythmia, unspecified"
+        },
+        {
+          "code": "I513",
+          "term": "Intracardiac thrombosis, not elsewhere classified"
+        },
+        {
+          "code": "I74",
+          "term": "Arterial embolism and thrombosis"
+        },
+        {
+          "code": "J661",
+          "term": "Flax-dresser disease"
+        },
+        {
+          "code": "L812",
+          "term": "Freckles"
+        },
+        {
+          "code": "L813",
+          "term": "Caf\u00e9 au lait spots"
+        },
+        {
+          "code": "N96",
+          "term": "Habitual aborter"
+        },
+        {
+          "code": "Q206",
+          "term": "Isomerism of atrial appendages"
+        },
+        {
+          "code": "Q211",
+          "term": "Atrial septal defect"
+        },
+        {
+          "code": "Q212",
+          "term": "Atrioventricular septal defect"
+        },
+        {
+          "code": "Q213",
+          "term": "Tetralogy of Fallot"
+        },
+        {
+          "code": "Q241",
+          "term": "Laevocardia"
+        },
+        {
+          "code": "Q246",
+          "term": "Congenital heart block"
+        },
+        {
+          "code": "R000",
+          "term": "Tachycardia, unspecified"
+        },
+        {
+          "code": "R002",
+          "term": "Palpitations"
+        },
+        {
+          "code": "R253",
+          "term": "Fasciculation"
+        },
+        {
+          "code": "R290",
+          "term": "Tetany"
+        },
+        {
+          "code": "Y442",
+          "term": "Anticoagulants"
+        }
+      ],
+      "fn_codes": []
+    },
+    "merged_enriched": {
+      "codelist_name": "merged_enriched",
+      "n_ref_codes": 7,
+      "n_output_codes": 98,
+      "recall": 1.0,
+      "precision": 0.0714,
+      "f1": 0.1333,
+      "tp_count": 7,
+      "fp_count": 91,
+      "fn_count": 0,
+      "tp_codes": [
+        {
+          "code": "I48",
+          "term": "Atrial fibrillation and flutter"
+        },
+        {
+          "code": "I480",
+          "term": "Paroxysmal atrial fibrillation"
+        },
+        {
+          "code": "I481",
+          "term": "Persistent atrial fibrillation"
+        },
+        {
+          "code": "I482",
+          "term": "Chronic atrial fibrillation"
+        },
+        {
+          "code": "I483",
+          "term": "Typical atrial flutter"
+        },
+        {
+          "code": "I484",
+          "term": "Atypical atrial flutter"
+        },
+        {
+          "code": "I489",
+          "term": "Atrial fibrillation and atrial flutter, unspecified"
+        }
+      ],
+      "fp_codes": [
+        {
+          "code": "287057009",
+          "term": "Atrial premature complex"
+        },
+        {
+          "code": "440059007",
+          "term": "Persistent atrial fibrillation"
+        },
+        {
+          "code": "A1386719",
+          "term": "congenital heart anomaly"
+        },
+        {
+          "code": "A38",
+          "term": "Scarlet fever"
+        },
+        {
+          "code": "B664",
+          "term": "Paragonimiasis"
+        },
+        {
+          "code": "B665",
+          "term": "Fasciolopsiasis"
+        },
+        {
+          "code": "C0003811",
+          "term": "Cardiac Arrhythmia"
+        },
+        {
+          "code": "C0018817",
+          "term": "Atrial Septal Defects"
+        },
+        {
+          "code": "C0023569",
+          "term": "Levocardia"
+        },
+        {
+          "code": "C0030252",
+          "term": "Palpitations"
+        },
+        {
+          "code": "C0033036",
+          "term": "Atrial Premature Complexes"
+        },
+        {
+          "code": "C0039236",
+          "term": "Tachycardia, Paroxysmal"
+        },
+        {
+          "code": "C0039240",
+          "term": "Supraventricular tachycardia"
+        },
+        {
+          "code": "C0039685",
+          "term": "Tetralogy of Fallot"
+        },
+        {
+          "code": "C0042514",
+          "term": "Tachycardia, Ventricular"
+        },
+        {
+          "code": "C0085615",
+          "term": "Right bundle branch block"
+        },
+        {
+          "code": "C0155707",
+          "term": "Trifascicular block"
+        },
+        {
+          "code": "C0155709",
+          "term": "Atrial fibrillation and flutter"
+        },
+        {
+          "code": "C0155710",
+          "term": "Ventricular fibrillation and flutter"
+        },
+        {
+          "code": "C0232219",
+          "term": "Abnormal cardiac conduction"
+        },
+        {
+          "code": "C0235480",
+          "term": "Paroxysmal atrial fibrillation"
+        },
+        {
+          "code": "C0264886",
+          "term": "Conduction disorder of the heart"
+        },
+        {
+          "code": "C0264912",
+          "term": "Left anterior fascicular block"
+        },
+        {
+          "code": "C0264914",
+          "term": "Bifascicular block"
+        },
+        {
+          "code": "C0344692",
+          "term": "Isomerism of atrial appendages"
+        },
+        {
+          "code": "C0348624",
+          "term": "Other specified heart block"
+        },
+        {
+          "code": "C0348626",
+          "term": "Other specified cardiac arrhythmias"
+        },
+        {
+          "code": "C0348864",
+          "term": "Certain current complications following acute myocardial infarction"
+        },
+        {
+          "code": "C0348866",
+          "term": "Atrial septal defect due to and following acute myocardial infarction"
+        },
+        {
+          "code": "C0348876",
+          "term": "Thrombosis of atrium, auricular appendage, and ventricle due to and following acute myocardial infarction"
+        },
+        {
+          "code": "C0349069",
+          "term": "Re-entry ventricular arrhythmia"
+        },
+        {
+          "code": "C0494595",
+          "term": "Atrioventricular and left bundle-branch block"
+        },
+        {
+          "code": "C0494598",
+          "term": "Other cardiac dysrhythmias"
+        },
+        {
+          "code": "C0694539",
+          "term": "Chronic atrial fibrillation"
+        },
+        {
+          "code": "C0878544",
+          "term": "Cardiomyopathies"
+        },
+        {
+          "code": "C2216005",
+          "term": "continuous electrocardiogram monitoring atrial premature depolarization"
+        },
+        {
+          "code": "C3264370",
+          "term": "Typical atrial flutter"
+        },
+        {
+          "code": "C3264372",
+          "term": "Atypical atrial flutter"
+        },
+        {
+          "code": "C3264373",
+          "term": "Unspecified atrial fibrillation and atrial flutter"
+        },
+        {
+          "code": "C5140810",
+          "term": "other persistent atrial fibrillation"
+        },
+        {
+          "code": "F845",
+          "term": "Asperger syndrome"
+        },
+        {
+          "code": "G731",
+          "term": "Lambert-Eaton syndrome"
+        },
+        {
+          "code": "I011",
+          "term": "Acute rheumatic endocarditis"
+        },
+        {
+          "code": "I231",
+          "term": "Atrial septal defect as current complication following acute myocardial infarction"
+        },
+        {
+          "code": "I236",
+          "term": "Thrombosis of atrium, auricular appendage, and ventricle as current complications following acute myocardial infarction"
+        },
+        {
+          "code": "I33",
+          "term": "Acute and subacute endocarditis"
+        },
+        {
+          "code": "I330",
+          "term": "Acute and subacute infective endocarditis"
+        },
+        {
+          "code": "I339",
+          "term": "Acute endocarditis, unspecified"
+        },
+        {
+          "code": "I424",
+          "term": "Endocardial fibroelastosis"
+        },
+        {
+          "code": "I44",
+          "term": "Atrioventricular and left bundle-branch block"
+        },
+        {
+          "code": "I440",
+          "term": "Atrioventricular block, first degree"
+        },
+        {
+          "code": "I441",
+          "term": "Atrioventricular block, second degree"
+        },
+        {
+          "code": "I442",
+          "term": "Atrioventricular block, complete"
+        },
+        {
+          "code": "I443",
+          "term": "Other and unspecified atrioventricular block"
+        },
+        {
+          "code": "I444",
+          "term": "Left anterior fascicular block"
+        },
+        {
+          "code": "I445",
+          "term": "Left posterior fascicular block"
+        },
+        {
+          "code": "I446",
+          "term": "Other and unspecified fascicular block"
+        },
+        {
+          "code": "I447",
+          "term": "Left bundle-branch block, unspecified"
+        },
+        {
+          "code": "I450",
+          "term": "Right fascicular block"
+        },
+        {
+          "code": "I452",
+          "term": "Bifascicular block"
+        },
+        {
+          "code": "I453",
+          "term": "Trifascicular block"
+        },
+        {
+          "code": "I455",
+          "term": "Other specified heart block"
+        },
+        {
+          "code": "I456",
+          "term": "Pre-excitation syndrome"
+        },
+        {
+          "code": "I47",
+          "term": "Paroxysmal tachycardia"
+        },
+        {
+          "code": "I470",
+          "term": "Re-entry ventricular arrhythmia"
+        },
+        {
+          "code": "I471",
+          "term": "Supraventricular tachycardia"
+        },
+        {
+          "code": "I472",
+          "term": "Ventricular tachycardia"
+        },
+        {
+          "code": "I479",
+          "term": "Paroxysmal tachycardia, unspecified"
+        },
+        {
+          "code": "I49",
+          "term": "Other cardiac arrhythmias"
+        },
+        {
+          "code": "I490",
+          "term": "Ventricular fibrillation and flutter"
+        },
+        {
+          "code": "I491",
+          "term": "Atrial premature depolarization"
+        },
+        {
+          "code": "I493",
+          "term": "Ventricular premature depolarization"
+        },
+        {
+          "code": "I498",
+          "term": "Other specified cardiac arrhythmias"
+        },
+        {
+          "code": "I499",
+          "term": "Cardiac arrhythmia, unspecified"
+        },
+        {
+          "code": "I513",
+          "term": "Intracardiac thrombosis, not elsewhere classified"
+        },
+        {
+          "code": "I74",
+          "term": "Arterial embolism and thrombosis"
+        },
+        {
+          "code": "J661",
+          "term": "Flax-dresser disease"
+        },
+        {
+          "code": "L812",
+          "term": "Freckles"
+        },
+        {
+          "code": "L813",
+          "term": "Caf\u00e9 au lait spots"
+        },
+        {
+          "code": "N96",
+          "term": "Habitual aborter"
+        },
+        {
+          "code": "Q206",
+          "term": "Isomerism of atrial appendages"
+        },
+        {
+          "code": "Q211",
+          "term": "Atrial septal defect"
+        },
+        {
+          "code": "Q212",
+          "term": "Atrioventricular septal defect"
+        },
+        {
+          "code": "Q213",
+          "term": "Tetralogy of Fallot"
+        },
+        {
+          "code": "Q241",
+          "term": "Laevocardia"
+        },
+        {
+          "code": "Q246",
+          "term": "Congenital heart block"
+        },
+        {
+          "code": "R000",
+          "term": "Tachycardia, unspecified"
+        },
+        {
+          "code": "R002",
+          "term": "Palpitations"
+        },
+        {
+          "code": "R253",
+          "term": "Fasciculation"
+        },
+        {
+          "code": "R290",
+          "term": "Tetany"
+        },
+        {
+          "code": "Y442",
+          "term": "Anticoagulants"
+        }
+      ],
+      "fn_codes": []
+    },
+    "all_scored": {
+      "codelist_name": "all_scored",
+      "n_ref_codes": 7,
+      "n_output_codes": 61,
+      "recall": 1.0,
+      "precision": 0.1148,
+      "f1": 0.2059,
+      "tp_count": 7,
+      "fp_count": 54,
+      "fn_count": 0,
+      "tp_codes": [
+        {
+          "code": "I48",
+          "term": "Atrial fibrillation and flutter"
+        },
+        {
+          "code": "I480",
+          "term": "Paroxysmal atrial fibrillation"
+        },
+        {
+          "code": "I481",
+          "term": "Persistent atrial fibrillation"
+        },
+        {
+          "code": "I482",
+          "term": "Chronic atrial fibrillation"
+        },
+        {
+          "code": "I483",
+          "term": "Typical atrial flutter"
+        },
+        {
+          "code": "I484",
+          "term": "Atypical atrial flutter"
+        },
+        {
+          "code": "I489",
+          "term": "Atrial fibrillation and atrial flutter, unspecified"
+        }
+      ],
+      "fp_codes": [
+        {
+          "code": "A38",
+          "term": "Scarlet fever"
+        },
+        {
+          "code": "B664",
+          "term": "Paragonimiasis"
+        },
+        {
+          "code": "B665",
+          "term": "Fasciolopsiasis"
+        },
+        {
+          "code": "F845",
+          "term": "Asperger syndrome"
+        },
+        {
+          "code": "G731",
+          "term": "Lambert-Eaton syndrome"
+        },
+        {
+          "code": "I011",
+          "term": "Acute rheumatic endocarditis"
+        },
+        {
+          "code": "I231",
+          "term": "Atrial septal defect as current complication following acute myocardial infarction"
+        },
+        {
+          "code": "I236",
+          "term": "Thrombosis of atrium, auricular appendage, and ventricle as current complications following acute myocardial infarction"
+        },
+        {
+          "code": "I33",
+          "term": "Acute and subacute endocarditis"
+        },
+        {
+          "code": "I330",
+          "term": "Acute and subacute infective endocarditis"
+        },
+        {
+          "code": "I339",
+          "term": "Acute endocarditis, unspecified"
+        },
+        {
+          "code": "I424",
+          "term": "Endocardial fibroelastosis"
+        },
+        {
+          "code": "I44",
+          "term": "Atrioventricular and left bundle-branch block"
+        },
+        {
+          "code": "I440",
+          "term": "Atrioventricular block, first degree"
+        },
+        {
+          "code": "I441",
+          "term": "Atrioventricular block, second degree"
+        },
+        {
+          "code": "I442",
+          "term": "Atrioventricular block, complete"
+        },
+        {
+          "code": "I443",
+          "term": "Other and unspecified atrioventricular block"
+        },
+        {
+          "code": "I444",
+          "term": "Left anterior fascicular block"
+        },
+        {
+          "code": "I445",
+          "term": "Left posterior fascicular block"
+        },
+        {
+          "code": "I446",
+          "term": "Other and unspecified fascicular block"
+        },
+        {
+          "code": "I447",
+          "term": "Left bundle-branch block, unspecified"
+        },
+        {
+          "code": "I450",
+          "term": "Right fascicular block"
+        },
+        {
+          "code": "I452",
+          "term": "Bifascicular block"
+        },
+        {
+          "code": "I453",
+          "term": "Trifascicular block"
+        },
+        {
+          "code": "I455",
+          "term": "Other specified heart block"
+        },
+        {
+          "code": "I456",
+          "term": "Pre-excitation syndrome"
+        },
+        {
+          "code": "I47",
+          "term": "Paroxysmal tachycardia"
+        },
+        {
+          "code": "I470",
+          "term": "Re-entry ventricular arrhythmia"
+        },
+        {
+          "code": "I471",
+          "term": "Supraventricular tachycardia"
+        },
+        {
+          "code": "I472",
+          "term": "Ventricular tachycardia"
+        },
+        {
+          "code": "I479",
+          "term": "Paroxysmal tachycardia, unspecified"
+        },
+        {
+          "code": "I49",
+          "term": "Other cardiac arrhythmias"
+        },
+        {
+          "code": "I490",
+          "term": "Ventricular fibrillation and flutter"
+        },
+        {
+          "code": "I491",
+          "term": "Atrial premature depolarization"
+        },
+        {
+          "code": "I493",
+          "term": "Ventricular premature depolarization"
+        },
+        {
+          "code": "I498",
+          "term": "Other specified cardiac arrhythmias"
+        },
+        {
+          "code": "I499",
+          "term": "Cardiac arrhythmia, unspecified"
+        },
+        {
+          "code": "I513",
+          "term": "Intracardiac thrombosis, not elsewhere classified"
+        },
+        {
+          "code": "I74",
+          "term": "Arterial embolism and thrombosis"
+        },
+        {
+          "code": "J661",
+          "term": "Flax-dresser disease"
+        },
+        {
+          "code": "L812",
+          "term": "Freckles"
+        },
+        {
+          "code": "L813",
+          "term": "Caf\u00e9 au lait spots"
+        },
+        {
+          "code": "N96",
+          "term": "Habitual aborter"
+        },
+        {
+          "code": "Q206",
+          "term": "Isomerism of atrial appendages"
+        },
+        {
+          "code": "Q211",
+          "term": "Atrial septal defect"
+        },
+        {
+          "code": "Q212",
+          "term": "Atrioventricular septal defect"
+        },
+        {
+          "code": "Q213",
+          "term": "Tetralogy of Fallot"
+        },
+        {
+          "code": "Q241",
+          "term": "Laevocardia"
+        },
+        {
+          "code": "Q246",
+          "term": "Congenital heart block"
+        },
+        {
+          "code": "R000",
+          "term": "Tachycardia, unspecified"
+        },
+        {
+          "code": "R002",
+          "term": "Palpitations"
+        },
+        {
+          "code": "R253",
+          "term": "Fasciculation"
+        },
+        {
+          "code": "R290",
+          "term": "Tetany"
+        },
+        {
+          "code": "Y442",
+          "term": "Anticoagulants"
+        }
+      ],
+      "fn_codes": []
+    },
+    "included_only": {
+      "codelist_name": "included_only",
+      "n_ref_codes": 7,
+      "n_output_codes": 7,
+      "recall": 1.0,
+      "precision": 1.0,
+      "f1": 1.0,
+      "tp_count": 7,
+      "fp_count": 0,
+      "fn_count": 0,
+      "tp_codes": [
+        {
+          "code": "I48",
+          "term": "Atrial fibrillation and flutter"
+        },
+        {
+          "code": "I480",
+          "term": "Paroxysmal atrial fibrillation"
+        },
+        {
+          "code": "I481",
+          "term": "Persistent atrial fibrillation"
+        },
+        {
+          "code": "I482",
+          "term": "Chronic atrial fibrillation"
+        },
+        {
+          "code": "I483",
+          "term": "Typical atrial flutter"
+        },
+        {
+          "code": "I484",
+          "term": "Atypical atrial flutter"
+        },
+        {
+          "code": "I489",
+          "term": "Atrial fibrillation and atrial flutter, unspecified"
+        }
+      ],
+      "fp_codes": [],
+      "fn_codes": []
+    },
+    "included_plus_uncertain": {
+      "codelist_name": "included_plus_uncertain",
+      "n_ref_codes": 7,
+      "n_output_codes": 7,
+      "recall": 1.0,
+      "precision": 1.0,
+      "f1": 1.0,
+      "tp_count": 7,
+      "fp_count": 0,
+      "fn_count": 0,
+      "tp_codes": [
+        {
+          "code": "I48",
+          "term": "Atrial fibrillation and flutter"
+        },
+        {
+          "code": "I480",
+          "term": "Paroxysmal atrial fibrillation"
+        },
+        {
+          "code": "I481",
+          "term": "Persistent atrial fibrillation"
+        },
+        {
+          "code": "I482",
+          "term": "Chronic atrial fibrillation"
+        },
+        {
+          "code": "I483",
+          "term": "Typical atrial flutter"
+        },
+        {
+          "code": "I484",
+          "term": "Atypical atrial flutter"
+        },
+        {
+          "code": "I489",
+          "term": "Atrial fibrillation and atrial flutter, unspecified"
+        }
+      ],
+      "fp_codes": [],
+      "fn_codes": []
+    }
+  },
+  "false_exclusions": {
+    "count": 0,
+    "codes": []
+  },
+  "uncertain_in_reference": {
+    "count": 0,
+    "codes": []
+  },
+  "summary": "Recall: 100.0% (7 of 7 reference codes retrieved). Precision: 100.0%. F1: 100.0%. 0 reference codes were incorrectly excluded.",
+  "elapsed_seconds": 22.54,
+  "pipeline_results_count": 61,
+  "scored_codes": [
+    {
+      "code": "I48",
+      "term": "Atrial fibrillation and flutter",
+      "vocabulary": "ICD-10 (WHO)",
+      "decision": "include",
+      "confidence": 0.99,
+      "rationale": "This is the parent code for atrial fibrillation and flutter, directly matching the queried conditions.",
+      "sources": [
+        "ChromaDB",
+        "OMOPHub"
+      ],
+      "usage_frequency": null
+    },
+    {
+      "code": "I48.0",
+      "term": "Paroxysmal atrial fibrillation",
+      "vocabulary": "ICD-10 (WHO)",
+      "decision": "include",
+      "confidence": 0.99,
+      "rationale": "Paroxysmal atrial fibrillation is a clinical subtype of atrial fibrillation, the primary condition.",
+      "sources": [
+        "ChromaDB",
+        "OMOPHub"
+      ],
+      "usage_frequency": null
+    },
+    {
+      "code": "I48.1",
+      "term": "Persistent atrial fibrillation",
+      "vocabulary": "ICD-10 (WHO)",
+      "decision": "include",
+      "confidence": 0.99,
+      "rationale": "Persistent atrial fibrillation is a clinical subtype of atrial fibrillation, the primary condition.",
+      "sources": [
+        "ChromaDB",
+        "OMOPHub"
+      ],
+      "usage_frequency": null
+    },
+    {
+      "code": "I48.2",
+      "term": "Chronic atrial fibrillation",
+      "vocabulary": "ICD-10 (WHO)",
+      "decision": "include",
+      "confidence": 0.99,
+      "rationale": "Chronic atrial fibrillation is a clinical subtype of atrial fibrillation, the primary condition.",
+      "sources": [
+        "ChromaDB",
+        "OMOPHub"
+      ],
+      "usage_frequency": null
+    },
+    {
+      "code": "I48.3",
+      "term": "Typical atrial flutter",
+      "vocabulary": "ICD-10 (WHO)",
+      "decision": "include",
+      "confidence": 0.99,
+      "rationale": "Typical atrial flutter is a clinical subtype of atrial flutter, the comorbidity condition.",
+      "sources": [
+        "ChromaDB",
+        "OMOPHub"
+      ],
+      "usage_frequency": null
+    },
+    {
+      "code": "I48.4",
+      "term": "Atypical atrial flutter",
+      "vocabulary": "ICD-10 (WHO)",
+      "decision": "include",
+      "confidence": 0.99,
+      "rationale": "Atypical atrial flutter is a clinical subtype of atrial flutter, the comorbidity condition.",
+      "sources": [
+        "ChromaDB",
+        "OMOPHub"
+      ],
+      "usage_frequency": null
+    },
+    {
+      "code": "I48.9",
+      "term": "Atrial fibrillation and atrial flutter, unspecified",
+      "vocabulary": "ICD-10 (WHO)",
+      "decision": "include",
+      "confidence": 0.99,
+      "rationale": "Atrial fibrillation and atrial flutter unspecified covers both the primary and comorbidity conditions.",
+      "sources": [
+        "ChromaDB",
+        "OMOPHub"
+      ],
+      "usage_frequency": null
+    },
+    {
+      "code": "A38",
+      "term": "Scarlet fever",
+      "vocabulary": "ICD-10 (WHO)",
+      "decision": "exclude",
+      "confidence": 0.99,
+      "rationale": "Scarlet fever is an infectious disease unrelated to atrial fibrillation or atrial flutter.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "usage_frequency": null
+    },
+    {
+      "code": "B66.4",
+      "term": "Paragonimiasis",
+      "vocabulary": "ICD-10 (WHO)",
+      "decision": "exclude",
+      "confidence": 0.99,
+      "rationale": "Paragonimiasis is a parasitic infection unrelated to atrial fibrillation or atrial flutter.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "usage_frequency": null
+    },
+    {
+      "code": "B66.5",
+      "term": "Fasciolopsiasis",
+      "vocabulary": "ICD-10 (WHO)",
+      "decision": "exclude",
+      "confidence": 0.99,
+      "rationale": "Fasciolopsiasis is a parasitic infection unrelated to atrial fibrillation or atrial flutter.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "usage_frequency": null
+    },
+    {
+      "code": "F84.5",
+      "term": "Asperger syndrome",
+      "vocabulary": "ICD-10 (WHO)",
+      "decision": "exclude",
+      "confidence": 0.99,
+      "rationale": "Asperger syndrome is a neurodevelopmental disorder unrelated to atrial fibrillation or atrial flutter.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "usage_frequency": null
+    },
+    {
+      "code": "G73.1",
+      "term": "Lambert-Eaton syndrome",
+      "vocabulary": "ICD-10 (WHO)",
+      "decision": "exclude",
+      "confidence": 0.99,
+      "rationale": "Lambert-Eaton syndrome is a neuromuscular disorder unrelated to atrial fibrillation or atrial flutter.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "usage_frequency": null
+    },
+    {
+      "code": "J66.1",
+      "term": "Flax-dresser disease",
+      "vocabulary": "ICD-10 (WHO)",
+      "decision": "exclude",
+      "confidence": 0.99,
+      "rationale": "Flax-dresser disease is an occupational lung disease completely unrelated to atrial fibrillation.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "usage_frequency": null
+    },
+    {
+      "code": "L81.2",
+      "term": "Freckles",
+      "vocabulary": "ICD-10 (WHO)",
+      "decision": "exclude",
+      "confidence": 0.99,
+      "rationale": "Freckles are a dermatological condition unrelated to atrial fibrillation.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "usage_frequency": null
+    },
+    {
+      "code": "L81.3",
+      "term": "Caf\u00e9 au lait spots",
+      "vocabulary": "ICD-10 (WHO)",
+      "decision": "exclude",
+      "confidence": 0.99,
+      "rationale": "Caf\u00e9 au lait spots are a dermatological condition unrelated to atrial fibrillation.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "usage_frequency": null
+    },
+    {
+      "code": "N96",
+      "term": "Habitual aborter",
+      "vocabulary": "ICD-10 (WHO)",
+      "decision": "exclude",
+      "confidence": 0.99,
+      "rationale": "Habitual aborter is an obstetric condition unrelated to atrial fibrillation.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "usage_frequency": null
+    },
+    {
+      "code": "R25.3",
+      "term": "Fasciculation",
+      "vocabulary": "ICD-10 (WHO)",
+      "decision": "exclude",
+      "confidence": 0.99,
+      "rationale": "Fasciculation is a neuromuscular symptom unrelated to atrial fibrillation.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "usage_frequency": null
+    },
+    {
+      "code": "R29.0",
+      "term": "Tetany",
+      "vocabulary": "ICD-10 (WHO)",
+      "decision": "exclude",
+      "confidence": 0.99,
+      "rationale": "Tetany is a neuromuscular symptom unrelated to atrial fibrillation.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "usage_frequency": null
+    },
+    {
+      "code": "I44",
+      "term": "Atrioventricular and left bundle-branch block",
+      "vocabulary": "ICD-10 (WHO)",
+      "decision": "exclude",
+      "confidence": 0.98,
+      "rationale": "Atrioventricular and left bundle-branch block are conduction abnormalities distinct from atrial fibrillation or flutter.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "usage_frequency": null
+    },
+    {
+      "code": "I44.0",
+      "term": "Atrioventricular block, first degree",
+      "vocabulary": "ICD-10 (WHO)",
+      "decision": "exclude",
+      "confidence": 0.98,
+      "rationale": "First-degree AV block is a conduction abnormality distinct from atrial fibrillation or flutter.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "usage_frequency": null
+    },
+    {
+      "code": "I44.1",
+      "term": "Atrioventricular block, second degree",
+      "vocabulary": "ICD-10 (WHO)",
+      "decision": "exclude",
+      "confidence": 0.98,
+      "rationale": "Second-degree AV block is a conduction abnormality distinct from atrial fibrillation or flutter.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "usage_frequency": null
+    },
+    {
+      "code": "I44.2",
+      "term": "Atrioventricular block, complete",
+      "vocabulary": "ICD-10 (WHO)",
+      "decision": "exclude",
+      "confidence": 0.98,
+      "rationale": "Complete AV block is a conduction abnormality distinct from atrial fibrillation or flutter.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "usage_frequency": null
+    },
+    {
+      "code": "I44.3",
+      "term": "Other and unspecified atrioventricular block",
+      "vocabulary": "ICD-10 (WHO)",
+      "decision": "exclude",
+      "confidence": 0.98,
+      "rationale": "Other and unspecified AV block is a conduction abnormality distinct from atrial fibrillation or flutter.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "usage_frequency": null
+    },
+    {
+      "code": "I44.4",
+      "term": "Left anterior fascicular block",
+      "vocabulary": "ICD-10 (WHO)",
+      "decision": "exclude",
+      "confidence": 0.98,
+      "rationale": "Left anterior fascicular block is a conduction abnormality distinct from atrial fibrillation or flutter.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "usage_frequency": null
+    },
+    {
+      "code": "I44.5",
+      "term": "Left posterior fascicular block",
+      "vocabulary": "ICD-10 (WHO)",
+      "decision": "exclude",
+      "confidence": 0.98,
+      "rationale": "Left posterior fascicular block is a conduction abnormality distinct from atrial fibrillation or flutter.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "usage_frequency": null
+    },
+    {
+      "code": "I44.6",
+      "term": "Other and unspecified fascicular block",
+      "vocabulary": "ICD-10 (WHO)",
+      "decision": "exclude",
+      "confidence": 0.98,
+      "rationale": "Other and unspecified fascicular block is a conduction abnormality distinct from atrial fibrillation or flutter.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "usage_frequency": null
+    },
+    {
+      "code": "I44.7",
+      "term": "Left bundle-branch block, unspecified",
+      "vocabulary": "ICD-10 (WHO)",
+      "decision": "exclude",
+      "confidence": 0.98,
+      "rationale": "Left bundle-branch block unspecified is a conduction abnormality distinct from atrial fibrillation or flutter.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "usage_frequency": null
+    },
+    {
+      "code": "I45.0",
+      "term": "Right fascicular block",
+      "vocabulary": "ICD-10 (WHO)",
+      "decision": "exclude",
+      "confidence": 0.98,
+      "rationale": "Right fascicular block is a conduction abnormality distinct from atrial fibrillation or flutter.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "usage_frequency": null
+    },
+    {
+      "code": "I45.2",
+      "term": "Bifascicular block",
+      "vocabulary": "ICD-10 (WHO)",
+      "decision": "exclude",
+      "confidence": 0.98,
+      "rationale": "Bifascicular block is a conduction abnormality distinct from atrial fibrillation or flutter.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "usage_frequency": null
+    },
+    {
+      "code": "I45.3",
+      "term": "Trifascicular block",
+      "vocabulary": "ICD-10 (WHO)",
+      "decision": "exclude",
+      "confidence": 0.98,
+      "rationale": "Trifascicular block is a conduction abnormality distinct from atrial fibrillation or flutter.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "usage_frequency": null
+    },
+    {
+      "code": "I45.5",
+      "term": "Other specified heart block",
+      "vocabulary": "ICD-10 (WHO)",
+      "decision": "exclude",
+      "confidence": 0.98,
+      "rationale": "Other specified heart block is a conduction abnormality distinct from atrial fibrillation or flutter.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "usage_frequency": null
+    },
+    {
+      "code": "I45.6",
+      "term": "Pre-excitation syndrome",
+      "vocabulary": "ICD-10 (WHO)",
+      "decision": "exclude",
+      "confidence": 0.98,
+      "rationale": "Pre-excitation syndrome is a conduction abnormality distinct from atrial fibrillation or flutter.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "usage_frequency": null
+    },
+    {
+      "code": "I47",
+      "term": "Paroxysmal tachycardia",
+      "vocabulary": "ICD-10 (WHO)",
+      "decision": "exclude",
+      "confidence": 0.98,
+      "rationale": "Paroxysmal tachycardia is a distinct arrhythmia category separate from atrial fibrillation or flutter.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "usage_frequency": null
+    },
+    {
+      "code": "I47.0",
+      "term": "Re-entry ventricular arrhythmia",
+      "vocabulary": "ICD-10 (WHO)",
+      "decision": "exclude",
+      "confidence": 0.98,
+      "rationale": "Re-entry ventricular arrhythmia is a distinct arrhythmia separate from atrial fibrillation or flutter.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "usage_frequency": null
+    },
+    {
+      "code": "I47.1",
+      "term": "Supraventricular tachycardia",
+      "vocabulary": "ICD-10 (WHO)",
+      "decision": "exclude",
+      "confidence": 0.98,
+      "rationale": "Supraventricular tachycardia is a distinct arrhythmia separate from atrial fibrillation or flutter.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "usage_frequency": null
+    },
+    {
+      "code": "I47.2",
+      "term": "Ventricular tachycardia",
+      "vocabulary": "ICD-10 (WHO)",
+      "decision": "exclude",
+      "confidence": 0.98,
+      "rationale": "Ventricular tachycardia is a distinct arrhythmia separate from atrial fibrillation or flutter.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "usage_frequency": null
+    },
+    {
+      "code": "I47.9",
+      "term": "Paroxysmal tachycardia, unspecified",
+      "vocabulary": "ICD-10 (WHO)",
+      "decision": "exclude",
+      "confidence": 0.98,
+      "rationale": "Paroxysmal tachycardia unspecified is a distinct arrhythmia separate from atrial fibrillation or flutter.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "usage_frequency": null
+    },
+    {
+      "code": "I49",
+      "term": "Other cardiac arrhythmias",
+      "vocabulary": "ICD-10 (WHO)",
+      "decision": "exclude",
+      "confidence": 0.98,
+      "rationale": "Other cardiac arrhythmias is a broader category that includes but is not limited to atrial fibrillation and flutter.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "usage_frequency": null
+    },
+    {
+      "code": "I49.0",
+      "term": "Ventricular fibrillation and flutter",
+      "vocabulary": "ICD-10 (WHO)",
+      "decision": "exclude",
+      "confidence": 0.98,
+      "rationale": "Ventricular fibrillation and flutter are distinct arrhythmias separate from atrial fibrillation or flutter.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "usage_frequency": null
+    },
+    {
+      "code": "I01.1",
+      "term": "Acute rheumatic endocarditis",
+      "vocabulary": "ICD-10 (WHO)",
+      "decision": "exclude",
+      "confidence": 0.95,
+      "rationale": "Acute rheumatic endocarditis is a cardiac complication that may predispose to atrial fibrillation but is not an instance of atrial fibrillation itself.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "usage_frequency": null
+    },
+    {
+      "code": "I23.1",
+      "term": "Atrial septal defect as current complication following acute myocardial infarction",
+      "vocabulary": "ICD-10 (WHO)",
+      "decision": "exclude",
+      "confidence": 0.95,
+      "rationale": "Atrial septal defect following MI is a structural complication of myocardial infarction, not an instance of atrial fibrillation or flutter.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "usage_frequency": null
+    },
+    {
+      "code": "I23.6",
+      "term": "Thrombosis of atrium, auricular appendage, and ventricle as current complications following acute myocardial infarction",
+      "vocabulary": "ICD-10 (WHO)",
+      "decision": "exclude",
+      "confidence": 0.95,
+      "rationale": "Thrombosis following MI is a complication of myocardial infarction, not an instance of atrial fibrillation or flutter.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "usage_frequency": null
+    },
+    {
+      "code": "I33",
+      "term": "Acute and subacute endocarditis",
+      "vocabulary": "ICD-10 (WHO)",
+      "decision": "exclude",
+      "confidence": 0.95,
+      "rationale": "Acute and subacute endocarditis is a cardiac infection that may predispose to atrial fibrillation but is not an instance of atrial fibrillation itself.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "usage_frequency": null
+    },
+    {
+      "code": "I33.0",
+      "term": "Acute and subacute infective endocarditis",
+      "vocabulary": "ICD-10 (WHO)",
+      "decision": "exclude",
+      "confidence": 0.95,
+      "rationale": "Acute and subacute infective endocarditis is a cardiac infection that may predispose to atrial fibrillation but is not an instance of atrial fibrillation itself.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "usage_frequency": null
+    },
+    {
+      "code": "I33.9",
+      "term": "Acute endocarditis, unspecified",
+      "vocabulary": "ICD-10 (WHO)",
+      "decision": "exclude",
+      "confidence": 0.95,
+      "rationale": "Acute endocarditis unspecified is a cardiac infection that may predispose to atrial fibrillation but is not an instance of atrial fibrillation itself.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "usage_frequency": null
+    },
+    {
+      "code": "I42.4",
+      "term": "Endocardial fibroelastosis",
+      "vocabulary": "ICD-10 (WHO)",
+      "decision": "exclude",
+      "confidence": 0.95,
+      "rationale": "Endocardial fibroelastosis is a structural cardiac condition that may predispose to atrial fibrillation but is not an instance of atrial fibrillation itself.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "usage_frequency": null
+    },
+    {
+      "code": "I49.1",
+      "term": "Atrial premature depolarization",
+      "vocabulary": "ICD-10 (WHO)",
+      "decision": "exclude",
+      "confidence": 0.95,
+      "rationale": "Atrial premature depolarization is a different arrhythmia, not atrial fibrillation or flutter.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "usage_frequency": null
+    },
+    {
+      "code": "I49.3",
+      "term": "Ventricular premature depolarization",
+      "vocabulary": "ICD-10 (WHO)",
+      "decision": "exclude",
+      "confidence": 0.95,
+      "rationale": "Ventricular premature depolarization is unrelated to atrial fibrillation or flutter.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "usage_frequency": null
+    },
+    {
+      "code": "I49.9",
+      "term": "Cardiac arrhythmia, unspecified",
+      "vocabulary": "ICD-10 (WHO)",
+      "decision": "exclude",
+      "confidence": 0.95,
+      "rationale": "Unspecified cardiac arrhythmia is too vague and does not confirm atrial fibrillation or flutter.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "usage_frequency": null
+    },
+    {
+      "code": "Q20.6",
+      "term": "Isomerism of atrial appendages",
+      "vocabulary": "ICD-10 (WHO)",
+      "decision": "exclude",
+      "confidence": 0.95,
+      "rationale": "Isomerism of atrial appendages is a congenital cardiac structural anomaly, not atrial fibrillation or flutter.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "usage_frequency": null
+    },
+    {
+      "code": "Q21.1",
+      "term": "Atrial septal defect",
+      "vocabulary": "ICD-10 (WHO)",
+      "decision": "exclude",
+      "confidence": 0.95,
+      "rationale": "Atrial septal defect is a congenital structural heart defect, not atrial fibrillation or flutter.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "usage_frequency": null
+    },
+    {
+      "code": "Q21.2",
+      "term": "Atrioventricular septal defect",
+      "vocabulary": "ICD-10 (WHO)",
+      "decision": "exclude",
+      "confidence": 0.95,
+      "rationale": "Atrioventricular septal defect is a congenital structural heart defect, not atrial fibrillation or flutter.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "usage_frequency": null
+    },
+    {
+      "code": "Q21.3",
+      "term": "Tetralogy of Fallot",
+      "vocabulary": "ICD-10 (WHO)",
+      "decision": "exclude",
+      "confidence": 0.95,
+      "rationale": "Tetralogy of Fallot is a congenital structural heart defect, not atrial fibrillation or flutter.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "usage_frequency": null
+    },
+    {
+      "code": "Q24.1",
+      "term": "Laevocardia",
+      "vocabulary": "ICD-10 (WHO)",
+      "decision": "exclude",
+      "confidence": 0.95,
+      "rationale": "Laevocardia is a congenital cardiac positional anomaly, not atrial fibrillation or flutter.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "usage_frequency": null
+    },
+    {
+      "code": "Q24.6",
+      "term": "Congenital heart block",
+      "vocabulary": "ICD-10 (WHO)",
+      "decision": "exclude",
+      "confidence": 0.95,
+      "rationale": "Congenital heart block is a congenital conduction disorder, not atrial fibrillation or flutter.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "usage_frequency": null
+    },
+    {
+      "code": "Y44.2",
+      "term": "Anticoagulants",
+      "vocabulary": "ICD-10 (WHO)",
+      "decision": "exclude",
+      "confidence": 0.95,
+      "rationale": "Anticoagulants are a treatment for atrial fibrillation, not a diagnostic code for the condition.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "usage_frequency": null
+    },
+    {
+      "code": "I49.8",
+      "term": "Other specified cardiac arrhythmias",
+      "vocabulary": "ICD-10 (WHO)",
+      "decision": "exclude",
+      "confidence": 0.9,
+      "rationale": "Generic 'other specified cardiac arrhythmias' is too broad and does not specifically represent atrial fibrillation or flutter.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "usage_frequency": null
+    },
+    {
+      "code": "R00.0",
+      "term": "Tachycardia, unspecified",
+      "vocabulary": "ICD-10 (WHO)",
+      "decision": "exclude",
+      "confidence": 0.9,
+      "rationale": "Unspecified tachycardia is a symptom that may accompany atrial fibrillation but does not confirm the diagnosis.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "usage_frequency": null
+    },
+    {
+      "code": "R00.2",
+      "term": "Palpitations",
+      "vocabulary": "ICD-10 (WHO)",
+      "decision": "exclude",
+      "confidence": 0.9,
+      "rationale": "Palpitations are a symptom that may accompany atrial fibrillation but do not confirm the diagnosis.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "usage_frequency": null
+    },
+    {
+      "code": "I51.3",
+      "term": "Intracardiac thrombosis, not elsewhere classified",
+      "vocabulary": "ICD-10 (WHO)",
+      "decision": "exclude",
+      "confidence": 0.85,
+      "rationale": "Intracardiac thrombosis is a complication of atrial fibrillation, not an instance of the condition itself.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "usage_frequency": null
+    },
+    {
+      "code": "I74",
+      "term": "Arterial embolism and thrombosis",
+      "vocabulary": "ICD-10 (WHO)",
+      "decision": "exclude",
+      "confidence": 0.85,
+      "rationale": "Arterial embolism and thrombosis are complications of atrial fibrillation, not instances of the condition.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "usage_frequency": null
+    }
+  ],
+  "pipeline": "rag",
+  "cold_start": false
+}
