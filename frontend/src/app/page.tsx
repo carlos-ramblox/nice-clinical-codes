@@ -26,6 +26,59 @@ const LOADING_STEPS = [
   { label: "Almost done — assembling final results...", delay: 21000 },
 ];
 
+// T31: render the OpenCodeCounts-derived usage column for one code.
+// Three branches:
+//   counted          → "12,540" + setting-aware badge ("GP" or "HES")
+//   withheld_below_5 → "<5" with a tooltip explaining NHS Digital's
+//                      1-4 privacy rule
+//   not_in_dataset   → em-dash with a tooltip explaining absence
+// Setting is inferred from usage_source so "12,540" never shows
+// without a clarifier. Counts are NHS Digital's published rounded
+// values for SNOMED primary care; ICD-10/OPCS-4 are unrounded.
+function UsageCell({ row }: { row: CodeResult }) {
+  const status = row.usage_status;
+  if (status === "counted" && typeof row.usage_frequency === "number") {
+    // Use the machine-readable usage_setting from the API rather than
+    // substring-matching usage_source — robust to future rewording of
+    // the attribution string.
+    const isHes = row.usage_setting === "secondary_care_hes";
+    const settingLabel = isHes ? "HES" : "GP";
+    const settingTitle = isHes
+      ? "NHS Digital HES inpatient FCEs (Apr 2024 – Mar 2025)"
+      : "NHS Digital primary-care SNOMED reporting (Aug 2024 – Jul 2025)";
+    return (
+      <span className="whitespace-nowrap" title={row.usage_source ?? settingTitle}>
+        <span className="tabular-nums">{row.usage_frequency.toLocaleString()}</span>
+        <span
+          className="ml-1.5 inline-flex items-center px-1 py-0.5 rounded text-[10px] font-medium bg-gray-100 text-gray-700 border border-gray-200"
+          aria-label={settingTitle}
+        >
+          {settingLabel}
+        </span>
+      </span>
+    );
+  }
+  if (status === "withheld_below_5") {
+    return (
+      <span
+        className="text-amber-700 text-xs"
+        title="NHS Digital withholds counts of 1-4 under their privacy policy. Code was used at least once."
+      >
+        &lt;5
+      </span>
+    );
+  }
+  return (
+    <span
+      className="text-gray-400"
+      title="Code is not present in the NHS Digital usage dataset."
+    >
+      —
+    </span>
+  );
+}
+
+
 function DecisionBadge({ decision }: { decision: string }) {
   const config = {
     include: { bg: "bg-green-100", text: "text-green-800", border: "border-green-300", icon: "✓", label: "Included" },
@@ -290,8 +343,30 @@ function DecisionFilter({
   );
 }
 
+// T29 — comma-separated exclusion phrases the user types in the
+// Exclusions input. Split, trim, drop empty, dedupe (case-insensitive).
+// Returned in input order so the structured criteria the backend
+// receives are predictable.
+function parseExclusionsInput(raw: string): string[] {
+  const seen = new Set<string>();
+  const out: string[] = [];
+  for (const part of raw.split(",")) {
+    const trimmed = part.trim();
+    if (!trimmed) continue;
+    const key = trimmed.toLowerCase();
+    if (seen.has(key)) continue;
+    seen.add(key);
+    out.push(trimmed);
+  }
+  return out;
+}
+
 export default function Home() {
   const [query, setQuery] = useState("");
+  // T29 — kept across searches on purpose: a user iterating on
+  // "diabetes" then "asthma" with the same "gestational" exclusion
+  // shouldn't have to retype it.
+  const [exclusionsInput, setExclusionsInput] = useState("");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [response, setResponse] = useState<SearchResponse | null>(null);
@@ -440,7 +515,11 @@ export default function Home() {
     setDecisionFilter("all");
 
     try {
-      const data = await searchCodes(q);
+      // T29 — pass the parsed exclusions through to the backend. Empty
+      // array is byte-identical on the wire to the pre-T29 request body
+      // (searchCodes drops the field when empty).
+      const exclusions = parseExclusionsInput(exclusionsInput);
+      const data = await searchCodes(q, { exclusions });
       setResponse(data);
       setSearchedAt(new Date().toISOString().split("T")[0]);
       pushRecent({ query: q, codeCount: data.results.length, at: new Date().toISOString() });
@@ -569,6 +648,28 @@ export default function Home() {
                   : "Search"}
             </button>
           </div>
+          {/* T29 — optional structured exclusions (Bennett 2023 mode 3).
+              A separate compact row keeps the primary search affordance
+              visually unchanged for users who don't need carve-outs. */}
+          <div className="mt-2 flex items-center gap-2 text-xs">
+            <label
+              htmlFor="exclusions-input"
+              className="text-gray-500 shrink-0"
+              title='Comma-separated exclusion phrases. Each becomes a structured exclusion criterion (Bennett 2023 mode 3): the LLM excludes codes whose meaning falls under that term, and the carve-out is recorded in the codelist signature on approval.'
+            >
+              Exclude:
+            </label>
+            <input
+              id="exclusions-input"
+              type="text"
+              value={exclusionsInput}
+              onChange={(e) => setExclusionsInput(e.target.value)}
+              placeholder="optional, comma-separated (e.g. gestational, type 1)"
+              aria-label="Exclusion criteria, comma-separated"
+              className="flex-1 px-2 py-1 border border-gray-200 rounded focus:outline-none focus:border-[#005EA5] text-gray-700"
+              maxLength={300}
+            />
+          </div>
         </form>
       </div>
 
@@ -620,6 +721,23 @@ export default function Home() {
                     <th className="px-4 py-2.5 font-medium">Decision</th>
                     <th className="px-4 py-2.5 font-medium">Confidence %</th>
                     <th className="px-4 py-2.5 font-medium">Sources</th>
+                    <th
+                      className="px-4 py-2.5 font-medium"
+                      // T31: column-header tooltip cites OpenCodeCounts and
+                      // names the rounding/withholding rules. The setting
+                      // badge ("GP" or "HES") on each cell distinguishes
+                      // primary care from HES inpatient counts so the bare
+                      // number is never read out of context.
+                      title={
+                        "Annual code-usage frequency from NHS Digital. " +
+                        "Methodology follows Bennett Institute's OpenCodeCounts. " +
+                        "SNOMED primary-care counts are rounded to the nearest 10 " +
+                        "with 1-4 withheld; ICD-10 and OPCS-4 inpatient counts " +
+                        "(HES) are unrounded with zero-usage codes excluded."
+                      }
+                    >
+                      Usage
+                    </th>
                   </tr>
                 </thead>
                 <tbody>
@@ -661,6 +779,9 @@ export default function Home() {
                       <td className="px-4 py-3">{Math.round(r.confidence * 100)}%</td>
                       <td className="px-4 py-3 text-gray-600 text-xs">
                         {r.sources.join(", ")}
+                      </td>
+                      <td className="px-4 py-3 text-sm">
+                        <UsageCell row={r} />
                       </td>
                     </tr>
                   ))}

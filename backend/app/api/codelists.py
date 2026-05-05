@@ -262,6 +262,11 @@ async def create_codelist(body: CreateCodelistRequest, user: dict = Depends(get_
         created_by=user["id"],
         decisions=entry["codes"],
         adopted_phenotypes=[a.model_dump() for a in body.adopted_phenotypes],
+        # T29 — carry the criteria captured at /api/search time. Empty
+        # lists are byte-equivalent to the pre-T29 path; non-empty
+        # values participate in signature_hash on approval.
+        include_criteria=entry.get("include_criteria") or [],
+        exclude_criteria=entry.get("exclude_criteria") or [],
     )
     # log user_id only — names are PII, don't ship them to stdout in prod
     logger.info(

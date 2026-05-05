@@ -3,6 +3,22 @@ const API_BASE = process.env.NEXT_PUBLIC_API_URL || "/api";
 // all HITL endpoints need the session cookie — always include credentials
 const AUTH_FETCH: RequestInit = { credentials: "include" };
 
+// usage_status disambiguates the three meanings of usage_frequency=null
+// (T31):
+//   "counted"           - usage_frequency is a real number; render it.
+//   "withheld_below_5"  - NHS Digital suppressed a count of 1-4; UI
+//                         renders "<5" rather than "—".
+//   "not_in_dataset"    - the code is absent from the upstream NHS
+//                         Digital publication; UI renders "—".
+// usage_source is the per-row attribution string the column-header
+// tooltip cites (e.g. "NHS Digital primary care SNOMED reporting").
+export type UsageStatus = "counted" | "withheld_below_5" | "not_in_dataset";
+// Machine-readable setting for the Usage column's GP/HES badge.
+// Decoupled from usage_source (which is the human-readable
+// attribution string) so a future rename of the attribution string
+// cannot silently break the badge logic.
+export type UsageSetting = "primary_care" | "secondary_care_hes";
+
 export interface CodeResult {
   code: string;
   term: string;
@@ -12,6 +28,9 @@ export interface CodeResult {
   rationale: string;
   sources: string[];
   usage_frequency: number | null;
+  usage_status: UsageStatus | null;
+  usage_source: string | null;
+  usage_setting: UsageSetting | null;
 }
 
 export interface SearchResponse {
@@ -24,14 +43,26 @@ export interface SearchResponse {
   elapsed_seconds: number;
 }
 
+export interface SearchOptions {
+  // T29 — structured study-intent criteria. Empty arrays preserve the
+  // pre-T29 request body exactly (the backend treats absent and []
+  // identically).
+  inclusions?: string[];
+  exclusions?: string[];
+}
+
 export async function searchCodes(
   query: string,
+  opts: SearchOptions = {},
 ): Promise<SearchResponse> {
+  const body: Record<string, unknown> = { query };
+  if (opts.inclusions && opts.inclusions.length > 0) body.inclusions = opts.inclusions;
+  if (opts.exclusions && opts.exclusions.length > 0) body.exclusions = opts.exclusions;
   const res = await fetch(`${API_BASE}/search`, {
     ...AUTH_FETCH,
     method: "POST",
     headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ query }),
+    body: JSON.stringify(body),
   });
   if (!res.ok) {
     throw new Error(`Search failed: ${res.status}`);
@@ -199,6 +230,11 @@ export interface Codelist extends CodelistSummary {
   reviewed_by_name?: string | null;
   decisions: CodelistDecision[];
   adopted_phenotypes: AdoptedPhenotype[];
+  // T29 — study-intent criteria captured at /api/search time and
+  // persisted on the codelist. Empty arrays for pre-T29 codelists
+  // (the column DEFAULT '[]' migration covers older rows).
+  include_criteria: string[];
+  exclude_criteria: string[];
 }
 
 export interface AuditEvent {

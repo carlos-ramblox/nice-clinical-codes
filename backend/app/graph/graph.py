@@ -13,6 +13,7 @@ from app.graph.nodes.chroma_retriever import retrieve_from_chromadb
 from app.graph.nodes.qof_retriever import retrieve_from_qof
 from app.graph.nodes.opencodelists_retriever import retrieve_from_opencodelists
 from app.graph.nodes.result_merger import merge_and_dedup
+from app.graph.nodes.usage_annotator import annotate_usage
 from app.graph.nodes.umls_enrichment_node import enrich_with_umls
 from app.graph.nodes.llm_reasoning import score_codes
 from app.graph.nodes.output_assembly import assemble_output
@@ -23,8 +24,21 @@ logger = logging.getLogger(__name__)
 # --- Node wrappers ---
 
 def query_parser_node(state: dict) -> dict:
-    """Parse raw query into structured conditions."""
-    result = parse_query(state["raw_query"])
+    """Parse raw query into structured conditions.
+
+    Reads optional ``request_include_criteria`` / ``request_exclude_criteria``
+    from state (set by ``run_pipeline``) and forwards them to
+    ``parse_query`` so request-level criteria override the LLM's own
+    natural-language extraction (T29). When the lists are empty/absent,
+    behaviour is identical to the pre-T29 path.
+    """
+    inc = state.get("request_include_criteria") or None
+    exc = state.get("request_exclude_criteria") or None
+    result = parse_query(
+        state["raw_query"],
+        request_include_criteria=inc,
+        request_exclude_criteria=exc,
+    )
     return {
         "parsed_conditions": result["conditions"],
         "vocabulary_cues": result.get("vocabulary_cues", []),
@@ -96,6 +110,7 @@ def build_graph(disabled_retrievers: set[str] | None = None) -> StateGraph:
     # always-present nodes
     graph.add_node("query_parser", query_parser_node)
     graph.add_node("result_merger", merge_and_dedup)
+    graph.add_node("usage_annotator", annotate_usage)
     graph.add_node("umls_enrichment", enrich_with_umls)
     graph.add_node("llm_reasoning", score_codes)
     graph.add_node("output_assembly", assemble_output)
@@ -115,8 +130,9 @@ def build_graph(disabled_retrievers: set[str] | None = None) -> StateGraph:
         graph.add_edge("query_parser", node_id)
         graph.add_edge(node_id, "result_merger")
 
-    # sequential: merger → UMLS enrichment → reasoning → output → END
-    graph.add_edge("result_merger", "umls_enrichment")
+    # sequential: merger → usage annotator → UMLS enrichment → reasoning → output → END
+    graph.add_edge("result_merger", "usage_annotator")
+    graph.add_edge("usage_annotator", "umls_enrichment")
     graph.add_edge("umls_enrichment", "llm_reasoning")
     graph.add_edge("llm_reasoning", "output_assembly")
     graph.add_edge("output_assembly", END)
@@ -143,13 +159,25 @@ def _get_pipeline(disabled_retrievers: set[str] | None = None):
     return _GRAPH_CACHE[key]
 
 
-async def run_pipeline(query: str, disabled_retrievers: set[str] | None = None) -> dict:
+async def run_pipeline(
+    query: str,
+    disabled_retrievers: set[str] | None = None,
+    *,
+    include_criteria: list[str] | None = None,
+    exclude_criteria: list[str] | None = None,
+) -> dict:
     """Run the full pipeline with a raw query string.
 
     ``disabled_retrievers`` is forwarded to ``build_graph`` (via a
     memoised cache). When non-empty, the named retrievers are skipped —
     use this for cold-start evaluation runs where the OpenCodelists
     retriever overlaps with the reference set.
+
+    ``include_criteria`` / ``exclude_criteria`` (T29) are the request-level
+    structured study-intent overrides. Non-empty values are passed to the
+    parser node via state and override any natural-language criteria the
+    parser would have extracted. Empty (the default) preserves pre-T29
+    behaviour exactly.
 
     The graph is invoked via ``ainvoke`` because the LLM-scoring node
     is async (it gathers per-batch ``ainvoke`` calls in parallel).
@@ -162,6 +190,11 @@ async def run_pipeline(query: str, disabled_retrievers: set[str] | None = None) 
     else:
         logger.info("Running pipeline for: %s", query)
     pipe = _get_pipeline(disabled_retrievers)
-    result = await pipe.ainvoke({"raw_query": query})
+    initial: dict = {"raw_query": query}
+    if include_criteria:
+        initial["request_include_criteria"] = list(include_criteria)
+    if exclude_criteria:
+        initial["request_exclude_criteria"] = list(exclude_criteria)
+    result = await pipe.ainvoke(initial)
     logger.info("Pipeline complete: %d codes in final list", len(result.get("final_code_list", [])))
     return result

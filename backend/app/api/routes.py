@@ -4,11 +4,12 @@ import io
 import logging
 import time
 import uuid
+from typing import Annotated
 
 import pandas as pd
 from fastapi import APIRouter, HTTPException, Query
 from fastapi.responses import StreamingResponse
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, StringConstraints
 
 _COLD_START_DESCRIPTION = (
     "When true, disables the OpenCodelists retriever for this request. "
@@ -90,6 +91,23 @@ class SearchRequest(BaseModel):
         min_length=2,
         max_length=500,
     )
+    # T29 — structured study-intent criteria. When non-empty, these
+    # OVERRIDE any "excluding X" / "but not X" phrases the parser would
+    # have extracted from the query string. Empty defaults preserve
+    # pre-T29 request and signature behaviour exactly. Per-item cap is
+    # defence-in-depth against an over-long single criterion bloating
+    # the scoring prompt or the signature payload — 100 chars is well
+    # above any realistic clinical-token length.
+    inclusions: list[Annotated[str, StringConstraints(min_length=1, max_length=100)]] = Field(
+        default_factory=list,
+        max_length=10,
+        description='Free-text inclusion phrases scoping the codelist.',
+    )
+    exclusions: list[Annotated[str, StringConstraints(min_length=1, max_length=100)]] = Field(
+        default_factory=list,
+        max_length=10,
+        description='Free-text exclusion phrases (Bennett 2023 mode 3 carve-outs).',
+    )
 
 
 class CodeResult(BaseModel):
@@ -100,7 +118,20 @@ class CodeResult(BaseModel):
     confidence: float
     rationale: str
     sources: list[str]
+    # OpenCodeCounts-derived fields (T31). usage_frequency stays None
+    # both when the code is missing from NHS Digital's published set
+    # and when the count was withheld under the 1-4 privacy rule;
+    # usage_status disambiguates so the UI can render distinct hints
+    # ("—" vs "<5"). usage_source is the human-readable attribution
+    # used in the column-header tooltip. usage_setting is the
+    # machine-readable equivalent ("primary_care" / "secondary_care_hes")
+    # the UI uses to pick the GP / HES badge — using it directly
+    # rather than substring-matching usage_source means a future
+    # rename of the attribution string can't silently break the badge.
     usage_frequency: int | None = None
+    usage_status: str | None = None
+    usage_source: str | None = None
+    usage_setting: str | None = None
 
 
 class SearchResponse(BaseModel):
@@ -151,7 +182,12 @@ async def search_codes(
     disabled = _disabled_retrievers(cold_start, disable_omophub, disable_qof, disable_chroma)
 
     try:
-        result = await run_pipeline(request.query, disabled)
+        result = await run_pipeline(
+            request.query,
+            disabled,
+            include_criteria=request.inclusions,
+            exclude_criteria=request.exclusions,
+        )
     except Exception as exc:
         logger.error("Pipeline failed: %s", exc)
         raise HTTPException(status_code=500, detail="Pipeline processing failed")
@@ -160,7 +196,13 @@ async def search_codes(
     final_codes = result.get("final_code_list", [])
 
     search_id = uuid.uuid4().hex[:12]
-    _search_cache.put(search_id, request.query, final_codes)
+    _search_cache.put(
+        search_id,
+        request.query,
+        final_codes,
+        include_criteria=request.inclusions,
+        exclude_criteria=request.exclusions,
+    )
 
     return SearchResponse(
         search_id=search_id,
@@ -176,6 +218,9 @@ async def search_codes(
                 rationale=c["rationale"],
                 sources=c.get("sources", []),
                 usage_frequency=c.get("usage_frequency"),
+                usage_status=c.get("usage_status"),
+                usage_source=c.get("usage_source"),
+                usage_setting=c.get("usage_setting"),
             )
             for c in final_codes
         ],
@@ -196,7 +241,14 @@ async def export_codes(search_id: str, output_format: str = "csv"):
         raise HTTPException(status_code=404, detail="Search result not found")
     codes = entry["codes"]
 
-    export_fields = ["code", "term", "vocabulary", "decision", "confidence", "rationale", "sources"]
+    export_fields = [
+        "code", "term", "vocabulary", "decision", "confidence", "rationale", "sources",
+        # T31: include the OpenCodeCounts fields in exports so a
+        # downstream analyst working off the CSV/XLSX gets the same
+        # signal as the search-page UI. Empty cells encode "—" / "<5"
+        # / a real number per usage_status.
+        "usage_frequency", "usage_status", "usage_source",
+    ]
 
     rows = []
     for c in codes:

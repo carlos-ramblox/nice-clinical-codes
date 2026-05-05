@@ -55,6 +55,31 @@ def _init_tables(conn: sqlite3.Connection):
     conn.execute("CREATE INDEX IF NOT EXISTS idx_codes_cluster ON codes(cluster_description)")
     conn.execute("CREATE INDEX IF NOT EXISTS idx_codes_term ON codes(term)")
     conn.execute("CREATE INDEX IF NOT EXISTS idx_codes_vocabulary ON codes(vocabulary)")
+
+    # OpenCodeCounts-derived per-code usage counts (T31). One row per
+    # (vocabulary, code, year, setting). ``count`` is NULL when the
+    # underlying value was withheld by NHS Digital under the 1-4 privacy
+    # rule (SNOMED primary care only); ``is_withheld=1`` distinguishes
+    # that from "code absent from this dataset" which has no row at all.
+    # ``setting`` separates primary-care GP usage from HES inpatient
+    # usage so the UI can label them distinctly — counts from those two
+    # surfaces have different denominators and must not be conflated.
+    conn.execute("""
+        CREATE TABLE IF NOT EXISTS code_usage (
+            vocabulary TEXT NOT NULL,
+            code TEXT NOT NULL,
+            year INTEGER NOT NULL,
+            count INTEGER,
+            setting TEXT NOT NULL,
+            period_start TEXT NOT NULL,
+            period_end TEXT NOT NULL,
+            is_withheld INTEGER NOT NULL DEFAULT 0,
+            active_at_start INTEGER,
+            active_at_end INTEGER,
+            PRIMARY KEY (vocabulary, code, year, setting)
+        )
+    """)
+    conn.execute("CREATE INDEX IF NOT EXISTS idx_code_usage_lookup ON code_usage(vocabulary, code)")
     conn.commit()
 
 

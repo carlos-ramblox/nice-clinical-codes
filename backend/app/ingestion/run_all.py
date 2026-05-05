@@ -46,6 +46,17 @@ def run_all(data_dir: str = "data") -> dict:
     else:
         logger.warning("No OPCS XML found in %s/opcs/", base)
 
+    # OpenCodeCounts usage CSVs (T31). Optional: when the directory is
+    # absent or empty, skip silently — usage_frequency on the
+    # search response simply stays None for every code.
+    occ_dir = base / "raw" / "opencodecounts"
+    if occ_dir.exists() and list(occ_dir.glob("*.csv")):
+        from app.ingestion.opencodecounts import ingest_directory as ingest_opencodecounts
+        logger.info("Ingesting OpenCodeCounts CSVs from %s", occ_dir)
+        results["opencodecounts"] = ingest_opencodecounts(base)
+    else:
+        logger.warning("No OpenCodeCounts CSVs found in %s (usage_frequency will be empty)", occ_dir)
+
     # ICD-10 XML (NHS TRUD 5th Edition) — release unzips into a nested
     # ICD10_Edition5_XML_<date>/Content/ folder, so search recursively.
     if (base / "icd10").exists():

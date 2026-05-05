@@ -78,7 +78,14 @@ def enrich_with_umls(state: dict) -> dict:
             "source_count": 1,
             "domain": "Condition",
             "similarity_score": None,
+            # UMLS suggestions have a CUI, not a SNOMED/ICD-10/OPCS-4
+            # code, so the OpenCodeCounts lookup has nothing to match
+            # against. Leave the T31 fields as not_in_dataset so the UI
+            # shows the same em-dash as a real miss — no false signal.
             "usage_frequency": None,
+            "usage_status": "not_in_dataset",
+            "usage_source": None,
+            "usage_setting": None,
         })
 
     if new_codes:

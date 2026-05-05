@@ -1,0 +1,101 @@
+{
+  "ticket": "T29",
+  "purpose": "inclusion/exclusion criteria \u2014 empty-invariance + carve-out lift",
+  "wall_clock_seconds": 246.1,
+  "runs": [
+    {
+      "label": "empty/heart_failure",
+      "query": "Heart failure codes",
+      "exclusions": [],
+      "inclusions": [],
+      "elapsed_seconds": 57.97,
+      "n_scored": 100,
+      "precision": 0.75,
+      "recall": 0.8571,
+      "f1": 0.8
+    },
+    {
+      "label": "empty/diabetes_mellitus",
+      "query": "Diabetes mellitus codes",
+      "exclusions": [],
+      "inclusions": [],
+      "elapsed_seconds": 41.09,
+      "n_scored": 100,
+      "precision": 0.8551,
+      "recall": 0.686,
+      "f1": 0.7613
+    },
+    {
+      "label": "empty/hypertension",
+      "query": "Hypertension diagnosis codes",
+      "exclusions": [],
+      "inclusions": [],
+      "elapsed_seconds": 25.78,
+      "n_scored": 100,
+      "precision": 0.96,
+      "recall": 0.2051,
+      "f1": 0.338
+    },
+    {
+      "label": "empty/mi_icd10",
+      "query": "Myocardial infarction (ICD10)",
+      "exclusions": [],
+      "inclusions": [],
+      "elapsed_seconds": 27.1,
+      "n_scored": 50,
+      "precision": 1.0,
+      "recall": 0.5833,
+      "f1": 0.7368
+    },
+    {
+      "label": "empty/asthma_pincer",
+      "query": "Asthma",
+      "exclusions": [],
+      "inclusions": [],
+      "elapsed_seconds": 23.49,
+      "n_scored": 100,
+      "precision": 0.734,
+      "recall": 0.5565,
+      "f1": 0.633
+    },
+    {
+      "label": "carve/hypertension_exclude_secondary",
+      "query": "Hypertension diagnosis codes",
+      "exclusions": [
+        "secondary"
+      ],
+      "inclusions": [],
+      "elapsed_seconds": 23.44,
+      "n_scored": 100,
+      "precision": 0.9762,
+      "recall": 0.3504,
+      "f1": 0.5157
+    },
+    {
+      "label": "carve/hiv_include_aids_defining",
+      "query": "Human immunodeficiency virus (HIV) codes",
+      "exclusions": [],
+      "inclusions": [
+        "AIDS-defining illness"
+      ],
+      "elapsed_seconds": 23.24,
+      "n_scored": 100,
+      "precision": 0.2195,
+      "recall": 0.037,
+      "f1": 0.0634
+    },
+    {
+      "label": "carve/diabetes_no_gestational",
+      "query": "Diabetes mellitus excluding gestational",
+      "exclusions": [
+        "gestational"
+      ],
+      "inclusions": [],
+      "elapsed_seconds": 23.99,
+      "n_scored": 100,
+      "precision": 0.7188,
+      "recall": 0.8214,
+      "f1": 0.7667
+    }
+  ]
+}

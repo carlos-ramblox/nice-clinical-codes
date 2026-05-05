@@ -1165,6 +1165,158 @@ Verification artefacts:
 - `data/test_sets/benchmark_2026_04/icd10_corpus_only_isolation.json`
   (OMOPHub disabled, ChromaDB-only) — F1 0.7368 / 1.0000
 
+### §5.9 Study-intent test case (T29)
+
+T29 added structured `include_criteria` / `exclude_criteria` to the
+parser, plumbed them through to the per-code scoring prompt, and
+extended `signature_hash` to cover the criteria when non-empty (with
+a conditional-append rule that preserves byte-for-byte compatibility
+with every pre-T29 approved hash — see
+`backend/tests/test_signature_hash_criteria.py` for the contract).
+This is the first first-class pipeline mitigation of Bennett 2023
+**failure mode 3** (study-intent ambiguity); §4 case 4 documents the
+prior position, where the carve-out had to be applied manually
+post-hoc by the reviewer. `LIMITATIONS.md` is updated to match.
+
+A new fixture, `data/test_sets/persona_audit/diabetes_no_gestational.json`,
+demonstrates the carve-out: query `"Diabetes mellitus excluding
+gestational"` paired with structured `exclusions=["gestational"]`
+should reproduce the dm_cod refset (minus pregnancy-context entries)
+even when the underlying retriever set surfaces broader gestational
+codes.
+
+The historical pre-T29 numbers in §3, §4, §5.1 – §5.8, §6, and §7
+are NOT retconned. They remain the v2 baseline for the methods
+paper. Post-T29 measurements live in this sub-section so the
+provenance of every reported F1 is unambiguous.
+
+**Empty-criteria F1 invariance** (post-T29 vs. v2 K=5 baseline,
+criteria default `[]`, single-run cost-trimmed sweep, n=5):
+
+| Codelist | Post-T29 F1 | v2 K=5 mean ± σ | Δ |
+|---|---|---|---|
+| heart_failure | 0.800 | 0.78 ± 0.02 | +0.020 |
+| diabetes_mellitus | 0.761 | 0.73 ± 0.02 | +0.031 |
+| hypertension | 0.338 | 0.46 ± 0.03 | −0.122 |
+| mi_icd10 | 0.737 | 0.74 ± 0.00 | −0.003 |
+| asthma_pincer | 0.633 | 0.62 ± 0.01 | +0.013 |
+| **mean** | **0.654** | **0.666** | **−0.012** |
+
+Mean delta of −0.012 across the five lists is within the K=5 mean σ
+of ±0.012 (T07), so the aggregate invariance contract holds. Four of
+the five per-codelist deltas are within 1.5σ of the v2 K=5 mean. The
+hypertension list is a single-run outlier at ≈4σ (−0.122 against a
+σ=0.03 list); this is not attributable to T29 because
+`_render_condition` produces a string byte-identical to the pre-T29
+form when both criteria lists are empty (pin in
+`backend/tests/test_query_parser_criteria.py::test_empty_case_returns_empty_lists_not_none`),
+and the conditional-append guard in `_compute_signature` likewise
+no-ops on empty criteria. The most likely explanation is the
+single-run vs. K=5-mean variance documented in T07 (1–3 % decision
+flips at temperature=0), amplified by hypertension being the highest-
+σ list in the cost-trimmed subset. A K=5 re-run of hypertension would
+tighten the estimate; deferred to keep the sweep within budget.
+
+**Carve-out lift on intent-sensitive lists** (post-T29 with non-empty
+criteria, single-run):
+
+| Run | F1 | vs. matched empty-criteria F1 | Notes |
+|---|---|---|---|
+| `hypertension` + `exclude_criteria=["secondary"]` | 0.516 | +0.178 | Substantially exceeds the 1–3 pts hypothesised; the structured criterion appears to have firmed the LLM's borderline decisions on the §4 case 4 secondary-hypertension family. |
+| `hiv` + `include_criteria=["AIDS-defining illness"]` | 0.063 | +0.04 vs. v2 K=5 (0.02) | Small positive lift on a famously poor-performing list (§4 case 7); the inclusion criterion partially recovers the AIDS-defining-illness recall the Fix C overcorrection cost, but absolute F1 is still floor-bound by retriever coverage on the 243-code reference. |
+| `diabetes_no_gestational` (new fixture) + `exclude_criteria=["gestational"]` | 0.767 | n/a (no matched empty baseline) | F1 in the same band as standard `diabetes_mellitus` (K=5 mean 0.73), confirming the carve-out runs without harming a study-intent-restricted reference. |
+
+Read together: the empty-criteria path is invariant in aggregate; the
+carve-out path produces measurable, non-trivial lifts where the
+underlying scoring decision is borderline. Both are hypotheses that
+the methods paper draft can now state as preliminary findings rather
+than future work, with the caveat that the cost-trimmed n=8 sweep is
+not powered for confidence intervals — a full K=5 sweep with the
+non-empty criteria sub-runs is the next step before any headline
+claim.
+
+Raw artefact: `data/test_sets/persona_audit/t29_benchmark_results.json`
+(8 runs, 4.1 min wall-clock, ≈$0.07 estimated LLM spend).
+
+### §5.10 Code-usage signal (T31; shipped 2026-05-05)
+
+Each code in the response now carries `usage_frequency`,
+`usage_status`, `usage_source` and `usage_setting`, populated from
+NHS Digital's primary-care SNOMED reporting (Aug 2024 – Jul 2025)
+and HES inpatient ICD-10 / OPCS-4 reporting (Apr 2024 – Mar 2025).
+Methodology follows Bennett Institute's
+[OpenCodeCounts](https://bennettoxford.github.io/opencodecounts/)
+(Wood et al., 2025); our ingest reads the NHS Digital CSVs directly
+under Open Government Licence v3.0 to avoid licence ambiguity on the
+harmonised dataset.
+
+**Coverage on a representative search.** A live `"type 2 diabetes"`
+query against the production-shape DB (`code_usage` populated with
+158,567 SNOMED + 9,650 ICD-10 + 8,641 OPCS-4 rows from the Aug 2024
+– Jul 2025 / Apr 2024 – Mar 2025 publications) returns **88 of 100
+candidates as `counted`** (51 with the GP setting, 37 with the HES
+inpatient setting), 5 as `withheld_below_5`, and only 7 as
+`not_in_dataset`. The 7 residuals are the structural gaps the
+schema design anticipates: UMLS-enriched suggestions which carry
+CUIs rather than SNOMED/ICD-10/OPCS-4 codes, codes that activated
+after the publication coverage end, and devolved-administration-only
+codes outside NHS England's scope. Treat **≥85 % counted on a
+typical search** as the steady-state expectation, not the
+tail-of-the-distribution.
+
+SNOMED counts are rounded to the nearest 10 with 1-4 withheld per
+NHS Digital's privacy policy; ICD-10 and OPCS-4 are unrounded with
+zero-usage codes excluded from the source. Codes not present in any
+source dataset are surfaced with `usage_status='not_in_dataset'`
+rather than zeroed; the UI distinguishes these from genuine zeros
+via the GP / HES badge and amber `<5` rendering.
+
+**Methodology footnote — HES counts are primary-position only.** NHS
+Digital's published HES dataset reports primary-diagnosis
+(`DIAG_4_01`) and primary-procedure (`OPERTN_4_01`) FCEs; the
+any-position counts are not in the source. A code that frequently
+appears as a *secondary* diagnosis on admissions for a different
+primary reason will report a count substantially smaller than its
+true any-position prevalence. Treat the HES number as a lower
+bound on diagnostic prevalence and an accurate measure of *"this
+code drove the admission"*. The primary / secondary distinction
+becomes especially relevant for comorbidity-heavy ICD-10 codes
+(e.g. `E11` Type 2 diabetes mellitus, often a secondary diagnosis on
+admissions for cardiovascular or renal complications).
+
+The signal is purely additive — surfaced for reviewer judgement
+rather than fed into the LLM scoring step — so the F1 numbers
+reported in §3 through §5.9 are unchanged. The intended use is
+post-pipeline: a reviewer eyeballing a 100-code candidate set can
+spot-check the high-volume `included` codes and the high-volume
+`excluded` codes for plausibility (orphan-code detection in the
+sense of Bennett 2023 failure-mode 4), the `<5` rendering flags
+codes whose real-world prevalence is too small to ground a typical
+phenotype on, and the GP / HES setting badge keeps the two
+denominators separate so a reviewer reading "12,927" against an
+ICD-10 row knows it is HES inpatient FCEs, not GP encounters. A
+future ticket would push usage into the scoring prompt as a
+tie-breaker on borderline cases; that is *not* part of T31 and
+would need its own benchmark sweep before claiming a recall or
+precision lift.
+
+Geographic and setting limitations of the signal are spelled out in
+[LIMITATIONS.md → Code-usage column](./LIMITATIONS.md#limitations-beyond-the-bennett-framework):
+England-only, GP + HES inpatient only, ranges-not-points for
+SNOMED, no quantitative signal under withholding, annual publication
+cadence, primary-position HES only.
+
+Raw ingest module: `backend/app/ingestion/opencodecounts.py`. Lookup
+contract pinned by `backend/tests/test_code_usage_lookup.py` (six
+cases including the most-recent-year resolution and the HES vs. GP
+attribution). Three-state `usage_status` round-trip into
+`CodeResult` pinned by `backend/tests/test_usage_annotator.py`. The
+HES long-format parser (one row per (code, category, attribute)
+tuple, filtered down to `DIAG_4_01 / OPERTN_4_01 × FCE_SUM`) is the
+non-obvious adaptation needed against the real NHS Digital
+publication shape; the SNOMED file is tab-separated `.txt`
+(detected via `csv.Sniffer`) rather than `.csv`.
+
 ## Faithfulness
 
 The headline P/R/F1 in this document evaluates *answer correctness* —

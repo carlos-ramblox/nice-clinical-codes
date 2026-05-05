@@ -225,6 +225,7 @@ The LangGraph pipeline is auto-instrumented; each `/api/search` produces a trace
 | [OpenCodelists](https://www.opencodelists.org) | CSV + scraping | Published, peer-reviewed clinical code lists |
 | [UMLS Metathesaurus](https://uts.nlm.nih.gov) | API | Concept relationships, synonyms, hierarchies |
 | [OPCS-4](https://digital.nhs.uk/data-and-information/information-standards/information-standards-and-data-collections-including-extractions/publications-and-notifications/standards-and-collections/opcs-4) | XML | NHS procedure and operation codes (12K codes) |
+| [NHS Digital code-usage publications](https://digital.nhs.uk/data-and-information/publications/statistical/mi-snomed-code-usage-in-primary-care) | CSV | Per-code annual usage counts (SNOMED primary care + ICD-10/OPCS-4 HES inpatient). Methodology follows Bennett Institute [OpenCodeCounts](https://bennettoxford.github.io/opencodecounts/); we read the upstream NHS Digital CSVs directly under OGL v3.0. |
 
 ## Project Structure
 

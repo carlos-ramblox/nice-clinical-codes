@@ -496,6 +496,41 @@ export default function CodelistReviewPage({
         </div>
       </div>
 
+      {/* T29: study-intent criteria captured at /api/search time and
+          carried through approval into the signature_hash. Read-only
+          here -- editing intent post-creation would invalidate the
+          signature contract. Hidden when both lists are empty so the
+          page stays compact for the common case. */}
+      {((codelist.include_criteria && codelist.include_criteria.length > 0)
+        || (codelist.exclude_criteria && codelist.exclude_criteria.length > 0)) && (
+        <section className="mb-4 border border-gray-200 bg-white px-4 py-3">
+          <h3 className="text-sm font-medium text-[#00436C] mb-2">
+            Study-intent criteria
+            <span className="ml-2 text-xs text-gray-500 font-normal">
+              applied at generation time, fixed in the signature on approval
+            </span>
+          </h3>
+          <dl className="text-xs space-y-1">
+            {codelist.include_criteria && codelist.include_criteria.length > 0 && (
+              <div>
+                <dt className="inline font-medium text-gray-700">Include: </dt>
+                <dd className="inline text-gray-600">
+                  {codelist.include_criteria.join(", ")}
+                </dd>
+              </div>
+            )}
+            {codelist.exclude_criteria && codelist.exclude_criteria.length > 0 && (
+              <div>
+                <dt className="inline font-medium text-gray-700">Exclude: </dt>
+                <dd className="inline text-gray-600">
+                  {codelist.exclude_criteria.join(", ")}
+                </dd>
+              </div>
+            )}
+          </dl>
+        </section>
+      )}
+
       {/* T34b: Adopted phenotypes -- the citations the user picked
           during the discovery-sidebar browse. Recorded as phenotype_adopted
           audit-log events on codelist creation; surfaced here as

@@ -39,9 +39,32 @@ def get_connection() -> sqlite3.Connection:
         _conn.execute("PRAGMA foreign_keys = ON")
         _conn.execute("PRAGMA journal_mode = WAL")  # concurrent reads while reviewing
         _init_schema(_conn)
+        _migrate_schema(_conn)
         _seed_demo_users(_conn)
         logger.info("HITL SQLite connected: %s", path)
     return _conn
+
+
+def _migrate_schema(conn: sqlite3.Connection) -> None:
+    """In-place column additions for older DBs.
+
+    SQLite has no ``ALTER TABLE ... IF NOT EXISTS``, so each migration
+    is wrapped in a try/except that swallows the duplicate-column
+    OperationalError ("duplicate column name: ..."). The column-default
+    keeps existing rows backward-compatible: pre-T29 codelists read
+    back as ``include_criteria=[]`` / ``exclude_criteria=[]`` and
+    therefore hash byte-identical to the pre-T29 signature payload.
+    """
+    for ddl in (
+        "ALTER TABLE codelists ADD COLUMN include_criteria TEXT NOT NULL DEFAULT '[]'",
+        "ALTER TABLE codelists ADD COLUMN exclude_criteria TEXT NOT NULL DEFAULT '[]'",
+    ):
+        try:
+            conn.execute(ddl)
+        except sqlite3.OperationalError as exc:
+            if "duplicate column" not in str(exc).lower():
+                raise
+    conn.commit()
 
 
 def _init_schema(conn: sqlite3.Connection) -> None:
@@ -68,7 +91,12 @@ def _init_schema(conn: sqlite3.Connection) -> None:
             reviewed_at TEXT,
             review_notes TEXT,
             signature_hash TEXT,
-            parent_id TEXT REFERENCES codelists(id)
+            parent_id TEXT REFERENCES codelists(id),
+            -- T29: study-intent criteria (JSON-encoded list[str], default '[]').
+            -- Migrate-friendly defaults so pre-T29 rows read back as empty
+            -- and signature_hash stays byte-compatible.
+            include_criteria TEXT NOT NULL DEFAULT '[]',
+            exclude_criteria TEXT NOT NULL DEFAULT '[]'
         );
 
         CREATE TABLE IF NOT EXISTS codelist_decisions (
@@ -197,6 +225,8 @@ def create_codelist(
     created_by: int,
     decisions: list[dict],
     adopted_phenotypes: list[dict] | None = None,
+    include_criteria: list[str] | None = None,
+    exclude_criteria: list[str] | None = None,
 ) -> str:
     """Persist a search result as a draft codelist. Returns the new id.
 
@@ -207,13 +237,21 @@ def create_codelist(
     in the same way decision-override events are; there is no
     separate adoptions table. ``get_codelist`` surfaces these to
     callers by replaying the relevant audit-log events.
+
+    ``include_criteria`` / ``exclude_criteria`` (T29) carry the
+    request-level study-intent scoping. ``None`` defaults to ``[]``,
+    which preserves the pre-T29 signature_hash bytes for any caller
+    that doesn't supply them.
     """
     conn = get_connection()
     cid = uuid.uuid4().hex[:16]
+    inc = list(include_criteria or [])
+    exc = list(exclude_criteria or [])
     conn.execute(
-        """INSERT INTO codelists (id, name, query, created_by, status)
-           VALUES (?, ?, ?, ?, 'draft')""",
-        (cid, name, query, created_by),
+        """INSERT INTO codelists (id, name, query, created_by, status,
+                                  include_criteria, exclude_criteria)
+           VALUES (?, ?, ?, ?, 'draft', ?, ?)""",
+        (cid, name, query, created_by, json.dumps(inc), json.dumps(exc)),
     )
     _insert_decisions(conn, cid, decisions)
     adoptions = adopted_phenotypes or []
@@ -224,6 +262,8 @@ def create_codelist(
             "query": query,
             "decision_count": len(decisions),
             "adoption_count": len(adoptions),
+            "include_criteria": inc,
+            "exclude_criteria": exc,
         },
     )
     for adoption in adoptions:
@@ -307,6 +347,16 @@ def get_codelist(cid: str) -> dict | None:
         except (TypeError, ValueError):
             d["sources"] = []
     result["decisions"] = sort_review_queue(decisions)
+
+    # T29: surface stored criteria as plain lists. Pre-T29 rows have the
+    # column default '[]' from _migrate_schema, so callers always see a
+    # well-formed (possibly empty) list.
+    for key in ("include_criteria", "exclude_criteria"):
+        raw = result.get(key)
+        try:
+            result[key] = json.loads(raw) if raw else []
+        except (TypeError, ValueError):
+            result[key] = []
 
     # Surface adopted phenotypes (T34b) by replaying the relevant audit
     # events. Stored audit-log only -- no separate table -- so every
@@ -446,6 +496,13 @@ def _compute_signature(conn: sqlite3.Connection, cid: str) -> str:
     """
     SHA-256 over the final human decisions in deterministic order. Gives us
     a tamper-evident digest of the approved codelist.
+
+    T29 backward-compat: when the codelist has neither include nor
+    exclude criteria, the payload is byte-identical to the pre-T29
+    format so pre-T29 approved hashes verify unchanged. When either
+    list is non-empty a ``--criteria--`` block is appended; both lists
+    are sorted before serialisation so semantically-equal intents (same
+    set, different order) produce the same hash.
     """
     rows = conn.execute(
         """SELECT code, vocabulary, human_decision
@@ -457,6 +514,24 @@ def _compute_signature(conn: sqlite3.Connection, cid: str) -> str:
     payload = "\n".join(
         f"{r['code']}|{r['vocabulary']}|{r['human_decision']}" for r in rows
     )
+
+    crit_row = conn.execute(
+        "SELECT include_criteria, exclude_criteria FROM codelists WHERE id = ?",
+        (cid,),
+    ).fetchone()
+    if crit_row is not None:
+        try:
+            inc = json.loads(crit_row["include_criteria"] or "[]")
+            exc = json.loads(crit_row["exclude_criteria"] or "[]")
+        except (TypeError, ValueError):
+            inc, exc = [], []
+        if inc or exc:
+            criteria_block = json.dumps(
+                {"include": sorted(inc), "exclude": sorted(exc)},
+                sort_keys=True,
+            )
+            payload += f"\n--criteria--\n{criteria_block}"
+
     return hashlib.sha256(payload.encode("utf-8")).hexdigest()
 
 
