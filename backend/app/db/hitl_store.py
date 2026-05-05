@@ -58,6 +58,10 @@ def _migrate_schema(conn: sqlite3.Connection) -> None:
     for ddl in (
         "ALTER TABLE codelists ADD COLUMN include_criteria TEXT NOT NULL DEFAULT '[]'",
         "ALTER TABLE codelists ADD COLUMN exclude_criteria TEXT NOT NULL DEFAULT '[]'",
+        # concept_id pinned at decision time: an approved codelist's
+        # OHDSI export must stay stable even if OMOPHub later remaps the
+        # same source code. Nullable for codes no retriever resolved.
+        "ALTER TABLE codelist_decisions ADD COLUMN concept_id INTEGER",
     ):
         try:
             conn.execute(ddl)
@@ -288,6 +292,7 @@ def create_codelist(
 def _insert_decisions(conn: sqlite3.Connection, cid: str, decisions: Iterable[dict]) -> None:
     rows = []
     for d in decisions:
+        cid_val = d.get("concept_id")
         rows.append((
             cid,
             d.get("code", ""),
@@ -300,13 +305,15 @@ def _insert_decisions(conn: sqlite3.Connection, cid: str, decisions: Iterable[di
             None,
             json.dumps(d.get("sources") or []),
             1 if _is_umls(d.get("sources")) else 0,
+            int(cid_val) if cid_val is not None else None,
         ))
     conn.executemany(
         """INSERT INTO codelist_decisions
            (codelist_id, code, term, vocabulary,
             ai_decision, ai_confidence, ai_rationale,
-            human_decision, override_comment, sources, is_umls_suggestion)
-           VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)""",
+            human_decision, override_comment, sources, is_umls_suggestion,
+            concept_id)
+           VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)""",
         rows,
     )
 
@@ -337,7 +344,8 @@ def get_codelist(cid: str) -> dict | None:
     decisions = [dict(r) for r in conn.execute(
         """SELECT id, code, term, vocabulary,
                   ai_decision, ai_confidence, ai_rationale,
-                  human_decision, override_comment, sources, is_umls_suggestion
+                  human_decision, override_comment, sources, is_umls_suggestion,
+                  concept_id
              FROM codelist_decisions WHERE codelist_id = ?""",
         (cid,),
     )]

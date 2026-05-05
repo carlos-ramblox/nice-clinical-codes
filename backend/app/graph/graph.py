@@ -13,6 +13,7 @@ from app.graph.nodes.chroma_retriever import retrieve_from_chromadb
 from app.graph.nodes.qof_retriever import retrieve_from_qof
 from app.graph.nodes.opencodelists_retriever import retrieve_from_opencodelists
 from app.graph.nodes.result_merger import merge_and_dedup
+from app.graph.nodes.concept_id_enricher import enrich_concept_ids
 from app.graph.nodes.usage_annotator import annotate_usage
 from app.graph.nodes.umls_enrichment_node import enrich_with_umls
 from app.graph.nodes.llm_reasoning import score_codes
@@ -110,6 +111,7 @@ def build_graph(disabled_retrievers: set[str] | None = None) -> StateGraph:
     # always-present nodes
     graph.add_node("query_parser", query_parser_node)
     graph.add_node("result_merger", merge_and_dedup)
+    graph.add_node("concept_id_enricher", enrich_concept_ids)
     graph.add_node("usage_annotator", annotate_usage)
     graph.add_node("umls_enrichment", enrich_with_umls)
     graph.add_node("llm_reasoning", score_codes)
@@ -130,8 +132,10 @@ def build_graph(disabled_retrievers: set[str] | None = None) -> StateGraph:
         graph.add_edge("query_parser", node_id)
         graph.add_edge(node_id, "result_merger")
 
-    # sequential: merger → usage annotator → UMLS enrichment → reasoning → output → END
-    graph.add_edge("result_merger", "usage_annotator")
+    # sequential: merger → concept_id enricher → usage annotator →
+    # UMLS enrichment → reasoning → output → END
+    graph.add_edge("result_merger", "concept_id_enricher")
+    graph.add_edge("concept_id_enricher", "usage_annotator")
     graph.add_edge("usage_annotator", "umls_enrichment")
     graph.add_edge("umls_enrichment", "llm_reasoning")
     graph.add_edge("llm_reasoning", "output_assembly")

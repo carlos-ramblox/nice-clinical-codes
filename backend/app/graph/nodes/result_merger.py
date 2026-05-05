@@ -47,6 +47,7 @@ def merge_and_dedup(state: dict) -> dict:
                 "usage_status": c.get("usage_status"),
                 "usage_source": c.get("usage_source"),
                 "usage_setting": c.get("usage_setting"),
+                "concept_id": c.get("concept_id"),
                 "sources": [c["source"]],
                 "source_count": 1,
             }
@@ -67,6 +68,12 @@ def merge_and_dedup(state: dict) -> dict:
             # keep usage frequency if we get one
             if c.get("usage_frequency") and not existing.get("usage_frequency"):
                 existing["usage_frequency"] = c["usage_frequency"]
+
+            # upgrade None -> non-None when a later source supplies
+            # a concept_id (typically OMOPHub for a code first seen
+            # via QOF / OpenCodelists / ChromaDB)
+            if existing.get("concept_id") is None and c.get("concept_id") is not None:
+                existing["concept_id"] = c["concept_id"]
 
             # prefer longer/more descriptive term
             if len(c.get("term", "")) > len(existing.get("term", "")):

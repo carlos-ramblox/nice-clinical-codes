@@ -39,6 +39,7 @@ from app.graph.graph import run_pipeline
 from app.evaluation.evaluator import run_evaluation
 from app.baseline.llm_client import run_baseline
 from app.api import _search_cache
+from app.exports.ohdsi import to_ohdsi_concept_set
 
 
 def _disabled_retrievers(
@@ -132,6 +133,7 @@ class CodeResult(BaseModel):
     usage_status: str | None = None
     usage_source: str | None = None
     usage_setting: str | None = None
+    concept_id: int | None = None
 
 
 class SearchResponse(BaseModel):
@@ -221,6 +223,7 @@ async def search_codes(
                 usage_status=c.get("usage_status"),
                 usage_source=c.get("usage_source"),
                 usage_setting=c.get("usage_setting"),
+                concept_id=c.get("concept_id"),
             )
             for c in final_codes
         ],
@@ -232,14 +235,26 @@ async def search_codes(
 
 @router.get("/export/{search_id}")
 async def export_codes(search_id: str, output_format: str = "csv"):
-    """Export a code list as CSV or Excel."""
-    if output_format not in ("csv", "xlsx"):
-        raise HTTPException(status_code=400, detail="output_format must be 'csv' or 'xlsx'")
+    """Export a code list as CSV, Excel, or OHDSI concept-set JSON.
+
+    ``output_format=ohdsi`` returns ``{"concept_set": ..., "unmapped": ...}``;
+    paste the ``concept_set`` into ATLAS' Concept Set Import dialog.
+    ``unmapped`` lists candidates whose OMOP concept_id the corpus
+    could not resolve.
+    """
+    if output_format not in ("csv", "xlsx", "ohdsi"):
+        raise HTTPException(
+            status_code=400,
+            detail="output_format must be 'csv', 'xlsx', or 'ohdsi'",
+        )
 
     entry = _search_cache.get(search_id)
     if entry is None:
         raise HTTPException(status_code=404, detail="Search result not found")
     codes = entry["codes"]
+
+    if output_format == "ohdsi":
+        return to_ohdsi_concept_set(entry.get("query") or "", codes)
 
     export_fields = [
         "code", "term", "vocabulary", "decision", "confidence", "rationale", "sources",

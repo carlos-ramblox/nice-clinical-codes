@@ -153,6 +153,29 @@ def search_omophub(
     return pd.DataFrame(merged)
 
 
+def _coerce_concept_id(value) -> int | None:
+    """Coerce an OMOPHub ``concept_id`` cell to int.
+
+    Pandas may surface the value as float (NaN promotes the dtype)
+    or str depending on the row; None / NaN / unparseable -> None.
+    """
+    if value is None or isinstance(value, bool):
+        return None
+    if isinstance(value, int):
+        return value
+    if isinstance(value, float):
+        if value != value:  # NaN
+            return None
+        return int(value)
+    s = str(value).strip()
+    if not s:
+        return None
+    try:
+        return int(s)
+    except ValueError:
+        return None
+
+
 def omophub_to_retrieved_codes(df: pd.DataFrame) -> list[dict]:
     """Convert OMOPHub DataFrame rows to RetrievedCode dicts for the pipeline."""
     return [
@@ -164,6 +187,7 @@ def omophub_to_retrieved_codes(df: pd.DataFrame) -> list[dict]:
             "domain": row.get("domain_id", "Unknown"),
             "similarity_score": None,
             "usage_frequency": None,
+            "concept_id": _coerce_concept_id(row.get("concept_id")),
         }
         for row in df.to_dict(orient="records")
     ]

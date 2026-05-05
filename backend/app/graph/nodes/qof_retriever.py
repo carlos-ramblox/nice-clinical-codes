@@ -1,6 +1,6 @@
 import logging
 
-from app.db.code_store import search_by_condition
+from app.db.code_store import get_concept_id_for, search_by_condition
 
 logger = logging.getLogger(__name__)
 
@@ -35,6 +35,7 @@ def retrieve_from_qof(state: dict) -> dict:
                 "domain": r["domain"],
                 "similarity_score": None,  # exact match, not semantic
                 "usage_frequency": None,
+                "concept_id": get_concept_id_for(r["vocabulary"], r["code"]),
             })
 
         logger.info("QOF: '%s' returned %d codes (%d total before source filter)", name, len(qof_rows), len(rows))

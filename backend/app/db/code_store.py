@@ -52,9 +52,18 @@ def _init_tables(conn: sqlite3.Connection):
             UNIQUE(code, vocabulary, source)
         )
     """)
+    # ALTER TABLE migration: existing on-disk corpora pre-date the
+    # concept_id column. Wrapped in try/except because SQLite has no
+    # ALTER TABLE ... IF NOT EXISTS.
+    try:
+        conn.execute("ALTER TABLE codes ADD COLUMN concept_id INTEGER")
+    except sqlite3.OperationalError as exc:
+        if "duplicate column" not in str(exc).lower():
+            raise
     conn.execute("CREATE INDEX IF NOT EXISTS idx_codes_cluster ON codes(cluster_description)")
     conn.execute("CREATE INDEX IF NOT EXISTS idx_codes_term ON codes(term)")
     conn.execute("CREATE INDEX IF NOT EXISTS idx_codes_vocabulary ON codes(vocabulary)")
+    conn.execute("CREATE INDEX IF NOT EXISTS idx_codes_lookup ON codes(vocabulary, code)")
 
     # OpenCodeCounts-derived per-code usage counts (T31). One row per
     # (vocabulary, code, year, setting). ``count`` is NULL when the
@@ -131,6 +140,19 @@ def search_by_condition(condition: str, vocabulary: str | None = None) -> list[d
 
     rows = conn.execute(query, params).fetchall()
     return [dict(r) for r in rows]
+
+
+def get_concept_id_for(vocabulary: str, code: str) -> int | None:
+    """Corpus-side OMOP concept_id lookup. None when not populated."""
+    if not vocabulary or not code:
+        return None
+    row = get_connection().execute(
+        """SELECT concept_id FROM codes
+            WHERE vocabulary = ? AND code = ? AND concept_id IS NOT NULL
+            LIMIT 1""",
+        (vocabulary, str(code)),
+    ).fetchone()
+    return int(row["concept_id"]) if row is not None else None
 
 
 def get_stats() -> dict:

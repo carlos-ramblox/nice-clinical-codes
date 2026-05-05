@@ -2,14 +2,22 @@
 
 import { useState, useEffect, useMemo } from "react";
 import { useRouter } from "next/navigation";
-import { searchCodes, exportCodes, createCodelist, discoverPhenotypes } from "@/lib/api";
+import {
+  searchCodes,
+  exportCodes,
+  exportCodesOhdsi,
+  createCodelist,
+  discoverPhenotypes,
+} from "@/lib/api";
 import type {
   CodeResult,
   SearchResponse,
   PhenotypeDiscoveryResult,
   AdoptedPhenotype,
+  OhdsiExport,
 } from "@/lib/api";
 import { useUser } from "@/lib/useUser";
+import { downloadBlob } from "@/lib/download";
 import { getRecent, pushRecent, formatAgo, type RecentSearch } from "@/lib/recentSearches";
 import { ConfirmModal } from "./ConfirmModal";
 
@@ -373,6 +381,8 @@ export default function Home() {
   const [searchedAt, setSearchedAt] = useState<string>("");
   const [selectedCode, setSelectedCode] = useState<CodeResult | null>(null);
   const [exporting, setExporting] = useState(false);
+  const [ohdsiExport, setOhdsiExport] = useState<OhdsiExport | null>(null);
+  const [ohdsiCopied, setOhdsiCopied] = useState(false);
   const [saving, setSaving] = useState(false);
   const [saveError, setSaveError] = useState<string | null>(null);
   const [showSaveModal, setShowSaveModal] = useState(false);
@@ -513,6 +523,8 @@ export default function Home() {
     setSelectedCode(null);
     setPage(1);
     setDecisionFilter("all");
+    setOhdsiExport(null);
+    setOhdsiCopied(false);
 
     try {
       // T29 — pass the parsed exclusions through to the backend. Empty
@@ -549,16 +561,45 @@ export default function Home() {
     setExporting(true);
     try {
       const blob = await exportCodes(response.search_id, format);
-      const url = URL.createObjectURL(blob);
-      const a = document.createElement("a");
-      a.href = url;
-      a.download = `codelist_${response.search_id}.${format}`;
-      a.click();
-      URL.revokeObjectURL(url);
+      downloadBlob(blob, `codelist_${response.search_id}.${format}`);
     } catch (err) {
       setError(err instanceof Error ? err.message : "Export failed");
     } finally {
       setExporting(false);
+    }
+  };
+
+  const handleOhdsiExport = async () => {
+    if (!response?.search_id || exporting) return;
+    setExporting(true);
+    try {
+      const data = await exportCodesOhdsi(response.search_id);
+      setOhdsiExport(data);
+      setOhdsiCopied(false);
+      const blob = new Blob([JSON.stringify(data.concept_set, null, 2)], {
+        type: "application/json",
+      });
+      const slug = (response.query || "codelist")
+        .toLowerCase()
+        .replace(/[^a-z0-9]+/g, "-")
+        .replace(/^-+|-+$/g, "")
+        .slice(0, 60) || "codelist";
+      downloadBlob(blob, `${slug}.ohdsi.json`);
+    } catch (err) {
+      setError(err instanceof Error ? err.message : "OHDSI export failed");
+    } finally {
+      setExporting(false);
+    }
+  };
+
+  const handleOhdsiCopy = async () => {
+    if (!ohdsiExport) return;
+    try {
+      await navigator.clipboard.writeText(JSON.stringify(ohdsiExport.concept_set, null, 2));
+      setOhdsiCopied(true);
+      window.setTimeout(() => setOhdsiCopied(false), 2000);
+    } catch (err) {
+      setError(err instanceof Error ? err.message : "Copy failed");
     }
   };
 
@@ -789,8 +830,10 @@ export default function Home() {
               </table>
             </div>
 
-            {/* Pagination + Export */}
-            <div className="px-5 py-3 flex items-center justify-between border-t border-gray-200">
+            {/* Pagination + Export. flex-wrap keeps the action buttons
+                on one line on narrow viewports (the right column carries
+                a 320px Provenance panel). */}
+            <div className="px-5 py-3 flex flex-wrap items-center justify-between gap-y-3 border-t border-gray-200">
               <div className="flex items-center gap-2 text-xs text-gray-500">
                 <span>
                   Showing {(page - 1) * PAGE_SIZE + 1}–{Math.min(page * PAGE_SIZE, filteredResults.length)} of {filteredResults.length}
@@ -827,11 +870,11 @@ export default function Home() {
                   </div>
                 )}
               </div>
-              <div className="flex gap-2">
+              <div className="flex flex-wrap items-center gap-2">
                 <button
                   onClick={handleSaveAsDraft}
                   disabled={saving || !response?.search_id}
-                  className="inline-flex items-center gap-2 px-4 py-2 bg-[#00436C] text-white text-sm font-medium hover:bg-[#005EA5] transition-colors disabled:opacity-50"
+                  className="inline-flex items-center gap-2 whitespace-nowrap px-4 py-2 bg-[#00436C] text-white text-sm font-medium hover:bg-[#005EA5] transition-colors disabled:opacity-50"
                   title={user ? "Save as a reviewable draft codelist" : "Sign in to save"}
                 >
                   {saving ? "Saving…" : "Save as draft"}
@@ -839,7 +882,7 @@ export default function Home() {
                 <button
                   onClick={() => handleExport("csv")}
                   disabled={exporting || !response?.search_id}
-                  className="inline-flex items-center gap-2 px-5 py-2 bg-[#005EA5] text-white text-sm font-medium hover:bg-[#00436C] transition-colors disabled:opacity-50"
+                  className="inline-flex items-center gap-2 whitespace-nowrap px-5 py-2 bg-[#005EA5] text-white text-sm font-medium hover:bg-[#00436C] transition-colors disabled:opacity-50"
                 >
                   <svg width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24" aria-hidden="true">
                     <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3" />
@@ -849,11 +892,44 @@ export default function Home() {
                 <button
                   onClick={() => handleExport("xlsx")}
                   disabled={exporting || !response?.search_id}
-                  className="inline-flex items-center gap-2 px-4 py-2 border border-gray-300 text-gray-700 text-sm font-medium hover:bg-gray-50 transition-colors disabled:opacity-50"
+                  className="inline-flex items-center gap-2 whitespace-nowrap px-4 py-2 border border-gray-300 text-gray-700 text-sm font-medium hover:bg-gray-50 transition-colors disabled:opacity-50"
                 >
                   Export Excel
                 </button>
+                <button
+                  onClick={handleOhdsiExport}
+                  disabled={exporting || !response?.search_id}
+                  className="inline-flex items-center gap-2 whitespace-nowrap px-4 py-2 border border-gray-300 text-gray-700 text-sm font-medium hover:bg-gray-50 transition-colors disabled:opacity-50"
+                  title="Download OHDSI concept-set JSON (ATLAS / CodelistGenerator)"
+                >
+                  OHDSI concept set
+                </button>
               </div>
+              {ohdsiExport && (
+                /* basis-full keeps the badge + Copy JSON on their own row. */
+                <div className="basis-full flex items-center justify-end gap-3 text-xs">
+                  <span
+                    className="text-gray-700 whitespace-nowrap"
+                    title="Mapped: items with an OMOP concept_id ATLAS will accept. Unmapped: codes the corpus could not resolve to OMOP — surfaced separately, not invented."
+                  >
+                    <span className="font-semibold text-[#00436C]">
+                      {ohdsiExport.concept_set.expression.items.length}
+                    </span>{" "}
+                    mapped ·{" "}
+                    <span className="font-semibold text-[#7C2A00]">
+                      {ohdsiExport.unmapped.length}
+                    </span>{" "}
+                    unmapped
+                  </span>
+                  <button
+                    onClick={handleOhdsiCopy}
+                    className="inline-flex items-center gap-1 whitespace-nowrap px-3 py-1 border border-gray-300 text-gray-700 hover:bg-gray-50 transition-colors"
+                    title="Copy concept_set JSON to clipboard for paste into ATLAS"
+                  >
+                    {ohdsiCopied ? "Copied" : "Copy JSON"}
+                  </button>
+                </div>
+              )}
               {saveError && (
                 <div className="ml-auto text-xs text-red-700">{saveError}</div>
               )}

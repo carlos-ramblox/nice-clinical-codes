@@ -31,6 +31,7 @@ export interface CodeResult {
   usage_status: UsageStatus | null;
   usage_source: string | null;
   usage_setting: UsageSetting | null;
+  concept_id: number | null;
 }
 
 export interface SearchResponse {
@@ -145,6 +146,56 @@ export async function exportCodes(
     throw new Error(`Export failed: ${res.status}`);
   }
   return res.blob();
+}
+
+// --- OHDSI concept-set JSON export ----------------------------------------
+// Mirrors backend/app/exports/ohdsi.py::to_ohdsi_concept_set.
+// UPPERCASE concept keys are the OHDSI shape; ATLAS pastes them as-is.
+
+export interface OhdsiConceptItem {
+  concept: {
+    CONCEPT_ID: number;
+    VOCABULARY_ID: string;
+    CONCEPT_CODE: string;
+    CONCEPT_NAME: string;
+  };
+  isExcluded: boolean;
+  includeDescendants: boolean;
+  includeMapped: boolean;
+}
+
+export interface OhdsiUnmappedRow {
+  code: string;
+  vocabulary: string;
+  term: string;
+  decision: "include" | "exclude";
+}
+
+export interface OhdsiExport {
+  concept_set: {
+    id: number;
+    name: string;
+    expression: { items: OhdsiConceptItem[] };
+  };
+  unmapped: OhdsiUnmappedRow[];
+}
+
+export async function exportCodesOhdsi(searchId: string): Promise<OhdsiExport> {
+  const res = await fetch(
+    `${API_BASE}/export/${searchId}?output_format=ohdsi`,
+    AUTH_FETCH,
+  );
+  if (!res.ok) throw new Error(`OHDSI export failed: ${res.status}`);
+  return res.json();
+}
+
+export async function exportCodelistOhdsi(codelistId: string): Promise<OhdsiExport> {
+  const res = await fetch(
+    `${API_BASE}/codelists/${codelistId}/export?format=ohdsi`,
+    AUTH_FETCH,
+  );
+  if (!res.ok) throw new Error(`OHDSI export failed: ${res.status}`);
+  return res.json();
 }
 
 // --- HITL: auth ------------------------------------------------------------

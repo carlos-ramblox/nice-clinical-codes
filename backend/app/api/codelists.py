@@ -20,8 +20,9 @@ from pydantic import BaseModel, Field
 from app.api.auth import get_current_user
 from app.api import _search_cache
 from app.config import HDR_UK_BASE_URL, HDR_UK_TOP_K_PHENOTYPES
-from app.db import hitl_store
+from app.db import code_store, hitl_store
 from app.db.code_normalize import normalize_code
+from app.exports.ohdsi import to_ohdsi_concept_set
 from app.services.phenotype_discovery import (
     compute_overlap,
     discover_phenotypes_ranked,
@@ -116,6 +117,43 @@ async def get_audit(codelist_id: str, user: dict = Depends(get_current_user)):
     if hitl_store.get_codelist(codelist_id) is None:
         raise HTTPException(status_code=404, detail="Codelist not found")
     return hitl_store.get_audit(codelist_id)
+
+
+@router.get("/{codelist_id}/export")
+async def export_codelist(
+    codelist_id: str,
+    format: str = Query("ohdsi", description="Export format. Currently only 'ohdsi'."),
+    user: dict = Depends(get_current_user),
+):
+    """Export a codelist as OHDSI concept-set JSON.
+
+    Decisions carry concept_id pinned at insert time; pre-migration
+    rows fall back to the local corpus lookup, never to a guess.
+    """
+    if format != "ohdsi":
+        raise HTTPException(status_code=400, detail="format must be 'ohdsi'")
+
+    cl = hitl_store.get_codelist(codelist_id)
+    if cl is None:
+        raise HTTPException(status_code=404, detail="Codelist not found")
+
+    enriched: list[dict] = []
+    for d in cl.get("decisions") or []:
+        cid_val = d.get("concept_id")
+        if cid_val is None:
+            cid_val = code_store.get_concept_id_for(
+                d.get("vocabulary") or "", d.get("code") or "",
+            )
+        enriched.append({
+            "code": d.get("code", ""),
+            "term": d.get("term", ""),
+            "vocabulary": d.get("vocabulary", ""),
+            "human_decision": d.get("human_decision"),
+            "decision": d.get("ai_decision"),
+            "concept_id": cid_val,
+        })
+
+    return to_ohdsi_concept_set(cl.get("name") or cl.get("query") or "", enriched)
 
 
 # --- HDR UK cross-reference (T35) ------------------------------------------

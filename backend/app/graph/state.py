@@ -27,6 +27,9 @@ class RetrievedCode(TypedDict):
     source: str  # "OMOPHub", "QOF", "OpenCodelists", "ChromaDB"
     domain: str  # "Condition", "Drug", "Procedure"
     similarity_score: float | None
+    # OMOP standard concept_id. None when no retriever resolved it;
+    # the OHDSI exporter routes those into a parallel `unmapped` array.
+    concept_id: int | None
     # OpenCodeCounts-derived fields (T31). usage_frequency is the
     # most-recent annual count from NHS Digital, or None when the code
     # is absent from the dataset OR when the count was withheld under
@@ -66,6 +69,7 @@ class EnrichedCode(TypedDict):
     usage_status: str | None
     usage_source: str | None
     usage_setting: str | None
+    concept_id: int | None
 
 
 class ScoredCode(TypedDict):
@@ -80,6 +84,7 @@ class ScoredCode(TypedDict):
     usage_status: str | None
     usage_source: str | None
     usage_setting: str | None
+    concept_id: int | None
 
 
 class ProvenanceRecord(TypedDict):

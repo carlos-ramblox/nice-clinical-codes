@@ -4,15 +4,18 @@ import { use, useEffect, useMemo, useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import {
+  exportCodelistOhdsi,
   getCodelist,
   getCrossReference,
   submitReview,
   type Codelist,
   type CodelistDecision,
   type CrossReferenceRow,
+  type OhdsiExport,
   type ReviewDecisionInput,
 } from "@/lib/api";
 import { useUser } from "@/lib/useUser";
+import { downloadBlob } from "@/lib/download";
 import { ConfirmModal } from "../../ConfirmModal";
 
 type HumanDecision = "include" | "exclude" | "uncertain";
@@ -271,6 +274,10 @@ export default function CodelistReviewPage({
   const [notes, setNotes] = useState("");
   const [submitting, setSubmitting] = useState(false);
   const [confirmAction, setConfirmAction] = useState<"approve" | "reject" | null>(null);
+  const [ohdsiExport, setOhdsiExport] = useState<OhdsiExport | null>(null);
+  const [ohdsiBusy, setOhdsiBusy] = useState(false);
+  const [ohdsiCopied, setOhdsiCopied] = useState(false);
+  const [ohdsiError, setOhdsiError] = useState<string | null>(null);
   const [filter, setFilter] = useState<"all" | HumanDecision>("all");
   const [sortMode, setSortMode] = useState<SortMode>("uncertainty");
 
@@ -411,6 +418,41 @@ export default function CodelistReviewPage({
     return errs;
   }, [codelist, drafts]);
 
+  const handleOhdsiExport = async () => {
+    if (!codelist || ohdsiBusy) return;
+    setOhdsiBusy(true);
+    setOhdsiError(null);
+    try {
+      const data = await exportCodelistOhdsi(codelist.id);
+      setOhdsiExport(data);
+      setOhdsiCopied(false);
+      const blob = new Blob([JSON.stringify(data.concept_set, null, 2)], {
+        type: "application/json",
+      });
+      const slug = (codelist.name || codelist.query || "codelist")
+        .toLowerCase()
+        .replace(/[^a-z0-9]+/g, "-")
+        .replace(/^-+|-+$/g, "")
+        .slice(0, 60) || "codelist";
+      downloadBlob(blob, `${slug}.ohdsi.json`);
+    } catch (err) {
+      setOhdsiError(err instanceof Error ? err.message : "OHDSI export failed");
+    } finally {
+      setOhdsiBusy(false);
+    }
+  };
+
+  const handleOhdsiCopy = async () => {
+    if (!ohdsiExport) return;
+    try {
+      await navigator.clipboard.writeText(JSON.stringify(ohdsiExport.concept_set, null, 2));
+      setOhdsiCopied(true);
+      window.setTimeout(() => setOhdsiCopied(false), 2000);
+    } catch (err) {
+      setOhdsiError(err instanceof Error ? err.message : "Copy failed");
+    }
+  };
+
   const submit = async (action: "approve" | "reject") => {
     if (!codelist) return;
     setSubmitting(true);
@@ -493,6 +535,43 @@ export default function CodelistReviewPage({
           >
             View audit log →
           </Link>
+          <div className="mt-3 flex flex-col items-end gap-1">
+            <button
+              onClick={handleOhdsiExport}
+              disabled={ohdsiBusy}
+              className="inline-flex items-center gap-2 px-3 py-1 border border-gray-300 text-xs text-gray-700 hover:bg-gray-50 disabled:opacity-50"
+              title="Download OHDSI concept-set JSON (ATLAS / CodelistGenerator)"
+            >
+              {ohdsiBusy ? "Exporting…" : "OHDSI concept set"}
+            </button>
+            {ohdsiExport && (
+              <div className="flex items-center gap-2 text-xs">
+                <span
+                  className="text-gray-700"
+                  title="Mapped: items ATLAS accepts (have OMOP concept_id). Unmapped: codes the corpus could not resolve to OMOP."
+                >
+                  <span className="font-semibold text-[#00436C]">
+                    {ohdsiExport.concept_set.expression.items.length}
+                  </span>{" "}
+                  mapped ·{" "}
+                  <span className="font-semibold text-[#7C2A00]">
+                    {ohdsiExport.unmapped.length}
+                  </span>{" "}
+                  unmapped
+                </span>
+                <button
+                  onClick={handleOhdsiCopy}
+                  className="px-2 py-0.5 border border-gray-300 text-gray-700 hover:bg-gray-50"
+                  title="Copy concept_set JSON to clipboard"
+                >
+                  {ohdsiCopied ? "Copied" : "Copy JSON"}
+                </button>
+              </div>
+            )}
+            {ohdsiError && (
+              <div className="text-xs text-red-700">{ohdsiError}</div>
+            )}
+          </div>
         </div>
       </div>
 
