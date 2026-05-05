@@ -1055,6 +1055,20 @@ and a post-hoc cross-reference panel that measures code overlap
 between the generated codelist and candidate phenotypes for
 citation-traceability.
 
+**HDR UK Phenotype Library: explicit adoption flow** *(shipped 2026-05-05)*
+Each row of the discovery sidebar now offers an explicit "Use this
+phenotype as a citation" action. Adoptions are collected client-side
+as the user browses and submitted alongside the codelist on
+Save-as-Draft; the backend records each adoption as a
+`phenotype_adopted` audit-log event, sharing tamper-evidence with
+the existing decision-override events (no separate adoptions table).
+The codelist detail page renders an "Adopted phenotypes" section
+listing each citation with a link out to the authoritative HDR UK
+page and the first-publication citation block so the methods section
+of any downstream paper can lift the citation chain directly.
+Adoption captures attribution intent, not codes — the persona
+pre-flight's "no code-mixing" rule is preserved end-to-end.
+
 **HDR UK Phenotype Library: cross-reference panel** *(shipped 2026-05-05)*
 The post-hoc validation surface is now live on the codelist detail
 page. After a draft codelist is saved, a collapsible panel ranks the

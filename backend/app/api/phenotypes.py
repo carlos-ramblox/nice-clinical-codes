@@ -44,6 +44,17 @@ def _hdruk_detail_url(phenotype_id: str) -> str:
     The canonical form is ``/phenotypes/{id}/detail/`` but the server
     redirects ``/phenotypes/{id}`` there with a 200 final response, so
     the shorter form is fine and reads cleaner in the UI.
+
+    TODO(T34c): pin the version. HDR UK phenotypes are versioned; the
+    current URL resolves to whichever version is "live" at click-time,
+    so an adopted citation that points at PH12 today and at PH12 v4
+    after HDR UK publishes a new version would silently shift. The
+    discovery search response already exposes ``phenotype_version_id``
+    -- piping it through ``PhenotypeDiscoveryResult``, the adoption
+    payload, and the detail URL (``/phenotypes/{id}/version/{v}``)
+    pins the citation to the version the user actually consulted.
+    Non-blocking for present-day reuse; future re-citations of older
+    adopted versions are at risk without it.
     """
     base = HDR_UK_BASE_URL.rstrip("/")
     return f"{base}/phenotypes/{phenotype_id}"

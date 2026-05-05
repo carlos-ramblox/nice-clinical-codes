@@ -196,8 +196,18 @@ def create_codelist(
     query: str,
     created_by: int,
     decisions: list[dict],
+    adopted_phenotypes: list[dict] | None = None,
 ) -> str:
-    """Persist a search result as a draft codelist. Returns the new id."""
+    """Persist a search result as a draft codelist. Returns the new id.
+
+    ``adopted_phenotypes`` is the list of HDR UK phenotypes the user
+    adopted as citations during the discovery-sidebar browse (T34b).
+    Each adoption is recorded as a separate ``phenotype_adopted``
+    event in the audit log so the citation chain is tamper-evident
+    in the same way decision-override events are; there is no
+    separate adoptions table. ``get_codelist`` surfaces these to
+    callers by replaying the relevant audit-log events.
+    """
     conn = get_connection()
     cid = uuid.uuid4().hex[:16]
     conn.execute(
@@ -206,16 +216,31 @@ def create_codelist(
         (cid, name, query, created_by),
     )
     _insert_decisions(conn, cid, decisions)
+    adoptions = adopted_phenotypes or []
     _append_audit(
         conn, cid, event="created", user_id=created_by,
         details={
             "name": name,
             "query": query,
             "decision_count": len(decisions),
+            "adoption_count": len(adoptions),
         },
     )
+    for adoption in adoptions:
+        _append_audit(
+            conn, cid, event="phenotype_adopted", user_id=created_by,
+            details={
+                "phenotype_id": adoption.get("phenotype_id", ""),
+                "name": adoption.get("name", ""),
+                "hdruk_url": adoption.get("hdruk_url", ""),
+                "first_publication": adoption.get("first_publication", ""),
+            },
+        )
     conn.commit()
-    logger.info("codelist %s created by user %d (%d decisions)", cid, created_by, len(decisions))
+    logger.info(
+        "codelist %s created by user %d (%d decisions, %d adoptions)",
+        cid, created_by, len(decisions), len(adoptions),
+    )
     return cid
 
 
@@ -281,6 +306,25 @@ def get_codelist(cid: str) -> dict | None:
         except (TypeError, ValueError):
             d["sources"] = []
     result["decisions"] = sort_review_queue(decisions)
+
+    # Surface adopted phenotypes (T34b) by replaying the relevant audit
+    # events. Stored audit-log only -- no separate table -- so every
+    # adoption carries the same tamper-evidence guarantees as the
+    # decision-override events.
+    adoptions: list[dict] = []
+    for r in conn.execute(
+        """SELECT details FROM audit_log
+            WHERE codelist_id = ? AND event = 'phenotype_adopted'
+            ORDER BY id""",
+        (cid,),
+    ):
+        raw = r["details"]
+        try:
+            adoptions.append(json.loads(raw) if raw else {})
+        except (TypeError, ValueError):
+            continue
+    result["adopted_phenotypes"] = adoptions
+
     return result
 
 

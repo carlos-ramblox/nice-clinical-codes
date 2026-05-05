@@ -184,11 +184,19 @@ export interface CodelistDecision {
   is_umls_suggestion: number;
 }
 
+export interface AdoptedPhenotype {
+  phenotype_id: string;
+  name: string;
+  hdruk_url: string;
+  first_publication: string;
+}
+
 export interface Codelist extends CodelistSummary {
   review_notes: string | null;
   signature_hash: string | null;
   reviewed_by_name?: string | null;
   decisions: CodelistDecision[];
+  adopted_phenotypes: AdoptedPhenotype[];
 }
 
 export interface AuditEvent {
@@ -230,12 +238,20 @@ export async function getAudit(id: string): Promise<AuditEvent[]> {
   return res.json();
 }
 
-export async function createCodelist(searchId: string, name: string): Promise<Codelist> {
+export async function createCodelist(
+  searchId: string,
+  name: string,
+  adoptedPhenotypes: AdoptedPhenotype[] = [],
+): Promise<Codelist> {
   const res = await fetch(`${API_BASE}/codelists`, {
     ...AUTH_FETCH,
     method: "POST",
     headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ search_id: searchId, name }),
+    body: JSON.stringify({
+      search_id: searchId,
+      name,
+      adopted_phenotypes: adoptedPhenotypes,
+    }),
   });
   if (!res.ok) {
     const detail = await res.text();

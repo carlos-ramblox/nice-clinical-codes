@@ -3,7 +3,12 @@
 import { useState, useEffect, useMemo } from "react";
 import { useRouter } from "next/navigation";
 import { searchCodes, exportCodes, createCodelist, discoverPhenotypes } from "@/lib/api";
-import type { CodeResult, SearchResponse, PhenotypeDiscoveryResult } from "@/lib/api";
+import type {
+  CodeResult,
+  SearchResponse,
+  PhenotypeDiscoveryResult,
+  AdoptedPhenotype,
+} from "@/lib/api";
 import { useUser } from "@/lib/useUser";
 import { getRecent, pushRecent, formatAgo, type RecentSearch } from "@/lib/recentSearches";
 import { ConfirmModal } from "./ConfirmModal";
@@ -96,7 +101,17 @@ function LoadingProgress() {
   );
 }
 
-function PhenotypeDiscoverySidebar({ rows }: { rows: PhenotypeDiscoveryResult[] }) {
+function PhenotypeDiscoverySidebar({
+  rows,
+  adoptedIds,
+  onAdopt,
+  onUnadopt,
+}: {
+  rows: PhenotypeDiscoveryResult[];
+  adoptedIds: Set<string>;
+  onAdopt: (row: PhenotypeDiscoveryResult) => void;
+  onUnadopt: (phenotypeId: string) => void;
+}) {
   // Read-mode panel: surfaces 3-5 candidate HDR UK phenotypes whose
   // clinical scope fits the user's query. Each row links out to the
   // authoritative HDR UK detail page; the rationale is shown as a
@@ -170,6 +185,36 @@ function PhenotypeDiscoverySidebar({ rows }: { rows: PhenotypeDiscoveryResult[] 
               >
                 {row.relevance_verdict}
               </span>
+            </div>
+            <div className="mt-1.5">
+              {/* T34b: explicit adoption action. Recorded in the user's
+                  in-memory state and applied on Save-as-Draft as a
+                  phenotype_adopted audit-log event. The button morphs
+                  to "Adopted" once the user has adopted; clicking again
+                  is a no-op (the parent component dedups by phenotype id). */}
+              {adoptedIds.has(row.phenotype_id) ? (
+                <span className="text-[11px] inline-flex items-center gap-2">
+                  <span className="text-green-700 font-medium">
+                    ✓ Adopted — will cite on save
+                  </span>
+                  <button
+                    type="button"
+                    onClick={() => onUnadopt(row.phenotype_id)}
+                    className="text-gray-500 hover:text-gray-700 underline"
+                    aria-label={`Remove ${row.phenotype_id} from adoptions`}
+                  >
+                    remove
+                  </button>
+                </span>
+              ) : (
+                <button
+                  type="button"
+                  onClick={() => onAdopt(row)}
+                  className="text-[11px] text-[#005EA5] hover:underline"
+                >
+                  + Use this phenotype as a citation
+                </button>
+              )}
             </div>
             {(row.type.length > 0 || row.coding_systems.length > 0 || row.data_sources.length > 0) && (
               <div className="mt-1 flex flex-wrap gap-1 text-[11px]">
@@ -266,6 +311,41 @@ export default function Home() {
   const [recent, setRecent] = useState<RecentSearch[]>([]);
   useEffect(() => { setRecent(getRecent()); }, []);
 
+  // T34b: adopted-phenotype state for the discovery sidebar.
+  // Session-scoped on purpose: no localStorage, no server pre-state.
+  // The persona model is "browse-then-decide": adoptions are a UI-layer
+  // marker until the user commits the whole package via Save-as-Draft.
+  // If they leave the page without saving, the adoptions disappear --
+  // matches the "I was browsing, I didn't commit" mental model. A
+  // future maintainer thinking about persisting these to localStorage
+  // should re-read the persona pre-flight first.
+  const [adoptedPhenotypes, setAdoptedPhenotypes] = useState<AdoptedPhenotype[]>([]);
+  const adoptedIds = useMemo(
+    () => new Set(adoptedPhenotypes.map((a) => a.phenotype_id)),
+    [adoptedPhenotypes],
+  );
+  const handleAdoptPhenotype = (row: PhenotypeDiscoveryResult) => {
+    setAdoptedPhenotypes((prev) => {
+      if (prev.some((a) => a.phenotype_id === row.phenotype_id)) return prev;
+      return [
+        ...prev,
+        {
+          phenotype_id: row.phenotype_id,
+          name: row.name,
+          hdruk_url: row.hdruk_url,
+          first_publication: row.first_publication,
+        },
+      ];
+    });
+  };
+  const handleUnadoptPhenotype = (phenotypeId: string) => {
+    // Session-only undo: lets a user un-adopt before they save without
+    // having to refresh the page (which would lose every other adoption
+    // collected during the browse). After save, undo lives in the codelist
+    // detail page's audit log -- not yet exposed but available there.
+    setAdoptedPhenotypes((prev) => prev.filter((a) => a.phenotype_id !== phenotypeId));
+  };
+
   // HDR UK phenotype discovery (T34): surface candidate published
   // phenotypes from the HDR UK Phenotype Library as the user types,
   // before they commit to running the pipeline. Debounced 300 ms;
@@ -330,7 +410,14 @@ export default function Home() {
     setSaving(true);
     setSaveError(null);
     try {
-      const cl = await createCodelist(response.search_id, draftName.trim());
+      // T34b: adoptions accumulated during the discovery-sidebar browse
+      // are submitted alongside the codelist. The backend records each
+      // as a phenotype_adopted audit-log event for tamper-evidence.
+      const cl = await createCodelist(
+        response.search_id,
+        draftName.trim(),
+        adoptedPhenotypes,
+      );
       setShowSaveModal(false);
       router.push(`/codelists/${cl.id}`);
     } catch (e) {
@@ -483,9 +570,14 @@ export default function Home() {
         </form>
       </div>
 
-      {/* HDR UK phenotype discovery sidebar (T34) */}
+      {/* HDR UK phenotype discovery sidebar (T34) + adoption (T34b) */}
       {!loading && !results && discoveryRows !== null && (
-        <PhenotypeDiscoverySidebar rows={discoveryRows} />
+        <PhenotypeDiscoverySidebar
+          rows={discoveryRows}
+          adoptedIds={adoptedIds}
+          onAdopt={handleAdoptPhenotype}
+          onUnadopt={handleUnadoptPhenotype}
+        />
       )}
 
       {/* Loading */}

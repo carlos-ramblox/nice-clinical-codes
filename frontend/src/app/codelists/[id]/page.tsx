@@ -490,6 +490,43 @@ export default function CodelistReviewPage({
         </div>
       </div>
 
+      {/* T34b: Adopted phenotypes -- the citations the user picked
+          during the discovery-sidebar browse. Recorded as phenotype_adopted
+          audit-log events on codelist creation; surfaced here as
+          read-only metadata. Hidden when no adoptions exist so the
+          page stays compact for the common case. */}
+      {codelist.adopted_phenotypes && codelist.adopted_phenotypes.length > 0 && (
+        <section className="mb-4 border border-gray-200 bg-white px-4 py-3">
+          <h3 className="text-sm font-medium text-[#00436C] mb-2">
+            Adopted phenotypes
+            <span className="ml-2 text-xs text-gray-500 font-normal">
+              {codelist.adopted_phenotypes.length} citation{codelist.adopted_phenotypes.length === 1 ? "" : "s"} from HDR UK
+            </span>
+          </h3>
+          <ul className="space-y-1.5">
+            {codelist.adopted_phenotypes.map((a) => (
+              <li key={a.phenotype_id} className="text-xs">
+                <a
+                  href={a.hdruk_url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-[#005EA5] hover:underline font-medium"
+                >
+                  {a.name}{" "}
+                  <span className="text-gray-400 font-normal">({a.phenotype_id})</span>
+                </a>
+                {a.first_publication && (
+                  <span className="text-gray-500"> — {a.first_publication}</span>
+                )}
+              </li>
+            ))}
+          </ul>
+          <p className="mt-2 text-[11px] text-gray-400">
+            These citations are recorded in the codelist&apos;s audit log and travel with the artefact.
+          </p>
+        </section>
+      )}
+
       {/* HDR UK cross-reference panel (T35) — read-only post-hoc validation */}
       <CrossReferencePanel
         codelistId={codelist.id}

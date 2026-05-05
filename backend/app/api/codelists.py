@@ -35,9 +35,33 @@ router = APIRouter(prefix="/codelists", tags=["codelists"])
 
 # --- request / response models ---------------------------------------------
 
+class AdoptedPhenotype(BaseModel):
+    """One HDR UK phenotype adopted as a citation during discovery (T34b).
+
+    Submitted with the codelist on save; recorded as a
+    ``phenotype_adopted`` audit-log event by ``hitl_store.create_codelist``.
+    The audit log is the single source of truth -- there is no separate
+    adoptions table -- so adoption history shares the existing
+    tamper-evidence path used for decision overrides.
+    """
+
+    phenotype_id: str = Field(..., min_length=1, max_length=64)
+    name: str = Field(..., min_length=1, max_length=300)
+    hdruk_url: str = Field(..., min_length=1, max_length=300)
+    first_publication: str = Field(default="", max_length=400)
+
+
 class CreateCodelistRequest(BaseModel):
     search_id: str = Field(..., description="search_id returned by POST /api/search")
     name: str = Field(..., min_length=1, max_length=200)
+    adopted_phenotypes: list[AdoptedPhenotype] = Field(
+        default_factory=list,
+        max_length=20,
+        description=(
+            "HDR UK phenotypes adopted via the discovery sidebar. Realistic "
+            "upper bound is 1-3 per study; cap at 20 for defence in depth."
+        ),
+    )
 
 
 class DecisionUpdate(BaseModel):
@@ -230,9 +254,13 @@ async def create_codelist(body: CreateCodelistRequest, user: dict = Depends(get_
         query=entry["query"],
         created_by=user["id"],
         decisions=entry["codes"],
+        adopted_phenotypes=[a.model_dump() for a in body.adopted_phenotypes],
     )
     # log user_id only — names are PII, don't ship them to stdout in prod
-    logger.info("codelist %s created by user_id=%d (%d codes)", cid, user["id"], len(entry["codes"]))
+    logger.info(
+        "codelist %s created by user_id=%d (%d codes, %d adoptions)",
+        cid, user["id"], len(entry["codes"]), len(body.adopted_phenotypes),
+    )
     return hitl_store.get_codelist(cid)
 
 
