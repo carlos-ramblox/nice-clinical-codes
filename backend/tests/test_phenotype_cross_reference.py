@@ -22,6 +22,8 @@ import sys
 from pathlib import Path
 from unittest.mock import patch
 
+import pytest
+
 # Allow `import app.*` whether the test is invoked from backend/ or repo root.
 _BACKEND = Path(__file__).resolve().parents[1]
 if str(_BACKEND) not in sys.path:
@@ -34,6 +36,31 @@ from app.services import phenotype_discovery as pd  # noqa: E402
 
 
 client = TestClient(app)
+
+
+@pytest.fixture(autouse=True)
+def _cleanup_test_codelists():
+    """Drop any codelist rows the test created so the dev SQLite DB does
+    not accrete fixture rows across runs.
+
+    Snapshot the codelist ids before the test, run the test, then delete
+    the diff. Cascades to ``codelist_decisions`` and ``audit_log`` rows
+    via explicit DELETE so we don't depend on schema-level FK CASCADE.
+    """
+    from app.db.hitl_store import get_connection
+    conn = get_connection()
+    pre_ids = {r["id"] for r in conn.execute("SELECT id FROM codelists")}
+    yield
+    post_ids = {r["id"] for r in conn.execute("SELECT id FROM codelists")}
+    new_ids = post_ids - pre_ids
+    if not new_ids:
+        return
+    placeholders = ",".join(["?"] * len(new_ids))
+    params = list(new_ids)
+    conn.execute(f"DELETE FROM audit_log WHERE codelist_id IN ({placeholders})", params)
+    conn.execute(f"DELETE FROM codelist_decisions WHERE codelist_id IN ({placeholders})", params)
+    conn.execute(f"DELETE FROM codelists WHERE id IN ({placeholders})", params)
+    conn.commit()
 
 
 # --- compute_overlap unit tests --------------------------------------------
@@ -197,12 +224,6 @@ def _login_demo_user():
     res = client.post("/api/auth/login", json={"user_id": users[0]["id"]})
     return res.json() if res.status_code == 200 else None
 
-
-# NOTE: tests below create real codelists in the dev SQLite DB and do not
-# clean them up afterwards (the hitl_store API is append-only, no delete).
-# This accretes "T35 fixture" rows on each run -- harmless at demo scale
-# but worth a follow-up to either add a delete helper or run tests against
-# an isolated in-memory DB. Tracked separately; not a T35 blocker.
 
 def _create_codelist_with_codes(codes: list[dict]) -> str:
     """Seed a codelist via /api/search + /api/codelists. ``codes`` items are
