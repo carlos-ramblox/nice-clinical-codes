@@ -39,6 +39,14 @@ def merge_and_dedup(state: dict) -> dict:
                 "domain": c.get("domain", ""),
                 "similarity_score": c.get("similarity_score"),
                 "usage_frequency": c.get("usage_frequency"),
+                # T31: usage_status / usage_source / usage_setting are
+                # populated by the usage_annotator node downstream;
+                # retrievers leave them None. Initialise here so
+                # downstream nodes (and tests that bypass the
+                # annotator) see a stable shape.
+                "usage_status": c.get("usage_status"),
+                "usage_source": c.get("usage_source"),
+                "usage_setting": c.get("usage_setting"),
                 "sources": [c["source"]],
                 "source_count": 1,
             }

@@ -25,6 +25,12 @@ COPY backend/app/ app/
 COPY data/raw/ data/raw/
 COPY data/opcs/ data/opcs/
 COPY data/icd10/ data/icd10/
+# T31: OpenCodeCounts CSVs (NHS Digital, OGL v3.0). The CSVs are
+# gitignored; the directory itself is checked in (with a README) so
+# this COPY always has a target. When the operator has not staged a
+# CSV the ingest step warns and continues — usage_frequency on the
+# search response simply stays None for every code.
+COPY data/raw/opencodecounts/ data/raw/opencodecounts/
 
 RUN python -m app.ingestion.run_all --data-dir data
 

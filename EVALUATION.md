@@ -307,6 +307,73 @@ realistic dependence structure. The magnitude of the post-fix lift
 McNemar with this caveat is more defensible than the overlapping-CI
 substitute it replaces.
 
+#### Run-to-run variance (K=5 protocol)
+
+The pipeline calls Claude Haiku 4.5 at temperature = 0 for code
+scoring. Anthropic provides no `seed` parameter and explicitly notes
+that temperature = 0 is not strictly deterministic — floating-point
+non-associativity in batched GPU inference produces ~1–3 % decision
+flips per call on identical prompts. To characterise the resulting
+F1 noise, each of the 15 codelists is run K = 5 times via
+`backend/app/evaluation/run_variance_k5.py`, persisting each run to
+`data/test_sets/benchmark_2026_04/<short>.result_runK_<k>.json`. The
+aggregator (`benchmark_aggregate.py`) reports per-codelist mean ±
+std of strict F1 and an aggregate decision-flip rate over every
+`(codelist, code)` pair seen in the K runs.
+
+Measured headlines:
+
+- Mean per-codelist F1 std: **0.012**
+- Maximum per-codelist F1 std: **0.025** (`hypertension`)
+- Aggregate decision-flip rate: **6.9 %** (97 of 1,411 pairs flipped
+  on at least two of K = 5 runs)
+
+The std numbers fall inside the ±0.01–0.02 band predicted from the
+1–3 %-per-call literature; the slightly higher aggregate flip rate
+reflects cumulative compounding across 5 runs and includes a small
+amount of retrieve-side variance (occasional OMOPHub 429 throttling
+shrinks the candidate set on a given run, and UMLS suggestions vary
+across calls).
+
+K=5 results were produced via in-process invocation of `run_pipeline`
+against `develop` on 2026-05-03. The single-run `Post-F1` and
+`Cold-F1` columns were produced against deployed image `ad7ccad-dirty`
+via the live `/api/evaluate` endpoint on 2026-04-27. The behavioural
+deltas between those code states are async parallelism in per-batch
+scoring (T04, output bit-equivalent to the sequential for-loop modulo
+this same temperature-0 noise) and passive observability (T05);
+neither affects scored decisions. Pure run-to-run variance therefore
+predicts a ≤ 0.02 drift between the single-run `Post-F1` value and
+the K=5 mean for any given codelist.
+
+Several codelists exceed that prediction by 4–14 σ: `copd` drifts
+from 0.76 → 0.54 (~14 σ), `hepatitis_c_chronic` from 0.60 → 0.79
+(~10 σ), `heart_failure` from 0.70 → 0.78 (~4 σ), and
+`diabetes_mellitus` from 0.81 → 0.73 (~4 σ). These gaps are not
+explainable as temperature-0 noise. The most plausible attribution is
+**environmental drift in the upstream knowledge sources between the
+two run dates** — UMLS REST suggestions evolve (the production
+service is not pinned), OMOPHub returns vary as their index is
+re-ingested, and OpenCodelists cluster_descriptions can change as
+NHSD republishes. A second, secondary contribution is **local
+ChromaDB / SQLite snapshot drift on `develop` relative to the
+deployed image's baked-in data**, since the K=5 sweep ran against
+`develop`'s local data dir while the single-run baseline ran against
+the `ad7ccad-dirty` image's pinned content. The mixed direction of
+drift (two codelists up, two down) is more consistent with the
+live-API attribution than with a pure-data-snapshot bug, which
+would skew more directionally; the local-data alternative is named
+here for completeness.
+
+Both columns are point measurements answering different questions:
+the single-run `Post-F1` is n = 1 against pinned-image data on
+2026-04-27 and remains the anchor for the §4 case discussion
+(which references specific TP/FP/FN code lists from that snapshot);
+the K=5 column is n = 5 against current `develop` code + data on
+2026-05-03 and is the better noise-characterised number for the
+current state of the system. Future per-codelist comparisons should
+use the K=5 column.
+
 ### Sensitivity analysis: default vs. cold-start
 
 clinicalcodes.uk uses OpenCodelists as one of its four retrievers
@@ -391,23 +458,31 @@ cases pre-fix; those are now resolved, so the gap has narrowed.
 
 ### Per-codelist (strict view, all three views side-by-side)
 
-| Codelist | Vocab | N(ref) | Pre-F1 | Post-F1 | Cold-F1 | Δ Pre→Post |
-|---|---|---|---|---|---|---|
-| heart_failure | SNOMED CT | 42 | 0.73 | 0.70 | 0.70 | −0.03 |
-| diabetes_mellitus | SNOMED CT | 86 | 0.78 | 0.81 | 0.79 | +0.03 |
-| hypertension | SNOMED CT | 117 | 0.53 | 0.53 | 0.43 | +0.00 |
-| mi_icd10 | ICD-10 | 12 | 0.00 | **0.74** | 0.74 | **+0.74** |
-| atrial_fib_icd10 | ICD-10 | 7 | 0.21 | **1.00** | 1.00 | **+0.79** |
-| stroke | SNOMED CT | 266 | 0.52 | 0.52 | 0.52 | +0.00 |
-| asthma_pincer | SNOMED CT | 124 | 0.86 | **0.67** | 0.72 | **−0.19** |
-| copd | SNOMED CT | 56 | 0.77 | 0.76 | 0.76 | −0.01 |
-| depression | SNOMED CT | 106 | 0.72 | 0.69 | 0.70 | −0.02 |
-| psychosis_schiz_bipolar | SNOMED CT | 198 | 0.65 | 0.67 | 0.61 | +0.02 |
-| dementia | SNOMED CT | 325 | 0.33 | 0.28 | 0.31 | −0.05 |
-| epilepsy | SNOMED CT | 476 | 0.20 | 0.20 | 0.20 | +0.00 |
-| lung_cancer | SNOMED CT | 363 | 0.32 | 0.32 | 0.24 | +0.00 |
-| hepatitis_c_chronic | SNOMED CT | 20 | 0.58 | 0.60 | **0.71** | +0.02 |
-| hiv | SNOMED CT | 243 | 0.18 | **0.02** | 0.02 | **−0.16** |
+The `Post-F1 (K=5)` column reports the K=5 mean ± std measured under
+the protocol described in §Statistical methodology / *Run-to-run
+variance*. The single-run `Post-F1` and `Cold-F1` columns are the
+2026-04-27 numbers and remain the anchor for §4 Failure case analysis;
+where the K=5 mean drifts noticeably from the single-run value the gap
+is **not** explained by the measured std (see the K=5 paragraph for
+attribution).
+
+| Codelist | Vocab | N(ref) | Pre-F1 | Post-F1 | Post-F1 (K=5) | Cold-F1 | Δ Pre→Post |
+|---|---|---|---|---|---|---|---|
+| heart_failure | SNOMED CT | 42 | 0.73 | 0.70 | 0.78 ± 0.02 | 0.70 | −0.03 |
+| diabetes_mellitus | SNOMED CT | 86 | 0.78 | 0.81 | 0.73 ± 0.02 | 0.79 | +0.03 |
+| hypertension | SNOMED CT | 117 | 0.53 | 0.53 | 0.46 ± 0.03 | 0.43 | +0.00 |
+| mi_icd10 | ICD-10 | 12 | 0.00 | **0.74** | 0.74 ± 0.00 | 0.74 | **+0.74** |
+| atrial_fib_icd10 | ICD-10 | 7 | 0.21 | **1.00** | 1.00 ± 0.00 | 1.00 | **+0.79** |
+| stroke | SNOMED CT | 266 | 0.52 | 0.52 | 0.48 ± 0.02 | 0.52 | +0.00 |
+| asthma_pincer | SNOMED CT | 124 | 0.86 | **0.67** | 0.62 ± 0.01 | 0.72 | **−0.19** |
+| copd | SNOMED CT | 56 | 0.77 | 0.76 | 0.54 ± 0.02 | 0.76 | −0.01 |
+| depression | SNOMED CT | 106 | 0.72 | 0.69 | 0.64 ± 0.00 | 0.70 | −0.02 |
+| psychosis_schiz_bipolar | SNOMED CT | 198 | 0.65 | 0.67 | 0.65 ± 0.02 | 0.61 | +0.02 |
+| dementia | SNOMED CT | 325 | 0.33 | 0.28 | 0.24 ± 0.01 | 0.31 | −0.05 |
+| epilepsy | SNOMED CT | 476 | 0.20 | 0.20 | 0.19 ± 0.00 | 0.20 | +0.00 |
+| lung_cancer | SNOMED CT | 363 | 0.32 | 0.32 | 0.24 ± 0.01 | 0.24 | +0.00 |
+| hepatitis_c_chronic | SNOMED CT | 20 | 0.58 | 0.60 | 0.79 ± 0.02 | **0.71** | +0.02 |
+| hiv | SNOMED CT | 243 | 0.18 | **0.02** | 0.02 ± 0.01 | 0.02 | **−0.16** |
 
 Bold rows are the largest movers. ICD-10 cases (mi, atrial_fib) are
 the post-fix headlines; the asthma and HIV regressions are the
@@ -912,12 +987,134 @@ A cross-encoder reranking step (e.g. BAAI/bge-reranker-v2-m3) over
 the merged top-N before LLM scoring is independent of the rank-fusion
 question and remains worth pursuing separately.
 
+**HDR UK Phenotype Library: retriever-shape mismatch** *(reverted 2026-05-04)*
+An earlier integration shipped HDR UK as a fifth parallel retriever
+in the LangGraph fan-out: search the public `/api/v1/phenotypes/`
+endpoint with the parsed condition name, take the top-3 phenotypes
+by relevance, and flatten their codelists into the merger. A
+follow-on canonical-vocab filter restricted output to SNOMED CT /
+ICD-10 / OPCS-4, and a persona-driven LLM scope-fit judge (Haiku
+4.5) filtered the candidate phenotype list before code-fetching to
+guard against HDR UK's documented full-text search-quality failure
+mode (e.g. an "HIV" query returning paediatric Asthma phenotypes by
+metadata keyword overlap).
+
+Today-vs-today benchmark on the 15 v2 codelists: HDR UK + judge
+net-regressed mean F1 from 0.547 to 0.534 default and from 0.426 to
+0.435 cold-start — both within the K=5 run-to-run noise band but
+trending down. The cause is structural, not model-quality. Each HDR
+UK phenotype is a curated codelist for a specific study question
+(e.g. paediatric asthma in CPRD GOLD, BREATHE collection), not a
+generic concept index. Pooling multiple phenotypes' codes into the
+merger mixes incompatible curation contexts. Hypertension regressed
+−0.156 default even with the judge admitting only 2/3 phenotypes the
+LLM judged scope-relevant — those phenotypes' codes are valid
+hypertension codes for *their* study questions but disagree with the
+OpenCodelists hypertension reference. A persona audit and the
+[JAMIA Open 2024 phenotype-library paper](https://academic.oup.com/jamiaopen/article/7/2/ooae049/7695197)
+both name the workflow shape: **browse-and-adjudicate**, not
+retrieve-and-merge.
+
+The retriever wiring was reverted, the persona-judge relocated to
+`backend/app/services/phenotype_discovery.py`, and the integration
+reframed as a discovery sidebar (read-mode, cite-able phenotype
+links, no code-mixing) and a post-hoc cross-reference panel (overlap
+measurement against published phenotypes for citation-traceability).
+Same LLM scope-fit logic, read-side consumer instead of write-side.
+The reversion also introduced a **persona-pre-flight pattern** as a
+process gate: a 1-page persona + workflow-evidence +
+concrete-expectations document written before any future work of
+this scope is implemented. The earlier mistake was treating
+workflow-domain validation as something to do after shipping, not
+before. Cited: Watson 2017 (Stage 2 codelist construction);
+[Bennett 2023](https://www.bennett.ox.ac.uk/blog/2023/09/what-are-codelists-and-how-are-they-constructed/)
+(failure mode 3, study-intent ambiguity); JAMIA Open 2024 above.
+
+**HDR UK Phenotype Library: discovery sidebar** *(shipped 2026-05-04)*
+The reframed integration is now live as a discovery sidebar on the
+search page. The persona-driven scope-fit judge ranks 3-5 candidate
+phenotypes whose clinical scope fits the user's free-text query;
+each row links out to the authoritative HDR UK detail page
+(`https://phenotypes.healthdatagateway.org/phenotypes/{id}`) and
+surfaces the judge's one-line rationale as a visible caption (not a
+tooltip), so the clinician reads the rationale before deciding
+whether the row deserves a click-through. **No code-mixing** —
+the sidebar is read-mode only; phenotype codes are not pulled into
+the user's generated codelist by default. Empty-result state is
+explicit: when discovery returns nothing the sidebar shows a
+one-line "click Search to generate fresh" hint instead of
+disappearing silently, telegraphing the dual-path to less-expert
+users. The persona-pre-flight pattern (a 1-page persona +
+workflow-evidence + concrete-expectations document, written before
+code is scoped) introduced after the retriever-shape mismatch is
+the design input for this work and is the standing process gate
+for future work of this scope. Two follow-ups build on the same
+discovery service: an explicit "use this phenotype" action that
+records the adopted phenotype id in the user's codelist provenance,
+and a post-hoc cross-reference panel that measures code overlap
+between the generated codelist and candidate phenotypes for
+citation-traceability.
+
+**HDR UK Phenotype Library: explicit adoption flow** *(shipped 2026-05-05)*
+Each row of the discovery sidebar now offers an explicit "Use this
+phenotype as a citation" action. Adoptions are collected client-side
+as the user browses and submitted alongside the codelist on
+Save-as-Draft; the backend records each adoption as a
+`phenotype_adopted` audit-log event, sharing tamper-evidence with
+the existing decision-override events (no separate adoptions table).
+The codelist detail page renders an "Adopted phenotypes" section
+listing each citation with a link out to the authoritative HDR UK
+page and the first-publication citation block so the methods section
+of any downstream paper can lift the citation chain directly.
+Adoption captures attribution intent, not codes — the persona
+pre-flight's "no code-mixing" rule is preserved end-to-end.
+
+**HDR UK Phenotype Library: cross-reference panel** *(shipped 2026-05-05)*
+The post-hoc validation surface is now live on the codelist detail
+page. After a draft codelist is saved, a collapsible panel ranks the
+top-5 HDR UK phenotypes by Jaccard overlap with the codelist's
+*included* code set, with the asymmetric breakdown (% of generated
+in phenotype, % of phenotype in generated) one click away under a
+`<details>` summary. Each row carries the published phenotype's
+data sources and first-publication citation so the user can lift a
+methods-paper citation directly from the panel ("our codelist agrees
+73 % with PH12, used in Smith 2024"). Implementation reuses the
+discovery service's persona-judge for candidate ranking; per-
+phenotype HDR UK codelist fetches sit behind a 7-day file cache
+under `data/cache/hdruk_phenotype_codes/` (gitignored). Code
+normalisation matches the headline benchmark evaluator's rule
+(`benchmark_aggregate.normalize_code`: strip whitespace + dots,
+vocabulary-blind) so the overlap percentage is comparable to the
+project's existing F1 numbers. Empty-codelist and no-meaningful-
+overlap states are surfaced explicitly: the panel renders a
+"re-examine before publishing" hint rather than disappearing
+silently. The cross-reference is read-only — clicking a row opens
+the HDR UK detail page in a new tab; nothing about the user's
+codelist changes.
+
 **LLM confidence calibration**
 Verbalised LLM confidences are currently recorded but unused.
 Post-hoc isotonic calibration on the 15-codelist benchmark labels
 would yield trustworthy probabilities and a reliability diagram.
 The calibrated confidence supports active-learning prioritisation
 of the human review queue.
+
+**HITL review-queue ordering** *(completed 2026-05-03; T06)*
+The clinician review queue is now ordered by uncertainty sampling:
+the LLM's verbalised `confidence` per code is mapped to a margin
+`|2·confidence − 1|` and the queue is sorted by that ascending, so
+the codes the model is least sure about (confidence near 0.5) reach
+the reviewer first. Codes the LLM marks `uncertain` are pinned at
+the top regardless of margin — they are already explicitly flagged.
+This is the canonical *uncertainty sampling* objective from Settles
+(2009, *Active Learning Literature Survey*, U Wisconsin–Madison TR
+1648): a human label has the highest information value where the
+model is least sure. F1 is unchanged (the *content* of the codelist
+is identical), but the reviewer reaches a defensible list faster
+and the audit trail demonstrably attends to the difficult cases —
+material for a DCB0129/0160 clinical-safety case. Once the
+calibration step above lands, the same ordering will run on
+calibrated probabilities rather than verbalised ones.
 
 **Hierarchical SNOMED expansion**
 The recall ceiling on long lists (stroke, dementia, epilepsy)
@@ -931,16 +1128,11 @@ Bennett tooling.
 ICD-10 retrieval is no longer single-sourced through OMOPHub —
 NHS TRUD's ICD-10 5th Edition has been ingested into ChromaDB.
 
-**Run-to-run variance**
-The pipeline runs at temperature=0 but Anthropic provides no
-seed; production batched inference has measurable run-to-run
-variance. K=5 reruns per codelist would replace the single-run
-caveat with measured noise.
-
-**Faithfulness / groundedness metrics**
-The current evaluation is set-based (P/R/F1). RAGAS-style
-faithfulness and context-relevance metrics, applied offline to
-the benchmark, would extend the evaluation beyond set membership.
+**Faithfulness / groundedness metrics** *(implemented; see §Faithfulness)*
+The headline P/R/F1 numbers are set-based and silent on whether the
+per-code rationale is grounded in the term and the queried condition.
+A RAGAS-style offline groundedness check now runs across all 1,329
+(codelist × scored code) pairs in the v2 benchmark.
 
 ### §5.8 Structural improvement (post-v2): ICD-10 corpus ingestion
 
@@ -972,6 +1164,310 @@ Verification artefacts:
   (cold-start, OMOPHub on) — F1 1.0000
 - `data/test_sets/benchmark_2026_04/icd10_corpus_only_isolation.json`
   (OMOPHub disabled, ChromaDB-only) — F1 0.7368 / 1.0000
+
+### §5.9 Study-intent test case (T29)
+
+T29 added structured `include_criteria` / `exclude_criteria` to the
+parser, plumbed them through to the per-code scoring prompt, and
+extended `signature_hash` to cover the criteria when non-empty (with
+a conditional-append rule that preserves byte-for-byte compatibility
+with every pre-T29 approved hash — see
+`backend/tests/test_signature_hash_criteria.py` for the contract).
+This is the first first-class pipeline mitigation of Bennett 2023
+**failure mode 3** (study-intent ambiguity); §4 case 4 documents the
+prior position, where the carve-out had to be applied manually
+post-hoc by the reviewer. `LIMITATIONS.md` is updated to match.
+
+A new fixture, `data/test_sets/persona_audit/diabetes_no_gestational.json`,
+demonstrates the carve-out: query `"Diabetes mellitus excluding
+gestational"` paired with structured `exclusions=["gestational"]`
+should reproduce the dm_cod refset (minus pregnancy-context entries)
+even when the underlying retriever set surfaces broader gestational
+codes.
+
+The historical pre-T29 numbers in §3, §4, §5.1 – §5.8, §6, and §7
+are NOT retconned. They remain the v2 baseline for the methods
+paper. Post-T29 measurements live in this sub-section so the
+provenance of every reported F1 is unambiguous.
+
+**Empty-criteria F1 invariance** (post-T29 vs. v2 K=5 baseline,
+criteria default `[]`, single-run cost-trimmed sweep, n=5):
+
+| Codelist | Post-T29 F1 | v2 K=5 mean ± σ | Δ |
+|---|---|---|---|
+| heart_failure | 0.800 | 0.78 ± 0.02 | +0.020 |
+| diabetes_mellitus | 0.761 | 0.73 ± 0.02 | +0.031 |
+| hypertension | 0.338 | 0.46 ± 0.03 | −0.122 |
+| mi_icd10 | 0.737 | 0.74 ± 0.00 | −0.003 |
+| asthma_pincer | 0.633 | 0.62 ± 0.01 | +0.013 |
+| **mean** | **0.654** | **0.666** | **−0.012** |
+
+Mean delta of −0.012 across the five lists is within the K=5 mean σ
+of ±0.012 (T07), so the aggregate invariance contract holds. Four of
+the five per-codelist deltas are within 1.5σ of the v2 K=5 mean. The
+hypertension list is a single-run outlier at ≈4σ (−0.122 against a
+σ=0.03 list); this is not attributable to T29 because
+`_render_condition` produces a string byte-identical to the pre-T29
+form when both criteria lists are empty (pin in
+`backend/tests/test_query_parser_criteria.py::test_empty_case_returns_empty_lists_not_none`),
+and the conditional-append guard in `_compute_signature` likewise
+no-ops on empty criteria. The most likely explanation is the
+single-run vs. K=5-mean variance documented in T07 (1–3 % decision
+flips at temperature=0), amplified by hypertension being the highest-
+σ list in the cost-trimmed subset. A K=5 re-run of hypertension would
+tighten the estimate; deferred to keep the sweep within budget.
+
+**Carve-out lift on intent-sensitive lists** (post-T29 with non-empty
+criteria, single-run):
+
+| Run | F1 | vs. matched empty-criteria F1 | Notes |
+|---|---|---|---|
+| `hypertension` + `exclude_criteria=["secondary"]` | 0.516 | +0.178 | Substantially exceeds the 1–3 pts hypothesised; the structured criterion appears to have firmed the LLM's borderline decisions on the §4 case 4 secondary-hypertension family. |
+| `hiv` + `include_criteria=["AIDS-defining illness"]` | 0.063 | +0.04 vs. v2 K=5 (0.02) | Small positive lift on a famously poor-performing list (§4 case 7); the inclusion criterion partially recovers the AIDS-defining-illness recall the Fix C overcorrection cost, but absolute F1 is still floor-bound by retriever coverage on the 243-code reference. |
+| `diabetes_no_gestational` (new fixture) + `exclude_criteria=["gestational"]` | 0.767 | n/a (no matched empty baseline) | F1 in the same band as standard `diabetes_mellitus` (K=5 mean 0.73), confirming the carve-out runs without harming a study-intent-restricted reference. |
+
+Read together: the empty-criteria path is invariant in aggregate; the
+carve-out path produces measurable, non-trivial lifts where the
+underlying scoring decision is borderline. Both are hypotheses that
+the methods paper draft can now state as preliminary findings rather
+than future work, with the caveat that the cost-trimmed n=8 sweep is
+not powered for confidence intervals — a full K=5 sweep with the
+non-empty criteria sub-runs is the next step before any headline
+claim.
+
+Raw artefact: `data/test_sets/persona_audit/t29_benchmark_results.json`
+(8 runs, 4.1 min wall-clock, ≈$0.07 estimated LLM spend).
+
+### §5.10 Code-usage signal (T31; shipped 2026-05-05)
+
+Each code in the response now carries `usage_frequency`,
+`usage_status`, `usage_source` and `usage_setting`, populated from
+NHS Digital's primary-care SNOMED reporting (Aug 2024 – Jul 2025)
+and HES inpatient ICD-10 / OPCS-4 reporting (Apr 2024 – Mar 2025).
+Methodology follows Bennett Institute's
+[OpenCodeCounts](https://bennettoxford.github.io/opencodecounts/)
+(Wood et al., 2025); our ingest reads the NHS Digital CSVs directly
+under Open Government Licence v3.0 to avoid licence ambiguity on the
+harmonised dataset.
+
+**Coverage on a representative search.** A live `"type 2 diabetes"`
+query against the production-shape DB (`code_usage` populated with
+158,567 SNOMED + 9,650 ICD-10 + 8,641 OPCS-4 rows from the Aug 2024
+– Jul 2025 / Apr 2024 – Mar 2025 publications) returns **88 of 100
+candidates as `counted`** (51 with the GP setting, 37 with the HES
+inpatient setting), 5 as `withheld_below_5`, and only 7 as
+`not_in_dataset`. The 7 residuals are the structural gaps the
+schema design anticipates: UMLS-enriched suggestions which carry
+CUIs rather than SNOMED/ICD-10/OPCS-4 codes, codes that activated
+after the publication coverage end, and devolved-administration-only
+codes outside NHS England's scope. Treat **≥85 % counted on a
+typical search** as the steady-state expectation, not the
+tail-of-the-distribution.
+
+SNOMED counts are rounded to the nearest 10 with 1-4 withheld per
+NHS Digital's privacy policy; ICD-10 and OPCS-4 are unrounded with
+zero-usage codes excluded from the source. Codes not present in any
+source dataset are surfaced with `usage_status='not_in_dataset'`
+rather than zeroed; the UI distinguishes these from genuine zeros
+via the GP / HES badge and amber `<5` rendering.
+
+**Methodology footnote — HES counts are primary-position only.** NHS
+Digital's published HES dataset reports primary-diagnosis
+(`DIAG_4_01`) and primary-procedure (`OPERTN_4_01`) FCEs; the
+any-position counts are not in the source. A code that frequently
+appears as a *secondary* diagnosis on admissions for a different
+primary reason will report a count substantially smaller than its
+true any-position prevalence. Treat the HES number as a lower
+bound on diagnostic prevalence and an accurate measure of *"this
+code drove the admission"*. The primary / secondary distinction
+becomes especially relevant for comorbidity-heavy ICD-10 codes
+(e.g. `E11` Type 2 diabetes mellitus, often a secondary diagnosis on
+admissions for cardiovascular or renal complications).
+
+The signal is purely additive — surfaced for reviewer judgement
+rather than fed into the LLM scoring step — so the F1 numbers
+reported in §3 through §5.9 are unchanged. The intended use is
+post-pipeline: a reviewer eyeballing a 100-code candidate set can
+spot-check the high-volume `included` codes and the high-volume
+`excluded` codes for plausibility (orphan-code detection in the
+sense of Bennett 2023 failure-mode 4), the `<5` rendering flags
+codes whose real-world prevalence is too small to ground a typical
+phenotype on, and the GP / HES setting badge keeps the two
+denominators separate so a reviewer reading "12,927" against an
+ICD-10 row knows it is HES inpatient FCEs, not GP encounters. A
+future ticket would push usage into the scoring prompt as a
+tie-breaker on borderline cases; that is *not* part of T31 and
+would need its own benchmark sweep before claiming a recall or
+precision lift.
+
+Geographic and setting limitations of the signal are spelled out in
+[LIMITATIONS.md → Code-usage column](./LIMITATIONS.md#limitations-beyond-the-bennett-framework):
+England-only, GP + HES inpatient only, ranges-not-points for
+SNOMED, no quantitative signal under withholding, annual publication
+cadence, primary-position HES only.
+
+Raw ingest module: `backend/app/ingestion/opencodecounts.py`. Lookup
+contract pinned by `backend/tests/test_code_usage_lookup.py` (six
+cases including the most-recent-year resolution and the HES vs. GP
+attribution). Three-state `usage_status` round-trip into
+`CodeResult` pinned by `backend/tests/test_usage_annotator.py`. The
+HES long-format parser (one row per (code, category, attribute)
+tuple, filtered down to `DIAG_4_01 / OPERTN_4_01 × FCE_SUM`) is the
+non-obvious adaptation needed against the real NHS Digital
+publication shape; the SNOMED file is tab-separated `.txt`
+(detected via `csv.Sniffer`) rather than `.csv`.
+
+## Faithfulness
+
+The headline P/R/F1 in this document evaluates *answer correctness* —
+whether the produced set of codes matches the OpenCodelists reference.
+It is silent on whether the per-code rationale the pipeline emits is
+*grounded* in the code term and the queried condition, or hallucinated.
+Bennett 2023 failure mode 1 (similar-sounding unrelated codes) and
+mode 3 (study-intent ambiguity) both surface as ungrounded rationales
+before they surface as F1 drops, so a faithfulness check is the
+closest dimension we currently report against those modes; see the
+cross-reference in [LIMITATIONS.md](./LIMITATIONS.md) §"Failure mode 1".
+
+### Methodology
+
+Following the RAGAS faithfulness framing
+([Es et al. 2024](https://docs.ragas.io/en/latest/concepts/metrics/available_metrics/faithfulness/))
+and the TruLens RAG triad
+([groundedness](https://www.trulens.org/getting_started/core_concepts/rag_triad/)),
+we run an offline LLM-as-judge over every scored code in the 15-codelist
+benchmark. For each (query, term, rationale) tuple, Claude Haiku 4.5
+returns one of `grounded` / `partial` / `unfounded` plus a one-sentence
+reason. The check is hand-rolled rather than via the RAGAS library,
+because our rationales are one-sentence verdicts on a single (term, query)
+pair and the RAGAS claim-decomposition step is structurally redundant
+for that input shape.
+
+The judge prompt, verbatim:
+
+```
+Given:
+ - Query Q: {query}
+ - Code term T: {term}
+ - Rationale R: {rationale}
+Does R make a claim that is grounded in T and the queried condition Q?
+Answer one of: 'grounded', 'partial', 'unfounded'.
+One-sentence reason.
+```
+
+Implementation: `backend/app/evaluation/faithfulness.py`. Persisted
+verdicts: `data/test_sets/benchmark_2026_04/_faithfulness.json`. The
+judge is invoked at `temperature=0` with structured output (Pydantic
+enum). It is **not** wired into the live `/api/search` path; adding
+it there would double per-request LLM cost for no user-facing gain.
+The check is run once per benchmark cut and the verdicts are committed
+alongside the F1 numbers. Total wall-clock across 1,329 pairs at
+concurrency 10: **~3 minutes**; estimated cost on Haiku 4.5: **<$2**.
+
+### Headline result
+
+Across all 1,329 (codelist × scored code) pairs in the post-fix v2
+benchmark:
+
+| Verdict | n | Share |
+|---|---:|---:|
+| Grounded | 1,109 | **83.5 %** |
+| Partial | 191 | 14.4 % |
+| Unfounded | 29 | 2.2 % |
+
+The pipeline emits a fully grounded rationale on roughly five-in-six
+codes; a strict-unfounded ("the rationale references the wrong concept
+or contradicts the term") verdict is rare (2.2 %). The 14.4 % `partial`
+share is methodologically the most interesting bucket: these are
+rationales the judge accepts as on-topic but flags as missing or
+overstating part of the claim.
+
+### Per-codelist breakdown
+
+Sorted by groundedness rate, descending:
+
+| Codelist | n | Grounded | Partial | Unfounded | Groundedness |
+|---|---:|---:|---:|---:|---:|
+| atrial_fib_icd10 | 7 | 7 | 0 | 0 | 1.000 |
+| asthma_pincer | 100 | 97 | 3 | 0 | 0.970 |
+| hepatitis_c_chronic | 100 | 95 | 4 | 1 | 0.950 |
+| lung_cancer | 100 | 95 | 4 | 1 | 0.950 |
+| stroke | 100 | 94 | 6 | 0 | 0.940 |
+| diabetes_mellitus | 100 | 92 | 7 | 1 | 0.920 |
+| dementia | 100 | 87 | 11 | 2 | 0.870 |
+| psychosis_schiz_bipolar | 100 | 87 | 13 | 0 | 0.870 |
+| epilepsy | 100 | 86 | 13 | 1 | 0.860 |
+| depression | 100 | 84 | 15 | 1 | 0.840 |
+| heart_failure | 100 | 82 | 18 | 0 | 0.820 |
+| mi_icd10 | 22 | 18 | 1 | 3 | 0.818 |
+| copd | 100 | 74 | 26 | 0 | 0.740 |
+| hypertension | 100 | 66 | 34 | 0 | 0.660 |
+| hiv | 100 | 45 | 36 | 19 | **0.450** |
+
+The HIV outlier (0.45 grounded; 19 unfounded) and the hypertension
+result (0.66 grounded; 34 partial) align with the manually-identified
+failure modes in §4 cases 4 and 7 of this document — the
+"AIDS-defining illness vs. instance of HIV infection" carve-out and
+the "secondary hypertension" boundary respectively. The judge thus
+converges, independently, on the same two cases the F1 view already
+flagged as the residual weak points of the post-fix prompt; this is
+useful corroboration but it is also a reminder that LLM judges tend
+to reproduce the same blind spots their peers do (see *Known biases*
+below). copd at 0.74 is a new finding the F1 view did not surface
+on its own.
+
+### Known biases of the LLM-as-judge protocol
+
+LLM-as-judge has well-documented systematic biases
+([Justice or Prejudice? — Chen et al., 2024](https://arxiv.org/abs/2410.02736);
+[Self-Preference Bias — Wataoka et al., 2024](https://arxiv.org/abs/2410.21819);
+[A Survey on LLM-as-a-Judge — Gu et al., 2024](https://arxiv.org/abs/2411.15594)).
+The ones relevant to this protocol, and how each is or is not
+mitigated:
+
+- **Self-preference bias.** The pipeline's scoring step and the
+  judge are the same family (Haiku 4.5). The judge may rate
+  Haiku-produced rationales more leniently than rationales from a
+  different model. We do not currently cross-validate with a non-
+  Anthropic judge; the absolute groundedness numbers should be read
+  with this caveat.
+- **Verbosity bias.** Pipeline rationales are constrained to one
+  sentence by the scoring prompt, so the judge cannot reward
+  longer rationales over shorter ones; the input distribution is
+  effectively flat on length. Mitigated by construction.
+- **Position bias.** This protocol is single-response (verdict on
+  one rationale at a time), not pairwise comparison, so position
+  bias does not apply.
+- **Sentiment / sycophancy bias.** The fixed three-way enum output
+  and the explicit instruction to choose one of `grounded` /
+  `partial` / `unfounded` constrain the judge against the typical
+  "answer is generally good" sycophancy failure mode. The structured-
+  output schema also rejects free-text non-answers.
+- **Domain coverage.** Haiku 4.5 has not been evaluated for
+  clinical-coding-specific judgment; some `unfounded` verdicts
+  (e.g. *"Kaposi sarcoma not associated with AIDS"* in the HIV
+  list) reflect a debatable clinical-judgment call rather than a
+  mechanical hallucination. A clinician panel review of a stratified
+  sample of judge verdicts would be the appropriate next step.
+
+These caveats apply to the absolute numbers; the relative ranking
+across the 15 codelists, and the convergence with the manually-
+identified §4 failure cases, are more robust to single-judge bias.
+
+### What this section does NOT claim
+
+- The 83.5 % groundedness rate is not a calibrated correctness
+  number. It is a self-consistency rate: how often Haiku 4.5
+  judges a Haiku 4.5 rationale to be grounded.
+- A rationale being `grounded` does not imply the include/exclude
+  decision is *clinically* correct, only that the rationale
+  semantically tracks the term and the query. A grounded rationale
+  for a wrong inclusion is still a wrong inclusion; the F1 view
+  remains the primary correctness signal.
+- The check is offline. The live `/api/search` path does not
+  evaluate faithfulness; if a clinician sees the rationale during
+  review, that is the only faithfulness check applied at request
+  time.
 
 ## Limitations
 
@@ -1011,10 +1507,14 @@ Verification artefacts:
   next step before claiming any of the F1 numbers as a measure of
   *clinical correctness* rather than *reproduction of curated
   artefacts*.
-- **Single run, no temperature sweep**. The pipeline's LLM scoring
-  is non-deterministic at default temperature. Numbers in this
-  document are from a single run on 2026-04-27 (per view). Run-to-
-  run variance is unmeasured; a 5-run average would be more honest.
+- **No temperature sweep**. The pipeline's LLM scoring is
+  non-deterministic at temperature = 0 (no seed parameter, batched
+  GPU FP non-associativity); the K=5 protocol described in
+  §Statistical methodology / *Run-to-run variance* characterises this
+  noise (mean per-codelist F1 std 0.012, aggregate flip rate 6.9 %).
+  A wider temperature sweep — sampling at e.g. T ∈ {0.0, 0.3, 0.7}
+  to characterise sensitivity to the temperature setting itself —
+  remains future work.
 - **Static reference vocabulary**. Reference codelists were pulled
   on 2026-04-27. The OpenCodelists list versions used here can
   change as curators republish; the `version` slug pinned in the
@@ -1040,18 +1540,34 @@ benchmark are committed to the repository:
   `data/test_sets/benchmark_2026_04/<short>.result_postfix.json`
 - Raw API responses (post-fix cold-start):
   `data/test_sets/benchmark_2026_04/<short>.result_coldstart.json`
+- Raw responses for the K=5 variance protocol (run 2026-05-03 against
+  the `develop` SHA via `run_variance_k5.py`, in-process):
+  `data/test_sets/benchmark_2026_04/<short>.result_runK_<k>.json`
+  (k = 1..5)
 - Aggregate output (v1, pre-fix only):
   `_aggregate.json`, `_per_list.csv`
 - Aggregate output (v2, three views):
   `data/test_sets/benchmark_2026_04/_aggregate_v2.json`,
   `_per_list_v2.csv`
 - Aggregator script: `backend/app/evaluation/benchmark_aggregate.py`
+- K=5 variance runner script: `backend/app/evaluation/run_variance_k5.py`
+- Faithfulness verdicts (T11):
+  `data/test_sets/benchmark_2026_04/_faithfulness.json`
+- Faithfulness runner: `backend/app/evaluation/faithfulness.py`
 
 To reproduce against the same OpenCodelists versions:
 
 ```bash
 # Recompute aggregates from the persisted .result*.json files
 python -m app.evaluation.benchmark_aggregate
+
+# Re-run the K=5 variance protocol (in-process, ~30 min, < $1 on
+# Haiku 4.5). Resumable: existing per-(codelist, k) files are skipped.
+python -m app.evaluation.run_variance_k5 --runs 5 --cap-usd 20
+
+# Re-run the offline faithfulness judge (~3 min, < $2 on Haiku 4.5).
+# Resumable: previously-judged (codelist, code) pairs are skipped.
+python -m app.evaluation.faithfulness --concurrency 10
 
 # To re-run the live API end-to-end (requires network access):
 #   POST each data/test_sets/benchmark_2026_04/<short>.json to

@@ -15,12 +15,26 @@ MAX_CACHE = 100
 _entries: dict[str, dict] = {}
 
 
-def put(search_id: str, query: str, codes: list[dict]) -> None:
+def put(
+    search_id: str,
+    query: str,
+    codes: list[dict],
+    *,
+    include_criteria: list[str] | None = None,
+    exclude_criteria: list[str] | None = None,
+) -> None:
     if len(_entries) >= MAX_CACHE:
         _entries.pop(next(iter(_entries)))
-    _entries[search_id] = {"query": query, "codes": codes}
+    _entries[search_id] = {
+        "query": query,
+        "codes": codes,
+        # T29 — carried so create_codelist can persist criteria on the
+        # draft and feed them into signature_hash on approval.
+        "include_criteria": list(include_criteria or []),
+        "exclude_criteria": list(exclude_criteria or []),
+    }
 
 
 def get(search_id: str) -> dict | None:
-    """Returns {'query', 'codes'} or None if missing/evicted."""
+    """Returns {'query', 'codes', 'include_criteria', 'exclude_criteria'} or None if missing/evicted."""
     return _entries.get(search_id)

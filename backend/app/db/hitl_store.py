@@ -39,9 +39,32 @@ def get_connection() -> sqlite3.Connection:
         _conn.execute("PRAGMA foreign_keys = ON")
         _conn.execute("PRAGMA journal_mode = WAL")  # concurrent reads while reviewing
         _init_schema(_conn)
+        _migrate_schema(_conn)
         _seed_demo_users(_conn)
         logger.info("HITL SQLite connected: %s", path)
     return _conn
+
+
+def _migrate_schema(conn: sqlite3.Connection) -> None:
+    """In-place column additions for older DBs.
+
+    SQLite has no ``ALTER TABLE ... IF NOT EXISTS``, so each migration
+    is wrapped in a try/except that swallows the duplicate-column
+    OperationalError ("duplicate column name: ..."). The column-default
+    keeps existing rows backward-compatible: pre-T29 codelists read
+    back as ``include_criteria=[]`` / ``exclude_criteria=[]`` and
+    therefore hash byte-identical to the pre-T29 signature payload.
+    """
+    for ddl in (
+        "ALTER TABLE codelists ADD COLUMN include_criteria TEXT NOT NULL DEFAULT '[]'",
+        "ALTER TABLE codelists ADD COLUMN exclude_criteria TEXT NOT NULL DEFAULT '[]'",
+    ):
+        try:
+            conn.execute(ddl)
+        except sqlite3.OperationalError as exc:
+            if "duplicate column" not in str(exc).lower():
+                raise
+    conn.commit()
 
 
 def _init_schema(conn: sqlite3.Connection) -> None:
@@ -68,7 +91,12 @@ def _init_schema(conn: sqlite3.Connection) -> None:
             reviewed_at TEXT,
             review_notes TEXT,
             signature_hash TEXT,
-            parent_id TEXT REFERENCES codelists(id)
+            parent_id TEXT REFERENCES codelists(id),
+            -- T29: study-intent criteria (JSON-encoded list[str], default '[]').
+            -- Migrate-friendly defaults so pre-T29 rows read back as empty
+            -- and signature_hash stays byte-compatible.
+            include_criteria TEXT NOT NULL DEFAULT '[]',
+            exclude_criteria TEXT NOT NULL DEFAULT '[]'
         );
 
         CREATE TABLE IF NOT EXISTS codelist_decisions (
@@ -132,6 +160,49 @@ def _row(r: sqlite3.Row | None) -> dict | None:
     return dict(r) if r is not None else None
 
 
+# --- review-queue ordering --------------------------------------------------
+
+def _review_queue_sort_key(d: dict) -> tuple:
+    """Uncertainty-sampling order (Settles 2009, *Active Learning Literature
+    Survey*): the codes the LLM is least sure about should reach the
+    reviewer first, since a human label there has the highest information
+    value.
+
+    Sort tuple:
+        (0 if ai_decision == 'uncertain' else 1,   # explicit-uncertain to top
+         |2 * ai_confidence - 1|,                  # ascending → least sure first
+         code,                                     # human-readable tiebreaker
+         id)                                       # full determinism on dup codes
+
+    The schema does not enforce ``UNIQUE(codelist_id, code)``, so two rows
+    can share a code; ``id`` (the decision PK) guarantees a deterministic
+    order in that case. Missing/non-numeric confidence is treated as 0.5
+    (maximum uncertainty), which surfaces unknown-confidence rows
+    alongside the genuinely uncertain — the safer default for a clinical
+    review queue.
+    """
+    raw_conf = d.get("ai_confidence")
+    try:
+        conf = float(raw_conf) if raw_conf is not None else 0.5
+    except (TypeError, ValueError):
+        conf = 0.5
+    margin = abs(2.0 * conf - 1.0)
+    return (
+        0 if d.get("ai_decision") == "uncertain" else 1,
+        margin,
+        d.get("code") or "",
+        d.get("id") or 0,
+    )
+
+
+def sort_review_queue(decisions: list[dict]) -> list[dict]:
+    """Return ``decisions`` reordered for HITL review by uncertainty.
+
+    See ``_review_queue_sort_key`` for the ordering definition.
+    """
+    return sorted(decisions, key=_review_queue_sort_key)
+
+
 # --- user ops ---------------------------------------------------------------
 
 def list_users() -> list[dict]:
@@ -153,26 +224,64 @@ def create_codelist(
     query: str,
     created_by: int,
     decisions: list[dict],
+    adopted_phenotypes: list[dict] | None = None,
+    include_criteria: list[str] | None = None,
+    exclude_criteria: list[str] | None = None,
 ) -> str:
-    """Persist a search result as a draft codelist. Returns the new id."""
+    """Persist a search result as a draft codelist. Returns the new id.
+
+    ``adopted_phenotypes`` is the list of HDR UK phenotypes the user
+    adopted as citations during the discovery-sidebar browse (T34b).
+    Each adoption is recorded as a separate ``phenotype_adopted``
+    event in the audit log so the citation chain is tamper-evident
+    in the same way decision-override events are; there is no
+    separate adoptions table. ``get_codelist`` surfaces these to
+    callers by replaying the relevant audit-log events.
+
+    ``include_criteria`` / ``exclude_criteria`` (T29) carry the
+    request-level study-intent scoping. ``None`` defaults to ``[]``,
+    which preserves the pre-T29 signature_hash bytes for any caller
+    that doesn't supply them.
+    """
     conn = get_connection()
     cid = uuid.uuid4().hex[:16]
+    inc = list(include_criteria or [])
+    exc = list(exclude_criteria or [])
     conn.execute(
-        """INSERT INTO codelists (id, name, query, created_by, status)
-           VALUES (?, ?, ?, ?, 'draft')""",
-        (cid, name, query, created_by),
+        """INSERT INTO codelists (id, name, query, created_by, status,
+                                  include_criteria, exclude_criteria)
+           VALUES (?, ?, ?, ?, 'draft', ?, ?)""",
+        (cid, name, query, created_by, json.dumps(inc), json.dumps(exc)),
     )
     _insert_decisions(conn, cid, decisions)
+    adoptions = adopted_phenotypes or []
     _append_audit(
         conn, cid, event="created", user_id=created_by,
         details={
             "name": name,
             "query": query,
             "decision_count": len(decisions),
+            "adoption_count": len(adoptions),
+            "include_criteria": inc,
+            "exclude_criteria": exc,
         },
     )
+    for adoption in adoptions:
+        _append_audit(
+            conn, cid, event="phenotype_adopted", user_id=created_by,
+            details={
+                "phenotype_id": adoption.get("phenotype_id", ""),
+                "phenotype_version_id": adoption.get("phenotype_version_id"),
+                "name": adoption.get("name", ""),
+                "hdruk_url": adoption.get("hdruk_url", ""),
+                "first_publication": adoption.get("first_publication", ""),
+            },
+        )
     conn.commit()
-    logger.info("codelist %s created by user %d (%d decisions)", cid, created_by, len(decisions))
+    logger.info(
+        "codelist %s created by user %d (%d decisions, %d adoptions)",
+        cid, created_by, len(decisions), len(adoptions),
+    )
     return cid
 
 
@@ -229,8 +338,7 @@ def get_codelist(cid: str) -> dict | None:
         """SELECT id, code, term, vocabulary,
                   ai_decision, ai_confidence, ai_rationale,
                   human_decision, override_comment, sources, is_umls_suggestion
-             FROM codelist_decisions WHERE codelist_id = ?
-             ORDER BY id""",
+             FROM codelist_decisions WHERE codelist_id = ?""",
         (cid,),
     )]
     for d in decisions:
@@ -238,7 +346,36 @@ def get_codelist(cid: str) -> dict | None:
             d["sources"] = json.loads(d["sources"]) if d["sources"] else []
         except (TypeError, ValueError):
             d["sources"] = []
-    result["decisions"] = decisions
+    result["decisions"] = sort_review_queue(decisions)
+
+    # T29: surface stored criteria as plain lists. Pre-T29 rows have the
+    # column default '[]' from _migrate_schema, so callers always see a
+    # well-formed (possibly empty) list.
+    for key in ("include_criteria", "exclude_criteria"):
+        raw = result.get(key)
+        try:
+            result[key] = json.loads(raw) if raw else []
+        except (TypeError, ValueError):
+            result[key] = []
+
+    # Surface adopted phenotypes (T34b) by replaying the relevant audit
+    # events. Stored audit-log only -- no separate table -- so every
+    # adoption carries the same tamper-evidence guarantees as the
+    # decision-override events.
+    adoptions: list[dict] = []
+    for r in conn.execute(
+        """SELECT details FROM audit_log
+            WHERE codelist_id = ? AND event = 'phenotype_adopted'
+            ORDER BY id""",
+        (cid,),
+    ):
+        raw = r["details"]
+        try:
+            adoptions.append(json.loads(raw) if raw else {})
+        except (TypeError, ValueError):
+            continue
+    result["adopted_phenotypes"] = adoptions
+
     return result
 
 
@@ -359,6 +496,13 @@ def _compute_signature(conn: sqlite3.Connection, cid: str) -> str:
     """
     SHA-256 over the final human decisions in deterministic order. Gives us
     a tamper-evident digest of the approved codelist.
+
+    T29 backward-compat: when the codelist has neither include nor
+    exclude criteria, the payload is byte-identical to the pre-T29
+    format so pre-T29 approved hashes verify unchanged. When either
+    list is non-empty a ``--criteria--`` block is appended; both lists
+    are sorted before serialisation so semantically-equal intents (same
+    set, different order) produce the same hash.
     """
     rows = conn.execute(
         """SELECT code, vocabulary, human_decision
@@ -370,6 +514,24 @@ def _compute_signature(conn: sqlite3.Connection, cid: str) -> str:
     payload = "\n".join(
         f"{r['code']}|{r['vocabulary']}|{r['human_decision']}" for r in rows
     )
+
+    crit_row = conn.execute(
+        "SELECT include_criteria, exclude_criteria FROM codelists WHERE id = ?",
+        (cid,),
+    ).fetchone()
+    if crit_row is not None:
+        try:
+            inc = json.loads(crit_row["include_criteria"] or "[]")
+            exc = json.loads(crit_row["exclude_criteria"] or "[]")
+        except (TypeError, ValueError):
+            inc, exc = [], []
+        if inc or exc:
+            criteria_block = json.dumps(
+                {"include": sorted(inc), "exclude": sorted(exc)},
+                sort_keys=True,
+            )
+            payload += f"\n--criteria--\n{criteria_block}"
+
     return hashlib.sha256(payload.encode("utf-8")).hexdigest()
 
 

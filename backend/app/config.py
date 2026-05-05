@@ -43,3 +43,25 @@ OMOPHUB_VOCABULARIES = {
     "ICD10": "ICD-10 (WHO)",
     "OPCS4": "OPCS-4",
 }
+
+# HDR UK Phenotype Library -- anonymous public read, no API key required.
+# Consumed by the read-side discovery service (T34) and the post-hoc
+# cross-reference panel (T35). The retriever-shape integration that
+# originally lived behind these env vars (T13) was reverted in T36 after
+# a persona audit established that phenotype libraries are designed for
+# browse-and-adjudicate use, not retrieve-and-merge use; see EVALUATION.md
+# for the methodology write-up.
+HDR_UK_BASE_URL = os.getenv("HDR_UK_BASE_URL", "https://phenotypes.healthdatagateway.org")
+HDR_UK_TOP_K_PHENOTYPES = int(os.getenv("HDR_UK_TOP_K_PHENOTYPES", "3"))
+# When true, the LLM scope-fit judge filters HDR UK candidate phenotypes
+# by clinical-scope match against the user query before they are surfaced
+# to the discovery sidebar (T34) or used for cross-reference (T35). The
+# judge guards against HDR UK's full-text search-quality failure mode
+# where a query like "HIV" returns paediatric Asthma phenotypes by
+# metadata keyword overlap.
+HDR_UK_USE_JUDGE = os.getenv("HDR_UK_USE_JUDGE", "yes").strip().lower() == "yes"
+# Model id for the relevance judge. Defaults to the code-scoring model
+# (Haiku 4.5) -- fast, cheap, validated. Override to a stronger model
+# (e.g. the query-parser id) if a future benchmark shows borderline
+# scope-fit decisions need more reasoning depth.
+HDR_UK_JUDGE_MODEL = os.getenv("HDR_UK_JUDGE_MODEL", LLM_SCORING_MODEL)

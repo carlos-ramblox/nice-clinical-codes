@@ -2,8 +2,13 @@
 
 import { useState, useEffect, useMemo } from "react";
 import { useRouter } from "next/navigation";
-import { searchCodes, exportCodes, createCodelist } from "@/lib/api";
-import type { CodeResult, SearchResponse } from "@/lib/api";
+import { searchCodes, exportCodes, createCodelist, discoverPhenotypes } from "@/lib/api";
+import type {
+  CodeResult,
+  SearchResponse,
+  PhenotypeDiscoveryResult,
+  AdoptedPhenotype,
+} from "@/lib/api";
 import { useUser } from "@/lib/useUser";
 import { getRecent, pushRecent, formatAgo, type RecentSearch } from "@/lib/recentSearches";
 import { ConfirmModal } from "./ConfirmModal";
@@ -20,6 +25,59 @@ const LOADING_STEPS = [
   { label: "Scoring codes with LLM reasoning...", delay: 13000 },
   { label: "Almost done — assembling final results...", delay: 21000 },
 ];
+
+// T31: render the OpenCodeCounts-derived usage column for one code.
+// Three branches:
+//   counted          → "12,540" + setting-aware badge ("GP" or "HES")
+//   withheld_below_5 → "<5" with a tooltip explaining NHS Digital's
+//                      1-4 privacy rule
+//   not_in_dataset   → em-dash with a tooltip explaining absence
+// Setting is inferred from usage_source so "12,540" never shows
+// without a clarifier. Counts are NHS Digital's published rounded
+// values for SNOMED primary care; ICD-10/OPCS-4 are unrounded.
+function UsageCell({ row }: { row: CodeResult }) {
+  const status = row.usage_status;
+  if (status === "counted" && typeof row.usage_frequency === "number") {
+    // Use the machine-readable usage_setting from the API rather than
+    // substring-matching usage_source — robust to future rewording of
+    // the attribution string.
+    const isHes = row.usage_setting === "secondary_care_hes";
+    const settingLabel = isHes ? "HES" : "GP";
+    const settingTitle = isHes
+      ? "NHS Digital HES inpatient FCEs (Apr 2024 – Mar 2025)"
+      : "NHS Digital primary-care SNOMED reporting (Aug 2024 – Jul 2025)";
+    return (
+      <span className="whitespace-nowrap" title={row.usage_source ?? settingTitle}>
+        <span className="tabular-nums">{row.usage_frequency.toLocaleString()}</span>
+        <span
+          className="ml-1.5 inline-flex items-center px-1 py-0.5 rounded text-[10px] font-medium bg-gray-100 text-gray-700 border border-gray-200"
+          aria-label={settingTitle}
+        >
+          {settingLabel}
+        </span>
+      </span>
+    );
+  }
+  if (status === "withheld_below_5") {
+    return (
+      <span
+        className="text-amber-700 text-xs"
+        title="NHS Digital withholds counts of 1-4 under their privacy policy. Code was used at least once."
+      >
+        &lt;5
+      </span>
+    );
+  }
+  return (
+    <span
+      className="text-gray-400"
+      title="Code is not present in the NHS Digital usage dataset."
+    >
+      —
+    </span>
+  );
+}
+
 
 function DecisionBadge({ decision }: { decision: string }) {
   const config = {
@@ -96,6 +154,160 @@ function LoadingProgress() {
   );
 }
 
+function PhenotypeDiscoverySidebar({
+  rows,
+  adoptedIds,
+  onAdopt,
+  onUnadopt,
+}: {
+  rows: PhenotypeDiscoveryResult[];
+  adoptedIds: Set<string>;
+  onAdopt: (row: PhenotypeDiscoveryResult) => void;
+  onUnadopt: (phenotypeId: string) => void;
+}) {
+  // Read-mode panel: surfaces 3-5 candidate HDR UK phenotypes whose
+  // clinical scope fits the user's query. Each row links out to the
+  // authoritative HDR UK detail page; the rationale is shown as a
+  // visible caption (not a tooltip) so the persona can decide whether
+  // a row deserves the click-through. No "use this phenotype" action,
+  // no auto-import — that's deferred to T34b / T35.
+  //
+  // Empty state: when discovery has fetched but found nothing, render
+  // a one-line hint that tells the user the dual-path explicitly
+  // ("none matched, click Search to generate fresh"). This is the
+  // alternative we surface so a less-expert user doesn't read the
+  // silent disappearance of the sidebar as a failure.
+  if (rows.length === 0) {
+    return (
+      <aside
+        aria-label="No HDR UK phenotypes matched"
+        className="max-w-5xl mx-auto mb-6 border border-gray-200 bg-gray-50 px-4 py-3 text-xs text-gray-600"
+      >
+        No published HDR UK phenotypes match this query &mdash; click <span className="font-medium">Search</span> to
+        generate a fresh codelist from the multi-source pipeline.
+      </aside>
+    );
+  }
+  return (
+    <aside
+      aria-label="Related HDR UK phenotypes"
+      className="max-w-5xl mx-auto mb-6 border border-gray-200 bg-white"
+    >
+      <div className="px-4 py-2.5 border-b border-gray-200">
+        <h3 className="font-[family-name:var(--font-lora)] text-sm font-semibold text-[#00436C]">
+          Related HDR UK phenotypes
+        </h3>
+        <p className="text-[11px] text-gray-500 mt-0.5">
+          Found {rows.length} published {rows.length === 1 ? "codelist" : "codelists"} that may answer your question.
+          {" "}None fit? Click <span className="font-medium">Search</span> to generate a fresh codelist instead.
+        </p>
+      </div>
+      <ul className="divide-y divide-gray-100">
+        {rows.map((row) => (
+          <li key={row.phenotype_id} className="px-4 py-3">
+            <div className="flex items-start justify-between gap-3">
+              <a
+                href={row.hdruk_url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[#005EA5] hover:underline font-medium text-sm"
+              >
+                {row.name}{" "}
+                <span className="text-gray-400 font-normal">({row.phenotype_id})</span>
+                <svg
+                  className="inline-block ml-1 -mt-0.5"
+                  width="11"
+                  height="11"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  aria-hidden="true"
+                >
+                  <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6" />
+                  <path d="M15 3h6v6" />
+                  <path d="M10 14L21 3" />
+                </svg>
+              </a>
+              <span
+                className={`shrink-0 text-[10px] px-1.5 py-0.5 rounded uppercase tracking-wide ${
+                  row.relevance_verdict === "relevant"
+                    ? "bg-green-50 text-green-700 border border-green-200"
+                    : "bg-amber-50 text-amber-700 border border-amber-200"
+                }`}
+              >
+                {row.relevance_verdict}
+              </span>
+            </div>
+            <div className="mt-1.5">
+              {/* T34b: explicit adoption action. Recorded in the user's
+                  in-memory state and applied on Save-as-Draft as a
+                  phenotype_adopted audit-log event. The button morphs
+                  to "Adopted" once the user has adopted; clicking again
+                  is a no-op (the parent component dedups by phenotype id). */}
+              {adoptedIds.has(row.phenotype_id) ? (
+                <span className="text-[11px] inline-flex items-center gap-2">
+                  <span className="text-green-700 font-medium">
+                    ✓ Adopted — will cite on save
+                  </span>
+                  <button
+                    type="button"
+                    onClick={() => onUnadopt(row.phenotype_id)}
+                    className="text-gray-500 hover:text-gray-700 underline"
+                    aria-label={`Remove ${row.phenotype_id} from adoptions`}
+                  >
+                    remove
+                  </button>
+                </span>
+              ) : (
+                <button
+                  type="button"
+                  onClick={() => onAdopt(row)}
+                  className="text-[11px] text-[#005EA5] hover:underline"
+                >
+                  + Use this phenotype as a citation
+                </button>
+              )}
+            </div>
+            {(row.type.length > 0 || row.coding_systems.length > 0 || row.data_sources.length > 0) && (
+              <div className="mt-1 flex flex-wrap gap-1 text-[11px]">
+                {row.type.map((t) => (
+                  <span key={`t-${t}`} className="px-1.5 py-0.5 bg-gray-100 text-gray-700 rounded">
+                    {t}
+                  </span>
+                ))}
+                {row.coding_systems.slice(0, 4).map((c) => (
+                  <span key={`c-${c}`} className="px-1.5 py-0.5 bg-blue-50 text-blue-700 rounded">
+                    {c}
+                  </span>
+                ))}
+                {row.data_sources.slice(0, 3).map((d) => (
+                  <span key={`d-${d}`} className="px-1.5 py-0.5 bg-gray-50 text-gray-600 rounded">
+                    {d}
+                  </span>
+                ))}
+              </div>
+            )}
+            <p className="mt-1.5 text-xs text-gray-600 italic">
+              {row.relevance_rationale}
+            </p>
+            {row.first_publication && (
+              <p className="mt-1 text-[11px] text-gray-400 line-clamp-2">
+                {row.first_publication}
+              </p>
+            )}
+          </li>
+        ))}
+      </ul>
+      <div className="px-4 py-2 border-t border-gray-100 text-[11px] text-gray-400">
+        These phenotypes are surfaced for citation and adjudication, not auto-merged into
+        your generated codelist.
+      </div>
+    </aside>
+  );
+}
+
+
 function DecisionFilter({
   filter,
   onChange,
@@ -131,8 +343,30 @@ function DecisionFilter({
   );
 }
 
+// T29 — comma-separated exclusion phrases the user types in the
+// Exclusions input. Split, trim, drop empty, dedupe (case-insensitive).
+// Returned in input order so the structured criteria the backend
+// receives are predictable.
+function parseExclusionsInput(raw: string): string[] {
+  const seen = new Set<string>();
+  const out: string[] = [];
+  for (const part of raw.split(",")) {
+    const trimmed = part.trim();
+    if (!trimmed) continue;
+    const key = trimmed.toLowerCase();
+    if (seen.has(key)) continue;
+    seen.add(key);
+    out.push(trimmed);
+  }
+  return out;
+}
+
 export default function Home() {
   const [query, setQuery] = useState("");
+  // T29 — kept across searches on purpose: a user iterating on
+  // "diabetes" then "asthma" with the same "gestational" exclusion
+  // shouldn't have to retype it.
+  const [exclusionsInput, setExclusionsInput] = useState("");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [response, setResponse] = useState<SearchResponse | null>(null);
@@ -151,6 +385,82 @@ export default function Home() {
 
   const [recent, setRecent] = useState<RecentSearch[]>([]);
   useEffect(() => { setRecent(getRecent()); }, []);
+
+  // T34b: adopted-phenotype state for the discovery sidebar.
+  // Session-scoped on purpose: no localStorage, no server pre-state.
+  // The persona model is "browse-then-decide": adoptions are a UI-layer
+  // marker until the user commits the whole package via Save-as-Draft.
+  // If they leave the page without saving, the adoptions disappear --
+  // matches the "I was browsing, I didn't commit" mental model. A
+  // future maintainer thinking about persisting these to localStorage
+  // should re-read the persona pre-flight first.
+  const [adoptedPhenotypes, setAdoptedPhenotypes] = useState<AdoptedPhenotype[]>([]);
+  const adoptedIds = useMemo(
+    () => new Set(adoptedPhenotypes.map((a) => a.phenotype_id)),
+    [adoptedPhenotypes],
+  );
+  const handleAdoptPhenotype = (row: PhenotypeDiscoveryResult) => {
+    setAdoptedPhenotypes((prev) => {
+      if (prev.some((a) => a.phenotype_id === row.phenotype_id)) return prev;
+      return [
+        ...prev,
+        {
+          phenotype_id: row.phenotype_id,
+          // Capture the version id at adoption time so the citation
+          // stays pinned to the version the user actually consulted.
+          phenotype_version_id: row.phenotype_version_id,
+          name: row.name,
+          hdruk_url: row.hdruk_url,
+          first_publication: row.first_publication,
+        },
+      ];
+    });
+  };
+  const handleUnadoptPhenotype = (phenotypeId: string) => {
+    // Session-only undo: lets a user un-adopt before they save without
+    // having to refresh the page (which would lose every other adoption
+    // collected during the browse). After save, undo lives in the codelist
+    // detail page's audit log -- not yet exposed but available there.
+    setAdoptedPhenotypes((prev) => prev.filter((a) => a.phenotype_id !== phenotypeId));
+  };
+
+  // HDR UK phenotype discovery (T34): surface candidate published
+  // phenotypes from the HDR UK Phenotype Library as the user types,
+  // before they commit to running the pipeline. Debounced 300 ms;
+  // gate at >=3 chars so we don't spam Haiku on partial words.
+  //
+  // Tri-state: null = not yet fetched (or query too short, or the
+  // fetch errored — we don't want to mis-attribute "no matches" on a
+  // transient HDR UK 500). [] = fetched and the judge admitted
+  // nothing — render the explicit "none matched, click Search"
+  // hint. Non-empty array = fetched with results — render the full
+  // sidebar. The render condition further hides the sidebar during
+  // a pipeline run and once results are showing.
+  const [discoveryRows, setDiscoveryRows] = useState<PhenotypeDiscoveryResult[] | null>(null);
+  useEffect(() => {
+    const trimmed = query.trim();
+    if (trimmed.length < 3) {
+      setDiscoveryRows(null);
+      return;
+    }
+    const ctrl = new AbortController();
+    const timer = setTimeout(async () => {
+      try {
+        const data = await discoverPhenotypes(trimmed, 5, ctrl.signal);
+        setDiscoveryRows(data);
+      } catch {
+        // Transient HDR UK / Haiku failure: hide the sidebar entirely
+        // (set to null, not []) so the user does not read the empty
+        // hint as authoritative. The main Search affordance is
+        // unaffected.
+        setDiscoveryRows(null);
+      }
+    }, 300);
+    return () => {
+      clearTimeout(timer);
+      ctrl.abort();
+    };
+  }, [query]);
 
   const SAMPLE_QUERIES = [
     "Type 2 diabetes",
@@ -178,7 +488,14 @@ export default function Home() {
     setSaving(true);
     setSaveError(null);
     try {
-      const cl = await createCodelist(response.search_id, draftName.trim());
+      // T34b: adoptions accumulated during the discovery-sidebar browse
+      // are submitted alongside the codelist. The backend records each
+      // as a phenotype_adopted audit-log event for tamper-evidence.
+      const cl = await createCodelist(
+        response.search_id,
+        draftName.trim(),
+        adoptedPhenotypes,
+      );
       setShowSaveModal(false);
       router.push(`/codelists/${cl.id}`);
     } catch (e) {
@@ -198,7 +515,11 @@ export default function Home() {
     setDecisionFilter("all");
 
     try {
-      const data = await searchCodes(q);
+      // T29 — pass the parsed exclusions through to the backend. Empty
+      // array is byte-identical on the wire to the pre-T29 request body
+      // (searchCodes drops the field when empty).
+      const exclusions = parseExclusionsInput(exclusionsInput);
+      const data = await searchCodes(q, { exclusions });
       setResponse(data);
       setSearchedAt(new Date().toISOString().split("T")[0]);
       pushRecent({ query: q, codeCount: data.results.length, at: new Date().toISOString() });
@@ -242,7 +563,6 @@ export default function Home() {
   };
 
   const results = response?.results ?? null;
-  const summary = response?.summary as Record<string, number> | undefined;
 
   // UMLS-enriched codes are suggestions (synonym/narrower/sibling expansion from
   // the UMLS Metathesaurus), not direct retrievals. Route them to the Review tab
@@ -317,11 +637,51 @@ export default function Home() {
               disabled={loading || !query.trim()}
               className="px-4 sm:px-8 bg-[#005EA5] text-white font-medium hover:bg-[#00436C] disabled:opacity-50 transition-colors whitespace-nowrap"
             >
-              {loading ? "Searching..." : "Search"}
+              {/* When discovery surfaced published phenotypes, the button
+                  morphs to "Generate fresh codelist" so the user reads
+                  it as the alternative-path-action rather than the only
+                  thing to click. Otherwise stays as plain "Search". */}
+              {loading
+                ? "Searching..."
+                : (discoveryRows && discoveryRows.length > 0)
+                  ? "Generate fresh codelist"
+                  : "Search"}
             </button>
+          </div>
+          {/* T29 — optional structured exclusions (Bennett 2023 mode 3).
+              A separate compact row keeps the primary search affordance
+              visually unchanged for users who don't need carve-outs. */}
+          <div className="mt-2 flex items-center gap-2 text-xs">
+            <label
+              htmlFor="exclusions-input"
+              className="text-gray-500 shrink-0"
+              title='Comma-separated exclusion phrases. Each becomes a structured exclusion criterion (Bennett 2023 mode 3): the LLM excludes codes whose meaning falls under that term, and the carve-out is recorded in the codelist signature on approval.'
+            >
+              Exclude:
+            </label>
+            <input
+              id="exclusions-input"
+              type="text"
+              value={exclusionsInput}
+              onChange={(e) => setExclusionsInput(e.target.value)}
+              placeholder="optional, comma-separated (e.g. gestational, type 1)"
+              aria-label="Exclusion criteria, comma-separated"
+              className="flex-1 px-2 py-1 border border-gray-200 rounded focus:outline-none focus:border-[#005EA5] text-gray-700"
+              maxLength={300}
+            />
           </div>
         </form>
       </div>
+
+      {/* HDR UK phenotype discovery sidebar (T34) + adoption (T34b) */}
+      {!loading && !results && discoveryRows !== null && (
+        <PhenotypeDiscoverySidebar
+          rows={discoveryRows}
+          adoptedIds={adoptedIds}
+          onAdopt={handleAdoptPhenotype}
+          onUnadopt={handleUnadoptPhenotype}
+        />
+      )}
 
       {/* Loading */}
       {loading && <LoadingProgress />}
@@ -361,6 +721,23 @@ export default function Home() {
                     <th className="px-4 py-2.5 font-medium">Decision</th>
                     <th className="px-4 py-2.5 font-medium">Confidence %</th>
                     <th className="px-4 py-2.5 font-medium">Sources</th>
+                    <th
+                      className="px-4 py-2.5 font-medium"
+                      // T31: column-header tooltip cites OpenCodeCounts and
+                      // names the rounding/withholding rules. The setting
+                      // badge ("GP" or "HES") on each cell distinguishes
+                      // primary care from HES inpatient counts so the bare
+                      // number is never read out of context.
+                      title={
+                        "Annual code-usage frequency from NHS Digital. " +
+                        "Methodology follows Bennett Institute's OpenCodeCounts. " +
+                        "SNOMED primary-care counts are rounded to the nearest 10 " +
+                        "with 1-4 withheld; ICD-10 and OPCS-4 inpatient counts " +
+                        "(HES) are unrounded with zero-usage codes excluded."
+                      }
+                    >
+                      Usage
+                    </th>
                   </tr>
                 </thead>
                 <tbody>
@@ -402,6 +779,9 @@ export default function Home() {
                       <td className="px-4 py-3">{Math.round(r.confidence * 100)}%</td>
                       <td className="px-4 py-3 text-gray-600 text-xs">
                         {r.sources.join(", ")}
+                      </td>
+                      <td className="px-4 py-3 text-sm">
+                        <UsageCell row={r} />
                       </td>
                     </tr>
                   ))}

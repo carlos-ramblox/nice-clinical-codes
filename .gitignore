@@ -30,6 +30,12 @@ data/raw/*.xlsx
 data/raw/*.csv
 data/raw/*.zip
 data/raw/opencodelists/
+# OpenCodeCounts source files from NHS Digital (download at build time).
+# Three upstreams: SNOMED primary care (tab-separated .txt) + HES
+# inpatient ICD-10 / OPCS-4 (.csv).
+data/raw/opencodecounts/*.csv
+data/raw/opencodecounts/*.txt
+data/raw/opencodecounts/*.zip
 # NHS TRUD ICD-10 XML is subscription-licensed and not redistributed
 data/icd10/*.xml
 data/icd10/*.zip
@@ -41,6 +47,9 @@ chromadb_data/
 *.db-wal
 *.sqlite3
 backend/data/
+# Per-phenotype codelist cache for the HDR UK cross-reference panel.
+# Populated lazily, gitignored, busted via ?refresh=1 on the endpoint.
+data/cache/hdruk_phenotype_codes/
 
 # ML artifacts
 *.joblib

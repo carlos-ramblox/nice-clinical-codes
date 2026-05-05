@@ -9,6 +9,13 @@ class ParsedCondition(TypedDict):
     condition_type: str  # "primary" or "comorbidity"
     coding_systems: list[str]
     domain: str  # "Condition", "Drug", or "Procedure"
+    # Bennett 2023 mode 3 (study intent). Free-text terms the scoring
+    # step uses to scope the codelist: any code whose meaning falls
+    # under an exclude term must be marked decision="exclude" (T29).
+    # Both default to [] so legacy callers and the empty-criteria path
+    # are byte-identical to the pre-T29 shape.
+    include_criteria: list[str]
+    exclude_criteria: list[str]
 
 
 class RetrievedCode(TypedDict):
@@ -20,7 +27,20 @@ class RetrievedCode(TypedDict):
     source: str  # "OMOPHub", "QOF", "OpenCodelists", "ChromaDB"
     domain: str  # "Condition", "Drug", "Procedure"
     similarity_score: float | None
+    # OpenCodeCounts-derived fields (T31). usage_frequency is the
+    # most-recent annual count from NHS Digital, or None when the code
+    # is absent from the dataset OR when the count was withheld under
+    # the 1-4 privacy rule. usage_status disambiguates:
+    #   "counted"           - usage_frequency is a real number
+    #   "withheld_below_5"  - count exists but suppressed by NHS Digital
+    #   "not_in_dataset"    - no row for this code at all
+    # usage_source carries the human-readable attribution string for
+    # the column-header tooltip. Populated by the usage_annotator node
+    # after de-dup; retrievers leave these as None.
     usage_frequency: int | None
+    usage_status: str | None
+    usage_source: str | None
+    usage_setting: str | None  # "primary_care" | "secondary_care_hes"
     # 1-based rank within the source retriever's native ordering.
     # Currently only ChromaDB populates this (per sub-query, after T25);
     # other retrievers do not yet emit a rank because their rank fields
@@ -43,6 +63,9 @@ class EnrichedCode(TypedDict):
     domain: str
     similarity_score: float | None
     usage_frequency: int | None
+    usage_status: str | None
+    usage_source: str | None
+    usage_setting: str | None
 
 
 class ScoredCode(TypedDict):
@@ -54,6 +77,9 @@ class ScoredCode(TypedDict):
     rationale: str
     sources: list[str]
     usage_frequency: int | None
+    usage_status: str | None
+    usage_source: str | None
+    usage_setting: str | None
 
 
 class ProvenanceRecord(TypedDict):
@@ -76,6 +102,14 @@ class PipelineState(TypedDict):
     # doesn't pin a vocabulary; non-empty values flow through to
     # retriever fan-out and to output filtering.
     vocabulary_cues: list[str]
+
+    # Structured study-intent criteria supplied at the request boundary
+    # (T29). When non-empty, query_parser_node applies them to every
+    # parsed condition and skips natural-language extraction for that
+    # condition — the structured input wins. Empty defaults preserve
+    # pre-T29 behaviour exactly.
+    request_include_criteria: list[str]
+    request_exclude_criteria: list[str]
 
     # Retrieval — reducer merges parallel results
     retrieved_codes: Annotated[list[RetrievedCode], add]

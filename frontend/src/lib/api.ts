@@ -3,6 +3,22 @@ const API_BASE = process.env.NEXT_PUBLIC_API_URL || "/api";
 // all HITL endpoints need the session cookie — always include credentials
 const AUTH_FETCH: RequestInit = { credentials: "include" };
 
+// usage_status disambiguates the three meanings of usage_frequency=null
+// (T31):
+//   "counted"           - usage_frequency is a real number; render it.
+//   "withheld_below_5"  - NHS Digital suppressed a count of 1-4; UI
+//                         renders "<5" rather than "—".
+//   "not_in_dataset"    - the code is absent from the upstream NHS
+//                         Digital publication; UI renders "—".
+// usage_source is the per-row attribution string the column-header
+// tooltip cites (e.g. "NHS Digital primary care SNOMED reporting").
+export type UsageStatus = "counted" | "withheld_below_5" | "not_in_dataset";
+// Machine-readable setting for the Usage column's GP/HES badge.
+// Decoupled from usage_source (which is the human-readable
+// attribution string) so a future rename of the attribution string
+// cannot silently break the badge logic.
+export type UsageSetting = "primary_care" | "secondary_care_hes";
+
 export interface CodeResult {
   code: string;
   term: string;
@@ -12,6 +28,9 @@ export interface CodeResult {
   rationale: string;
   sources: string[];
   usage_frequency: number | null;
+  usage_status: UsageStatus | null;
+  usage_source: string | null;
+  usage_setting: UsageSetting | null;
 }
 
 export interface SearchResponse {
@@ -24,17 +43,92 @@ export interface SearchResponse {
   elapsed_seconds: number;
 }
 
+export interface SearchOptions {
+  // T29 — structured study-intent criteria. Empty arrays preserve the
+  // pre-T29 request body exactly (the backend treats absent and []
+  // identically).
+  inclusions?: string[];
+  exclusions?: string[];
+}
+
 export async function searchCodes(
   query: string,
+  opts: SearchOptions = {},
 ): Promise<SearchResponse> {
+  const body: Record<string, unknown> = { query };
+  if (opts.inclusions && opts.inclusions.length > 0) body.inclusions = opts.inclusions;
+  if (opts.exclusions && opts.exclusions.length > 0) body.exclusions = opts.exclusions;
   const res = await fetch(`${API_BASE}/search`, {
     ...AUTH_FETCH,
     method: "POST",
     headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ query }),
+    body: JSON.stringify(body),
   });
   if (!res.ok) {
     throw new Error(`Search failed: ${res.status}`);
+  }
+  return res.json();
+}
+
+// --- HDR UK phenotype discovery (T34) --------------------------------------
+
+export interface PhenotypeDiscoveryResult {
+  phenotype_id: string;
+  phenotype_version_id: number | null;
+  name: string;
+  type: string[];
+  coding_systems: string[];
+  data_sources: string[];
+  first_publication: string;
+  hdruk_url: string;
+  relevance_rationale: string;
+  relevance_verdict: "relevant" | "uncertain";
+}
+
+export interface CrossReferenceRow {
+  phenotype_id: string;
+  name: string;
+  hdruk_url: string;
+  overlap_jaccard: number;
+  overlap_generated_in_phenotype: number;
+  overlap_phenotype_in_generated: number;
+  n_generated_codes: number;
+  n_phenotype_codes: number;
+  n_intersection: number;
+  data_sources: string[];
+  first_publication: string;
+  relevance_rationale: string;
+}
+
+export async function getCrossReference(
+  codelistId: string,
+  refresh: boolean = false,
+): Promise<CrossReferenceRow[]> {
+  const params = refresh ? "?refresh=true" : "";
+  const res = await fetch(
+    `${API_BASE}/codelists/${codelistId}/cross-reference${params}`,
+    AUTH_FETCH,
+  );
+  if (!res.ok) throw new Error(`Cross-reference failed: ${res.status}`);
+  return res.json();
+}
+
+export async function discoverPhenotypes(
+  query: string,
+  topK: number = 5,
+  signal?: AbortSignal,
+): Promise<PhenotypeDiscoveryResult[]> {
+  const params = new URLSearchParams({ query, top_k: String(topK) });
+  const res = await fetch(`${API_BASE}/phenotypes/discover?${params.toString()}`, {
+    ...AUTH_FETCH,
+    signal,
+  });
+  if (!res.ok) {
+    // Discovery is supplementary; surface the error to the caller but
+    // the calling component should hide the sidebar rather than
+    // showing a red banner — this is "browse-mode" content, not the
+    // main search result the user clicked for.
+    throw new Error(`Discover failed: ${res.status}`);
   }
   return res.json();
 }
@@ -122,11 +216,25 @@ export interface CodelistDecision {
   is_umls_suggestion: number;
 }
 
+export interface AdoptedPhenotype {
+  phenotype_id: string;
+  phenotype_version_id: number | null;
+  name: string;
+  hdruk_url: string;
+  first_publication: string;
+}
+
 export interface Codelist extends CodelistSummary {
   review_notes: string | null;
   signature_hash: string | null;
   reviewed_by_name?: string | null;
   decisions: CodelistDecision[];
+  adopted_phenotypes: AdoptedPhenotype[];
+  // T29 — study-intent criteria captured at /api/search time and
+  // persisted on the codelist. Empty arrays for pre-T29 codelists
+  // (the column DEFAULT '[]' migration covers older rows).
+  include_criteria: string[];
+  exclude_criteria: string[];
 }
 
 export interface AuditEvent {
@@ -168,12 +276,20 @@ export async function getAudit(id: string): Promise<AuditEvent[]> {
   return res.json();
 }
 
-export async function createCodelist(searchId: string, name: string): Promise<Codelist> {
+export async function createCodelist(
+  searchId: string,
+  name: string,
+  adoptedPhenotypes: AdoptedPhenotype[] = [],
+): Promise<Codelist> {
   const res = await fetch(`${API_BASE}/codelists`, {
     ...AUTH_FETCH,
     method: "POST",
     headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ search_id: searchId, name }),
+    body: JSON.stringify({
+      search_id: searchId,
+      name,
+      adopted_phenotypes: adoptedPhenotypes,
+    }),
   });
   if (!res.ok) {
     const detail = await res.text();

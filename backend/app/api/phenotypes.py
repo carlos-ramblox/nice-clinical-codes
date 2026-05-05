@@ -1,0 +1,149 @@
+"""HDR UK Phenotype Library discovery endpoint (T34).
+
+Surfaces 3-5 candidate phenotypes whose clinical scope fits the user's
+free-text query, ranked by the persona-driven LLM scope-fit judge from
+``app.services.phenotype_discovery``. Read-mode only -- no code-mixing,
+no auto-import. Each row's ``hdruk_url`` is the authoritative HDR UK
+detail page; clicking goes there.
+
+Cost model: one HDR UK search request + one Haiku judge call per uncached
+discovery hit. The 5-minute in-process TTL cache below + the frontend's
+300 ms debounce + the ``min_length=3`` query gate are sufficient guards
+at demo scale; if sustained load shows up in telemetry, swap the
+in-process cache for redis.
+
+Auth: this router is intentionally **unauthenticated**, mirroring the
+search and evaluate endpoints. Discovery happens before the user logs
+in or commits to generating a codelist; gating it behind login would
+contradict the persona pre-flight (browse-and-adjudicate, then decide).
+The router intentionally does not import from ``app.api.codelists`` so
+no ``Depends(get_current_user)`` leaks in.
+"""
+from __future__ import annotations
+
+import logging
+
+from fastapi import APIRouter, Query
+from pydantic import BaseModel, Field
+from typing import Literal
+
+from app.config import HDR_UK_BASE_URL
+from app.services.phenotype_discovery import (
+    clear_discovery_cache,
+    discover_phenotypes_ranked,
+)
+
+logger = logging.getLogger(__name__)
+
+router = APIRouter()
+
+
+def _hdruk_detail_url(phenotype_id: str, version: int | None = None) -> str:
+    """Build the public HDR UK detail-page URL for a phenotype id.
+
+    When ``version`` is supplied the URL is pinned to
+    ``/phenotypes/{id}/version/{v}/detail/`` so a citation adopted
+    today against PH12 v24 keeps pointing at PH12 v24 even after HDR
+    UK publishes a new version. When ``version`` is ``None`` the URL
+    falls back to ``/phenotypes/{id}``, which the server redirects to
+    the latest version's detail page.
+    """
+    base = HDR_UK_BASE_URL.rstrip("/")
+    if version is not None:
+        return f"{base}/phenotypes/{phenotype_id}/version/{version}/detail/"
+    return f"{base}/phenotypes/{phenotype_id}"
+
+
+def _first_publication(phenotype: dict) -> str:
+    """Return a single-line citation for the phenotype's first publication, or ''."""
+    pubs = phenotype.get("publications") or []
+    if not pubs or not isinstance(pubs[0], dict):
+        return ""
+    details = (pubs[0].get("details") or "").strip()
+    return details[:240]  # cap so a long citation list doesn't blow the response
+
+
+class PhenotypeDiscoveryResult(BaseModel):
+    """One row of the discovery sidebar."""
+
+    phenotype_id: str = Field(description="HDR UK phenotype id, e.g. PH12")
+    phenotype_version_id: int | None = Field(
+        default=None,
+        description=(
+            "HDR UK version id of the phenotype the user is looking at "
+            "right now; surfaced so citations can pin the version "
+            "instead of drifting when HDR UK publishes new versions."
+        ),
+    )
+    name: str
+    type: list[str] = Field(default_factory=list, description="e.g. ['Disease or syndrome']")
+    coding_systems: list[str] = Field(default_factory=list)
+    data_sources: list[str] = Field(default_factory=list)
+    first_publication: str = Field(default="", description="First citation, capped at 240 chars")
+    hdruk_url: str = Field(description="Authoritative HDR UK detail page; primary affordance")
+    relevance_rationale: str = Field(
+        description="One-sentence judge rationale, or a fallback string when the judge was skipped",
+    )
+    relevance_verdict: Literal["relevant", "uncertain"] = Field(
+        description="'relevant' iff the judge ran and explicitly admitted the phenotype",
+    )
+
+
+def _project(phenotype: dict, decision) -> PhenotypeDiscoveryResult:
+    """Build the response row from a (phenotype, decision) tuple."""
+    pid = phenotype.get("phenotype_id", "")
+    raw_version = phenotype.get("phenotype_version_id")
+    version = int(raw_version) if isinstance(raw_version, int) else None
+    if decision is not None:
+        rationale = decision.reason
+        verdict: Literal["relevant", "uncertain"] = "relevant"
+    else:
+        # Judge skipped or silently omitted this phenotype -- the row is
+        # surfaced for transparency but flagged so the UI can hedge the
+        # rationale ("(judge skipped)" rather than a misleading reason).
+        rationale = "Phenotype admitted without explicit scope-fit verdict (judge unavailable)."
+        verdict = "uncertain"
+    return PhenotypeDiscoveryResult(
+        phenotype_id=pid,
+        phenotype_version_id=version,
+        name=phenotype.get("name", ""),
+        type=[t.get("name", "") for t in (phenotype.get("type") or []) if t.get("name")],
+        coding_systems=[c.get("name", "") for c in (phenotype.get("coding_system") or []) if c.get("name")],
+        data_sources=[d.get("name", "") for d in (phenotype.get("data_sources") or []) if d.get("name")],
+        first_publication=_first_publication(phenotype),
+        hdruk_url=_hdruk_detail_url(pid, version),
+        relevance_rationale=rationale,
+        relevance_verdict=verdict,
+    )
+
+
+@router.get("/phenotypes/discover", response_model=list[PhenotypeDiscoveryResult])
+def discover_phenotypes(
+    query: str = Query(..., min_length=3, max_length=200, description="Free-text clinical query, min 3 chars"),
+    top_k: int = Query(5, ge=1, le=10, description="Maximum number of phenotypes to return (1-10)"),
+):
+    """Return HDR UK phenotypes whose clinical scope fits ``query``.
+
+    Each row links to the authoritative HDR UK detail page; the UI does
+    NOT proxy or wrap that page. Code-fetching is out of scope for this
+    endpoint (the discovery sidebar is read-mode only); the post-hoc
+    cross-reference panel covers code-overlap measurement.
+    """
+    # Cache is now shared with the cross-reference endpoint via the
+    # service layer, so a researcher who hits discovery and then
+    # cross-reference for the same query within 5 minutes pays for at
+    # most one Haiku judge call across the pair.
+    ranked = discover_phenotypes_ranked(query, top_k)
+    return [_project(p, decision) for p, decision in ranked if p.get("phenotype_id")]
+
+
+@router.delete("/phenotypes/discover/cache", include_in_schema=False)
+def _clear_discovery_cache_endpoint():
+    """Hidden test helper: blow away the in-process discovery cache.
+
+    Not advertised in the public OpenAPI schema. Used by the endpoint
+    tests to isolate cache-hit vs cache-miss behaviour without sleeping
+    out the 5-minute TTL.
+    """
+    clear_discovery_cache()
+    return {"cleared": True}

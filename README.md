@@ -11,6 +11,7 @@
 # Clinical Code Discovery - Multi-source clinical codelist generation with LLM-assisted scoring and human review
 
 <p align="center">
+  <a href="https://github.com/carlos-ramblox/nice-clinical-codes/actions/workflows/ci.yml"><img src="https://github.com/carlos-ramblox/nice-clinical-codes/actions/workflows/ci.yml/badge.svg?branch=main" alt="CI"></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/license-Apache%202.0-blue.svg" alt="License: Apache 2.0"></a>
   <img src="https://img.shields.io/badge/python-3.12+-blue.svg" alt="Python 3.12+">
   <img src="https://img.shields.io/badge/node-20+-43853d.svg" alt="Node 20+">
@@ -224,6 +225,7 @@ The LangGraph pipeline is auto-instrumented; each `/api/search` produces a trace
 | [OpenCodelists](https://www.opencodelists.org) | CSV + scraping | Published, peer-reviewed clinical code lists |
 | [UMLS Metathesaurus](https://uts.nlm.nih.gov) | API | Concept relationships, synonyms, hierarchies |
 | [OPCS-4](https://digital.nhs.uk/data-and-information/information-standards/information-standards-and-data-collections-including-extractions/publications-and-notifications/standards-and-collections/opcs-4) | XML | NHS procedure and operation codes (12K codes) |
+| [NHS Digital code-usage publications](https://digital.nhs.uk/data-and-information/publications/statistical/mi-snomed-code-usage-in-primary-care) | CSV | Per-code annual usage counts (SNOMED primary care + ICD-10/OPCS-4 HES inpatient). Methodology follows Bennett Institute [OpenCodeCounts](https://bennettoxford.github.io/opencodecounts/); we read the upstream NHS Digital CSVs directly under OGL v3.0. |
 
 ## Project Structure
 

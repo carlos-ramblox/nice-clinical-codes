@@ -1,0 +1,26 @@
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+extend-exclude = [
+    "data",
+    "frontend",
+    "notebooks",
+    "infra",
+    ".venv",
+    "backend/.venv",
+    "backend/chromadb_data",
+]
+
+[tool.ruff.lint]
+# Default rule set (E4/E7/E9 + F): pycodestyle errors and pyflakes.
+# E501 (line-too-long) is not in the default selection, so the
+# line-length above is informational. W and I are deferred to a
+# follow-up that runs the autofix.
+
+[tool.ruff.lint.per-file-ignores]
+# routes.py keeps Query() default-string constants between two import
+# groups so each constant sits next to the route that consumes it.
+"backend/app/api/routes.py" = ["E402"]
+# Test modules splice backend/ onto sys.path before importing app.* so
+# they remain runnable both via pytest and as scripts.
+"backend/tests/*.py" = ["E402"]

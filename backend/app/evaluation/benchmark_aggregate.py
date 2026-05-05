@@ -39,31 +39,16 @@ import numpy as np
 from scipy.stats import bootstrap as scipy_bootstrap
 from statsmodels.stats.contingency_tables import mcnemar
 
+# Canonical normaliser lifted to a leaf module so that callers that only
+# need normalize_code (notably the cross-reference and discovery service
+# paths) do not transitively pull in numpy / scipy / statsmodels at
+# import time. Re-exported here so existing eval scripts that import
+# ``benchmark_aggregate.normalize_code`` keep working.
+from app.db.code_normalize import normalize_code  # noqa: F401  (re-export)
+
 ROOT = Path(__file__).resolve().parents[3]
 BENCH = ROOT / "data" / "test_sets" / "benchmark_2026_04"
 SELECTION = ROOT / "data" / "raw" / "opencodelists" / "selection.json"
-
-
-def normalize_code(code: str, vocabulary: str) -> str:
-    """Code normalization for fair set comparison.
-
-    Strips whitespace and all dots, vocabulary-blind. The same
-    transformation is applied to both reference and output codes, so
-    OPCS-4 codes that carry dots (like "K40.1") are mutated
-    symmetrically — set membership is preserved either way. SNOMED CT
-    has no dots so the strip is a no-op.
-
-    This matches ``evaluator._norm`` exactly so the live
-    ``/api/evaluate`` and the offline aggregator agree on every
-    metric. Earlier divergence (vocab-aware vs. vocab-blind dot
-    stripping) caused OPCS-4 codes to map differently between the
-    two paths; the rule is now uniform.
-
-    The ``vocabulary`` parameter is retained for API compatibility
-    and may be used by future per-vocabulary normalization rules,
-    but is currently ignored.
-    """
-    return (code or "").strip().replace(".", "")
 
 
 def metrics(tp: int, fp: int, fn: int) -> tuple[float, float, float]:
@@ -498,6 +483,125 @@ def _build_view(selection: list[dict], suffix: str) -> dict | None:
     }
 
 
+def _build_variance_view(selection: list[dict], k_max: int = 5) -> dict | None:
+    """Read ``<short>.result_runK_<k>.json`` files (k = 1..k_max) and
+    summarise run-to-run variance per codelist plus an aggregate
+    decision-flip rate (T07).
+
+    For each codelist with **at least two** runs on disk, reports
+    ``f1_mean`` and ``f1_std`` (ddof=1) over the per-run included-only
+    F1, plus ``f1_min``/``f1_max`` and the count of runs found. The
+    aggregate ``f1_std_mean`` / ``f1_std_max`` describe variance across
+    the 15 lists.
+
+    Decision-flip rate is computed at the ``(codelist, code)`` granularity:
+    for every code that appears in at least one of the K runs of a given
+    codelist, we collect the set of distinct decisions assigned to it
+    across runs (a code missing from a particular run contributes the
+    sentinel ``"<absent>"`` so an unstable retrieve/dedup pass counts as
+    a flip too). The pair flips iff that set has size > 1. Reported as
+    ``flip_rate = flipped_pairs / total_pairs`` overall and per codelist.
+
+    Returns ``None`` when no ``result_runK_*.json`` files exist anywhere
+    (so callers can skip writing a variance block when this view hasn't
+    been populated yet).
+    """
+    per_list: list[dict] = []
+
+    for s in selection:
+        short = s["short"]
+        runs: list[dict] = []
+        for k in range(1, k_max + 1):
+            p = BENCH / f"{short}.result_runK_{k}.json"
+            if not p.exists():
+                continue
+            with open(p, encoding="utf-8") as f:
+                runs.append(json.load(f))
+        if len(runs) < 2:
+            # Skip codelists with <2 runs — std is undefined and a flip
+            # rate over a single observation is meaningless. Surface this
+            # as missing rather than silently zero so a half-finished
+            # sweep is visible in the output.
+            continue
+
+        with open(BENCH / f"{short}.json", encoding="utf-8") as f:
+            ts = json.load(f)
+        per_run_view = [evaluate_one(ts, r) for r in runs]
+        f1s = [v["strict"]["f1"] for v in per_run_view]
+        precs = [v["strict"]["precision"] for v in per_run_view]
+        recs = [v["strict"]["recall"] for v in per_run_view]
+
+        # Decision-flip accounting per (code) within this codelist.
+        # Build the universe of all-ever-seen codes first, then iterate
+        # the runs to fill in either the per-run decision or the
+        # ``<absent>`` sentinel. Doing it in two passes (rather than
+        # accumulating per-code lists in a single pass) is the only way
+        # to backfill ``<absent>`` for codes that first appear in run k>1
+        # — a single-pass walk would leave the early-run absences
+        # invisible and silently under-count the flip rate for codes
+        # that the retriever did not surface on every run.
+        all_codes: set[str] = set()
+        for run in runs:
+            for c in run.get("scored_codes", []) or []:
+                code = normalize_code(c.get("code", ""), c.get("vocabulary", ""))
+                if code:
+                    all_codes.add(code)
+
+        per_code_decisions: dict[str, list[str]] = {code: [] for code in all_codes}
+        for run in runs:
+            by_code = {
+                normalize_code(c.get("code", ""), c.get("vocabulary", "")): c.get("decision", "")
+                for c in (run.get("scored_codes", []) or [])
+                if c.get("code")
+            }
+            for code in all_codes:
+                per_code_decisions[code].append(by_code.get(code, "<absent>"))
+
+        flipped = sum(1 for decisions in per_code_decisions.values() if len(set(decisions)) > 1)
+        total = len(per_code_decisions)
+        flip_rate = (flipped / total) if total else 0.0
+
+        per_list.append({
+            "short": short,
+            "vocabulary": ts[0].get("Codelist_vocabulary", ""),
+            "area": s["area"],
+            "n_ref": per_run_view[0]["strict"]["n_ref"],
+            "n_runs": len(runs),
+            "f1_per_run": [round(x, 4) for x in f1s],
+            "f1_mean": round(statistics.mean(f1s), 4),
+            "f1_std": round(statistics.stdev(f1s), 4) if len(f1s) > 1 else 0.0,
+            "f1_min": round(min(f1s), 4),
+            "f1_max": round(max(f1s), 4),
+            "precision_mean": round(statistics.mean(precs), 4),
+            "recall_mean": round(statistics.mean(recs), 4),
+            "n_pairs": total,
+            "n_flipped": flipped,
+            "flip_rate": round(flip_rate, 4),
+        })
+
+    if not per_list:
+        return None
+
+    f1_stds = [r["f1_std"] for r in per_list]
+    f1_means = [r["f1_mean"] for r in per_list]
+    total_pairs = sum(r["n_pairs"] for r in per_list)
+    total_flipped = sum(r["n_flipped"] for r in per_list)
+    aggregate_flip_rate = (total_flipped / total_pairs) if total_pairs else 0.0
+
+    return {
+        "k_max": k_max,
+        "n_codelists": len(per_list),
+        "f1_std_mean": round(statistics.mean(f1_stds), 4),
+        "f1_std_max": round(max(f1_stds), 4),
+        "f1_std_per_list_median": round(statistics.median(f1_stds), 4),
+        "f1_mean_of_means": round(statistics.mean(f1_means), 4),
+        "aggregate_flip_rate": round(aggregate_flip_rate, 4),
+        "total_pairs": total_pairs,
+        "total_flipped": total_flipped,
+        "per_list": per_list,
+    }
+
+
 def _write_legacy_outputs(view: dict | None) -> None:
     """Preserve the original v1 output files (_aggregate.json,
     _per_list.csv) so anything that consumed them still works."""
@@ -518,12 +622,18 @@ def _write_legacy_outputs(view: dict | None) -> None:
             w.writerow({k: r[k] for k in fields})
 
 
-def _write_v2_outputs(views: dict[str, dict], mcnemar_results: dict | None = None) -> None:
+def _write_v2_outputs(
+    views: dict[str, dict],
+    mcnemar_results: dict | None = None,
+    variance_view: dict | None = None,
+) -> None:
     """Write the three-view aggregate JSON and a wide per-list CSV with
     pre/post/cold columns side-by-side."""
     payload: dict = {name: view for name, view in views.items() if view is not None}
     if mcnemar_results:
         payload["mcnemar"] = {k: v for k, v in mcnemar_results.items() if v is not None}
+    if variance_view is not None:
+        payload["variance_k5"] = variance_view
     (BENCH / "_aggregate_v2.json").write_text(json.dumps(payload, indent=2), encoding="utf-8")
 
     # Build wide CSV: one row per codelist with columns for each view.
@@ -581,10 +691,15 @@ def main():
         "coldstart_vs_pre_fix": _mcnemar_pre_post(views["pre_fix"], views["coldstart"]),
     }
 
+    # K=5 run-to-run variance view (T07). Reads result_runK_*.json files
+    # if present; returns None otherwise so a half-finished sweep is
+    # surfaced as an explicitly-empty block rather than silent zeros.
+    variance_view = _build_variance_view(selection, k_max=5)
+
     # Legacy v1 outputs continue to reflect the pre-fix baseline so the
     # original EVALUATION.md numbers stay reproducible from the same files.
     _write_legacy_outputs(views["pre_fix"])
-    _write_v2_outputs(views, mcnemar_results)
+    _write_v2_outputs(views, mcnemar_results, variance_view=variance_view)
 
     # Concise stdout summary so callers can eyeball headline deltas.
     for name, view in views.items():
@@ -611,6 +726,21 @@ def main():
             f"b={mc['discordant_b_pre_right_post_wrong']} c={mc['discordant_c_pre_wrong_post_right']}\n"
             f"  test={mc['test']}  statistic={mc['statistic']}  p={mc['pvalue']:.4g}"
         )
+
+    if variance_view is None:
+        print("\nvariance_k5: <no result_runK_*.json files yet>")
+    else:
+        print(
+            f"\nvariance_k5: n_codelists={variance_view['n_codelists']}  k_max={variance_view['k_max']}  "
+            f"F1_std_mean={variance_view['f1_std_mean']:.4f}  F1_std_max={variance_view['f1_std_max']:.4f}  "
+            f"flip_rate={variance_view['aggregate_flip_rate']:.4f} "
+            f"({variance_view['total_flipped']}/{variance_view['total_pairs']} pairs)"
+        )
+        print("  per-list F1_mean ± std (n_runs):")
+        for r in variance_view["per_list"]:
+            print(f"    {r['short']:<28s} {r['f1_mean']:.3f} ± {r['f1_std']:.3f}  "
+                  f"(n={r['n_runs']}, range [{r['f1_min']:.3f}, {r['f1_max']:.3f}], "
+                  f"flip_rate={r['flip_rate']:.3f})")
 
 
 if __name__ == "__main__":
