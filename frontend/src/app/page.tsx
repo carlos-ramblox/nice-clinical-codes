@@ -331,6 +331,9 @@ export default function Home() {
         ...prev,
         {
           phenotype_id: row.phenotype_id,
+          // Capture the version id at adoption time so the citation
+          // stays pinned to the version the user actually consulted.
+          phenotype_version_id: row.phenotype_version_id,
           name: row.name,
           hdruk_url: row.hdruk_url,
           first_publication: row.first_publication,

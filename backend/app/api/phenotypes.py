@@ -38,25 +38,19 @@ logger = logging.getLogger(__name__)
 router = APIRouter()
 
 
-def _hdruk_detail_url(phenotype_id: str) -> str:
+def _hdruk_detail_url(phenotype_id: str, version: int | None = None) -> str:
     """Build the public HDR UK detail-page URL for a phenotype id.
 
-    The canonical form is ``/phenotypes/{id}/detail/`` but the server
-    redirects ``/phenotypes/{id}`` there with a 200 final response, so
-    the shorter form is fine and reads cleaner in the UI.
-
-    TODO(T34c): pin the version. HDR UK phenotypes are versioned; the
-    current URL resolves to whichever version is "live" at click-time,
-    so an adopted citation that points at PH12 today and at PH12 v4
-    after HDR UK publishes a new version would silently shift. The
-    discovery search response already exposes ``phenotype_version_id``
-    -- piping it through ``PhenotypeDiscoveryResult``, the adoption
-    payload, and the detail URL (``/phenotypes/{id}/version/{v}``)
-    pins the citation to the version the user actually consulted.
-    Non-blocking for present-day reuse; future re-citations of older
-    adopted versions are at risk without it.
+    When ``version`` is supplied the URL is pinned to
+    ``/phenotypes/{id}/version/{v}/detail/`` so a citation adopted
+    today against PH12 v24 keeps pointing at PH12 v24 even after HDR
+    UK publishes a new version. When ``version`` is ``None`` the URL
+    falls back to ``/phenotypes/{id}``, which the server redirects to
+    the latest version's detail page.
     """
     base = HDR_UK_BASE_URL.rstrip("/")
+    if version is not None:
+        return f"{base}/phenotypes/{phenotype_id}/version/{version}/detail/"
     return f"{base}/phenotypes/{phenotype_id}"
 
 
@@ -73,6 +67,14 @@ class PhenotypeDiscoveryResult(BaseModel):
     """One row of the discovery sidebar."""
 
     phenotype_id: str = Field(description="HDR UK phenotype id, e.g. PH12")
+    phenotype_version_id: int | None = Field(
+        default=None,
+        description=(
+            "HDR UK version id of the phenotype the user is looking at "
+            "right now; surfaced so citations can pin the version "
+            "instead of drifting when HDR UK publishes new versions."
+        ),
+    )
     name: str
     type: list[str] = Field(default_factory=list, description="e.g. ['Disease or syndrome']")
     coding_systems: list[str] = Field(default_factory=list)
@@ -90,6 +92,8 @@ class PhenotypeDiscoveryResult(BaseModel):
 def _project(phenotype: dict, decision) -> PhenotypeDiscoveryResult:
     """Build the response row from a (phenotype, decision) tuple."""
     pid = phenotype.get("phenotype_id", "")
+    raw_version = phenotype.get("phenotype_version_id")
+    version = int(raw_version) if isinstance(raw_version, int) else None
     if decision is not None:
         rationale = decision.reason
         verdict: Literal["relevant", "uncertain"] = "relevant"
@@ -101,12 +105,13 @@ def _project(phenotype: dict, decision) -> PhenotypeDiscoveryResult:
         verdict = "uncertain"
     return PhenotypeDiscoveryResult(
         phenotype_id=pid,
+        phenotype_version_id=version,
         name=phenotype.get("name", ""),
         type=[t.get("name", "") for t in (phenotype.get("type") or []) if t.get("name")],
         coding_systems=[c.get("name", "") for c in (phenotype.get("coding_system") or []) if c.get("name")],
         data_sources=[d.get("name", "") for d in (phenotype.get("data_sources") or []) if d.get("name")],
         first_publication=_first_publication(phenotype),
-        hdruk_url=_hdruk_detail_url(pid),
+        hdruk_url=_hdruk_detail_url(pid, version),
         relevance_rationale=rationale,
         relevance_verdict=verdict,
     )

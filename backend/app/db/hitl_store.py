@@ -231,6 +231,7 @@ def create_codelist(
             conn, cid, event="phenotype_adopted", user_id=created_by,
             details={
                 "phenotype_id": adoption.get("phenotype_id", ""),
+                "phenotype_version_id": adoption.get("phenotype_version_id"),
                 "name": adoption.get("name", ""),
                 "hdruk_url": adoption.get("hdruk_url", ""),
                 "first_publication": adoption.get("first_publication", ""),

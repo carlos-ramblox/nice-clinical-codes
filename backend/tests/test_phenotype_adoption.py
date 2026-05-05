@@ -152,6 +152,58 @@ def test_get_codelist_surfaces_adopted_phenotypes_to_frontend():
     assert row["first_publication"] == "Nissen et al. 2017"
 
 
+def test_adoption_preserves_phenotype_version_through_audit_log():
+    # Pin the version-pinning contract: the version captured at adopt
+    # time round-trips into the phenotype_adopted audit-event details
+    # and into the read-side codelist projection. Citation stability
+    # against HDR UK version churn relies on this.
+    assert _login_demo_user() is not None
+    sid = _seed_search("asthma", [
+        {"code": "J45", "term": "Asthma", "vocabulary": "ICD-10",
+         "decision": "include", "confidence": 0.9, "rationale": "ok", "sources": []},
+    ])
+    adoptions = [{
+        "phenotype_id": "PH12",
+        "phenotype_version_id": 24,
+        "name": "Asthma",
+        "hdruk_url": "https://phenotypes.healthdatagateway.org/phenotypes/PH12/version/24/detail/",
+        "first_publication": "Nissen et al. 2017",
+    }]
+    cl = _create({"search_id": sid, "name": "T34c version-pinning fixture",
+                  "adopted_phenotypes": adoptions})
+
+    # Audit event carries the version
+    audit = client.get(f"/api/codelists/{cl['id']}/audit").json()
+    adopted_events = [e for e in audit if e["event"] == "phenotype_adopted"]
+    assert len(adopted_events) == 1
+    assert adopted_events[0]["details"]["phenotype_version_id"] == 24
+
+    # Read-side projection carries the version
+    detail = client.get(f"/api/codelists/{cl['id']}").json()
+    assert detail["adopted_phenotypes"][0]["phenotype_version_id"] == 24
+
+
+def test_adoption_without_version_keeps_back_compat():
+    # phenotype_version_id is optional; older clients submitting just
+    # phenotype_id + name + url + citation (the original T34b shape)
+    # continue to work and surface ``None`` for version downstream.
+    assert _login_demo_user() is not None
+    sid = _seed_search("asthma", [
+        {"code": "J45", "term": "Asthma", "vocabulary": "ICD-10",
+         "decision": "include", "confidence": 0.9, "rationale": "ok", "sources": []},
+    ])
+    adoptions = [{
+        "phenotype_id": "PH12",
+        "name": "Asthma",
+        "hdruk_url": "https://phenotypes.healthdatagateway.org/phenotypes/PH12",
+        "first_publication": "",
+    }]
+    cl = _create({"search_id": sid, "name": "T34c back-compat fixture",
+                  "adopted_phenotypes": adoptions})
+    detail = client.get(f"/api/codelists/{cl['id']}").json()
+    assert detail["adopted_phenotypes"][0]["phenotype_version_id"] is None
+
+
 def test_create_codelist_validates_adoption_payload_shape():
     # Adoption shape is enforced by Pydantic so the frontend cannot
     # silently submit malformed entries. 422 from FastAPI's validator.

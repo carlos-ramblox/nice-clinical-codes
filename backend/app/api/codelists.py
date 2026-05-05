@@ -46,6 +46,13 @@ class AdoptedPhenotype(BaseModel):
     """
 
     phenotype_id: str = Field(..., min_length=1, max_length=64)
+    phenotype_version_id: int | None = Field(
+        default=None,
+        description=(
+            "HDR UK version id captured at adoption time, so the citation "
+            "stays pinned to the version the user actually consulted."
+        ),
+    )
     name: str = Field(..., min_length=1, max_length=300)
     hdruk_url: str = Field(..., min_length=1, max_length=300)
     first_publication: str = Field(default="", max_length=400)

@@ -43,6 +43,7 @@ export async function searchCodes(
 
 export interface PhenotypeDiscoveryResult {
   phenotype_id: string;
+  phenotype_version_id: number | null;
   name: string;
   type: string[];
   coding_systems: string[];
@@ -186,6 +187,7 @@ export interface CodelistDecision {
 
 export interface AdoptedPhenotype {
   phenotype_id: string;
+  phenotype_version_id: number | null;
   name: string;
   hdruk_url: string;
   first_publication: string;

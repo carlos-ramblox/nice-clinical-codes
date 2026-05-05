@@ -136,6 +136,9 @@ def test_discover_returns_phenotypes_with_rationale_and_link():
         _phenotype_payload("PH12", "Asthma"),
         _phenotype_payload("PH99", "Pulmonary embolism"),
     ]
+    # phenotype_version_id is optional in the fixtures; this test
+    # exercises the unversioned-URL path. The versioned-URL contract
+    # is pinned by the dedicated test below.
     decisions = {
         "PH12": {"relevant": True,  "reason": "primary scope is asthma in adults"},
         "PH99": {"relevant": False, "reason": "different condition"},
@@ -158,6 +161,24 @@ def test_discover_returns_phenotypes_with_rationale_and_link():
     # click through to.
     assert "SNOMED CT" in row["coding_systems"]
     assert "ICD10 codes" in row["coding_systems"]
+
+
+def test_discover_pins_version_in_url_when_available():
+    # When the HDR UK search response carries phenotype_version_id, the
+    # endpoint pins the link to /phenotypes/{id}/version/{v}/detail/ so
+    # an adopted citation stays pointed at the version the user
+    # actually consulted, even if HDR UK publishes a newer one later.
+    _clear_cache()
+    pheno = _phenotype_payload("PH12", "Asthma", phenotype_version_id=24)
+    decisions = {"PH12": {"relevant": True, "reason": "matches"}}
+    p1, p2, p3, p4 = _patch_pipeline([pheno], decisions)
+    with p1, p2, p3, p4:
+        r = client.get("/api/phenotypes/discover", params={"query": "asthma"})
+    assert r.status_code == 200
+    body = r.json()
+    assert len(body) == 1
+    assert body[0]["phenotype_version_id"] == 24
+    assert body[0]["hdruk_url"].endswith("/phenotypes/PH12/version/24/detail/")
 
 
 def test_discover_query_too_short_returns_422():

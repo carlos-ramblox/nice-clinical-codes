@@ -519,7 +519,10 @@ export default function CodelistReviewPage({
                   className="text-[#005EA5] hover:underline font-medium"
                 >
                   {a.name}{" "}
-                  <span className="text-gray-400 font-normal">({a.phenotype_id})</span>
+                  <span className="text-gray-400 font-normal">
+                    ({a.phenotype_id}
+                    {a.phenotype_version_id != null && ` v${a.phenotype_version_id}`})
+                  </span>
                 </a>
                 {a.first_publication && (
                   <span className="text-gray-500"> — {a.first_publication}</span>
