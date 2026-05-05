@@ -53,6 +53,34 @@ export interface PhenotypeDiscoveryResult {
   relevance_verdict: "relevant" | "uncertain";
 }
 
+export interface CrossReferenceRow {
+  phenotype_id: string;
+  name: string;
+  hdruk_url: string;
+  overlap_jaccard: number;
+  overlap_generated_in_phenotype: number;
+  overlap_phenotype_in_generated: number;
+  n_generated_codes: number;
+  n_phenotype_codes: number;
+  n_intersection: number;
+  data_sources: string[];
+  first_publication: string;
+  relevance_rationale: string;
+}
+
+export async function getCrossReference(
+  codelistId: string,
+  refresh: boolean = false,
+): Promise<CrossReferenceRow[]> {
+  const params = refresh ? "?refresh=true" : "";
+  const res = await fetch(
+    `${API_BASE}/codelists/${codelistId}/cross-reference${params}`,
+    AUTH_FETCH,
+  );
+  if (!res.ok) throw new Error(`Cross-reference failed: ${res.status}`);
+  return res.json();
+}
+
 export async function discoverPhenotypes(
   query: string,
   topK: number = 5,

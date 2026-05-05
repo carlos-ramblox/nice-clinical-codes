@@ -22,27 +22,20 @@ no ``Depends(get_current_user)`` leaks in.
 from __future__ import annotations
 
 import logging
-import threading
-import time
 
-import requests
 from fastapi import APIRouter, Query
 from pydantic import BaseModel, Field
 from typing import Literal
 
 from app.config import HDR_UK_BASE_URL
 from app.services.phenotype_discovery import (
-    rank_phenotypes_with_rationale,
-    search_phenotypes,
+    clear_discovery_cache,
+    discover_phenotypes_ranked,
 )
 
 logger = logging.getLogger(__name__)
 
 router = APIRouter()
-
-_DISCOVERY_CACHE_TTL_S = 300  # 5 minutes
-_DISCOVERY_CACHE: dict[tuple[str, int], tuple[float, list]] = {}
-_DISCOVERY_CACHE_LOCK = threading.Lock()
 
 
 def _hdruk_detail_url(phenotype_id: str) -> str:
@@ -83,25 +76,6 @@ class PhenotypeDiscoveryResult(BaseModel):
     )
 
 
-def _cache_get(query: str, top_k: int) -> list[PhenotypeDiscoveryResult] | None:
-    key = (query.lower().strip(), top_k)
-    with _DISCOVERY_CACHE_LOCK:
-        entry = _DISCOVERY_CACHE.get(key)
-        if entry is None:
-            return None
-        ts, value = entry
-        if time.time() - ts > _DISCOVERY_CACHE_TTL_S:
-            del _DISCOVERY_CACHE[key]
-            return None
-    return value
-
-
-def _cache_put(query: str, top_k: int, value: list[PhenotypeDiscoveryResult]) -> None:
-    key = (query.lower().strip(), top_k)
-    with _DISCOVERY_CACHE_LOCK:
-        _DISCOVERY_CACHE[key] = (time.time(), value)
-
-
 def _project(phenotype: dict, decision) -> PhenotypeDiscoveryResult:
     """Build the response row from a (phenotype, decision) tuple."""
     pid = phenotype.get("phenotype_id", "")
@@ -136,40 +110,24 @@ def discover_phenotypes(
 
     Each row links to the authoritative HDR UK detail page; the UI does
     NOT proxy or wrap that page. Code-fetching is out of scope for this
-    endpoint (T34 ships read-mode only); T35 covers post-hoc
-    cross-reference with code-overlap measurement.
+    endpoint (the discovery sidebar is read-mode only); the post-hoc
+    cross-reference panel covers code-overlap measurement.
     """
-    cached = _cache_get(query, top_k)
-    if cached is not None:
-        return cached
-
-    try:
-        with requests.Session() as session:
-            session.headers.update({"Accept": "application/json"})
-            phenotypes = search_phenotypes(session, query, top_k)
-    except Exception as exc:
-        # Transient HDR UK failure -- return empty so the UI hides the
-        # sidebar rather than showing a stale or partial result.
-        logger.warning("HDR UK search failed for '%s': %s", query, exc)
-        return []
-
-    if not phenotypes:
-        return []
-
-    ranked = rank_phenotypes_with_rationale(query, phenotypes)
-    out = [_project(p, decision) for p, decision in ranked if p.get("phenotype_id")]
-    _cache_put(query, top_k, out)
-    return out
+    # Cache is now shared with the cross-reference endpoint via the
+    # service layer, so a researcher who hits discovery and then
+    # cross-reference for the same query within 5 minutes pays for at
+    # most one Haiku judge call across the pair.
+    ranked = discover_phenotypes_ranked(query, top_k)
+    return [_project(p, decision) for p, decision in ranked if p.get("phenotype_id")]
 
 
 @router.delete("/phenotypes/discover/cache", include_in_schema=False)
-def _clear_discovery_cache():
-    """Hidden test helper: blow away the in-process cache.
+def _clear_discovery_cache_endpoint():
+    """Hidden test helper: blow away the in-process discovery cache.
 
     Not advertised in the public OpenAPI schema. Used by the endpoint
     tests to isolate cache-hit vs cache-miss behaviour without sleeping
     out the 5-minute TTL.
     """
-    with _DISCOVERY_CACHE_LOCK:
-        _DISCOVERY_CACHE.clear()
+    clear_discovery_cache()
     return {"cleared": True}

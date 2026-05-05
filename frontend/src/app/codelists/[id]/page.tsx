@@ -5,9 +5,11 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import {
   getCodelist,
+  getCrossReference,
   submitReview,
   type Codelist,
   type CodelistDecision,
+  type CrossReferenceRow,
   type ReviewDecisionInput,
 } from "@/lib/api";
 import { useUser } from "@/lib/useUser";
@@ -35,6 +37,184 @@ const decisionColor: Record<HumanDecision, string> = {
   exclude: "bg-red-100 text-red-800 border-red-300",
   uncertain: "bg-amber-100 text-amber-800 border-amber-300",
 };
+
+// Persona pre-flight expectation #4 named a 5% Jaccard threshold below
+// which the panel should explicitly warn the user that no candidate
+// phenotype meaningfully overlaps. The pre-flight itself flagged the
+// number as a guess that should be calibrated against a sample of
+// methods-paper citations once usage data exists; until then this
+// constant is the single source of truth so the calibration is a
+// one-line change.
+const LOW_OVERLAP_JACCARD_THRESHOLD = 0.05;
+
+function CrossReferencePanel({
+  codelistId,
+  codelistQuery,
+}: {
+  codelistId: string;
+  codelistQuery: string;
+}) {
+  // Read-mode validation: rank up to 5 HDR UK phenotypes by code-set
+  // overlap with this codelist's *included* codes. Default collapsed
+  // because the underlying request makes one Haiku judge call + up to
+  // 5 HDR UK codelist fetches; we don't want to pay that on every
+  // page load. Both layers cache (5-min discovery cache + 7-day
+  // per-phenotype file cache) so repeat expands are essentially free.
+  const [open, setOpen] = useState(false);
+  const [rows, setRows] = useState<CrossReferenceRow[] | null>(null);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+
+  const load = async (refresh: boolean = false) => {
+    setLoading(true);
+    setError(null);
+    try {
+      const data = await getCrossReference(codelistId, refresh);
+      setRows(data);
+    } catch (e) {
+      setError(e instanceof Error ? e.message : "Cross-reference failed");
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const handleToggle = () => {
+    const next = !open;
+    setOpen(next);
+    if (next && rows == null && !loading) {
+      load(false);
+    }
+  };
+
+  const formatPct = (n: number) => `${(n * 100).toFixed(0)}%`;
+
+  return (
+    <section className="mb-4 border border-gray-200 bg-white">
+      <button
+        type="button"
+        onClick={handleToggle}
+        aria-expanded={open}
+        className="w-full flex items-center justify-between px-4 py-2.5 text-left hover:bg-gray-50"
+      >
+        <span className="text-sm font-medium text-[#00436C]">
+          Cross-reference with HDR UK Phenotype Library
+          {rows != null && rows.length > 0 && (
+            <span className="ml-2 text-xs text-gray-500 font-normal">
+              {rows.length} match{rows.length === 1 ? "" : "es"}
+            </span>
+          )}
+        </span>
+        <span className="text-xs text-gray-500">{open ? "▴" : "▾"}</span>
+      </button>
+      {open && (
+        <div className="border-t border-gray-200 px-4 py-3">
+          {loading && (
+            <p className="text-xs text-gray-500">Computing overlap…</p>
+          )}
+          {error && (
+            <p className="text-xs text-red-600">Cross-reference failed: {error}</p>
+          )}
+          {!loading && !error && rows != null && rows.length === 0 && (
+            <p className="text-xs text-gray-600">
+              No published HDR UK phenotype meaningfully overlaps with this codelist
+              — re-examine before publishing, or{" "}
+              <Link
+                href={`/?q=${encodeURIComponent(codelistQuery)}`}
+                className="text-[#005EA5] hover:underline"
+              >
+                browse candidate phenotypes for this query
+              </Link>
+              {" "}on the search page.
+            </p>
+          )}
+          {!loading && rows != null && rows.length > 0 && (
+            <>
+              {/* Persona pre-flight flag #4: if no candidate reaches a
+                  material overlap threshold the panel should say so
+                  explicitly. We keep all rows visible for transparency
+                  but prepend the warning so the user does not mis-read
+                  low-overlap results as a clean match. */}
+              {Math.max(...rows.map((r) => r.overlap_jaccard)) < LOW_OVERLAP_JACCARD_THRESHOLD && (
+                <p className="mb-3 px-3 py-2 bg-amber-50 border border-amber-200 text-xs text-amber-900">
+                  Low overlap with all candidate phenotypes — re-examine before publishing.
+                  The rows below are surfaced for transparency, not as endorsements.
+                </p>
+              )}
+              <ul className="divide-y divide-gray-100">
+                {rows.map((row) => (
+                  <li key={row.phenotype_id} className="py-2.5">
+                    <div className="flex items-baseline justify-between gap-3">
+                      <a
+                        href={row.hdruk_url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-[#005EA5] hover:underline font-medium text-sm"
+                      >
+                        {row.name}{" "}
+                        <span className="text-gray-400 font-normal">({row.phenotype_id})</span>
+                      </a>
+                      <span className="shrink-0 text-sm font-mono text-[#00436C]">
+                        {formatPct(row.overlap_jaccard)} Jaccard
+                      </span>
+                    </div>
+                    {row.relevance_rationale && (
+                      <p className="mt-1 text-xs text-gray-600 italic">
+                        {row.relevance_rationale}
+                      </p>
+                    )}
+                    <details className="mt-1 text-xs text-gray-700">
+                      <summary className="cursor-pointer text-gray-500 hover:text-gray-700">
+                        Show breakdown
+                      </summary>
+                      <div className="mt-1 pl-3 space-y-0.5 text-gray-600">
+                        <div>
+                          {formatPct(row.overlap_generated_in_phenotype)} of this codelist&apos;s{" "}
+                          {row.n_generated_codes} included codes appear in the phenotype
+                        </div>
+                        <div>
+                          {formatPct(row.overlap_phenotype_in_generated)} of the phenotype&apos;s{" "}
+                          {row.n_phenotype_codes} codes appear in this codelist
+                        </div>
+                        <div className="text-gray-400">
+                          intersection: {row.n_intersection} codes
+                        </div>
+                        {row.data_sources.length > 0 && (
+                          <div className="text-gray-400">
+                            data sources: {row.data_sources.slice(0, 4).join(", ")}
+                          </div>
+                        )}
+                        {row.first_publication && (
+                          <div className="mt-1 text-gray-500">
+                            <span className="text-gray-400">cite: </span>
+                            {row.first_publication}
+                          </div>
+                        )}
+                      </div>
+                    </details>
+                  </li>
+                ))}
+              </ul>
+              <div className="mt-2 pt-2 border-t border-gray-100 flex items-center justify-between">
+                <span className="text-[11px] text-gray-400">
+                  Read-only validation. Click a phenotype to view it on the HDR UK Phenotype Library.
+                </span>
+                <button
+                  type="button"
+                  onClick={() => load(true)}
+                  disabled={loading}
+                  className="text-xs text-[#005EA5] hover:underline disabled:opacity-50"
+                >
+                  Refresh
+                </button>
+              </div>
+            </>
+          )}
+        </div>
+      )}
+    </section>
+  );
+}
+
 
 function SortableTh({
   label,
@@ -309,6 +489,12 @@ export default function CodelistReviewPage({
           </Link>
         </div>
       </div>
+
+      {/* HDR UK cross-reference panel (T35) — read-only post-hoc validation */}
+      <CrossReferencePanel
+        codelistId={codelist.id}
+        codelistQuery={codelist.query || codelist.name}
+      />
 
       {/* Stats + filter */}
       <div className="flex items-center gap-4 border-y border-gray-200 py-2 text-xs mb-4">

@@ -1055,6 +1055,29 @@ and a post-hoc cross-reference panel that measures code overlap
 between the generated codelist and candidate phenotypes for
 citation-traceability.
 
+**HDR UK Phenotype Library: cross-reference panel** *(shipped 2026-05-05)*
+The post-hoc validation surface is now live on the codelist detail
+page. After a draft codelist is saved, a collapsible panel ranks the
+top-5 HDR UK phenotypes by Jaccard overlap with the codelist's
+*included* code set, with the asymmetric breakdown (% of generated
+in phenotype, % of phenotype in generated) one click away under a
+`<details>` summary. Each row carries the published phenotype's
+data sources and first-publication citation so the user can lift a
+methods-paper citation directly from the panel ("our codelist agrees
+73 % with PH12, used in Smith 2024"). Implementation reuses the
+discovery service's persona-judge for candidate ranking; per-
+phenotype HDR UK codelist fetches sit behind a 7-day file cache
+under `data/cache/hdruk_phenotype_codes/` (gitignored). Code
+normalisation matches the headline benchmark evaluator's rule
+(`benchmark_aggregate.normalize_code`: strip whitespace + dots,
+vocabulary-blind) so the overlap percentage is comparable to the
+project's existing F1 numbers. Empty-codelist and no-meaningful-
+overlap states are surfaced explicitly: the panel renders a
+"re-examine before publishing" hint rather than disappearing
+silently. The cross-reference is read-only — clicking a row opens
+the HDR UK detail page in a new tab; nothing about the user's
+codelist changes.
+
 **LLM confidence calibration**
 Verbalised LLM confidences are currently recorded but unused.
 Post-hoc isotonic calibration on the 15-codelist benchmark labels

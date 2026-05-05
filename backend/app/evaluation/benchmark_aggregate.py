@@ -39,31 +39,16 @@ import numpy as np
 from scipy.stats import bootstrap as scipy_bootstrap
 from statsmodels.stats.contingency_tables import mcnemar
 
+# Canonical normaliser lifted to a leaf module so that callers that only
+# need normalize_code (notably the cross-reference and discovery service
+# paths) do not transitively pull in numpy / scipy / statsmodels at
+# import time. Re-exported here so existing eval scripts that import
+# ``benchmark_aggregate.normalize_code`` keep working.
+from app.db.code_normalize import normalize_code  # noqa: F401  (re-export)
+
 ROOT = Path(__file__).resolve().parents[3]
 BENCH = ROOT / "data" / "test_sets" / "benchmark_2026_04"
 SELECTION = ROOT / "data" / "raw" / "opencodelists" / "selection.json"
-
-
-def normalize_code(code: str, vocabulary: str) -> str:
-    """Code normalization for fair set comparison.
-
-    Strips whitespace and all dots, vocabulary-blind. The same
-    transformation is applied to both reference and output codes, so
-    OPCS-4 codes that carry dots (like "K40.1") are mutated
-    symmetrically — set membership is preserved either way. SNOMED CT
-    has no dots so the strip is a no-op.
-
-    This matches ``evaluator._norm`` exactly so the live
-    ``/api/evaluate`` and the offline aggregator agree on every
-    metric. Earlier divergence (vocab-aware vs. vocab-blind dot
-    stripping) caused OPCS-4 codes to map differently between the
-    two paths; the rule is now uniform.
-
-    The ``vocabulary`` parameter is retained for API compatibility
-    and may be used by future per-vocabulary normalization rules,
-    but is currently ignored.
-    """
-    return (code or "").strip().replace(".", "")
 
 
 def metrics(tp: int, fp: int, fn: int) -> tuple[float, float, float]:

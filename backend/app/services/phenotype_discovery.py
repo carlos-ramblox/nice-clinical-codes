@@ -39,13 +39,18 @@ defensive backoff on 429 / 5xx responses.
 """
 from __future__ import annotations
 
+import json
 import logging
+import threading
 import time
+from pathlib import Path
 from typing import Any
 
 import requests
 from langchain_anthropic import ChatAnthropic
 from pydantic import BaseModel, Field
+
+from app.db.code_normalize import normalize_code
 
 from app.config import (
     ANTHROPIC_API_KEY,
@@ -269,11 +274,230 @@ def judge_phenotype_relevance(query: str, phenotypes: list[dict]) -> list[dict]:
     Falls through to the input unchanged when the judge is disabled (the
     return is the caller's exact list reference) or when the LLM call
     fails / no API key (the return is a fresh list with the same
-    contents). T34's discovery endpoint uses :func:`rank_phenotypes_with_rationale`
-    instead so it can surface the judge's per-row reason; this wrapper
-    keeps the 6 ``test_phenotype_discovery.py`` tests green and is
-    available for future callers that just want the filtered list.
+    contents). The discovery endpoint uses
+    :func:`rank_phenotypes_with_rationale` instead so it can surface the
+    judge's per-row reason; this wrapper pins behaviour for the existing
+    tests and is available for future callers that just want the
+    filtered list.
     """
     if not HDR_UK_USE_JUDGE:
         return phenotypes
     return [p for p, _ in rank_phenotypes_with_rationale(query, phenotypes)]
+
+
+# --- Cached discovery (shared by the discovery endpoint and the
+#     cross-reference endpoint so neither pays for a repeated search +
+#     Haiku judge call within the in-process TTL window). ----------------
+
+_DISCOVERY_CACHE_TTL_S = 300  # 5 minutes
+_DISCOVERY_CACHE: dict[
+    tuple[str, int],
+    tuple[float, list[tuple[dict, _PhenotypeRelevance | None]]],
+] = {}
+_DISCOVERY_CACHE_LOCK = threading.Lock()
+
+
+def _discovery_cache_get(query: str, top_k: int):
+    key = (query.lower().strip(), top_k)
+    with _DISCOVERY_CACHE_LOCK:
+        entry = _DISCOVERY_CACHE.get(key)
+        if entry is None:
+            return None
+        ts, value = entry
+        if time.time() - ts > _DISCOVERY_CACHE_TTL_S:
+            del _DISCOVERY_CACHE[key]
+            return None
+    return value
+
+
+def _discovery_cache_put(query: str, top_k: int, value):
+    key = (query.lower().strip(), top_k)
+    with _DISCOVERY_CACHE_LOCK:
+        _DISCOVERY_CACHE[key] = (time.time(), value)
+
+
+def clear_discovery_cache() -> None:
+    """Test helper: drop all cached discovery results."""
+    with _DISCOVERY_CACHE_LOCK:
+        _DISCOVERY_CACHE.clear()
+
+
+def discover_phenotypes_ranked(
+    query: str,
+    top_k: int = HDR_UK_TOP_K_PHENOTYPES,
+) -> list[tuple[dict, _PhenotypeRelevance | None]]:
+    """Search HDR UK + run the relevance judge, with in-process caching.
+
+    Returns ``(phenotype, decision)`` tuples for phenotypes the judge
+    admitted. ``decision`` is ``None`` for fall-through cases (judge
+    skipped / LLM error / silent omission).
+
+    The 5-minute in-process cache is keyed on the lower-cased trimmed
+    query string and ``top_k``; both the discovery sidebar endpoint and
+    the post-hoc cross-reference panel share it so a researcher who
+    discovers a phenotype and then later asks for cross-reference on the
+    same query pays for at most one Haiku call across the pair.
+    """
+    cached = _discovery_cache_get(query, top_k)
+    if cached is not None:
+        return cached
+    try:
+        with requests.Session() as session:
+            session.headers.update({"Accept": "application/json"})
+            phenotypes = search_phenotypes(session, query, top_k)
+    except Exception as exc:
+        logger.warning("HDR UK search failed for '%s': %s", query, exc)
+        return []
+    if not phenotypes:
+        empty: list[tuple[dict, _PhenotypeRelevance | None]] = []
+        _discovery_cache_put(query, top_k, empty)
+        return empty
+    ranked = rank_phenotypes_with_rationale(query, phenotypes)
+    _discovery_cache_put(query, top_k, ranked)
+    return ranked
+
+
+# --- Phenotype-codelist fetch + file cache (T35) -------------------------
+#
+# HDR UK phenotype codelists are versioned and immutable per version, so
+# a 7-day file-cache TTL is safe; the user can bust it via ``?refresh=1``
+# on the cross-reference endpoint when they want to pick up a new
+# version. Cache files live under ``data/cache/hdruk_phenotype_codes/``
+# (gitignored) and store the *normalised* code set so the cross-reference
+# overlap computation is just set arithmetic at read time. The 7-day
+# TTL is a pragmatic guess; phenotype-library updates are rare and the
+# refresh affordance is the escape hatch.
+
+_PHENOTYPE_CACHE_TTL_S = 7 * 24 * 3600  # 7 days
+# parents[3] = repo root: this file lives at backend/app/services/, so
+# parents[0] = services, parents[1] = app, parents[2] = backend,
+# parents[3] = repo root. Cache lives at <repo_root>/data/cache/... and
+# is gitignored.
+_PHENOTYPE_CACHE_DIR = Path(__file__).resolve().parents[3] / "data" / "cache" / "hdruk_phenotype_codes"
+
+
+def _phenotype_cache_path(phenotype_id: str, version: int | None) -> Path:
+    """Return the file path for a cached phenotype codelist.
+
+    Encoded as ``{id}__{version}.json`` so callers that want a specific
+    version (T35 cross-reference reproducibility) can pin one; ``None``
+    means "the live default version" and is cached under
+    ``{id}__live.json``.
+    """
+    suffix = "live" if version is None else str(version)
+    return _PHENOTYPE_CACHE_DIR / f"{phenotype_id}__{suffix}.json"
+
+
+def _load_phenotype_cache(path: Path) -> set[str] | None:
+    """Return the cached normalised code set, or ``None`` if missing/expired."""
+    if not path.exists():
+        return None
+    age = time.time() - path.stat().st_mtime
+    if age > _PHENOTYPE_CACHE_TTL_S:
+        return None
+    try:
+        with open(path, encoding="utf-8") as f:
+            payload = json.load(f)
+    except Exception as exc:
+        logger.warning("HDR UK phenotype-cache read failed for %s: %s", path.name, exc)
+        return None
+    codes = payload.get("codes", [])
+    return set(codes) if isinstance(codes, list) else None
+
+
+def _save_phenotype_cache(path: Path, codes: set[str]) -> None:
+    """Persist the normalised code set; cache directory is created on demand."""
+    try:
+        path.parent.mkdir(parents=True, exist_ok=True)
+        with open(path, "w", encoding="utf-8") as f:
+            json.dump({"codes": sorted(codes), "n": len(codes)}, f)
+    except Exception as exc:
+        logger.warning("HDR UK phenotype-cache write failed for %s: %s", path.name, exc)
+
+
+def fetch_phenotype_codes(
+    session: requests.Session,
+    phenotype_id: str,
+    version: int | None = None,
+    refresh: bool = False,
+) -> set[str]:
+    """Return the normalised code set for an HDR UK phenotype.
+
+    Set elements use the same normalisation rule the headline benchmark
+    evaluator applies (``benchmark_aggregate.normalize_code``: strip
+    whitespace + dots, vocabulary-blind) so the cross-reference overlap
+    measurement is comparable to the project's existing F1 numbers.
+
+    Reads through a 7-day file cache by default. ``refresh=True`` skips
+    the cache lookup but still writes the result back, so a one-off
+    refresh repopulates the cache for subsequent reads.
+    """
+    if not phenotype_id:
+        return set()
+    cache_path = _phenotype_cache_path(phenotype_id, version)
+    if not refresh:
+        cached = _load_phenotype_cache(cache_path)
+        if cached is not None:
+            return cached
+    base = HDR_UK_BASE_URL.rstrip("/")
+    if version is None:
+        url = f"{base}/api/v1/phenotypes/{phenotype_id}/export/codes/"
+    else:
+        url = f"{base}/api/v1/phenotypes/{phenotype_id}/version/{version}/export/codes"
+    try:
+        payload = _get_with_backoff(session, url)
+    except Exception as exc:
+        logger.warning("HDR UK phenotype fetch failed for %s: %s", phenotype_id, exc)
+        return set()
+    rows: list[dict]
+    if isinstance(payload, list):
+        rows = payload
+    elif isinstance(payload, dict) and isinstance(payload.get("data"), list):
+        rows = payload["data"]
+    else:
+        rows = []
+    codes: set[str] = set()
+    for row in rows:
+        raw = row.get("code") if isinstance(row, dict) else None
+        if not raw:
+            continue
+        coding = (row.get("coding_system") or {}) if isinstance(row, dict) else {}
+        vocab = coding.get("name", "") if isinstance(coding, dict) else ""
+        normalised = normalize_code(str(raw), vocab)
+        if normalised:
+            codes.add(normalised)
+    _save_phenotype_cache(cache_path, codes)
+    return codes
+
+
+def compute_overlap(generated: set[str], phenotype: set[str]) -> dict[str, float | int]:
+    """Return Jaccard + the two asymmetric overlap percentages.
+
+    Jaccard = |A ∩ B| / |A ∪ B|. The asymmetric numbers answer the two
+    questions a methods researcher actually wants ranked side-by-side:
+    *"how much of my generated list is already in this phenotype?"* and
+    *"how much of this phenotype is in my generated list?"*. Single
+    Jaccard is the primary affordance; the asymmetric pair lives one
+    click away in the UI.
+
+    All-zero output for empty inputs is the explicit contract: an empty
+    generated codelist (rare, but possible during draft) has zero
+    overlap with anything; the caller decides how to surface that
+    (typically: hide the row).
+    """
+    n_generated = len(generated)
+    n_phenotype = len(phenotype)
+    intersection = generated & phenotype
+    n_intersection = len(intersection)
+    union = generated | phenotype
+    jaccard = (n_intersection / len(union)) if union else 0.0
+    gen_in_phen = (n_intersection / n_generated) if n_generated else 0.0
+    phen_in_gen = (n_intersection / n_phenotype) if n_phenotype else 0.0
+    return {
+        "overlap_jaccard": round(jaccard, 4),
+        "overlap_generated_in_phenotype": round(gen_in_phen, 4),
+        "overlap_phenotype_in_generated": round(phen_in_gen, 4),
+        "n_generated_codes": n_generated,
+        "n_phenotype_codes": n_phenotype,
+        "n_intersection": n_intersection,
+    }

@@ -41,6 +41,9 @@ chromadb_data/
 *.db-wal
 *.sqlite3
 backend/data/
+# Per-phenotype codelist cache for the HDR UK cross-reference panel.
+# Populated lazily, gitignored, busted via ?refresh=1 on the endpoint.
+data/cache/hdruk_phenotype_codes/
 
 # ML artifacts
 *.joblib
