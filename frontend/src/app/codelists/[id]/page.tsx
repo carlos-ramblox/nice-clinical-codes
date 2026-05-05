@@ -283,6 +283,12 @@ export default function CodelistReviewPage({
   useEffect(() => {
     if (!user) return;
     let cancelled = false;
+    // The synchronous setState is intentional: it resets the spinner
+    // when the route param id changes (navigating between codelists).
+    // The lint-clean React-19 alternative is `useTransition` or
+    // `<Suspense>` with the new `use()` API; that's a wider refactor
+    // for a separate ticket.
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setLoading(true);
     getCodelist(id)
       .then((cl) => {

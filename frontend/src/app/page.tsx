@@ -481,7 +481,6 @@ export default function Home() {
   };
 
   const results = response?.results ?? null;
-  const summary = response?.summary as Record<string, number> | undefined;
 
   // UMLS-enriched codes are suggestions (synonym/narrower/sibling expansion from
   // the UMLS Metathesaurus), not direct retrievals. Route them to the Review tab
