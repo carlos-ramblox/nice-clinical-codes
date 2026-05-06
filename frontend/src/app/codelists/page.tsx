@@ -147,6 +147,17 @@ export default function CodelistsPage() {
                   <span className="ml-2 text-xs text-gray-400">
                     v{r.version}
                   </span>
+                  {/* Only meaningful on approved rows -- a draft with
+                      private=1 isn't hiding anything because drafts
+                      aren't on the gallery in the first place. */}
+                  {r.status === "approved" && r.private ? (
+                    <span
+                      className="ml-2 text-xs text-gray-500 border border-gray-300 px-1 py-0.5"
+                      title="Hidden from the public gallery"
+                    >
+                      hidden
+                    </span>
+                  ) : null}
                 </td>
                 <td className="px-4 py-2 text-gray-700">
                   {r.query || <em className="text-gray-400">—</em>}

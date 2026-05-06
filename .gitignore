@@ -93,6 +93,7 @@ docker-compose.override.yml
 AGENTS.md
 CLAUDE.md
 .claude/
+.agents/
 
 # Jupyter
 .ipynb_checkpoints/

@@ -7,6 +7,7 @@ import {
   exportCodelistOhdsi,
   getCodelist,
   getCrossReference,
+  setCodelistPrivacy,
   submitReview,
   type Codelist,
   type CodelistDecision,
@@ -15,7 +16,7 @@ import {
   type ReviewDecisionInput,
 } from "@/lib/api";
 import { useUser } from "@/lib/useUser";
-import { downloadBlob } from "@/lib/download";
+import { downloadBlob, slugify } from "@/lib/download";
 import { ConfirmModal } from "../../ConfirmModal";
 
 type HumanDecision = "include" | "exclude" | "uncertain";
@@ -278,6 +279,12 @@ export default function CodelistReviewPage({
   const [ohdsiBusy, setOhdsiBusy] = useState(false);
   const [ohdsiCopied, setOhdsiCopied] = useState(false);
   const [ohdsiError, setOhdsiError] = useState<string | null>(null);
+  // T32 — local mirror of codelist.private so the toggle reflects the
+  // mutation immediately without a refetch. null until the codelist
+  // loads. SQLite returns 0/1 so we coerce to bool on read.
+  const [isPrivate, setIsPrivate] = useState<boolean | null>(null);
+  const [privacyBusy, setPrivacyBusy] = useState(false);
+  const [privacyError, setPrivacyError] = useState<string | null>(null);
   const [filter, setFilter] = useState<"all" | HumanDecision>("all");
   const [sortMode, setSortMode] = useState<SortMode>("uncertainty");
 
@@ -301,6 +308,7 @@ export default function CodelistReviewPage({
       .then((cl) => {
         if (cancelled) return;
         setCodelist(cl);
+        setIsPrivate(Boolean(cl.private));
         const init: Record<number, DraftState> = {};
         for (const d of cl.decisions) {
           init[d.id] = {
@@ -429,16 +437,26 @@ export default function CodelistReviewPage({
       const blob = new Blob([JSON.stringify(data.concept_set, null, 2)], {
         type: "application/json",
       });
-      const slug = (codelist.name || codelist.query || "codelist")
-        .toLowerCase()
-        .replace(/[^a-z0-9]+/g, "-")
-        .replace(/^-+|-+$/g, "")
-        .slice(0, 60) || "codelist";
-      downloadBlob(blob, `${slug}.ohdsi.json`);
+      downloadBlob(blob, `${slugify(codelist.name || codelist.query)}.ohdsi.json`);
     } catch (err) {
       setOhdsiError(err instanceof Error ? err.message : "OHDSI export failed");
     } finally {
       setOhdsiBusy(false);
+    }
+  };
+
+  const handlePrivacyToggle = async () => {
+    if (!codelist || isPrivate == null || privacyBusy) return;
+    const next = !isPrivate;
+    setPrivacyBusy(true);
+    setPrivacyError(null);
+    try {
+      const result = await setCodelistPrivacy(codelist.id, next);
+      setIsPrivate(Boolean(result.private));
+    } catch (e) {
+      setPrivacyError(e instanceof Error ? e.message : "Privacy update failed");
+    } finally {
+      setPrivacyBusy(false);
     }
   };
 
@@ -535,6 +553,43 @@ export default function CodelistReviewPage({
           >
             View audit log →
           </Link>
+          {/* T32: owner-only opt-out from /gallery. Approved + non-private
+              rows show up at /gallery; flipping this hides the row without
+              affecting the artefact, the audit log, or the signature. */}
+          {user && codelist.created_by === user.id && isPrivate != null && (
+            <div className="mt-3 text-xs">
+              <label className="inline-flex items-center gap-2 cursor-pointer">
+                <input
+                  type="checkbox"
+                  checked={isPrivate}
+                  disabled={privacyBusy}
+                  onChange={handlePrivacyToggle}
+                  className="rounded border-gray-300"
+                />
+                <span className="text-gray-700">
+                  Hide from public gallery
+                </span>
+              </label>
+              {/* Spell out the four (status × isPrivate) states explicitly
+                  so the owner knows what visibility they're committing to.
+                  The previous copy left the draft case ambiguous ("Pre-
+                  marking is supported") without saying which way it was
+                  pre-marked. */}
+              <div className="mt-0.5 text-[11px] text-gray-500">
+                {codelist.status === "approved" && isPrivate &&
+                  "Hidden from the public /gallery."}
+                {codelist.status === "approved" && !isPrivate &&
+                  "Visible at the public /gallery."}
+                {codelist.status !== "approved" && isPrivate &&
+                  "Pre-marked. This codelist will be hidden from /gallery once approved."}
+                {codelist.status !== "approved" && !isPrivate &&
+                  "Will appear at /gallery once approved. Tick to opt out before approving."}
+              </div>
+              {privacyError && (
+                <div className="mt-1 text-red-700">{privacyError}</div>
+              )}
+            </div>
+          )}
           <div className="mt-3 flex flex-col items-end gap-1">
             <button
               onClick={handleOhdsiExport}
@@ -843,6 +898,20 @@ export default function CodelistReviewPage({
           {error && (
             <div className="text-xs text-red-700 bg-red-50 border border-red-200 rounded p-2 mb-3">
               {error}
+            </div>
+          )}
+          {/* T32: warn the reviewer that the codelist's query and per-code
+              AI rationales will appear publicly on approval, *unless* it's
+              already pre-marked private. The owner-only opt-out lives in
+              the right-column toggle; non-owner reviewers see a softer
+              variant of the warning since they can't flip it themselves. */}
+          {!isPrivate && (
+            <div className="text-xs text-amber-900 bg-amber-50 border border-amber-200 rounded p-2 mb-3">
+              On approval this codelist&apos;s query and per-code AI rationales
+              will appear at <code className="font-mono">/gallery</code>; reviewer
+              names and override comments are redacted. {user && codelist.created_by === user.id
+                ? "Use the privacy toggle above to opt out before approving."
+                : "Only the codelist creator can opt out."}
             </div>
           )}
           <div className="flex gap-2">

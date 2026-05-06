@@ -84,6 +84,14 @@ class ReviewRequest(BaseModel):
     notes: Optional[str] = None
 
 
+class PrivacyRequest(BaseModel):
+    # T32: owner-only opt-out from /gallery. True hides the row from the
+    # public surface; False puts it back. Status-agnostic on purpose --
+    # an owner can pre-mark a draft private so it never auto-publishes
+    # the moment it's approved.
+    private: bool
+
+
 # --- list / read ------------------------------------------------------------
 
 @router.get("")
@@ -366,3 +374,27 @@ async def review_codelist(
         **result,
         "reviewed_by": user["name"],
     }
+
+
+# --- T32 privacy toggle -----------------------------------------------------
+
+@router.put("/{codelist_id}/privacy")
+async def set_privacy(
+    codelist_id: str,
+    body: PrivacyRequest,
+    user: dict = Depends(get_current_user),
+):
+    """Owner-only flip of the public-gallery opt-out flag. 404 for
+    missing, 403 for not-the-owner -- distinguishing the two is fine
+    here because the auth route already requires a session."""
+    try:
+        return hitl_store.set_codelist_privacy(
+            cid=codelist_id, private=body.private, user_id=user["id"],
+        )
+    except KeyError:
+        raise HTTPException(status_code=404, detail="Codelist not found")
+    except PermissionError:
+        raise HTTPException(
+            status_code=403,
+            detail="Only the codelist creator can change its privacy.",
+        )

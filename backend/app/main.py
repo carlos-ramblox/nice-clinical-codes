@@ -10,6 +10,7 @@ from app.api.routes import router
 from app.api.auth import router as auth_router
 from app.api.codelists import router as codelists_router
 from app.api.phenotypes import router as phenotypes_router
+from app.api.public_codelists import router as public_codelists_router
 
 logger = logging.getLogger(__name__)
 
@@ -58,6 +59,7 @@ app.include_router(router, prefix="/api")
 app.include_router(auth_router, prefix="/api")
 app.include_router(codelists_router, prefix="/api")
 app.include_router(phenotypes_router, prefix="/api")
+app.include_router(public_codelists_router, prefix="/api")
 
 
 @app.get("/health")

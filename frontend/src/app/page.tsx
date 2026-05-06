@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect, useMemo } from "react";
+import Link from "next/link";
 import { useRouter } from "next/navigation";
 import {
   searchCodes,
@@ -8,6 +9,7 @@ import {
   exportCodesOhdsi,
   createCodelist,
   discoverPhenotypes,
+  getPublicCount,
 } from "@/lib/api";
 import type {
   CodeResult,
@@ -17,7 +19,7 @@ import type {
   OhdsiExport,
 } from "@/lib/api";
 import { useUser } from "@/lib/useUser";
-import { downloadBlob } from "@/lib/download";
+import { downloadBlob, slugify } from "@/lib/download";
 import { getRecent, pushRecent, formatAgo, type RecentSearch } from "@/lib/recentSearches";
 import { ConfirmModal } from "./ConfirmModal";
 
@@ -396,6 +398,19 @@ export default function Home() {
   const [recent, setRecent] = useState<RecentSearch[]>([]);
   useEffect(() => { setRecent(getRecent()); }, []);
 
+  // T32: count of approved & non-private codelists. Surfaced in the hero
+  // as "Browse N approved codelists" only when N > 0 -- the link is
+  // pointless before any codelist has been approved, and a "0 approved"
+  // claim would advertise an empty gallery to first-time visitors.
+  const [galleryCount, setGalleryCount] = useState<number | null>(null);
+  useEffect(() => {
+    let cancelled = false;
+    getPublicCount()
+      .then((n) => { if (!cancelled) setGalleryCount(n); })
+      .catch(() => { /* swallow: hero link is supplementary, not required */ });
+    return () => { cancelled = true; };
+  }, []);
+
   // T34b: adopted-phenotype state for the discovery sidebar.
   // Session-scoped on purpose: no localStorage, no server pre-state.
   // The persona model is "browse-then-decide": adoptions are a UI-layer
@@ -579,12 +594,7 @@ export default function Home() {
       const blob = new Blob([JSON.stringify(data.concept_set, null, 2)], {
         type: "application/json",
       });
-      const slug = (response.query || "codelist")
-        .toLowerCase()
-        .replace(/[^a-z0-9]+/g, "-")
-        .replace(/^-+|-+$/g, "")
-        .slice(0, 60) || "codelist";
-      downloadBlob(blob, `${slug}.ohdsi.json`);
+      downloadBlob(blob, `${slugify(response.query)}.ohdsi.json`);
     } catch (err) {
       setError(err instanceof Error ? err.message : "OHDSI export failed");
     } finally {
@@ -652,6 +662,16 @@ export default function Home() {
             Search SNOMED CT and ICD-10 codes across NHS reference sets, QOF rules,
             and published codelists.
           </p>
+          {galleryCount != null && galleryCount > 0 && (
+            <p className="mt-3 text-sm">
+              <Link
+                href="/gallery"
+                className="text-[#005EA5] hover:underline"
+              >
+                Browse {galleryCount} approved codelist{galleryCount === 1 ? "" : "s"} →
+              </Link>
+            </p>
+          )}
         </div>
       )}
 

@@ -68,6 +68,30 @@ def _migrate_schema(conn: sqlite3.Connection) -> None:
         except sqlite3.OperationalError as exc:
             if "duplicate column" not in str(exc).lower():
                 raise
+
+    # T32: ``private`` column. Schema default is 0 (new codelists are
+    # public by default per audit Rank 5), but on a pre-T32 database
+    # every already-approved row was reviewed under a no-public-gallery
+    # mental model. Back-fill those rows to private=1 so the migration
+    # is *not* a one-way visibility door for existing reviewers; new
+    # codelists created after the migration still get the audit-led
+    # default-public behaviour from the column DEFAULT.
+    #
+    # The back-fill UPDATE runs only when the ALTER actually succeeded
+    # (first run of this migration). On subsequent runs the ALTER
+    # raises ``duplicate column`` and the UPDATE is skipped, so a
+    # reviewer who later flipped a row back to public is not silently
+    # re-hidden.
+    try:
+        conn.execute(
+            "ALTER TABLE codelists ADD COLUMN private INTEGER NOT NULL DEFAULT 0",
+        )
+        conn.execute("UPDATE codelists SET private = 1")
+        logger.info("T32 migration: back-filled private=1 on pre-T32 codelists")
+    except sqlite3.OperationalError as exc:
+        if "duplicate column" not in str(exc).lower():
+            raise
+
     conn.commit()
 
 
@@ -100,7 +124,9 @@ def _init_schema(conn: sqlite3.Connection) -> None:
             -- Migrate-friendly defaults so pre-T29 rows read back as empty
             -- and signature_hash stays byte-compatible.
             include_criteria TEXT NOT NULL DEFAULT '[]',
-            exclude_criteria TEXT NOT NULL DEFAULT '[]'
+            exclude_criteria TEXT NOT NULL DEFAULT '[]',
+            -- T32: owner-flippable opt-out for the public /gallery surface.
+            private INTEGER NOT NULL DEFAULT 0
         );
 
         CREATE TABLE IF NOT EXISTS codelist_decisions (
@@ -387,12 +413,222 @@ def get_codelist(cid: str) -> dict | None:
     return result
 
 
+# --- T32 public-gallery redaction & list/get -------------------------------
+#
+# The public surface returns approved codelists without auth. Three things
+# leak personal data and must be stripped before the row leaves the API:
+#   - reviewer / creator full names  -> reduced to initials
+#   - per-decision override comments -> dropped (free-text PII)
+#   - UMLS-suggestion rows           -> dropped; they're algorithmic
+#     suggestions awaiting reviewer adjudication, not part of the
+#     approved set in the spirit of the artefact.
+#
+# Redaction happens at the DAO layer so every public route shares one
+# code path; the auth route returns the raw row unchanged.
+
+
+_HONORIFICS_AND_SUFFIXES = {
+    # honorifics
+    "dr", "mr", "mrs", "ms", "miss", "prof", "professor",
+    "sir", "dame", "lord", "lady", "rev", "revd", "hon",
+    # post-nominal qualifications that are not name parts
+    "phd", "md", "mbbs", "frcp", "mrcp", "frcs",
+}
+
+
+def _initials(name: str | None) -> str:
+    """'Dr Jane Smith' -> 'JS'. 'Smith, J.' -> 'SJ'. Empty/None -> ''.
+
+    Strips punctuation per token rather than dropping any token that
+    happens to end in punctuation -- the older path silently lost the
+    surname when the name came in 'Surname, Forename' form (NHS
+    directory style). Dots become whitespace (so 'J.K.' splits into
+    two initials) and the strip set covers the remaining trailing
+    punctuation cases.
+    """
+    if not name:
+        return ""
+    tokens = [t.strip(",;:") for t in name.replace(".", " ").split()]
+    parts = [t for t in tokens if t and t.lower() not in _HONORIFICS_AND_SUFFIXES]
+    return "".join(p[0].upper() for p in parts)
+
+
+def _redact_summary_row(row: dict) -> dict:
+    """Row-level PII redaction: numeric user ids stripped, names reduced
+    to initials, parent_id (versioning pointer) dropped.
+
+    Single source of truth for the row-level redaction contract; called
+    from both ``list_public_codelists`` (raw SQL list path) and
+    ``_redact_codelist`` (detail path on top of ``get_codelist``). When
+    a future schema change adds another reviewer-identifying field this
+    is the one place to update.
+    """
+    out = dict(row)
+    # Drop raw user_id columns; an unauthenticated visitor has no use for
+    # them and they'd allow cross-referencing reviewer activity by id.
+    for key in ("created_by", "reviewed_by"):
+        out.pop(key, None)
+    out["created_by_initials"] = _initials(out.pop("created_by_name", None))
+    out["reviewed_by_initials"] = _initials(out.pop("reviewed_by_name", None))
+    # parent_id is the versioning chain pointer. If a public codelist
+    # were ever forked from a private/draft parent, leaking the parent's
+    # id would let a visitor probe the parent's existence by trying it
+    # against /api/public/codelists/{id} and reading 404 vs row.
+    out.pop("parent_id", None)
+    return out
+
+
+def _redact_codelist(row: dict) -> dict:
+    """Return a copy of ``row`` safe to expose to an unauthenticated caller.
+
+    Drops UMLS-suggestion decisions, removes override comments, replaces
+    reviewer/creator names with initials, strips numeric user ids and
+    review notes. Sets ``redacted=True`` so downstream consumers can't
+    mistake a redacted body for a full one.
+    """
+    out = _redact_summary_row(row)
+    out["redacted"] = True
+    # Review notes can carry reviewer-identifying free text. Drop wholesale
+    # rather than try to scrub.
+    out.pop("review_notes", None)
+
+    decisions = out.get("decisions") or []
+    redacted_decisions: list[dict] = []
+    for d in decisions:
+        if d.get("is_umls_suggestion"):
+            continue
+        rd = dict(d)
+        rd.pop("override_comment", None)
+        # is_umls_suggestion is always 0 here (UMLS rows dropped above);
+        # don't ship a column whose value is structurally fixed.
+        rd.pop("is_umls_suggestion", None)
+        # ai_rationale is model output, not PII -- keep it; it's the
+        # main signal a public visitor will read.
+        redacted_decisions.append(rd)
+    out["decisions"] = redacted_decisions
+
+    # Stats the gallery list view wants without making the caller paginate
+    # the decisions array client-side.
+    out["included_count"] = sum(
+        1 for d in redacted_decisions if d.get("human_decision") == "include"
+    )
+    out["decisions_count"] = len(redacted_decisions)
+    return out
+
+
+def count_public_codelists() -> int:
+    """Approved & non-private codelists. Cheap; safe to call on every render."""
+    conn = get_connection()
+    return conn.execute(
+        "SELECT COUNT(*) FROM codelists WHERE status = 'approved' AND private = 0"
+    ).fetchone()[0]
+
+
+def list_public_codelists(limit: int = 100, offset: int = 0) -> list[dict]:
+    """Gallery list view -- approved & non-private rows, redacted, newest first.
+
+    Ordered by reviewed_at DESC; ties broken by created_at so the order is
+    stable when reviewed_at happens to be equal (or NULL on legacy rows
+    that somehow slipped through with status=approved).
+    """
+    conn = get_connection()
+    # Two joins so reviewer initials show in the list view as well as the
+    # detail view -- otherwise the gallery list shows the author but not
+    # the reviewer, which is jarring once a researcher clicks through.
+    rows = conn.execute(
+        """SELECT c.id, c.name, c.version, c.status, c.query,
+                  c.created_by, uc.name AS created_by_name,
+                  c.created_at, c.reviewed_by, ur.name AS reviewed_by_name,
+                  c.reviewed_at, c.signature_hash,
+                  (SELECT COUNT(*) FROM codelist_decisions d
+                     WHERE d.codelist_id = c.id
+                       AND d.is_umls_suggestion = 0) AS decisions_count,
+                  (SELECT COUNT(*) FROM codelist_decisions d
+                     WHERE d.codelist_id = c.id
+                       AND d.is_umls_suggestion = 0
+                       AND d.human_decision = 'include') AS included_count
+             FROM codelists c
+             LEFT JOIN users uc ON uc.id = c.created_by
+             LEFT JOIN users ur ON ur.id = c.reviewed_by
+            WHERE c.status = 'approved' AND c.private = 0
+            ORDER BY COALESCE(c.reviewed_at, c.created_at) DESC, c.id
+            LIMIT ? OFFSET ?""",
+        (max(1, min(limit, 500)), max(0, offset)),
+    ).fetchall()
+    return [_redact_summary_row(dict(r)) for r in rows]
+
+
+def get_public_codelist(cid: str) -> dict | None:
+    """Same data as get_codelist but redacted, and only when approved+!private.
+
+    Returns None if the codelist either does not exist or is not eligible
+    for public display -- the route layer turns that into a single 404 so
+    a private codelist's id is indistinguishable from a missing one.
+
+    Visibility is checked on the SAME row read by ``get_codelist`` rather
+    than via a separate prior SELECT; an owner flipping ``private`` between
+    two queries would otherwise let a redacted-but-now-private body slip
+    through the gap.
+
+    TODO(T26): ``get_codelist`` itself fires four separate SELECTs without
+    an explicit transaction, so a private flip mid-read could still affect
+    the decision/audit fan-out reads. Wrap in BEGIN/COMMIT alongside the
+    submit_review serialisation deferred for the same ticket.
+    """
+    full = get_codelist(cid)
+    if full is None:
+        return None
+    if full.get("status") != "approved" or full.get("private"):
+        return None
+    return _redact_codelist(full)
+
+
+def set_codelist_privacy(cid: str, private: bool, user_id: int) -> dict:
+    """Owner-flippable opt-out from the public gallery.
+
+    Returns ``{"id", "private", "status"}`` on success -- ``private`` is
+    the raw 0/1 int to match the wire shape of ``list_codelists`` and
+    ``get_codelist``, so a frontend that patches a list-row from the
+    mutation response doesn't have to reconcile two formats.
+
+    Raises ``KeyError`` if the codelist does not exist; ``PermissionError``
+    if the caller is not the creator. The mutation is appended to the
+    audit log so a flip back-and-forth is visible.
+    """
+    conn = get_connection()
+    row = conn.execute(
+        "SELECT created_by, status, private FROM codelists WHERE id = ?",
+        (cid,),
+    ).fetchone()
+    if row is None:
+        raise KeyError(f"codelist not found: {cid}")
+    if row["created_by"] != user_id:
+        raise PermissionError("only the codelist creator can change privacy")
+    new_val = 1 if private else 0
+    if row["private"] != new_val:
+        conn.execute(
+            "UPDATE codelists SET private = ? WHERE id = ?", (new_val, cid),
+        )
+        # Audit details keep the bool form: it's persisted JSON the
+        # frontend reads as a human-readable history, not a row patched
+        # back into the codelist list.
+        _append_audit(
+            conn, cid,
+            event="privacy_changed",
+            user_id=user_id,
+            details={"private": bool(new_val)},
+        )
+        conn.commit()
+    return {"id": cid, "private": new_val, "status": row["status"]}
+
+
 def list_codelists(user_id: int | None = None, status: str | None = None) -> list[dict]:
     conn = get_connection()
     sql = (
         """SELECT c.id, c.name, c.version, c.status, c.query,
                   c.created_by, u.name AS created_by_name,
                   c.created_at, c.reviewed_by, c.reviewed_at,
+                  c.private,
                   (SELECT COUNT(*) FROM codelist_decisions d WHERE d.codelist_id = c.id)
                     AS decision_count
              FROM codelists c LEFT JOIN users u ON u.id = c.created_by

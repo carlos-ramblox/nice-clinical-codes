@@ -251,6 +251,9 @@ export interface CodelistSummary {
   reviewed_by: number | null;
   reviewed_at: string | null;
   decision_count: number;
+  // T32: 0/1 flag. Surfaced so the My Codelists list can render a
+  // "hidden from gallery" indicator without re-fetching each row.
+  private?: 0 | 1;
 }
 
 export interface CodelistDecision {
@@ -286,6 +289,9 @@ export interface Codelist extends CodelistSummary {
   // (the column DEFAULT '[]' migration covers older rows).
   include_criteria: string[];
   exclude_criteria: string[];
+  // T32 — owner-flippable opt-out from the public gallery. SQLite
+  // INTEGER 0/1 over the JSON wire; coerce to bool at the use site.
+  private?: 0 | 1;
 }
 
 export interface AuditEvent {
@@ -380,4 +386,123 @@ export async function submitReview(
     throw new Error(`Review failed: ${res.status} ${detail}`);
   }
   return res.json();
+}
+
+// T32 — owner-only opt-out from the public /gallery surface. The route
+// 403s for non-owners and 404s for missing codelists; surfaced separately
+// so the codelist-detail page can render distinct error states.
+//
+// The response's `private` field is the raw 0/1 int (same shape as
+// list/detail GETs), so a caller can patch a list row in place without
+// reconciling two formats. Coerce with `Boolean(...)` at the use site.
+export async function setCodelistPrivacy(
+  id: string,
+  isPrivate: boolean,
+): Promise<{ id: string; private: 0 | 1; status: CodelistStatus }> {
+  const res = await fetch(`${API_BASE}/codelists/${id}/privacy`, {
+    ...AUTH_FETCH,
+    method: "PUT",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ private: isPrivate }),
+  });
+  if (!res.ok) throw new Error(`Privacy update failed: ${res.status}`);
+  return res.json();
+}
+
+// --- T32: public gallery (no auth) ----------------------------------------
+//
+// Mirrors a redacted subset of the auth-side codelist read shape. Names
+// are reduced to initials, override comments are gone, UMLS-suggestion
+// rows are filtered out before the body leaves the API. `redacted: true`
+// is set on the detail body so the gallery UI can surface that
+// distinction to a visitor.
+
+export interface PublicCodelistSummary {
+  id: string;
+  name: string;
+  version: number;
+  status: "approved";
+  query: string;
+  created_at: string;
+  reviewed_at: string | null;
+  signature_hash: string | null;
+  decisions_count: number;
+  included_count: number;
+  created_by_initials: string;
+  reviewed_by_initials: string;
+}
+
+// Same fields as CodelistDecision minus override_comment (redacted),
+// minus is_umls_suggestion (the public route drops those rows entirely).
+export interface PublicCodelistDecision {
+  id: number;
+  code: string;
+  term: string;
+  vocabulary: string;
+  ai_decision: "include" | "exclude" | "uncertain";
+  ai_confidence: number;
+  ai_rationale: string;
+  human_decision: "include" | "exclude" | "uncertain";
+  sources: string[];
+  concept_id: number | null;
+}
+
+export interface PublicCodelist extends PublicCodelistSummary {
+  redacted: true;
+  decisions: PublicCodelistDecision[];
+  adopted_phenotypes: AdoptedPhenotype[];
+  include_criteria: string[];
+  exclude_criteria: string[];
+}
+
+// PUBLIC_FETCH skips credentials so cookies aren't sent on the gallery
+// surface; the routes don't read them but the cleaner separation matches
+// the spirit of "this is the unauthenticated view".
+const PUBLIC_FETCH: RequestInit = { credentials: "omit" };
+
+export async function getPublicCount(): Promise<number> {
+  const res = await fetch(`${API_BASE}/public/codelists/count`, PUBLIC_FETCH);
+  if (!res.ok) throw new Error(`Public count failed: ${res.status}`);
+  const body = (await res.json()) as { count: number };
+  return body.count;
+}
+
+export async function listPublicCodelists(opts: {
+  limit?: number;
+  offset?: number;
+} = {}): Promise<PublicCodelistSummary[]> {
+  const params = new URLSearchParams();
+  if (opts.limit) params.set("limit", String(opts.limit));
+  if (opts.offset) params.set("offset", String(opts.offset));
+  const qs = params.toString();
+  const res = await fetch(
+    `${API_BASE}/public/codelists${qs ? `?${qs}` : ""}`,
+    PUBLIC_FETCH,
+  );
+  if (!res.ok) throw new Error(`List public codelists failed: ${res.status}`);
+  return res.json();
+}
+
+export async function getPublicCodelist(id: string): Promise<PublicCodelist> {
+  const res = await fetch(`${API_BASE}/public/codelists/${id}`, PUBLIC_FETCH);
+  if (!res.ok) throw new Error(`Get public codelist failed: ${res.status}`);
+  return res.json();
+}
+
+export async function exportPublicCodelistOhdsi(id: string): Promise<OhdsiExport> {
+  const res = await fetch(
+    `${API_BASE}/public/codelists/${id}/export?format=ohdsi`,
+    PUBLIC_FETCH,
+  );
+  if (!res.ok) throw new Error(`Public OHDSI export failed: ${res.status}`);
+  return res.json();
+}
+
+export async function exportPublicCodelistCsv(id: string): Promise<Blob> {
+  const res = await fetch(
+    `${API_BASE}/public/codelists/${id}/export?format=csv`,
+    PUBLIC_FETCH,
+  );
+  if (!res.ok) throw new Error(`Public CSV export failed: ${res.status}`);
+  return res.blob();
 }
