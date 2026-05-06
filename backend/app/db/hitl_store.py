@@ -39,11 +39,29 @@ class ConflictError(Exception):
     ``status`` carries the actual status seen under the lock so the
     route can emit a 409 ``detail`` in the same format as its pre-check
     path, without re-reading the row.
+
+    ``reason`` is an optional sub-discriminator for cases where 409
+    means more than "wrong status". Currently used by
+    ``submit_review_v2`` to flag ``reason="voting_finalised"`` —
+    structurally the codelist is still ``in_review`` but this caller
+    has already locked their votes and must use ``/consensus`` to
+    change a decision. Keeping ``status`` as the literal DB status
+    (always one of the five valid values) and routing the
+    "voting_finalised" subcase through ``reason`` avoids the synthetic-
+    status footgun where ``.status`` could be confused for a real
+    ``codelists.status`` row value.
     """
 
-    def __init__(self, codelist_id: str, status: str) -> None:
+    def __init__(
+        self,
+        codelist_id: str,
+        status: str,
+        *,
+        reason: str | None = None,
+    ) -> None:
         self.codelist_id = codelist_id
         self.status = status
+        self.reason = reason
         super().__init__(f"codelist {codelist_id} is already {status}")
 
 
@@ -1012,6 +1030,632 @@ def submit_review(
     }
 
 
+# --- T30 v2 review path ---------------------------------------------------
+#
+# Public functions that orchestrate the two-reviewer Delphi flow. Each
+# owns its own ``BEGIN IMMEDIATE`` transaction and composes the
+# ``_locked_*`` helpers from ``app.db.state_machine`` plus the
+# signature dispatcher in this module.
+
+
+def assign_reviewers(
+    cid: str,
+    reviewer_ids: list[int],
+    caller_user_id: int,
+) -> dict:
+    """Assign exactly two reviewers to a draft codelist, transitioning
+    it to ``in_review`` and locking ``signature_version=2`` (the v2
+    Delphi flow).
+
+    Guards (all 400 from the route, except status which is 409):
+    - ``len(reviewer_ids) == 2`` — Cohen's kappa is n=2 only; T30
+      step 3 didn't ship Fleiss. Reject 1 (legacy single-reviewer
+      goes via ``submit_review``) or 3+ (n=3 is explicit-optional
+      in the T30 ticket, deferred until a Fleiss helper lands).
+    - Caller (the codelist creator) is NOT in ``reviewer_ids``.
+      Watson 2017 Stage 3 requires reviewer independence.
+    - All ``reviewer_ids`` exist in ``users``.
+    - Codelist status is ``draft``. Re-assignment after
+      ``in_review`` would invalidate every per-reviewer vote
+      already cast; if the workflow needs to change reviewers
+      mid-process, the owner forks the codelist.
+
+    Idempotent on draft: re-posting the same reviewer-id set is a
+    no-op (returns the current state without an audit row).
+    Re-posting a *different* set on a draft replaces the previous
+    assignment and logs both old and new ids in the
+    ``reviewers_assigned`` audit event so the trail is
+    reconstructible.
+
+    Sets ``signature_version=2`` on the codelist row at first
+    successful assignment. ``signature_version`` is immutable
+    afterwards (the v1/v2 dispatch in ``_compute_signature``
+    relies on this); a route that wants to demote a v2 codelist
+    back to v1 is not part of the workflow.
+    """
+    from app.db.state_machine import _locked_transition
+
+    # Quick payload-shape checks that don't need the row.
+    if len(reviewer_ids) != 2:
+        raise ValueError(
+            f"reviewer_ids must contain exactly 2 ids "
+            f"(got {len(reviewer_ids)}); n=3 is reserved for a future "
+            "Fleiss-kappa path"
+        )
+    if len(set(reviewer_ids)) != 2:
+        raise ValueError("reviewer_ids must be distinct")
+
+    conn = get_connection()
+    conn.commit()
+    conn.execute("BEGIN IMMEDIATE")
+    try:
+        row = conn.execute(
+            "SELECT status, created_by, reviewer_ids, signature_version "
+            "FROM codelists WHERE id = ?",
+            (cid,),
+        ).fetchone()
+        if row is None:
+            raise KeyError(f"codelist not found: {cid}")
+        # Authz first: a non-creator gets 403 regardless of payload
+        # validity. The self-review check below is creator-specific
+        # (the creator is the one trying to be a reviewer of their
+        # own codelist), so it only makes sense after we've confirmed
+        # the caller IS the creator.
+        if row["created_by"] != caller_user_id:
+            raise PermissionError(
+                "only the codelist creator can assign reviewers"
+            )
+        if caller_user_id in reviewer_ids:
+            raise ValueError(
+                "creator cannot self-review (Delphi requires reviewer independence)"
+            )
+        if row["status"] != "draft":
+            raise ConflictError(cid, row["status"])
+
+        # Validate every reviewer_id exists in the users table.
+        placeholders = ",".join("?" * len(reviewer_ids))
+        existing_ids = {
+            r["id"] for r in conn.execute(
+                f"SELECT id FROM users WHERE id IN ({placeholders})",
+                reviewer_ids,
+            )
+        }
+        missing = [rid for rid in reviewer_ids if rid not in existing_ids]
+        if missing:
+            raise ValueError(
+                f"unknown reviewer_id(s): {missing}"
+            )
+
+        previous = sorted(json.loads(row["reviewer_ids"] or "[]"))
+        new_ids = sorted(reviewer_ids)
+        if previous == new_ids:
+            # Idempotent re-post — already assigned to this set. Read
+            # signature_version from the row rather than hardcoding 2;
+            # the assumption "non-empty reviewer_ids implies sig_v=2"
+            # holds today (this function is the only writer of
+            # ``reviewer_ids`` and always sets sig_v=2 alongside) but
+            # is fragile against future migrations or admin
+            # corrections — the row is the source of truth.
+            conn.commit()
+            return {
+                "id": cid,
+                "reviewer_ids": new_ids,
+                "status": row["status"],
+                "signature_version": row["signature_version"],
+            }
+
+        conn.execute(
+            "UPDATE codelists SET reviewer_ids = ?, signature_version = 2 "
+            "WHERE id = ?",
+            (json.dumps(new_ids), cid),
+        )
+        # First-time assignment transitions draft -> in_review. A
+        # replacement on an already-in-review codelist would have
+        # been rejected above by the status guard, so this path
+        # only fires from draft.
+        _locked_transition(
+            conn, cid, from_status="draft", to_status="in_review",
+            reviewer_id=caller_user_id,
+        )
+        _append_audit(
+            conn, cid, event="reviewers_assigned",
+            user_id=caller_user_id,
+            details={"reviewer_ids": new_ids, "previous": previous},
+        )
+        conn.commit()
+    except Exception:
+        conn.rollback()
+        raise
+
+    return {
+        "id": cid,
+        "reviewer_ids": new_ids,
+        "status": "in_review",
+        "signature_version": 2,
+    }
+
+
+def submit_review_v2(
+    cid: str,
+    reviewer_id: int,
+    votes: list[dict],
+    is_final: bool,
+) -> dict:
+    """v2 per-reviewer voting path. Each ``votes`` entry:
+    ``{decision_id: int, vote: 'include'|'exclude'|'uncertain', comment: str|None}``.
+
+    Guards:
+    - Status is ``in_review`` (votes mutable).
+    - Caller is in ``reviewer_ids``.
+    - Every ``decision_id`` belongs to this codelist.
+    - Caller has NOT previously logged ``voting_finalised`` (votes
+      become locked at finalisation; re-votes go through ``/consensus``).
+    - If ``is_final=True``, caller has voted on every decision in
+      the codelist (otherwise 400 with the missing decision_ids).
+
+    Behaviour after a successful ``is_final=True`` write that
+    leaves both reviewers finalised:
+    - Compute Cohen's kappa across the two reviewers' votes.
+    - If every decision has unanimous votes: update each
+      ``human_decision`` to the agreed value, transition
+      ``in_review -> approved``, sign as v2.
+    - Otherwise: transition ``in_review -> adjudication``.
+      ``human_decision`` stays unchanged; ``/consensus`` will
+      resolve.
+    """
+    from app.db.state_machine import (
+        _both_reviewers_finalised,
+        _compute_codelist_kappa,
+        _locked_mark_voting_finalised,
+        _locked_record_vote,
+        _locked_transition,
+    )
+
+    conn = get_connection()
+    conn.commit()
+    conn.execute("BEGIN IMMEDIATE")
+    try:
+        row = conn.execute(
+            "SELECT status, reviewer_ids FROM codelists WHERE id = ?",
+            (cid,),
+        ).fetchone()
+        if row is None:
+            raise KeyError(f"codelist not found: {cid}")
+        # Reviewer-membership before status: a non-reviewer gets a
+        # clean 403 regardless of where the codelist is in its
+        # lifecycle.
+        reviewer_ids = json.loads(row["reviewer_ids"] or "[]")
+        if reviewer_id not in reviewer_ids:
+            raise PermissionError(
+                f"user {reviewer_id} is not a reviewer of {cid}"
+            )
+        if row["status"] != "in_review":
+            raise ConflictError(cid, row["status"])
+
+        # Already-finalised check next: a finalised reviewer
+        # submitting a payload (well-formed or not) should see the
+        # 409 "voting finalised" message, not a 400 about decision
+        # ids. is_final is monotonic per reviewer — once true, no
+        # more votes accepted; they must use /consensus.
+        already_finalised = conn.execute(
+            "SELECT 1 FROM audit_log WHERE codelist_id = ? "
+            "AND event = 'voting_finalised' AND user_id = ?",
+            (cid, reviewer_id),
+        ).fetchone()
+        if already_finalised is not None:
+            raise ConflictError(
+                cid, row["status"], reason="voting_finalised",
+            )
+
+        # Validate every decision_id belongs to this codelist (catches
+        # cross-codelist UI copy-paste bugs).
+        codelist_decision_ids = {
+            r["id"] for r in conn.execute(
+                "SELECT id FROM codelist_decisions WHERE codelist_id = ?",
+                (cid,),
+            )
+        }
+        for v in votes:
+            if v["decision_id"] not in codelist_decision_ids:
+                raise ValueError(
+                    f"decision_id {v['decision_id']} does not belong to "
+                    f"codelist {cid}"
+                )
+
+        # Apply the votes.
+        for v in votes:
+            _locked_record_vote(
+                conn,
+                decision_id=v["decision_id"],
+                reviewer_id=reviewer_id,
+                vote=v["vote"],
+                comment=v.get("comment"),
+            )
+
+        result: dict[str, Any] = {
+            "status": "in_review",
+            "is_final": False,
+        }
+
+        if is_final:
+            # All decisions must have a vote from this reviewer
+            # before finalisation is allowed.
+            voted_ids = {
+                r["decision_id"] for r in conn.execute(
+                    "SELECT decision_id FROM decision_votes "
+                    "WHERE reviewer_id = ? AND decision_id IN "
+                    "(SELECT id FROM codelist_decisions WHERE codelist_id = ?)",
+                    (reviewer_id, cid),
+                )
+            }
+            missing = sorted(codelist_decision_ids - voted_ids)
+            if missing:
+                raise ValueError(
+                    f"cannot finalise: missing votes for decisions {missing}"
+                )
+
+            _locked_mark_voting_finalised(conn, cid, reviewer_id)
+            result["is_final"] = True
+
+            if _both_reviewers_finalised(conn, cid, reviewer_ids):
+                kappa = _compute_codelist_kappa(conn, cid)
+                conn.execute(
+                    "UPDATE codelists SET agreement_kappa = ? WHERE id = ?",
+                    (kappa, cid),
+                )
+                # Pull both reviewers' votes per decision and decide
+                # the disposition.
+                vote_rows = conn.execute(
+                    "SELECT v.decision_id, v.reviewer_id, v.vote "
+                    "FROM decision_votes v "
+                    "JOIN codelist_decisions d ON d.id = v.decision_id "
+                    "WHERE d.codelist_id = ?",
+                    (cid,),
+                ).fetchall()
+                by_decision: dict[int, dict[int, str]] = {}
+                for vr in vote_rows:
+                    by_decision.setdefault(vr["decision_id"], {})[
+                        vr["reviewer_id"]
+                    ] = vr["vote"]
+                a_id, b_id = sorted(reviewer_ids)
+                # Explicit completeness guard before the unanimity sweep:
+                # the finalisation check above ensures both reviewers
+                # have voted on every decision, but if a corruption /
+                # race somehow leaves a decision missing a vote, the
+                # naive ``votes_by_rev.get(a_id) != votes_by_rev.get(b_id)``
+                # would compare ``None == None`` and silently classify
+                # as agreement, then ``votes_by_rev[a_id]`` below would
+                # KeyError with a less informative message. Fail loud
+                # here with the actual diagnostic instead.
+                for did, votes_by_rev in by_decision.items():
+                    if a_id not in votes_by_rev or b_id not in votes_by_rev:
+                        raise ValueError(
+                            f"internal: decision {did} is missing a vote "
+                            f"from one reviewer despite both reporting "
+                            f"voting_finalised"
+                        )
+                disagreements = [
+                    did for did, votes_by_rev in by_decision.items()
+                    if votes_by_rev[a_id] != votes_by_rev[b_id]
+                ]
+                if not disagreements:
+                    # Unanimous — apply each agreed vote to
+                    # human_decision and transition straight to
+                    # approved (skip adjudication).
+                    for did, votes_by_rev in by_decision.items():
+                        agreed = votes_by_rev[a_id]
+                        conn.execute(
+                            "UPDATE codelist_decisions "
+                            "SET human_decision = ? WHERE id = ?",
+                            (agreed, did),
+                        )
+                    _locked_transition(
+                        conn, cid, "in_review", "approved",
+                        reviewer_id=reviewer_id, is_final=True,
+                    )
+                    signature = _compute_signature(conn, cid)
+                    conn.execute(
+                        "UPDATE codelists SET signature_hash = ?, "
+                        "reviewed_by = ?, reviewed_at = ? WHERE id = ?",
+                        (signature, reviewer_id, _now(), cid),
+                    )
+                    result["status"] = "approved"
+                    result["signature_hash"] = signature
+                    result["agreement_kappa"] = kappa
+                else:
+                    _locked_transition(
+                        conn, cid, "in_review", "adjudication",
+                        reviewer_id=reviewer_id, is_final=True,
+                    )
+                    result["status"] = "adjudication"
+                    result["agreement_kappa"] = kappa
+                    result["disagreements"] = sorted(disagreements)
+        conn.commit()
+    except Exception:
+        conn.rollback()
+        raise
+    return result
+
+
+def submit_consensus(
+    cid: str,
+    reviewer_id: int,
+    resolutions: list[dict],
+    acknowledge: bool,
+) -> dict:
+    """Both-ACK consensus mechanism for adjudication-state codelists.
+
+    Each ``resolutions`` entry:
+    ``{decision_id: int, final_decision: 'include'|'exclude'|'uncertain',
+       rationale: str (non-empty)}``.
+
+    Guards:
+    - Status is ``adjudication``.
+    - Caller is in ``reviewer_ids``.
+    - Every ``decision_id`` belongs to this codelist.
+    - Every ``rationale`` is non-empty (the audit anchor for *why*
+      we resolved this way; an empty rationale makes the resolution
+      opaque to a future reader).
+    - Every disputed decision (where the two reviewers' final
+      votes differed) is covered by the resolutions array.
+      Resolutions can also re-resolve previously-unanimous
+      decisions (Watson 2017: discussion may overturn earlier
+      agreement).
+
+    Two phases:
+
+    1. ``acknowledge=False`` — proposes a set of resolutions.
+       Logs ``proposed_consensus`` with the proposer's id and the
+       full resolutions array. Status stays ``adjudication``.
+       Counter-proposals are unlimited; each is a fresh event
+       superseding the prior proposal.
+
+    2. ``acknowledge=True`` — accepts the *other* reviewer's most
+       recent proposal. Resolutions MUST byte-equal that proposal
+       (canonical sort by ``decision_id``). The fail-loud reason:
+       silently changing a resolution while ACK'ing would forge
+       the other reviewer's clinical agreement. On clean ACK:
+       update each ``human_decision``, log ``consensus_acknowledged``,
+       transition ``adjudication -> approved``, compute v2 signature.
+    """
+    from app.db.state_machine import _locked_transition
+
+    if not resolutions:
+        raise ValueError("resolutions must be non-empty")
+    for r in resolutions:
+        rationale = (r.get("rationale") or "").strip()
+        if not rationale:
+            raise ValueError(
+                f"resolution for decision {r.get('decision_id')} "
+                "requires a non-empty rationale"
+            )
+
+    conn = get_connection()
+    conn.commit()
+    conn.execute("BEGIN IMMEDIATE")
+    try:
+        row = conn.execute(
+            "SELECT status, reviewer_ids FROM codelists WHERE id = ?",
+            (cid,),
+        ).fetchone()
+        if row is None:
+            raise KeyError(f"codelist not found: {cid}")
+        # Reviewer-membership before status — non-reviewers get 403
+        # regardless of lifecycle stage.
+        reviewer_ids = json.loads(row["reviewer_ids"] or "[]")
+        if reviewer_id not in reviewer_ids:
+            raise PermissionError(
+                f"user {reviewer_id} is not a reviewer of {cid}"
+            )
+        if row["status"] != "adjudication":
+            raise ConflictError(cid, row["status"])
+
+        codelist_decision_ids = {
+            r["id"] for r in conn.execute(
+                "SELECT id FROM codelist_decisions WHERE codelist_id = ?",
+                (cid,),
+            )
+        }
+        for r in resolutions:
+            if r["decision_id"] not in codelist_decision_ids:
+                raise ValueError(
+                    f"decision_id {r['decision_id']} does not belong to "
+                    f"codelist {cid}"
+                )
+
+        # Compute the disputed set: decisions where the two reviewers'
+        # votes differed at finalisation. Every disputed decision must
+        # be covered by ``resolutions``.
+        vote_rows = conn.execute(
+            "SELECT v.decision_id, v.reviewer_id, v.vote "
+            "FROM decision_votes v "
+            "JOIN codelist_decisions d ON d.id = v.decision_id "
+            "WHERE d.codelist_id = ?",
+            (cid,),
+        ).fetchall()
+        by_decision: dict[int, dict[int, str]] = {}
+        for vr in vote_rows:
+            by_decision.setdefault(vr["decision_id"], {})[
+                vr["reviewer_id"]
+            ] = vr["vote"]
+        a_id, b_id = sorted(reviewer_ids)
+        # Explicit completeness guard before computing the disputed
+        # set. The codelist is in adjudication status, which means
+        # both reviewers had ``voting_finalised`` audit events at
+        # that transition. If a vote is now missing despite that
+        # (DB corruption / future race), classifying the decision as
+        # "not disputed" via ``None == None`` would silently let the
+        # consensus path commit a signature on incomplete data — fail
+        # loud instead.
+        for did, votes_by_rev in by_decision.items():
+            if a_id not in votes_by_rev or b_id not in votes_by_rev:
+                raise ValueError(
+                    f"internal: decision {did} is missing a vote from "
+                    f"one reviewer despite codelist being in adjudication"
+                )
+        disputed = {
+            did for did, votes_by_rev in by_decision.items()
+            if votes_by_rev[a_id] != votes_by_rev[b_id]
+        }
+        resolved_ids = {r["decision_id"] for r in resolutions}
+        unresolved = sorted(disputed - resolved_ids)
+        if unresolved:
+            raise ValueError(
+                f"unresolved disputed decisions: {unresolved}"
+            )
+
+        canonical = _canonical_resolutions(resolutions)
+
+        if not acknowledge:
+            _append_audit(
+                conn, cid, event="proposed_consensus",
+                user_id=reviewer_id,
+                details={"resolutions": canonical},
+            )
+            conn.commit()
+            return {"status": "adjudication", "acknowledged": False}
+
+        # acknowledge=True — find the most recent proposal by SOMEONE
+        # ELSE and confirm byte-equality.
+        prior = conn.execute(
+            "SELECT user_id, details FROM audit_log "
+            "WHERE codelist_id = ? AND event = 'proposed_consensus' "
+            "ORDER BY id DESC LIMIT 1",
+            (cid,),
+        ).fetchone()
+        if prior is None:
+            raise ValueError(
+                "no consensus proposal exists yet; submit acknowledge=False "
+                "first to propose a resolution"
+            )
+        if prior["user_id"] == reviewer_id:
+            raise ValueError(
+                "cannot acknowledge your own proposal; the other reviewer "
+                "must ACK or counter-propose"
+            )
+        prior_resolutions = json.loads(prior["details"]).get("resolutions", [])
+        if prior_resolutions != canonical:
+            raise ValueError(
+                "acknowledge=True requires resolutions to byte-equal the "
+                "prior proposal; submit acknowledge=False to counter-propose"
+            )
+
+        # Apply each resolution.
+        for r in resolutions:
+            conn.execute(
+                "UPDATE codelist_decisions "
+                "SET human_decision = ?, override_comment = ? WHERE id = ?",
+                (r["final_decision"], r["rationale"].strip(), r["decision_id"]),
+            )
+        _append_audit(
+            conn, cid, event="consensus_acknowledged",
+            user_id=reviewer_id,
+            details={
+                "resolutions": canonical,
+                "proposer": prior["user_id"],
+                "acknowledger": reviewer_id,
+            },
+        )
+        _locked_transition(
+            conn, cid, "adjudication", "approved",
+            reviewer_id=reviewer_id, is_final=True,
+        )
+        signature = _compute_signature(conn, cid)
+        conn.execute(
+            "UPDATE codelists SET signature_hash = ?, reviewed_by = ?, "
+            "reviewed_at = ? WHERE id = ?",
+            (signature, reviewer_id, _now(), cid),
+        )
+        conn.commit()
+        return {
+            "status": "approved",
+            "acknowledged": True,
+            "signature_hash": signature,
+        }
+    except Exception:
+        conn.rollback()
+        raise
+
+
+def _canonical_resolutions(resolutions: list[dict]) -> list[dict]:
+    """Sort by ``decision_id`` and pick only the byte-comparison
+    fields. Used by ``submit_consensus`` to compare an ACK against
+    the prior proposal — both serialised through this helper before
+    the equality check, so the comparison is order-independent and
+    ignores any extraneous fields a future shape might carry.
+    """
+    return sorted(
+        [
+            {
+                "decision_id": int(r["decision_id"]),
+                "final_decision": r["final_decision"],
+                "rationale": (r.get("rationale") or "").strip(),
+            }
+            for r in resolutions
+        ],
+        key=lambda x: x["decision_id"],
+    )
+
+
+def reject_codelist_v2(
+    cid: str,
+    reviewer_id: int,
+    reason: str,
+) -> dict:
+    """Unilateral reject from a v2 codelist's review or adjudication
+    state. Single-reviewer rejection is sufficient — reject is a
+    veto by design (Watson 2017 phrasing: any reviewer can withdraw
+    consensus).
+
+    Guards:
+    - Status is ``in_review`` or ``adjudication``.
+    - Caller is in ``reviewer_ids``.
+    - Reason is non-empty.
+
+    Logs ``status_transition`` with reason; no signature on a
+    rejected codelist.
+    """
+    from app.db.state_machine import _locked_transition
+
+    if not reason or not reason.strip():
+        raise ValueError("reject requires a non-empty reason")
+
+    conn = get_connection()
+    conn.commit()
+    conn.execute("BEGIN IMMEDIATE")
+    try:
+        row = conn.execute(
+            "SELECT status, reviewer_ids FROM codelists WHERE id = ?",
+            (cid,),
+        ).fetchone()
+        if row is None:
+            raise KeyError(f"codelist not found: {cid}")
+        # Reviewer-membership before status — non-reviewers get 403
+        # regardless of lifecycle stage.
+        reviewer_ids = json.loads(row["reviewer_ids"] or "[]")
+        if reviewer_id not in reviewer_ids:
+            raise PermissionError(
+                f"user {reviewer_id} is not a reviewer of {cid}"
+            )
+        if row["status"] not in ("in_review", "adjudication"):
+            raise ConflictError(cid, row["status"])
+
+        _locked_transition(
+            conn, cid, row["status"], "rejected",
+            reviewer_id=reviewer_id, reason=reason.strip(),
+        )
+        conn.execute(
+            "UPDATE codelists SET reviewed_by = ?, reviewed_at = ?, "
+            "review_notes = ? WHERE id = ?",
+            (reviewer_id, _now(), reason.strip(), cid),
+        )
+        conn.commit()
+    except Exception:
+        conn.rollback()
+        raise
+    return {"status": "rejected", "reason": reason.strip()}
+
+
 def _compute_signature(conn: sqlite3.Connection, cid: str) -> str:
     """SHA-256 over the codelist's final state, dispatching on
     ``signature_version``.
@@ -1085,6 +1729,15 @@ def _append_audit(
     user_id: int | None,
     details: dict,
 ) -> None:
+    """INSERT one row into ``audit_log``. Caller must hold the
+    surrounding transaction (typically ``BEGIN IMMEDIATE``) — this
+    helper is the single audit-write primitive used by every
+    ``_locked_*`` helper in ``state_machine.py`` AND by the four
+    public mutation functions in this module. Standalone calls
+    outside a transaction would commit the audit row to disk
+    independently of the work it documents, breaking the
+    "audit-log mirrors completed clinical events" contract.
+    """
     conn.execute(
         """INSERT INTO audit_log (codelist_id, event, user_id, details, timestamp)
            VALUES (?, ?, ?, ?, ?)""",

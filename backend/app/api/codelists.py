@@ -92,6 +92,84 @@ class PrivacyRequest(BaseModel):
     private: bool
 
 
+# --- T30 v2 models ---------------------------------------------------------
+
+
+class AssignReviewersRequest(BaseModel):
+    """Payload for ``POST /codelists/{id}/reviewers``. Exactly two
+    reviewer ids; the store enforces independence (no self-review)
+    and existence."""
+
+    reviewer_ids: list[int] = Field(
+        ..., min_length=2, max_length=2,
+        description=(
+            "Exactly two reviewer user-ids. v1 of T30 caps at n=2 "
+            "because Cohen's kappa is the only agreement metric "
+            "shipped; n=3 with Fleiss' kappa is a future option."
+        ),
+    )
+
+
+class VoteUpdate(BaseModel):
+    """One per-reviewer vote on a single decision row."""
+
+    decision_id: int
+    vote: Literal["include", "exclude", "uncertain"]
+    comment: Optional[str] = None
+
+
+class ReviewVoteRequest(BaseModel):
+    """v2 review payload — discriminates on ``votes`` (vs v1's
+    ``decisions``) so the dispatcher in ``review_codelist`` can
+    reject mismatched-shape submissions early."""
+
+    votes: list[VoteUpdate] = Field(
+        ..., min_length=1,
+        description="At least one vote. UPSERTs by (decision_id, reviewer_id).",
+    )
+    is_final: bool = Field(
+        default=False,
+        description=(
+            "True locks this reviewer's votes and (when both reviewers "
+            "have finalised) triggers the auto-disposition: unanimous "
+            "→ approved + signature; any disagreement → adjudication."
+        ),
+    )
+
+
+class ResolutionUpdate(BaseModel):
+    """One consensus resolution. Rationale is the audit anchor for
+    *why* this decision was resolved this way."""
+
+    decision_id: int
+    final_decision: Literal["include", "exclude", "uncertain"]
+    rationale: str = Field(..., min_length=1)
+
+
+class ConsensusRequest(BaseModel):
+    """Payload for ``POST /codelists/{id}/consensus``.
+
+    Two-phase both-ACK design:
+    - ``acknowledge=False``: propose resolutions. Logged as a
+      ``proposed_consensus`` audit event; status stays adjudication.
+    - ``acknowledge=True``: accept the *other* reviewer's most
+      recent proposal. Resolutions MUST byte-equal the prior
+      proposal — silently changing a resolution while pretending
+      to ACK would forge the other reviewer's clinical agreement.
+    """
+
+    resolutions: list[ResolutionUpdate] = Field(..., min_length=1)
+    acknowledge: bool = False
+
+
+class RejectRequest(BaseModel):
+    """Payload for ``POST /codelists/{id}/reject``. Reason required
+    so the audit log records *why* a codelist was rejected, not
+    only that it was."""
+
+    reason: str = Field(..., min_length=1)
+
+
 # --- list / read ------------------------------------------------------------
 
 @router.get("")
@@ -323,20 +401,90 @@ async def create_codelist(body: CreateCodelistRequest, user: dict = Depends(get_
 
 
 # --- review ----------------------------------------------------------------
+#
+# /review dispatches on ``signature_version``: v1 codelists (legacy
+# single-reviewer, ``reviewer_ids=[]``) take the historical
+# ``ReviewRequest`` shape and route to ``submit_review``; v2 codelists
+# (``signature_version=2`` set by ``/reviewers``) take the
+# ``ReviewVoteRequest`` per-reviewer shape and route to
+# ``submit_review_v2``. signature_version is immutable post-creation,
+# so the dispatch is one-way: a v1 codelist stays v1, a v2 stays v2.
+# Mismatched-shape payloads (v1 shape on v2 codelist or vice-versa)
+# return 400 — the discriminator is the request body's top-level
+# key (``decisions`` vs ``votes``), validated below before the store
+# call.
+
 
 @router.post("/{codelist_id}/review")
 async def review_codelist(
     codelist_id: str,
-    body: ReviewRequest,
+    body: dict,  # raw dict; we discriminate then re-validate
     user: dict = Depends(get_current_user),
 ):
     """
-    Apply reviewer decisions, flip status to approved/rejected, record
-    overrides in the audit log and compute a signature hash on approval.
+    Apply reviewer decisions on a codelist. Dispatches on
+    ``signature_version``: v1 (legacy single-reviewer) or v2
+    (two-reviewer Delphi).
     """
     cl = hitl_store.get_codelist(codelist_id)
     if cl is None:
         raise HTTPException(status_code=404, detail="Codelist not found")
+
+    sig_version = cl.get("signature_version", 1)
+    has_v1_shape = "decisions" in body
+    has_v2_shape = "votes" in body
+
+    if sig_version == 1:
+        if not has_v1_shape:
+            raise HTTPException(
+                status_code=400,
+                detail=(
+                    "this codelist uses single-reviewer review; submit a "
+                    "complete review payload with 'decisions' and 'action'"
+                ),
+            )
+        if has_v2_shape:
+            raise HTTPException(
+                status_code=400,
+                detail=(
+                    "ambiguous payload: 'votes' (v2) submitted to a v1 "
+                    "codelist; use 'decisions' instead"
+                ),
+            )
+        return await _review_v1(codelist_id, body, cl, user)
+
+    # v2 path
+    if not has_v2_shape:
+        raise HTTPException(
+            status_code=400,
+            detail=(
+                "this codelist uses two-reviewer review; submit per-reviewer "
+                "votes via 'votes' and 'is_final'"
+            ),
+        )
+    if has_v1_shape:
+        raise HTTPException(
+            status_code=400,
+            detail=(
+                "ambiguous payload: 'decisions' (v1) submitted to a v2 "
+                "codelist; use 'votes' instead"
+            ),
+        )
+    return await _review_v2(codelist_id, body, user)
+
+
+async def _review_v1(
+    codelist_id: str,
+    body: dict,
+    cl: dict,
+    user: dict,
+) -> dict:
+    """Legacy single-reviewer path. Unchanged behaviour from pre-T30."""
+    try:
+        request = ReviewRequest.model_validate(body)
+    except Exception as exc:
+        raise HTTPException(status_code=400, detail=str(exc))
+
     if cl["status"] not in ("draft", "in_review"):
         raise HTTPException(
             status_code=409,
@@ -345,7 +493,7 @@ async def review_codelist(
 
     # enforce: every override carries a non-empty comment
     decision_by_id = {d["id"]: d for d in cl["decisions"]}
-    for update in body.decisions:
+    for update in request.decisions:
         ai = decision_by_id.get(update.id)
         if ai is None:
             raise HTTPException(
@@ -366,33 +514,170 @@ async def review_codelist(
         result = hitl_store.submit_review(
             cid=codelist_id,
             reviewer_id=user["id"],
-            decisions=[d.model_dump() for d in body.decisions],
-            action=body.action,
-            notes=body.notes,
+            decisions=[d.model_dump() for d in request.decisions],
+            action=request.action,
+            notes=request.notes,
         )
     except hitl_store.ConflictError as exc:
-        # Race-induced 409 from the BEGIN IMMEDIATE re-check inside
-        # submit_review. The earlier pre-check above catches the
-        # non-concurrent path; this catches the case where a second
-        # reviewer slips through that pre-check before the first
-        # reviewer commits. detail format mirrors the pre-check string
-        # so a client parsing the body sees one shape across both
-        # paths.
         raise HTTPException(
             status_code=409,
             detail=f"Cannot review a codelist in status '{exc.status}'",
         )
     except KeyError:
-        # TOCTOU: the codelist disappeared between the pre-check
-        # ``get_codelist`` above and the BEGIN IMMEDIATE re-read inside
-        # submit_review. Translate to the same 404 the pre-check would
-        # have emitted. Pre-existing race; close it on the touched line.
         raise HTTPException(status_code=404, detail="Codelist not found")
+    except ValueError as exc:
+        # submit_review now refuses v2 codelists with ValueError. The
+        # dispatcher above should have caught the version mismatch
+        # before we got here, but the store-level guard is the
+        # authoritative gate; surface its message at 422.
+        raise HTTPException(status_code=422, detail=str(exc))
     return {
         "codelist_id": codelist_id,
         **result,
         "reviewed_by": user["name"],
     }
+
+
+async def _review_v2(
+    codelist_id: str,
+    body: dict,
+    user: dict,
+) -> dict:
+    """v2 per-reviewer voting path. Caller is one of the two
+    reviewers assigned via ``POST /reviewers``; UPSERTs each vote
+    and (on ``is_final=true`` from both reviewers) auto-transitions
+    to approved (unanimous) or adjudication (any disagreement)."""
+    try:
+        request = ReviewVoteRequest.model_validate(body)
+    except Exception as exc:
+        raise HTTPException(status_code=400, detail=str(exc))
+
+    try:
+        result = hitl_store.submit_review_v2(
+            cid=codelist_id,
+            reviewer_id=user["id"],
+            votes=[v.model_dump() for v in request.votes],
+            is_final=request.is_final,
+        )
+    except hitl_store.ConflictError as exc:
+        raise HTTPException(
+            status_code=409,
+            detail=(
+                "voting finalised; submit a counter-proposal via /consensus "
+                "to change a vote"
+                if exc.reason == "voting_finalised"
+                else f"Cannot review a codelist in status '{exc.status}'"
+            ),
+        )
+    except KeyError:
+        raise HTTPException(status_code=404, detail="Codelist not found")
+    except PermissionError as exc:
+        raise HTTPException(status_code=403, detail=str(exc))
+    except ValueError as exc:
+        raise HTTPException(status_code=400, detail=str(exc))
+    return {
+        "codelist_id": codelist_id,
+        **result,
+        "reviewer": user["name"],
+    }
+
+
+# --- T30 v2 endpoints ------------------------------------------------------
+
+
+@router.post("/{codelist_id}/reviewers", status_code=200)
+async def assign_reviewers(
+    codelist_id: str,
+    body: AssignReviewersRequest,
+    user: dict = Depends(get_current_user),
+):
+    """Assign exactly two reviewers to a draft codelist; transitions
+    it to ``in_review`` and locks ``signature_version=2``.
+
+    Owner-only (creator). Idempotent on draft: re-posting the same
+    set is a no-op; re-posting a different set replaces. Any
+    non-draft status returns 409.
+    """
+    try:
+        return hitl_store.assign_reviewers(
+            cid=codelist_id,
+            reviewer_ids=body.reviewer_ids,
+            caller_user_id=user["id"],
+        )
+    except KeyError:
+        raise HTTPException(status_code=404, detail="Codelist not found")
+    except PermissionError as exc:
+        raise HTTPException(status_code=403, detail=str(exc))
+    except hitl_store.ConflictError as exc:
+        raise HTTPException(
+            status_code=409,
+            detail=f"Cannot assign reviewers to a codelist in status '{exc.status}'",
+        )
+    except ValueError as exc:
+        raise HTTPException(status_code=400, detail=str(exc))
+
+
+@router.post("/{codelist_id}/consensus")
+async def submit_consensus(
+    codelist_id: str,
+    body: ConsensusRequest,
+    user: dict = Depends(get_current_user),
+):
+    """Both-ACK consensus on an adjudication-state codelist.
+
+    First call (``acknowledge=False``) proposes a set of resolutions
+    covering every disputed decision (and optionally re-resolving
+    previously-unanimous ones). Second call (``acknowledge=True``)
+    by the *other* reviewer accepts the prior proposal — must
+    byte-equal — and transitions to approved.
+    """
+    try:
+        return hitl_store.submit_consensus(
+            cid=codelist_id,
+            reviewer_id=user["id"],
+            resolutions=[r.model_dump() for r in body.resolutions],
+            acknowledge=body.acknowledge,
+        )
+    except KeyError:
+        raise HTTPException(status_code=404, detail="Codelist not found")
+    except PermissionError as exc:
+        raise HTTPException(status_code=403, detail=str(exc))
+    except hitl_store.ConflictError as exc:
+        raise HTTPException(
+            status_code=409,
+            detail=f"Cannot submit consensus on a codelist in status '{exc.status}'",
+        )
+    except ValueError as exc:
+        raise HTTPException(status_code=400, detail=str(exc))
+
+
+@router.post("/{codelist_id}/reject")
+async def reject_codelist(
+    codelist_id: str,
+    body: RejectRequest,
+    user: dict = Depends(get_current_user),
+):
+    """Unilateral reject from a v2 codelist's review or adjudication
+    state. Single-reviewer rejection is sufficient — reject is a
+    veto by design. v1 codelists reject through ``/review`` with
+    ``action=reject`` (legacy path)."""
+    try:
+        return hitl_store.reject_codelist_v2(
+            cid=codelist_id,
+            reviewer_id=user["id"],
+            reason=body.reason,
+        )
+    except KeyError:
+        raise HTTPException(status_code=404, detail="Codelist not found")
+    except PermissionError as exc:
+        raise HTTPException(status_code=403, detail=str(exc))
+    except hitl_store.ConflictError as exc:
+        raise HTTPException(
+            status_code=409,
+            detail=f"Cannot reject a codelist in status '{exc.status}'",
+        )
+    except ValueError as exc:
+        raise HTTPException(status_code=400, detail=str(exc))
 
 
 # --- T32 privacy toggle -----------------------------------------------------
