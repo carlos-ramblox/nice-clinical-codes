@@ -12,6 +12,7 @@ Demo users are seeded on first init so the login dropdown is never empty.
 import hashlib
 import json
 import logging
+import math
 import sqlite3
 import uuid
 from datetime import datetime, timezone
@@ -19,6 +20,13 @@ from pathlib import Path
 from typing import Any, Iterable, Optional
 
 from app.config import HITL_DATABASE_URL
+# Note: importing from app.services into app.db inverts the canonical
+# layered-architecture arrow (db should sit *below* services). The
+# project pragmatic exception: ``app.services.agreement`` is pure-
+# Python with no I/O — it is structurally a utility that just happens
+# to live next to ``phenotype_discovery.py`` for cohesion. If a wider
+# audit later finds other inversions, relocate to ``app/utils/`` in
+# one pass; not worth a one-file move on its own. (T30 step-4 audit.)
 from app.services.agreement import cohen_kappa
 
 logger = logging.getLogger(__name__)
@@ -59,6 +67,12 @@ class InvalidTransition(Exception):
     to HTTP 422 (Unprocessable Entity) so the client can distinguish
     "you tried something the workflow does not allow" (422) from
     "something else got there first" (409).
+
+    ``from_status`` and ``to_status`` are exposed as attributes so
+    step 5's route handler can build the 422 ``detail`` string from
+    structured fields rather than parsing ``str(exc)`` (mirrors
+    ``ConflictError.status``, which the route already uses for the
+    409 detail in ``api/codelists.py:review_codelist``).
     """
 
     def __init__(self, from_status: str, to_status: str) -> None:
@@ -571,12 +585,27 @@ def create_codelist(
 def _insert_decisions(conn: sqlite3.Connection, cid: str, decisions: Iterable[dict]) -> None:
     rows = []
     for d in decisions:
+        code = d.get("code", "")
+        vocab = d.get("vocabulary", "")
+        # The signature payload uses ``code|vocabulary|decision`` with
+        # ``\n`` row separators; embedding ``|`` or ``\n`` in either
+        # field creates payload ambiguity that could collide hashes.
+        # Well-formed values from upstream retrievers never contain
+        # these characters, but a compromised retriever or a future
+        # manual-add path might — fail loud at insertion rather than
+        # later at signature-verification time.
+        for value, field in ((code, "code"), (vocab, "vocabulary")):
+            if isinstance(value, str) and ("|" in value or "\n" in value):
+                raise ValueError(
+                    f"decision {field} contains a separator character "
+                    f"(``|`` or newline): {value!r}"
+                )
         cid_val = d.get("concept_id")
         rows.append((
             cid,
-            d.get("code", ""),
+            code,
             d.get("term", ""),
-            d.get("vocabulary", ""),
+            vocab,
             d.get("decision", "uncertain"),
             float(d.get("confidence") or 0.0),
             d.get("rationale", ""),
@@ -933,12 +962,27 @@ def submit_review(
     conn.execute("BEGIN IMMEDIATE")
     try:
         existing_cl = conn.execute(
-            "SELECT id, status FROM codelists WHERE id = ?", (cid,),
+            "SELECT id, status, signature_version FROM codelists WHERE id = ?",
+            (cid,),
         ).fetchone()
         if existing_cl is None:
             raise KeyError(f"codelist not found: {cid}")
         if existing_cl["status"] not in ("draft", "in_review"):
             raise ConflictError(cid, existing_cl["status"])
+        # ``submit_review`` handles only the legacy single-reviewer
+        # (v1) flow. v2 codelists must use the per-reviewer flow:
+        # POST /reviewers (assign) → POST /review per reviewer
+        # (with is_final) → POST /consensus (both reviewers ACK).
+        # Routing a v2 codelist through this bulk-update path would
+        # silently overwrite ``human_decision`` on every row outside
+        # the Delphi state machine. Step 5 wires the v2 routes;
+        # this guard prevents accidental misuse before then.
+        if existing_cl["signature_version"] == 2:
+            raise ValueError(
+                f"codelist {cid} uses the two-reviewer Delphi flow "
+                "(signature_version=2); submit_review is the legacy "
+                "single-reviewer path"
+            )
 
         override_events: list[dict] = []
         for d in decisions:
@@ -1076,6 +1120,16 @@ def _decision_block(decisions: list[dict]) -> str:
     sort is the single source of order for both versions, so
     semantically-equal codelists (same codes, decisions, and
     vocabularies) hash identically regardless of insertion order.
+
+    Format assumption: ``code`` and ``vocabulary`` values do not
+    contain ``|`` or newline characters. Well-formed values from
+    OMOPHub / OpenCodelists / QOF / Chroma never do (codes are
+    alphanumeric/dotted, vocabularies are short tags from
+    ``OMOPHUB_VOCABULARIES``), and ``_insert_decisions`` rejects
+    any pathological input at write time. The pipe-delimited
+    format is frozen because changing it would break v1 byte-compat
+    (every pre-T30 approved hash would re-verify wrong); the
+    insertion-time validation is the safety net for v2 too.
     """
     rows = sorted(
         (d["code"], d["vocabulary"], d["final_decision"]) for d in decisions
@@ -1160,11 +1214,29 @@ def _compute_signature_v2(codelist: dict, decisions: list[dict]) -> str:
     if kappa is None:
         kappa_block = f"{_KAPPA_METHOD_TAG}:null"
     else:
+        kappa_f = float(kappa)
+        # NaN / Inf are not valid agreement scores and would silently
+        # embed ``cohen-unweighted:nan`` (or ``inf``) in the audit
+        # hash. Cohen's kappa over the {include, exclude, uncertain}
+        # label set cannot mathematically yield NaN/Inf (the formula
+        # is bounded), so reaching this branch indicates upstream
+        # corruption — fail loud so the codelist isn't approved with
+        # a meaningless signature.
+        if not math.isfinite(kappa_f):
+            raise ValueError(
+                f"agreement_kappa is non-finite ({kappa_f!r}); "
+                "cannot produce a stable v2 signature"
+            )
+        # Normalise -0.0 to +0.0 so two semantically equal kappas
+        # always render as the same byte string. ``-0.0`` is unreachable
+        # through the current ``cohen_kappa`` formula but cheap defence
+        # in depth — IEEE 754 says ``-0.0 + 0.0 == +0.0``.
+        kappa_f = kappa_f + 0.0
         # 4 decimal places — enough resolution for the audit
         # (Landis & Koch bands are stated to 2 dp); avoids the
         # floating-point repr noise that would otherwise put
         # non-deterministic bytes in the hash.
-        kappa_block = f"{_KAPPA_METHOD_TAG}:{float(kappa):.4f}"
+        kappa_block = f"{_KAPPA_METHOD_TAG}:{kappa_f:.4f}"
 
     payload += (
         f"\n--criteria--\n{criteria_block}"
@@ -1242,7 +1314,19 @@ def _transition(
     The audit-log entry uses ``event="status_transition"`` with
     ``details = {from, to, is_final, reason}`` so a downstream
     auditor can reconstruct the order and motivation of every
-    state change.
+    state change. Note: this differs from ``submit_review``'s
+    legacy event names (``event="approved"`` / ``"rejected"``) —
+    analytics queries that look for terminal states must check
+    both ``event in ('approved','rejected')`` AND
+    ``event='status_transition' AND details->>'to' IN
+    ('approved','rejected')`` to cover both code paths.
+
+    ``is_final`` is currently always ``False`` at every call site
+    because step 5 has not yet wired the per-reviewer routes that
+    populate it. The parameter is reserved for that step's vote
+    submission flow ("I'm done voting"); it lands in the audit-log
+    details so the forensics question "did reviewer X knowingly
+    finalise their votes?" reads cleanly off the row.
     """
     if (from_status, to_status) not in _VALID_TRANSITIONS:
         raise InvalidTransition(from_status, to_status)
@@ -1296,6 +1380,23 @@ def _record_vote(
     CHECK constraint enforces the ``include`` / ``exclude`` /
     ``uncertain`` set; this helper does not validate the vote
     value (the constraint will fire on insert).
+
+    SQLite's UPSERT ``DO UPDATE`` clause **always** uses ``ABORT``
+    for any constraint violation hit during the UPDATE phase,
+    regardless of the outer INSERT's conflict resolution
+    (https://www.sqlite.org/lang_upsert.html — "Limitations").
+    A bad ``vote`` value therefore rolls back the caller's
+    surrounding ``BEGIN IMMEDIATE`` transaction entirely, not
+    just this one statement — desired safety, but worth noting
+    so future callers don't expect single-row recovery.
+
+    This helper is intentionally liberal about *when* a vote is
+    recorded — it accepts a re-vote even after the reviewer has
+    logged ``voting_finalised``. Step 5's route is the right place
+    to refuse post-finalise re-votes if the workflow demands it;
+    keeping ``_record_vote`` permissive lets the helper stay
+    reusable for normal voting, override paths, and future
+    admin-correction flows.
 
     The caller owns the surrounding transaction.
     """
@@ -1385,7 +1486,20 @@ def _compute_codelist_kappa(
     by_reviewer: dict[int, dict[int, str]] = {}
     for r in rows:
         by_reviewer.setdefault(r["reviewer_id"], {})[r["decision_id"]] = r["vote"]
+    # >2 reviewers: not "insufficient data", it's "wrong tool". Returning
+    # None here would silently persist NULL kappa for a codelist that
+    # actually has full vote data, hiding the data-quality issue. The
+    # n=3+ scope is explicit-optional in the T30 ticket; when it lands,
+    # call a Fleiss-kappa helper instead and document the dispatch.
+    if len(by_reviewer) > 2:
+        raise ValueError(
+            f"_compute_codelist_kappa expects ≤2 reviewers (Cohen's "
+            f"kappa is n=2 only); codelist {cid} has {len(by_reviewer)}. "
+            "Add a Fleiss-kappa path before unlocking n=3 reviewer "
+            "assignments in step 5."
+        )
     if len(by_reviewer) != 2:
+        # 0 or 1 reviewers — insufficient data, not an error.
         return None
 
     a_id, b_id = sorted(by_reviewer.keys())

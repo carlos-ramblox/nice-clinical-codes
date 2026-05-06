@@ -193,3 +193,50 @@ def test_legacy_single_reviewer_happy_path_unchanged():
     assert body["status"] == "approved"
     assert body["signature_hash"]
     assert body["override_count"] == 0
+
+
+def test_submit_review_refuses_v2_codelist():
+    """The legacy ``submit_review`` path is single-reviewer (v1) only.
+    A codelist with ``signature_version=2`` (the two-reviewer Delphi
+    flow, set by ``POST /reviewers`` in step 5) must be rejected
+    before any decision rows are mutated — silently overwriting
+    ``human_decision`` outside the per-reviewer flow would corrupt
+    the Delphi audit chain.
+
+    Tests the store-level guard directly: ``submit_review`` raises
+    ``ValueError`` on a v2 codelist. Step 5's route refactor will
+    catch the ValueError and translate to an HTTP code (likely 422
+    or 409); we don't go through the route here because the route
+    has not yet been refactored to expect v2-shaped traffic, and
+    TestClient propagates uncaught exceptions instead of converting
+    them to 500."""
+    import pytest as _pytest
+    from app.db.hitl_store import get_connection, submit_review
+
+    _login_demo_user()
+    cid = _create_draft()
+
+    # Promote the row to v2 directly. In production this happens via
+    # POST /reviewers (step 5); for this test we bypass the route to
+    # exercise submit_review's guard in isolation.
+    conn = get_connection()
+    conn.execute(
+        "UPDATE codelists SET signature_version = 2 WHERE id = ?", (cid,),
+    )
+    conn.commit()
+
+    payload = _approve_payload(cid)
+    with _pytest.raises(ValueError, match="two-reviewer"):
+        submit_review(
+            cid=cid,
+            reviewer_id=1,
+            decisions=payload["decisions"],
+            action=payload["action"],
+            notes=payload["notes"],
+        )
+
+    # Status must remain unchanged; no signature was written. The
+    # try/except/rollback in submit_review handles the cleanup.
+    detail = client.get(f"/api/codelists/{cid}").json()
+    assert detail["status"] == "draft"
+    assert detail.get("signature_hash") in (None, "")

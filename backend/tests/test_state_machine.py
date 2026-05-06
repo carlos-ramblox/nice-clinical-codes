@@ -75,9 +75,13 @@ ILLEGAL_EDGES: list[tuple[str, str]] = [
 def _open_post_t30() -> sqlite3.Connection:
     """In-memory SQLite with the full post-T30 schema — created via
     ``_init_schema``. Used directly by the state-machine tests so we
-    don't run the migration path (which is exercised separately in
-    ``test_hitl_t30_migration``). One user is seeded so audit-log
-    foreign keys validate."""
+    don't run the migration path: the migration's row-preservation
+    contract is pinned in ``test_hitl_t30_migration.py`` (8 tests
+    covering the rebuild dance), and re-running the migration here
+    would only duplicate that surface. Coverage of the end-to-end
+    "pre-T30 DB on disk → T30 schema in memory" path lives in the
+    migration test file; this fixture exercises the post-migration
+    state machine in isolation."""
     conn = sqlite3.connect(":memory:")
     conn.row_factory = sqlite3.Row
     conn.execute("PRAGMA foreign_keys = ON")
@@ -369,6 +373,25 @@ def test_compute_codelist_kappa_returns_none_with_one_reviewer() -> None:
     conn.commit()
 
     assert _compute_codelist_kappa(conn, "cl1") is None
+
+
+def test_compute_codelist_kappa_raises_for_more_than_two_reviewers() -> None:
+    """Three reviewers' votes is not "insufficient data" — it's "wrong
+    metric". Cohen's kappa is n=2 only; silently returning None for
+    n=3 would persist NULL kappa for a codelist with full vote data,
+    masking a data-quality issue. Step 5 must wire a Fleiss-kappa
+    helper before unlocking n=3 reviewer assignment."""
+    conn = _open_post_t30()
+    _seed_codelist(conn, reviewer_ids=[1, 2, 3])
+    [did] = _seed_decisions(conn, "cl1", 1)
+
+    _record_vote(conn, did, 1, "include")
+    _record_vote(conn, did, 2, "include")
+    _record_vote(conn, did, 3, "exclude")
+    conn.commit()
+
+    with pytest.raises(ValueError, match="n=2 only"):
+        _compute_codelist_kappa(conn, "cl1")
 
 
 def test_compute_codelist_kappa_uses_only_common_decisions() -> None:

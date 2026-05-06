@@ -259,3 +259,82 @@ def test_v1_and_v2_diverge_on_same_input() -> None:
         _compute_signature_v1(cl_v1, decisions)
         != _compute_signature_v2(cl_v2, decisions)
     )
+
+
+# ---------------------------------------------------------------------------
+# v2 numeric guards
+# ---------------------------------------------------------------------------
+
+
+def test_v2_rejects_nan_kappa() -> None:
+    """``agreement_kappa = NaN`` must raise rather than silently embed
+    ``cohen-unweighted:nan`` in the audit hash. Cohen's kappa over
+    string labels can't mathematically yield NaN; reaching this
+    branch indicates upstream corruption and must fail loud."""
+    codelist = _v2_codelist(agreement_kappa=float("nan"))
+    with pytest.raises(ValueError, match="non-finite"):
+        _compute_signature_v2(codelist, _DECISIONS_FIXTURE)
+
+
+def test_v2_rejects_infinite_kappa() -> None:
+    """``agreement_kappa = +inf`` / ``-inf`` must also raise. Same
+    reasoning as the NaN case — non-finite values do not round-trip
+    through ``f"{kappa:.4f}"`` to a meaningful audit string."""
+    for bad in (float("inf"), float("-inf")):
+        codelist = _v2_codelist(agreement_kappa=bad)
+        with pytest.raises(ValueError, match="non-finite"):
+            _compute_signature_v2(codelist, _DECISIONS_FIXTURE)
+
+
+def test_v2_normalises_negative_zero_kappa() -> None:
+    """``agreement_kappa = -0.0`` must hash identically to
+    ``agreement_kappa = 0.0``. Without the ``+ 0.0`` normalisation,
+    Python's float formatter produces ``-0.0000`` vs ``0.0000`` —
+    two byte sequences for one logical value, breaking the
+    "semantically equal codelists hash identically" property."""
+    pos_zero = _compute_signature_v2(
+        _v2_codelist(agreement_kappa=0.0), _DECISIONS_FIXTURE,
+    )
+    neg_zero = _compute_signature_v2(
+        _v2_codelist(agreement_kappa=-0.0), _DECISIONS_FIXTURE,
+    )
+    assert pos_zero == neg_zero
+
+
+# ---------------------------------------------------------------------------
+# decision-insertion validation (separator characters)
+# ---------------------------------------------------------------------------
+
+
+@pytest.mark.parametrize("bad_field, bad_value", [
+    ("code", "E11|E10"),
+    ("code", "E11\nbogus"),
+    ("vocabulary", "ICD|10"),
+    ("vocabulary", "ICD-10\n--criteria--\n[]"),
+])
+def test_insert_decisions_rejects_separator_chars(
+    bad_field: str, bad_value: str,
+) -> None:
+    """``_insert_decisions`` must reject ``|`` and newline characters
+    in ``code`` / ``vocabulary``. Both are signature-payload separators
+    in v1 and v2; embedding either in a stored row would create payload
+    ambiguity that could collide hashes between semantically-different
+    codelists. Well-formed retriever output never contains these
+    characters, so the validation is a fail-loud safety net for
+    pipeline corruption / future manual-add paths."""
+    from app.db.hitl_store import _insert_decisions
+    import sqlite3
+    conn = sqlite3.connect(":memory:")
+
+    base = {
+        "code": "E11",
+        "vocabulary": "ICD-10",
+        "decision": "include",
+        "confidence": 0.9,
+        "rationale": "ok",
+        "sources": [],
+    }
+    base[bad_field] = bad_value
+
+    with pytest.raises(ValueError, match="separator character"):
+        _insert_decisions(conn, "cl-test", [base])
