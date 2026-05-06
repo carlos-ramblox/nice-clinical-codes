@@ -930,6 +930,15 @@ def submit_review(
     ``ConflictError`` so the route layer can return 409. The route's own
     pre-check at ``api/codelists.py:review_codelist`` is now defence-in-
     depth — the lock is the authoritative gate.
+
+    Concurrency assumption: ``submit_review`` is called only from the
+    ``POST /api/codelists/{id}/review`` route handler. SQLite per-thread
+    connections (T07) + ``BEGIN IMMEDIATE`` (T26) make per-codelist
+    serialisation correct under that assumption. If a future ticket adds
+    a background reconciler, batch importer, or any non-route caller, the
+    defensive ``conn.commit()`` at the top of this function (which assumes
+    no other thread holds an implicit transaction on the singleton) needs
+    revisiting before that caller lands.
     """
     if action not in ("approve", "reject"):
         raise ValueError(f"unknown action: {action}")

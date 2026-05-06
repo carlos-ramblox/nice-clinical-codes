@@ -1469,6 +1469,112 @@ identified §4 failure cases, are more robust to single-judge bias.
   review, that is the only faithfulness check applied at request
   time.
 
+## Inter-rater agreement (T30; methodology)
+
+The two-reviewer Delphi flow shipped in T30 surfaces Cohen's κ on the
+review surface and uses it as the disposition signal: codelists with
+unanimous votes auto-approve on second finalisation, while any
+disagreement routes the codelist to an adjudication step where a
+proposed → acknowledged consensus mechanism resolves the disputed
+decisions. This section pins the methodology so a downstream paper
+can cite it without reading the implementation.
+
+### Formula
+
+Cohen's κ for two reviewers over a nominal label set is
+
+$$\kappa = \frac{p_o - p_e}{1 - p_e}$$
+
+where $p_o$ is the observed agreement (the fraction of items where
+both reviewers voted the same label) and $p_e$ is the expected
+agreement under independent chance, computed as the dot product of
+the two reviewers' marginal label distributions. The label set in
+this implementation is $\{$include, exclude, uncertain$\}$ — the
+DB CHECK constraint on `decision_votes.vote` enforces it.
+
+The implementation lives in
+[`backend/app/services/agreement.py::cohen_kappa`](./backend/app/services/agreement.py)
+as a pure-Python function with no I/O. It returns `None` for empty
+inputs (insufficient data is not an error), `1.0` for the
+single-category collapse case ($p_e = 1$ when both reviewers vote
+all-include or all-exclude — the standard formula's $0/0$ is
+project-locally resolved to perfect agreement, since $p_o = 1$ is
+structurally guaranteed in that case), and a `ValueError` for
+length-mismatched inputs (a programming bug at the call site, not
+a runtime condition).
+
+### Interpretation bands
+
+We surface Landis & Koch's (1977) qualitative labels alongside the
+numeric κ on the review header strip:
+
+| κ range          | Label             |
+|------------------|-------------------|
+| κ < 0            | poor              |
+| 0 ≤ κ ≤ 0.20     | slight            |
+| 0.21 ≤ κ ≤ 0.40  | fair              |
+| 0.41 ≤ κ ≤ 0.60  | moderate          |
+| 0.61 ≤ κ ≤ 0.80  | substantial       |
+| 0.81 ≤ κ ≤ 1.00  | almost perfect    |
+
+The 0.41 boundary is the UI's amber-warning threshold (κ < 0.41
+surfaces an informational caption recommending discussion before
+consensus); see [`CLINICAL_SAFETY.md`](./CLINICAL_SAFETY.md) for the
+hazard-mitigation reading.
+
+### Why unweighted
+
+Cohen's κ has weighted variants (linear, quadratic) that treat
+include↔uncertain disagreement as less severe than include↔exclude.
+The clinical case for weighted κ is real, but the choice of weights
+is itself contestable — quadratic weights aggressively reward "near
+agreement" in a way that may overstate consensus on adversarially
+ambiguous codes, while linear weights stay conservative. Watson 2017
+Stage 3 (the Delphi-adjudication paper this implementation cites) uses
+unweighted κ; we ship that first to keep the metric's interpretation
+free from a weight-choice debate. A `cohen_kappa_weighted` is the
+natural extension if a future inter-rater study or methods-paper
+reviewer asks for it.
+
+### Test fixtures
+
+The metric's correctness is pinned by three property tests in
+[`backend/tests/test_agreement.py`](./backend/tests/test_agreement.py):
+
+- **Perfect agreement** (`a == b` on every item): κ = 1, regardless
+  of marginal distribution.
+- **Inverted agreement on balanced marginals** (every item disagrees,
+  $p_a = p_b = 0.5$): κ = -1 — the worst possible value, indicating
+  systematic disagreement worse than chance.
+- **Chance-level agreement** (4-item fixture with $p_o = p_e = 0.5$):
+  κ = 0 exactly. The fixture uses a 4-item list rather than 50 because
+  with $N = 50$ split 25/25, $\kappa = 0$ is unreachable by integer
+  construction (the construction requires $k = j = 12.5$, non-integer).
+  At $N = 4$ the arithmetic is exact and verifiable at a glance.
+
+Plus three edge-case tests: empty input returns `None`; single-category
+collapse returns `1.0` (not `NaN`); length mismatch raises
+`ValueError`.
+
+### What's not measured here
+
+This section documents the metric's properties and the codebase's
+implementation; it does not constitute an inter-rater reliability
+study. The next deliverable is a real IRR study with 2-3 clinicians
+on the existing 15-codelist benchmark, gated on T30 landing and ~4
+weeks of clinician calendar time. T30 unlocks the calendar; the
+study itself is a separate ticket. When that lands, the per-codelist
+and aggregate κ values will appear here as a §Inter-rater results
+subsection and the methodology paper draft will gain a parallel
+table.
+
+The mapping from κ to clinical action is also out of scope for this
+section — see [`CLINICAL_SAFETY.md`](./CLINICAL_SAFETY.md) for how
+the `< 0.41` band is surfaced as an informational warning rather
+than a gating threshold, and for the four design decisions
+(independent voting, both-ACK consensus, the warning band, auditable
+rejection) that compose the two-reviewer mitigation.
+
 ## Limitations
 
 - **Sample size**. 15 of 3,735 published lists is a 0.4 % sample.
