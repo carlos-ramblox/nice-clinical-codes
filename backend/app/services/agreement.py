@@ -52,9 +52,13 @@ def cohen_kappa(
         indicate worse-than-chance agreement.
         Returns 1.0 when both reviewers concentrate on the same single
         label — the standard formula's denominator is 0 in that case
-        (``pe == 1``); the McHugh 2012 convention is that perfect
-        agreement is perfect agreement and the chance-adjustment is
-        undefined but the result is 1.0.
+        (``pe == 1``). McHugh 2012 does not address this edge case
+        explicitly; the choice of 1.0 (vs. NaN, which is what
+        scikit-learn ≥ 1.9 returns by default) is a project-local
+        convention: ``po == 1`` is structurally guaranteed in this
+        case, and "every item agrees" is the natural reading the
+        UI surfaces. A NaN propagating into the audit copy is
+        worse than misleading.
 
     Raises
     ------
@@ -92,11 +96,13 @@ def cohen_kappa(
     # ``pe == 1`` happens iff both reviewers concentrate on the same
     # single label (Cauchy-Schwarz equality case). In that case
     # ``po == 1`` too — every item is the same on both sides — and
-    # the ratio ``(1 - 1) / (1 - 1)`` is 0/0, undefined. Convention
-    # per McHugh 2012: return 1.0. The epsilon guards against
-    # accumulated floating-point error when ``pe`` approaches 1 but
-    # doesn't quite hit it; in the exact-1 case (counts of 1.0) it's
-    # belt-and-braces.
+    # the ratio ``(1 - 1) / (1 - 1)`` is 0/0, undefined. Project-local
+    # convention: return 1.0 because po==1 is structurally guaranteed.
+    # McHugh 2012 (cited in the module header) does not address this
+    # case; sklearn ≥ 1.9's cohen_kappa_score defaults to NaN. The
+    # epsilon guards against accumulated floating-point error when
+    # ``pe`` approaches 1 but doesn't quite hit it; in the exact-1
+    # case (counts of 1.0) it's belt-and-braces.
     if abs(1.0 - pe) < 1e-12:
         return 1.0
 

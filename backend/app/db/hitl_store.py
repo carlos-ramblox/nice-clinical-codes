@@ -19,6 +19,7 @@ from pathlib import Path
 from typing import Any, Iterable, Optional
 
 from app.config import HITL_DATABASE_URL
+from app.services.agreement import cohen_kappa
 
 logger = logging.getLogger(__name__)
 
@@ -27,14 +28,16 @@ _conn: Optional[sqlite3.Connection] = None
 
 class ConflictError(Exception):
     """Raised when ``submit_review`` finds the codelist already in a terminal
-    status (``approved`` / ``rejected``) under the BEGIN IMMEDIATE lock.
+    status (``approved`` / ``rejected``) under the BEGIN IMMEDIATE lock,
+    or when ``_transition`` finds the codelist's actual current status
+    doesn't match the caller's declared ``from_status``.
 
     Distinct from ``KeyError`` (codelist missing) so the route layer can
     translate it to HTTP 409 Conflict — the second concurrent reviewer
     sees a definitive "already reviewed" rather than a 200 with a
     last-writer-wins signature.
 
-    ``status`` carries the terminal status seen under the lock so the
+    ``status`` carries the actual status seen under the lock so the
     route can emit a 409 ``detail`` in the same format as its pre-check
     path, without re-reading the row.
     """
@@ -43,6 +46,27 @@ class ConflictError(Exception):
         self.codelist_id = codelist_id
         self.status = status
         super().__init__(f"codelist {codelist_id} is already {status}")
+
+
+class InvalidTransition(Exception):
+    """Raised when ``_transition`` is asked to move a codelist along an
+    edge that is not in ``_VALID_TRANSITIONS``.
+
+    Distinct from ``ConflictError`` (which means "current state doesn't
+    match expected from_status — race condition / stale view") because
+    an invalid transition is a caller-side bug: the route asked for an
+    edge the state machine does not contain. The route translates this
+    to HTTP 422 (Unprocessable Entity) so the client can distinguish
+    "you tried something the workflow does not allow" (422) from
+    "something else got there first" (409).
+    """
+
+    def __init__(self, from_status: str, to_status: str) -> None:
+        self.from_status = from_status
+        self.to_status = to_status
+        super().__init__(
+            f"illegal status transition: {from_status} -> {to_status}"
+        )
 
 
 def _db_path() -> str:
@@ -981,46 +1005,396 @@ def submit_review(
 
 
 def _compute_signature(conn: sqlite3.Connection, cid: str) -> str:
-    """
-    SHA-256 over the final human decisions in deterministic order. Gives us
-    a tamper-evident digest of the approved codelist.
+    """SHA-256 over the codelist's final state, dispatching on
+    ``signature_version``.
 
-    T29 backward-compat: when the codelist has neither include nor
-    exclude criteria, the payload is byte-identical to the pre-T29
-    format so pre-T29 approved hashes verify unchanged. When either
-    list is non-empty a ``--criteria--`` block is appended; both lists
-    are sorted before serialisation so semantically-equal intents (same
-    set, different order) produce the same hash.
-    """
-    rows = conn.execute(
-        """SELECT code, vocabulary, human_decision
-             FROM codelist_decisions
-            WHERE codelist_id = ?
-            ORDER BY code, vocabulary""",
-        (cid,),
-    ).fetchall()
-    payload = "\n".join(
-        f"{r['code']}|{r['vocabulary']}|{r['human_decision']}" for r in rows
-    )
+    - **v1** (default, legacy): pre-T30 single-reviewer format.
+      ``--criteria--`` block appended only when at least one of
+      ``include_criteria`` / ``exclude_criteria`` is non-empty
+      (T29 conditional-append). Empty-criteria codelists hash
+      byte-identical to the pre-T29 formula.
+    - **v2** (post-T30): canonical two-reviewer Delphi format.
+      Always emits ``--criteria--``, ``--reviewers--``, and
+      ``--kappa--`` blocks. The kappa block carries its method
+      tag (``cohen-unweighted:0.5234`` or ``cohen-unweighted:null``)
+      so a future switch to weighted kappa or Fleiss for n=3
+      produces a legitimately different hash, not a silent
+      regression.
 
-    crit_row = conn.execute(
-        "SELECT include_criteria, exclude_criteria FROM codelists WHERE id = ?",
+    ``signature_version`` is **immutable per codelist**: set when
+    the codelist commits to either path (v1 at creation with
+    empty ``reviewer_ids``, v2 when the first ≥2 reviewers are
+    assigned via ``POST /reviewers``) and never mutated afterwards.
+    Promoting a v1 codelist to v2 retroactively would invalidate
+    every prior verification of its v1 signature, so the
+    workflow forks instead — adding reviewers to a legacy codelist
+    creates a new v2 codelist with a new id rather than mutating
+    the existing row.
+
+    The dispatcher fetches all the inputs both versions might need
+    in two queries (one row, N decisions) and hands a plain dict /
+    list[dict] to the version-specific helper. This keeps the
+    helpers pure — easy to test by passing dicts directly without
+    a SQL fixture.
+    """
+    row = conn.execute(
+        "SELECT signature_version, include_criteria, exclude_criteria, "
+        "       reviewer_ids, agreement_kappa "
+        "FROM codelists WHERE id = ?",
         (cid,),
     ).fetchone()
-    if crit_row is not None:
-        try:
-            inc = json.loads(crit_row["include_criteria"] or "[]")
-            exc = json.loads(crit_row["exclude_criteria"] or "[]")
-        except (TypeError, ValueError):
-            inc, exc = [], []
-        if inc or exc:
-            criteria_block = json.dumps(
-                {"include": sorted(inc), "exclude": sorted(exc)},
-                sort_keys=True,
-            )
-            payload += f"\n--criteria--\n{criteria_block}"
+    if row is None:
+        raise KeyError(f"codelist not found: {cid}")
+    decisions = [dict(d) for d in conn.execute(
+        "SELECT code, vocabulary, human_decision AS final_decision "
+        "FROM codelist_decisions WHERE codelist_id = ? "
+        "ORDER BY code, vocabulary",
+        (cid,),
+    )]
+    codelist = dict(row)
 
+    # Explicit None-check rather than ``or 1``: a future row with a
+    # ``signature_version`` of 0 would slip through truthiness-fallback
+    # silently into v1, defeating the unknown-version guard below.
+    # ``DEFAULT 1`` makes 0 unreachable today, but the guard's job is
+    # to fail loud on unexpected values.
+    version = codelist.get("signature_version")
+    if version is None:
+        version = 1
+    if version == 1:
+        return _compute_signature_v1(codelist, decisions)
+    if version == 2:
+        return _compute_signature_v2(codelist, decisions)
+    raise ValueError(f"unknown signature_version: {version}")
+
+
+def _decision_block(decisions: list[dict]) -> str:
+    """Per-decision payload block, shared by v1 and v2.
+
+    Sorted by ``(code, vocabulary)``; one row per line in
+    ``code|vocabulary|final_decision`` format. Deterministic — the
+    sort is the single source of order for both versions, so
+    semantically-equal codelists (same codes, decisions, and
+    vocabularies) hash identically regardless of insertion order.
+    """
+    rows = sorted(
+        (d["code"], d["vocabulary"], d["final_decision"]) for d in decisions
+    )
+    return "\n".join(f"{c}|{v}|{f}" for c, v, f in rows)
+
+
+def _compute_signature_v1(codelist: dict, decisions: list[dict]) -> str:
+    """v1 signature: pre-T30 single-reviewer format.
+
+    Payload::
+
+        {decision_block}
+        [--criteria--                    <- conditional, only when non-empty
+        {"exclude": [...], "include": [...]}]
+
+    Frozen — pre-T30 approved hashes verify byte-identical under
+    this function. Any mutation here is a backward-compat break.
+    """
+    payload = _decision_block(decisions)
+    try:
+        inc = json.loads(codelist.get("include_criteria") or "[]")
+        exc = json.loads(codelist.get("exclude_criteria") or "[]")
+    except (TypeError, ValueError):
+        inc, exc = [], []
+    if inc or exc:
+        criteria_block = json.dumps(
+            {"include": sorted(inc), "exclude": sorted(exc)},
+            sort_keys=True,
+        )
+        payload += f"\n--criteria--\n{criteria_block}"
     return hashlib.sha256(payload.encode("utf-8")).hexdigest()
+
+
+# Method tag baked into v2's kappa block. Switching to a different
+# method (weighted, Fleiss, etc.) is a deliberate signature change
+# — bump this to a new tag and ship a new signature_version, do
+# not silently change the tag for an existing v2 codelist.
+_KAPPA_METHOD_TAG = "cohen-unweighted"
+
+
+def _compute_signature_v2(codelist: dict, decisions: list[dict]) -> str:
+    """v2 signature: post-T30 two-reviewer Delphi canonical format.
+
+    Payload::
+
+        {decision_block}
+        --criteria--
+        {"exclude": [...], "include": [...]}
+        --reviewers--
+        [3, 7]
+        --kappa--
+        cohen-unweighted:0.5234
+
+    Always-emit-everything: the criteria block is unconditional
+    (no T29-style append-only-when-non-empty), the reviewers block
+    is the sorted JSON list, and the kappa block carries its
+    method tag so a future method switch is visible in the hash.
+    ``cohen-unweighted:null`` represents an undefined kappa (e.g.
+    a v2 codelist that approved unanimously without ever entering
+    adjudication, where kappa was never computed).
+    """
+    payload = _decision_block(decisions)
+
+    try:
+        inc = json.loads(codelist.get("include_criteria") or "[]")
+        exc = json.loads(codelist.get("exclude_criteria") or "[]")
+    except (TypeError, ValueError):
+        inc, exc = [], []
+    criteria_block = json.dumps(
+        {"include": sorted(inc), "exclude": sorted(exc)},
+        sort_keys=True,
+    )
+
+    try:
+        reviewer_ids = sorted(json.loads(codelist.get("reviewer_ids") or "[]"))
+    except (TypeError, ValueError):
+        reviewer_ids = []
+    reviewers_block = json.dumps(reviewer_ids)
+
+    kappa = codelist.get("agreement_kappa")
+    if kappa is None:
+        kappa_block = f"{_KAPPA_METHOD_TAG}:null"
+    else:
+        # 4 decimal places — enough resolution for the audit
+        # (Landis & Koch bands are stated to 2 dp); avoids the
+        # floating-point repr noise that would otherwise put
+        # non-deterministic bytes in the hash.
+        kappa_block = f"{_KAPPA_METHOD_TAG}:{float(kappa):.4f}"
+
+    payload += (
+        f"\n--criteria--\n{criteria_block}"
+        f"\n--reviewers--\n{reviewers_block}"
+        f"\n--kappa--\n{kappa_block}"
+    )
+    return hashlib.sha256(payload.encode("utf-8")).hexdigest()
+
+
+# --- state machine ----------------------------------------------------------
+#
+# T30 status edges. Anything not in this set raises InvalidTransition.
+# The legacy single-reviewer flow keeps draft -> approved/rejected;
+# the two-reviewer Delphi flow uses
+# draft -> in_review -> {approved (unanimous), adjudication, rejected};
+# adjudication -> {approved (consensus), rejected (with reason)}.
+# Approved and rejected are terminal — no edges out.
+
+_VALID_TRANSITIONS: frozenset[tuple[str, str]] = frozenset({
+    # Legacy single-reviewer flow (reviewer_ids = []).
+    ("draft", "approved"),
+    ("draft", "rejected"),
+    # Two-reviewer Delphi flow.
+    ("draft", "in_review"),
+    ("in_review", "approved"),      # both finalised + unanimous => skip adjudication
+    ("in_review", "adjudication"),  # both finalised + at least one disagreement
+    ("in_review", "rejected"),      # any reviewer rejects before adjudication
+    ("adjudication", "approved"),   # both reviewers ACK consensus
+    ("adjudication", "rejected"),   # any reviewer rejects from adjudication (reason required)
+})
+
+
+def _transition(
+    conn: sqlite3.Connection,
+    cid: str,
+    from_status: str,
+    to_status: str,
+    reviewer_id: int | None,
+    *,
+    is_final: bool = False,
+    reason: str | None = None,
+) -> None:
+    """Move ``cid`` along a state-machine edge, logging the transition.
+
+    The caller **must** hold a ``BEGIN IMMEDIATE`` transaction
+    before invoking this helper. Calling it outside an exclusive
+    write lock is unsafe: two concurrent callers can both pass
+    the ``from_status`` re-check before either commits, then both
+    issue the ``UPDATE``, with the second silently overwriting
+    the first and leaving two ``status_transition`` audit rows
+    for one logical move. SQLite has no API to assert IMMEDIATE
+    vs DEFERRED at runtime, so the contract is enforced by
+    convention at every call site.
+
+    This helper does not commit or roll back — it issues one
+    ``UPDATE`` and one audit-log ``INSERT`` so the caller can
+    batch them with the rest of the request's writes.
+
+    Constraints:
+
+    - The ``(from_status, to_status)`` pair must be in
+      ``_VALID_TRANSITIONS`` or ``InvalidTransition`` is raised.
+    - The codelist's actual current status must equal
+      ``from_status``; otherwise ``ConflictError`` is raised
+      (the caller's view of state was stale, e.g. a concurrent
+      reviewer reached the next state first).
+    - Rejection from ``in_review`` or ``adjudication`` requires a
+      non-empty ``reason``. Rejection without a stated reason is
+      itself a clinical-safety hazard — the audit log must record
+      *why* a codelist was rejected, not just that it was.
+      ``ValueError`` if the reason is missing.
+    - ``signature_version`` is **not** mutated — it is set at the
+      codelist's commit-to-flow point and is immutable afterwards.
+
+    The audit-log entry uses ``event="status_transition"`` with
+    ``details = {from, to, is_final, reason}`` so a downstream
+    auditor can reconstruct the order and motivation of every
+    state change.
+    """
+    if (from_status, to_status) not in _VALID_TRANSITIONS:
+        raise InvalidTransition(from_status, to_status)
+    if to_status == "rejected" and from_status in ("in_review", "adjudication"):
+        if not reason or not reason.strip():
+            raise ValueError(
+                f"rejection from {from_status} requires a non-empty reason"
+            )
+
+    row = conn.execute(
+        "SELECT status FROM codelists WHERE id = ?", (cid,),
+    ).fetchone()
+    if row is None:
+        raise KeyError(f"codelist not found: {cid}")
+    if row["status"] != from_status:
+        raise ConflictError(cid, row["status"])
+
+    conn.execute(
+        "UPDATE codelists SET status = ? WHERE id = ?",
+        (to_status, cid),
+    )
+    _append_audit(
+        conn, cid,
+        event="status_transition",
+        user_id=reviewer_id,
+        details={
+            "from": from_status,
+            "to": to_status,
+            "is_final": is_final,
+            "reason": reason,
+        },
+    )
+
+
+# --- per-reviewer voting ----------------------------------------------------
+
+def _record_vote(
+    conn: sqlite3.Connection,
+    decision_id: int,
+    reviewer_id: int,
+    vote: str,
+    *,
+    comment: str | None = None,
+) -> None:
+    """Record (or update) a reviewer's vote on a single decision.
+
+    ``UNIQUE(decision_id, reviewer_id)`` on the ``decision_votes``
+    table is the conflict target for the upsert: a re-vote
+    overwrites the existing row with a fresh ``voted_at``
+    timestamp rather than creating a parallel duplicate. The DB
+    CHECK constraint enforces the ``include`` / ``exclude`` /
+    ``uncertain`` set; this helper does not validate the vote
+    value (the constraint will fire on insert).
+
+    The caller owns the surrounding transaction.
+    """
+    conn.execute(
+        """INSERT INTO decision_votes (decision_id, reviewer_id, vote, comment)
+           VALUES (?, ?, ?, ?)
+           ON CONFLICT(decision_id, reviewer_id) DO UPDATE SET
+               vote = excluded.vote,
+               comment = excluded.comment,
+               voted_at = strftime('%Y-%m-%dT%H:%M:%SZ','now')""",
+        (decision_id, reviewer_id, vote, comment),
+    )
+
+
+def _mark_voting_finalised(
+    conn: sqlite3.Connection,
+    cid: str,
+    reviewer_id: int,
+) -> None:
+    """Log that ``reviewer_id`` has finalised their voting on ``cid``.
+
+    "I'm done voting" is recorded as an explicit
+    ``voting_finalised`` audit-log event, not derived from
+    "every decision has a vote from this reviewer". The clinical
+    forensics question "did reviewer X knowingly approve?" needs
+    a positive declaration, not an inference from row counts —
+    a reviewer who submits 99/100 votes might still be working,
+    and the audit log should not silently treat that as approval.
+    """
+    _append_audit(
+        conn, cid, event="voting_finalised",
+        user_id=reviewer_id, details={},
+    )
+
+
+def _both_reviewers_finalised(
+    conn: sqlite3.Connection,
+    cid: str,
+    reviewer_ids: list[int],
+) -> bool:
+    """Return ``True`` iff every assigned reviewer has logged a
+    ``voting_finalised`` event on this codelist.
+
+    Empty ``reviewer_ids`` (legacy single-reviewer flow) returns
+    ``False`` — the legacy path should not reach this helper, and
+    if it does we want the caller to fail closed rather than
+    accidentally transition a draft.
+    """
+    if not reviewer_ids:
+        return False
+    rows = conn.execute(
+        """SELECT DISTINCT user_id FROM audit_log
+            WHERE codelist_id = ? AND event = 'voting_finalised'""",
+        (cid,),
+    ).fetchall()
+    finalised = {r["user_id"] for r in rows}
+    return all(rid in finalised for rid in reviewer_ids)
+
+
+def _compute_codelist_kappa(
+    conn: sqlite3.Connection,
+    cid: str,
+) -> float | None:
+    """Cohen's kappa over the per-(decision, reviewer) votes for a
+    two-reviewer codelist.
+
+    Returns ``None`` when there aren't exactly two distinct
+    reviewers' votes covering at least one common decision —
+    mirrors ``cohen_kappa``'s "insufficient data" return rather
+    than raising, so the caller can persist ``NULL`` into
+    ``codelists.agreement_kappa`` without a special-case branch.
+
+    The agreement metric runs against the intersection of
+    decisions both reviewers have voted on. Decisions that only
+    one reviewer has touched do not contribute (nothing to
+    compare against).
+    """
+    rows = conn.execute(
+        """SELECT v.decision_id, v.reviewer_id, v.vote
+             FROM decision_votes v
+             JOIN codelist_decisions d ON d.id = v.decision_id
+            WHERE d.codelist_id = ?
+            ORDER BY v.decision_id, v.reviewer_id""",
+        (cid,),
+    ).fetchall()
+
+    by_reviewer: dict[int, dict[int, str]] = {}
+    for r in rows:
+        by_reviewer.setdefault(r["reviewer_id"], {})[r["decision_id"]] = r["vote"]
+    if len(by_reviewer) != 2:
+        return None
+
+    a_id, b_id = sorted(by_reviewer.keys())
+    common = sorted(set(by_reviewer[a_id]) & set(by_reviewer[b_id]))
+    if not common:
+        return None
+    votes_a = [by_reviewer[a_id][d] for d in common]
+    votes_b = [by_reviewer[b_id][d] for d in common]
+    return cohen_kappa(votes_a, votes_b)
 
 
 # --- audit log --------------------------------------------------------------
