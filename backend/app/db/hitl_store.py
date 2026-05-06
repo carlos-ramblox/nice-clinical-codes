@@ -112,7 +112,177 @@ def _migrate_schema(conn: sqlite3.Connection) -> None:
         if "duplicate column" not in str(exc).lower():
             raise
 
+    # T30: incremental column adds for the two-reviewer Delphi flow.
+    # Each ALTER is idempotent via the same duplicate-column swallow.
+    # Defaults (reviewer_ids='[]', signature_version=1) make pre-T30
+    # rows read back as legacy single-reviewer codelists; agreement_kappa
+    # stays NULL so a UI surface can distinguish "no kappa computed" from
+    # "kappa computed and zero".
+    for ddl in (
+        "ALTER TABLE codelists ADD COLUMN reviewer_ids TEXT NOT NULL DEFAULT '[]'",
+        "ALTER TABLE codelists ADD COLUMN agreement_kappa REAL",
+        "ALTER TABLE codelists ADD COLUMN signature_version INTEGER NOT NULL DEFAULT 1",
+    ):
+        try:
+            conn.execute(ddl)
+        except sqlite3.OperationalError as exc:
+            if "duplicate column" not in str(exc).lower():
+                raise
+
     conn.commit()
+
+    # T30: rebuild ``codelists`` to add ``adjudication`` to the status
+    # CHECK constraint. SQLite has no ALTER TABLE DROP/MODIFY CHECK,
+    # so the only path is the table-rebuild dance documented at
+    # https://www.sqlite.org/lang_altertable.html#otheralter . Runs
+    # only when the existing CHECK doesn't already include the new
+    # status — idempotent on subsequent boots.
+    _migrate_codelists_for_t30(conn)
+
+
+def _migrate_codelists_for_t30(conn: sqlite3.Connection) -> None:
+    """Rebuild ``codelists`` so its status CHECK accepts ``adjudication``.
+
+    The 12-step SQLite rebuild dance (CREATE _new, INSERT SELECT, DROP,
+    RENAME) is the only way to update an existing CHECK constraint in
+    SQLite. This function adds the four safety nails confirmed for T30:
+
+    1. ``PRAGMA foreign_keys = OFF`` *outside* the transaction (SQLite
+       silently no-ops the PRAGMA inside a transaction). This stops
+       child-row FKs (codelist_decisions, audit_log) from tripping
+       during the DROP step.
+    2. ``PRAGMA foreign_key_check`` *after* COMMIT to surface any orphan
+       rows the rebuild left behind — fail loud rather than ship a DB
+       with silent integrity holes.
+    3. Idempotency by ``sqlite_master.sql`` parse: if the existing CHECK
+       already mentions ``adjudication`` we skip. No separate
+       schema_migrations table for this single ticket.
+    4. Recreate every index that exists today on codelists. SQLite
+       drops them when the underlying table is DROPped; missing them
+       silently from the rebuilt schema would slow every status / owner
+       lookup.
+
+    Plus a row-count safety check before/after — if the row counts
+    diverge the rebuild raises rather than committing a half-complete
+    migration.
+    """
+    row = conn.execute(
+        "SELECT sql FROM sqlite_master WHERE type='table' AND name='codelists'"
+    ).fetchone()
+    if row is None:
+        # _init_schema runs first and would have created the table; if
+        # it's missing here something is structurally wrong. Fail loud.
+        raise sqlite3.OperationalError(
+            "T30 migration: codelists table is missing"
+        )
+    if "'adjudication'" in (row["sql"] or ""):
+        # Already migrated (fresh DB or re-boot after migration ran).
+        return
+
+    pre_codelists = conn.execute("SELECT COUNT(*) FROM codelists").fetchone()[0]
+    pre_decisions = conn.execute("SELECT COUNT(*) FROM codelist_decisions").fetchone()[0]
+    pre_audit = conn.execute("SELECT COUNT(*) FROM audit_log").fetchone()[0]
+
+    conn.execute("PRAGMA foreign_keys = OFF")
+    conn.execute("BEGIN")
+    try:
+        conn.execute(
+            """
+            CREATE TABLE codelists_new (
+                id TEXT PRIMARY KEY,
+                name TEXT NOT NULL,
+                version INTEGER NOT NULL DEFAULT 1,
+                status TEXT NOT NULL DEFAULT 'draft'
+                    CHECK(status IN ('draft','in_review','adjudication','approved','rejected')),
+                query TEXT NOT NULL,
+                created_by INTEGER NOT NULL REFERENCES users(id),
+                created_at TEXT NOT NULL DEFAULT (strftime('%Y-%m-%dT%H:%M:%SZ','now')),
+                reviewed_by INTEGER REFERENCES users(id),
+                reviewed_at TEXT,
+                review_notes TEXT,
+                signature_hash TEXT,
+                parent_id TEXT REFERENCES codelists(id),
+                include_criteria TEXT NOT NULL DEFAULT '[]',
+                exclude_criteria TEXT NOT NULL DEFAULT '[]',
+                private INTEGER NOT NULL DEFAULT 0,
+                reviewer_ids TEXT NOT NULL DEFAULT '[]',
+                agreement_kappa REAL,
+                signature_version INTEGER NOT NULL DEFAULT 1
+            )
+            """
+        )
+        # Explicit column list on both sides so a future column add to
+        # the new schema doesn't silently leave the SELECT one short.
+        conn.execute(
+            """
+            INSERT INTO codelists_new (
+                id, name, version, status, query, created_by, created_at,
+                reviewed_by, reviewed_at, review_notes, signature_hash, parent_id,
+                include_criteria, exclude_criteria, private,
+                reviewer_ids, agreement_kappa, signature_version
+            )
+            SELECT
+                id, name, version, status, query, created_by, created_at,
+                reviewed_by, reviewed_at, review_notes, signature_hash, parent_id,
+                include_criteria, exclude_criteria, private,
+                reviewer_ids, agreement_kappa, signature_version
+            FROM codelists
+            """
+        )
+        conn.execute("DROP TABLE codelists")
+        conn.execute("ALTER TABLE codelists_new RENAME TO codelists")
+        # Recreate every index that lives on codelists. The index list
+        # here must match _init_schema's CREATE INDEX statements for
+        # codelists exactly — if a future ticket adds an index there
+        # without adding it here, the rebuild silently drops it.
+        conn.execute("CREATE INDEX IF NOT EXISTS idx_codelists_status  ON codelists(status)")
+        conn.execute("CREATE INDEX IF NOT EXISTS idx_codelists_creator ON codelists(created_by)")
+
+        # foreign_key_check runs BEFORE COMMIT so any orphan rows the
+        # rebuild left behind trigger a rollback rather than commit a
+        # corrupted DB. Per the SQLite docs at
+        # https://www.sqlite.org/lang_altertable.html#otheralter step 9.
+        # PRAGMA foreign_keys=OFF disables enforcement during DML but
+        # does NOT suppress foreign_key_check's detection — it's a
+        # query against sqlite_master, not constraint enforcement.
+        violations = conn.execute("PRAGMA foreign_key_check").fetchall()
+        if violations:
+            raise sqlite3.IntegrityError(
+                f"T30 migration: foreign_key_check found {len(violations)} "
+                f"violations after codelists rebuild: {[dict(v) for v in violations]}"
+            )
+        conn.commit()
+    except Exception:
+        conn.rollback()
+        # PRAGMA flip back is best-effort — the next get_connection()
+        # boot would re-flip it ON via _init_schema's PRAGMA call, but
+        # we should leave the connection in a sane state for the rest
+        # of this process too.
+        conn.execute("PRAGMA foreign_keys = ON")
+        raise
+
+    conn.execute("PRAGMA foreign_keys = ON")
+
+    post_codelists = conn.execute("SELECT COUNT(*) FROM codelists").fetchone()[0]
+    post_decisions = conn.execute("SELECT COUNT(*) FROM codelist_decisions").fetchone()[0]
+    post_audit = conn.execute("SELECT COUNT(*) FROM audit_log").fetchone()[0]
+    if (
+        post_codelists != pre_codelists
+        or post_decisions != pre_decisions
+        or post_audit != pre_audit
+    ):
+        raise sqlite3.IntegrityError(
+            "T30 migration: row counts diverged across rebuild — "
+            f"codelists {pre_codelists}->{post_codelists}, "
+            f"decisions {pre_decisions}->{post_decisions}, "
+            f"audit_log {pre_audit}->{post_audit}"
+        )
+    logger.info(
+        "T30 migration: codelists rebuilt (status CHECK now includes "
+        "'adjudication'); %d codelist / %d decision / %d audit rows "
+        "preserved",
+        post_codelists, post_decisions, post_audit,
+    )
 
 
 def _init_schema(conn: sqlite3.Connection) -> None:
@@ -130,8 +300,12 @@ def _init_schema(conn: sqlite3.Connection) -> None:
             id TEXT PRIMARY KEY,
             name TEXT NOT NULL,
             version INTEGER NOT NULL DEFAULT 1,
+            -- T30: 'adjudication' status added between 'in_review' and
+            -- 'approved' for two-reviewer Delphi runs. Pre-T30 rows
+            -- (status in legacy four-tuple) keep validating because the
+            -- new tuple is a superset.
             status TEXT NOT NULL DEFAULT 'draft'
-                CHECK(status IN ('draft','in_review','approved','rejected')),
+                CHECK(status IN ('draft','in_review','adjudication','approved','rejected')),
             query TEXT NOT NULL,
             created_by INTEGER NOT NULL REFERENCES users(id),
             created_at TEXT NOT NULL DEFAULT (strftime('%Y-%m-%dT%H:%M:%SZ','now')),
@@ -146,7 +320,22 @@ def _init_schema(conn: sqlite3.Connection) -> None:
             include_criteria TEXT NOT NULL DEFAULT '[]',
             exclude_criteria TEXT NOT NULL DEFAULT '[]',
             -- T32: owner-flippable opt-out for the public /gallery surface.
-            private INTEGER NOT NULL DEFAULT 0
+            private INTEGER NOT NULL DEFAULT 0,
+            -- T30: list of user-id reviewers assigned to the codelist
+            -- (JSON-encoded list[int], default '[]'). ≥2 reviewers must
+            -- be assigned before the codelist transitions out of 'draft'.
+            reviewer_ids TEXT NOT NULL DEFAULT '[]',
+            -- T30: Cohen's kappa over the two-reviewer per-code votes,
+            -- computed on entry to 'adjudication' and persisted.
+            -- NULL for legacy / single-reviewer codelists.
+            agreement_kappa REAL,
+            -- T30: explicit signature payload version. Branches the
+            -- _compute_signature path so v1 (legacy + T29 criteria
+            -- conditional append) and v2 (T30 reviewer_ids + kappa
+            -- fan-out) can co-exist; legacy approved hashes verify
+            -- byte-identical under v1 forever. Default 1 so pre-T30
+            -- rows read back as v1 without a back-fill UPDATE.
+            signature_version INTEGER NOT NULL DEFAULT 1
         );
 
         CREATE TABLE IF NOT EXISTS codelist_decisions (
@@ -173,11 +362,31 @@ def _init_schema(conn: sqlite3.Connection) -> None:
             timestamp TEXT NOT NULL DEFAULT (strftime('%Y-%m-%dT%H:%M:%SZ','now'))
         );
 
+        -- T30: per-(decision, reviewer) vote. Replaces the single
+        -- ``codelist_decisions.human_decision`` field for two-reviewer
+        -- Delphi runs; the legacy column is retained on the parent row
+        -- as the consensus / casting-vote outcome (single-reviewer rows
+        -- continue to populate it directly). UNIQUE(decision_id,
+        -- reviewer_id) lets a re-vote use INSERT OR REPLACE without
+        -- silent duplicates; ON DELETE CASCADE keeps the orphan-vote
+        -- shape consistent with codelist_decisions ↔ codelists.
+        CREATE TABLE IF NOT EXISTS decision_votes (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            decision_id INTEGER NOT NULL REFERENCES codelist_decisions(id) ON DELETE CASCADE,
+            reviewer_id INTEGER NOT NULL REFERENCES users(id),
+            vote TEXT CHECK(vote IN ('include','exclude','uncertain')) NOT NULL,
+            comment TEXT,
+            voted_at TEXT NOT NULL DEFAULT (strftime('%Y-%m-%dT%H:%M:%SZ','now')),
+            UNIQUE(decision_id, reviewer_id)
+        );
+
         CREATE INDEX IF NOT EXISTS idx_codelists_status  ON codelists(status);
         CREATE INDEX IF NOT EXISTS idx_codelists_creator ON codelists(created_by);
         CREATE INDEX IF NOT EXISTS idx_decisions_codelist ON codelist_decisions(codelist_id);
         CREATE INDEX IF NOT EXISTS idx_audit_codelist     ON audit_log(codelist_id);
         CREATE INDEX IF NOT EXISTS idx_audit_timestamp    ON audit_log(timestamp);
+        CREATE INDEX IF NOT EXISTS idx_decision_votes_decision ON decision_votes(decision_id);
+        CREATE INDEX IF NOT EXISTS idx_decision_votes_reviewer ON decision_votes(reviewer_id);
         """
     )
     conn.commit()

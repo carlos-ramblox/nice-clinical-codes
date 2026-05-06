@@ -445,8 +445,14 @@ def test_migration_backfills_private_one_on_pre_t32_rows():
 
     conn = sqlite3.connect(":memory:")
     conn.row_factory = sqlite3.Row
-    # Pre-T32 schema: codelists without the include/exclude/private
-    # columns (the older shape that the migration is meant to cover).
+    # Pre-T32 codelists shape: post-T29 (include_criteria /
+    # exclude_criteria already present, the T29 ALTER would have added
+    # them on a real pre-T29 deployment), pre-T32 (no `private` column
+    # yet). All other columns (reviewed_by / reviewed_at /
+    # signature_hash / parent_id) have been part of _init_schema since
+    # T0 and were always present on a real production DB; keep them
+    # here so subsequent migrations (T30 rebuild) find the columns
+    # they need to copy across.
     conn.executescript(
         """
         CREATE TABLE users (
@@ -461,7 +467,14 @@ def test_migration_backfills_private_one_on_pre_t32_rows():
             status TEXT NOT NULL DEFAULT 'draft',
             query TEXT NOT NULL,
             created_by INTEGER NOT NULL REFERENCES users(id),
-            created_at TEXT NOT NULL DEFAULT (strftime('%Y-%m-%dT%H:%M:%SZ','now'))
+            created_at TEXT NOT NULL DEFAULT (strftime('%Y-%m-%dT%H:%M:%SZ','now')),
+            reviewed_by INTEGER REFERENCES users(id),
+            reviewed_at TEXT,
+            review_notes TEXT,
+            signature_hash TEXT,
+            parent_id TEXT REFERENCES codelists(id),
+            include_criteria TEXT NOT NULL DEFAULT '[]',
+            exclude_criteria TEXT NOT NULL DEFAULT '[]'
         );
         CREATE TABLE codelist_decisions (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
