@@ -31,6 +31,25 @@ import math
 _KAPPA_METHOD_TAG = "cohen-unweighted"
 
 
+def _parse_criteria(codelist: dict) -> tuple[list, list]:
+    """Parse ``include_criteria`` and ``exclude_criteria`` from a
+    codelist row, returning sorted lists ready for deterministic
+    serialisation. Empty lists for missing, NULL, or malformed
+    columns — same byte-compat fallback both v1 and v2 used inline
+    before this helper was extracted.
+
+    Sorting here is the single source of order for the criteria
+    payload across both signature versions; downstream callers feed
+    the lists straight into ``json.dumps`` without re-sorting.
+    """
+    try:
+        inc = sorted(json.loads(codelist.get("include_criteria") or "[]"))
+        exc = sorted(json.loads(codelist.get("exclude_criteria") or "[]"))
+    except (TypeError, ValueError):
+        return [], []
+    return inc, exc
+
+
 def _decision_block(decisions: list[dict]) -> str:
     """Per-decision payload block, shared by v1 and v2.
 
@@ -69,15 +88,10 @@ def _compute_signature_v1(codelist: dict, decisions: list[dict]) -> str:
     this function. Any mutation here is a backward-compat break.
     """
     payload = _decision_block(decisions)
-    try:
-        inc = json.loads(codelist.get("include_criteria") or "[]")
-        exc = json.loads(codelist.get("exclude_criteria") or "[]")
-    except (TypeError, ValueError):
-        inc, exc = [], []
+    inc, exc = _parse_criteria(codelist)
     if inc or exc:
         criteria_block = json.dumps(
-            {"include": sorted(inc), "exclude": sorted(exc)},
-            sort_keys=True,
+            {"include": inc, "exclude": exc}, sort_keys=True,
         )
         payload += f"\n--criteria--\n{criteria_block}"
     return hashlib.sha256(payload.encode("utf-8")).hexdigest()
@@ -106,14 +120,9 @@ def _compute_signature_v2(codelist: dict, decisions: list[dict]) -> str:
     """
     payload = _decision_block(decisions)
 
-    try:
-        inc = json.loads(codelist.get("include_criteria") or "[]")
-        exc = json.loads(codelist.get("exclude_criteria") or "[]")
-    except (TypeError, ValueError):
-        inc, exc = [], []
+    inc, exc = _parse_criteria(codelist)
     criteria_block = json.dumps(
-        {"include": sorted(inc), "exclude": sorted(exc)},
-        sort_keys=True,
+        {"include": inc, "exclude": exc}, sort_keys=True,
     )
 
     try:
