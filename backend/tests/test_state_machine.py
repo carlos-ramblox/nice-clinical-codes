@@ -31,13 +31,12 @@ _BACKEND = Path(__file__).resolve().parents[1]
 if str(_BACKEND) not in sys.path:
     sys.path.insert(0, str(_BACKEND))
 
-from app.db.hitl_store import (  # noqa: E402
-    ConflictError,
+from app.db.hitl_store import ConflictError, _init_schema  # noqa: E402
+from app.db.state_machine import (  # noqa: E402
     InvalidTransition,
     _VALID_TRANSITIONS,
     _both_reviewers_finalised,
     _compute_codelist_kappa,
-    _init_schema,
     _mark_voting_finalised,
     _record_vote,
     _transition,

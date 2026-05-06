@@ -31,7 +31,7 @@ _BACKEND = Path(__file__).resolve().parents[1]
 if str(_BACKEND) not in sys.path:
     sys.path.insert(0, str(_BACKEND))
 
-from app.db.hitl_store import (  # noqa: E402
+from app.db.signature import (  # noqa: E402
     _compute_signature_v1,
     _compute_signature_v2,
     _decision_block,
