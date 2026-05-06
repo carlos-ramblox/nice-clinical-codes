@@ -362,13 +362,32 @@ async def review_codelist(
                     ),
                 )
 
-    result = hitl_store.submit_review(
-        cid=codelist_id,
-        reviewer_id=user["id"],
-        decisions=[d.model_dump() for d in body.decisions],
-        action=body.action,
-        notes=body.notes,
-    )
+    try:
+        result = hitl_store.submit_review(
+            cid=codelist_id,
+            reviewer_id=user["id"],
+            decisions=[d.model_dump() for d in body.decisions],
+            action=body.action,
+            notes=body.notes,
+        )
+    except hitl_store.ConflictError as exc:
+        # Race-induced 409 from the BEGIN IMMEDIATE re-check inside
+        # submit_review. The earlier pre-check above catches the
+        # non-concurrent path; this catches the case where a second
+        # reviewer slips through that pre-check before the first
+        # reviewer commits. detail format mirrors the pre-check string
+        # so a client parsing the body sees one shape across both
+        # paths.
+        raise HTTPException(
+            status_code=409,
+            detail=f"Cannot review a codelist in status '{exc.status}'",
+        )
+    except KeyError:
+        # TOCTOU: the codelist disappeared between the pre-check
+        # ``get_codelist`` above and the BEGIN IMMEDIATE re-read inside
+        # submit_review. Translate to the same 404 the pre-check would
+        # have emitted. Pre-existing race; close it on the touched line.
+        raise HTTPException(status_code=404, detail="Codelist not found")
     return {
         "codelist_id": codelist_id,
         **result,

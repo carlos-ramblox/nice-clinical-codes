@@ -25,6 +25,26 @@ logger = logging.getLogger(__name__)
 _conn: Optional[sqlite3.Connection] = None
 
 
+class ConflictError(Exception):
+    """Raised when ``submit_review`` finds the codelist already in a terminal
+    status (``approved`` / ``rejected``) under the BEGIN IMMEDIATE lock.
+
+    Distinct from ``KeyError`` (codelist missing) so the route layer can
+    translate it to HTTP 409 Conflict — the second concurrent reviewer
+    sees a definitive "already reviewed" rather than a 200 with a
+    last-writer-wins signature.
+
+    ``status`` carries the terminal status seen under the lock so the
+    route can emit a 409 ``detail`` in the same format as its pre-check
+    path, without re-reading the row.
+    """
+
+    def __init__(self, codelist_id: str, status: str) -> None:
+        self.codelist_id = codelist_id
+        self.status = status
+        super().__init__(f"codelist {codelist_id} is already {status}")
+
+
 def _db_path() -> str:
     return HITL_DATABASE_URL.replace("sqlite:///", "")
 
@@ -657,77 +677,92 @@ def submit_review(
     """
     Apply reviewer decisions, flip status to approved/rejected, compute
     signature on approve. Each decision dict: {id, human_decision, override_comment}.
+
+    The body runs inside a ``BEGIN IMMEDIATE`` transaction so two reviewers
+    approving the same ``cid`` concurrently are serialised at the database
+    layer rather than racing on overlapping read-modify-write state. The
+    second caller blocks on the lock, then re-reads the codelist's status
+    under the lock; if it has already been approved/rejected we raise
+    ``ConflictError`` so the route layer can return 409. The route's own
+    pre-check at ``api/codelists.py:review_codelist`` is now defence-in-
+    depth — the lock is the authoritative gate.
     """
-    # TODO(T26): wrap this in BEGIN IMMEDIATE / SELECT ... FOR UPDATE.
-    # Two reviewers approving the same cid concurrently can both pass
-    # the existence check below, both UPDATE codelist_decisions, and
-    # write conflicting signature_hash values — last-writer-wins on the
-    # codelist row but both leave audit entries. WAL mode permits the
-    # concurrent reads but does not serialise this read-modify-write.
-    # Deferred: only manifests under multi-reviewer concurrent load,
-    # which the demo deployment doesn't have. Revisit when an NHS
-    # Trust pilot lands.
     if action not in ("approve", "reject"):
         raise ValueError(f"unknown action: {action}")
 
     conn = get_connection()
-    cursor = conn.execute("SELECT id FROM codelists WHERE id = ?", (cid,))
-    if cursor.fetchone() is None:
-        raise KeyError(f"codelist not found: {cid}")
-
-    override_events: list[dict] = []
-    for d in decisions:
-        did = d.get("id")
-        human = d.get("human_decision")
-        comment = d.get("override_comment") or None
-        if did is None or human is None:
-            continue
-
-        existing = conn.execute(
-            "SELECT code, ai_decision, human_decision FROM codelist_decisions WHERE id = ? AND codelist_id = ?",
-            (did, cid),
+    # Flush any pending implicit transaction defensively. Python's sqlite3
+    # opens an implicit transaction on first DML statement; if a previous
+    # caller left one dangling (e.g. crashed between INSERT and commit),
+    # ``BEGIN IMMEDIATE`` would error with "cannot start a transaction
+    # within a transaction". commit() is a no-op when nothing is pending.
+    conn.commit()
+    conn.execute("BEGIN IMMEDIATE")
+    try:
+        existing_cl = conn.execute(
+            "SELECT id, status FROM codelists WHERE id = ?", (cid,),
         ).fetchone()
-        if existing is None:
-            continue
+        if existing_cl is None:
+            raise KeyError(f"codelist not found: {cid}")
+        if existing_cl["status"] not in ("draft", "in_review"):
+            raise ConflictError(cid, existing_cl["status"])
+
+        override_events: list[dict] = []
+        for d in decisions:
+            did = d.get("id")
+            human = d.get("human_decision")
+            comment = d.get("override_comment") or None
+            if did is None or human is None:
+                continue
+
+            existing = conn.execute(
+                "SELECT code, ai_decision, human_decision FROM codelist_decisions WHERE id = ? AND codelist_id = ?",
+                (did, cid),
+            ).fetchone()
+            if existing is None:
+                continue
+
+            conn.execute(
+                """UPDATE codelist_decisions
+                      SET human_decision = ?, override_comment = ?
+                    WHERE id = ? AND codelist_id = ?""",
+                (human, comment, did, cid),
+            )
+            if existing["ai_decision"] != human:
+                override_events.append({
+                    "decision_id": did,
+                    "code": existing["code"],
+                    "ai_decision": existing["ai_decision"],
+                    "human_decision": human,
+                    "reason": comment,
+                })
+
+        new_status = "approved" if action == "approve" else "rejected"
+        signature = _compute_signature(conn, cid) if action == "approve" else None
 
         conn.execute(
-            """UPDATE codelist_decisions
-                  SET human_decision = ?, override_comment = ?
-                WHERE id = ? AND codelist_id = ?""",
-            (human, comment, did, cid),
+            """UPDATE codelists
+                  SET status = ?, reviewed_by = ?, reviewed_at = ?,
+                      review_notes = ?, signature_hash = ?
+                WHERE id = ?""",
+            (new_status, reviewer_id, _now(), notes, signature, cid),
         )
-        if existing["ai_decision"] != human:
-            override_events.append({
-                "decision_id": did,
-                "code": existing["code"],
-                "ai_decision": existing["ai_decision"],
-                "human_decision": human,
-                "reason": comment,
-            })
 
-    new_status = "approved" if action == "approve" else "rejected"
-    signature = _compute_signature(conn, cid) if action == "approve" else None
-
-    conn.execute(
-        """UPDATE codelists
-              SET status = ?, reviewed_by = ?, reviewed_at = ?,
-                  review_notes = ?, signature_hash = ?
-            WHERE id = ?""",
-        (new_status, reviewer_id, _now(), notes, signature, cid),
-    )
-
-    # log every override, then the terminal event
-    for o in override_events:
-        _append_audit(conn, cid, event="override", user_id=reviewer_id, details=o)
-    _append_audit(
-        conn, cid, event=new_status, user_id=reviewer_id,
-        details={
-            "notes": notes,
-            "override_count": len(override_events),
-            "signature_hash": signature,
-        },
-    )
-    conn.commit()
+        # log every override, then the terminal event
+        for o in override_events:
+            _append_audit(conn, cid, event="override", user_id=reviewer_id, details=o)
+        _append_audit(
+            conn, cid, event=new_status, user_id=reviewer_id,
+            details={
+                "notes": notes,
+                "override_count": len(override_events),
+                "signature_hash": signature,
+            },
+        )
+        conn.commit()
+    except Exception:
+        conn.rollback()
+        raise
 
     return {
         "status": new_status,
