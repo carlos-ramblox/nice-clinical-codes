@@ -5,11 +5,11 @@ The state machine is the load-bearing safety surface for the
 two-reviewer Delphi flow: every status change a codelist makes
 must come from the small fixed table of legal edges, and every
 move must leave an audit-log trace. Tests here exercise the
-``_transition`` helper directly with an in-memory SQLite — bypass
+``_locked_transition`` helper directly with an in-memory SQLite — bypass
 the API layer so the matrix can stay focused on the transition
 algebra without auth / payload-shape noise.
 
-Voting helpers (``_record_vote``, ``_mark_voting_finalised``,
+Voting helpers (``_locked_record_vote``, ``_locked_mark_voting_finalised``,
 ``_both_reviewers_finalised``, ``_compute_codelist_kappa``) get
 their own focused tests in the same file because they participate
 in the same workflow — a route at step 5 calls them in concert
@@ -37,9 +37,9 @@ from app.db.state_machine import (  # noqa: E402
     _VALID_TRANSITIONS,
     _both_reviewers_finalised,
     _compute_codelist_kappa,
-    _mark_voting_finalised,
-    _record_vote,
-    _transition,
+    _locked_mark_voting_finalised,
+    _locked_record_vote,
+    _locked_transition,
 )
 
 
@@ -140,7 +140,7 @@ def test_legal_edges_succeed(from_status: str, to_status: str) -> None:
     _seed_codelist(conn, status=from_status)
 
     reason = "fixture reason" if to_status == "rejected" else None
-    _transition(conn, "cl1", from_status, to_status, reviewer_id=1, reason=reason)
+    _locked_transition(conn, "cl1", from_status, to_status, reviewer_id=1, reason=reason)
     conn.commit()
 
     new_status = conn.execute(
@@ -151,7 +151,7 @@ def test_legal_edges_succeed(from_status: str, to_status: str) -> None:
     # Audit-log entry recorded.
     audit = conn.execute(
         "SELECT event, details FROM audit_log "
-        "WHERE codelist_id = 'cl1' AND event = 'status_transition'"
+        "WHERE codelist_id = 'cl1' AND event = 'status_locked_transition'"
     ).fetchall()
     assert len(audit) == 1
     details = json.loads(audit[0]["details"])
@@ -160,7 +160,7 @@ def test_legal_edges_succeed(from_status: str, to_status: str) -> None:
 
 
 @pytest.mark.parametrize("from_status, to_status", ILLEGAL_EDGES)
-def test_illegal_edges_raise_invalid_transition(
+def test_illegal_edges_raise_invalid_locked_transition(
     from_status: str, to_status: str,
 ) -> None:
     """Every (from, to) pair NOT in the legal table raises
@@ -172,7 +172,7 @@ def test_illegal_edges_raise_invalid_transition(
     _seed_codelist(conn, status=from_status)
 
     with pytest.raises(InvalidTransition):
-        _transition(conn, "cl1", from_status, to_status, reviewer_id=1)
+        _locked_transition(conn, "cl1", from_status, to_status, reviewer_id=1)
 
     # Status unchanged.
     assert conn.execute(
@@ -180,7 +180,7 @@ def test_illegal_edges_raise_invalid_transition(
     ).fetchone()["status"] == from_status
 
 
-def test_transition_raises_conflict_error_when_actual_status_differs() -> None:
+def test_locked_transition_raises_conflict_error_when_actual_status_differs() -> None:
     """If the codelist's actual status doesn't match the caller's
     declared ``from_status``, raise ``ConflictError`` (stale view).
     Distinct from ``InvalidTransition``: the edge IS legal, but the
@@ -190,16 +190,16 @@ def test_transition_raises_conflict_error_when_actual_status_differs() -> None:
     _seed_codelist(conn, status="approved")  # already terminal
 
     with pytest.raises(ConflictError) as exc_info:
-        _transition(conn, "cl1", "in_review", "approved", reviewer_id=1)
+        _locked_transition(conn, "cl1", "in_review", "approved", reviewer_id=1)
     assert exc_info.value.status == "approved"
 
 
-def test_transition_raises_key_error_when_codelist_missing() -> None:
+def test_locked_transition_raises_key_error_when_codelist_missing() -> None:
     """A transition on a missing codelist raises ``KeyError``, same
     contract as ``submit_review``. The route translates this to 404."""
     conn = _open_post_t30()
     with pytest.raises(KeyError):
-        _transition(conn, "does-not-exist", "draft", "in_review", reviewer_id=1)
+        _locked_transition(conn, "does-not-exist", "draft", "in_review", reviewer_id=1)
 
 
 # ---------------------------------------------------------------------------
@@ -218,7 +218,7 @@ def test_rejection_from_review_states_requires_reason(from_status: str) -> None:
 
     for missing_reason in (None, "", "   "):
         with pytest.raises(ValueError, match="non-empty reason"):
-            _transition(
+            _locked_transition(
                 conn, "cl1", from_status, "rejected",
                 reviewer_id=1, reason=missing_reason,
             )
@@ -231,7 +231,7 @@ def test_rejection_from_draft_does_not_require_reason() -> None:
     ``notes`` field, separately. Don't break the legacy path."""
     conn = _open_post_t30()
     _seed_codelist(conn, status="draft")
-    _transition(conn, "cl1", "draft", "rejected", reviewer_id=1, reason=None)
+    _locked_transition(conn, "cl1", "draft", "rejected", reviewer_id=1, reason=None)
     conn.commit()
     assert conn.execute(
         "SELECT status FROM codelists WHERE id = 'cl1'"
@@ -243,7 +243,7 @@ def test_rejection_audit_records_the_reason() -> None:
     forensic readers can reconstruct *why* a codelist was rejected."""
     conn = _open_post_t30()
     _seed_codelist(conn, status="adjudication")
-    _transition(
+    _locked_transition(
         conn, "cl1", "adjudication", "rejected",
         reviewer_id=2, reason="codes E10/E11 conflict with study intent",
     )
@@ -251,7 +251,7 @@ def test_rejection_audit_records_the_reason() -> None:
 
     audit = conn.execute(
         "SELECT details FROM audit_log "
-        "WHERE codelist_id = 'cl1' AND event = 'status_transition'"
+        "WHERE codelist_id = 'cl1' AND event = 'status_locked_transition'"
     ).fetchone()
     assert json.loads(audit["details"])["reason"].startswith("codes E10/E11")
 
@@ -261,7 +261,7 @@ def test_rejection_audit_records_the_reason() -> None:
 # ---------------------------------------------------------------------------
 
 
-def test_record_vote_inserts_then_upserts() -> None:
+def test_locked_record_vote_inserts_then_upserts() -> None:
     """First call inserts; second call on the same (decision, reviewer)
     pair upserts in place (UNIQUE constraint + ON CONFLICT). No silent
     duplicate rows."""
@@ -269,9 +269,9 @@ def test_record_vote_inserts_then_upserts() -> None:
     _seed_codelist(conn, reviewer_ids=[1, 2])
     [did] = _seed_decisions(conn, "cl1", 1)
 
-    _record_vote(conn, did, reviewer_id=1, vote="include", comment="first")
+    _locked_record_vote(conn, did, reviewer_id=1, vote="include", comment="first")
     conn.commit()
-    _record_vote(conn, did, reviewer_id=1, vote="exclude", comment="changed mind")
+    _locked_record_vote(conn, did, reviewer_id=1, vote="exclude", comment="changed mind")
     conn.commit()
 
     rows = conn.execute(
@@ -284,15 +284,15 @@ def test_record_vote_inserts_then_upserts() -> None:
     assert rows[0]["comment"] == "changed mind"
 
 
-def test_mark_voting_finalised_writes_audit_event() -> None:
-    """``_mark_voting_finalised`` writes a single ``voting_finalised``
+def test_locked_mark_voting_finalised_writes_audit_event() -> None:
+    """``_locked_mark_voting_finalised`` writes a single ``voting_finalised``
     event with the reviewer's id. The audit chain is the source of
     truth for "I'm done voting"; ``_both_reviewers_finalised`` reads
     it back."""
     conn = _open_post_t30()
     _seed_codelist(conn, reviewer_ids=[1, 2])
 
-    _mark_voting_finalised(conn, "cl1", reviewer_id=2)
+    _locked_mark_voting_finalised(conn, "cl1", reviewer_id=2)
     conn.commit()
 
     rows = conn.execute(
@@ -312,16 +312,16 @@ def test_both_reviewers_finalised_requires_every_assignee() -> None:
 
     assert _both_reviewers_finalised(conn, "cl1", [1, 2]) is False
 
-    _mark_voting_finalised(conn, "cl1", reviewer_id=1)
+    _locked_mark_voting_finalised(conn, "cl1", reviewer_id=1)
     conn.commit()
     assert _both_reviewers_finalised(conn, "cl1", [1, 2]) is False
 
     # Non-assignee finalising doesn't count.
-    _mark_voting_finalised(conn, "cl1", reviewer_id=3)
+    _locked_mark_voting_finalised(conn, "cl1", reviewer_id=3)
     conn.commit()
     assert _both_reviewers_finalised(conn, "cl1", [1, 2]) is False
 
-    _mark_voting_finalised(conn, "cl1", reviewer_id=2)
+    _locked_mark_voting_finalised(conn, "cl1", reviewer_id=2)
     conn.commit()
     assert _both_reviewers_finalised(conn, "cl1", [1, 2]) is True
 
@@ -346,14 +346,14 @@ def test_compute_codelist_kappa_perfect_agreement_returns_one() -> None:
     dids = _seed_decisions(conn, "cl1", 4)
 
     for did in dids:
-        _record_vote(conn, did, 1, "include")
-        _record_vote(conn, did, 2, "include")
+        _locked_record_vote(conn, did, 1, "include")
+        _locked_record_vote(conn, did, 2, "include")
     # Half include, half exclude — single-category collapse handled
     # by cohen_kappa's pe==1 convention; let's mix to avoid that
     # edge case.
     for did in dids[:2]:
-        _record_vote(conn, did, 1, "exclude")
-        _record_vote(conn, did, 2, "exclude")
+        _locked_record_vote(conn, did, 1, "exclude")
+        _locked_record_vote(conn, did, 2, "exclude")
     conn.commit()
 
     assert _compute_codelist_kappa(conn, "cl1") == 1.0
@@ -368,7 +368,7 @@ def test_compute_codelist_kappa_returns_none_with_one_reviewer() -> None:
     dids = _seed_decisions(conn, "cl1", 2)
 
     for did in dids:
-        _record_vote(conn, did, 1, "include")
+        _locked_record_vote(conn, did, 1, "include")
     conn.commit()
 
     assert _compute_codelist_kappa(conn, "cl1") is None
@@ -384,9 +384,9 @@ def test_compute_codelist_kappa_raises_for_more_than_two_reviewers() -> None:
     _seed_codelist(conn, reviewer_ids=[1, 2, 3])
     [did] = _seed_decisions(conn, "cl1", 1)
 
-    _record_vote(conn, did, 1, "include")
-    _record_vote(conn, did, 2, "include")
-    _record_vote(conn, did, 3, "exclude")
+    _locked_record_vote(conn, did, 1, "include")
+    _locked_record_vote(conn, did, 2, "include")
+    _locked_record_vote(conn, did, 3, "exclude")
     conn.commit()
 
     with pytest.raises(ValueError, match="n=2 only"):
@@ -403,10 +403,10 @@ def test_compute_codelist_kappa_uses_only_common_decisions() -> None:
     _seed_codelist(conn, reviewer_ids=[1, 2])
     d1, d2, d3 = _seed_decisions(conn, "cl1", 3)
 
-    _record_vote(conn, d1, 1, "include")
-    _record_vote(conn, d2, 1, "exclude")
-    _record_vote(conn, d2, 2, "exclude")  # <-- only common decision
-    _record_vote(conn, d3, 2, "include")
+    _locked_record_vote(conn, d1, 1, "include")
+    _locked_record_vote(conn, d2, 1, "exclude")
+    _locked_record_vote(conn, d2, 2, "exclude")  # <-- only common decision
+    _locked_record_vote(conn, d3, 2, "include")
     conn.commit()
 
     # Common = {d2}, both voted exclude → κ = 1.0 (pe==1 convention).

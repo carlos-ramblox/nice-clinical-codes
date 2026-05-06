@@ -5,8 +5,27 @@ vote helpers.
 Lives separately from ``hitl_store`` so the workflow algebra (legal
 edges, transitions, vote upserts, kappa-from-votes) stays focused
 without the persistence-layer noise. The route layer in step 5 will
-call ``_transition`` and the voting helpers directly under its own
-``BEGIN IMMEDIATE`` lock.
+call ``_locked_transition`` and the voting helpers directly under its
+own ``BEGIN IMMEDIATE`` lock.
+
+Transaction discipline
+----------------------
+Mutation helpers here are prefixed ``_locked_`` to make the
+caller-holds-the-lock contract visible at every call site. The
+prefix is the convention this module enforces:
+
+    - ``_locked_*`` — the caller MUST hold a ``BEGIN IMMEDIATE``
+      transaction before invoking. The helper does not commit or
+      roll back; it issues its writes under the caller's lock so
+      they batch with the rest of the request.
+    - read-only helpers (``_both_reviewers_finalised``,
+      ``_compute_codelist_kappa``) — no lock needed; pure SELECTs
+      that may still be called inside a lock for snapshot
+      consistency.
+
+Public functions in ``hitl_store`` (``submit_review``, etc.) are
+the transaction owners — they BEGIN, call any number of locked
+helpers from this module, and COMMIT.
 
 Two import-direction notes:
 
@@ -34,7 +53,7 @@ from app.services.agreement import cohen_kappa
 
 
 class InvalidTransition(Exception):
-    """Raised when ``_transition`` is asked to move a codelist along an
+    """Raised when ``_locked_transition`` is asked to move a codelist along an
     edge that is not in ``_VALID_TRANSITIONS``.
 
     Distinct from ``ConflictError`` (which means "current state doesn't
@@ -81,7 +100,7 @@ _VALID_TRANSITIONS: frozenset[tuple[str, str]] = frozenset({
 })
 
 
-def _transition(
+def _locked_transition(
     conn: sqlite3.Connection,
     cid: str,
     from_status: str,
@@ -98,7 +117,7 @@ def _transition(
     write lock is unsafe: two concurrent callers can both pass
     the ``from_status`` re-check before either commits, then both
     issue the ``UPDATE``, with the second silently overwriting
-    the first and leaving two ``status_transition`` audit rows
+    the first and leaving two ``status_locked_transition`` audit rows
     for one logical move. SQLite has no API to assert IMMEDIATE
     vs DEFERRED at runtime, so the contract is enforced by
     convention at every call site.
@@ -123,14 +142,14 @@ def _transition(
     - ``signature_version`` is **not** mutated — it is set at the
       codelist's commit-to-flow point and is immutable afterwards.
 
-    The audit-log entry uses ``event="status_transition"`` with
+    The audit-log entry uses ``event="status_locked_transition"`` with
     ``details = {from, to, is_final, reason}`` so a downstream
     auditor can reconstruct the order and motivation of every
     state change. Note: this differs from ``submit_review``'s
     legacy event names (``event="approved"`` / ``"rejected"``) —
     analytics queries that look for terminal states must check
     both ``event in ('approved','rejected')`` AND
-    ``event='status_transition' AND details->>'to' IN
+    ``event='status_locked_transition' AND details->>'to' IN
     ('approved','rejected')`` to cover both code paths.
 
     ``is_final`` is currently always ``False`` at every call site
@@ -162,7 +181,7 @@ def _transition(
     )
     _append_audit(
         conn, cid,
-        event="status_transition",
+        event="status_locked_transition",
         user_id=reviewer_id,
         details={
             "from": from_status,
@@ -175,7 +194,7 @@ def _transition(
 
 # --- per-reviewer voting ----------------------------------------------------
 
-def _record_vote(
+def _locked_record_vote(
     conn: sqlite3.Connection,
     decision_id: int,
     reviewer_id: int,
@@ -206,7 +225,7 @@ def _record_vote(
     recorded — it accepts a re-vote even after the reviewer has
     logged ``voting_finalised``. Step 5's route is the right place
     to refuse post-finalise re-votes if the workflow demands it;
-    keeping ``_record_vote`` permissive lets the helper stay
+    keeping ``_locked_record_vote`` permissive lets the helper stay
     reusable for normal voting, override paths, and future
     admin-correction flows.
 
@@ -223,7 +242,7 @@ def _record_vote(
     )
 
 
-def _mark_voting_finalised(
+def _locked_mark_voting_finalised(
     conn: sqlite3.Connection,
     cid: str,
     reviewer_id: int,
