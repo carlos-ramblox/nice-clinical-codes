@@ -833,6 +833,184 @@ def test_reject_missing_reason_returns_422():
     assert res.status_code == 422, res.text
 
 
+# ---------------------------------------------------------------------------
+# /voting-state — load-bearing privacy + state-projection contract
+# ---------------------------------------------------------------------------
+
+
+def _voting_state(cid: str) -> dict:
+    res = client.get(f"/api/codelists/{cid}/voting-state")
+    assert res.status_code == 200, res.text
+    return res.json()
+
+
+def test_voting_state_pre_finalise_hides_peer_votes():
+    """Anchoring-bias guard (Watson 2017): a reviewer must not see
+    the other reviewer's votes until they have finalised. ``peer_votes``
+    is ``null`` pre-self-finalisation; ``caller_votes`` is the caller's
+    own progress."""
+    users = _users()
+    cid = _assign_reviewers(users[0]["id"], users[1]["id"], users[2]["id"])
+    dids = _decision_ids_for(cid)
+
+    # Mark votes (without finalising).
+    _login(users[2]["id"])
+    client.post(
+        f"/api/codelists/{cid}/review",
+        json={
+            "votes": [{"decision_id": dids[0], "vote": "include"}],
+            "is_final": False,
+        },
+    )
+    # Jane's view BEFORE she finalises: she sees her own votes (none yet)
+    # and peer_votes = null even though Mark has voted.
+    _login(users[1]["id"])
+    state = _voting_state(cid)
+    assert state["caller_finalised"] is False
+    assert state["peer_finalised"] is False  # Mark hasn't finalised either
+    assert state["peer_votes"] is None
+    assert state["caller_votes"] == []
+
+
+def test_voting_state_post_self_finalise_reveals_peer_votes():
+    """Once the caller finalises, the peer's votes become visible.
+    The peer's *finalisation status* is always visible (a public
+    clinical event); only the per-decision votes are gated."""
+    users = _users()
+    cid = _assign_reviewers(users[0]["id"], users[1]["id"], users[2]["id"])
+    dids = _decision_ids_for(cid)
+    full_votes = [{"decision_id": d, "vote": "include"} for d in dids]
+
+    # Mark votes (not final).
+    _login(users[2]["id"])
+    client.post(
+        f"/api/codelists/{cid}/review",
+        json={"votes": full_votes, "is_final": False},
+    )
+    # Jane finalises with full votes.
+    _login(users[1]["id"])
+    client.post(
+        f"/api/codelists/{cid}/review",
+        json={"votes": full_votes, "is_final": True},
+    )
+    state = _voting_state(cid)
+    assert state["caller_finalised"] is True
+    assert state["peer_finalised"] is False
+    assert state["peer_votes"] is not None
+    assert len(state["peer_votes"]) == len(dids)
+
+
+def test_voting_state_creator_does_not_see_peer_votes_before_both_finalised():
+    """The codelist creator (non-reviewer) reads voting state to
+    monitor progress. They get the same anchoring-bias treatment:
+    no peer_votes until BOTH reviewers have finalised, mirroring
+    the rule for individual reviewers."""
+    users = _users()
+    creator, r1, r2 = users[0]["id"], users[1]["id"], users[2]["id"]
+    cid = _assign_reviewers(creator, r1, r2)
+    dids = _decision_ids_for(cid)
+    full_votes = [{"decision_id": d, "vote": "include"} for d in dids]
+
+    _login(r1)
+    client.post(
+        f"/api/codelists/{cid}/review",
+        json={"votes": full_votes, "is_final": True},
+    )
+    # Only one reviewer finalised — creator sees null.
+    _login(creator)
+    state = _voting_state(cid)
+    assert state["is_caller_a_reviewer"] is False
+    assert state["peer_votes"] is None
+
+    # Second reviewer finalises → creator now sees both reviewers' votes.
+    _login(r2)
+    client.post(
+        f"/api/codelists/{cid}/review",
+        json={"votes": full_votes, "is_final": True},
+    )
+    _login(creator)
+    state2 = _voting_state(cid)
+    assert state2["peer_votes"] is not None
+    # Creator sees votes from BOTH reviewers (no "self" perspective).
+    reviewer_ids_seen = {v["reviewer_id"] for v in state2["peer_votes"]}
+    assert reviewer_ids_seen == {r1, r2}
+
+
+def test_voting_state_non_reviewer_non_creator_returns_403():
+    """A user who isn't the codelist creator and isn't in
+    reviewer_ids can't read the voting state — even authenticated."""
+    users = _users()
+    creator, r1, r2 = users[0]["id"], users[1]["id"], users[2]["id"]
+    cid = _assign_reviewers(creator, r1, r2)
+
+    # Log in as someone outside the codelist's permission scope.
+    # The demo seed has only three users, all of whom are involved
+    # with this codelist (creator + 2 reviewers), so seed an extra.
+    from app.db.hitl_store import get_connection
+    conn = get_connection()
+    cur = conn.execute(
+        "INSERT INTO users (email, name, role) VALUES "
+        "('outsider@x', 'Test Outsider', 'reviewer')"
+    )
+    outsider_id = cur.lastrowid
+    conn.commit()
+    try:
+        _login(outsider_id)
+        res = client.get(f"/api/codelists/{cid}/voting-state")
+        assert res.status_code == 403, res.text
+    finally:
+        conn.execute("DELETE FROM users WHERE id = ?", (outsider_id,))
+        conn.commit()
+
+
+def test_voting_state_disputed_decision_ids_populated_in_adjudication():
+    """``disputed_decision_ids`` is empty pre-adjudication and
+    populated once the codelist is in adjudication state — pinning
+    the contract the v2 UI's red-badge pinning depends on."""
+    users = _users()
+    creator, r1, r2 = users[0]["id"], users[1]["id"], users[2]["id"]
+    cid, dids = _seed_adjudication(creator, r1, r2)
+
+    _login(r1)
+    state = _voting_state(cid)
+    assert state["status"] == "adjudication"
+    # _seed_adjudication sets a single disagreement on dids[1].
+    assert state["disputed_decision_ids"] == [dids[1]]
+
+
+def test_voting_state_proposed_consensus_surfaces_only_in_adjudication():
+    """The most-recent ``proposed_consensus`` event is surfaced as a
+    structured field for the consensus-form UI. ``null`` outside
+    adjudication; populated by the latest proposal in adjudication."""
+    users = _users()
+    creator, r1, r2 = users[0]["id"], users[1]["id"], users[2]["id"]
+    cid, dids = _seed_adjudication(creator, r1, r2)
+
+    _login(r1)
+    pre = _voting_state(cid)
+    assert pre["proposed_consensus"] is None  # no proposal yet
+
+    # Jane proposes.
+    client.post(
+        f"/api/codelists/{cid}/consensus",
+        json={
+            "resolutions": [{
+                "decision_id": dids[1],
+                "final_decision": "include",
+                "rationale": "discussed: include",
+            }],
+            "acknowledge": False,
+        },
+    )
+    # Mark queries voting-state and sees Jane's proposal.
+    _login(r2)
+    state = _voting_state(cid)
+    assert state["proposed_consensus"] is not None
+    assert state["proposed_consensus"]["proposer_id"] == r1
+    assert state["proposed_consensus"]["proposer_name"] == "Dr Jane Smith"
+    assert len(state["proposed_consensus"]["resolutions"]) == 1
+
+
 def test_reject_non_reviewer_returns_403():
     """Non-reviewers cannot reject."""
     users = _users()

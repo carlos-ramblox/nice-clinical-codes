@@ -237,7 +237,20 @@ export async function getMe(): Promise<User | null> {
 
 // --- HITL: codelists -------------------------------------------------------
 
-export type CodelistStatus = "draft" | "in_review" | "approved" | "rejected";
+// T30: ``adjudication`` is the v2-only state that sits between
+// in_review and approved when reviewers disagree at finalisation.
+// Legacy v1 codelists never enter it; the union covers both flows
+// because the same UI dispatches on signature_version.
+export type CodelistStatus =
+  | "draft"
+  | "in_review"
+  | "adjudication"
+  | "approved"
+  | "rejected";
+
+// T30: vote labels match the include/exclude/uncertain decision
+// values; the DB CHECK on decision_votes.vote enforces the same set.
+export type VoteValue = "include" | "exclude" | "uncertain";
 
 export interface CodelistSummary {
   id: string;
@@ -292,6 +305,13 @@ export interface Codelist extends CodelistSummary {
   // T32 — owner-flippable opt-out from the public gallery. SQLite
   // INTEGER 0/1 over the JSON wire; coerce to bool at the use site.
   private?: 0 | 1;
+  // T30 — v2 fields. For legacy v1 codelists: signature_version=1,
+  // reviewer_ids=[], agreement_kappa=null. The UI dispatches on
+  // signature_version, not on reviewer_ids length, because the
+  // version is the immutable post-creation anchor.
+  signature_version: 1 | 2;
+  reviewer_ids: number[];
+  agreement_kappa: number | null;
 }
 
 export interface AuditEvent {
@@ -505,4 +525,156 @@ export async function exportPublicCodelistCsv(id: string): Promise<Blob> {
   );
   if (!res.ok) throw new Error(`Public CSV export failed: ${res.status}`);
   return res.blob();
+}
+
+// --- T30: two-reviewer Delphi (v2 path) -----------------------------------
+
+export interface VoteRow {
+  decision_id: number;
+  vote: VoteValue;
+  comment: string | null;
+}
+
+export interface PeerVoteRow extends VoteRow {
+  reviewer_id: number;
+}
+
+export interface ConsensusResolution {
+  decision_id: number;
+  final_decision: VoteValue;
+  rationale: string;
+}
+
+export interface ProposedConsensus {
+  proposer_id: number;
+  proposer_name: string;
+  resolutions: ConsensusResolution[];
+  proposed_at: string;
+}
+
+// Caller-aware view of a v2 codelist's per-reviewer voting state.
+// Matches ``backend/app/db/hitl_store.py::get_voting_state`` exactly.
+// The peer_votes privacy filter is the load-bearing anchoring-bias
+// guard from Watson 2017 — null until the caller has finalised.
+export interface VotingState {
+  status: CodelistStatus;
+  signature_version: 1 | 2;
+  reviewer_ids: number[];
+  reviewer_names: Record<string, string>;  // user_id stringified by JSON
+  caller_id: number;
+  is_caller_a_reviewer: boolean;
+  caller_finalised: boolean;
+  peer_id: number | null;
+  peer_name: string | null;
+  peer_finalised: boolean;
+  caller_votes: VoteRow[];
+  peer_votes: PeerVoteRow[] | null;  // null until caller finalises
+  disputed_decision_ids: number[];
+  agreement_kappa: number | null;
+  proposed_consensus: ProposedConsensus | null;
+}
+
+export async function getVotingState(id: string): Promise<VotingState> {
+  const res = await fetch(
+    `${API_BASE}/codelists/${id}/voting-state`,
+    AUTH_FETCH,
+  );
+  if (!res.ok) {
+    const detail = await res.text();
+    throw new Error(`Voting state failed: ${res.status} ${detail}`);
+  }
+  return res.json();
+}
+
+export interface AssignReviewersResult {
+  id: string;
+  reviewer_ids: number[];
+  status: CodelistStatus;
+  signature_version: 1 | 2;
+}
+
+export async function assignReviewers(
+  id: string,
+  reviewerIds: number[],
+): Promise<AssignReviewersResult> {
+  const res = await fetch(`${API_BASE}/codelists/${id}/reviewers`, {
+    ...AUTH_FETCH,
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ reviewer_ids: reviewerIds }),
+  });
+  if (!res.ok) {
+    const detail = await res.text();
+    throw new Error(`Assign reviewers failed: ${res.status} ${detail}`);
+  }
+  return res.json();
+}
+
+export interface V2ReviewResult {
+  codelist_id: string;
+  status: CodelistStatus;
+  is_final: boolean;
+  agreement_kappa?: number | null;
+  signature_hash?: string;
+  disagreements?: number[];
+  reviewer: string;
+}
+
+export async function submitV2Review(
+  id: string,
+  votes: VoteRow[],
+  isFinal: boolean,
+): Promise<V2ReviewResult> {
+  const res = await fetch(`${API_BASE}/codelists/${id}/review`, {
+    ...AUTH_FETCH,
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ votes, is_final: isFinal }),
+  });
+  if (!res.ok) {
+    const detail = await res.text();
+    throw new Error(`Submit votes failed: ${res.status} ${detail}`);
+  }
+  return res.json();
+}
+
+export interface ConsensusResult {
+  status: CodelistStatus;
+  acknowledged: boolean;
+  signature_hash?: string;
+}
+
+export async function submitConsensus(
+  id: string,
+  resolutions: ConsensusResolution[],
+  acknowledge: boolean,
+): Promise<ConsensusResult> {
+  const res = await fetch(`${API_BASE}/codelists/${id}/consensus`, {
+    ...AUTH_FETCH,
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ resolutions, acknowledge }),
+  });
+  if (!res.ok) {
+    const detail = await res.text();
+    throw new Error(`Consensus failed: ${res.status} ${detail}`);
+  }
+  return res.json();
+}
+
+export async function rejectCodelistV2(
+  id: string,
+  reason: string,
+): Promise<{ status: CodelistStatus; reason: string }> {
+  const res = await fetch(`${API_BASE}/codelists/${id}/reject`, {
+    ...AUTH_FETCH,
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ reason }),
+  });
+  if (!res.ok) {
+    const detail = await res.text();
+    throw new Error(`Reject failed: ${res.status} ${detail}`);
+  }
+  return res.json();
 }

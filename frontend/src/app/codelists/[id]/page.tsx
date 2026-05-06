@@ -7,17 +7,37 @@ import {
   exportCodelistOhdsi,
   getCodelist,
   getCrossReference,
+  getVotingState,
   setCodelistPrivacy,
   submitReview,
   type Codelist,
   type CodelistDecision,
+  type CodelistStatus,
   type CrossReferenceRow,
   type OhdsiExport,
   type ReviewDecisionInput,
+  type VotingState,
 } from "@/lib/api";
 import { useUser } from "@/lib/useUser";
 import { downloadBlob, slugify } from "@/lib/download";
 import { ConfirmModal } from "../../ConfirmModal";
+import { ConsensusForm } from "./ConsensusForm";
+import { KappaHeader } from "./KappaHeader";
+import { RejectModal } from "./RejectModal";
+import { ReviewerAssignmentPanel } from "./ReviewerAssignmentPanel";
+import { V2ReviewSurface } from "./V2ReviewSurface";
+
+// Status pill palette for the codelist lifecycle. Reuses the same
+// shape as the include/exclude/uncertain decision pills below;
+// adjudication picks up the same amber as the kappa-warning
+// treatment so the visual signal lines up.
+const STATUS_PILL: Record<CodelistStatus, string> = {
+  draft: "bg-gray-100 text-gray-800 border-gray-300",
+  in_review: "bg-blue-100 text-blue-800 border-blue-300",
+  adjudication: "bg-amber-100 text-amber-800 border-amber-300",
+  approved: "bg-green-100 text-green-800 border-green-300",
+  rejected: "bg-red-100 text-red-800 border-red-300",
+};
 
 type HumanDecision = "include" | "exclude" | "uncertain";
 
@@ -288,6 +308,15 @@ export default function CodelistReviewPage({
   const [filter, setFilter] = useState<"all" | HumanDecision>("all");
   const [sortMode, setSortMode] = useState<SortMode>("uncertainty");
 
+  // T30 v2 — caller-aware voting state. Fetched on demand for v2
+  // codelists; null for v1 (the legacy surface doesn't need it).
+  // Re-fetched after every successful v2 mutation so the kappa
+  // header and the table stay in sync with the server.
+  const [votingState, setVotingState] = useState<VotingState | null>(null);
+  const [rejectOpen, setRejectOpen] = useState(false);
+  const [reloadTick, setReloadTick] = useState(0);
+  const reload = () => setReloadTick((n) => n + 1);
+
   useEffect(() => {
     if (!userLoading && !user) {
       router.push(`/login?next=/codelists/${id}`);
@@ -305,7 +334,7 @@ export default function CodelistReviewPage({
     // eslint-disable-next-line react-hooks/set-state-in-effect
     setLoading(true);
     getCodelist(id)
-      .then((cl) => {
+      .then(async (cl) => {
         if (cancelled) return;
         setCodelist(cl);
         setIsPrivate(Boolean(cl.private));
@@ -317,11 +346,27 @@ export default function CodelistReviewPage({
           };
         }
         setDrafts(init);
+
+        // T30 v2 — fetch the voting state for codelists that have
+        // been promoted past v1. The endpoint 403s for non-reviewer
+        // non-creators; surface that as "you can read the codelist
+        // but the per-reviewer review controls aren't for you" by
+        // leaving votingState null.
+        if (cl.signature_version === 2) {
+          try {
+            const vs = await getVotingState(id);
+            if (!cancelled) setVotingState(vs);
+          } catch {
+            if (!cancelled) setVotingState(null);
+          }
+        } else {
+          setVotingState(null);
+        }
       })
       .catch((e) => { if (!cancelled) setError(String(e)); })
       .finally(() => { if (!cancelled) setLoading(false); });
     return () => { cancelled = true; };
-  }, [user, id]);
+  }, [user, id, reloadTick]);
 
   // Warn before leaving with unsaved overrides
   useEffect(() => {
@@ -532,13 +577,7 @@ export default function CodelistReviewPage({
         </div>
         <div className="text-right">
           <span
-            className={`inline-block text-xs px-2 py-0.5 rounded border ${
-              codelist.status === "approved"
-                ? "bg-green-100 text-green-800 border-green-300"
-                : codelist.status === "rejected"
-                ? "bg-red-100 text-red-800 border-red-300"
-                : "bg-gray-100 text-gray-800 border-gray-300"
-            }`}
+            className={`inline-block text-xs px-2 py-0.5 rounded border ${STATUS_PILL[codelist.status]}`}
           >
             {codelist.status}
           </span>
@@ -711,6 +750,69 @@ export default function CodelistReviewPage({
         codelistQuery={codelist.query || codelist.name}
       />
 
+      {/* T30 v1→v2 promotion panel — creator-only, draft-only. Once
+          two reviewers are assigned the codelist commits to v2 and
+          this panel disappears. */}
+      {codelist.signature_version === 1 &&
+        codelist.status === "draft" &&
+        user &&
+        user.id === codelist.created_by && (
+          <ReviewerAssignmentPanel
+            codelistId={codelist.id}
+            creatorId={codelist.created_by}
+            onAssigned={reload}
+          />
+        )}
+
+      {/* T30 v2 kappa header — visible above the decisions table for
+          v2 codelists in any non-draft state. Hidden for v1
+          codelists (no reviewer pair, no kappa concept). */}
+      {codelist.signature_version === 2 && votingState && (
+        <KappaHeader status={codelist.status} state={votingState} />
+      )}
+
+      {/* T30 v2 consensus form — only meaningful in adjudication. */}
+      {codelist.signature_version === 2 &&
+        codelist.status === "adjudication" &&
+        votingState && (
+          <ConsensusForm
+            codelistId={codelist.id}
+            decisions={codelist.decisions}
+            state={votingState}
+            onResolved={reload}
+          />
+        )}
+
+      {/* T30 v2 review surface — vote table + finalise controls.
+          Replaces the v1 stats/filter/table/submit block below for
+          v2 codelists. The dispatch is on signature_version, which
+          is immutable post-creation, so v1 and v2 stay on their
+          respective surfaces forever. */}
+      {codelist.signature_version === 2 && votingState && (
+        <V2ReviewSurface
+          codelistId={codelist.id}
+          decisions={codelist.decisions}
+          state={votingState}
+          onChanged={reload}
+        />
+      )}
+      {codelist.signature_version === 2 && votingState &&
+        votingState.is_caller_a_reviewer &&
+        (codelist.status === "in_review" || codelist.status === "adjudication") && (
+          <div className="mb-6 flex justify-end">
+            <button
+              type="button"
+              onClick={() => setRejectOpen(true)}
+              className="px-4 py-1.5 bg-red-600 text-white text-sm font-medium rounded hover:bg-red-700"
+            >
+              Reject codelist
+            </button>
+          </div>
+        )}
+
+      {/* --- v1 legacy surface (signature_version=1) ----------------- */}
+      {codelist.signature_version === 1 && (
+      <>
       {/* Stats + filter */}
       <div className="flex items-center gap-4 border-y border-gray-200 py-2 text-xs mb-4">
         <span className="text-gray-500">
@@ -932,6 +1034,22 @@ export default function CodelistReviewPage({
           </div>
         </div>
       )}
+      </>
+      )}
+      {/* --- end v1 legacy surface ----------------------------------- */}
+
+      {/* T30 v2 reject modal — opened from the Reject button above.
+          Shared with the legacy ConfirmModal infrastructure for
+          focus-trap / escape / backdrop behaviours. */}
+      <RejectModal
+        codelistId={codelist.id}
+        open={rejectOpen}
+        onClose={() => setRejectOpen(false)}
+        onRejected={() => {
+          setRejectOpen(false);
+          reload();
+        }}
+      />
 
       {/* Approve/reject confirmation modal */}
       <ConfirmModal

@@ -651,6 +651,32 @@ async def submit_consensus(
         raise HTTPException(status_code=400, detail=str(exc))
 
 
+@router.get("/{codelist_id}/voting-state")
+async def get_voting_state(
+    codelist_id: str,
+    user: dict = Depends(get_current_user),
+):
+    """Caller-aware view of a v2 codelist's per-reviewer voting state.
+
+    Returns the data the v2 review UI needs in one payload — kappa,
+    finalisation flags, the caller's own votes, and (post-self-
+    finalisation) the peer's votes. Reviewers and the codelist
+    creator can read it; other authenticated users get 403.
+
+    The peer-votes privacy filter is the anchoring-bias guard from
+    Watson 2017 Stage 3 — see ``hitl_store.get_voting_state`` for
+    the rule.
+    """
+    try:
+        return hitl_store.get_voting_state(
+            cid=codelist_id, caller_user_id=user["id"],
+        )
+    except KeyError:
+        raise HTTPException(status_code=404, detail="Codelist not found")
+    except PermissionError as exc:
+        raise HTTPException(status_code=403, detail=str(exc))
+
+
 @router.post("/{codelist_id}/reject")
 async def reject_codelist(
     codelist_id: str,

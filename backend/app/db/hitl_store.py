@@ -649,7 +649,7 @@ def get_codelist(cid: str) -> dict | None:
     # T29: surface stored criteria as plain lists. Pre-T29 rows have the
     # column default '[]' from _migrate_schema, so callers always see a
     # well-formed (possibly empty) list.
-    for key in ("include_criteria", "exclude_criteria"):
+    for key in ("include_criteria", "exclude_criteria", "reviewer_ids"):
         raw = result.get(key)
         try:
             result[key] = json.loads(raw) if raw else []
@@ -1654,6 +1654,198 @@ def reject_codelist_v2(
         conn.rollback()
         raise
     return {"status": "rejected", "reason": reason.strip()}
+
+
+def get_voting_state(cid: str, caller_user_id: int) -> dict:
+    """Caller-aware view of a v2 codelist's per-reviewer voting state.
+
+    Returns the data the v2 review UI needs in one payload:
+
+    - ``status`` / ``signature_version`` / ``reviewer_ids`` /
+      ``reviewer_names`` — codelist-level facts.
+    - ``caller_id`` — for the UI to show "you" affordances.
+    - ``is_caller_a_reviewer`` — false for the creator monitoring
+      progress.
+    - ``caller_finalised`` / ``peer_finalised`` — has each reviewer
+      logged ``voting_finalised``? The peer's finalisation state is
+      visible immediately (it's a public clinical event); only the
+      peer's *votes* are hidden pre-self-finalisation.
+    - ``caller_votes`` — current votes by the caller (may be partial
+      mid-voting; replaced by the most-recent upsert per
+      ``decision_id``).
+    - ``peer_votes`` — ``null`` until the caller finalises (Watson
+      2017 anchoring-bias prevention); a list once revealed. The
+      creator (non-reviewer) sees ``peer_votes`` only after BOTH
+      reviewers finalise (consistent with "no peeking until the
+      independent stage is over").
+    - ``disputed_decision_ids`` — populated when status=adjudication
+      (i.e. both finalised AND at least one disagreement).
+    - ``agreement_kappa`` — populated when both finalised (mirrors
+      ``codelists.agreement_kappa``; the auto-disposition on second
+      finalisation persists kappa atomically).
+    - ``proposed_consensus`` — most-recent ``proposed_consensus``
+      audit event (proposer + resolutions + timestamp) when status
+      is adjudication; ``null`` otherwise.
+
+    Auth: caller must be in ``reviewer_ids`` OR be the codelist
+    creator. Other authenticated users see ``PermissionError``.
+    """
+    conn = get_connection()
+    row = conn.execute(
+        "SELECT status, signature_version, reviewer_ids, agreement_kappa, "
+        "       created_by FROM codelists WHERE id = ?",
+        (cid,),
+    ).fetchone()
+    if row is None:
+        raise KeyError(f"codelist not found: {cid}")
+    reviewer_ids: list[int] = sorted(json.loads(row["reviewer_ids"] or "[]"))
+    is_caller_a_reviewer = caller_user_id in reviewer_ids
+    is_caller_creator = row["created_by"] == caller_user_id
+    if not (is_caller_a_reviewer or is_caller_creator):
+        raise PermissionError(
+            "voting state is visible only to assigned reviewers and "
+            "the codelist creator"
+        )
+
+    # Reviewer-name lookup (small JOIN; kept inline to avoid an
+    # extra round-trip from the route).
+    reviewer_names: dict[int, str] = {}
+    if reviewer_ids:
+        placeholders = ",".join(["?"] * len(reviewer_ids))
+        for r in conn.execute(
+            f"SELECT id, name FROM users WHERE id IN ({placeholders})",
+            reviewer_ids,
+        ):
+            reviewer_names[r["id"]] = r["name"]
+
+    # Finalisation flags from audit_log (the source of truth — see
+    # state_machine._mark_voting_finalised).
+    finalised_ids = {
+        r["user_id"] for r in conn.execute(
+            "SELECT DISTINCT user_id FROM audit_log "
+            "WHERE codelist_id = ? AND event = 'voting_finalised'",
+            (cid,),
+        )
+    }
+    caller_finalised = caller_user_id in finalised_ids
+    peer_id: int | None = None
+    if is_caller_a_reviewer:
+        peers = [r for r in reviewer_ids if r != caller_user_id]
+        peer_id = peers[0] if peers else None
+    peer_finalised = peer_id in finalised_ids if peer_id is not None else False
+
+    # Per-reviewer votes. The privacy filter is the load-bearing
+    # anchoring-bias guard: a reviewer must not see the other
+    # reviewer's votes until they have finalised their own. The
+    # creator (non-reviewer) gets the same "after both finalised"
+    # treatment so the rule reads consistently.
+    all_votes = [dict(r) for r in conn.execute(
+        "SELECT v.decision_id, v.reviewer_id, v.vote, v.comment "
+        "FROM decision_votes v "
+        "JOIN codelist_decisions d ON d.id = v.decision_id "
+        "WHERE d.codelist_id = ? "
+        "ORDER BY v.decision_id, v.reviewer_id",
+        (cid,),
+    )]
+    caller_votes = [
+        {k: v[k] for k in ("decision_id", "vote", "comment")}
+        for v in all_votes if v["reviewer_id"] == caller_user_id
+    ]
+    if is_caller_a_reviewer:
+        peer_votes_visible = caller_finalised
+    else:
+        # Creator sees peer votes only when both reviewers have
+        # finalised (i.e. once the independent stage is over).
+        peer_votes_visible = (
+            len(reviewer_ids) > 0
+            and all(rid in finalised_ids for rid in reviewer_ids)
+        )
+    peer_votes: list[dict] | None
+    if peer_votes_visible and peer_id is not None:
+        peer_votes = [
+            {
+                "decision_id": v["decision_id"],
+                "reviewer_id": v["reviewer_id"],
+                "vote": v["vote"],
+                "comment": v["comment"],
+            }
+            for v in all_votes if v["reviewer_id"] != caller_user_id
+        ]
+    elif peer_votes_visible and is_caller_creator:
+        # Creator viewing both reviewers' votes; both are "peers"
+        # from the creator's perspective.
+        peer_votes = [
+            {
+                "decision_id": v["decision_id"],
+                "reviewer_id": v["reviewer_id"],
+                "vote": v["vote"],
+                "comment": v["comment"],
+            }
+            for v in all_votes
+        ]
+    else:
+        peer_votes = None
+
+    # Disputed decision ids — only meaningful in adjudication. We
+    # compute from the votes view we have rather than storing
+    # separately; the value is stable while the codelist is in
+    # adjudication (votes are locked).
+    disputed_decision_ids: list[int] = []
+    if row["status"] == "adjudication" and len(reviewer_ids) == 2:
+        a_id, b_id = reviewer_ids
+        by_decision: dict[int, dict[int, str]] = {}
+        for v in all_votes:
+            by_decision.setdefault(v["decision_id"], {})[
+                v["reviewer_id"]
+            ] = v["vote"]
+        disputed_decision_ids = sorted(
+            did for did, votes_by_rev in by_decision.items()
+            if votes_by_rev.get(a_id) != votes_by_rev.get(b_id)
+        )
+
+    # Most-recent consensus proposal (only meaningful in adjudication;
+    # the route returns ``null`` outside that state to keep the UI
+    # contract clean).
+    proposed_consensus: dict | None = None
+    if row["status"] == "adjudication":
+        prior = conn.execute(
+            "SELECT user_id, details, timestamp FROM audit_log "
+            "WHERE codelist_id = ? AND event = 'proposed_consensus' "
+            "ORDER BY id DESC LIMIT 1",
+            (cid,),
+        ).fetchone()
+        if prior is not None:
+            try:
+                resolutions = json.loads(prior["details"]).get(
+                    "resolutions", [],
+                )
+            except (TypeError, ValueError):
+                resolutions = []
+            proposer_name = reviewer_names.get(prior["user_id"], "")
+            proposed_consensus = {
+                "proposer_id": prior["user_id"],
+                "proposer_name": proposer_name,
+                "resolutions": resolutions,
+                "proposed_at": prior["timestamp"],
+            }
+
+    return {
+        "status": row["status"],
+        "signature_version": row["signature_version"],
+        "reviewer_ids": reviewer_ids,
+        "reviewer_names": reviewer_names,
+        "caller_id": caller_user_id,
+        "is_caller_a_reviewer": is_caller_a_reviewer,
+        "caller_finalised": caller_finalised,
+        "peer_id": peer_id,
+        "peer_name": reviewer_names.get(peer_id) if peer_id is not None else None,
+        "peer_finalised": peer_finalised,
+        "caller_votes": caller_votes,
+        "peer_votes": peer_votes,
+        "disputed_decision_ids": disputed_decision_ids,
+        "agreement_kappa": row["agreement_kappa"],
+        "proposed_consensus": proposed_consensus,
+    }
 
 
 def _compute_signature(conn: sqlite3.Connection, cid: str) -> str:
