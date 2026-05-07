@@ -198,6 +198,24 @@ export async function exportCodelistOhdsi(codelistId: string): Promise<OhdsiExpo
   return res.json();
 }
 
+export async function exportCodelistOpenCodelists(codelistId: string): Promise<Blob> {
+  const res = await fetch(
+    `${API_BASE}/codelists/${codelistId}/export.opencodelists.csv`,
+    AUTH_FETCH,
+  );
+  if (!res.ok) {
+    let detail = `OpenCodelists export failed: ${res.status}`;
+    try {
+      const body = await res.json();
+      if (body?.detail) detail = body.detail;
+    } catch {
+      // non-JSON error body (e.g. proxy 502)
+    }
+    throw new Error(detail);
+  }
+  return res.blob();
+}
+
 // --- HITL: auth ------------------------------------------------------------
 
 export interface User {

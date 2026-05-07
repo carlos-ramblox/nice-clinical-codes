@@ -614,6 +614,21 @@ def _is_umls(sources: Any) -> bool:
     return any(isinstance(s, str) and s.startswith("UMLS") for s in sources)
 
 
+def get_reviewer_names(reviewer_ids: list[int]) -> dict[str, str]:
+    """Resolve user-ids to names, keyed by stringified id for JSON drop-in."""
+    if not reviewer_ids:
+        return {}
+    conn = get_connection()
+    placeholders = ",".join("?" * len(reviewer_ids))
+    return {
+        str(r["id"]): r["name"]
+        for r in conn.execute(
+            f"SELECT id, name FROM users WHERE id IN ({placeholders})",
+            reviewer_ids,
+        )
+    }
+
+
 def get_codelist(cid: str) -> dict | None:
     conn = get_connection()
     row = conn.execute(

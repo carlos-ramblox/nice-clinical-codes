@@ -10,11 +10,16 @@ Auth is required on every endpoint — the reviewer's identity must be
 recorded for EU AI Act / GDPR Article 22 compliance on human oversight.
 """
 
+import csv
+import io
+import json
 import logging
+import zipfile
 from typing import Literal, Optional
 
 import requests
 from fastapi import APIRouter, Depends, HTTPException, Query
+from fastapi.responses import StreamingResponse
 from pydantic import BaseModel, Field
 
 from app.api.auth import get_current_user
@@ -23,6 +28,11 @@ from app.config import HDR_UK_BASE_URL, HDR_UK_TOP_K_PHENOTYPES
 from app.db import code_store, hitl_store
 from app.db.code_normalize import normalize_code
 from app.exports.ohdsi import to_ohdsi_concept_set
+from app.exports.opencodelists import (
+    build_provenance,
+    group_for_opencodelists,
+    slug_for,
+)
 from app.services.phenotype_discovery import (
     compute_overlap,
     discover_phenotypes_ranked,
@@ -240,6 +250,102 @@ async def export_codelist(
         })
 
     return to_ohdsi_concept_set(cl.get("name") or cl.get("query") or "", enriched)
+
+
+@router.get("/{codelist_id}/export.opencodelists.csv")
+async def export_codelist_opencodelists(
+    codelist_id: str,
+    user: dict = Depends(get_current_user),
+):
+    """Export an approved two-reviewer codelist in OpenCodelists upload-CSV format.
+
+    Response is ``application/zip`` carrying one ``<slug>.<ocl_slug>.csv``
+    per coding system plus a ``<slug>.provenance.json`` with the SHA-256
+    signature, reviewer pair, and per-system manifest.
+
+    Gated on ``status='approved'`` AND two-reviewer signature (v2 with
+    ≥2 distinct reviewer ids). 422 when no included row maps to an
+    OpenCodelists coding system.
+    """
+    cl = hitl_store.get_codelist(codelist_id)
+    if cl is None:
+        raise HTTPException(status_code=404, detail="Codelist not found")
+
+    if cl.get("status") != "approved":
+        raise HTTPException(
+            status_code=409,
+            detail=(
+                "OpenCodelists export requires an approved codelist; "
+                f"this one is in status '{cl.get('status')}'"
+            ),
+        )
+    sig_version = cl.get("signature_version")
+    distinct_reviewers = len(set(cl.get("reviewer_ids") or []))
+    if sig_version != 2:
+        raise HTTPException(
+            status_code=409,
+            detail=(
+                "OpenCodelists export requires two-reviewer Delphi adjudication; "
+                "this codelist was approved on the legacy single-reviewer signature. "
+                "Re-promote a fresh draft to v2 via the /reviewers route to enable export."
+            ),
+        )
+    if distinct_reviewers < 2:
+        # v2 state machine guarantees ≥2 distinct ids; fewer means corruption.
+        raise HTTPException(
+            status_code=409,
+            detail=(
+                "OpenCodelists export requires two distinct reviewer ids; "
+                f"this codelist has {distinct_reviewers}. "
+                "This is a data-integrity error — investigate the codelist's reviewer_ids."
+            ),
+        )
+
+    groups, dropped = group_for_opencodelists(cl.get("decisions") or [])
+    if not groups:
+        raise HTTPException(
+            status_code=422,
+            detail=(
+                "No included codes map to an OpenCodelists coding system "
+                "(supported: SNOMED CT, ICD-10, OPCS-4, CTV3, Read v2, "
+                "BNF, dm+d). Nothing to export."
+            ),
+        )
+
+    base = slug_for(cl.get("name") or cl.get("query") or "", fallback=codelist_id)
+    reviewer_names = hitl_store.get_reviewer_names(cl.get("reviewer_ids") or [])
+    provenance = build_provenance(cl, groups, dropped, reviewer_names, base=base)
+
+    zip_buf = io.BytesIO()
+    with zipfile.ZipFile(zip_buf, mode="w", compression=zipfile.ZIP_DEFLATED) as zf:
+        for ocl_slug, rows in sorted(groups.items()):
+            csv_buf = io.StringIO()
+            writer = csv.DictWriter(csv_buf, fieldnames=["code", "term"])
+            writer.writeheader()
+            writer.writerows(rows)
+            zf.writestr(f"{base}.{ocl_slug}.csv", csv_buf.getvalue())
+        zf.writestr(
+            f"{base}.provenance.json",
+            json.dumps(provenance, indent=2, sort_keys=True),
+        )
+    zip_buf.seek(0)
+
+    logger.info(
+        "opencodelists export: codelist %s by user_id=%d "
+        "(%d codes across %d coding systems, %d dropped)",
+        codelist_id, user["id"],
+        sum(len(rows) for rows in groups.values()), len(groups), len(dropped),
+    )
+
+    return StreamingResponse(
+        zip_buf,
+        media_type="application/zip",
+        headers={
+            "Content-Disposition": (
+                f'attachment; filename="{base}.opencodelists.zip"'
+            ),
+        },
+    )
 
 
 # --- HDR UK cross-reference (T35) ------------------------------------------

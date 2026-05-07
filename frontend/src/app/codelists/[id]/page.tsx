@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import {
   exportCodelistOhdsi,
+  exportCodelistOpenCodelists,
   getCodelist,
   getCrossReference,
   getVotingState,
@@ -299,6 +300,8 @@ export default function CodelistReviewPage({
   const [ohdsiBusy, setOhdsiBusy] = useState(false);
   const [ohdsiCopied, setOhdsiCopied] = useState(false);
   const [ohdsiError, setOhdsiError] = useState<string | null>(null);
+  const [opencodelistsBusy, setOpencodelistsBusy] = useState(false);
+  const [opencodelistsError, setOpencodelistsError] = useState<string | null>(null);
   // T32 — local mirror of codelist.private so the toggle reflects the
   // mutation immediately without a refetch. null until the codelist
   // loads. SQLite returns 0/1 so we coerce to bool on read.
@@ -490,6 +493,25 @@ export default function CodelistReviewPage({
     }
   };
 
+  const handleOpenCodelistsExport = async () => {
+    if (!codelist || opencodelistsBusy) return;
+    setOpencodelistsBusy(true);
+    setOpencodelistsError(null);
+    try {
+      const blob = await exportCodelistOpenCodelists(codelist.id);
+      downloadBlob(
+        blob,
+        `${slugify(codelist.name || codelist.query)}.opencodelists.zip`,
+      );
+    } catch (err) {
+      setOpencodelistsError(
+        err instanceof Error ? err.message : "OpenCodelists export failed",
+      );
+    } finally {
+      setOpencodelistsBusy(false);
+    }
+  };
+
   const handlePrivacyToggle = async () => {
     if (!codelist || isPrivate == null || privacyBusy) return;
     const next = !isPrivate;
@@ -551,6 +573,17 @@ export default function CodelistReviewPage({
     return <div className="max-w-6xl mx-auto px-6 py-8 text-sm text-red-700">{error}</div>;
   }
   if (!codelist) return null;
+
+  const hasTwoReviewers =
+    codelist.signature_version === 2 &&
+    (codelist.reviewer_ids?.length ?? 0) >= 2;
+  const isOclApproved = codelist.status === "approved";
+  const oclEnabled = isOclApproved && hasTwoReviewers;
+  const oclTooltip = oclEnabled
+    ? "Download a ZIP with one OpenCodelists upload-CSV per coding system plus a provenance.json. Each CSV uploads as its own OpenCodelists codelist."
+    : !isOclApproved
+      ? "Available once the codelist is approved"
+      : "Requires two-reviewer Delphi adjudication (signature v2)";
 
   return (
     <div className="max-w-6xl mx-auto px-6 py-8">
@@ -638,6 +671,17 @@ export default function CodelistReviewPage({
             >
               {ohdsiBusy ? "Exporting…" : "OHDSI concept set"}
             </button>
+            <button
+              onClick={handleOpenCodelistsExport}
+              disabled={!oclEnabled || opencodelistsBusy}
+              className="inline-flex items-center gap-2 px-3 py-1 border border-gray-300 text-xs text-gray-700 hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed"
+              title={oclTooltip}
+            >
+              {opencodelistsBusy ? "Exporting…" : "Export to OpenCodelists"}
+            </button>
+            {opencodelistsError && (
+              <div className="text-xs text-red-700">{opencodelistsError}</div>
+            )}
             {ohdsiExport && (
               <div className="flex items-center gap-2 text-xs">
                 <span
