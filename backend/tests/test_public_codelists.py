@@ -286,7 +286,7 @@ def test_draft_premarked_private_stays_hidden_on_approval():
     private) combo, not just the post-approval flip path -- the spec
     says privacy is status-agnostic on purpose so a reviewer can opt
     out before the artefact ever auto-publishes."""
-    user = _login_demo_user()
+    _login_demo_user()
     sid = _seed_search("type 2 diabetes", _CODES_FIXTURE)
     cl = client.post(
         "/api/codelists", json={"search_id": sid, "name": "T32 pre-marked draft"},
