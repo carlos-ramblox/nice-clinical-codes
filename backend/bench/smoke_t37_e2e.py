@@ -100,13 +100,11 @@ def check_drug_query_isolated() -> list[str]:
 
 
 def check_drug_query_full_pipeline() -> list[str]:
-    """Production-mode probe: documents the cap-displacement issue.
-
-    Not an assertion failure — drug retrievers DO fire (the parser
-    correctly assigns domain=Drug); they're just out-sorted by
-    multi-source SNOMED candidates and truncated by MAX_CANDIDATES.
-    Logged for visibility; surfaced as the T37g follow-up."""
+    """Production-mode probe: the per-vocab quota (T37g) must keep dm+d
+    and BNF rows in the top-MAX_CANDIDATES even when OMOPHub + ChromaDB
+    saturate the SNOMED pool."""
     print(f"\n>>> Drug query (full pipeline, all retrievers): {DRUG_QUERY!r}")
+    fails: list[str] = []
     resp = _search(DRUG_QUERY)
     results = resp.get("results", [])
     dmd_rows = [r for r in results if DMD_TAG in r.get("sources", [])]
@@ -114,11 +112,11 @@ def check_drug_query_full_pipeline() -> list[str]:
     print(f"  total candidates : {len(results)}")
     print(f"  dm+d candidates  : {len(dmd_rows)}")
     print(f"  BNF candidates   : {len(bnf_rows)}")
-    if len(dmd_rows) == 0 and len(bnf_rows) == 0:
-        print("  NOTE: dm+d/BNF retrievers fired but their rows were displaced")
-        print("        by multi-source SNOMED candidates past MAX_CANDIDATES=100.")
-        print("        Tracked as T37g (cap-aware merge for drug queries).")
-    return []  # not a hard-fail — issue surfaced for follow-up
+    _assert(len(dmd_rows) > 0,
+            f"dm+d survives the cap on the full pipeline (got {len(dmd_rows)})", fails)
+    _assert(len(bnf_rows) > 0,
+            f"BNF survives the cap on the full pipeline (got {len(bnf_rows)})", fails)
+    return fails
 
 
 def check_disease_query() -> list[str]:

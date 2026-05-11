@@ -34,6 +34,11 @@ LLM_MODEL = os.getenv("LLM_MODEL", "claude-sonnet-4-20250514")
 LLM_SCORING_MODEL = os.getenv("LLM_SCORING_MODEL", "claude-haiku-4-5-20251001")
 RETRIEVAL_TOP_K = int(os.getenv("RETRIEVAL_TOP_K", "50"))
 MAX_CANDIDATES = int(os.getenv("MAX_CANDIDATES", "100"))
+# T37g: reserved slots per drug vocabulary inside MAX_CANDIDATES, only
+# applied when at least one parsed condition has domain="Drug". Without
+# it, single-source dm+d / BNF rows are displaced by multi-source SNOMED
+# from OMOPHub + ChromaDB and never reach the scorer.
+DRUG_VOCAB_QUOTA = int(os.getenv("DRUG_VOCAB_QUOTA", "15"))
 UMLS_EXPAND = os.getenv("UMLS_EXPAND", "yes").strip().lower() == "yes"
 
 # OMOPHub
