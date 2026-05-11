@@ -19,6 +19,10 @@ from typing import Any, Iterable, Optional
 
 from app.config import HITL_DATABASE_URL
 from app.db.signature import _compute_signature_v1, _compute_signature_v2
+from app.services.dmd_classification import (
+    VOCABULARY as DMD_VOCAB,
+    infer_dmd_level,
+)
 
 logger = logging.getLogger(__name__)
 
@@ -659,6 +663,7 @@ def get_codelist(cid: str) -> dict | None:
             d["sources"] = json.loads(d["sources"]) if d["sources"] else []
         except (TypeError, ValueError):
             d["sources"] = []
+        d["dmd_level"] = infer_dmd_level(d["term"]) if d.get("vocabulary") == DMD_VOCAB else None
     result["decisions"] = sort_review_queue(decisions)
 
     # T29: surface stored criteria as plain lists. Pre-T29 rows have the

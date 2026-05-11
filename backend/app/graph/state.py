@@ -3,6 +3,8 @@
 from typing import TypedDict, Annotated
 from operator import add
 
+from app.services.dmd_classification import DmdLevel  # noqa: F401  (re-exported for callers)
+
 
 class ParsedCondition(TypedDict):
     name: str
@@ -54,6 +56,7 @@ class RetrievedCode(TypedDict):
     # merger (deferred T01, blocked on T23/T24) does not need to
     # change the typed state shape again.
     rank: int
+    dmd_level: DmdLevel | None
 
 
 class EnrichedCode(TypedDict):
@@ -70,6 +73,7 @@ class EnrichedCode(TypedDict):
     usage_source: str | None
     usage_setting: str | None
     concept_id: int | None
+    dmd_level: DmdLevel | None
 
 
 class ScoredCode(TypedDict):
@@ -85,6 +89,7 @@ class ScoredCode(TypedDict):
     usage_source: str | None
     usage_setting: str | None
     concept_id: int | None
+    dmd_level: DmdLevel | None
 
 
 class ProvenanceRecord(TypedDict):

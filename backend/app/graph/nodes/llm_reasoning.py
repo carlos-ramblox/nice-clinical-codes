@@ -260,6 +260,7 @@ async def score_codes(state: dict) -> dict:
             "usage_source": c.get("usage_source"),
             "usage_setting": c.get("usage_setting"),
             "concept_id": c.get("concept_id"),
+            "dmd_level": c.get("dmd_level"),
         }
 
         scored.append(scored_code)

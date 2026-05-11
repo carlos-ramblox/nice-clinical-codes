@@ -94,6 +94,8 @@ AGENTS.md
 CLAUDE.md
 .claude/
 .agents/
+.specify/
+specs/
 
 # Jupyter
 .ipynb_checkpoints/

@@ -21,7 +21,7 @@
 
 > **Try it without installing anything at [clinicalcodes.uk](https://clinicalcodes.uk).** No account required for a single demo query; clinician sign-in is needed for the human-review workflow.
 
-Multi-source pipeline that **discovers** candidate clinical codes (SNOMED CT, ICD-10, OPCS-4) via four parallel retrievers across UK clinical vocabularies, **enriches** them through UMLS-based synonym expansion, and supports **validation** through per-code LLM scoring (Claude Haiku 4.5) and a human review gate. Developed as part of the University of Cambridge (PACE) Data Science programme, in collaboration with NICE stakeholders.
+Multi-source pipeline that **discovers** candidate clinical codes (SNOMED CT, ICD-10, OPCS-4, plus dm+d and BNF/pseudoBNF for UK drug-exposure codelists) via six parallel retrievers across UK clinical vocabularies, **enriches** them through UMLS-based synonym expansion, and supports **validation** through per-code LLM scoring (Claude Haiku 4.5) and a human review gate. Developed as part of the University of Cambridge (PACE) Data Science programme, in collaboration with NICE stakeholders.
 
 Given a clinical condition (e.g. "type 2 diabetes with hypertension"), the pipeline returns a candidate codelist with full provenance — every code carries its source(s), an LLM-generated rationale, and a confidence score. Human reviewers then accept, reject or edit individual codes before the codelist is exported. The output format is compatible with OpenCodelists. End-to-end latency for a representative single-condition query is on the order of tens of seconds, dominated by per-code LLM scoring and subject to model availability and source-API response time; we have not yet characterised median or worst-case latency on a fixed test set (see [LIMITATIONS.md](LIMITATIONS.md)). The published comparator for manual codelist construction is months of clinician time, reduced to 7-9 hours under Aslam et al. 2025's automation framework on the DynAIRx multi-long-term-conditions cohort.
 
@@ -42,7 +42,9 @@ User → Frontend (Next.js)
          │     ├── OMOPHub (SNOMED/ICD-10, live API)
          │     ├── QOF Business Rules (SQLite)
          │     ├── OpenCodelists (SQLite)
-         │     └── ChromaDB (semantic search over SQLite corpus)
+         │     ├── ChromaDB (semantic search over SQLite corpus)
+         │     ├── dm+d (SQLite; fires on Drug-domain queries)
+         │     └── BNF/pseudoBNF (SQLite; fires on Drug-domain queries)
          │
          ├─→ Result Merger + Dedup
          ├─→ UMLS Enrichment (synonyms, narrower, siblings - live API)
@@ -62,7 +64,7 @@ User → Frontend (Next.js)
 - **Vector DB:** ChromaDB with PubMedBERT biomedical embeddings
 - **Relational store:** SQLite — ingested code corpus (`backend/app/db/code_store.py`, ~53K rows across QOF, OPCS-4, ICD-10, OpenCodelists) and HITL workflow tables (`hitl_store.py`: codelists, decisions, audit log with deterministic SHA-256 content-hash that detects post-approval edits)
 - **Knowledge graph:** UMLS Metathesaurus (synonym, narrower, sibling expansion)
-- **Data sources:** QOF Business Rules, OpenCodelists, OPCS-4, NHS TRUD ICD-10 5th Edition, OMOPHub, UMLS (53K+ codes ingested locally)
+- **Data sources:** QOF Business Rules, OpenCodelists, OPCS-4, NHS TRUD ICD-10 5th Edition, OMOPHub, UMLS (53K+ codes ingested locally), plus dm+d and BNF/pseudoBNF drug codelists under `data/raw/opencodelists/{dmd,bnf}/`
 - **Deployment:** AWS ECS Fargate, ECR, ALB, ACM, Route 53. Live at [clinicalcodes.uk](https://clinicalcodes.uk)
 - **Cost:** per-query cost dominated by the LLM scoring step; tracked at request time but not currently benchmarked against a fixed test set
 

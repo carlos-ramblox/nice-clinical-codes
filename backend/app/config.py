@@ -38,10 +38,25 @@ UMLS_EXPAND = os.getenv("UMLS_EXPAND", "yes").strip().lower() == "yes"
 
 # OMOPHub
 OMOPHUB_PAGE_SIZE = int(os.getenv("OMOPHUB_PAGE_SIZE", "20"))
+# OMOP-side vocabulary IDs surfaced by OMOPHub.concepts.get_by_code.
+# MUST NOT contain non-OMOP vocabularies (dm+d, BNF, etc.) — those
+# poison the inverse map built by concept_id_enricher and burn API
+# slots on guaranteed misses. For UI / display purposes (e.g. rendering
+# "dm+d" or future "RxNorm" labels) use VOCABULARY_DISPLAY_LABELS.
 OMOPHUB_VOCABULARIES = {
     "SNOMED": "SNOMED CT",
     "ICD10": "ICD-10 (WHO)",
     "OPCS4": "OPCS-4",
+}
+
+# Canonical display labels for every vocabulary the pipeline can emit.
+# Superset of OMOPHUB_VOCABULARIES. Use this when you need the full
+# vocabulary set (UI labels, export filters); use OMOPHUB_VOCABULARIES
+# only for the OMOPHub API boundary.
+VOCABULARY_DISPLAY_LABELS = {
+    **OMOPHUB_VOCABULARIES,
+    "DMD": "dm+d",
+    "BNF": "BNF",
 }
 
 # HDR UK Phenotype Library -- anonymous public read, no API key required.

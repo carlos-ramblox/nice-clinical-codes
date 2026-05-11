@@ -19,6 +19,10 @@ export type UsageStatus = "counted" | "withheld_below_5" | "not_in_dataset";
 // cannot silently break the badge logic.
 export type UsageSetting = "primary_care" | "secondary_care_hes";
 
+// dm+d four-level hierarchy badge (T37). Surfaced for dm+d rows; null
+// for everything else, including BNF rows.
+export type DmdLevel = "Ingredient" | "VTM" | "VMP" | "AMP";
+
 export interface CodeResult {
   code: string;
   term: string;
@@ -32,6 +36,7 @@ export interface CodeResult {
   usage_source: string | null;
   usage_setting: UsageSetting | null;
   concept_id: number | null;
+  dmd_level: DmdLevel | null;
 }
 
 export interface SearchResponse {
@@ -299,6 +304,7 @@ export interface CodelistDecision {
   override_comment: string | null;
   sources: string[];
   is_umls_suggestion: number;
+  dmd_level: DmdLevel | null;
 }
 
 export interface AdoptedPhenotype {
@@ -483,6 +489,7 @@ export interface PublicCodelistDecision {
   human_decision: "include" | "exclude" | "uncertain";
   sources: string[];
   concept_id: number | null;
+  dmd_level: DmdLevel | null;
 }
 
 export interface PublicCodelist extends PublicCodelistSummary {

@@ -48,6 +48,7 @@ def merge_and_dedup(state: dict) -> dict:
                 "usage_source": c.get("usage_source"),
                 "usage_setting": c.get("usage_setting"),
                 "concept_id": c.get("concept_id"),
+                "dmd_level": c.get("dmd_level"),
                 "sources": [c["source"]],
                 "source_count": 1,
             }
@@ -74,6 +75,9 @@ def merge_and_dedup(state: dict) -> dict:
             # via QOF / OpenCodelists / ChromaDB)
             if existing.get("concept_id") is None and c.get("concept_id") is not None:
                 existing["concept_id"] = c["concept_id"]
+
+            if existing.get("dmd_level") is None and c.get("dmd_level") is not None:
+                existing["dmd_level"] = c["dmd_level"]
 
             # prefer longer/more descriptive term
             if len(c.get("term", "")) > len(existing.get("term", "")):

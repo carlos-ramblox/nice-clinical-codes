@@ -12,6 +12,8 @@ from app.graph.nodes.omophub_retriever import search_omophub, omophub_to_retriev
 from app.graph.nodes.chroma_retriever import retrieve_from_chromadb
 from app.graph.nodes.qof_retriever import retrieve_from_qof
 from app.graph.nodes.opencodelists_retriever import retrieve_from_opencodelists
+from app.graph.nodes.dmd_retriever import retrieve_from_dmd
+from app.graph.nodes.bnf_retriever import retrieve_from_bnf
 from app.graph.nodes.result_merger import merge_and_dedup
 from app.graph.nodes.concept_id_enricher import enrich_concept_ids
 from app.graph.nodes.usage_annotator import annotate_usage
@@ -78,7 +80,13 @@ _RETRIEVERS: dict[str, tuple[str, Callable]] = {
     "chroma":        ("chroma_retriever",        retrieve_from_chromadb),
     "qof":           ("qof_retriever",           retrieve_from_qof),
     "opencodelists": ("opencodelists_retriever", retrieve_from_opencodelists),
+    "dmd":           ("dmd_retriever",           retrieve_from_dmd),
+    "bnf":           ("bnf_retriever",           retrieve_from_bnf),
 }
+
+# Public alias for callers that only need the set of retriever names
+# (e.g. routes.py's disable-all guard). Lets _RETRIEVERS stay private.
+RETRIEVER_NAMES: frozenset[str] = frozenset(_RETRIEVERS)
 
 
 def build_graph(disabled_retrievers: set[str] | None = None) -> StateGraph:

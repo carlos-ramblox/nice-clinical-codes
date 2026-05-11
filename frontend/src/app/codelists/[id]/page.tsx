@@ -40,6 +40,13 @@ const STATUS_PILL: Record<CodelistStatus, string> = {
   rejected: "bg-red-100 text-red-800 border-red-300",
 };
 
+const DMD_LEVEL_TOOLTIPS: Record<string, string> = {
+  Ingredient: "Ingredient — chemical substance. Broadest level; cohort captures every brand, strength, and formulation.",
+  VTM: "VTM (Virtual Therapeutic Moiety) — generic substance without route or strength.",
+  VMP: "VMP (Virtual Medicinal Product) — generic with route and strength.",
+  AMP: "AMP (Actual Medicinal Product) — brand-specific.",
+};
+
 type HumanDecision = "include" | "exclude" | "uncertain";
 
 // Server returns decisions in uncertainty-sampling order (Settles 2009):
@@ -955,6 +962,14 @@ export default function CodelistReviewPage({
                     <div className="text-[10px] text-gray-500">
                       {d.vocabulary}
                       {d.is_umls_suggestion ? " · UMLS" : ""}
+                      {d.dmd_level && (
+                        <span
+                          className="ml-1 px-1 rounded bg-indigo-100 text-indigo-800 border border-indigo-300"
+                          title={DMD_LEVEL_TOOLTIPS[d.dmd_level] || d.dmd_level}
+                        >
+                          {d.dmd_level}
+                        </span>
+                      )}
                     </div>
                   </td>
                   <td className="px-3 py-2">{d.term}</td>
