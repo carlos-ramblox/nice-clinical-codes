@@ -19,6 +19,7 @@ import {
   type ReviewDecisionInput,
   type VotingState,
 } from "@/lib/api";
+import { DmdLevelBadge } from "@/lib/dmd";
 import { useUser } from "@/lib/useUser";
 import { downloadBlob, slugify } from "@/lib/download";
 import { ConfirmModal } from "../../ConfirmModal";
@@ -38,13 +39,6 @@ const STATUS_PILL: Record<CodelistStatus, string> = {
   adjudication: "bg-amber-100 text-amber-800 border-amber-300",
   approved: "bg-green-100 text-green-800 border-green-300",
   rejected: "bg-red-100 text-red-800 border-red-300",
-};
-
-const DMD_LEVEL_TOOLTIPS: Record<string, string> = {
-  Ingredient: "Ingredient — chemical substance. Broadest level; cohort captures every brand, strength, and formulation.",
-  VTM: "VTM (Virtual Therapeutic Moiety) — generic substance without route or strength.",
-  VMP: "VMP (Virtual Medicinal Product) — generic with route and strength.",
-  AMP: "AMP (Actual Medicinal Product) — brand-specific.",
 };
 
 type HumanDecision = "include" | "exclude" | "uncertain";
@@ -962,14 +956,7 @@ export default function CodelistReviewPage({
                     <div className="text-[10px] text-gray-500">
                       {d.vocabulary}
                       {d.is_umls_suggestion ? " · UMLS" : ""}
-                      {d.dmd_level && (
-                        <span
-                          className="ml-1 px-1 rounded bg-indigo-100 text-indigo-800 border border-indigo-300"
-                          title={DMD_LEVEL_TOOLTIPS[d.dmd_level] || d.dmd_level}
-                        >
-                          {d.dmd_level}
-                        </span>
-                      )}
+                      {d.dmd_level && <DmdLevelBadge level={d.dmd_level} compact />}
                     </div>
                   </td>
                   <td className="px-3 py-2">{d.term}</td>

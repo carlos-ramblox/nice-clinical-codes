@@ -18,6 +18,7 @@ import type {
   AdoptedPhenotype,
   OhdsiExport,
 } from "@/lib/api";
+import { DmdLevelBadge } from "@/lib/dmd";
 import { useUser } from "@/lib/useUser";
 import { downloadBlob, slugify } from "@/lib/download";
 import { getRecent, pushRecent, formatAgo, type RecentSearch } from "@/lib/recentSearches";
@@ -88,24 +89,6 @@ function UsageCell({ row }: { row: CodeResult }) {
   );
 }
 
-
-const DMD_LEVEL_TOOLTIPS: Record<string, string> = {
-  Ingredient: "Ingredient — chemical substance. Broadest level; cohort captures every brand, strength, and formulation.",
-  VTM: "VTM (Virtual Therapeutic Moiety) — generic substance without route or strength.",
-  VMP: "VMP (Virtual Medicinal Product) — generic with route and strength (e.g. 'Metformin 500mg tablets').",
-  AMP: "AMP (Actual Medicinal Product) — brand-specific (e.g. 'Glucophage 500mg tablets, Merck Serono').",
-};
-
-function DmdLevelBadge({ level }: { level: string }) {
-  return (
-    <span
-      className="ml-1.5 inline-flex items-center px-1.5 py-0.5 rounded text-[10px] font-medium bg-indigo-100 text-indigo-800 border border-indigo-300"
-      title={DMD_LEVEL_TOOLTIPS[level] || level}
-    >
-      {level}
-    </span>
-  );
-}
 
 function DecisionBadge({ decision }: { decision: string }) {
   const config = {
