@@ -392,7 +392,15 @@ class BaselineRequest(BaseModel):
         ...,
         description="Same format as /api/evaluate. Runs an LLM-only baseline (no RAG) on Research_question and evaluates against Codelist.",
     )
-    model: str = Field(
+    # T37e: open OpenRouter slug space, but pattern-constrained to forbid
+    # log-injection / extreme length. Slug shape is "vendor/model" or bare
+    # model name; allowed chars match OpenRouter's published slug rules.
+    model: Annotated[
+        str,
+        StringConstraints(
+            min_length=1, max_length=100, pattern=r"^[a-zA-Z0-9._\-/]+$",
+        ),
+    ] = Field(
         default="microsoft/phi-4",
         description="OpenRouter model id, e.g. 'microsoft/phi-4', 'openai/gpt-4o-mini', 'anthropic/claude-3.5-haiku'.",
     )
@@ -417,8 +425,10 @@ async def baseline_evaluate(request: BaselineRequest):
     try:
         codes = await asyncio.to_thread(run_baseline, query, model=request.model)
     except Exception as exc:
-        logger.error("Baseline (%s) pipeline failed: %s", request.model, exc)
-        raise HTTPException(status_code=500, detail=f"Baseline failed: {exc}")
+        # T37e: log the exception server-side; the response body stays
+        # generic so error text from upstream services doesn't leak.
+        logger.error("Baseline (%s) pipeline failed: %s", request.model, exc, exc_info=True)
+        raise HTTPException(status_code=500, detail="Baseline processing failed") from None
 
     eval_result = run_evaluation(test_set, {"results": codes})
     eval_result["elapsed_seconds"] = round(time.time() - t0, 2)
