@@ -21,6 +21,7 @@ import logging
 import threading
 import time
 from concurrent.futures import ThreadPoolExecutor, as_completed
+from typing import Any, Callable
 
 from omophub import OMOPHub, RateLimitError
 
@@ -28,7 +29,21 @@ from app.config import OMOPHUB_API_KEY, OMOPHUB_VOCABULARIES
 
 logger = logging.getLogger(__name__)
 
-_WORKERS = 8
+_WORKERS = 4
+_MAX_429_RETRIES = 4
+
+
+def _retry_429(fn: Callable[..., Any], *args: Any, **kwargs: Any) -> Any:
+    """Run an OMOPHub call, sleeping on 429 and retrying with backoff."""
+    for attempt in range(_MAX_429_RETRIES):
+        try:
+            return fn(*args, **kwargs)
+        except RateLimitError as exc:
+            if attempt == _MAX_429_RETRIES - 1:
+                raise
+            wait = getattr(exc, "retry_after", None) or (0.5 * (2 ** attempt))
+            time.sleep(wait)
+    raise RuntimeError("unreachable")
 _CACHE_TTL_SECONDS = 7 * 24 * 3600
 
 _LABEL_TO_OMOP_VOCAB = {label: omop_id for omop_id, label in OMOPHUB_VOCABULARIES.items()}
@@ -110,15 +125,14 @@ def _lookup(client: OMOPHub, vocab_id: str, code: str) -> tuple[int | None, bool
         return value, True
 
     try:
-        concept = client.concepts.get_by_code(vocab_id, code, include_relationships=True)
+        concept = _retry_429(
+            client.concepts.get_by_code, vocab_id, code, include_relationships=True,
+        )
         cid_int = _safe_concept_id(concept)
     except RateLimitError as exc:
-        # 429 means we're being throttled — surfaces in prod under load,
-        # not a routine "code not in vocab" miss.
-        logger.warning("OMOPHub rate-limited on get_by_code(%s, %s): %s", vocab_id, code, exc)
-        cid_int = None
+        logger.warning("OMOPHub rate-limited on get_by_code(%s, %s) after retries: %s", vocab_id, code, exc)
+        return None, False
     except Exception as exc:
-        # NotFoundError + transient network blips: routine, not actionable.
         logger.debug("OMOPHub get_by_code(%s, %s) failed: %s", vocab_id, code, exc)
         cid_int = None
 

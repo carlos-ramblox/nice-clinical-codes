@@ -19,6 +19,7 @@ from app.graph.nodes.concept_id_enricher import enrich_concept_ids
 from app.graph.nodes.usage_annotator import annotate_usage
 from app.graph.nodes.umls_enrichment_node import enrich_with_umls
 from app.graph.nodes.llm_reasoning import score_codes
+from app.graph.nodes.hierarchy_expander import expand_hierarchy
 from app.graph.nodes.output_assembly import assemble_output
 
 logger = logging.getLogger(__name__)
@@ -123,6 +124,7 @@ def build_graph(disabled_retrievers: set[str] | None = None) -> StateGraph:
     graph.add_node("usage_annotator", annotate_usage)
     graph.add_node("umls_enrichment", enrich_with_umls)
     graph.add_node("llm_reasoning", score_codes)
+    graph.add_node("hierarchy_expander", expand_hierarchy)
     graph.add_node("output_assembly", assemble_output)
 
     # active retrievers
@@ -146,7 +148,8 @@ def build_graph(disabled_retrievers: set[str] | None = None) -> StateGraph:
     graph.add_edge("concept_id_enricher", "usage_annotator")
     graph.add_edge("usage_annotator", "umls_enrichment")
     graph.add_edge("umls_enrichment", "llm_reasoning")
-    graph.add_edge("llm_reasoning", "output_assembly")
+    graph.add_edge("llm_reasoning", "hierarchy_expander")
+    graph.add_edge("hierarchy_expander", "output_assembly")
     graph.add_edge("output_assembly", END)
 
     return graph.compile()
