@@ -13,11 +13,16 @@ SOURCE_TAG = "OpenCodelists (BNF)"
 
 def ingest_bnf_csv(csv_path: str | Path, codelist_name: str = "") -> int:
     path = Path(csv_path)
-    if not path.exists():
+    try:
+        f = open(path, encoding="utf-8")
+    except FileNotFoundError:
         logger.warning("BNF CSV not found: %s", csv_path)
         return 0
+    except OSError as exc:
+        logger.warning("BNF CSV could not be opened: %s -- %s", csv_path, exc)
+        return 0
 
-    with open(path, encoding="utf-8") as f:
+    with f:
         reader = csv.DictReader(f)
         codes = []
         for row in reader:

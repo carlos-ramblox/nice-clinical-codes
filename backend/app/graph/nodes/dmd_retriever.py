@@ -15,11 +15,18 @@ __all__ = ["SOURCE_TAG", "ingest_dmd_csv", "ingest_dmd_dir", "retrieve_from_dmd"
 
 def ingest_dmd_csv(csv_path: str | Path, codelist_name: str = "") -> int:
     path = Path(csv_path)
-    if not path.exists():
+    try:
+        f = open(path, encoding="utf-8")
+    except FileNotFoundError:
         logger.warning("dm+d CSV not found: %s", csv_path)
         return 0
+    except OSError as exc:
+        # T37d: locked file / permission denied / disk error — degrade
+        # to empty ingest rather than crash the whole sweep.
+        logger.warning("dm+d CSV could not be opened: %s -- %s", csv_path, exc)
+        return 0
 
-    with open(path, encoding="utf-8") as f:
+    with f:
         reader = csv.DictReader(f)
         codes = []
         for row in reader:

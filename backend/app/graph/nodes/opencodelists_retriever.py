@@ -26,11 +26,16 @@ def ingest_opencodelists_csv(csv_path: str | Path, codelist_name: str = ""):
     CSV format: code,term (standard OpenCodelists export).
     """
     path = Path(csv_path)
-    if not path.exists():
+    try:
+        f = open(path, encoding="utf-8")
+    except FileNotFoundError:
         logger.warning("CSV not found: %s", csv_path)
         return 0
+    except OSError as exc:
+        logger.warning("CSV could not be opened: %s -- %s", csv_path, exc)
+        return 0
 
-    with open(path, encoding="utf-8") as f:
+    with f:
         reader = csv.DictReader(f)
         codes = []
         for row in reader:
