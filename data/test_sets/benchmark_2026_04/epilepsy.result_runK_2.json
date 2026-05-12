@@ -6,13 +6,13 @@
     "retrieved_raw": {
       "codelist_name": "retrieved_raw",
       "n_ref_codes": 476,
-      "n_output_codes": 3654,
-      "recall": 0.4286,
-      "precision": 0.0558,
-      "f1": 0.0988,
-      "tp_count": 204,
-      "fp_count": 3450,
-      "fn_count": 272,
+      "n_output_codes": 3645,
+      "recall": 0.4202,
+      "precision": 0.0549,
+      "f1": 0.0971,
+      "tp_count": 200,
+      "fp_count": 3445,
+      "fn_count": 276,
       "tp_codes": [
         {
           "code": "1156803005",
@@ -241,10 +241,6 @@
         {
           "code": "230381009",
           "term": "Focal epilepsy"
-        },
-        {
-          "code": "230384001",
-          "term": "Benign atypical partial epilepsy in childhood"
         },
         {
           "code": "230387008",
@@ -543,14 +539,6 @@
           "term": "Epilepsy with eyelid myoclonia"
         },
         {
-          "code": "717225001",
-          "term": "Benign adult familial myoclonic epilepsy"
-        },
-        {
-          "code": "720519003",
-          "term": "Atherosclerosis, deafness, diabetes, epilepsy, nephropathy syndrome"
-        },
-        {
           "code": "723676007",
           "term": "Severe intellectual disability, epilepsy, anal anomaly, distal phalangeal hypoplasia syndrome"
         },
@@ -677,10 +665,6 @@
         {
           "code": "770758009",
           "term": "New-onset refractory status epilepticus"
-        },
-        {
-          "code": "770898002",
-          "term": "Autosomal recessive cerebellar ataxia, epilepsy, intellectual disability syndrome due to WW domain containing oxidoreductase deficiency"
         },
         {
           "code": "771141002",
@@ -12421,10 +12405,6 @@
           "term": "Product containing precisely lacosamide 50 milligram/1 each conventional release oral tablet (clinical drug)"
         },
         {
-          "code": "442151000124108",
-          "term": "Autosomal dominant nocturnal frontal lobe epilepsy, refractory"
-        },
-        {
           "code": "443711000001108",
           "term": "Tegretol 200mg tablets (Novartis Pharmaceuticals UK Ltd) (product)"
         },
@@ -12977,10 +12957,6 @@
           "term": "Skeletal dysplasia with epilepsy and short stature syndrome (disorder)"
         },
         {
-          "code": "718862007",
-          "term": "Assessment using Neurological Disorders Depression Inventory in Epilepsy"
-        },
-        {
           "code": "719155005",
           "term": "X-linked intellectual disability and epilepsy with progressive joint contracture and facial dysmorphism syndrome (disorder)"
         },
@@ -13003,10 +12979,6 @@
         {
           "code": "7315411000001103",
           "term": "Trileptal 60mg/ml oral suspension sugar free (Novartis Pharmaceuticals UK Ltd) (product)"
-        },
-        {
-          "code": "733623005",
-          "term": "Autism spectrum disorder, epilepsy, arthrogryposis syndrome"
         },
         {
           "code": "739111000001100",
@@ -13059,10 +13031,6 @@
         {
           "code": "782711000001103",
           "term": "Zarontin 250mg/5ml syrup (Pfizer Ltd) (product)"
-        },
-        {
-          "code": "782721009",
-          "term": "Autosomal recessive cerebellar ataxia, epilepsy, intellectual disability syndrome due to RUBCN deficiency"
         },
         {
           "code": "7843411000001108",
@@ -14397,10 +14365,6 @@
           "term": "Lamotrigine 200mg tablets (Zentiva Pharma UK Ltd) (product)"
         },
         {
-          "code": "968661000000102",
-          "term": "At risk of sudden unexpected death in epilepsy"
-        },
-        {
           "code": "9703811000001108",
           "term": "Acetazolamide 250mg tablets (A A H Pharmaceuticals Ltd) (product)"
         },
@@ -15127,6 +15091,10 @@
           "term": "Benign psychomotor epilepsy of childhood"
         },
         {
+          "code": "230384001",
+          "term": "Benign atypical partial epilepsy in childhood"
+        },
+        {
           "code": "230385000",
           "term": "Epilepsy with recurrent unilateral seizures in children"
         },
@@ -15539,6 +15507,10 @@
           "term": "X-linked epilepsy with learning disability and behavior disorder syndrome"
         },
         {
+          "code": "717225001",
+          "term": "Benign adult familial myoclonic epilepsy"
+        },
+        {
           "code": "717276003",
           "term": "Folinic acid responsive developmental and epileptic encephalopathy"
         },
@@ -15549,6 +15521,10 @@
         {
           "code": "719810000",
           "term": "X-linked intellectual disability with seizure and psoriasis syndrome"
+        },
+        {
+          "code": "720519003",
+          "term": "Atherosclerosis, deafness, diabetes, epilepsy, nephropathy syndrome"
         },
         {
           "code": "721207002",
@@ -15643,6 +15619,10 @@
           "term": "Infantile spasm and broad thumb syndrome"
         },
         {
+          "code": "770898002",
+          "term": "Autosomal recessive cerebellar ataxia, epilepsy, intellectual disability syndrome due to WW domain containing oxidoreductase deficiency"
+        },
+        {
           "code": "771142009",
           "term": "Cortical dysplasia with focal epilepsy syndrome"
         },
@@ -15728,12 +15708,12 @@
       "codelist_name": "merged_enriched",
       "n_ref_codes": 476,
       "n_output_codes": 100,
-      "recall": 0.1218,
-      "precision": 0.58,
-      "f1": 0.2014,
-      "tp_count": 58,
-      "fp_count": 42,
-      "fn_count": 418,
+      "recall": 0.105,
+      "precision": 0.5,
+      "f1": 0.1736,
+      "tp_count": 50,
+      "fp_count": 50,
+      "fn_count": 426,
       "tp_codes": [
         {
           "code": "116401000119105",
@@ -15812,10 +15792,6 @@
           "term": "Cingulate frontal lobe epilepsy"
         },
         {
-          "code": "230397004",
-          "term": "Anterior frontopolar frontal lobe epilepsy"
-        },
-        {
           "code": "230399001",
           "term": "Dorsolateral frontal lobe epilepsy"
         },
@@ -15868,10 +15844,6 @@
           "term": "Writing epilepsy"
         },
         {
-          "code": "230454005",
-          "term": "Aquagenic epilepsy"
-        },
-        {
           "code": "267581004",
           "term": "Progressive myoclonic epilepsy"
         },
@@ -15904,10 +15876,6 @@
           "term": "Psychomotor epilepsy"
         },
         {
-          "code": "361268000",
-          "term": "Alcohol-induced epilepsy"
-        },
-        {
           "code": "44145005",
           "term": "Self-limited epilepsy with centrotemporal spikes"
         },
@@ -15936,26 +15904,6 @@
           "term": "Audiogenic epilepsy"
         },
         {
-          "code": "770622009",
-          "term": "Benign infantile focal epilepsy with midline spikes and waves during sleep"
-        },
-        {
-          "code": "770623004",
-          "term": "Benign occipital lobe epilepsy"
-        },
-        {
-          "code": "771448004",
-          "term": "Autism epilepsy syndrome due to branched chain ketoacid dehydrogenase kinase deficiency"
-        },
-        {
-          "code": "773498006",
-          "term": "Autosomal recessive cerebellar ataxia, epilepsy, intellectual disability syndrome due to TUD deficiency"
-        },
-        {
-          "code": "788417006",
-          "term": "Alopecia, epilepsy, intellectual disability syndrome Moynahan type"
-        },
-        {
           "code": "79745005",
           "term": "Reflex epilepsy"
         },
@@ -15974,16 +15922,32 @@
           "term": "Epilepsy resolved (finding)"
         },
         {
-          "code": "720980004",
-          "term": "Alopecia, psychomotor epilepsy, periodontal pyorrhea, intellectual disability syndrome (disorder)"
+          "code": "A830",
+          "term": "Japanese encephalitis"
         },
         {
           "code": "A835",
           "term": "California encephalitis"
         },
         {
+          "code": "B262",
+          "term": "Mumps encephalitis"
+        },
+        {
+          "code": "E035",
+          "term": "Myxoedema coma"
+        },
+        {
           "code": "E512",
           "term": "Wernicke encephalopathy"
+        },
+        {
+          "code": "F071",
+          "term": "Postencephalitic syndrome"
+        },
+        {
+          "code": "F445",
+          "term": "Dissociative convulsions"
         },
         {
           "code": "F803",
@@ -16090,8 +16054,20 @@
           "term": "Hypertensive encephalopathy"
         },
         {
+          "code": "P90",
+          "term": "Convulsions of newborn"
+        },
+        {
+          "code": "Q01",
+          "term": "Encephalocele"
+        },
+        {
           "code": "Q012",
           "term": "Occipital encephalocele"
+        },
+        {
+          "code": "Q042",
+          "term": "Holoprosencephaly"
         },
         {
           "code": "Q045",
@@ -16120,6 +16096,10 @@
         {
           "code": "R568",
           "term": "Other and unspecified convulsions"
+        },
+        {
+          "code": "S080",
+          "term": "Avulsion of scalp"
         },
         {
           "code": "T425",
@@ -16836,6 +16816,10 @@
           "term": "Frontal lobe epilepsy"
         },
         {
+          "code": "230397004",
+          "term": "Anterior frontopolar frontal lobe epilepsy"
+        },
+        {
           "code": "230398009",
           "term": "Orbitofrontal frontal lobe epilepsy"
         },
@@ -16962,6 +16946,10 @@
         {
           "code": "230453004",
           "term": "Decision-making epilepsy"
+        },
+        {
+          "code": "230454005",
+          "term": "Aquagenic epilepsy"
         },
         {
           "code": "230455006",
@@ -17122,6 +17110,10 @@
         {
           "code": "35796005",
           "term": "Generalized nonconvulsive epilepsy"
+        },
+        {
+          "code": "361268000",
+          "term": "Alcohol-induced epilepsy"
         },
         {
           "code": "36803009",
@@ -17588,6 +17580,14 @@
           "term": "Lissencephaly due to LIS1 mutation"
         },
         {
+          "code": "770622009",
+          "term": "Benign infantile focal epilepsy with midline spikes and waves during sleep"
+        },
+        {
+          "code": "770623004",
+          "term": "Benign occipital lobe epilepsy"
+        },
+        {
           "code": "770624005",
           "term": "Benign partial epilepsy of infancy with complex partial seizures"
         },
@@ -17624,6 +17624,10 @@
           "term": "Severe neonatal onset encephalopathy with microcephaly"
         },
         {
+          "code": "771448004",
+          "term": "Autism epilepsy syndrome due to branched chain ketoacid dehydrogenase kinase deficiency"
+        },
+        {
           "code": "771469002",
           "term": "Early-onset spastic ataxia, myoclonic epilepsy, neuropathy syndrome"
         },
@@ -17642,6 +17646,10 @@
         {
           "code": "773497001",
           "term": "Partial corpus callosum agenesis, cerebellar vermis hypoplasia with posterior fossa cysts syndrome"
+        },
+        {
+          "code": "773498006",
+          "term": "Autosomal recessive cerebellar ataxia, epilepsy, intellectual disability syndrome due to TUD deficiency"
         },
         {
           "code": "773548008",
@@ -17726,6 +17734,10 @@
         {
           "code": "785726009",
           "term": "Hyperekplexia epilepsy syndrome"
+        },
+        {
+          "code": "788417006",
+          "term": "Alopecia, epilepsy, intellectual disability syndrome Moynahan type"
         },
         {
           "code": "789063000",
@@ -17817,12 +17829,12 @@
       "codelist_name": "all_scored",
       "n_ref_codes": 476,
       "n_output_codes": 100,
-      "recall": 0.1218,
-      "precision": 0.58,
-      "f1": 0.2014,
-      "tp_count": 58,
-      "fp_count": 42,
-      "fn_count": 418,
+      "recall": 0.105,
+      "precision": 0.5,
+      "f1": 0.1736,
+      "tp_count": 50,
+      "fp_count": 50,
+      "fn_count": 426,
       "tp_codes": [
         {
           "code": "116401000119105",
@@ -17901,10 +17913,6 @@
           "term": "Cingulate frontal lobe epilepsy"
         },
         {
-          "code": "230397004",
-          "term": "Anterior frontopolar frontal lobe epilepsy"
-        },
-        {
           "code": "230399001",
           "term": "Dorsolateral frontal lobe epilepsy"
         },
@@ -17957,10 +17965,6 @@
           "term": "Writing epilepsy"
         },
         {
-          "code": "230454005",
-          "term": "Aquagenic epilepsy"
-        },
-        {
           "code": "267581004",
           "term": "Progressive myoclonic epilepsy"
         },
@@ -17993,10 +17997,6 @@
           "term": "Psychomotor epilepsy"
         },
         {
-          "code": "361268000",
-          "term": "Alcohol-induced epilepsy"
-        },
-        {
           "code": "44145005",
           "term": "Self-limited epilepsy with centrotemporal spikes"
         },
@@ -18025,26 +18025,6 @@
           "term": "Audiogenic epilepsy"
         },
         {
-          "code": "770622009",
-          "term": "Benign infantile focal epilepsy with midline spikes and waves during sleep"
-        },
-        {
-          "code": "770623004",
-          "term": "Benign occipital lobe epilepsy"
-        },
-        {
-          "code": "771448004",
-          "term": "Autism epilepsy syndrome due to branched chain ketoacid dehydrogenase kinase deficiency"
-        },
-        {
-          "code": "773498006",
-          "term": "Autosomal recessive cerebellar ataxia, epilepsy, intellectual disability syndrome due to TUD deficiency"
-        },
-        {
-          "code": "788417006",
-          "term": "Alopecia, epilepsy, intellectual disability syndrome Moynahan type"
-        },
-        {
           "code": "79745005",
           "term": "Reflex epilepsy"
         },
@@ -18063,16 +18043,32 @@
           "term": "Epilepsy resolved (finding)"
         },
         {
-          "code": "720980004",
-          "term": "Alopecia, psychomotor epilepsy, periodontal pyorrhea, intellectual disability syndrome (disorder)"
+          "code": "A830",
+          "term": "Japanese encephalitis"
         },
         {
           "code": "A835",
           "term": "California encephalitis"
         },
         {
+          "code": "B262",
+          "term": "Mumps encephalitis"
+        },
+        {
+          "code": "E035",
+          "term": "Myxoedema coma"
+        },
+        {
           "code": "E512",
           "term": "Wernicke encephalopathy"
+        },
+        {
+          "code": "F071",
+          "term": "Postencephalitic syndrome"
+        },
+        {
+          "code": "F445",
+          "term": "Dissociative convulsions"
         },
         {
           "code": "F803",
@@ -18179,8 +18175,20 @@
           "term": "Hypertensive encephalopathy"
         },
         {
+          "code": "P90",
+          "term": "Convulsions of newborn"
+        },
+        {
+          "code": "Q01",
+          "term": "Encephalocele"
+        },
+        {
           "code": "Q012",
           "term": "Occipital encephalocele"
+        },
+        {
+          "code": "Q042",
+          "term": "Holoprosencephaly"
         },
         {
           "code": "Q045",
@@ -18209,6 +18217,10 @@
         {
           "code": "R568",
           "term": "Other and unspecified convulsions"
+        },
+        {
+          "code": "S080",
+          "term": "Avulsion of scalp"
         },
         {
           "code": "T425",
@@ -18925,6 +18937,10 @@
           "term": "Frontal lobe epilepsy"
         },
         {
+          "code": "230397004",
+          "term": "Anterior frontopolar frontal lobe epilepsy"
+        },
+        {
           "code": "230398009",
           "term": "Orbitofrontal frontal lobe epilepsy"
         },
@@ -19051,6 +19067,10 @@
         {
           "code": "230453004",
           "term": "Decision-making epilepsy"
+        },
+        {
+          "code": "230454005",
+          "term": "Aquagenic epilepsy"
         },
         {
           "code": "230455006",
@@ -19211,6 +19231,10 @@
         {
           "code": "35796005",
           "term": "Generalized nonconvulsive epilepsy"
+        },
+        {
+          "code": "361268000",
+          "term": "Alcohol-induced epilepsy"
         },
         {
           "code": "36803009",
@@ -19677,6 +19701,14 @@
           "term": "Lissencephaly due to LIS1 mutation"
         },
         {
+          "code": "770622009",
+          "term": "Benign infantile focal epilepsy with midline spikes and waves during sleep"
+        },
+        {
+          "code": "770623004",
+          "term": "Benign occipital lobe epilepsy"
+        },
+        {
           "code": "770624005",
           "term": "Benign partial epilepsy of infancy with complex partial seizures"
         },
@@ -19713,6 +19745,10 @@
           "term": "Severe neonatal onset encephalopathy with microcephaly"
         },
         {
+          "code": "771448004",
+          "term": "Autism epilepsy syndrome due to branched chain ketoacid dehydrogenase kinase deficiency"
+        },
+        {
           "code": "771469002",
           "term": "Early-onset spastic ataxia, myoclonic epilepsy, neuropathy syndrome"
         },
@@ -19731,6 +19767,10 @@
         {
           "code": "773497001",
           "term": "Partial corpus callosum agenesis, cerebellar vermis hypoplasia with posterior fossa cysts syndrome"
+        },
+        {
+          "code": "773498006",
+          "term": "Autosomal recessive cerebellar ataxia, epilepsy, intellectual disability syndrome due to TUD deficiency"
         },
         {
           "code": "773548008",
@@ -19815,6 +19855,10 @@
         {
           "code": "785726009",
           "term": "Hyperekplexia epilepsy syndrome"
+        },
+        {
+          "code": "788417006",
+          "term": "Alopecia, epilepsy, intellectual disability syndrome Moynahan type"
         },
         {
           "code": "789063000",
@@ -19905,13 +19949,13 @@
     "included_only": {
       "codelist_name": "included_only",
       "n_ref_codes": 476,
-      "n_output_codes": 66,
-      "recall": 0.1008,
-      "precision": 0.7273,
-      "f1": 0.1771,
-      "tp_count": 48,
+      "n_output_codes": 64,
+      "recall": 0.0966,
+      "precision": 0.7188,
+      "f1": 0.1704,
+      "tp_count": 46,
       "fp_count": 18,
-      "fn_count": 428,
+      "fn_count": 430,
       "tp_codes": [
         {
           "code": "116401000119105",
@@ -19982,10 +20026,6 @@
           "term": "Cingulate frontal lobe epilepsy"
         },
         {
-          "code": "230397004",
-          "term": "Anterior frontopolar frontal lobe epilepsy"
-        },
-        {
           "code": "230399001",
           "term": "Dorsolateral frontal lobe epilepsy"
         },
@@ -20028,6 +20068,10 @@
         {
           "code": "230445007",
           "term": "Nocturnal epilepsy"
+        },
+        {
+          "code": "230448009",
+          "term": "Writing epilepsy"
         },
         {
           "code": "267581004",
@@ -20084,14 +20128,6 @@
         {
           "code": "765216006",
           "term": "Audiogenic epilepsy"
-        },
-        {
-          "code": "770622009",
-          "term": "Benign infantile focal epilepsy with midline spikes and waves during sleep"
-        },
-        {
-          "code": "770623004",
-          "term": "Benign occipital lobe epilepsy"
         },
         {
           "code": "79745005",
@@ -20886,6 +20922,10 @@
           "term": "Frontal lobe epilepsy"
         },
         {
+          "code": "230397004",
+          "term": "Anterior frontopolar frontal lobe epilepsy"
+        },
+        {
           "code": "230398009",
           "term": "Orbitofrontal frontal lobe epilepsy"
         },
@@ -20996,10 +21036,6 @@
         {
           "code": "230446008",
           "term": "Epilepsy only in relation to photic stimulation"
-        },
-        {
-          "code": "230448009",
-          "term": "Writing epilepsy"
         },
         {
           "code": "230449001",
@@ -21656,6 +21692,14 @@
         {
           "code": "770560008",
           "term": "Lissencephaly due to LIS1 mutation"
+        },
+        {
+          "code": "770622009",
+          "term": "Benign infantile focal epilepsy with midline spikes and waves during sleep"
+        },
+        {
+          "code": "770623004",
+          "term": "Benign occipital lobe epilepsy"
         },
         {
           "code": "770624005",
@@ -21898,13 +21942,13 @@
     "included_plus_uncertain": {
       "codelist_name": "included_plus_uncertain",
       "n_ref_codes": 476,
-      "n_output_codes": 70,
-      "recall": 0.1092,
-      "precision": 0.7429,
-      "f1": 0.1905,
-      "tp_count": 52,
+      "n_output_codes": 65,
+      "recall": 0.0987,
+      "precision": 0.7231,
+      "f1": 0.1738,
+      "tp_count": 47,
       "fp_count": 18,
-      "fn_count": 424,
+      "fn_count": 429,
       "tp_codes": [
         {
           "code": "116401000119105",
@@ -21979,10 +22023,6 @@
           "term": "Cingulate frontal lobe epilepsy"
         },
         {
-          "code": "230397004",
-          "term": "Anterior frontopolar frontal lobe epilepsy"
-        },
-        {
           "code": "230399001",
           "term": "Dorsolateral frontal lobe epilepsy"
         },
@@ -22019,10 +22059,6 @@
           "term": "Dravet syndrome"
         },
         {
-          "code": "230440002",
-          "term": "Secondary reading epilepsy"
-        },
-        {
           "code": "230444006",
           "term": "Menstrual epilepsy"
         },
@@ -22033,10 +22069,6 @@
         {
           "code": "230448009",
           "term": "Writing epilepsy"
-        },
-        {
-          "code": "230454005",
-          "term": "Aquagenic epilepsy"
         },
         {
           "code": "267581004",
@@ -22093,14 +22125,6 @@
         {
           "code": "765216006",
           "term": "Audiogenic epilepsy"
-        },
-        {
-          "code": "770622009",
-          "term": "Benign infantile focal epilepsy with midline spikes and waves during sleep"
-        },
-        {
-          "code": "770623004",
-          "term": "Benign occipital lobe epilepsy"
         },
         {
           "code": "79745005",
@@ -22891,6 +22915,10 @@
           "term": "Frontal lobe epilepsy"
         },
         {
+          "code": "230397004",
+          "term": "Anterior frontopolar frontal lobe epilepsy"
+        },
+        {
           "code": "230398009",
           "term": "Orbitofrontal frontal lobe epilepsy"
         },
@@ -22987,6 +23015,10 @@
           "term": "Epilepsy with continuous spike wave during slow-wave sleep"
         },
         {
+          "code": "230440002",
+          "term": "Secondary reading epilepsy"
+        },
+        {
           "code": "230441003",
           "term": "Drug-induced epilepsy"
         },
@@ -23017,6 +23049,10 @@
         {
           "code": "230453004",
           "term": "Decision-making epilepsy"
+        },
+        {
+          "code": "230454005",
+          "term": "Aquagenic epilepsy"
         },
         {
           "code": "230455006",
@@ -23651,6 +23687,14 @@
           "term": "Lissencephaly due to LIS1 mutation"
         },
         {
+          "code": "770622009",
+          "term": "Benign infantile focal epilepsy with midline spikes and waves during sleep"
+        },
+        {
+          "code": "770623004",
+          "term": "Benign occipital lobe epilepsy"
+        },
+        {
           "code": "770624005",
           "term": "Benign partial epilepsy of infancy with complex partial seizures"
         },
@@ -23890,67 +23934,37 @@
     }
   },
   "false_exclusions": {
-    "count": 6,
+    "count": 3,
     "codes": [
-      {
-        "code": "1179360000",
-        "term": "Fetal epilepsy due to perinatal stroke (disorder)",
-        "rationale": "Fetal epilepsy due to perinatal stroke is secondary epilepsy caused by a specific etiology (stroke), not primary epilepsy."
-      },
       {
         "code": "313307000",
         "term": "Epileptic seizure (finding)",
-        "rationale": "An 'epileptic seizure' is a symptom/manifestation of epilepsy, not an instance of the epilepsy diagnosis itself; seizures occur in epilepsy but the code does not confirm epilepsy as a disorder."
+        "rationale": "Epileptic seizure is a finding/manifestation of epilepsy, not an instance of the epilepsy condition itself."
       },
       {
-        "code": "361268000",
-        "term": "Alcohol-induced epilepsy (disorder)",
-        "rationale": "Alcohol-induced epilepsy is secondary epilepsy caused by an external factor (alcohol); the query specifies 'primary' epilepsy, which excludes secondary forms."
+        "code": "1179360000",
+        "term": "Fetal epilepsy due to perinatal stroke (disorder)",
+        "rationale": "Fetal epilepsy due to perinatal stroke is secondary epilepsy caused by stroke, not primary epilepsy."
       },
       {
-        "code": "771448004",
-        "term": "Autism epilepsy syndrome due to branched chain ketoacid dehydrogenase kinase deficiency (disorder)",
-        "rationale": "This is a rare genetic syndrome (autism-epilepsy syndrome due to BCKDK deficiency) where epilepsy is one component of a broader metabolic/genetic disorder, not a primary epilepsy type."
-      },
-      {
-        "code": "773498006",
-        "term": "Autosomal recessive cerebellar ataxia, epilepsy, intellectual disability syndrome due to TUD deficiency (disorder)",
-        "rationale": "This is a rare genetic syndrome (ARCAEID due to TUD deficiency) where epilepsy is one component of a broader neurological disorder, not a primary epilepsy type."
-      },
-      {
-        "code": "788417006",
-        "term": "Alopecia, epilepsy, intellectual disability syndrome Moynahan type (disorder)",
-        "rationale": "This is a rare syndromic disorder (Moynahan syndrome) where epilepsy is one component among multiple unrelated features, not a primary epilepsy type."
+        "code": "230440002",
+        "term": "Secondary reading epilepsy (disorder)",
+        "rationale": "Secondary reading epilepsy is secondary epilepsy triggered by reading, not primary epilepsy."
       }
     ]
   },
   "uncertain_in_reference": {
-    "count": 4,
+    "count": 1,
     "codes": [
-      {
-        "code": "230440002",
-        "term": "Secondary reading epilepsy (disorder)",
-        "rationale": "Secondary reading epilepsy is triggered by reading activity; unclear if this represents primary epilepsy or a secondary/reflex epilepsy variant."
-      },
-      {
-        "code": "230448009",
-        "term": "Writing epilepsy (disorder)",
-        "rationale": "Writing epilepsy is a reflex/trigger-induced epilepsy; unclear if this represents primary epilepsy or a secondary reflex variant."
-      },
-      {
-        "code": "230454005",
-        "term": "Aquagenic epilepsy (disorder)",
-        "rationale": "Aquagenic epilepsy is a reflex/trigger-induced epilepsy; unclear if this represents primary epilepsy or a secondary reflex variant."
-      },
       {
         "code": "1208991001",
         "term": "Myoclonic epileptic seizure (finding)",
-        "rationale": "Myoclonic epileptic seizure is coded as a 'finding' rather than a 'disorder', which may represent a manifestation rather than the condition itself; clinical judgment needed on whether seizure types alone should be included."
+        "rationale": "Myoclonic epileptic seizure is a seizure type finding; unclear if this represents a diagnosis of epilepsy or just a seizure manifestation."
       }
     ]
   },
-  "summary": "Recall: 10.1% (48 of 476 reference codes retrieved). Precision: 72.7%. F1: 17.7%. 6 reference codes were incorrectly excluded.",
-  "elapsed_seconds": 23.32,
+  "summary": "Recall: 9.7% (46 of 476 reference codes retrieved). Precision: 71.9%. F1: 17.0%. 3 reference codes were incorrectly excluded.",
+  "elapsed_seconds": 23.84,
   "pipeline_results_count": 100,
   "scored_codes": [
     {
@@ -23959,12 +23973,16 @@
       "vocabulary": "ICD-10 (WHO)",
       "decision": "include",
       "confidence": 1.0,
-      "rationale": "G40 is the primary ICD-10 code for epilepsy and directly represents the queried condition.",
+      "rationale": "G40 is the primary ICD-10 code for epilepsy itself.",
       "sources": [
-        "ChromaDB",
-        "OMOPHub"
+        "ChromaDB"
       ],
-      "usage_frequency": null
+      "usage_frequency": 57278,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital HES inpatient FCEs",
+      "usage_setting": "secondary_care_hes",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "G40.0",
@@ -23972,12 +23990,16 @@
       "vocabulary": "ICD-10 (WHO)",
       "decision": "include",
       "confidence": 1.0,
-      "rationale": "Localization-related idiopathic epilepsy is a specific subtype of primary epilepsy.",
+      "rationale": "Localization-related idiopathic epilepsy is a clinical subtype of primary epilepsy.",
       "sources": [
-        "ChromaDB",
-        "OMOPHub"
+        "ChromaDB"
       ],
-      "usage_frequency": null
+      "usage_frequency": 448,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital HES inpatient FCEs",
+      "usage_setting": "secondary_care_hes",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "G40.1",
@@ -23985,12 +24007,16 @@
       "vocabulary": "ICD-10 (WHO)",
       "decision": "include",
       "confidence": 1.0,
-      "rationale": "Localization-related symptomatic epilepsy with simple partial seizures is a specific subtype of primary epilepsy.",
+      "rationale": "Localization-related symptomatic epilepsy with simple partial seizures is a clinical subtype of primary epilepsy.",
       "sources": [
-        "ChromaDB",
-        "OMOPHub"
+        "ChromaDB"
       ],
-      "usage_frequency": null
+      "usage_frequency": 6165,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital HES inpatient FCEs",
+      "usage_setting": "secondary_care_hes",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "G40.2",
@@ -23998,12 +24024,16 @@
       "vocabulary": "ICD-10 (WHO)",
       "decision": "include",
       "confidence": 1.0,
-      "rationale": "Localization-related symptomatic epilepsy with complex partial seizures is a specific subtype of primary epilepsy.",
+      "rationale": "Localization-related symptomatic epilepsy with complex partial seizures is a clinical subtype of primary epilepsy.",
       "sources": [
-        "ChromaDB",
-        "OMOPHub"
+        "ChromaDB"
       ],
-      "usage_frequency": null
+      "usage_frequency": 2083,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital HES inpatient FCEs",
+      "usage_setting": "secondary_care_hes",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "G40.3",
@@ -24011,12 +24041,16 @@
       "vocabulary": "ICD-10 (WHO)",
       "decision": "include",
       "confidence": 1.0,
-      "rationale": "Generalized idiopathic epilepsy is a specific subtype of primary epilepsy.",
+      "rationale": "Generalized idiopathic epilepsy and epileptic syndromes is a clinical subtype of primary epilepsy.",
       "sources": [
-        "ChromaDB",
-        "OMOPHub"
+        "ChromaDB"
       ],
-      "usage_frequency": null
+      "usage_frequency": 18406,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital HES inpatient FCEs",
+      "usage_setting": "secondary_care_hes",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "G40.4",
@@ -24024,12 +24058,16 @@
       "vocabulary": "ICD-10 (WHO)",
       "decision": "include",
       "confidence": 1.0,
-      "rationale": "Other generalized epilepsy and epileptic syndromes is a specific subtype of primary epilepsy.",
+      "rationale": "Other generalized epilepsy and epileptic syndromes is a clinical subtype of primary epilepsy.",
       "sources": [
-        "ChromaDB",
-        "OMOPHub"
+        "ChromaDB"
       ],
-      "usage_frequency": null
+      "usage_frequency": 1949,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital HES inpatient FCEs",
+      "usage_setting": "secondary_care_hes",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "G40.5",
@@ -24037,11 +24075,16 @@
       "vocabulary": "ICD-10 (WHO)",
       "decision": "include",
       "confidence": 1.0,
-      "rationale": "Special epileptic syndromes is a specific subtype of primary epilepsy.",
+      "rationale": "Special epileptic syndromes is a clinical subtype of primary epilepsy.",
       "sources": [
         "ChromaDB"
       ],
-      "usage_frequency": null
+      "usage_frequency": 1242,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital HES inpatient FCEs",
+      "usage_setting": "secondary_care_hes",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "G40.6",
@@ -24049,11 +24092,16 @@
       "vocabulary": "ICD-10 (WHO)",
       "decision": "include",
       "confidence": 1.0,
-      "rationale": "Grand mal seizures unspecified is a specific manifestation of primary epilepsy.",
+      "rationale": "Grand mal seizures unspecified is a seizure type manifestation of primary epilepsy.",
       "sources": [
         "ChromaDB"
       ],
-      "usage_frequency": null
+      "usage_frequency": 484,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital HES inpatient FCEs",
+      "usage_setting": "secondary_care_hes",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "G40.7",
@@ -24061,11 +24109,16 @@
       "vocabulary": "ICD-10 (WHO)",
       "decision": "include",
       "confidence": 1.0,
-      "rationale": "Petit mal seizures unspecified is a specific manifestation of primary epilepsy.",
+      "rationale": "Petit mal unspecified is a seizure type manifestation of primary epilepsy.",
       "sources": [
         "ChromaDB"
       ],
-      "usage_frequency": null
+      "usage_frequency": 87,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital HES inpatient FCEs",
+      "usage_setting": "secondary_care_hes",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "G40.8",
@@ -24075,10 +24128,14 @@
       "confidence": 1.0,
       "rationale": "Other epilepsy is a residual category for primary epilepsy.",
       "sources": [
-        "ChromaDB",
-        "OMOPHub"
+        "ChromaDB"
       ],
-      "usage_frequency": null
+      "usage_frequency": 1710,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital HES inpatient FCEs",
+      "usage_setting": "secondary_care_hes",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "G40.9",
@@ -24086,25 +24143,16 @@
       "vocabulary": "ICD-10 (WHO)",
       "decision": "include",
       "confidence": 1.0,
-      "rationale": "Epilepsy unspecified is a valid code for primary epilepsy when type is not specified.",
+      "rationale": "Epilepsy unspecified is a diagnostic code for primary epilepsy.",
       "sources": [
-        "ChromaDB",
-        "OMOPHub"
+        "ChromaDB"
       ],
-      "usage_frequency": null
-    },
-    {
-      "code": "84757009",
-      "term": "Epilepsy (disorder)",
-      "vocabulary": "SNOMED CT",
-      "decision": "include",
-      "confidence": 1.0,
-      "rationale": "Epilepsy (disorder) is the generic parent code for the queried condition and represents an instance of primary epilepsy.",
-      "sources": [
-        "ChromaDB",
-        "QOF Business Rules 2024-25"
-      ],
-      "usage_frequency": null
+      "usage_frequency": 24704,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital HES inpatient FCEs",
+      "usage_setting": "secondary_care_hes",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "G41",
@@ -24112,11 +24160,16 @@
       "vocabulary": "ICD-10 (WHO)",
       "decision": "include",
       "confidence": 0.95,
-      "rationale": "Status epilepticus is a severe acute manifestation of epilepsy and represents an instance of the condition.",
+      "rationale": "Status epilepticus is an acute manifestation and complication of epilepsy where the term explicitly contains 'epilepticus'.",
       "sources": [
         "ChromaDB"
       ],
-      "usage_frequency": null
+      "usage_frequency": 7439,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital HES inpatient FCEs",
+      "usage_setting": "secondary_care_hes",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "G41.0",
@@ -24128,7 +24181,12 @@
       "sources": [
         "ChromaDB"
       ],
-      "usage_frequency": null
+      "usage_frequency": 1384,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital HES inpatient FCEs",
+      "usage_setting": "secondary_care_hes",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "G41.1",
@@ -24140,7 +24198,12 @@
       "sources": [
         "ChromaDB"
       ],
-      "usage_frequency": null
+      "usage_frequency": 38,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital HES inpatient FCEs",
+      "usage_setting": "secondary_care_hes",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "G41.2",
@@ -24152,7 +24215,12 @@
       "sources": [
         "ChromaDB"
       ],
-      "usage_frequency": null
+      "usage_frequency": 103,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital HES inpatient FCEs",
+      "usage_setting": "secondary_care_hes",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "G41.8",
@@ -24164,7 +24232,12 @@
       "sources": [
         "ChromaDB"
       ],
-      "usage_frequency": null
+      "usage_frequency": 545,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital HES inpatient FCEs",
+      "usage_setting": "secondary_care_hes",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "G41.9",
@@ -24172,11 +24245,16 @@
       "vocabulary": "ICD-10 (WHO)",
       "decision": "include",
       "confidence": 0.95,
-      "rationale": "Status epilepticus unspecified is a valid code for acute epileptic manifestations when type is not specified.",
+      "rationale": "Status epilepticus unspecified is a diagnostic code for acute epileptic manifestations.",
       "sources": [
         "ChromaDB"
       ],
-      "usage_frequency": null
+      "usage_frequency": 5369,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital HES inpatient FCEs",
+      "usage_setting": "secondary_care_hes",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "116401000119105",
@@ -24184,12 +24262,17 @@
       "vocabulary": "SNOMED CT",
       "decision": "include",
       "confidence": 0.95,
-      "rationale": "Recurrent complex partial epilepsy is a specific clinical subtype of primary epilepsy with clear diagnostic confirmation.",
+      "rationale": "Recurrent complex partial epilepsy is a specific subtype of primary epilepsy with clear diagnostic confirmation.",
       "sources": [
         "ChromaDB",
         "QOF Business Rules 2024-25"
       ],
-      "usage_frequency": null
+      "usage_frequency": 70,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "1260117009",
@@ -24197,12 +24280,35 @@
       "vocabulary": "SNOMED CT",
       "decision": "include",
       "confidence": 0.95,
-      "rationale": "Combined focal and generalized epilepsy is a recognized clinical subtype of primary epilepsy.",
+      "rationale": "Combined focal and generalized epilepsy is a primary epilepsy syndrome with explicit epilepsy diagnosis.",
       "sources": [
         "ChromaDB",
         "QOF Business Rules 2024-25"
       ],
-      "usage_frequency": null
+      "usage_frequency": 90,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": null,
+      "dmd_level": null
+    },
+    {
+      "code": "1275631007",
+      "term": "Developmental and epileptic encephalopathy (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Developmental and epileptic encephalopathy is a primary epilepsy disorder with clear diagnostic confirmation.",
+      "sources": [
+        "ChromaDB",
+        "QOF Business Rules 2024-25"
+      ],
+      "usage_frequency": 110,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "192990004",
@@ -24210,12 +24316,17 @@
       "vocabulary": "SNOMED CT",
       "decision": "include",
       "confidence": 0.95,
-      "rationale": "Myoclonic epilepsy in infancy is a recognized primary epilepsy syndrome with specific age and seizure type characteristics.",
+      "rationale": "Myoclonic epilepsy in infancy is a specific primary epilepsy syndrome with clear diagnostic confirmation.",
       "sources": [
         "ChromaDB",
         "QOF Business Rules 2024-25"
       ],
-      "usage_frequency": null
+      "usage_frequency": 80,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": 4101742,
+      "dmd_level": null
     },
     {
       "code": "193000002",
@@ -24223,12 +24334,71 @@
       "vocabulary": "SNOMED CT",
       "decision": "include",
       "confidence": 0.95,
-      "rationale": "Temporal lobe epilepsy is a well-established primary focal epilepsy syndrome.",
+      "rationale": "Temporal lobe epilepsy is a primary focal epilepsy syndrome with explicit epilepsy diagnosis.",
       "sources": [
         "ChromaDB",
         "QOF Business Rules 2024-25"
       ],
-      "usage_frequency": null
+      "usage_frequency": 10160,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": 4102345,
+      "dmd_level": null
+    },
+    {
+      "code": "193002005",
+      "term": "Psychosensory epilepsy (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Psychosensory epilepsy is a primary focal epilepsy syndrome with explicit epilepsy diagnosis.",
+      "sources": [
+        "ChromaDB",
+        "QOF Business Rules 2024-25"
+      ],
+      "usage_frequency": 10,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": null,
+      "dmd_level": null
+    },
+    {
+      "code": "193003000",
+      "term": "Mesiobasal limbic epilepsy (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Mesiobasal limbic epilepsy is a primary focal epilepsy syndrome with explicit epilepsy diagnosis.",
+      "sources": [
+        "ChromaDB",
+        "QOF Business Rules 2024-25"
+      ],
+      "usage_frequency": 10,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": 4104856,
+      "dmd_level": null
+    },
+    {
+      "code": "193008009",
+      "term": "Somatosensory epilepsy (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Somatosensory epilepsy is a primary focal epilepsy syndrome with explicit epilepsy diagnosis.",
+      "sources": [
+        "ChromaDB",
+        "QOF Business Rules 2024-25"
+      ],
+      "usage_frequency": null,
+      "usage_status": "withheld_below_5",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "19598007",
@@ -24236,12 +24406,35 @@
       "vocabulary": "SNOMED CT",
       "decision": "include",
       "confidence": 0.95,
-      "rationale": "Generalized epilepsy is a major primary epilepsy classification encompassing multiple generalized seizure types.",
+      "rationale": "Generalized epilepsy is a major primary epilepsy syndrome with explicit epilepsy diagnosis.",
       "sources": [
         "ChromaDB",
         "QOF Business Rules 2024-25"
       ],
-      "usage_frequency": null
+      "usage_frequency": 14970,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": 4055361,
+      "dmd_level": null
+    },
+    {
+      "code": "199451000000106",
+      "term": "Simple partial epileptic seizure (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Simple partial epileptic seizure is a seizure type within primary epilepsy with explicit epilepsy diagnosis.",
+      "sources": [
+        "ChromaDB",
+        "QOF Business Rules 2024-25"
+      ],
+      "usage_frequency": 730,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": 44789005,
+      "dmd_level": null
     },
     {
       "code": "230381009",
@@ -24249,12 +24442,215 @@
       "vocabulary": "SNOMED CT",
       "decision": "include",
       "confidence": 0.95,
-      "rationale": "Focal epilepsy is a major primary epilepsy classification for localized seizure onset.",
+      "rationale": "Focal epilepsy is a primary epilepsy syndrome with explicit epilepsy diagnosis.",
       "sources": [
         "ChromaDB",
         "QOF Business Rules 2024-25"
       ],
-      "usage_frequency": null
+      "usage_frequency": 15340,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": 374915,
+      "dmd_level": null
+    },
+    {
+      "code": "230390002",
+      "term": "Localization-related symptomatic epilepsy (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Localization-related symptomatic epilepsy is a primary epilepsy syndrome with explicit epilepsy diagnosis.",
+      "sources": [
+        "ChromaDB",
+        "QOF Business Rules 2024-25"
+      ],
+      "usage_frequency": 70,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": null,
+      "dmd_level": null
+    },
+    {
+      "code": "230391003",
+      "term": "Amygdalo-hippocampal epilepsy (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Amygdalo-hippocampal epilepsy is a specific primary focal epilepsy syndrome with explicit epilepsy diagnosis.",
+      "sources": [
+        "ChromaDB",
+        "QOF Business Rules 2024-25"
+      ],
+      "usage_frequency": 10,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": 4044083,
+      "dmd_level": null
+    },
+    {
+      "code": "230392005",
+      "term": "Rhinencephalic epilepsy (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Rhinencephalic epilepsy is a specific primary focal epilepsy syndrome with explicit epilepsy diagnosis.",
+      "sources": [
+        "ChromaDB",
+        "QOF Business Rules 2024-25"
+      ],
+      "usage_frequency": null,
+      "usage_status": "not_in_dataset",
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": null,
+      "dmd_level": null
+    },
+    {
+      "code": "230393000",
+      "term": "Lateral temporal epilepsy (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Lateral temporal epilepsy is a specific primary focal epilepsy syndrome with explicit epilepsy diagnosis.",
+      "sources": [
+        "ChromaDB",
+        "QOF Business Rules 2024-25"
+      ],
+      "usage_frequency": 20,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": 4043408,
+      "dmd_level": null
+    },
+    {
+      "code": "230395007",
+      "term": "Supplementary motor epilepsy (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Supplementary motor epilepsy is a specific primary focal epilepsy syndrome with explicit epilepsy diagnosis.",
+      "sources": [
+        "ChromaDB",
+        "QOF Business Rules 2024-25"
+      ],
+      "usage_frequency": null,
+      "usage_status": "withheld_below_5",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": 4044084,
+      "dmd_level": null
+    },
+    {
+      "code": "230396008",
+      "term": "Cingulate epilepsy (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Cingulate epilepsy is a specific primary focal epilepsy syndrome with explicit epilepsy diagnosis.",
+      "sources": [
+        "ChromaDB",
+        "QOF Business Rules 2024-25"
+      ],
+      "usage_frequency": null,
+      "usage_status": "not_in_dataset",
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": 4047889,
+      "dmd_level": null
+    },
+    {
+      "code": "230399001",
+      "term": "Dorsolateral epilepsy (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Dorsolateral epilepsy is a specific primary focal epilepsy syndrome with explicit epilepsy diagnosis.",
+      "sources": [
+        "ChromaDB",
+        "QOF Business Rules 2024-25"
+      ],
+      "usage_frequency": null,
+      "usage_status": "not_in_dataset",
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": 4047890,
+      "dmd_level": null
+    },
+    {
+      "code": "230400008",
+      "term": "Opercular epilepsy (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Opercular epilepsy is a specific primary focal epilepsy syndrome with explicit epilepsy diagnosis.",
+      "sources": [
+        "ChromaDB",
+        "QOF Business Rules 2024-25"
+      ],
+      "usage_frequency": 10,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": 4043410,
+      "dmd_level": null
+    },
+    {
+      "code": "230403005",
+      "term": "Parietal lobe epilepsy (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Parietal lobe epilepsy is a specific primary focal epilepsy syndrome with explicit epilepsy diagnosis.",
+      "sources": [
+        "ChromaDB",
+        "QOF Business Rules 2024-25"
+      ],
+      "usage_frequency": 10,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": 4046206,
+      "dmd_level": null
+    },
+    {
+      "code": "230404004",
+      "term": "Occipital lobe epilepsy (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Occipital lobe epilepsy is a specific primary focal epilepsy syndrome with explicit epilepsy diagnosis.",
+      "sources": [
+        "ChromaDB",
+        "QOF Business Rules 2024-25"
+      ],
+      "usage_frequency": 120,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": 4046207,
+      "dmd_level": null
+    },
+    {
+      "code": "230408001",
+      "term": "Localization-related cryptogenic epilepsy (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Localization-related cryptogenic epilepsy is a primary epilepsy syndrome with explicit epilepsy diagnosis.",
+      "sources": [
+        "ChromaDB",
+        "QOF Business Rules 2024-25"
+      ],
+      "usage_frequency": 30,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "230413002",
@@ -24262,12 +24658,53 @@
       "vocabulary": "SNOMED CT",
       "decision": "include",
       "confidence": 0.95,
-      "rationale": "Juvenile absence epilepsy is a recognized primary generalized epilepsy syndrome.",
+      "rationale": "Juvenile absence epilepsy is a specific primary generalized epilepsy syndrome with explicit epilepsy diagnosis.",
       "sources": [
         "ChromaDB",
         "QOF Business Rules 2024-25"
       ],
-      "usage_frequency": null
+      "usage_frequency": 2040,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": 4046210,
+      "dmd_level": null
+    },
+    {
+      "code": "230421008",
+      "term": "Epilepsy with myoclonic-atonic seizures (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Epilepsy with myoclonic-atonic seizures is a primary epilepsy syndrome with explicit epilepsy diagnosis.",
+      "sources": [
+        "ChromaDB",
+        "QOF Business Rules 2024-25"
+      ],
+      "usage_frequency": 110,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": null,
+      "dmd_level": null
+    },
+    {
+      "code": "230422001",
+      "term": "Epilepsy with myoclonic absence (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Epilepsy with myoclonic absence is a primary epilepsy syndrome with explicit epilepsy diagnosis.",
+      "sources": [
+        "ChromaDB",
+        "QOF Business Rules 2024-25"
+      ],
+      "usage_frequency": 100,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "230437002",
@@ -24275,12 +24712,107 @@
       "vocabulary": "SNOMED CT",
       "decision": "include",
       "confidence": 0.95,
-      "rationale": "Severe myoclonic epilepsy in infancy is a recognized primary epilepsy syndrome.",
+      "rationale": "Severe myoclonic epilepsy in infancy is a specific primary epilepsy syndrome with explicit epilepsy diagnosis.",
       "sources": [
         "ChromaDB",
         "QOF Business Rules 2024-25"
       ],
-      "usage_frequency": null
+      "usage_frequency": 620,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": null,
+      "dmd_level": null
+    },
+    {
+      "code": "230444006",
+      "term": "Menstrual epilepsy (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Menstrual epilepsy is a primary epilepsy syndrome with explicit epilepsy diagnosis, triggered by menstrual cycle.",
+      "sources": [
+        "ChromaDB",
+        "QOF Business Rules 2024-25"
+      ],
+      "usage_frequency": 70,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": null,
+      "dmd_level": null
+    },
+    {
+      "code": "230445007",
+      "term": "Nocturnal epilepsy (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Nocturnal epilepsy is a clinical subtype of primary epilepsy characterized by seizures occurring during sleep.",
+      "sources": [
+        "ChromaDB",
+        "QOF Business Rules 2024-25"
+      ],
+      "usage_frequency": 2380,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": null,
+      "dmd_level": null
+    },
+    {
+      "code": "230448009",
+      "term": "Writing epilepsy (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Writing epilepsy is a reflex epilepsy subtype triggered by writing, a recognized primary epilepsy variant.",
+      "sources": [
+        "ChromaDB",
+        "QOF Business Rules 2024-25"
+      ],
+      "usage_frequency": null,
+      "usage_status": "not_in_dataset",
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": 4047904,
+      "dmd_level": null
+    },
+    {
+      "code": "267581004",
+      "term": "Progressive myoclonic epilepsy (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Progressive myoclonic epilepsy is a primary epilepsy syndrome characterized by myoclonic seizures and progressive neurological decline.",
+      "sources": [
+        "ChromaDB",
+        "QOF Business Rules 2024-25"
+      ],
+      "usage_frequency": 110,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": 4147501,
+      "dmd_level": null
+    },
+    {
+      "code": "267592003",
+      "term": "Motor cortex epilepsy (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Motor cortex epilepsy is a localization-related primary epilepsy with seizures originating from motor cortex.",
+      "sources": [
+        "ChromaDB",
+        "QOF Business Rules 2024-25"
+      ],
+      "usage_frequency": null,
+      "usage_status": "withheld_below_5",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": 4147503,
+      "dmd_level": null
     },
     {
       "code": "278510009",
@@ -24288,12 +24820,53 @@
       "vocabulary": "SNOMED CT",
       "decision": "include",
       "confidence": 0.95,
-      "rationale": "Localization-related idiopathic epilepsy is a recognized primary epilepsy classification.",
+      "rationale": "Localization-related idiopathic epilepsy is a primary epilepsy syndrome with seizures arising from a specific brain region.",
       "sources": [
         "ChromaDB",
         "QOF Business Rules 2024-25"
       ],
-      "usage_frequency": null
+      "usage_frequency": 40,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": null,
+      "dmd_level": null
+    },
+    {
+      "code": "290741000119102",
+      "term": "Intractable idiopathic partial epilepsy (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Intractable idiopathic partial epilepsy is a primary epilepsy subtype with drug-resistant seizures of idiopathic origin.",
+      "sources": [
+        "ChromaDB",
+        "QOF Business Rules 2024-25"
+      ],
+      "usage_frequency": 20,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": null,
+      "dmd_level": null
+    },
+    {
+      "code": "307356008",
+      "term": "Motor epilepsy (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Motor epilepsy is a primary epilepsy subtype characterized by motor seizures.",
+      "sources": [
+        "ChromaDB",
+        "QOF Business Rules 2024-25"
+      ],
+      "usage_frequency": 20,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "307357004",
@@ -24301,12 +24874,17 @@
       "vocabulary": "SNOMED CT",
       "decision": "include",
       "confidence": 0.95,
-      "rationale": "Jacksonian/focal/motor epilepsy is a specific clinical subtype of epilepsy and directly represents an instance of the queried condition.",
+      "rationale": "Jacksonian, focal or motor epilepsy is a primary epilepsy subtype with focal motor seizures.",
       "sources": [
         "ChromaDB",
         "QOF Business Rules 2024-25"
       ],
-      "usage_frequency": null
+      "usage_frequency": 480,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "361123003",
@@ -24314,12 +24892,17 @@
       "vocabulary": "SNOMED CT",
       "decision": "include",
       "confidence": 0.95,
-      "rationale": "Psychomotor epilepsy is a recognized clinical subtype of epilepsy and represents an instance of the queried condition.",
+      "rationale": "Psychomotor epilepsy is a primary epilepsy subtype with seizures involving psychomotor symptoms.",
       "sources": [
         "ChromaDB",
         "QOF Business Rules 2024-25"
       ],
-      "usage_frequency": null
+      "usage_frequency": 20,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "44145005",
@@ -24327,12 +24910,17 @@
       "vocabulary": "SNOMED CT",
       "decision": "include",
       "confidence": 0.95,
-      "rationale": "Benign Rolandic epilepsy is a specific primary epilepsy syndrome in childhood and represents an instance of the queried condition.",
+      "rationale": "Benign Rolandic epilepsy is a primary idiopathic epilepsy syndrome of childhood.",
       "sources": [
         "ChromaDB",
         "QOF Business Rules 2024-25"
       ],
-      "usage_frequency": null
+      "usage_frequency": 1150,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": 4185733,
+      "dmd_level": null
     },
     {
       "code": "50866000",
@@ -24340,12 +24928,17 @@
       "vocabulary": "SNOMED CT",
       "decision": "include",
       "confidence": 0.95,
-      "rationale": "Childhood absence epilepsy is a primary generalized epilepsy syndrome and represents an instance of the queried condition.",
+      "rationale": "Childhood absence epilepsy is a primary generalized epilepsy syndrome characterized by absence seizures.",
       "sources": [
         "ChromaDB",
         "QOF Business Rules 2024-25"
       ],
-      "usage_frequency": null
+      "usage_frequency": 1250,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": 4179936,
+      "dmd_level": null
     },
     {
       "code": "509341000000107",
@@ -24353,12 +24946,17 @@
       "vocabulary": "SNOMED CT",
       "decision": "include",
       "confidence": 0.95,
-      "rationale": "Petit-mal epilepsy is a primary generalized epilepsy syndrome (absence seizures) and represents an instance of the queried condition.",
+      "rationale": "Petit-mal epilepsy is a primary generalized epilepsy syndrome, synonymous with absence epilepsy.",
       "sources": [
         "ChromaDB",
         "QOF Business Rules 2024-25"
       ],
-      "usage_frequency": null
+      "usage_frequency": 3030,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "6204001",
@@ -24366,12 +24964,17 @@
       "vocabulary": "SNOMED CT",
       "decision": "include",
       "confidence": 0.95,
-      "rationale": "Juvenile myoclonic epilepsy is a primary generalized epilepsy syndrome and represents an instance of the queried condition.",
+      "rationale": "Juvenile myoclonic epilepsy is a primary generalized epilepsy syndrome with myoclonic seizures.",
       "sources": [
         "ChromaDB",
         "QOF Business Rules 2024-25"
       ],
-      "usage_frequency": null
+      "usage_frequency": 4160,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": 4267274,
+      "dmd_level": null
     },
     {
       "code": "716278005",
@@ -24379,38 +24982,53 @@
       "vocabulary": "SNOMED CT",
       "decision": "include",
       "confidence": 0.95,
-      "rationale": "Epilepsy with eyelid myoclonia is a specific primary epilepsy syndrome and represents an instance of the queried condition.",
+      "rationale": "Epilepsy with eyelid myoclonia is a primary epilepsy syndrome with characteristic eyelid myoclonic seizures.",
       "sources": [
         "ChromaDB",
         "QOF Business Rules 2024-25"
       ],
-      "usage_frequency": null
+      "usage_frequency": 130,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
-      "code": "770622009",
-      "term": "Benign infantile focal epilepsy with midline spikes and waves during sleep (disorder)",
+      "code": "763622006",
+      "term": "Thinking epilepsy (disorder)",
       "vocabulary": "SNOMED CT",
       "decision": "include",
       "confidence": 0.95,
-      "rationale": "Benign infantile focal epilepsy with midline spikes is a primary epilepsy syndrome in infants and represents an instance of the queried condition.",
+      "rationale": "Thinking epilepsy is a reflex epilepsy subtype triggered by cognitive activity, a recognized primary epilepsy variant.",
       "sources": [
-        "OMOPHub",
+        "ChromaDB",
         "QOF Business Rules 2024-25"
       ],
-      "usage_frequency": null
+      "usage_frequency": 10,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
-      "code": "770623004",
-      "term": "Benign occipital lobe epilepsy (disorder)",
+      "code": "765216006",
+      "term": "Audiogenic epilepsy (disorder)",
       "vocabulary": "SNOMED CT",
       "decision": "include",
       "confidence": 0.95,
-      "rationale": "Benign occipital lobe epilepsy is a primary focal epilepsy syndrome and represents an instance of the queried condition.",
+      "rationale": "Audiogenic epilepsy is a reflex epilepsy subtype triggered by sound, a recognized primary epilepsy variant.",
       "sources": [
-        "OMOPHub",
+        "ChromaDB",
         "QOF Business Rules 2024-25"
       ],
-      "usage_frequency": null
+      "usage_frequency": 10,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": 35622969,
+      "dmd_level": null
     },
     {
       "code": "79745005",
@@ -24418,12 +25036,35 @@
       "vocabulary": "SNOMED CT",
       "decision": "include",
       "confidence": 0.95,
-      "rationale": "Reflex epilepsy is a primary epilepsy subtype triggered by external stimuli and represents an instance of the queried condition.",
+      "rationale": "Reflex epilepsy is a primary epilepsy subtype triggered by specific external or internal stimuli.",
       "sources": [
         "ChromaDB",
         "QOF Business Rules 2024-25"
       ],
-      "usage_frequency": null
+      "usage_frequency": 50,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": 4194366,
+      "dmd_level": null
+    },
+    {
+      "code": "84757009",
+      "term": "Epilepsy (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Epilepsy is the primary condition itself, representing the general disorder.",
+      "sources": [
+        "ChromaDB",
+        "QOF Business Rules 2024-25"
+      ],
+      "usage_frequency": 256050,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": 380378,
+      "dmd_level": null
     },
     {
       "code": "95208000",
@@ -24431,417 +25072,34 @@
       "vocabulary": "SNOMED CT",
       "decision": "include",
       "confidence": 0.95,
-      "rationale": "Photogenic epilepsy is a reflex epilepsy subtype triggered by light and represents an instance of primary epilepsy.",
+      "rationale": "Photogenic epilepsy is a reflex epilepsy subtype triggered by light, a recognized primary epilepsy variant.",
       "sources": [
         "ChromaDB",
         "QOF Business Rules 2024-25"
       ],
-      "usage_frequency": null
-    },
-    {
-      "code": "1275631007",
-      "term": "Developmental and epileptic encephalopathy (disorder)",
-      "vocabulary": "SNOMED CT",
-      "decision": "include",
-      "confidence": 0.9,
-      "rationale": "Developmental and epileptic encephalopathy is a recognized primary epilepsy syndrome with developmental and seizure components.",
-      "sources": [
-        "ChromaDB",
-        "QOF Business Rules 2024-25"
-      ],
-      "usage_frequency": null
-    },
-    {
-      "code": "193002005",
-      "term": "Psychosensory epilepsy (disorder)",
-      "vocabulary": "SNOMED CT",
-      "decision": "include",
-      "confidence": 0.9,
-      "rationale": "Psychosensory epilepsy is a recognized primary focal epilepsy syndrome with specific sensory manifestations.",
-      "sources": [
-        "ChromaDB",
-        "QOF Business Rules 2024-25"
-      ],
-      "usage_frequency": null
-    },
-    {
-      "code": "193003000",
-      "term": "Mesiobasal limbic epilepsy (disorder)",
-      "vocabulary": "SNOMED CT",
-      "decision": "include",
-      "confidence": 0.9,
-      "rationale": "Mesiobasal limbic epilepsy is a recognized primary focal epilepsy syndrome.",
-      "sources": [
-        "ChromaDB",
-        "QOF Business Rules 2024-25"
-      ],
-      "usage_frequency": null
-    },
-    {
-      "code": "193008009",
-      "term": "Somatosensory epilepsy (disorder)",
-      "vocabulary": "SNOMED CT",
-      "decision": "include",
-      "confidence": 0.9,
-      "rationale": "Somatosensory epilepsy is a recognized primary focal epilepsy syndrome with specific sensory characteristics.",
-      "sources": [
-        "ChromaDB",
-        "QOF Business Rules 2024-25"
-      ],
-      "usage_frequency": null
-    },
-    {
-      "code": "199451000000106",
-      "term": "Simple partial epileptic seizure (disorder)",
-      "vocabulary": "SNOMED CT",
-      "decision": "include",
-      "confidence": 0.9,
-      "rationale": "Simple partial epileptic seizure is a recognized seizure type within primary focal epilepsy syndromes.",
-      "sources": [
-        "ChromaDB",
-        "QOF Business Rules 2024-25"
-      ],
-      "usage_frequency": null
-    },
-    {
-      "code": "230390002",
-      "term": "Localization-related symptomatic epilepsy (disorder)",
-      "vocabulary": "SNOMED CT",
-      "decision": "include",
-      "confidence": 0.9,
-      "rationale": "Localization-related symptomatic epilepsy is a recognized primary epilepsy classification with identifiable structural lesions.",
-      "sources": [
-        "ChromaDB",
-        "QOF Business Rules 2024-25"
-      ],
-      "usage_frequency": null
-    },
-    {
-      "code": "230391003",
-      "term": "Amygdalo-hippocampal temporal lobe epilepsy",
-      "vocabulary": "SNOMED CT",
-      "decision": "include",
-      "confidence": 0.9,
-      "rationale": "Amygdalo-hippocampal temporal lobe epilepsy is a specific primary focal epilepsy syndrome.",
-      "sources": [
-        "ChromaDB",
-        "OMOPHub",
-        "QOF Business Rules 2024-25"
-      ],
-      "usage_frequency": null
-    },
-    {
-      "code": "230392005",
-      "term": "Rhinencephalic epilepsy (disorder)",
-      "vocabulary": "SNOMED CT",
-      "decision": "include",
-      "confidence": 0.9,
-      "rationale": "Rhinencephalic epilepsy is a recognized primary focal epilepsy syndrome.",
-      "sources": [
-        "ChromaDB",
-        "QOF Business Rules 2024-25"
-      ],
-      "usage_frequency": null
-    },
-    {
-      "code": "230393000",
-      "term": "Lateral temporal epilepsy (disorder)",
-      "vocabulary": "SNOMED CT",
-      "decision": "include",
-      "confidence": 0.9,
-      "rationale": "Lateral temporal epilepsy is a specific primary focal epilepsy syndrome.",
-      "sources": [
-        "ChromaDB",
-        "QOF Business Rules 2024-25"
-      ],
-      "usage_frequency": null
-    },
-    {
-      "code": "230395007",
-      "term": "Supplementary motor epilepsy (disorder)",
-      "vocabulary": "SNOMED CT",
-      "decision": "include",
-      "confidence": 0.9,
-      "rationale": "Supplementary motor epilepsy is a recognized primary focal epilepsy syndrome.",
-      "sources": [
-        "ChromaDB",
-        "QOF Business Rules 2024-25"
-      ],
-      "usage_frequency": null
-    },
-    {
-      "code": "230396008",
-      "term": "Cingulate epilepsy (disorder)",
-      "vocabulary": "SNOMED CT",
-      "decision": "include",
-      "confidence": 0.9,
-      "rationale": "Cingulate epilepsy is a recognized primary focal epilepsy syndrome.",
-      "sources": [
-        "ChromaDB",
-        "QOF Business Rules 2024-25"
-      ],
-      "usage_frequency": null
-    },
-    {
-      "code": "230397004",
-      "term": "Anterior frontopolar frontal lobe epilepsy",
-      "vocabulary": "SNOMED CT",
-      "decision": "include",
-      "confidence": 0.9,
-      "rationale": "Anterior frontopolar frontal lobe epilepsy is a specific primary focal epilepsy syndrome.",
-      "sources": [
-        "OMOPHub",
-        "QOF Business Rules 2024-25"
-      ],
-      "usage_frequency": null
-    },
-    {
-      "code": "230399001",
-      "term": "Dorsolateral epilepsy (disorder)",
-      "vocabulary": "SNOMED CT",
-      "decision": "include",
-      "confidence": 0.9,
-      "rationale": "Dorsolateral epilepsy is a recognized primary focal epilepsy syndrome.",
-      "sources": [
-        "ChromaDB",
-        "QOF Business Rules 2024-25"
-      ],
-      "usage_frequency": null
-    },
-    {
-      "code": "230400008",
-      "term": "Opercular epilepsy (disorder)",
-      "vocabulary": "SNOMED CT",
-      "decision": "include",
-      "confidence": 0.9,
-      "rationale": "Opercular epilepsy is a recognized primary focal epilepsy syndrome.",
-      "sources": [
-        "ChromaDB",
-        "QOF Business Rules 2024-25"
-      ],
-      "usage_frequency": null
-    },
-    {
-      "code": "230403005",
-      "term": "Parietal lobe epilepsy (disorder)",
-      "vocabulary": "SNOMED CT",
-      "decision": "include",
-      "confidence": 0.9,
-      "rationale": "Parietal lobe epilepsy is a recognized primary focal epilepsy syndrome.",
-      "sources": [
-        "ChromaDB",
-        "QOF Business Rules 2024-25"
-      ],
-      "usage_frequency": null
-    },
-    {
-      "code": "230404004",
-      "term": "Occipital lobe epilepsy (disorder)",
-      "vocabulary": "SNOMED CT",
-      "decision": "include",
-      "confidence": 0.9,
-      "rationale": "Occipital lobe epilepsy is a recognized primary focal epilepsy syndrome.",
-      "sources": [
-        "ChromaDB",
-        "QOF Business Rules 2024-25"
-      ],
-      "usage_frequency": null
-    },
-    {
-      "code": "230408001",
-      "term": "Localization-related cryptogenic epilepsy (disorder)",
-      "vocabulary": "SNOMED CT",
-      "decision": "include",
-      "confidence": 0.9,
-      "rationale": "Localization-related cryptogenic epilepsy is a recognized primary epilepsy classification with unknown etiology.",
-      "sources": [
-        "ChromaDB",
-        "QOF Business Rules 2024-25"
-      ],
-      "usage_frequency": null
-    },
-    {
-      "code": "230421008",
-      "term": "Epilepsy with myoclonic-atonic seizures (disorder)",
-      "vocabulary": "SNOMED CT",
-      "decision": "include",
-      "confidence": 0.9,
-      "rationale": "Epilepsy with myoclonic-atonic seizures is a recognized primary generalized epilepsy syndrome.",
-      "sources": [
-        "ChromaDB",
-        "QOF Business Rules 2024-25"
-      ],
-      "usage_frequency": null
-    },
-    {
-      "code": "230422001",
-      "term": "Epilepsy with myoclonic absence (disorder)",
-      "vocabulary": "SNOMED CT",
-      "decision": "include",
-      "confidence": 0.9,
-      "rationale": "Epilepsy with myoclonic absence is a recognized primary generalized epilepsy syndrome.",
-      "sources": [
-        "ChromaDB",
-        "QOF Business Rules 2024-25"
-      ],
-      "usage_frequency": null
-    },
-    {
-      "code": "267581004",
-      "term": "Progressive myoclonic epilepsy (disorder)",
-      "vocabulary": "SNOMED CT",
-      "decision": "include",
-      "confidence": 0.9,
-      "rationale": "Progressive myoclonic epilepsy is a recognized primary epilepsy syndrome with progressive course.",
-      "sources": [
-        "ChromaDB",
-        "QOF Business Rules 2024-25"
-      ],
-      "usage_frequency": null
-    },
-    {
-      "code": "267592003",
-      "term": "Motor cortex epilepsy (disorder)",
-      "vocabulary": "SNOMED CT",
-      "decision": "include",
-      "confidence": 0.9,
-      "rationale": "Motor cortex epilepsy is a recognized primary focal epilepsy syndrome.",
-      "sources": [
-        "ChromaDB",
-        "QOF Business Rules 2024-25"
-      ],
-      "usage_frequency": null
-    },
-    {
-      "code": "290741000119102",
-      "term": "Intractable idiopathic partial epilepsy (disorder)",
-      "vocabulary": "SNOMED CT",
-      "decision": "include",
-      "confidence": 0.9,
-      "rationale": "Intractable idiopathic partial epilepsy is a recognized primary focal epilepsy with treatment-resistant characteristics.",
-      "sources": [
-        "ChromaDB",
-        "QOF Business Rules 2024-25"
-      ],
-      "usage_frequency": null
-    },
-    {
-      "code": "307356008",
-      "term": "Motor epilepsy (disorder)",
-      "vocabulary": "SNOMED CT",
-      "decision": "include",
-      "confidence": 0.9,
-      "rationale": "Motor epilepsy is a recognized primary focal epilepsy syndrome with motor manifestations.",
-      "sources": [
-        "ChromaDB",
-        "QOF Business Rules 2024-25"
-      ],
-      "usage_frequency": null
-    },
-    {
-      "code": "763622006",
-      "term": "Thinking epilepsy (disorder)",
-      "vocabulary": "SNOMED CT",
-      "decision": "include",
-      "confidence": 0.9,
-      "rationale": "Thinking epilepsy is a reflex epilepsy subtype triggered by cognitive activity and represents an instance of primary epilepsy.",
-      "sources": [
-        "ChromaDB",
-        "QOF Business Rules 2024-25"
-      ],
-      "usage_frequency": null
-    },
-    {
-      "code": "765216006",
-      "term": "Audiogenic epilepsy (disorder)",
-      "vocabulary": "SNOMED CT",
-      "decision": "include",
-      "confidence": 0.9,
-      "rationale": "Audiogenic epilepsy is a reflex epilepsy subtype triggered by sound and represents an instance of primary epilepsy.",
-      "sources": [
-        "ChromaDB",
-        "OMOPHub",
-        "QOF Business Rules 2024-25"
-      ],
-      "usage_frequency": null
+      "usage_frequency": 470,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": 4316060,
+      "dmd_level": null
     },
     {
       "code": "F80.3",
       "term": "Acquired aphasia with epilepsy [Landau-Kleffner]",
       "vocabulary": "ICD-10 (WHO)",
       "decision": "include",
-      "confidence": 0.85,
-      "rationale": "Landau-Kleffner syndrome is a recognized epileptic syndrome characterized by acquired aphasia and epilepsy, representing a specific form of primary epilepsy.",
+      "confidence": 0.9,
+      "rationale": "Acquired aphasia with epilepsy (Landau-Kleffner syndrome) is a named epileptic syndrome where the term explicitly contains 'epilepsy'.",
       "sources": [
-        "ChromaDB",
-        "OMOPHub"
+        "ChromaDB"
       ],
-      "usage_frequency": null
-    },
-    {
-      "code": "230444006",
-      "term": "Menstrual epilepsy (disorder)",
-      "vocabulary": "SNOMED CT",
-      "decision": "include",
-      "confidence": 0.85,
-      "rationale": "Menstrual epilepsy is a recognized primary epilepsy variant with catamenial seizure patterns.",
-      "sources": [
-        "ChromaDB",
-        "QOF Business Rules 2024-25"
-      ],
-      "usage_frequency": null
-    },
-    {
-      "code": "230445007",
-      "term": "Nocturnal epilepsy (disorder)",
-      "vocabulary": "SNOMED CT",
-      "decision": "include",
-      "confidence": 0.85,
-      "rationale": "Nocturnal epilepsy is a recognized primary epilepsy variant with seizures occurring during sleep.",
-      "sources": [
-        "ChromaDB",
-        "QOF Business Rules 2024-25"
-      ],
-      "usage_frequency": null
-    },
-    {
-      "code": "230440002",
-      "term": "Secondary reading epilepsy (disorder)",
-      "vocabulary": "SNOMED CT",
-      "decision": "uncertain",
-      "confidence": 0.65,
-      "rationale": "Secondary reading epilepsy is triggered by reading activity; unclear if this represents primary epilepsy or a secondary/reflex epilepsy variant.",
-      "sources": [
-        "ChromaDB",
-        "QOF Business Rules 2024-25"
-      ],
-      "usage_frequency": null
-    },
-    {
-      "code": "230448009",
-      "term": "Writing epilepsy (disorder)",
-      "vocabulary": "SNOMED CT",
-      "decision": "uncertain",
-      "confidence": 0.65,
-      "rationale": "Writing epilepsy is a reflex/trigger-induced epilepsy; unclear if this represents primary epilepsy or a secondary reflex variant.",
-      "sources": [
-        "ChromaDB",
-        "QOF Business Rules 2024-25"
-      ],
-      "usage_frequency": null
-    },
-    {
-      "code": "230454005",
-      "term": "Aquagenic epilepsy (disorder)",
-      "vocabulary": "SNOMED CT",
-      "decision": "uncertain",
-      "confidence": 0.65,
-      "rationale": "Aquagenic epilepsy is a reflex/trigger-induced epilepsy; unclear if this represents primary epilepsy or a secondary reflex variant.",
-      "sources": [
-        "OMOPHub",
-        "QOF Business Rules 2024-25"
-      ],
-      "usage_frequency": null
+      "usage_frequency": 5,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital HES inpatient FCEs",
+      "usage_setting": "secondary_care_hes",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "1208991001",
@@ -24849,96 +25107,51 @@
       "vocabulary": "SNOMED CT",
       "decision": "uncertain",
       "confidence": 0.6,
-      "rationale": "Myoclonic epileptic seizure is coded as a 'finding' rather than a 'disorder', which may represent a manifestation rather than the condition itself; clinical judgment needed on whether seizure types alone should be included.",
+      "rationale": "Myoclonic epileptic seizure is a seizure type finding; unclear if this represents a diagnosis of epilepsy or just a seizure manifestation.",
       "sources": [
         "ChromaDB",
         "QOF Business Rules 2024-25"
       ],
-      "usage_frequency": null
+      "usage_frequency": 230,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": 37163355,
+      "dmd_level": null
     },
     {
-      "code": "H53.0",
-      "term": "Amblyopia ex anopsia",
+      "code": "S08.0",
+      "term": "Avulsion of scalp",
       "vocabulary": "ICD-10 (WHO)",
       "decision": "exclude",
       "confidence": 0.99,
-      "rationale": "Amblyopia ex anopsia is an ophthalmological condition unrelated to epilepsy.",
+      "rationale": "Avulsion of scalp is a traumatic injury unrelated to epilepsy.",
       "sources": [
         "ChromaDB"
       ],
-      "usage_frequency": null
+      "usage_frequency": 41,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital HES inpatient FCEs",
+      "usage_setting": "secondary_care_hes",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
-      "code": "Q18.5",
-      "term": "Microstomia",
+      "code": "A83.0",
+      "term": "Japanese encephalitis",
       "vocabulary": "ICD-10 (WHO)",
       "decision": "exclude",
-      "confidence": 0.99,
-      "rationale": "Microstomia is a congenital craniofacial abnormality unrelated to epilepsy.",
+      "confidence": 0.95,
+      "rationale": "Japanese encephalitis is an infectious disease that may cause seizures but is not an instance of primary epilepsy.",
       "sources": [
         "ChromaDB"
       ],
-      "usage_frequency": null
-    },
-    {
-      "code": "F81.1",
-      "term": "Specific spelling disorder",
-      "vocabulary": "ICD-10 (WHO)",
-      "decision": "exclude",
-      "confidence": 0.98,
-      "rationale": "Specific spelling disorder is a learning disorder unrelated to epilepsy.",
-      "sources": [
-        "ChromaDB"
-      ],
-      "usage_frequency": null
-    },
-    {
-      "code": "G25.0",
-      "term": "Essential tremor",
-      "vocabulary": "ICD-10 (WHO)",
-      "decision": "exclude",
-      "confidence": 0.98,
-      "rationale": "Essential tremor is a movement disorder distinct from epilepsy.",
-      "sources": [
-        "ChromaDB"
-      ],
-      "usage_frequency": null
-    },
-    {
-      "code": "T42.5",
-      "term": "Poisoning: Mixed antiepileptics, not elsewhere classified",
-      "vocabulary": "ICD-10 (WHO)",
-      "decision": "exclude",
-      "confidence": 0.98,
-      "rationale": "Poisoning by antiepileptics is an adverse event code, not a diagnosis of epilepsy.",
-      "sources": [
-        "ChromaDB"
-      ],
-      "usage_frequency": null
-    },
-    {
-      "code": "Y46",
-      "term": "Antiepileptics and antiparkinsonism drugs",
-      "vocabulary": "ICD-10 (WHO)",
-      "decision": "exclude",
-      "confidence": 0.98,
-      "rationale": "Antiepileptics and antiparkinsonism drugs is a medication code, not a diagnosis of epilepsy.",
-      "sources": [
-        "ChromaDB"
-      ],
-      "usage_frequency": null
-    },
-    {
-      "code": "Y46.6",
-      "term": "Other and unspecified antiepileptics",
-      "vocabulary": "ICD-10 (WHO)",
-      "decision": "exclude",
-      "confidence": 0.98,
-      "rationale": "Other and unspecified antiepileptics is a medication code, not a diagnosis of epilepsy.",
-      "sources": [
-        "ChromaDB"
-      ],
-      "usage_frequency": null
+      "usage_frequency": null,
+      "usage_status": "not_in_dataset",
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "A83.5",
@@ -24950,7 +25163,46 @@
       "sources": [
         "ChromaDB"
       ],
-      "usage_frequency": null
+      "usage_frequency": null,
+      "usage_status": "not_in_dataset",
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": null,
+      "dmd_level": null
+    },
+    {
+      "code": "B26.2",
+      "term": "Mumps encephalitis",
+      "vocabulary": "ICD-10 (WHO)",
+      "decision": "exclude",
+      "confidence": 0.95,
+      "rationale": "Mumps encephalitis is an infectious complication that may cause seizures but is not an instance of primary epilepsy.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "usage_frequency": 1,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital HES inpatient FCEs",
+      "usage_setting": "secondary_care_hes",
+      "concept_id": null,
+      "dmd_level": null
+    },
+    {
+      "code": "E03.5",
+      "term": "Myxoedema coma",
+      "vocabulary": "ICD-10 (WHO)",
+      "decision": "exclude",
+      "confidence": 0.95,
+      "rationale": "Myxoedema coma is an endocrine emergency that may cause seizures but is not an instance of primary epilepsy.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "usage_frequency": 146,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital HES inpatient FCEs",
+      "usage_setting": "secondary_care_hes",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "E51.2",
@@ -24958,11 +25210,84 @@
       "vocabulary": "ICD-10 (WHO)",
       "decision": "exclude",
       "confidence": 0.95,
-      "rationale": "Wernicke encephalopathy is a nutritional disorder that may cause seizures but is not primary epilepsy.",
+      "rationale": "Wernicke encephalopathy is a nutritional disorder that may cause seizures but is not an instance of primary epilepsy.",
       "sources": [
         "ChromaDB"
       ],
-      "usage_frequency": null
+      "usage_frequency": 1025,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital HES inpatient FCEs",
+      "usage_setting": "secondary_care_hes",
+      "concept_id": null,
+      "dmd_level": null
+    },
+    {
+      "code": "F44.5",
+      "term": "Dissociative convulsions",
+      "vocabulary": "ICD-10 (WHO)",
+      "decision": "exclude",
+      "confidence": 0.95,
+      "rationale": "Dissociative convulsions are a psychiatric manifestation that mimic seizures but are not epilepsy.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "usage_frequency": 4890,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital HES inpatient FCEs",
+      "usage_setting": "secondary_care_hes",
+      "concept_id": null,
+      "dmd_level": null
+    },
+    {
+      "code": "F81.1",
+      "term": "Specific spelling disorder",
+      "vocabulary": "ICD-10 (WHO)",
+      "decision": "exclude",
+      "confidence": 0.95,
+      "rationale": "Specific spelling disorder is a learning disorder unrelated to epilepsy.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "usage_frequency": null,
+      "usage_status": "not_in_dataset",
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": null,
+      "dmd_level": null
+    },
+    {
+      "code": "G25.0",
+      "term": "Essential tremor",
+      "vocabulary": "ICD-10 (WHO)",
+      "decision": "exclude",
+      "confidence": 0.95,
+      "rationale": "Essential tremor is a movement disorder distinct from epilepsy.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "usage_frequency": 686,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital HES inpatient FCEs",
+      "usage_setting": "secondary_care_hes",
+      "concept_id": null,
+      "dmd_level": null
+    },
+    {
+      "code": "G25.3",
+      "term": "Myoclonus",
+      "vocabulary": "ICD-10 (WHO)",
+      "decision": "exclude",
+      "confidence": 0.95,
+      "rationale": "Myoclonus is a movement disorder that may co-occur with epilepsy but is not an instance of primary epilepsy.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "usage_frequency": 1046,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital HES inpatient FCEs",
+      "usage_setting": "secondary_care_hes",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "G92",
@@ -24970,11 +25295,16 @@
       "vocabulary": "ICD-10 (WHO)",
       "decision": "exclude",
       "confidence": 0.95,
-      "rationale": "Toxic encephalopathy is a separate condition that may cause seizures but is not primary epilepsy.",
+      "rationale": "Toxic encephalopathy is a separate condition that may cause seizures but is not an instance of primary epilepsy.",
       "sources": [
         "ChromaDB"
       ],
-      "usage_frequency": null
+      "usage_frequency": 172,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital HES inpatient FCEs",
+      "usage_setting": "secondary_care_hes",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "G93.1",
@@ -24982,11 +25312,33 @@
       "vocabulary": "ICD-10 (WHO)",
       "decision": "exclude",
       "confidence": 0.95,
-      "rationale": "Anoxic brain damage is a separate condition that may cause seizures but is not primary epilepsy.",
+      "rationale": "Anoxic brain damage is a separate condition that may cause seizures but is not an instance of primary epilepsy.",
       "sources": [
         "ChromaDB"
       ],
-      "usage_frequency": null
+      "usage_frequency": 2675,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital HES inpatient FCEs",
+      "usage_setting": "secondary_care_hes",
+      "concept_id": null,
+      "dmd_level": null
+    },
+    {
+      "code": "H53.0",
+      "term": "Amblyopia ex anopsia",
+      "vocabulary": "ICD-10 (WHO)",
+      "decision": "exclude",
+      "confidence": 0.95,
+      "rationale": "Amblyopia ex anopsia is an ophthalmological condition unrelated to epilepsy.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "usage_frequency": 147,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital HES inpatient FCEs",
+      "usage_setting": "secondary_care_hes",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "I67.4",
@@ -24994,11 +25346,33 @@
       "vocabulary": "ICD-10 (WHO)",
       "decision": "exclude",
       "confidence": 0.95,
-      "rationale": "Hypertensive encephalopathy is a vascular condition that may cause seizures but is not primary epilepsy.",
+      "rationale": "Hypertensive encephalopathy is a vascular complication that may cause seizures but is not an instance of primary epilepsy.",
       "sources": [
         "ChromaDB"
       ],
-      "usage_frequency": null
+      "usage_frequency": 614,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital HES inpatient FCEs",
+      "usage_setting": "secondary_care_hes",
+      "concept_id": null,
+      "dmd_level": null
+    },
+    {
+      "code": "Q01",
+      "term": "Encephalocele",
+      "vocabulary": "ICD-10 (WHO)",
+      "decision": "exclude",
+      "confidence": 0.95,
+      "rationale": "Encephalocele is a congenital structural malformation that may be associated with seizures but is not an instance of primary epilepsy.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "usage_frequency": 195,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital HES inpatient FCEs",
+      "usage_setting": "secondary_care_hes",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "Q01.2",
@@ -25006,11 +25380,33 @@
       "vocabulary": "ICD-10 (WHO)",
       "decision": "exclude",
       "confidence": 0.95,
-      "rationale": "Occipital encephalocele is a congenital structural abnormality that may be associated with seizures but is not primary epilepsy.",
+      "rationale": "Occipital encephalocele is a congenital structural malformation that may be associated with seizures but is not an instance of primary epilepsy.",
       "sources": [
         "ChromaDB"
       ],
-      "usage_frequency": null
+      "usage_frequency": 65,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital HES inpatient FCEs",
+      "usage_setting": "secondary_care_hes",
+      "concept_id": null,
+      "dmd_level": null
+    },
+    {
+      "code": "Q04.2",
+      "term": "Holoprosencephaly",
+      "vocabulary": "ICD-10 (WHO)",
+      "decision": "exclude",
+      "confidence": 0.95,
+      "rationale": "Holoprosencephaly is a congenital structural malformation that may be associated with seizures but is not an instance of primary epilepsy.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "usage_frequency": 28,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital HES inpatient FCEs",
+      "usage_setting": "secondary_care_hes",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "Q04.5",
@@ -25018,11 +25414,33 @@
       "vocabulary": "ICD-10 (WHO)",
       "decision": "exclude",
       "confidence": 0.95,
-      "rationale": "Megalencephaly is a congenital structural abnormality that may be associated with seizures but is not primary epilepsy.",
+      "rationale": "Megalencephaly is a congenital structural malformation that may be associated with seizures but is not an instance of primary epilepsy.",
       "sources": [
         "ChromaDB"
       ],
-      "usage_frequency": null
+      "usage_frequency": 20,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital HES inpatient FCEs",
+      "usage_setting": "secondary_care_hes",
+      "concept_id": null,
+      "dmd_level": null
+    },
+    {
+      "code": "Q18.5",
+      "term": "Microstomia",
+      "vocabulary": "ICD-10 (WHO)",
+      "decision": "exclude",
+      "confidence": 0.95,
+      "rationale": "Microstomia is a congenital craniofacial malformation unrelated to epilepsy.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "usage_frequency": 5,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital HES inpatient FCEs",
+      "usage_setting": "secondary_care_hes",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "Q75.3",
@@ -25030,11 +25448,16 @@
       "vocabulary": "ICD-10 (WHO)",
       "decision": "exclude",
       "confidence": 0.95,
-      "rationale": "Macrocephaly is a congenital structural abnormality that may be associated with seizures but is not primary epilepsy.",
+      "rationale": "Macrocephaly is a congenital condition that may be associated with seizures but is not an instance of primary epilepsy.",
       "sources": [
         "ChromaDB"
       ],
-      "usage_frequency": null
+      "usage_frequency": 543,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital HES inpatient FCEs",
+      "usage_setting": "secondary_care_hes",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "R29.0",
@@ -25042,11 +25465,84 @@
       "vocabulary": "ICD-10 (WHO)",
       "decision": "exclude",
       "confidence": 0.95,
-      "rationale": "Tetany is a symptom of neuromuscular irritability distinct from epilepsy.",
+      "rationale": "Tetany is a neuromuscular symptom unrelated to epilepsy; not an instance of primary epilepsy.",
       "sources": [
         "ChromaDB"
       ],
-      "usage_frequency": null
+      "usage_frequency": 31,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital HES inpatient FCEs",
+      "usage_setting": "secondary_care_hes",
+      "concept_id": null,
+      "dmd_level": null
+    },
+    {
+      "code": "R56.0",
+      "term": "Febrile convulsions",
+      "vocabulary": "ICD-10 (WHO)",
+      "decision": "exclude",
+      "confidence": 0.95,
+      "rationale": "Febrile convulsions are acute symptomatic seizures triggered by fever, not primary epilepsy.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "usage_frequency": 5814,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital HES inpatient FCEs",
+      "usage_setting": "secondary_care_hes",
+      "concept_id": null,
+      "dmd_level": null
+    },
+    {
+      "code": "T42.5",
+      "term": "Poisoning: Mixed antiepileptics, not elsewhere classified",
+      "vocabulary": "ICD-10 (WHO)",
+      "decision": "exclude",
+      "confidence": 0.95,
+      "rationale": "Poisoning by antiepileptics is a drug toxicity code, not an instance of primary epilepsy.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "usage_frequency": 47,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital HES inpatient FCEs",
+      "usage_setting": "secondary_care_hes",
+      "concept_id": null,
+      "dmd_level": null
+    },
+    {
+      "code": "Y46",
+      "term": "Antiepileptics and antiparkinsonism drugs",
+      "vocabulary": "ICD-10 (WHO)",
+      "decision": "exclude",
+      "confidence": 0.95,
+      "rationale": "Antiepileptics and antiparkinsonism drugs is a medication classification code, not a diagnosis of epilepsy.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "usage_frequency": null,
+      "usage_status": "not_in_dataset",
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": null,
+      "dmd_level": null
+    },
+    {
+      "code": "Y46.6",
+      "term": "Other and unspecified antiepileptics",
+      "vocabulary": "ICD-10 (WHO)",
+      "decision": "exclude",
+      "confidence": 0.95,
+      "rationale": "Other and unspecified antiepileptics is a medication code, not a diagnosis of primary epilepsy.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "usage_frequency": null,
+      "usage_status": "not_in_dataset",
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "Z82.0",
@@ -25054,12 +25550,16 @@
       "vocabulary": "ICD-10 (WHO)",
       "decision": "exclude",
       "confidence": 0.95,
-      "rationale": "Family history of epilepsy is a risk factor/history code, not a diagnosis of primary epilepsy in the patient.",
+      "rationale": "Family history of epilepsy is a risk factor/history code, not an instance of primary epilepsy in the patient.",
       "sources": [
-        "ChromaDB",
-        "OMOPHub"
+        "ChromaDB"
       ],
-      "usage_frequency": null
+      "usage_frequency": null,
+      "usage_status": "not_in_dataset",
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "162658001",
@@ -25067,24 +25567,52 @@
       "vocabulary": "SNOMED CT",
       "decision": "exclude",
       "confidence": 0.95,
-      "rationale": "Epilepsy resolved indicates past history rather than current active epilepsy and should be excluded per guidance on resolved conditions.",
+      "rationale": "Epilepsy resolved indicates past epilepsy that is no longer active; does not confirm current primary epilepsy.",
       "sources": [
         "ChromaDB",
         "QOF Business Rules 2024-25"
       ],
-      "usage_frequency": null
+      "usage_frequency": 2860,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": 4037145,
+      "dmd_level": null
     },
     {
-      "code": "G25.3",
-      "term": "Myoclonus",
+      "code": "313307000",
+      "term": "Epileptic seizure (finding)",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.95,
+      "rationale": "Epileptic seizure is a finding/manifestation of epilepsy, not an instance of the epilepsy condition itself.",
+      "sources": [
+        "ChromaDB",
+        "QOF Business Rules 2024-25"
+      ],
+      "usage_frequency": 8760,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": 4197485,
+      "dmd_level": null
+    },
+    {
+      "code": "F07.1",
+      "term": "Postencephalitic syndrome",
       "vocabulary": "ICD-10 (WHO)",
       "decision": "exclude",
       "confidence": 0.9,
-      "rationale": "Myoclonus is a symptom that may occur in epilepsy but is not itself an instance of primary epilepsy.",
+      "rationale": "Postencephalitic syndrome is a sequela of encephalitis, not an instance of primary epilepsy.",
       "sources": [
         "ChromaDB"
       ],
-      "usage_frequency": null
+      "usage_frequency": 11,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital HES inpatient FCEs",
+      "usage_setting": "secondary_care_hes",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "G93.4",
@@ -25092,23 +25620,50 @@
       "vocabulary": "ICD-10 (WHO)",
       "decision": "exclude",
       "confidence": 0.9,
-      "rationale": "Encephalopathy unspecified is a general brain condition that may cause seizures but is not primary epilepsy.",
+      "rationale": "Encephalopathy unspecified is a general brain condition that may cause seizures but is not an instance of primary epilepsy.",
       "sources": [
         "ChromaDB"
       ],
-      "usage_frequency": null
+      "usage_frequency": 1420,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital HES inpatient FCEs",
+      "usage_setting": "secondary_care_hes",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
-      "code": "R56.0",
-      "term": "Febrile convulsions",
+      "code": "R56",
+      "term": "Convulsions, not elsewhere classified",
       "vocabulary": "ICD-10 (WHO)",
       "decision": "exclude",
       "confidence": 0.9,
-      "rationale": "Febrile convulsions are acute seizures triggered by fever, not primary epilepsy.",
+      "rationale": "Convulsions not elsewhere classified is a symptom code, not a diagnosis of epilepsy; includes febrile convulsions and other non-epileptic causes.",
       "sources": [
         "ChromaDB"
       ],
-      "usage_frequency": null
+      "usage_frequency": 51913,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital HES inpatient FCEs",
+      "usage_setting": "secondary_care_hes",
+      "concept_id": null,
+      "dmd_level": null
+    },
+    {
+      "code": "R56.8",
+      "term": "Other and unspecified convulsions",
+      "vocabulary": "ICD-10 (WHO)",
+      "decision": "exclude",
+      "confidence": 0.9,
+      "rationale": "Other and unspecified convulsions is a symptom code that does not confirm a diagnosis of primary epilepsy.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "usage_frequency": 46099,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital HES inpatient FCEs",
+      "usage_setting": "secondary_care_hes",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "1179360000",
@@ -25116,114 +25671,52 @@
       "vocabulary": "SNOMED CT",
       "decision": "exclude",
       "confidence": 0.9,
-      "rationale": "Fetal epilepsy due to perinatal stroke is secondary epilepsy caused by a specific etiology (stroke), not primary epilepsy.",
+      "rationale": "Fetal epilepsy due to perinatal stroke is secondary epilepsy caused by stroke, not primary epilepsy.",
       "sources": [
         "OpenCodelists (Bennett Institute)",
         "QOF Business Rules 2024-25"
       ],
-      "usage_frequency": null
+      "usage_frequency": 10,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
-      "code": "313307000",
-      "term": "Epileptic seizure (finding)",
+      "code": "P90",
+      "term": "Convulsions of newborn",
+      "vocabulary": "ICD-10 (WHO)",
+      "decision": "exclude",
+      "confidence": 0.85,
+      "rationale": "Convulsions of newborn is a neonatal condition that may represent seizures but is not an instance of primary epilepsy as a chronic disorder.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "usage_frequency": 314,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital HES inpatient FCEs",
+      "usage_setting": "secondary_care_hes",
+      "concept_id": null,
+      "dmd_level": null
+    },
+    {
+      "code": "230440002",
+      "term": "Secondary reading epilepsy (disorder)",
       "vocabulary": "SNOMED CT",
       "decision": "exclude",
-      "confidence": 0.9,
-      "rationale": "An 'epileptic seizure' is a symptom/manifestation of epilepsy, not an instance of the epilepsy diagnosis itself; seizures occur in epilepsy but the code does not confirm epilepsy as a disorder.",
+      "confidence": 0.85,
+      "rationale": "Secondary reading epilepsy is secondary epilepsy triggered by reading, not primary epilepsy.",
       "sources": [
         "ChromaDB",
         "QOF Business Rules 2024-25"
       ],
-      "usage_frequency": null
-    },
-    {
-      "code": "R56",
-      "term": "Convulsions, not elsewhere classified",
-      "vocabulary": "ICD-10 (WHO)",
-      "decision": "exclude",
-      "confidence": 0.85,
-      "rationale": "Convulsions not elsewhere classified is a symptom code for seizures of unspecified etiology, not a diagnosis of primary epilepsy.",
-      "sources": [
-        "ChromaDB"
-      ],
-      "usage_frequency": null
-    },
-    {
-      "code": "R56.8",
-      "term": "Other and unspecified convulsions",
-      "vocabulary": "ICD-10 (WHO)",
-      "decision": "exclude",
-      "confidence": 0.85,
-      "rationale": "Other and unspecified convulsions is a symptom code for seizures of unspecified etiology, not a diagnosis of primary epilepsy.",
-      "sources": [
-        "ChromaDB"
-      ],
-      "usage_frequency": null
-    },
-    {
-      "code": "361268000",
-      "term": "Alcohol-induced epilepsy (disorder)",
-      "vocabulary": "SNOMED CT",
-      "decision": "exclude",
-      "confidence": 0.85,
-      "rationale": "Alcohol-induced epilepsy is secondary epilepsy caused by an external factor (alcohol); the query specifies 'primary' epilepsy, which excludes secondary forms.",
-      "sources": [
-        "OMOPHub",
-        "QOF Business Rules 2024-25"
-      ],
-      "usage_frequency": null
-    },
-    {
-      "code": "720980004",
-      "term": "Alopecia, psychomotor epilepsy, periodontal pyorrhea, intellectual disability syndrome (disorder)",
-      "vocabulary": "SNOMED CT",
-      "decision": "exclude",
-      "confidence": 0.85,
-      "rationale": "This is a rare syndromic disorder (APPID syndrome) where epilepsy is one component among multiple unrelated features; it is a distinct syndrome, not a primary epilepsy type.",
-      "sources": [
-        "OMOPHub",
-        "QOF Business Rules 2024-25"
-      ],
-      "usage_frequency": null
-    },
-    {
-      "code": "771448004",
-      "term": "Autism epilepsy syndrome due to branched chain ketoacid dehydrogenase kinase deficiency (disorder)",
-      "vocabulary": "SNOMED CT",
-      "decision": "exclude",
-      "confidence": 0.8,
-      "rationale": "This is a rare genetic syndrome (autism-epilepsy syndrome due to BCKDK deficiency) where epilepsy is one component of a broader metabolic/genetic disorder, not a primary epilepsy type.",
-      "sources": [
-        "OMOPHub",
-        "QOF Business Rules 2024-25"
-      ],
-      "usage_frequency": null
-    },
-    {
-      "code": "773498006",
-      "term": "Autosomal recessive cerebellar ataxia, epilepsy, intellectual disability syndrome due to TUD deficiency (disorder)",
-      "vocabulary": "SNOMED CT",
-      "decision": "exclude",
-      "confidence": 0.8,
-      "rationale": "This is a rare genetic syndrome (ARCAEID due to TUD deficiency) where epilepsy is one component of a broader neurological disorder, not a primary epilepsy type.",
-      "sources": [
-        "OMOPHub",
-        "QOF Business Rules 2024-25"
-      ],
-      "usage_frequency": null
-    },
-    {
-      "code": "788417006",
-      "term": "Alopecia, epilepsy, intellectual disability syndrome Moynahan type (disorder)",
-      "vocabulary": "SNOMED CT",
-      "decision": "exclude",
-      "confidence": 0.8,
-      "rationale": "This is a rare syndromic disorder (Moynahan syndrome) where epilepsy is one component among multiple unrelated features, not a primary epilepsy type.",
-      "sources": [
-        "OMOPHub",
-        "QOF Business Rules 2024-25"
-      ],
-      "usage_frequency": null
+      "usage_frequency": 10,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": 4043552,
+      "dmd_level": null
     }
   ],
   "pipeline": "rag",

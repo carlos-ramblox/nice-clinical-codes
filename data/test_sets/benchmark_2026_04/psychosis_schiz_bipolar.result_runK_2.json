@@ -6,12 +6,12 @@
     "retrieved_raw": {
       "codelist_name": "retrieved_raw",
       "n_ref_codes": 198,
-      "n_output_codes": 2728,
+      "n_output_codes": 2721,
       "recall": 1.0,
-      "precision": 0.0726,
-      "f1": 0.1353,
+      "precision": 0.0728,
+      "f1": 0.1357,
       "tp_count": 198,
-      "fp_count": 2530,
+      "fp_count": 2523,
       "fn_count": 0,
       "tp_codes": [
         {
@@ -3675,10 +3675,6 @@
         {
           "code": "191693002",
           "term": "Residual disintegrative psychoses"
-        },
-        {
-          "code": "191697001",
-          "term": "Borderline psychosis of childhood"
         },
         {
           "code": "191701003",
@@ -7913,32 +7909,12 @@
           "term": "Olanzapine 10mg tablets (Medihealth (Northern) Ltd) (AMP)"
         },
         {
-          "code": "390815004",
-          "term": "Early intervention in psychosis"
-        },
-        {
           "code": "39085011000001103",
           "term": "Risperidone 250microgram tablets (A A H Pharmaceuticals Ltd) (AMP)"
         },
         {
           "code": "39086811000001101",
           "term": "Levomepromazine 6mg tablets (A A H Pharmaceuticals Ltd) (AMP)"
-        },
-        {
-          "code": "391183008",
-          "term": "Early intervention in psychosis - 24 hour intensive"
-        },
-        {
-          "code": "391188004",
-          "term": "Early intervention in psychosis - 1-2 contacts/week"
-        },
-        {
-          "code": "391189007",
-          "term": "Early intervention in psychosis - 1-3 contacts/month"
-        },
-        {
-          "code": "391190003",
-          "term": "Early intervention in psychosis - <1 contact/month"
         },
         {
           "code": "39125711000001100",
@@ -9897,10 +9873,6 @@
           "term": "Haloperidol 10mg tablets (Teva UK Ltd) (AMP)"
         },
         {
-          "code": "718026005",
-          "term": "Cognitive behavioral therapy for psychosis"
-        },
-        {
           "code": "71984005",
           "term": "Mild manic bipolar I disorder"
         },
@@ -11047,12 +11019,20 @@
           "term": "Chronic schizoaffective schizophrenia"
         },
         {
+          "code": "191571002",
+          "term": "Acute exacerbation of subchronic schizoaffective schizophrenia"
+        },
+        {
           "code": "191572009",
           "term": "Acute exacerbation of chronic schizoaffective schizophrenia"
         },
         {
           "code": "191577003",
           "term": "Cenesthopathic schizophrenia"
+        },
+        {
+          "code": "191586008",
+          "term": "Single manic episode, severe, with psychosis"
         },
         {
           "code": "191618007",
@@ -11133,10 +11113,6 @@
         {
           "code": "231494001",
           "term": "Mania"
-        },
-        {
-          "code": "238972008",
-          "term": "Cutaneous monosymptomatic delusional psychosis"
         },
         {
           "code": "247804008",
@@ -11223,16 +11199,16 @@
           "term": "Severe bipolar disorder with psychotic features"
         },
         {
+          "code": "4926007",
+          "term": "Schizophrenia in remission"
+        },
+        {
           "code": "53049002",
           "term": "Severe bipolar disorder without psychotic features"
         },
         {
           "code": "53607008",
           "term": "Depressed bipolar I disorder in remission"
-        },
-        {
-          "code": "5464005",
-          "term": "Brief reactive psychosis"
         },
         {
           "code": "55516002",
@@ -11257,10 +11233,6 @@
         {
           "code": "64905009",
           "term": "Paranoid schizophrenia"
-        },
-        {
-          "code": "65971000052100",
-          "term": "Acute psychosis"
         },
         {
           "code": "68995007",
@@ -11434,10 +11406,6 @@
           "term": "Latent schizophrenia in remission"
         },
         {
-          "code": "191571002",
-          "term": "Acute exacerbation of subchronic schizoaffective schizophrenia"
-        },
-        {
           "code": "191574005",
           "term": "Schizoaffective schizophrenia in remission"
         },
@@ -11448,10 +11416,6 @@
         {
           "code": "191584006",
           "term": "Single manic episode, moderate"
-        },
-        {
-          "code": "191586008",
-          "term": "Single manic episode, severe, with psychosis"
         },
         {
           "code": "191588009",
@@ -11536,6 +11500,10 @@
         {
           "code": "231496004",
           "term": "Hypomania"
+        },
+        {
+          "code": "238972008",
+          "term": "Cutaneous monosymptomatic delusional psychosis"
         },
         {
           "code": "238973003",
@@ -11634,12 +11602,12 @@
           "term": "Delusional disorder"
         },
         {
-          "code": "4926007",
-          "term": "Schizophrenia in remission"
-        },
-        {
           "code": "51133006",
           "term": "Residual schizophrenia in remission"
+        },
+        {
+          "code": "5464005",
+          "term": "Brief reactive psychosis"
         },
         {
           "code": "60401000119104",
@@ -11656,6 +11624,10 @@
         {
           "code": "63395003",
           "term": "Folie \u00e0 trois"
+        },
+        {
+          "code": "65971000052100",
+          "term": "Acute psychosis"
         },
         {
           "code": "68890003",
@@ -11855,12 +11827,20 @@
           "term": "Chronic schizoaffective schizophrenia"
         },
         {
+          "code": "191571002",
+          "term": "Acute exacerbation of subchronic schizoaffective schizophrenia"
+        },
+        {
           "code": "191572009",
           "term": "Acute exacerbation of chronic schizoaffective schizophrenia"
         },
         {
           "code": "191577003",
           "term": "Cenesthopathic schizophrenia"
+        },
+        {
+          "code": "191586008",
+          "term": "Single manic episode, severe, with psychosis"
         },
         {
           "code": "191618007",
@@ -11941,10 +11921,6 @@
         {
           "code": "231494001",
           "term": "Mania"
-        },
-        {
-          "code": "238972008",
-          "term": "Cutaneous monosymptomatic delusional psychosis"
         },
         {
           "code": "247804008",
@@ -12031,16 +12007,16 @@
           "term": "Severe bipolar disorder with psychotic features"
         },
         {
+          "code": "4926007",
+          "term": "Schizophrenia in remission"
+        },
+        {
           "code": "53049002",
           "term": "Severe bipolar disorder without psychotic features"
         },
         {
           "code": "53607008",
           "term": "Depressed bipolar I disorder in remission"
-        },
-        {
-          "code": "5464005",
-          "term": "Brief reactive psychosis"
         },
         {
           "code": "55516002",
@@ -12065,10 +12041,6 @@
         {
           "code": "64905009",
           "term": "Paranoid schizophrenia"
-        },
-        {
-          "code": "65971000052100",
-          "term": "Acute psychosis"
         },
         {
           "code": "68995007",
@@ -12242,10 +12214,6 @@
           "term": "Latent schizophrenia in remission"
         },
         {
-          "code": "191571002",
-          "term": "Acute exacerbation of subchronic schizoaffective schizophrenia"
-        },
-        {
           "code": "191574005",
           "term": "Schizoaffective schizophrenia in remission"
         },
@@ -12256,10 +12224,6 @@
         {
           "code": "191584006",
           "term": "Single manic episode, moderate"
-        },
-        {
-          "code": "191586008",
-          "term": "Single manic episode, severe, with psychosis"
         },
         {
           "code": "191588009",
@@ -12344,6 +12308,10 @@
         {
           "code": "231496004",
           "term": "Hypomania"
+        },
+        {
+          "code": "238972008",
+          "term": "Cutaneous monosymptomatic delusional psychosis"
         },
         {
           "code": "238973003",
@@ -12442,12 +12410,12 @@
           "term": "Delusional disorder"
         },
         {
-          "code": "4926007",
-          "term": "Schizophrenia in remission"
-        },
-        {
           "code": "51133006",
           "term": "Residual schizophrenia in remission"
+        },
+        {
+          "code": "5464005",
+          "term": "Brief reactive psychosis"
         },
         {
           "code": "60401000119104",
@@ -12464,6 +12432,10 @@
         {
           "code": "63395003",
           "term": "Folie \u00e0 trois"
+        },
+        {
+          "code": "65971000052100",
+          "term": "Acute psychosis"
         },
         {
           "code": "68890003",
@@ -12550,165 +12522,21 @@
     "included_only": {
       "codelist_name": "included_only",
       "n_ref_codes": 198,
-      "n_output_codes": 91,
-      "recall": 0.4596,
+      "n_output_codes": 36,
+      "recall": 0.1818,
       "precision": 1.0,
-      "f1": 0.6298,
-      "tp_count": 91,
+      "f1": 0.3077,
+      "tp_count": 36,
       "fp_count": 0,
-      "fn_count": 107,
+      "fn_count": 162,
       "tp_codes": [
-        {
-          "code": "1089481000000106",
-          "term": "Cataleptic schizophrenia"
-        },
-        {
-          "code": "111483008",
-          "term": "Catatonic schizophrenia in remission"
-        },
-        {
-          "code": "111484002",
-          "term": "Undifferentiated schizophrenia"
-        },
-        {
-          "code": "111485001",
-          "term": "Mixed bipolar I disorder in full remission"
-        },
         {
           "code": "1127191000000108",
           "term": "First episode psychosis"
         },
         {
-          "code": "12939007",
-          "term": "Chronic disorganized schizophrenia"
-        },
-        {
-          "code": "13313007",
-          "term": "Mild bipolar disorder"
-        },
-        {
-          "code": "13746004",
-          "term": "Bipolar disorder"
-        },
-        {
-          "code": "14291003",
-          "term": "Subchronic disorganized schizophrenia with acute exacerbations"
-        },
-        {
-          "code": "1499003",
-          "term": "Bipolar I disorder, single manic episode with postpartum onset"
-        },
-        {
-          "code": "162004",
-          "term": "Severe manic bipolar I disorder without psychotic features"
-        },
-        {
-          "code": "16506000",
-          "term": "Mixed bipolar I disorder"
-        },
-        {
-          "code": "16990005",
-          "term": "Subchronic schizophrenia"
-        },
-        {
-          "code": "17782008",
-          "term": "Bipolar I disorder, most recent episode manic with catatonic features"
-        },
-        {
           "code": "191525009",
           "term": "Non-organic psychosis"
-        },
-        {
-          "code": "191526005",
-          "term": "Schizophrenic disorders"
-        },
-        {
-          "code": "191527001",
-          "term": "Simple schizophrenia"
-        },
-        {
-          "code": "191531007",
-          "term": "Acute exacerbation of chronic schizophrenia"
-        },
-        {
-          "code": "191542003",
-          "term": "Catatonic schizophrenia"
-        },
-        {
-          "code": "191555002",
-          "term": "Acute exacerbation of chronic paranoid schizophrenia"
-        },
-        {
-          "code": "191559008",
-          "term": "Latent schizophrenia"
-        },
-        {
-          "code": "191561004",
-          "term": "Subchronic latent schizophrenia"
-        },
-        {
-          "code": "191562006",
-          "term": "Chronic latent schizophrenia"
-        },
-        {
-          "code": "191567000",
-          "term": "Schizoaffective schizophrenia"
-        },
-        {
-          "code": "191569002",
-          "term": "Subchronic schizoaffective schizophrenia"
-        },
-        {
-          "code": "191570001",
-          "term": "Chronic schizoaffective schizophrenia"
-        },
-        {
-          "code": "191572009",
-          "term": "Acute exacerbation of chronic schizoaffective schizophrenia"
-        },
-        {
-          "code": "191577003",
-          "term": "Cenesthopathic schizophrenia"
-        },
-        {
-          "code": "191618007",
-          "term": "Bipolar affective disorder, current episode manic"
-        },
-        {
-          "code": "191620005",
-          "term": "Bipolar affective disorder, currently manic, mild"
-        },
-        {
-          "code": "191621009",
-          "term": "Bipolar affective disorder, currently manic, moderate"
-        },
-        {
-          "code": "191623007",
-          "term": "Bipolar affective disorder, currently manic, severe, with psychosis"
-        },
-        {
-          "code": "191625000",
-          "term": "Bipolar affective disorder, currently manic, in full remission"
-        },
-        {
-          "code": "191627008",
-          "term": "Bipolar affective disorder, current episode depression"
-        },
-        {
-          "code": "191629006",
-          "term": "Bipolar affective disorder, currently depressed, mild"
-        },
-        {
-          "code": "191630001",
-          "term": "Bipolar affective disorder, currently depressed, moderate"
-        },
-        {
-          "code": "191634005",
-          "term": "Bipolar affective disorder, currently depressed, in full remission"
-        },
-        {
-          "code": "191636007",
-          "term": "Mixed bipolar affective disorder"
         },
         {
           "code": "191638008",
@@ -12803,12 +12631,12 @@
           "term": "Subchronic catatonic schizophrenia"
         },
         {
-          "code": "441704009",
-          "term": "Affective psychosis"
-        },
-        {
           "code": "4441000",
           "term": "Severe bipolar disorder with psychotic features"
+        },
+        {
+          "code": "4926007",
+          "term": "Schizophrenia in remission"
         },
         {
           "code": "53049002",
@@ -12839,88 +12667,12 @@
           "term": "Paranoid schizophrenia"
         },
         {
-          "code": "65971000052100",
-          "term": "Acute psychosis"
-        },
-        {
-          "code": "68995007",
-          "term": "Chronic catatonic schizophrenia"
-        },
-        {
           "code": "69322001",
           "term": "Psychotic disorder"
         },
         {
-          "code": "71103003",
-          "term": "Chronic residual schizophrenia"
-        },
-        {
-          "code": "760721000000109",
-          "term": "Mixed bipolar affective disorder, in partial remission"
-        },
-        {
-          "code": "764591000000108",
-          "term": "Mixed bipolar affective disorder, severe"
-        },
-        {
           "code": "765176007",
           "term": "Psychosis and severe depression co-occurrent and due to bipolar affective disorder"
-        },
-        {
-          "code": "76566000",
-          "term": "Subchronic residual schizophrenia"
-        },
-        {
-          "code": "767631007",
-          "term": "Bipolar disorder, most recent episode depression"
-        },
-        {
-          "code": "767632000",
-          "term": "Bipolar disorder, most recent episode manic"
-        },
-        {
-          "code": "767633005",
-          "term": "Bipolar affective disorder, most recent episode mixed"
-        },
-        {
-          "code": "767635003",
-          "term": "Bipolar I disorder, most recent episode manic"
-        },
-        {
-          "code": "767636002",
-          "term": "Bipolar I disorder, most recent episode depression"
-        },
-        {
-          "code": "789061003",
-          "term": "Rapid cycling bipolar II disorder"
-        },
-        {
-          "code": "79584002",
-          "term": "Moderate bipolar disorder"
-        },
-        {
-          "code": "79866005",
-          "term": "Subchronic paranoid schizophrenia"
-        },
-        {
-          "code": "83225003",
-          "term": "Bipolar II disorder"
-        },
-        {
-          "code": "83746006",
-          "term": "Chronic schizophrenia"
-        },
-        {
-          "code": "85248005",
-          "term": "Bipolar disorder in remission"
-        },
-        {
-          "code": "85861002",
-          "term": "Subchronic undifferentiated schizophrenia"
-        },
-        {
-          "code": "87950005",
-          "term": "Bipolar I disorder, single manic episode with catatonic features"
         }
       ],
       "fp_codes": [],
@@ -12928,6 +12680,10 @@
         {
           "code": "1086471000000103",
           "term": "Recurrent reactive depressive episodes, severe, with psychosis"
+        },
+        {
+          "code": "1089481000000106",
+          "term": "Cataleptic schizophrenia"
         },
         {
           "code": "1089511000000100",
@@ -12954,6 +12710,18 @@
           "term": "Subchronic schizophrenia with acute exacerbations"
         },
         {
+          "code": "111483008",
+          "term": "Catatonic schizophrenia in remission"
+        },
+        {
+          "code": "111484002",
+          "term": "Undifferentiated schizophrenia"
+        },
+        {
+          "code": "111485001",
+          "term": "Mixed bipolar I disorder in full remission"
+        },
+        {
           "code": "1204417003",
           "term": "Early onset schizophrenia"
         },
@@ -12970,6 +12738,30 @@
           "term": "Psychotic disorder with insight present"
         },
         {
+          "code": "12939007",
+          "term": "Chronic disorganized schizophrenia"
+        },
+        {
+          "code": "13313007",
+          "term": "Mild bipolar disorder"
+        },
+        {
+          "code": "13746004",
+          "term": "Bipolar disorder"
+        },
+        {
+          "code": "14291003",
+          "term": "Subchronic disorganized schizophrenia with acute exacerbations"
+        },
+        {
+          "code": "1499003",
+          "term": "Bipolar I disorder, single manic episode with postpartum onset"
+        },
+        {
+          "code": "162004",
+          "term": "Severe manic bipolar I disorder without psychotic features"
+        },
+        {
           "code": "162313000",
           "term": "Morbid jealousy"
         },
@@ -12978,8 +12770,32 @@
           "term": "Bipolar disorder caused by drug"
         },
         {
+          "code": "16506000",
+          "term": "Mixed bipolar I disorder"
+        },
+        {
+          "code": "16990005",
+          "term": "Subchronic schizophrenia"
+        },
+        {
+          "code": "17782008",
+          "term": "Bipolar I disorder, most recent episode manic with catatonic features"
+        },
+        {
+          "code": "191526005",
+          "term": "Schizophrenic disorders"
+        },
+        {
+          "code": "191527001",
+          "term": "Simple schizophrenia"
+        },
+        {
           "code": "191530008",
           "term": "Acute exacerbation of subchronic schizophrenia"
+        },
+        {
+          "code": "191531007",
+          "term": "Acute exacerbation of chronic schizophrenia"
         },
         {
           "code": "191538001",
@@ -12988,6 +12804,10 @@
         {
           "code": "191539009",
           "term": "Acute exacerbation of chronic hebephrenic schizophrenia"
+        },
+        {
+          "code": "191542003",
+          "term": "Catatonic schizophrenia"
         },
         {
           "code": "191547009",
@@ -13002,6 +12822,22 @@
           "term": "Acute exacerbation of subchronic paranoid schizophrenia"
         },
         {
+          "code": "191555002",
+          "term": "Acute exacerbation of chronic paranoid schizophrenia"
+        },
+        {
+          "code": "191559008",
+          "term": "Latent schizophrenia"
+        },
+        {
+          "code": "191561004",
+          "term": "Subchronic latent schizophrenia"
+        },
+        {
+          "code": "191562006",
+          "term": "Chronic latent schizophrenia"
+        },
+        {
           "code": "191563001",
           "term": "Acute exacerbation of subchronic latent schizophrenia"
         },
@@ -13014,12 +12850,32 @@
           "term": "Latent schizophrenia in remission"
         },
         {
+          "code": "191567000",
+          "term": "Schizoaffective schizophrenia"
+        },
+        {
+          "code": "191569002",
+          "term": "Subchronic schizoaffective schizophrenia"
+        },
+        {
+          "code": "191570001",
+          "term": "Chronic schizoaffective schizophrenia"
+        },
+        {
           "code": "191571002",
           "term": "Acute exacerbation of subchronic schizoaffective schizophrenia"
         },
         {
+          "code": "191572009",
+          "term": "Acute exacerbation of chronic schizoaffective schizophrenia"
+        },
+        {
           "code": "191574005",
           "term": "Schizoaffective schizophrenia in remission"
+        },
+        {
+          "code": "191577003",
+          "term": "Cenesthopathic schizophrenia"
         },
         {
           "code": "191583000",
@@ -13066,8 +12922,48 @@
           "term": "Recurrent major depressive episodes, severe, with psychosis"
         },
         {
+          "code": "191618007",
+          "term": "Bipolar affective disorder, current episode manic"
+        },
+        {
+          "code": "191620005",
+          "term": "Bipolar affective disorder, currently manic, mild"
+        },
+        {
+          "code": "191621009",
+          "term": "Bipolar affective disorder, currently manic, moderate"
+        },
+        {
+          "code": "191623007",
+          "term": "Bipolar affective disorder, currently manic, severe, with psychosis"
+        },
+        {
+          "code": "191625000",
+          "term": "Bipolar affective disorder, currently manic, in full remission"
+        },
+        {
+          "code": "191627008",
+          "term": "Bipolar affective disorder, current episode depression"
+        },
+        {
+          "code": "191629006",
+          "term": "Bipolar affective disorder, currently depressed, mild"
+        },
+        {
+          "code": "191630001",
+          "term": "Bipolar affective disorder, currently depressed, moderate"
+        },
+        {
           "code": "191632009",
           "term": "Bipolar affective disorder, currently depressed, severe, with psychosis"
+        },
+        {
+          "code": "191634005",
+          "term": "Bipolar affective disorder, currently depressed, in full remission"
+        },
+        {
+          "code": "191636007",
+          "term": "Mixed bipolar affective disorder"
         },
         {
           "code": "191667009",
@@ -13238,12 +13134,12 @@
           "term": "Amok"
         },
         {
-          "code": "48500005",
-          "term": "Delusional disorder"
+          "code": "441704009",
+          "term": "Affective psychosis"
         },
         {
-          "code": "4926007",
-          "term": "Schizophrenia in remission"
+          "code": "48500005",
+          "term": "Delusional disorder"
         },
         {
           "code": "51133006",
@@ -13274,8 +13170,16 @@
           "term": "Folie \u00e0 trois"
         },
         {
+          "code": "65971000052100",
+          "term": "Acute psychosis"
+        },
+        {
           "code": "68890003",
           "term": "Schizoaffective disorder"
+        },
+        {
+          "code": "68995007",
+          "term": "Chronic catatonic schizophrenia"
         },
         {
           "code": "7025000",
@@ -13284,6 +13188,10 @@
         {
           "code": "70814008",
           "term": "Subchronic residual schizophrenia with acute exacerbations"
+        },
+        {
+          "code": "71103003",
+          "term": "Chronic residual schizophrenia"
         },
         {
           "code": "712824002",
@@ -13314,6 +13222,14 @@
           "term": "Recurrent major depressive episodes, severe, with psychosis, psychosis in remission"
         },
         {
+          "code": "760721000000109",
+          "term": "Mixed bipolar affective disorder, in partial remission"
+        },
+        {
+          "code": "764591000000108",
+          "term": "Mixed bipolar affective disorder, severe"
+        },
+        {
           "code": "764621000000106",
           "term": "Recurrent manic episodes, severe"
         },
@@ -13338,16 +13254,72 @@
           "term": "Single manic episode in remission"
         },
         {
+          "code": "76566000",
+          "term": "Subchronic residual schizophrenia"
+        },
+        {
+          "code": "767631007",
+          "term": "Bipolar disorder, most recent episode depression"
+        },
+        {
+          "code": "767632000",
+          "term": "Bipolar disorder, most recent episode manic"
+        },
+        {
+          "code": "767633005",
+          "term": "Bipolar affective disorder, most recent episode mixed"
+        },
+        {
+          "code": "767635003",
+          "term": "Bipolar I disorder, most recent episode manic"
+        },
+        {
+          "code": "767636002",
+          "term": "Bipolar I disorder, most recent episode depression"
+        },
+        {
           "code": "77475008",
           "term": "Jealous delusion disorder"
+        },
+        {
+          "code": "789061003",
+          "term": "Rapid cycling bipolar II disorder"
         },
         {
           "code": "79204003",
           "term": "Chronic undifferentiated schizophrenia with acute exacerbations"
         },
         {
+          "code": "79584002",
+          "term": "Moderate bipolar disorder"
+        },
+        {
+          "code": "79866005",
+          "term": "Subchronic paranoid schizophrenia"
+        },
+        {
+          "code": "83225003",
+          "term": "Bipolar II disorder"
+        },
+        {
+          "code": "83746006",
+          "term": "Chronic schizophrenia"
+        },
+        {
           "code": "84760002",
           "term": "Schizoaffective disorder, depressive type"
+        },
+        {
+          "code": "85248005",
+          "term": "Bipolar disorder in remission"
+        },
+        {
+          "code": "85861002",
+          "term": "Subchronic undifferentiated schizophrenia"
+        },
+        {
+          "code": "87950005",
+          "term": "Bipolar I disorder, single manic episode with catatonic features"
         },
         {
           "code": "88975006",
@@ -13358,165 +13330,21 @@
     "included_plus_uncertain": {
       "codelist_name": "included_plus_uncertain",
       "n_ref_codes": 198,
-      "n_output_codes": 91,
-      "recall": 0.4596,
+      "n_output_codes": 36,
+      "recall": 0.1818,
       "precision": 1.0,
-      "f1": 0.6298,
-      "tp_count": 91,
+      "f1": 0.3077,
+      "tp_count": 36,
       "fp_count": 0,
-      "fn_count": 107,
+      "fn_count": 162,
       "tp_codes": [
-        {
-          "code": "1089481000000106",
-          "term": "Cataleptic schizophrenia"
-        },
-        {
-          "code": "111483008",
-          "term": "Catatonic schizophrenia in remission"
-        },
-        {
-          "code": "111484002",
-          "term": "Undifferentiated schizophrenia"
-        },
-        {
-          "code": "111485001",
-          "term": "Mixed bipolar I disorder in full remission"
-        },
         {
           "code": "1127191000000108",
           "term": "First episode psychosis"
         },
         {
-          "code": "12939007",
-          "term": "Chronic disorganized schizophrenia"
-        },
-        {
-          "code": "13313007",
-          "term": "Mild bipolar disorder"
-        },
-        {
-          "code": "13746004",
-          "term": "Bipolar disorder"
-        },
-        {
-          "code": "14291003",
-          "term": "Subchronic disorganized schizophrenia with acute exacerbations"
-        },
-        {
-          "code": "1499003",
-          "term": "Bipolar I disorder, single manic episode with postpartum onset"
-        },
-        {
-          "code": "162004",
-          "term": "Severe manic bipolar I disorder without psychotic features"
-        },
-        {
-          "code": "16506000",
-          "term": "Mixed bipolar I disorder"
-        },
-        {
-          "code": "16990005",
-          "term": "Subchronic schizophrenia"
-        },
-        {
-          "code": "17782008",
-          "term": "Bipolar I disorder, most recent episode manic with catatonic features"
-        },
-        {
           "code": "191525009",
           "term": "Non-organic psychosis"
-        },
-        {
-          "code": "191526005",
-          "term": "Schizophrenic disorders"
-        },
-        {
-          "code": "191527001",
-          "term": "Simple schizophrenia"
-        },
-        {
-          "code": "191531007",
-          "term": "Acute exacerbation of chronic schizophrenia"
-        },
-        {
-          "code": "191542003",
-          "term": "Catatonic schizophrenia"
-        },
-        {
-          "code": "191555002",
-          "term": "Acute exacerbation of chronic paranoid schizophrenia"
-        },
-        {
-          "code": "191559008",
-          "term": "Latent schizophrenia"
-        },
-        {
-          "code": "191561004",
-          "term": "Subchronic latent schizophrenia"
-        },
-        {
-          "code": "191562006",
-          "term": "Chronic latent schizophrenia"
-        },
-        {
-          "code": "191567000",
-          "term": "Schizoaffective schizophrenia"
-        },
-        {
-          "code": "191569002",
-          "term": "Subchronic schizoaffective schizophrenia"
-        },
-        {
-          "code": "191570001",
-          "term": "Chronic schizoaffective schizophrenia"
-        },
-        {
-          "code": "191572009",
-          "term": "Acute exacerbation of chronic schizoaffective schizophrenia"
-        },
-        {
-          "code": "191577003",
-          "term": "Cenesthopathic schizophrenia"
-        },
-        {
-          "code": "191618007",
-          "term": "Bipolar affective disorder, current episode manic"
-        },
-        {
-          "code": "191620005",
-          "term": "Bipolar affective disorder, currently manic, mild"
-        },
-        {
-          "code": "191621009",
-          "term": "Bipolar affective disorder, currently manic, moderate"
-        },
-        {
-          "code": "191623007",
-          "term": "Bipolar affective disorder, currently manic, severe, with psychosis"
-        },
-        {
-          "code": "191625000",
-          "term": "Bipolar affective disorder, currently manic, in full remission"
-        },
-        {
-          "code": "191627008",
-          "term": "Bipolar affective disorder, current episode depression"
-        },
-        {
-          "code": "191629006",
-          "term": "Bipolar affective disorder, currently depressed, mild"
-        },
-        {
-          "code": "191630001",
-          "term": "Bipolar affective disorder, currently depressed, moderate"
-        },
-        {
-          "code": "191634005",
-          "term": "Bipolar affective disorder, currently depressed, in full remission"
-        },
-        {
-          "code": "191636007",
-          "term": "Mixed bipolar affective disorder"
         },
         {
           "code": "191638008",
@@ -13611,12 +13439,12 @@
           "term": "Subchronic catatonic schizophrenia"
         },
         {
-          "code": "441704009",
-          "term": "Affective psychosis"
-        },
-        {
           "code": "4441000",
           "term": "Severe bipolar disorder with psychotic features"
+        },
+        {
+          "code": "4926007",
+          "term": "Schizophrenia in remission"
         },
         {
           "code": "53049002",
@@ -13647,88 +13475,12 @@
           "term": "Paranoid schizophrenia"
         },
         {
-          "code": "65971000052100",
-          "term": "Acute psychosis"
-        },
-        {
-          "code": "68995007",
-          "term": "Chronic catatonic schizophrenia"
-        },
-        {
           "code": "69322001",
           "term": "Psychotic disorder"
         },
         {
-          "code": "71103003",
-          "term": "Chronic residual schizophrenia"
-        },
-        {
-          "code": "760721000000109",
-          "term": "Mixed bipolar affective disorder, in partial remission"
-        },
-        {
-          "code": "764591000000108",
-          "term": "Mixed bipolar affective disorder, severe"
-        },
-        {
           "code": "765176007",
           "term": "Psychosis and severe depression co-occurrent and due to bipolar affective disorder"
-        },
-        {
-          "code": "76566000",
-          "term": "Subchronic residual schizophrenia"
-        },
-        {
-          "code": "767631007",
-          "term": "Bipolar disorder, most recent episode depression"
-        },
-        {
-          "code": "767632000",
-          "term": "Bipolar disorder, most recent episode manic"
-        },
-        {
-          "code": "767633005",
-          "term": "Bipolar affective disorder, most recent episode mixed"
-        },
-        {
-          "code": "767635003",
-          "term": "Bipolar I disorder, most recent episode manic"
-        },
-        {
-          "code": "767636002",
-          "term": "Bipolar I disorder, most recent episode depression"
-        },
-        {
-          "code": "789061003",
-          "term": "Rapid cycling bipolar II disorder"
-        },
-        {
-          "code": "79584002",
-          "term": "Moderate bipolar disorder"
-        },
-        {
-          "code": "79866005",
-          "term": "Subchronic paranoid schizophrenia"
-        },
-        {
-          "code": "83225003",
-          "term": "Bipolar II disorder"
-        },
-        {
-          "code": "83746006",
-          "term": "Chronic schizophrenia"
-        },
-        {
-          "code": "85248005",
-          "term": "Bipolar disorder in remission"
-        },
-        {
-          "code": "85861002",
-          "term": "Subchronic undifferentiated schizophrenia"
-        },
-        {
-          "code": "87950005",
-          "term": "Bipolar I disorder, single manic episode with catatonic features"
         }
       ],
       "fp_codes": [],
@@ -13736,6 +13488,10 @@
         {
           "code": "1086471000000103",
           "term": "Recurrent reactive depressive episodes, severe, with psychosis"
+        },
+        {
+          "code": "1089481000000106",
+          "term": "Cataleptic schizophrenia"
         },
         {
           "code": "1089511000000100",
@@ -13762,6 +13518,18 @@
           "term": "Subchronic schizophrenia with acute exacerbations"
         },
         {
+          "code": "111483008",
+          "term": "Catatonic schizophrenia in remission"
+        },
+        {
+          "code": "111484002",
+          "term": "Undifferentiated schizophrenia"
+        },
+        {
+          "code": "111485001",
+          "term": "Mixed bipolar I disorder in full remission"
+        },
+        {
           "code": "1204417003",
           "term": "Early onset schizophrenia"
         },
@@ -13778,6 +13546,30 @@
           "term": "Psychotic disorder with insight present"
         },
         {
+          "code": "12939007",
+          "term": "Chronic disorganized schizophrenia"
+        },
+        {
+          "code": "13313007",
+          "term": "Mild bipolar disorder"
+        },
+        {
+          "code": "13746004",
+          "term": "Bipolar disorder"
+        },
+        {
+          "code": "14291003",
+          "term": "Subchronic disorganized schizophrenia with acute exacerbations"
+        },
+        {
+          "code": "1499003",
+          "term": "Bipolar I disorder, single manic episode with postpartum onset"
+        },
+        {
+          "code": "162004",
+          "term": "Severe manic bipolar I disorder without psychotic features"
+        },
+        {
           "code": "162313000",
           "term": "Morbid jealousy"
         },
@@ -13786,8 +13578,32 @@
           "term": "Bipolar disorder caused by drug"
         },
         {
+          "code": "16506000",
+          "term": "Mixed bipolar I disorder"
+        },
+        {
+          "code": "16990005",
+          "term": "Subchronic schizophrenia"
+        },
+        {
+          "code": "17782008",
+          "term": "Bipolar I disorder, most recent episode manic with catatonic features"
+        },
+        {
+          "code": "191526005",
+          "term": "Schizophrenic disorders"
+        },
+        {
+          "code": "191527001",
+          "term": "Simple schizophrenia"
+        },
+        {
           "code": "191530008",
           "term": "Acute exacerbation of subchronic schizophrenia"
+        },
+        {
+          "code": "191531007",
+          "term": "Acute exacerbation of chronic schizophrenia"
         },
         {
           "code": "191538001",
@@ -13796,6 +13612,10 @@
         {
           "code": "191539009",
           "term": "Acute exacerbation of chronic hebephrenic schizophrenia"
+        },
+        {
+          "code": "191542003",
+          "term": "Catatonic schizophrenia"
         },
         {
           "code": "191547009",
@@ -13810,6 +13630,22 @@
           "term": "Acute exacerbation of subchronic paranoid schizophrenia"
         },
         {
+          "code": "191555002",
+          "term": "Acute exacerbation of chronic paranoid schizophrenia"
+        },
+        {
+          "code": "191559008",
+          "term": "Latent schizophrenia"
+        },
+        {
+          "code": "191561004",
+          "term": "Subchronic latent schizophrenia"
+        },
+        {
+          "code": "191562006",
+          "term": "Chronic latent schizophrenia"
+        },
+        {
           "code": "191563001",
           "term": "Acute exacerbation of subchronic latent schizophrenia"
         },
@@ -13822,12 +13658,32 @@
           "term": "Latent schizophrenia in remission"
         },
         {
+          "code": "191567000",
+          "term": "Schizoaffective schizophrenia"
+        },
+        {
+          "code": "191569002",
+          "term": "Subchronic schizoaffective schizophrenia"
+        },
+        {
+          "code": "191570001",
+          "term": "Chronic schizoaffective schizophrenia"
+        },
+        {
           "code": "191571002",
           "term": "Acute exacerbation of subchronic schizoaffective schizophrenia"
         },
         {
+          "code": "191572009",
+          "term": "Acute exacerbation of chronic schizoaffective schizophrenia"
+        },
+        {
           "code": "191574005",
           "term": "Schizoaffective schizophrenia in remission"
+        },
+        {
+          "code": "191577003",
+          "term": "Cenesthopathic schizophrenia"
         },
         {
           "code": "191583000",
@@ -13874,8 +13730,48 @@
           "term": "Recurrent major depressive episodes, severe, with psychosis"
         },
         {
+          "code": "191618007",
+          "term": "Bipolar affective disorder, current episode manic"
+        },
+        {
+          "code": "191620005",
+          "term": "Bipolar affective disorder, currently manic, mild"
+        },
+        {
+          "code": "191621009",
+          "term": "Bipolar affective disorder, currently manic, moderate"
+        },
+        {
+          "code": "191623007",
+          "term": "Bipolar affective disorder, currently manic, severe, with psychosis"
+        },
+        {
+          "code": "191625000",
+          "term": "Bipolar affective disorder, currently manic, in full remission"
+        },
+        {
+          "code": "191627008",
+          "term": "Bipolar affective disorder, current episode depression"
+        },
+        {
+          "code": "191629006",
+          "term": "Bipolar affective disorder, currently depressed, mild"
+        },
+        {
+          "code": "191630001",
+          "term": "Bipolar affective disorder, currently depressed, moderate"
+        },
+        {
           "code": "191632009",
           "term": "Bipolar affective disorder, currently depressed, severe, with psychosis"
+        },
+        {
+          "code": "191634005",
+          "term": "Bipolar affective disorder, currently depressed, in full remission"
+        },
+        {
+          "code": "191636007",
+          "term": "Mixed bipolar affective disorder"
         },
         {
           "code": "191667009",
@@ -14046,12 +13942,12 @@
           "term": "Amok"
         },
         {
-          "code": "48500005",
-          "term": "Delusional disorder"
+          "code": "441704009",
+          "term": "Affective psychosis"
         },
         {
-          "code": "4926007",
-          "term": "Schizophrenia in remission"
+          "code": "48500005",
+          "term": "Delusional disorder"
         },
         {
           "code": "51133006",
@@ -14082,8 +13978,16 @@
           "term": "Folie \u00e0 trois"
         },
         {
+          "code": "65971000052100",
+          "term": "Acute psychosis"
+        },
+        {
           "code": "68890003",
           "term": "Schizoaffective disorder"
+        },
+        {
+          "code": "68995007",
+          "term": "Chronic catatonic schizophrenia"
         },
         {
           "code": "7025000",
@@ -14092,6 +13996,10 @@
         {
           "code": "70814008",
           "term": "Subchronic residual schizophrenia with acute exacerbations"
+        },
+        {
+          "code": "71103003",
+          "term": "Chronic residual schizophrenia"
         },
         {
           "code": "712824002",
@@ -14122,6 +14030,14 @@
           "term": "Recurrent major depressive episodes, severe, with psychosis, psychosis in remission"
         },
         {
+          "code": "760721000000109",
+          "term": "Mixed bipolar affective disorder, in partial remission"
+        },
+        {
+          "code": "764591000000108",
+          "term": "Mixed bipolar affective disorder, severe"
+        },
+        {
           "code": "764621000000106",
           "term": "Recurrent manic episodes, severe"
         },
@@ -14146,16 +14062,72 @@
           "term": "Single manic episode in remission"
         },
         {
+          "code": "76566000",
+          "term": "Subchronic residual schizophrenia"
+        },
+        {
+          "code": "767631007",
+          "term": "Bipolar disorder, most recent episode depression"
+        },
+        {
+          "code": "767632000",
+          "term": "Bipolar disorder, most recent episode manic"
+        },
+        {
+          "code": "767633005",
+          "term": "Bipolar affective disorder, most recent episode mixed"
+        },
+        {
+          "code": "767635003",
+          "term": "Bipolar I disorder, most recent episode manic"
+        },
+        {
+          "code": "767636002",
+          "term": "Bipolar I disorder, most recent episode depression"
+        },
+        {
           "code": "77475008",
           "term": "Jealous delusion disorder"
+        },
+        {
+          "code": "789061003",
+          "term": "Rapid cycling bipolar II disorder"
         },
         {
           "code": "79204003",
           "term": "Chronic undifferentiated schizophrenia with acute exacerbations"
         },
         {
+          "code": "79584002",
+          "term": "Moderate bipolar disorder"
+        },
+        {
+          "code": "79866005",
+          "term": "Subchronic paranoid schizophrenia"
+        },
+        {
+          "code": "83225003",
+          "term": "Bipolar II disorder"
+        },
+        {
+          "code": "83746006",
+          "term": "Chronic schizophrenia"
+        },
+        {
           "code": "84760002",
           "term": "Schizoaffective disorder, depressive type"
+        },
+        {
+          "code": "85248005",
+          "term": "Bipolar disorder in remission"
+        },
+        {
+          "code": "85861002",
+          "term": "Subchronic undifferentiated schizophrenia"
+        },
+        {
+          "code": "87950005",
+          "term": "Bipolar I disorder, single manic episode with catatonic features"
         },
         {
           "code": "88975006",
@@ -14165,52 +14137,327 @@
     }
   },
   "false_exclusions": {
-    "count": 9,
+    "count": 64,
     "codes": [
+      {
+        "code": "1089481000000106",
+        "term": "Cataleptic schizophrenia (disorder)",
+        "rationale": "Cataleptic schizophrenia is a subtype of schizophrenia, which is listed as a comorbidity (not primary condition), so it should be excluded."
+      },
+      {
+        "code": "111483008",
+        "term": "Catatonic schizophrenia in remission (disorder)",
+        "rationale": "Catatonic schizophrenia in remission is a schizophrenia subtype in remission, which is a comorbidity, not the primary condition (psychosis)."
+      },
+      {
+        "code": "111484002",
+        "term": "Undifferentiated schizophrenia (disorder)",
+        "rationale": "Undifferentiated schizophrenia is a schizophrenia subtype, which is listed as a comorbidity, not the primary condition."
+      },
+      {
+        "code": "111485001",
+        "term": "Mixed bipolar I disorder in full remission (disorder)",
+        "rationale": "Mixed bipolar I disorder in full remission is a bipolar affective disorder subtype, which is listed as a comorbidity, not the primary condition."
+      },
+      {
+        "code": "12939007",
+        "term": "Chronic disorganized schizophrenia (disorder)",
+        "rationale": "Chronic disorganized schizophrenia is a schizophrenia subtype, which is listed as a comorbidity, not the primary condition."
+      },
+      {
+        "code": "13313007",
+        "term": "Mild bipolar disorder (disorder)",
+        "rationale": "Mild bipolar disorder is a bipolar affective disorder subtype, which is listed as a comorbidity, not the primary condition."
+      },
+      {
+        "code": "13746004",
+        "term": "Bipolar disorder (disorder)",
+        "rationale": "Bipolar disorder is listed as a comorbidity in the query, not the primary condition (psychosis)."
+      },
+      {
+        "code": "14291003",
+        "term": "Subchronic disorganized schizophrenia with acute exacerbations (disorder)",
+        "rationale": "Subchronic disorganized schizophrenia with acute exacerbations is a schizophrenia subtype, which is listed as a comorbidity, not the primary condition."
+      },
+      {
+        "code": "1499003",
+        "term": "Bipolar I disorder, single manic episode with postpartum onset (disorder)",
+        "rationale": "Bipolar I disorder, single manic episode with postpartum onset is a bipolar affective disorder subtype, which is listed as a comorbidity, not the primary condition."
+      },
+      {
+        "code": "162004",
+        "term": "Severe manic bipolar I disorder without psychotic features (disorder)",
+        "rationale": "Severe manic bipolar I disorder without psychotic features is a bipolar affective disorder subtype, which is listed as a comorbidity, not the primary condition."
+      },
+      {
+        "code": "16506000",
+        "term": "Mixed bipolar I disorder (disorder)",
+        "rationale": "Mixed bipolar I disorder is a bipolar affective disorder subtype, which is listed as a comorbidity, not the primary condition."
+      },
+      {
+        "code": "16990005",
+        "term": "Subchronic schizophrenia (disorder)",
+        "rationale": "Subchronic schizophrenia is a schizophrenia subtype, which is listed as a comorbidity, not the primary condition."
+      },
+      {
+        "code": "17782008",
+        "term": "Bipolar I disorder, most recent episode manic with catatonic features (disorder)",
+        "rationale": "Bipolar I disorder, most recent episode manic with catatonic features is a bipolar affective disorder subtype, which is listed as a comorbidity, not the primary condition."
+      },
+      {
+        "code": "191526005",
+        "term": "Schizophrenic disorders (disorder)",
+        "rationale": "Schizophrenic disorders is a schizophrenia category, which is listed as a comorbidity, not the primary condition."
+      },
+      {
+        "code": "191527001",
+        "term": "Simple schizophrenia (disorder)",
+        "rationale": "Simple schizophrenia is a schizophrenia subtype, which is listed as a comorbidity, not the primary condition."
+      },
+      {
+        "code": "191531007",
+        "term": "Acute exacerbation of chronic schizophrenia (disorder)",
+        "rationale": "Acute exacerbation of chronic schizophrenia is a schizophrenia subtype, which is listed as a comorbidity, not the primary condition."
+      },
+      {
+        "code": "191542003",
+        "term": "Catatonic schizophrenia (disorder)",
+        "rationale": "Catatonic schizophrenia is a schizophrenia subtype, which is listed as a comorbidity, not the primary condition."
+      },
+      {
+        "code": "191555002",
+        "term": "Acute exacerbation of chronic paranoid schizophrenia (disorder)",
+        "rationale": "Acute exacerbation of chronic paranoid schizophrenia is a schizophrenia subtype, which is listed as a comorbidity, not the primary condition."
+      },
+      {
+        "code": "191559008",
+        "term": "Latent schizophrenia (disorder)",
+        "rationale": "Latent schizophrenia is a schizophrenia subtype, which is listed as a comorbidity, not the primary condition."
+      },
+      {
+        "code": "191561004",
+        "term": "Subchronic latent schizophrenia (disorder)",
+        "rationale": "Subchronic latent schizophrenia is a schizophrenia subtype, which is listed as a comorbidity, not the primary condition."
+      },
+      {
+        "code": "191562006",
+        "term": "Chronic latent schizophrenia (disorder)",
+        "rationale": "Chronic latent schizophrenia is a schizophrenia subtype, which is listed as a comorbidity, not the primary condition."
+      },
+      {
+        "code": "191567000",
+        "term": "Schizoaffective schizophrenia (disorder)",
+        "rationale": "Schizoaffective schizophrenia is a schizophrenia subtype, which is listed as a comorbidity, not the primary condition."
+      },
+      {
+        "code": "191569002",
+        "term": "Subchronic schizoaffective schizophrenia (disorder)",
+        "rationale": "Subchronic schizoaffective schizophrenia is a schizophrenia subtype, which is listed as a comorbidity, not the primary condition."
+      },
+      {
+        "code": "191570001",
+        "term": "Chronic schizoaffective schizophrenia (disorder)",
+        "rationale": "Chronic schizoaffective schizophrenia is a schizophrenia subtype, which is listed as a comorbidity, not the primary condition."
+      },
+      {
+        "code": "191571002",
+        "term": "Acute exacerbation of subchronic schizoaffective schizophrenia (disorder)",
+        "rationale": "Acute exacerbation of subchronic schizoaffective schizophrenia is a schizophrenia subtype, which is listed as a comorbidity, not the primary condition."
+      },
+      {
+        "code": "191572009",
+        "term": "Acute exacerbation of chronic schizoaffective schizophrenia (disorder)",
+        "rationale": "Acute exacerbation of chronic schizoaffective schizophrenia is a schizophrenia subtype, which is listed as a comorbidity, not the primary condition."
+      },
+      {
+        "code": "191577003",
+        "term": "Cenesthopathic schizophrenia (disorder)",
+        "rationale": "Cenesthopathic schizophrenia is a schizophrenia subtype, which is listed as a comorbidity, not the primary condition."
+      },
+      {
+        "code": "191586008",
+        "term": "Single manic episode, severe, with psychosis (disorder)",
+        "rationale": "Single manic episode, severe, with psychosis is a bipolar affective disorder subtype, which is listed as a comorbidity, not the primary condition."
+      },
+      {
+        "code": "191618007",
+        "term": "Bipolar affective disorder, current episode manic (disorder)",
+        "rationale": "Bipolar affective disorder, current episode manic is a bipolar affective disorder subtype, which is listed as a comorbidity, not the primary condition."
+      },
+      {
+        "code": "191620005",
+        "term": "Bipolar affective disorder, currently manic, mild (disorder)",
+        "rationale": "Bipolar affective disorder, currently manic, mild is a bipolar affective disorder subtype, which is listed as a comorbidity, not the primary condition."
+      },
+      {
+        "code": "191621009",
+        "term": "Bipolar affective disorder, currently manic, moderate (disorder)",
+        "rationale": "Bipolar affective disorder, currently manic, moderate is a bipolar affective disorder subtype, which is listed as a comorbidity, not the primary condition."
+      },
+      {
+        "code": "191623007",
+        "term": "Bipolar affective disorder, currently manic, severe, with psychosis (disorder)",
+        "rationale": "Bipolar affective disorder, currently manic, severe, with psychosis is a bipolar affective disorder subtype, which is listed as a comorbidity, not the primary condition."
+      },
+      {
+        "code": "191625000",
+        "term": "Bipolar affective disorder, currently manic, in full remission (disorder)",
+        "rationale": "Bipolar affective disorder, currently manic, in full remission is a bipolar affective disorder subtype, which is listed as a comorbidity, not the primary condition."
+      },
+      {
+        "code": "191627008",
+        "term": "Bipolar affective disorder, current episode depression (disorder)",
+        "rationale": "Bipolar affective disorder, current episode depression is a bipolar affective disorder subtype, which is listed as a comorbidity, not the primary condition."
+      },
+      {
+        "code": "191629006",
+        "term": "Bipolar affective disorder, currently depressed, mild (disorder)",
+        "rationale": "Bipolar affective disorder, currently depressed, mild is a bipolar affective disorder subtype, which is listed as a comorbidity, not the primary condition."
+      },
+      {
+        "code": "191630001",
+        "term": "Bipolar affective disorder, currently depressed, moderate (disorder)",
+        "rationale": "Bipolar affective disorder, currently depressed, moderate is a bipolar affective disorder subtype, which is listed as a comorbidity, not the primary condition."
+      },
+      {
+        "code": "191634005",
+        "term": "Bipolar affective disorder, currently depressed, in full remission (disorder)",
+        "rationale": "Bipolar affective disorder, currently depressed, in full remission is a bipolar affective disorder subtype, which is listed as a comorbidity, not the primary condition."
+      },
+      {
+        "code": "191636007",
+        "term": "Mixed bipolar affective disorder (disorder)",
+        "rationale": "Mixed bipolar affective disorder is a bipolar affective disorder subtype, which is listed as a comorbidity, not the primary condition."
+      },
+      {
+        "code": "68995007",
+        "term": "Chronic catatonic schizophrenia (disorder)",
+        "rationale": "Chronic catatonic schizophrenia is a subtype of schizophrenia, which is marked as comorbidity, not primary condition; excluded under criterion 'schizophrenia (comorbidity)'."
+      },
+      {
+        "code": "71103003",
+        "term": "Chronic residual schizophrenia (disorder)",
+        "rationale": "Chronic residual schizophrenia is a subtype of schizophrenia, which is marked as comorbidity, not primary condition; excluded under criterion 'schizophrenia (comorbidity)'."
+      },
+      {
+        "code": "760721000000109",
+        "term": "Mixed bipolar affective disorder, in partial remission (disorder)",
+        "rationale": "Mixed bipolar affective disorder in partial remission is a subtype of bipolar affective disorder, which is marked as comorbidity, not primary condition; excluded under criterion 'bipolar affective disorder (comorbidity)'."
+      },
+      {
+        "code": "764591000000108",
+        "term": "Mixed bipolar affective disorder, severe (disorder)",
+        "rationale": "Mixed bipolar affective disorder, severe is a subtype of bipolar affective disorder, which is marked as comorbidity, not primary condition; excluded under criterion 'bipolar affective disorder (comorbidity)'."
+      },
+      {
+        "code": "76566000",
+        "term": "Subchronic residual schizophrenia (disorder)",
+        "rationale": "Subchronic residual schizophrenia is a subtype of schizophrenia, which is marked as comorbidity, not primary condition; excluded under criterion 'schizophrenia (comorbidity)'."
+      },
+      {
+        "code": "767631007",
+        "term": "Bipolar disorder, most recent episode depression (disorder)",
+        "rationale": "Bipolar disorder, most recent episode depression is a subtype of bipolar affective disorder, which is marked as comorbidity, not primary condition; excluded under criterion 'bipolar affective disorder (comorbidity)'."
+      },
+      {
+        "code": "767632000",
+        "term": "Bipolar disorder, most recent episode manic (disorder)",
+        "rationale": "Bipolar disorder, most recent episode manic is a subtype of bipolar affective disorder, which is marked as comorbidity, not primary condition; excluded under criterion 'bipolar affective disorder (comorbidity)'."
+      },
+      {
+        "code": "767633005",
+        "term": "Bipolar affective disorder, most recent episode mixed (disorder)",
+        "rationale": "Bipolar affective disorder, most recent episode mixed is a subtype of bipolar affective disorder, which is marked as comorbidity, not primary condition; excluded under criterion 'bipolar affective disorder (comorbidity)'."
+      },
+      {
+        "code": "767635003",
+        "term": "Bipolar I disorder, most recent episode manic (disorder)",
+        "rationale": "Bipolar I disorder, most recent episode manic is a subtype of bipolar affective disorder, which is marked as comorbidity, not primary condition; excluded under criterion 'bipolar affective disorder (comorbidity)'."
+      },
+      {
+        "code": "767636002",
+        "term": "Bipolar I disorder, most recent episode depression (disorder)",
+        "rationale": "Bipolar I disorder, most recent episode depression is a subtype of bipolar affective disorder, which is marked as comorbidity, not primary condition; excluded under criterion 'bipolar affective disorder (comorbidity)'."
+      },
+      {
+        "code": "789061003",
+        "term": "Rapid cycling bipolar II disorder (disorder)",
+        "rationale": "Rapid cycling bipolar II disorder is a subtype of bipolar affective disorder, which is marked as comorbidity, not primary condition; excluded under criterion 'bipolar affective disorder (comorbidity)'."
+      },
+      {
+        "code": "79584002",
+        "term": "Moderate bipolar disorder (disorder)",
+        "rationale": "Moderate bipolar disorder is a subtype of bipolar affective disorder, which is marked as comorbidity, not primary condition; excluded under criterion 'bipolar affective disorder (comorbidity)'."
+      },
+      {
+        "code": "79866005",
+        "term": "Subchronic paranoid schizophrenia (disorder)",
+        "rationale": "Subchronic paranoid schizophrenia is a subtype of schizophrenia, which is marked as comorbidity, not primary condition; excluded under criterion 'schizophrenia (comorbidity)'."
+      },
+      {
+        "code": "83225003",
+        "term": "Bipolar II disorder (disorder)",
+        "rationale": "Bipolar II disorder is a subtype of bipolar affective disorder, which is marked as comorbidity, not primary condition; excluded under criterion 'bipolar affective disorder (comorbidity)'."
+      },
+      {
+        "code": "83746006",
+        "term": "Chronic schizophrenia (disorder)",
+        "rationale": "Chronic schizophrenia is a subtype of schizophrenia, which is marked as comorbidity, not primary condition; excluded under criterion 'schizophrenia (comorbidity)'."
+      },
+      {
+        "code": "85248005",
+        "term": "Bipolar disorder in remission (disorder)",
+        "rationale": "Bipolar disorder in remission is a subtype of bipolar affective disorder, which is marked as comorbidity, not primary condition; excluded under criterion 'bipolar affective disorder (comorbidity)'."
+      },
+      {
+        "code": "85861002",
+        "term": "Subchronic undifferentiated schizophrenia (disorder)",
+        "rationale": "Subchronic undifferentiated schizophrenia is a subtype of schizophrenia, which is marked as comorbidity, not primary condition; excluded under criterion 'schizophrenia (comorbidity)'."
+      },
+      {
+        "code": "87950005",
+        "term": "Bipolar I disorder, single manic episode with catatonic features (disorder)",
+        "rationale": "Bipolar I disorder, single manic episode with catatonic features is a subtype of bipolar affective disorder, which is marked as comorbidity, not primary condition; excluded under criterion 'bipolar affective disorder (comorbidity)'."
+      },
       {
         "code": "191677006",
         "term": "Acute hysterical psychosis (disorder)",
-        "rationale": "Acute hysterical psychosis is a distinct primary psychotic disorder unrelated to schizophrenia or bipolar affective disorder."
+        "rationale": "Acute hysterical psychosis is a specific psychotic disorder distinct from primary psychosis, schizophrenia, or bipolar affective disorder."
       },
       {
         "code": "191680007",
         "term": "Psychogenic paranoid psychosis (disorder)",
-        "rationale": "Psychogenic paranoid psychosis is a distinct primary psychotic disorder not equivalent to schizophrenia or bipolar affective disorder."
+        "rationale": "Psychogenic paranoid psychosis is a specific psychotic disorder distinct from primary psychosis, schizophrenia, or bipolar affective disorder."
       },
       {
         "code": "231449007",
         "term": "Epileptic psychosis (disorder)",
-        "rationale": "Epileptic psychosis is a secondary psychosis caused by epilepsy, not a primary psychotic disorder or bipolar affective disorder."
-      },
-      {
-        "code": "238972008",
-        "term": "Cutaneous monosymptomatic delusional psychosis (disorder)",
-        "rationale": "Cutaneous monosymptomatic delusional psychosis is a rare, specific primary psychotic disorder distinct from schizophrenia or bipolar affective disorder."
+        "rationale": "Epileptic psychosis is a secondary psychosis caused by epilepsy, not primary psychosis, schizophrenia, or bipolar affective disorder."
       },
       {
         "code": "268622001",
         "term": "Chronic paranoid psychosis (disorder)",
-        "rationale": "Chronic paranoid psychosis is a primary psychotic disorder distinct from schizophrenia or bipolar affective disorder."
-      },
-      {
-        "code": "307417003",
-        "term": "Cycloid psychosis (disorder)",
-        "rationale": "Cycloid psychosis is a distinct primary psychotic disorder not equivalent to schizophrenia or bipolar affective disorder."
-      },
-      {
-        "code": "5464005",
-        "term": "Brief reactive psychosis (disorder)",
-        "rationale": "Brief reactive psychosis is a distinct primary psychotic disorder with different etiology and course than schizophrenia or bipolar affective disorder."
-      },
-      {
-        "code": "61831009",
-        "term": "Induced psychotic disorder (disorder)",
-        "rationale": "Induced psychotic disorder is a distinct primary psychotic disorder caused by external factors, not schizophrenia or bipolar affective disorder."
+        "rationale": "Chronic paranoid psychosis is a primary psychotic disorder but does not explicitly name schizophrenia or bipolar affective disorder in its term."
       },
       {
         "code": "278853003",
         "term": "Acute schizophrenia-like psychotic disorder (disorder)",
-        "rationale": "Acute schizophrenia-like psychotic disorder is a primary psychotic disorder distinct from schizophrenia itself."
+        "rationale": "Acute schizophrenia-like psychotic disorder is a primary psychotic disorder but does not explicitly name schizophrenia in its term."
+      },
+      {
+        "code": "307417003",
+        "term": "Cycloid psychosis (disorder)",
+        "rationale": "Cycloid psychosis is a primary psychotic disorder distinct from schizophrenia or bipolar affective disorder."
+      },
+      {
+        "code": "61831009",
+        "term": "Induced psychotic disorder (disorder)",
+        "rationale": "Induced psychotic disorder is a primary psychotic disorder distinct from schizophrenia or bipolar affective disorder."
+      },
+      {
+        "code": "441704009",
+        "term": "Affective psychosis (disorder)",
+        "rationale": "Affective psychosis is a primary psychotic disorder but does not explicitly name schizophrenia or bipolar affective disorder in its term."
       }
     ]
   },
@@ -14218,608 +14465,29 @@
     "count": 0,
     "codes": []
   },
-  "summary": "Recall: 46.0% (91 of 198 reference codes retrieved). Precision: 100.0%. F1: 63.0%. 9 reference codes were incorrectly excluded.",
-  "elapsed_seconds": 32.71,
+  "summary": "Recall: 18.2% (36 of 198 reference codes retrieved). Precision: 100.0%. F1: 30.8%. 64 reference codes were incorrectly excluded.",
+  "elapsed_seconds": 34.46,
   "pipeline_results_count": 100,
   "scored_codes": [
-    {
-      "code": "1089481000000106",
-      "term": "Cataleptic schizophrenia (disorder)",
-      "vocabulary": "SNOMED CT",
-      "decision": "include",
-      "confidence": 0.95,
-      "rationale": "Cataleptic schizophrenia is a specific subtype of schizophrenia, directly matching the query for schizophrenia as a comorbidity.",
-      "sources": [
-        "ChromaDB",
-        "OpenCodelists (bristol)",
-        "OpenCodelists (nhsd-primary-care-domain-refsets)",
-        "OpenCodelists (ons)",
-        "QOF Business Rules 2024-25"
-      ],
-      "usage_frequency": null
-    },
-    {
-      "code": "111483008",
-      "term": "Catatonic schizophrenia in remission (disorder)",
-      "vocabulary": "SNOMED CT",
-      "decision": "include",
-      "confidence": 0.95,
-      "rationale": "Catatonic schizophrenia in remission is a schizophrenia subtype with remission status, matching the schizophrenia comorbidity criterion.",
-      "sources": [
-        "ChromaDB",
-        "OpenCodelists (bristol)",
-        "OpenCodelists (nhsd-primary-care-domain-refsets)",
-        "OpenCodelists (ons)",
-        "QOF Business Rules 2024-25"
-      ],
-      "usage_frequency": null
-    },
-    {
-      "code": "111484002",
-      "term": "Undifferentiated schizophrenia (disorder)",
-      "vocabulary": "SNOMED CT",
-      "decision": "include",
-      "confidence": 0.95,
-      "rationale": "Undifferentiated schizophrenia is a recognized schizophrenia subtype, directly matching the schizophrenia comorbidity criterion.",
-      "sources": [
-        "ChromaDB",
-        "OpenCodelists (bristol)",
-        "OpenCodelists (nhsd-primary-care-domain-refsets)",
-        "OpenCodelists (ons)",
-        "QOF Business Rules 2024-25"
-      ],
-      "usage_frequency": null
-    },
-    {
-      "code": "111485001",
-      "term": "Mixed bipolar I disorder in full remission (disorder)",
-      "vocabulary": "SNOMED CT",
-      "decision": "include",
-      "confidence": 0.95,
-      "rationale": "Mixed bipolar I disorder in full remission is a bipolar affective disorder subtype, matching the bipolar affective disorder comorbidity criterion.",
-      "sources": [
-        "ChromaDB",
-        "OpenCodelists (bristol)",
-        "OpenCodelists (nhsd-primary-care-domain-refsets)",
-        "QOF Business Rules 2024-25"
-      ],
-      "usage_frequency": null
-    },
     {
       "code": "1127191000000108",
       "term": "First episode psychosis (finding)",
       "vocabulary": "SNOMED CT",
       "decision": "include",
       "confidence": 0.95,
-      "rationale": "First episode psychosis is a primary presentation of psychosis, directly matching the primary psychosis criterion.",
+      "rationale": "First episode psychosis directly represents an instance of the primary condition (psychosis).",
       "sources": [
         "ChromaDB",
         "OpenCodelists (nhsd-primary-care-domain-refsets)",
         "OpenCodelists (ons)",
         "QOF Business Rules 2024-25"
       ],
-      "usage_frequency": null
-    },
-    {
-      "code": "12939007",
-      "term": "Chronic disorganized schizophrenia (disorder)",
-      "vocabulary": "SNOMED CT",
-      "decision": "include",
-      "confidence": 0.95,
-      "rationale": "Chronic disorganized schizophrenia is a schizophrenia subtype, matching the schizophrenia comorbidity criterion.",
-      "sources": [
-        "ChromaDB",
-        "OpenCodelists (bristol)",
-        "OpenCodelists (nhsd-primary-care-domain-refsets)",
-        "OpenCodelists (ons)",
-        "QOF Business Rules 2024-25"
-      ],
-      "usage_frequency": null
-    },
-    {
-      "code": "13313007",
-      "term": "Mild bipolar disorder (disorder)",
-      "vocabulary": "SNOMED CT",
-      "decision": "include",
-      "confidence": 0.95,
-      "rationale": "Mild bipolar disorder is a bipolar affective disorder subtype, matching the bipolar affective disorder comorbidity criterion.",
-      "sources": [
-        "ChromaDB",
-        "OpenCodelists (bristol)",
-        "OpenCodelists (nhsd-primary-care-domain-refsets)",
-        "OpenCodelists (ons)",
-        "QOF Business Rules 2024-25"
-      ],
-      "usage_frequency": null
-    },
-    {
-      "code": "13746004",
-      "term": "Bipolar disorder (disorder)",
-      "vocabulary": "SNOMED CT",
-      "decision": "include",
-      "confidence": 0.95,
-      "rationale": "Bipolar disorder is the primary condition matching the bipolar affective disorder comorbidity criterion.",
-      "sources": [
-        "ChromaDB",
-        "OpenCodelists (bristol)",
-        "OpenCodelists (nhsd-primary-care-domain-refsets)",
-        "OpenCodelists (ons)",
-        "QOF Business Rules 2024-25"
-      ],
-      "usage_frequency": null
-    },
-    {
-      "code": "14291003",
-      "term": "Subchronic disorganized schizophrenia with acute exacerbations (disorder)",
-      "vocabulary": "SNOMED CT",
-      "decision": "include",
-      "confidence": 0.95,
-      "rationale": "Subchronic disorganized schizophrenia with acute exacerbations is a schizophrenia subtype, matching the schizophrenia comorbidity criterion.",
-      "sources": [
-        "ChromaDB",
-        "OpenCodelists (bristol)",
-        "OpenCodelists (nhsd-primary-care-domain-refsets)",
-        "OpenCodelists (ons)",
-        "QOF Business Rules 2024-25"
-      ],
-      "usage_frequency": null
-    },
-    {
-      "code": "1499003",
-      "term": "Bipolar I disorder, single manic episode with postpartum onset (disorder)",
-      "vocabulary": "SNOMED CT",
-      "decision": "include",
-      "confidence": 0.95,
-      "rationale": "Bipolar I disorder with postpartum onset is a bipolar affective disorder subtype, matching the bipolar affective disorder comorbidity criterion.",
-      "sources": [
-        "ChromaDB",
-        "OpenCodelists (bristol)",
-        "OpenCodelists (nhsd-primary-care-domain-refsets)",
-        "OpenCodelists (ons)",
-        "QOF Business Rules 2024-25"
-      ],
-      "usage_frequency": null
-    },
-    {
-      "code": "162004",
-      "term": "Severe manic bipolar I disorder without psychotic features (disorder)",
-      "vocabulary": "SNOMED CT",
-      "decision": "include",
-      "confidence": 0.95,
-      "rationale": "Severe manic bipolar I disorder is a bipolar affective disorder subtype, matching the bipolar affective disorder comorbidity criterion.",
-      "sources": [
-        "ChromaDB",
-        "OpenCodelists (bristol)",
-        "OpenCodelists (nhsd-primary-care-domain-refsets)",
-        "OpenCodelists (ons)",
-        "QOF Business Rules 2024-25"
-      ],
-      "usage_frequency": null
-    },
-    {
-      "code": "16506000",
-      "term": "Mixed bipolar I disorder (disorder)",
-      "vocabulary": "SNOMED CT",
-      "decision": "include",
-      "confidence": 0.95,
-      "rationale": "Mixed bipolar I disorder is a bipolar affective disorder subtype, matching the bipolar affective disorder comorbidity criterion.",
-      "sources": [
-        "ChromaDB",
-        "OpenCodelists (bristol)",
-        "OpenCodelists (nhsd-primary-care-domain-refsets)",
-        "OpenCodelists (ons)",
-        "QOF Business Rules 2024-25"
-      ],
-      "usage_frequency": null
-    },
-    {
-      "code": "16990005",
-      "term": "Subchronic schizophrenia (disorder)",
-      "vocabulary": "SNOMED CT",
-      "decision": "include",
-      "confidence": 0.95,
-      "rationale": "Subchronic schizophrenia is a schizophrenia subtype, matching the schizophrenia comorbidity criterion.",
-      "sources": [
-        "ChromaDB",
-        "OpenCodelists (bristol)",
-        "OpenCodelists (nhsd-primary-care-domain-refsets)",
-        "OpenCodelists (ons)",
-        "QOF Business Rules 2024-25"
-      ],
-      "usage_frequency": null
-    },
-    {
-      "code": "17782008",
-      "term": "Bipolar I disorder, most recent episode manic with catatonic features (disorder)",
-      "vocabulary": "SNOMED CT",
-      "decision": "include",
-      "confidence": 0.95,
-      "rationale": "Bipolar I disorder with manic episode and catatonic features is a bipolar affective disorder subtype, matching the bipolar affective disorder comorbidity criterion.",
-      "sources": [
-        "ChromaDB",
-        "OpenCodelists (bristol)",
-        "OpenCodelists (nhsd-primary-care-domain-refsets)",
-        "OpenCodelists (ons)",
-        "QOF Business Rules 2024-25"
-      ],
-      "usage_frequency": null
-    },
-    {
-      "code": "191525009",
-      "term": "Non-organic psychosis (disorder)",
-      "vocabulary": "SNOMED CT",
-      "decision": "include",
-      "confidence": 0.95,
-      "rationale": "Non-organic psychosis is a primary psychosis condition, matching the primary psychosis criterion.",
-      "sources": [
-        "ChromaDB",
-        "OpenCodelists (nhsd-primary-care-domain-refsets)",
-        "OpenCodelists (ons)",
-        "QOF Business Rules 2024-25"
-      ],
-      "usage_frequency": null
-    },
-    {
-      "code": "191526005",
-      "term": "Schizophrenic disorders (disorder)",
-      "vocabulary": "SNOMED CT",
-      "decision": "include",
-      "confidence": 0.95,
-      "rationale": "Schizophrenic disorders is a broad category encompassing schizophrenia, matching the schizophrenia comorbidity criterion.",
-      "sources": [
-        "ChromaDB",
-        "OpenCodelists (bristol)",
-        "OpenCodelists (nhsd-primary-care-domain-refsets)",
-        "OpenCodelists (ons)",
-        "QOF Business Rules 2024-25"
-      ],
-      "usage_frequency": null
-    },
-    {
-      "code": "191527001",
-      "term": "Simple schizophrenia (disorder)",
-      "vocabulary": "SNOMED CT",
-      "decision": "include",
-      "confidence": 0.95,
-      "rationale": "Simple schizophrenia is a schizophrenia subtype, matching the schizophrenia comorbidity criterion.",
-      "sources": [
-        "ChromaDB",
-        "OpenCodelists (bristol)",
-        "OpenCodelists (nhsd-primary-care-domain-refsets)",
-        "OpenCodelists (ons)",
-        "QOF Business Rules 2024-25"
-      ],
-      "usage_frequency": null
-    },
-    {
-      "code": "191531007",
-      "term": "Acute exacerbation of chronic schizophrenia (disorder)",
-      "vocabulary": "SNOMED CT",
-      "decision": "include",
-      "confidence": 0.95,
-      "rationale": "Acute exacerbation of chronic schizophrenia is a schizophrenia presentation, matching the schizophrenia comorbidity criterion.",
-      "sources": [
-        "ChromaDB",
-        "OpenCodelists (bristol)",
-        "OpenCodelists (nhsd-primary-care-domain-refsets)",
-        "OpenCodelists (ons)",
-        "QOF Business Rules 2024-25"
-      ],
-      "usage_frequency": null
-    },
-    {
-      "code": "191542003",
-      "term": "Catatonic schizophrenia (disorder)",
-      "vocabulary": "SNOMED CT",
-      "decision": "include",
-      "confidence": 0.95,
-      "rationale": "Catatonic schizophrenia is a schizophrenia subtype, matching the schizophrenia comorbidity criterion.",
-      "sources": [
-        "ChromaDB",
-        "OpenCodelists (bristol)",
-        "OpenCodelists (nhsd-primary-care-domain-refsets)",
-        "OpenCodelists (ons)",
-        "QOF Business Rules 2024-25"
-      ],
-      "usage_frequency": null
-    },
-    {
-      "code": "191555002",
-      "term": "Acute exacerbation of chronic paranoid schizophrenia (disorder)",
-      "vocabulary": "SNOMED CT",
-      "decision": "include",
-      "confidence": 0.95,
-      "rationale": "Acute exacerbation of chronic paranoid schizophrenia is a schizophrenia presentation, matching the schizophrenia comorbidity criterion.",
-      "sources": [
-        "ChromaDB",
-        "OpenCodelists (bristol)",
-        "OpenCodelists (nhsd-primary-care-domain-refsets)",
-        "OpenCodelists (ons)",
-        "QOF Business Rules 2024-25"
-      ],
-      "usage_frequency": null
-    },
-    {
-      "code": "191559008",
-      "term": "Latent schizophrenia (disorder)",
-      "vocabulary": "SNOMED CT",
-      "decision": "include",
-      "confidence": 0.95,
-      "rationale": "Latent schizophrenia is a schizophrenia subtype, matching the schizophrenia comorbidity criterion.",
-      "sources": [
-        "ChromaDB",
-        "OpenCodelists (nhsd-primary-care-domain-refsets)",
-        "OpenCodelists (ons)",
-        "QOF Business Rules 2024-25"
-      ],
-      "usage_frequency": null
-    },
-    {
-      "code": "191561004",
-      "term": "Subchronic latent schizophrenia (disorder)",
-      "vocabulary": "SNOMED CT",
-      "decision": "include",
-      "confidence": 0.95,
-      "rationale": "Subchronic latent schizophrenia is a schizophrenia subtype, matching the schizophrenia comorbidity criterion.",
-      "sources": [
-        "ChromaDB",
-        "OpenCodelists (nhsd-primary-care-domain-refsets)",
-        "OpenCodelists (ons)",
-        "QOF Business Rules 2024-25"
-      ],
-      "usage_frequency": null
-    },
-    {
-      "code": "191562006",
-      "term": "Chronic latent schizophrenia (disorder)",
-      "vocabulary": "SNOMED CT",
-      "decision": "include",
-      "confidence": 0.95,
-      "rationale": "Chronic latent schizophrenia is a schizophrenia subtype, matching the schizophrenia comorbidity criterion.",
-      "sources": [
-        "ChromaDB",
-        "OpenCodelists (nhsd-primary-care-domain-refsets)",
-        "OpenCodelists (ons)",
-        "QOF Business Rules 2024-25"
-      ],
-      "usage_frequency": null
-    },
-    {
-      "code": "191567000",
-      "term": "Schizoaffective schizophrenia (disorder)",
-      "vocabulary": "SNOMED CT",
-      "decision": "include",
-      "confidence": 0.95,
-      "rationale": "Schizoaffective schizophrenia is a schizophrenia-spectrum disorder, matching the schizophrenia comorbidity criterion.",
-      "sources": [
-        "ChromaDB",
-        "OpenCodelists (nhsd-primary-care-domain-refsets)",
-        "OpenCodelists (ons)",
-        "QOF Business Rules 2024-25"
-      ],
-      "usage_frequency": null
-    },
-    {
-      "code": "191569002",
-      "term": "Subchronic schizoaffective schizophrenia (disorder)",
-      "vocabulary": "SNOMED CT",
-      "decision": "include",
-      "confidence": 0.95,
-      "rationale": "Subchronic schizoaffective schizophrenia is a schizophrenia-spectrum disorder, matching the schizophrenia comorbidity criterion.",
-      "sources": [
-        "ChromaDB",
-        "OpenCodelists (nhsd-primary-care-domain-refsets)",
-        "OpenCodelists (ons)",
-        "QOF Business Rules 2024-25"
-      ],
-      "usage_frequency": null
-    },
-    {
-      "code": "191570001",
-      "term": "Chronic schizoaffective schizophrenia (disorder)",
-      "vocabulary": "SNOMED CT",
-      "decision": "include",
-      "confidence": 0.95,
-      "rationale": "Chronic schizoaffective schizophrenia is a schizophrenia-spectrum disorder, matching the schizophrenia comorbidity criterion.",
-      "sources": [
-        "ChromaDB",
-        "OpenCodelists (nhsd-primary-care-domain-refsets)",
-        "OpenCodelists (ons)",
-        "QOF Business Rules 2024-25"
-      ],
-      "usage_frequency": null
-    },
-    {
-      "code": "191572009",
-      "term": "Acute exacerbation of chronic schizoaffective schizophrenia (disorder)",
-      "vocabulary": "SNOMED CT",
-      "decision": "include",
-      "confidence": 0.95,
-      "rationale": "Acute exacerbation of chronic schizoaffective schizophrenia is a schizophrenia-spectrum presentation, matching the schizophrenia comorbidity criterion.",
-      "sources": [
-        "ChromaDB",
-        "OpenCodelists (nhsd-primary-care-domain-refsets)",
-        "OpenCodelists (ons)",
-        "QOF Business Rules 2024-25"
-      ],
-      "usage_frequency": null
-    },
-    {
-      "code": "191577003",
-      "term": "Cenesthopathic schizophrenia (disorder)",
-      "vocabulary": "SNOMED CT",
-      "decision": "include",
-      "confidence": 0.95,
-      "rationale": "Cenesthopathic schizophrenia is a schizophrenia subtype, matching the schizophrenia comorbidity criterion.",
-      "sources": [
-        "ChromaDB",
-        "OpenCodelists (bristol)",
-        "OpenCodelists (nhsd-primary-care-domain-refsets)",
-        "OpenCodelists (ons)",
-        "QOF Business Rules 2024-25"
-      ],
-      "usage_frequency": null
-    },
-    {
-      "code": "191618007",
-      "term": "Bipolar affective disorder, current episode manic (disorder)",
-      "vocabulary": "SNOMED CT",
-      "decision": "include",
-      "confidence": 0.95,
-      "rationale": "Bipolar affective disorder in manic episode is a bipolar affective disorder presentation, matching the bipolar affective disorder comorbidity criterion.",
-      "sources": [
-        "ChromaDB",
-        "OpenCodelists (bristol)",
-        "OpenCodelists (nhsd-primary-care-domain-refsets)",
-        "OpenCodelists (ons)",
-        "QOF Business Rules 2024-25"
-      ],
-      "usage_frequency": null
-    },
-    {
-      "code": "191620005",
-      "term": "Bipolar affective disorder, currently manic, mild (disorder)",
-      "vocabulary": "SNOMED CT",
-      "decision": "include",
-      "confidence": 0.95,
-      "rationale": "Bipolar affective disorder currently manic, mild is a bipolar affective disorder presentation, matching the bipolar affective disorder comorbidity criterion.",
-      "sources": [
-        "ChromaDB",
-        "OpenCodelists (bristol)",
-        "OpenCodelists (nhsd-primary-care-domain-refsets)",
-        "OpenCodelists (ons)",
-        "QOF Business Rules 2024-25"
-      ],
-      "usage_frequency": null
-    },
-    {
-      "code": "191621009",
-      "term": "Bipolar affective disorder, currently manic, moderate (disorder)",
-      "vocabulary": "SNOMED CT",
-      "decision": "include",
-      "confidence": 0.95,
-      "rationale": "Bipolar affective disorder currently manic, moderate is a bipolar affective disorder presentation, matching the bipolar affective disorder comorbidity criterion.",
-      "sources": [
-        "ChromaDB",
-        "OpenCodelists (bristol)",
-        "OpenCodelists (nhsd-primary-care-domain-refsets)",
-        "OpenCodelists (ons)",
-        "QOF Business Rules 2024-25"
-      ],
-      "usage_frequency": null
-    },
-    {
-      "code": "191623007",
-      "term": "Bipolar affective disorder, currently manic, severe, with psychosis (disorder)",
-      "vocabulary": "SNOMED CT",
-      "decision": "include",
-      "confidence": 0.95,
-      "rationale": "Bipolar affective disorder currently manic, severe with psychosis is a bipolar affective disorder presentation, matching the bipolar affective disorder comorbidity criterion.",
-      "sources": [
-        "ChromaDB",
-        "OMOPHub",
-        "OpenCodelists (bristol)",
-        "OpenCodelists (nhsd-primary-care-domain-refsets)",
-        "OpenCodelists (ons)",
-        "QOF Business Rules 2024-25"
-      ],
-      "usage_frequency": null
-    },
-    {
-      "code": "191625000",
-      "term": "Bipolar affective disorder, currently manic, in full remission (disorder)",
-      "vocabulary": "SNOMED CT",
-      "decision": "include",
-      "confidence": 0.95,
-      "rationale": "Bipolar affective disorder currently manic in full remission is a bipolar affective disorder presentation, matching the bipolar affective disorder comorbidity criterion.",
-      "sources": [
-        "ChromaDB",
-        "OpenCodelists (bristol)",
-        "OpenCodelists (nhsd-primary-care-domain-refsets)",
-        "OpenCodelists (ons)",
-        "QOF Business Rules 2024-25"
-      ],
-      "usage_frequency": null
-    },
-    {
-      "code": "191627008",
-      "term": "Bipolar affective disorder, current episode depression (disorder)",
-      "vocabulary": "SNOMED CT",
-      "decision": "include",
-      "confidence": 0.95,
-      "rationale": "Bipolar affective disorder in depressive episode is a bipolar affective disorder presentation, matching the bipolar affective disorder comorbidity criterion.",
-      "sources": [
-        "ChromaDB",
-        "OpenCodelists (bristol)",
-        "OpenCodelists (nhsd-primary-care-domain-refsets)",
-        "OpenCodelists (ons)",
-        "QOF Business Rules 2024-25"
-      ],
-      "usage_frequency": null
-    },
-    {
-      "code": "191629006",
-      "term": "Bipolar affective disorder, currently depressed, mild (disorder)",
-      "vocabulary": "SNOMED CT",
-      "decision": "include",
-      "confidence": 0.95,
-      "rationale": "Bipolar affective disorder currently depressed, mild is a bipolar affective disorder presentation, matching the bipolar affective disorder comorbidity criterion.",
-      "sources": [
-        "ChromaDB",
-        "OpenCodelists (bristol)",
-        "OpenCodelists (nhsd-primary-care-domain-refsets)",
-        "OpenCodelists (ons)",
-        "QOF Business Rules 2024-25"
-      ],
-      "usage_frequency": null
-    },
-    {
-      "code": "191630001",
-      "term": "Bipolar affective disorder, currently depressed, moderate (disorder)",
-      "vocabulary": "SNOMED CT",
-      "decision": "include",
-      "confidence": 0.95,
-      "rationale": "Bipolar affective disorder currently depressed, moderate is a bipolar affective disorder presentation, matching the bipolar affective disorder comorbidity criterion.",
-      "sources": [
-        "ChromaDB",
-        "OpenCodelists (bristol)",
-        "OpenCodelists (nhsd-primary-care-domain-refsets)",
-        "OpenCodelists (ons)",
-        "QOF Business Rules 2024-25"
-      ],
-      "usage_frequency": null
-    },
-    {
-      "code": "191634005",
-      "term": "Bipolar affective disorder, currently depressed, in full remission (disorder)",
-      "vocabulary": "SNOMED CT",
-      "decision": "include",
-      "confidence": 0.95,
-      "rationale": "Bipolar affective disorder currently depressed in full remission is a bipolar affective disorder presentation, matching the bipolar affective disorder comorbidity criterion.",
-      "sources": [
-        "ChromaDB",
-        "OpenCodelists (bristol)",
-        "OpenCodelists (nhsd-primary-care-domain-refsets)",
-        "OpenCodelists (ons)",
-        "QOF Business Rules 2024-25"
-      ],
-      "usage_frequency": null
-    },
-    {
-      "code": "191636007",
-      "term": "Mixed bipolar affective disorder (disorder)",
-      "vocabulary": "SNOMED CT",
-      "decision": "include",
-      "confidence": 0.95,
-      "rationale": "Mixed bipolar affective disorder is a bipolar affective disorder subtype, matching the bipolar affective disorder comorbidity criterion.",
-      "sources": [
-        "ChromaDB",
-        "OpenCodelists (bristol)",
-        "OpenCodelists (nhsd-primary-care-domain-refsets)",
-        "OpenCodelists (ons)",
-        "QOF Business Rules 2024-25"
-      ],
-      "usage_frequency": null
+      "usage_frequency": 6340,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "191638008",
@@ -14827,7 +14495,7 @@
       "vocabulary": "SNOMED CT",
       "decision": "include",
       "confidence": 0.95,
-      "rationale": "Mixed bipolar affective disorder, mild is a bipolar affective disorder subtype, matching the bipolar affective disorder comorbidity criterion.",
+      "rationale": "Mixed bipolar affective disorder, mild is a subtype of bipolar affective disorder, which is explicitly listed as a comorbidity criterion.",
       "sources": [
         "ChromaDB",
         "OpenCodelists (bristol)",
@@ -14835,7 +14503,12 @@
         "OpenCodelists (ons)",
         "QOF Business Rules 2024-25"
       ],
-      "usage_frequency": null
+      "usage_frequency": 60,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": 439249,
+      "dmd_level": null
     },
     {
       "code": "191639000",
@@ -14843,7 +14516,7 @@
       "vocabulary": "SNOMED CT",
       "decision": "include",
       "confidence": 0.95,
-      "rationale": "Mixed bipolar affective disorder, moderate is a bipolar affective disorder subtype, matching the bipolar affective disorder comorbidity criterion.",
+      "rationale": "Mixed bipolar affective disorder, moderate is a severity variant of bipolar affective disorder, which is explicitly listed as a comorbidity criterion.",
       "sources": [
         "ChromaDB",
         "OpenCodelists (bristol)",
@@ -14851,7 +14524,12 @@
         "OpenCodelists (ons)",
         "QOF Business Rules 2024-25"
       ],
-      "usage_frequency": null
+      "usage_frequency": 70,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": 439248,
+      "dmd_level": null
     },
     {
       "code": "191641004",
@@ -14859,7 +14537,7 @@
       "vocabulary": "SNOMED CT",
       "decision": "include",
       "confidence": 0.95,
-      "rationale": "Mixed bipolar affective disorder with psychosis is a direct instance of bipolar affective disorder (comorbidity) and explicitly contains psychosis in the term.",
+      "rationale": "Mixed bipolar affective disorder, severe, with psychosis is a severity variant of bipolar affective disorder, which is explicitly listed as a comorbidity criterion.",
       "sources": [
         "ChromaDB",
         "OpenCodelists (bristol)",
@@ -14867,7 +14545,12 @@
         "OpenCodelists (ons)",
         "QOF Business Rules 2024-25"
       ],
-      "usage_frequency": null
+      "usage_frequency": 160,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": 439246,
+      "dmd_level": null
     },
     {
       "code": "192362008",
@@ -14875,7 +14558,7 @@
       "vocabulary": "SNOMED CT",
       "decision": "include",
       "confidence": 0.95,
-      "rationale": "Bipolar affective disorder, current episode mixed is a direct instance of bipolar affective disorder (comorbidity).",
+      "rationale": "Bipolar affective disorder, current episode mixed is a clinical state of bipolar affective disorder, which is explicitly listed as a comorbidity criterion.",
       "sources": [
         "ChromaDB",
         "OpenCodelists (bristol)",
@@ -14883,7 +14566,12 @@
         "OpenCodelists (ons)",
         "QOF Business Rules 2024-25"
       ],
-      "usage_frequency": null
+      "usage_frequency": 430,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": 435226,
+      "dmd_level": null
     },
     {
       "code": "26025008",
@@ -14891,7 +14579,7 @@
       "vocabulary": "SNOMED CT",
       "decision": "include",
       "confidence": 0.95,
-      "rationale": "Residual schizophrenia is a clinical subtype of schizophrenia (comorbidity), representing a variant course of the condition.",
+      "rationale": "Residual schizophrenia is a subtype of schizophrenia, which is explicitly listed as a comorbidity criterion.",
       "sources": [
         "ChromaDB",
         "OpenCodelists (bristol)",
@@ -14899,7 +14587,12 @@
         "OpenCodelists (ons)",
         "QOF Business Rules 2024-25"
       ],
-      "usage_frequency": null
+      "usage_frequency": 270,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "268617001",
@@ -14907,7 +14600,7 @@
       "vocabulary": "SNOMED CT",
       "decision": "include",
       "confidence": 0.95,
-      "rationale": "Acute schizophrenic episode is a direct instance of schizophrenia (comorbidity), representing an acute presentation.",
+      "rationale": "Acute schizophrenic episode is a clinical state of schizophrenia, which is explicitly listed as a comorbidity criterion.",
       "sources": [
         "ChromaDB",
         "OpenCodelists (bristol)",
@@ -14915,7 +14608,12 @@
         "OpenCodelists (ons)",
         "QOF Business Rules 2024-25"
       ],
-      "usage_frequency": null
+      "usage_frequency": 290,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": 432864,
+      "dmd_level": null
     },
     {
       "code": "27387000",
@@ -14923,7 +14621,7 @@
       "vocabulary": "SNOMED CT",
       "decision": "include",
       "confidence": 0.95,
-      "rationale": "Subchronic disorganized schizophrenia is a clinical subtype of schizophrenia (comorbidity).",
+      "rationale": "Subchronic disorganized schizophrenia is a subtype of schizophrenia, which is explicitly listed as a comorbidity criterion.",
       "sources": [
         "ChromaDB",
         "OpenCodelists (bristol)",
@@ -14931,7 +14629,12 @@
         "OpenCodelists (ons)",
         "QOF Business Rules 2024-25"
       ],
-      "usage_frequency": null
+      "usage_frequency": null,
+      "usage_status": "not_in_dataset",
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "28663008",
@@ -14939,7 +14642,7 @@
       "vocabulary": "SNOMED CT",
       "decision": "include",
       "confidence": 0.95,
-      "rationale": "Severe manic bipolar I disorder with psychotic features is a direct instance of bipolar affective disorder (comorbidity) with psychosis.",
+      "rationale": "Severe manic bipolar I disorder with psychotic features is a subtype of bipolar affective disorder, which is explicitly listed as a comorbidity criterion.",
       "sources": [
         "ChromaDB",
         "OpenCodelists (bristol)",
@@ -14947,7 +14650,12 @@
         "OpenCodelists (ons)",
         "QOF Business Rules 2024-25"
       ],
-      "usage_frequency": null
+      "usage_frequency": 10,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": 4102603,
+      "dmd_level": null
     },
     {
       "code": "29599000",
@@ -14955,7 +14663,7 @@
       "vocabulary": "SNOMED CT",
       "decision": "include",
       "confidence": 0.95,
-      "rationale": "Chronic undifferentiated schizophrenia is a clinical subtype of schizophrenia (comorbidity).",
+      "rationale": "Chronic undifferentiated schizophrenia is a subtype of schizophrenia, which is explicitly listed as a comorbidity criterion.",
       "sources": [
         "ChromaDB",
         "OpenCodelists (bristol)",
@@ -14963,7 +14671,33 @@
         "OpenCodelists (ons)",
         "QOF Business Rules 2024-25"
       ],
-      "usage_frequency": null
+      "usage_frequency": null,
+      "usage_status": "withheld_below_5",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": 4105330,
+      "dmd_level": null
+    },
+    {
+      "code": "31373002",
+      "term": "Disorganized schizophrenia in remission (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Disorganized schizophrenia in remission is a remission state of schizophrenia, which is explicitly listed as a comorbidity criterion.",
+      "sources": [
+        "ChromaDB",
+        "OpenCodelists (bristol)",
+        "OpenCodelists (nhsd-primary-care-domain-refsets)",
+        "OpenCodelists (ons)",
+        "QOF Business Rules 2024-25"
+      ],
+      "usage_frequency": 20,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "31446002",
@@ -14971,7 +14705,7 @@
       "vocabulary": "SNOMED CT",
       "decision": "include",
       "confidence": 0.95,
-      "rationale": "Bipolar I disorder, most recent episode hypomanic is a direct instance of bipolar affective disorder (comorbidity).",
+      "rationale": "Bipolar I disorder, most recent episode hypomanic is a clinical state of bipolar affective disorder, which is explicitly listed as a comorbidity criterion.",
       "sources": [
         "ChromaDB",
         "OpenCodelists (bristol)",
@@ -14979,7 +14713,12 @@
         "OpenCodelists (ons)",
         "QOF Business Rules 2024-25"
       ],
-      "usage_frequency": null
+      "usage_frequency": 1610,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": 4150985,
+      "dmd_level": null
     },
     {
       "code": "31658008",
@@ -14987,7 +14726,7 @@
       "vocabulary": "SNOMED CT",
       "decision": "include",
       "confidence": 0.95,
-      "rationale": "Chronic paranoid schizophrenia is a clinical subtype of schizophrenia (comorbidity).",
+      "rationale": "Chronic paranoid schizophrenia is a subtype of schizophrenia, which is explicitly listed as a comorbidity criterion.",
       "sources": [
         "ChromaDB",
         "OpenCodelists (bristol)",
@@ -14995,7 +14734,12 @@
         "OpenCodelists (ons)",
         "QOF Business Rules 2024-25"
       ],
-      "usage_frequency": null
+      "usage_frequency": 1210,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "35218008",
@@ -15003,7 +14747,7 @@
       "vocabulary": "SNOMED CT",
       "decision": "include",
       "confidence": 0.95,
-      "rationale": "Chronic disorganized schizophrenia with acute exacerbation is a clinical variant of schizophrenia (comorbidity).",
+      "rationale": "Chronic disorganized schizophrenia with acute exacerbation is a subtype of schizophrenia, which is explicitly listed as a comorbidity criterion.",
       "sources": [
         "ChromaDB",
         "OpenCodelists (bristol)",
@@ -15011,7 +14755,12 @@
         "OpenCodelists (ons)",
         "QOF Business Rules 2024-25"
       ],
-      "usage_frequency": null
+      "usage_frequency": null,
+      "usage_status": "not_in_dataset",
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "35252006",
@@ -15019,7 +14768,7 @@
       "vocabulary": "SNOMED CT",
       "decision": "include",
       "confidence": 0.95,
-      "rationale": "Disorganized schizophrenia is a clinical subtype of schizophrenia (comorbidity).",
+      "rationale": "Disorganized schizophrenia is a subtype of schizophrenia, which is explicitly listed as a comorbidity criterion.",
       "sources": [
         "ChromaDB",
         "OpenCodelists (bristol)",
@@ -15027,7 +14776,12 @@
         "OpenCodelists (ons)",
         "QOF Business Rules 2024-25"
       ],
-      "usage_frequency": null
+      "usage_frequency": 810,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": 441828,
+      "dmd_level": null
     },
     {
       "code": "371596008",
@@ -15035,7 +14789,7 @@
       "vocabulary": "SNOMED CT",
       "decision": "include",
       "confidence": 0.95,
-      "rationale": "Bipolar I disorder is a direct instance of bipolar affective disorder (comorbidity).",
+      "rationale": "Bipolar I disorder is a major subtype of bipolar affective disorder, which is explicitly listed as a comorbidity criterion.",
       "sources": [
         "ChromaDB",
         "OpenCodelists (bristol)",
@@ -15043,7 +14797,12 @@
         "OpenCodelists (ons)",
         "QOF Business Rules 2024-25"
       ],
-      "usage_frequency": null
+      "usage_frequency": 1830,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": 432876,
+      "dmd_level": null
     },
     {
       "code": "416340002",
@@ -15051,7 +14810,7 @@
       "vocabulary": "SNOMED CT",
       "decision": "include",
       "confidence": 0.95,
-      "rationale": "Late onset schizophrenia is a clinical variant of schizophrenia (comorbidity) distinguished by age of onset.",
+      "rationale": "Late onset schizophrenia is a subtype of schizophrenia, which is explicitly listed as a comorbidity criterion.",
       "sources": [
         "ChromaDB",
         "OpenCodelists (bristol)",
@@ -15059,7 +14818,12 @@
         "OpenCodelists (ons)",
         "QOF Business Rules 2024-25"
       ],
-      "usage_frequency": null
+      "usage_frequency": 170,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "42868002",
@@ -15067,7 +14831,7 @@
       "vocabulary": "SNOMED CT",
       "decision": "include",
       "confidence": 0.95,
-      "rationale": "Subchronic catatonic schizophrenia is a clinical subtype of schizophrenia (comorbidity).",
+      "rationale": "Subchronic catatonic schizophrenia is a subtype of schizophrenia, which is explicitly listed as a comorbidity criterion.",
       "sources": [
         "ChromaDB",
         "OpenCodelists (bristol)",
@@ -15075,7 +14839,12 @@
         "OpenCodelists (ons)",
         "QOF Business Rules 2024-25"
       ],
-      "usage_frequency": null
+      "usage_frequency": null,
+      "usage_status": "withheld_below_5",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "4441000",
@@ -15083,7 +14852,7 @@
       "vocabulary": "SNOMED CT",
       "decision": "include",
       "confidence": 0.95,
-      "rationale": "Severe bipolar disorder with psychotic features is a direct instance of bipolar affective disorder (comorbidity) with psychosis.",
+      "rationale": "Severe bipolar disorder with psychotic features is a severity variant of bipolar affective disorder, which is explicitly listed as a comorbidity criterion.",
       "sources": [
         "ChromaDB",
         "OpenCodelists (bristol)",
@@ -15091,7 +14860,73 @@
         "OpenCodelists (ons)",
         "QOF Business Rules 2024-25"
       ],
-      "usage_frequency": null
+      "usage_frequency": 150,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": 4195158,
+      "dmd_level": null
+    },
+    {
+      "code": "4926007",
+      "term": "Schizophrenia in remission (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Schizophrenia in remission is a remission state of schizophrenia, which is explicitly listed as a comorbidity criterion.",
+      "sources": [
+        "ChromaDB",
+        "OpenCodelists (bristol)",
+        "OpenCodelists (nhsd-primary-care-domain-refsets)",
+        "QOF Business Rules 2024-25"
+      ],
+      "usage_frequency": 4870,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": null,
+      "dmd_level": null
+    },
+    {
+      "code": "53049002",
+      "term": "Severe bipolar disorder without psychotic features (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Severe bipolar disorder without psychotic features is a severity variant of bipolar affective disorder, which is explicitly listed as a comorbidity criterion.",
+      "sources": [
+        "ChromaDB",
+        "OpenCodelists (bristol)",
+        "OpenCodelists (nhsd-primary-care-domain-refsets)",
+        "OpenCodelists (ons)",
+        "QOF Business Rules 2024-25"
+      ],
+      "usage_frequency": 20,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": 4200385,
+      "dmd_level": null
+    },
+    {
+      "code": "53607008",
+      "term": "Depressed bipolar I disorder in remission (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Depressed bipolar I disorder in remission is a clinical state of bipolar affective disorder, which is explicitly listed as a comorbidity criterion.",
+      "sources": [
+        "ChromaDB",
+        "OpenCodelists (bristol)",
+        "OpenCodelists (nhsd-primary-care-domain-refsets)",
+        "QOF Business Rules 2024-25"
+      ],
+      "usage_frequency": 110,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "55516002",
@@ -15099,7 +14934,7 @@
       "vocabulary": "SNOMED CT",
       "decision": "include",
       "confidence": 0.95,
-      "rationale": "Bipolar I disorder, most recent episode manic with postpartum onset is a direct instance of bipolar affective disorder (comorbidity).",
+      "rationale": "Bipolar I disorder, most recent episode manic with postpartum onset is a clinical state of bipolar affective disorder, which is explicitly listed as a comorbidity criterion.",
       "sources": [
         "ChromaDB",
         "OpenCodelists (bristol)",
@@ -15107,7 +14942,12 @@
         "OpenCodelists (ons)",
         "QOF Business Rules 2024-25"
       ],
-      "usage_frequency": null
+      "usage_frequency": null,
+      "usage_status": "withheld_below_5",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": 4210024,
+      "dmd_level": null
     },
     {
       "code": "58214004",
@@ -15115,7 +14955,7 @@
       "vocabulary": "SNOMED CT",
       "decision": "include",
       "confidence": 0.95,
-      "rationale": "Schizophrenia is a direct instance of schizophrenia (comorbidity).",
+      "rationale": "Schizophrenia is the primary diagnosis explicitly listed as a comorbidity criterion.",
       "sources": [
         "ChromaDB",
         "OpenCodelists (bristol)",
@@ -15123,7 +14963,12 @@
         "OpenCodelists (ons)",
         "QOF Business Rules 2024-25"
       ],
-      "usage_frequency": null
+      "usage_frequency": 66200,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": 435783,
+      "dmd_level": null
     },
     {
       "code": "61403008",
@@ -15131,7 +14976,7 @@
       "vocabulary": "SNOMED CT",
       "decision": "include",
       "confidence": 0.95,
-      "rationale": "Severe depressed bipolar I disorder without psychotic features is a clinical variant of bipolar affective disorder (comorbidity).",
+      "rationale": "Severe depressed bipolar I disorder without psychotic features is a severity variant of bipolar affective disorder, which is explicitly listed as a comorbidity criterion.",
       "sources": [
         "ChromaDB",
         "OpenCodelists (bristol)",
@@ -15139,7 +14984,32 @@
         "OpenCodelists (ons)",
         "QOF Business Rules 2024-25"
       ],
-      "usage_frequency": null
+      "usage_frequency": 150,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": 442570,
+      "dmd_level": null
+    },
+    {
+      "code": "63249007",
+      "term": "Manic bipolar I disorder in partial remission (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Manic bipolar I disorder in partial remission is a clinical state of bipolar affective disorder, which is explicitly listed as a comorbidity criterion.",
+      "sources": [
+        "ChromaDB",
+        "OpenCodelists (bristol)",
+        "OpenCodelists (nhsd-primary-care-domain-refsets)",
+        "QOF Business Rules 2024-25"
+      ],
+      "usage_frequency": 40,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "64905009",
@@ -15147,7 +15017,7 @@
       "vocabulary": "SNOMED CT",
       "decision": "include",
       "confidence": 0.95,
-      "rationale": "Paranoid schizophrenia is a clinical subtype of schizophrenia (comorbidity).",
+      "rationale": "Paranoid schizophrenia is a subtype of schizophrenia, which is explicitly listed as a comorbidity criterion.",
       "sources": [
         "ChromaDB",
         "OpenCodelists (bristol)",
@@ -15155,23 +15025,12 @@
         "OpenCodelists (ons)",
         "QOF Business Rules 2024-25"
       ],
-      "usage_frequency": null
-    },
-    {
-      "code": "68995007",
-      "term": "Chronic catatonic schizophrenia (disorder)",
-      "vocabulary": "SNOMED CT",
-      "decision": "include",
-      "confidence": 0.95,
-      "rationale": "Chronic catatonic schizophrenia is a specific subtype of schizophrenia, which is explicitly listed as a comorbidity in the query.",
-      "sources": [
-        "ChromaDB",
-        "OpenCodelists (bristol)",
-        "OpenCodelists (nhsd-primary-care-domain-refsets)",
-        "OpenCodelists (ons)",
-        "QOF Business Rules 2024-25"
-      ],
-      "usage_frequency": null
+      "usage_frequency": 98090,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": 433450,
+      "dmd_level": null
     },
     {
       "code": "69322001",
@@ -15179,269 +15038,39 @@
       "vocabulary": "SNOMED CT",
       "decision": "include",
       "confidence": 0.95,
-      "rationale": "Psychotic disorder is a primary condition matching the 'Psychosis (primary)' component of the query.",
+      "rationale": "Psychotic disorder is a direct instance of the primary condition 'psychosis' and should be included.",
       "sources": [
         "ChromaDB",
         "OpenCodelists (nhsd-primary-care-domain-refsets)",
         "OpenCodelists (ons)",
         "QOF Business Rules 2024-25"
       ],
-      "usage_frequency": null
+      "usage_frequency": 65230,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
-      "code": "71103003",
-      "term": "Chronic residual schizophrenia (disorder)",
+      "code": "191525009",
+      "term": "Non-organic psychosis (disorder)",
       "vocabulary": "SNOMED CT",
       "decision": "include",
-      "confidence": 0.95,
-      "rationale": "Chronic residual schizophrenia is a specific subtype of schizophrenia, which is explicitly listed as a comorbidity in the query.",
+      "confidence": 0.9,
+      "rationale": "Non-organic psychosis directly represents an instance of the primary condition (psychosis).",
       "sources": [
         "ChromaDB",
-        "OpenCodelists (bristol)",
         "OpenCodelists (nhsd-primary-care-domain-refsets)",
         "OpenCodelists (ons)",
         "QOF Business Rules 2024-25"
       ],
-      "usage_frequency": null
-    },
-    {
-      "code": "760721000000109",
-      "term": "Mixed bipolar affective disorder, in partial remission (disorder)",
-      "vocabulary": "SNOMED CT",
-      "decision": "include",
-      "confidence": 0.95,
-      "rationale": "Mixed bipolar affective disorder in partial remission is a severity variant of bipolar affective disorder, which is explicitly listed as a comorbidity in the query.",
-      "sources": [
-        "ChromaDB",
-        "OpenCodelists (bristol)",
-        "OpenCodelists (nhsd-primary-care-domain-refsets)",
-        "QOF Business Rules 2024-25"
-      ],
-      "usage_frequency": null
-    },
-    {
-      "code": "764591000000108",
-      "term": "Mixed bipolar affective disorder, severe (disorder)",
-      "vocabulary": "SNOMED CT",
-      "decision": "include",
-      "confidence": 0.95,
-      "rationale": "Mixed bipolar affective disorder, severe is a severity variant of bipolar affective disorder, which is explicitly listed as a comorbidity in the query.",
-      "sources": [
-        "ChromaDB",
-        "OpenCodelists (bristol)",
-        "OpenCodelists (nhsd-primary-care-domain-refsets)",
-        "OpenCodelists (ons)",
-        "QOF Business Rules 2024-25"
-      ],
-      "usage_frequency": null
-    },
-    {
-      "code": "76566000",
-      "term": "Subchronic residual schizophrenia (disorder)",
-      "vocabulary": "SNOMED CT",
-      "decision": "include",
-      "confidence": 0.95,
-      "rationale": "Subchronic residual schizophrenia is a specific subtype of schizophrenia, which is explicitly listed as a comorbidity in the query.",
-      "sources": [
-        "ChromaDB",
-        "OpenCodelists (bristol)",
-        "OpenCodelists (nhsd-primary-care-domain-refsets)",
-        "OpenCodelists (ons)",
-        "QOF Business Rules 2024-25"
-      ],
-      "usage_frequency": null
-    },
-    {
-      "code": "767631007",
-      "term": "Bipolar disorder, most recent episode depression (disorder)",
-      "vocabulary": "SNOMED CT",
-      "decision": "include",
-      "confidence": 0.95,
-      "rationale": "Bipolar disorder with most recent episode depression is a clinical subtype of bipolar affective disorder, which is explicitly listed as a comorbidity in the query.",
-      "sources": [
-        "ChromaDB",
-        "OpenCodelists (bristol)",
-        "OpenCodelists (nhsd-primary-care-domain-refsets)",
-        "OpenCodelists (ons)",
-        "QOF Business Rules 2024-25"
-      ],
-      "usage_frequency": null
-    },
-    {
-      "code": "767632000",
-      "term": "Bipolar disorder, most recent episode manic (disorder)",
-      "vocabulary": "SNOMED CT",
-      "decision": "include",
-      "confidence": 0.95,
-      "rationale": "Bipolar disorder with most recent episode manic is a clinical subtype of bipolar affective disorder, which is explicitly listed as a comorbidity in the query.",
-      "sources": [
-        "ChromaDB",
-        "OpenCodelists (bristol)",
-        "OpenCodelists (nhsd-primary-care-domain-refsets)",
-        "OpenCodelists (ons)",
-        "QOF Business Rules 2024-25"
-      ],
-      "usage_frequency": null
-    },
-    {
-      "code": "767633005",
-      "term": "Bipolar affective disorder, most recent episode mixed (disorder)",
-      "vocabulary": "SNOMED CT",
-      "decision": "include",
-      "confidence": 0.95,
-      "rationale": "Bipolar affective disorder with most recent episode mixed is a clinical subtype of bipolar affective disorder, which is explicitly listed as a comorbidity in the query.",
-      "sources": [
-        "ChromaDB",
-        "OpenCodelists (bristol)",
-        "OpenCodelists (nhsd-primary-care-domain-refsets)",
-        "OpenCodelists (ons)",
-        "QOF Business Rules 2024-25"
-      ],
-      "usage_frequency": null
-    },
-    {
-      "code": "767635003",
-      "term": "Bipolar I disorder, most recent episode manic (disorder)",
-      "vocabulary": "SNOMED CT",
-      "decision": "include",
-      "confidence": 0.95,
-      "rationale": "Bipolar I disorder with most recent episode manic is a clinical subtype of bipolar affective disorder, which is explicitly listed as a comorbidity in the query.",
-      "sources": [
-        "ChromaDB",
-        "OpenCodelists (bristol)",
-        "OpenCodelists (nhsd-primary-care-domain-refsets)",
-        "OpenCodelists (ons)",
-        "QOF Business Rules 2024-25"
-      ],
-      "usage_frequency": null
-    },
-    {
-      "code": "767636002",
-      "term": "Bipolar I disorder, most recent episode depression (disorder)",
-      "vocabulary": "SNOMED CT",
-      "decision": "include",
-      "confidence": 0.95,
-      "rationale": "Bipolar I disorder with most recent episode depression is a clinical subtype of bipolar affective disorder, which is explicitly listed as a comorbidity in the query.",
-      "sources": [
-        "ChromaDB",
-        "OpenCodelists (bristol)",
-        "OpenCodelists (nhsd-primary-care-domain-refsets)",
-        "OpenCodelists (ons)",
-        "QOF Business Rules 2024-25"
-      ],
-      "usage_frequency": null
-    },
-    {
-      "code": "789061003",
-      "term": "Rapid cycling bipolar II disorder (disorder)",
-      "vocabulary": "SNOMED CT",
-      "decision": "include",
-      "confidence": 0.95,
-      "rationale": "Rapid cycling bipolar II disorder is a clinical subtype of bipolar affective disorder, which is explicitly listed as a comorbidity in the query.",
-      "sources": [
-        "ChromaDB",
-        "OpenCodelists (bristol)",
-        "OpenCodelists (nhsd-primary-care-domain-refsets)",
-        "OpenCodelists (ons)",
-        "QOF Business Rules 2024-25"
-      ],
-      "usage_frequency": null
-    },
-    {
-      "code": "79584002",
-      "term": "Moderate bipolar disorder (disorder)",
-      "vocabulary": "SNOMED CT",
-      "decision": "include",
-      "confidence": 0.95,
-      "rationale": "Moderate bipolar disorder is a severity variant of bipolar affective disorder, which is explicitly listed as a comorbidity in the query.",
-      "sources": [
-        "ChromaDB",
-        "OpenCodelists (bristol)",
-        "OpenCodelists (nhsd-primary-care-domain-refsets)",
-        "OpenCodelists (ons)",
-        "QOF Business Rules 2024-25"
-      ],
-      "usage_frequency": null
-    },
-    {
-      "code": "79866005",
-      "term": "Subchronic paranoid schizophrenia (disorder)",
-      "vocabulary": "SNOMED CT",
-      "decision": "include",
-      "confidence": 0.95,
-      "rationale": "Subchronic paranoid schizophrenia is a specific subtype of schizophrenia, which is explicitly listed as a comorbidity in the query.",
-      "sources": [
-        "ChromaDB",
-        "OpenCodelists (bristol)",
-        "OpenCodelists (nhsd-primary-care-domain-refsets)",
-        "OpenCodelists (ons)",
-        "QOF Business Rules 2024-25"
-      ],
-      "usage_frequency": null
-    },
-    {
-      "code": "83225003",
-      "term": "Bipolar II disorder (disorder)",
-      "vocabulary": "SNOMED CT",
-      "decision": "include",
-      "confidence": 0.95,
-      "rationale": "Bipolar II disorder is a clinical subtype of bipolar affective disorder, which is explicitly listed as a comorbidity in the query.",
-      "sources": [
-        "ChromaDB",
-        "OpenCodelists (bristol)",
-        "OpenCodelists (nhsd-primary-care-domain-refsets)",
-        "OpenCodelists (ons)",
-        "QOF Business Rules 2024-25"
-      ],
-      "usage_frequency": null
-    },
-    {
-      "code": "83746006",
-      "term": "Chronic schizophrenia (disorder)",
-      "vocabulary": "SNOMED CT",
-      "decision": "include",
-      "confidence": 0.95,
-      "rationale": "Chronic schizophrenia is a specific subtype of schizophrenia, which is explicitly listed as a comorbidity in the query.",
-      "sources": [
-        "ChromaDB",
-        "OpenCodelists (bristol)",
-        "OpenCodelists (nhsd-primary-care-domain-refsets)",
-        "OpenCodelists (ons)",
-        "QOF Business Rules 2024-25"
-      ],
-      "usage_frequency": null
-    },
-    {
-      "code": "85861002",
-      "term": "Subchronic undifferentiated schizophrenia (disorder)",
-      "vocabulary": "SNOMED CT",
-      "decision": "include",
-      "confidence": 0.95,
-      "rationale": "Subchronic undifferentiated schizophrenia is a specific subtype of schizophrenia, which is explicitly listed as a comorbidity in the query.",
-      "sources": [
-        "ChromaDB",
-        "OpenCodelists (bristol)",
-        "OpenCodelists (nhsd-primary-care-domain-refsets)",
-        "OpenCodelists (ons)",
-        "QOF Business Rules 2024-25"
-      ],
-      "usage_frequency": null
-    },
-    {
-      "code": "87950005",
-      "term": "Bipolar I disorder, single manic episode with catatonic features (disorder)",
-      "vocabulary": "SNOMED CT",
-      "decision": "include",
-      "confidence": 0.95,
-      "rationale": "Bipolar I disorder with single manic episode and catatonic features is a clinical subtype of bipolar affective disorder, which is explicitly listed as a comorbidity in the query.",
-      "sources": [
-        "ChromaDB",
-        "OpenCodelists (bristol)",
-        "OpenCodelists (nhsd-primary-care-domain-refsets)",
-        "OpenCodelists (ons)",
-        "QOF Business Rules 2024-25"
-      ],
-      "usage_frequency": null
+      "usage_frequency": 20830,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "191643001",
@@ -15449,14 +15078,39 @@
       "vocabulary": "SNOMED CT",
       "decision": "include",
       "confidence": 0.9,
-      "rationale": "Mixed bipolar affective disorder in remission is a clinical variant of bipolar affective disorder (comorbidity), representing the same condition in remission state.",
+      "rationale": "Mixed bipolar affective disorder, in full remission is a remission state of bipolar affective disorder, which is explicitly listed as a comorbidity criterion.",
       "sources": [
         "ChromaDB",
         "OpenCodelists (bristol)",
         "OpenCodelists (nhsd-primary-care-domain-refsets)",
         "QOF Business Rules 2024-25"
       ],
-      "usage_frequency": null
+      "usage_frequency": 1450,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": null,
+      "dmd_level": null
+    },
+    {
+      "code": "191658009",
+      "term": "Atypical manic disorder (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.9,
+      "rationale": "Atypical manic disorder is a clinical variant of bipolar affective disorder, which is explicitly listed as a comorbidity criterion.",
+      "sources": [
+        "ChromaDB",
+        "OpenCodelists (nhsd-primary-care-domain-refsets)",
+        "OpenCodelists (ons)",
+        "QOF Business Rules 2024-25"
+      ],
+      "usage_frequency": 20,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "231494001",
@@ -15464,22 +15118,27 @@
       "vocabulary": "SNOMED CT",
       "decision": "include",
       "confidence": 0.9,
-      "rationale": "Mania is a core clinical manifestation of bipolar affective disorder (comorbidity) and represents an acute episode of the condition.",
+      "rationale": "Mania is a core manifestation of bipolar affective disorder, which is explicitly listed as a comorbidity criterion.",
       "sources": [
         "ChromaDB",
         "OpenCodelists (nhsd-primary-care-domain-refsets)",
         "OpenCodelists (ons)",
         "QOF Business Rules 2024-25"
       ],
-      "usage_frequency": null
+      "usage_frequency": 2680,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
-      "code": "31373002",
-      "term": "Disorganized schizophrenia in remission (disorder)",
+      "code": "247804008",
+      "term": "Schizophrenic prodrome (disorder)",
       "vocabulary": "SNOMED CT",
       "decision": "include",
       "confidence": 0.9,
-      "rationale": "Disorganized schizophrenia in remission is a clinical variant of schizophrenia (comorbidity) in remission state.",
+      "rationale": "Schizophrenic prodrome is a clinical stage of schizophrenia, which is explicitly listed as a comorbidity criterion.",
       "sources": [
         "ChromaDB",
         "OpenCodelists (bristol)",
@@ -15487,7 +15146,32 @@
         "OpenCodelists (ons)",
         "QOF Business Rules 2024-25"
       ],
-      "usage_frequency": null
+      "usage_frequency": 40,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": null,
+      "dmd_level": null
+    },
+    {
+      "code": "274952002",
+      "term": "Borderline schizophrenia (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.9,
+      "rationale": "Borderline schizophrenia is a clinical variant of schizophrenia, which is explicitly listed as a comorbidity criterion.",
+      "sources": [
+        "ChromaDB",
+        "OpenCodelists (nhsd-primary-care-domain-refsets)",
+        "OpenCodelists (ons)",
+        "QOF Business Rules 2024-25"
+      ],
+      "usage_frequency": 40,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "38368003",
@@ -15495,7 +15179,7 @@
       "vocabulary": "SNOMED CT",
       "decision": "include",
       "confidence": 0.9,
-      "rationale": "Schizoaffective disorder, bipolar type combines schizophrenic and bipolar features, relevant to both schizophrenia and bipolar affective disorder comorbidities.",
+      "rationale": "Schizoaffective disorder, bipolar type combines schizophrenia and bipolar features; both are explicitly listed as comorbidity criteria.",
       "sources": [
         "ChromaDB",
         "OpenCodelists (bristol)",
@@ -15503,53 +15187,12 @@
         "OpenCodelists (ons)",
         "QOF Business Rules 2024-25"
       ],
-      "usage_frequency": null
-    },
-    {
-      "code": "53049002",
-      "term": "Severe bipolar disorder without psychotic features (disorder)",
-      "vocabulary": "SNOMED CT",
-      "decision": "include",
-      "confidence": 0.9,
-      "rationale": "Severe bipolar disorder without psychotic features is a clinical variant of bipolar affective disorder (comorbidity).",
-      "sources": [
-        "ChromaDB",
-        "OpenCodelists (bristol)",
-        "OpenCodelists (nhsd-primary-care-domain-refsets)",
-        "OpenCodelists (ons)",
-        "QOF Business Rules 2024-25"
-      ],
-      "usage_frequency": null
-    },
-    {
-      "code": "53607008",
-      "term": "Depressed bipolar I disorder in remission (disorder)",
-      "vocabulary": "SNOMED CT",
-      "decision": "include",
-      "confidence": 0.9,
-      "rationale": "Depressed bipolar I disorder in remission is a clinical variant of bipolar affective disorder (comorbidity) in remission.",
-      "sources": [
-        "ChromaDB",
-        "OpenCodelists (bristol)",
-        "OpenCodelists (nhsd-primary-care-domain-refsets)",
-        "QOF Business Rules 2024-25"
-      ],
-      "usage_frequency": null
-    },
-    {
-      "code": "63249007",
-      "term": "Manic bipolar I disorder in partial remission (disorder)",
-      "vocabulary": "SNOMED CT",
-      "decision": "include",
-      "confidence": 0.9,
-      "rationale": "Manic bipolar I disorder in partial remission is a clinical variant of bipolar affective disorder (comorbidity).",
-      "sources": [
-        "ChromaDB",
-        "OpenCodelists (bristol)",
-        "OpenCodelists (nhsd-primary-care-domain-refsets)",
-        "QOF Business Rules 2024-25"
-      ],
-      "usage_frequency": null
+      "usage_frequency": 220,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": 4244078,
+      "dmd_level": null
     },
     {
       "code": "765176007",
@@ -15557,7 +15200,7 @@
       "vocabulary": "SNOMED CT",
       "decision": "include",
       "confidence": 0.9,
-      "rationale": "This code explicitly names both psychosis and bipolar affective disorder in its term, representing a manifestation of bipolar disorder that includes psychotic features.",
+      "rationale": "This code explicitly names 'psychosis' in the term and represents an instance of the primary condition, despite also mentioning bipolar affective disorder.",
       "sources": [
         "ChromaDB",
         "OpenCodelists (bristol)",
@@ -15565,45 +15208,1142 @@
         "OpenCodelists (ons)",
         "QOF Business Rules 2024-25"
       ],
-      "usage_frequency": null
+      "usage_frequency": 240,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": 35622934,
+      "dmd_level": null
+    },
+    {
+      "code": "1089481000000106",
+      "term": "Cataleptic schizophrenia (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.95,
+      "rationale": "Cataleptic schizophrenia is a subtype of schizophrenia, which is listed as a comorbidity (not primary condition), so it should be excluded.",
+      "sources": [
+        "ChromaDB",
+        "OpenCodelists (bristol)",
+        "OpenCodelists (nhsd-primary-care-domain-refsets)",
+        "OpenCodelists (ons)",
+        "QOF Business Rules 2024-25"
+      ],
+      "usage_frequency": null,
+      "usage_status": "withheld_below_5",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": 35610094,
+      "dmd_level": null
+    },
+    {
+      "code": "111483008",
+      "term": "Catatonic schizophrenia in remission (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.95,
+      "rationale": "Catatonic schizophrenia in remission is a schizophrenia subtype in remission, which is a comorbidity, not the primary condition (psychosis).",
+      "sources": [
+        "ChromaDB",
+        "OpenCodelists (bristol)",
+        "OpenCodelists (nhsd-primary-care-domain-refsets)",
+        "OpenCodelists (ons)",
+        "QOF Business Rules 2024-25"
+      ],
+      "usage_frequency": 60,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": null,
+      "dmd_level": null
+    },
+    {
+      "code": "111484002",
+      "term": "Undifferentiated schizophrenia (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.95,
+      "rationale": "Undifferentiated schizophrenia is a schizophrenia subtype, which is listed as a comorbidity, not the primary condition.",
+      "sources": [
+        "ChromaDB",
+        "OpenCodelists (bristol)",
+        "OpenCodelists (nhsd-primary-care-domain-refsets)",
+        "OpenCodelists (ons)",
+        "QOF Business Rules 2024-25"
+      ],
+      "usage_frequency": 330,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": 4008566,
+      "dmd_level": null
+    },
+    {
+      "code": "111485001",
+      "term": "Mixed bipolar I disorder in full remission (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.95,
+      "rationale": "Mixed bipolar I disorder in full remission is a bipolar affective disorder subtype, which is listed as a comorbidity, not the primary condition.",
+      "sources": [
+        "ChromaDB",
+        "OpenCodelists (bristol)",
+        "OpenCodelists (nhsd-primary-care-domain-refsets)",
+        "QOF Business Rules 2024-25"
+      ],
+      "usage_frequency": 140,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": null,
+      "dmd_level": null
+    },
+    {
+      "code": "12939007",
+      "term": "Chronic disorganized schizophrenia (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.95,
+      "rationale": "Chronic disorganized schizophrenia is a schizophrenia subtype, which is listed as a comorbidity, not the primary condition.",
+      "sources": [
+        "ChromaDB",
+        "OpenCodelists (bristol)",
+        "OpenCodelists (nhsd-primary-care-domain-refsets)",
+        "OpenCodelists (ons)",
+        "QOF Business Rules 2024-25"
+      ],
+      "usage_frequency": 10,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": 440368,
+      "dmd_level": null
+    },
+    {
+      "code": "13313007",
+      "term": "Mild bipolar disorder (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.95,
+      "rationale": "Mild bipolar disorder is a bipolar affective disorder subtype, which is listed as a comorbidity, not the primary condition.",
+      "sources": [
+        "ChromaDB",
+        "OpenCodelists (bristol)",
+        "OpenCodelists (nhsd-primary-care-domain-refsets)",
+        "OpenCodelists (ons)",
+        "QOF Business Rules 2024-25"
+      ],
+      "usage_frequency": 130,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": 4028027,
+      "dmd_level": null
+    },
+    {
+      "code": "13746004",
+      "term": "Bipolar disorder (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.95,
+      "rationale": "Bipolar disorder is listed as a comorbidity in the query, not the primary condition (psychosis).",
+      "sources": [
+        "ChromaDB",
+        "OpenCodelists (bristol)",
+        "OpenCodelists (nhsd-primary-care-domain-refsets)",
+        "OpenCodelists (ons)",
+        "QOF Business Rules 2024-25"
+      ],
+      "usage_frequency": 173830,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": 436665,
+      "dmd_level": null
+    },
+    {
+      "code": "14291003",
+      "term": "Subchronic disorganized schizophrenia with acute exacerbations (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.95,
+      "rationale": "Subchronic disorganized schizophrenia with acute exacerbations is a schizophrenia subtype, which is listed as a comorbidity, not the primary condition.",
+      "sources": [
+        "ChromaDB",
+        "OpenCodelists (bristol)",
+        "OpenCodelists (nhsd-primary-care-domain-refsets)",
+        "OpenCodelists (ons)",
+        "QOF Business Rules 2024-25"
+      ],
+      "usage_frequency": null,
+      "usage_status": "withheld_below_5",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": null,
+      "dmd_level": null
+    },
+    {
+      "code": "1499003",
+      "term": "Bipolar I disorder, single manic episode with postpartum onset (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.95,
+      "rationale": "Bipolar I disorder, single manic episode with postpartum onset is a bipolar affective disorder subtype, which is listed as a comorbidity, not the primary condition.",
+      "sources": [
+        "ChromaDB",
+        "OpenCodelists (bristol)",
+        "OpenCodelists (nhsd-primary-care-domain-refsets)",
+        "OpenCodelists (ons)",
+        "QOF Business Rules 2024-25"
+      ],
+      "usage_frequency": null,
+      "usage_status": "not_in_dataset",
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": 4033390,
+      "dmd_level": null
+    },
+    {
+      "code": "162004",
+      "term": "Severe manic bipolar I disorder without psychotic features (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.95,
+      "rationale": "Severe manic bipolar I disorder without psychotic features is a bipolar affective disorder subtype, which is listed as a comorbidity, not the primary condition.",
+      "sources": [
+        "ChromaDB",
+        "OpenCodelists (bristol)",
+        "OpenCodelists (nhsd-primary-care-domain-refsets)",
+        "OpenCodelists (ons)",
+        "QOF Business Rules 2024-25"
+      ],
+      "usage_frequency": 50,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": 443797,
+      "dmd_level": null
+    },
+    {
+      "code": "16506000",
+      "term": "Mixed bipolar I disorder (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.95,
+      "rationale": "Mixed bipolar I disorder is a bipolar affective disorder subtype, which is listed as a comorbidity, not the primary condition.",
+      "sources": [
+        "ChromaDB",
+        "OpenCodelists (bristol)",
+        "OpenCodelists (nhsd-primary-care-domain-refsets)",
+        "OpenCodelists (ons)",
+        "QOF Business Rules 2024-25"
+      ],
+      "usage_frequency": 40,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": 443906,
+      "dmd_level": null
+    },
+    {
+      "code": "16990005",
+      "term": "Subchronic schizophrenia (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.95,
+      "rationale": "Subchronic schizophrenia is a schizophrenia subtype, which is listed as a comorbidity, not the primary condition.",
+      "sources": [
+        "ChromaDB",
+        "OpenCodelists (bristol)",
+        "OpenCodelists (nhsd-primary-care-domain-refsets)",
+        "OpenCodelists (ons)",
+        "QOF Business Rules 2024-25"
+      ],
+      "usage_frequency": null,
+      "usage_status": "not_in_dataset",
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": 440373,
+      "dmd_level": null
+    },
+    {
+      "code": "17782008",
+      "term": "Bipolar I disorder, most recent episode manic with catatonic features (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.95,
+      "rationale": "Bipolar I disorder, most recent episode manic with catatonic features is a bipolar affective disorder subtype, which is listed as a comorbidity, not the primary condition.",
+      "sources": [
+        "ChromaDB",
+        "OpenCodelists (bristol)",
+        "OpenCodelists (nhsd-primary-care-domain-refsets)",
+        "OpenCodelists (ons)",
+        "QOF Business Rules 2024-25"
+      ],
+      "usage_frequency": 10,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": 4073401,
+      "dmd_level": null
+    },
+    {
+      "code": "191526005",
+      "term": "Schizophrenic disorders (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.95,
+      "rationale": "Schizophrenic disorders is a schizophrenia category, which is listed as a comorbidity, not the primary condition.",
+      "sources": [
+        "ChromaDB",
+        "OpenCodelists (bristol)",
+        "OpenCodelists (nhsd-primary-care-domain-refsets)",
+        "OpenCodelists (ons)",
+        "QOF Business Rules 2024-25"
+      ],
+      "usage_frequency": 32210,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": null,
+      "dmd_level": null
+    },
+    {
+      "code": "191527001",
+      "term": "Simple schizophrenia (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.95,
+      "rationale": "Simple schizophrenia is a schizophrenia subtype, which is listed as a comorbidity, not the primary condition.",
+      "sources": [
+        "ChromaDB",
+        "OpenCodelists (bristol)",
+        "OpenCodelists (nhsd-primary-care-domain-refsets)",
+        "OpenCodelists (ons)",
+        "QOF Business Rules 2024-25"
+      ],
+      "usage_frequency": 2250,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": 436067,
+      "dmd_level": null
+    },
+    {
+      "code": "191531007",
+      "term": "Acute exacerbation of chronic schizophrenia (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.95,
+      "rationale": "Acute exacerbation of chronic schizophrenia is a schizophrenia subtype, which is listed as a comorbidity, not the primary condition.",
+      "sources": [
+        "ChromaDB",
+        "OpenCodelists (bristol)",
+        "OpenCodelists (nhsd-primary-care-domain-refsets)",
+        "OpenCodelists (ons)",
+        "QOF Business Rules 2024-25"
+      ],
+      "usage_frequency": 120,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": null,
+      "dmd_level": null
+    },
+    {
+      "code": "191542003",
+      "term": "Catatonic schizophrenia (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.95,
+      "rationale": "Catatonic schizophrenia is a schizophrenia subtype, which is listed as a comorbidity, not the primary condition.",
+      "sources": [
+        "ChromaDB",
+        "OpenCodelists (bristol)",
+        "OpenCodelists (nhsd-primary-care-domain-refsets)",
+        "OpenCodelists (ons)",
+        "QOF Business Rules 2024-25"
+      ],
+      "usage_frequency": 430,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": null,
+      "dmd_level": null
+    },
+    {
+      "code": "191555002",
+      "term": "Acute exacerbation of chronic paranoid schizophrenia (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.95,
+      "rationale": "Acute exacerbation of chronic paranoid schizophrenia is a schizophrenia subtype, which is listed as a comorbidity, not the primary condition.",
+      "sources": [
+        "ChromaDB",
+        "OpenCodelists (bristol)",
+        "OpenCodelists (nhsd-primary-care-domain-refsets)",
+        "OpenCodelists (ons)",
+        "QOF Business Rules 2024-25"
+      ],
+      "usage_frequency": 100,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": null,
+      "dmd_level": null
+    },
+    {
+      "code": "191559008",
+      "term": "Latent schizophrenia (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.95,
+      "rationale": "Latent schizophrenia is a schizophrenia subtype, which is listed as a comorbidity, not the primary condition.",
+      "sources": [
+        "ChromaDB",
+        "OpenCodelists (nhsd-primary-care-domain-refsets)",
+        "OpenCodelists (ons)",
+        "QOF Business Rules 2024-25"
+      ],
+      "usage_frequency": 170,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": null,
+      "dmd_level": null
+    },
+    {
+      "code": "191561004",
+      "term": "Subchronic latent schizophrenia (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.95,
+      "rationale": "Subchronic latent schizophrenia is a schizophrenia subtype, which is listed as a comorbidity, not the primary condition.",
+      "sources": [
+        "ChromaDB",
+        "OpenCodelists (nhsd-primary-care-domain-refsets)",
+        "OpenCodelists (ons)",
+        "QOF Business Rules 2024-25"
+      ],
+      "usage_frequency": null,
+      "usage_status": "not_in_dataset",
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": null,
+      "dmd_level": null
+    },
+    {
+      "code": "191562006",
+      "term": "Chronic latent schizophrenia (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.95,
+      "rationale": "Chronic latent schizophrenia is a schizophrenia subtype, which is listed as a comorbidity, not the primary condition.",
+      "sources": [
+        "ChromaDB",
+        "OpenCodelists (nhsd-primary-care-domain-refsets)",
+        "OpenCodelists (ons)",
+        "QOF Business Rules 2024-25"
+      ],
+      "usage_frequency": null,
+      "usage_status": "withheld_below_5",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": null,
+      "dmd_level": null
+    },
+    {
+      "code": "191567000",
+      "term": "Schizoaffective schizophrenia (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.95,
+      "rationale": "Schizoaffective schizophrenia is a schizophrenia subtype, which is listed as a comorbidity, not the primary condition.",
+      "sources": [
+        "ChromaDB",
+        "OpenCodelists (nhsd-primary-care-domain-refsets)",
+        "OpenCodelists (ons)",
+        "QOF Business Rules 2024-25"
+      ],
+      "usage_frequency": 4030,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": null,
+      "dmd_level": null
+    },
+    {
+      "code": "191569002",
+      "term": "Subchronic schizoaffective schizophrenia (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.95,
+      "rationale": "Subchronic schizoaffective schizophrenia is a schizophrenia subtype, which is listed as a comorbidity, not the primary condition.",
+      "sources": [
+        "ChromaDB",
+        "OpenCodelists (nhsd-primary-care-domain-refsets)",
+        "OpenCodelists (ons)",
+        "QOF Business Rules 2024-25"
+      ],
+      "usage_frequency": null,
+      "usage_status": "not_in_dataset",
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": null,
+      "dmd_level": null
+    },
+    {
+      "code": "191570001",
+      "term": "Chronic schizoaffective schizophrenia (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.95,
+      "rationale": "Chronic schizoaffective schizophrenia is a schizophrenia subtype, which is listed as a comorbidity, not the primary condition.",
+      "sources": [
+        "ChromaDB",
+        "OpenCodelists (nhsd-primary-care-domain-refsets)",
+        "OpenCodelists (ons)",
+        "QOF Business Rules 2024-25"
+      ],
+      "usage_frequency": 230,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": null,
+      "dmd_level": null
+    },
+    {
+      "code": "191571002",
+      "term": "Acute exacerbation of subchronic schizoaffective schizophrenia (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.95,
+      "rationale": "Acute exacerbation of subchronic schizoaffective schizophrenia is a schizophrenia subtype, which is listed as a comorbidity, not the primary condition.",
+      "sources": [
+        "ChromaDB",
+        "OpenCodelists (nhsd-primary-care-domain-refsets)",
+        "OpenCodelists (ons)",
+        "QOF Business Rules 2024-25"
+      ],
+      "usage_frequency": 10,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": null,
+      "dmd_level": null
+    },
+    {
+      "code": "191572009",
+      "term": "Acute exacerbation of chronic schizoaffective schizophrenia (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.95,
+      "rationale": "Acute exacerbation of chronic schizoaffective schizophrenia is a schizophrenia subtype, which is listed as a comorbidity, not the primary condition.",
+      "sources": [
+        "ChromaDB",
+        "OpenCodelists (nhsd-primary-care-domain-refsets)",
+        "OpenCodelists (ons)",
+        "QOF Business Rules 2024-25"
+      ],
+      "usage_frequency": 30,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": null,
+      "dmd_level": null
+    },
+    {
+      "code": "191577003",
+      "term": "Cenesthopathic schizophrenia (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.95,
+      "rationale": "Cenesthopathic schizophrenia is a schizophrenia subtype, which is listed as a comorbidity, not the primary condition.",
+      "sources": [
+        "ChromaDB",
+        "OpenCodelists (bristol)",
+        "OpenCodelists (nhsd-primary-care-domain-refsets)",
+        "OpenCodelists (ons)",
+        "QOF Business Rules 2024-25"
+      ],
+      "usage_frequency": 10,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": null,
+      "dmd_level": null
+    },
+    {
+      "code": "191586008",
+      "term": "Single manic episode, severe, with psychosis (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.95,
+      "rationale": "Single manic episode, severe, with psychosis is a bipolar affective disorder subtype, which is listed as a comorbidity, not the primary condition.",
+      "sources": [
+        "ChromaDB",
+        "OpenCodelists (nhsd-primary-care-domain-refsets)",
+        "OpenCodelists (ons)",
+        "QOF Business Rules 2024-25"
+      ],
+      "usage_frequency": 340,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": null,
+      "dmd_level": null
+    },
+    {
+      "code": "191618007",
+      "term": "Bipolar affective disorder, current episode manic (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.95,
+      "rationale": "Bipolar affective disorder, current episode manic is a bipolar affective disorder subtype, which is listed as a comorbidity, not the primary condition.",
+      "sources": [
+        "ChromaDB",
+        "OpenCodelists (bristol)",
+        "OpenCodelists (nhsd-primary-care-domain-refsets)",
+        "OpenCodelists (ons)",
+        "QOF Business Rules 2024-25"
+      ],
+      "usage_frequency": 1550,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": 440078,
+      "dmd_level": null
+    },
+    {
+      "code": "191620005",
+      "term": "Bipolar affective disorder, currently manic, mild (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.95,
+      "rationale": "Bipolar affective disorder, currently manic, mild is a bipolar affective disorder subtype, which is listed as a comorbidity, not the primary condition.",
+      "sources": [
+        "ChromaDB",
+        "OpenCodelists (bristol)",
+        "OpenCodelists (nhsd-primary-care-domain-refsets)",
+        "OpenCodelists (ons)",
+        "QOF Business Rules 2024-25"
+      ],
+      "usage_frequency": 70,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": 441834,
+      "dmd_level": null
+    },
+    {
+      "code": "191621009",
+      "term": "Bipolar affective disorder, currently manic, moderate (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.95,
+      "rationale": "Bipolar affective disorder, currently manic, moderate is a bipolar affective disorder subtype, which is listed as a comorbidity, not the primary condition.",
+      "sources": [
+        "ChromaDB",
+        "OpenCodelists (bristol)",
+        "OpenCodelists (nhsd-primary-care-domain-refsets)",
+        "OpenCodelists (ons)",
+        "QOF Business Rules 2024-25"
+      ],
+      "usage_frequency": 80,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": 433992,
+      "dmd_level": null
+    },
+    {
+      "code": "191623007",
+      "term": "Bipolar affective disorder, currently manic, severe, with psychosis (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.95,
+      "rationale": "Bipolar affective disorder, currently manic, severe, with psychosis is a bipolar affective disorder subtype, which is listed as a comorbidity, not the primary condition.",
+      "sources": [
+        "ChromaDB",
+        "OpenCodelists (bristol)",
+        "OpenCodelists (nhsd-primary-care-domain-refsets)",
+        "OpenCodelists (ons)",
+        "QOF Business Rules 2024-25"
+      ],
+      "usage_frequency": 860,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": 439256,
+      "dmd_level": null
+    },
+    {
+      "code": "191625000",
+      "term": "Bipolar affective disorder, currently manic, in full remission (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.95,
+      "rationale": "Bipolar affective disorder, currently manic, in full remission is a bipolar affective disorder subtype, which is listed as a comorbidity, not the primary condition.",
+      "sources": [
+        "ChromaDB",
+        "OpenCodelists (bristol)",
+        "OpenCodelists (nhsd-primary-care-domain-refsets)",
+        "OpenCodelists (ons)",
+        "QOF Business Rules 2024-25"
+      ],
+      "usage_frequency": 400,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": null,
+      "dmd_level": null
+    },
+    {
+      "code": "191627008",
+      "term": "Bipolar affective disorder, current episode depression (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.95,
+      "rationale": "Bipolar affective disorder, current episode depression is a bipolar affective disorder subtype, which is listed as a comorbidity, not the primary condition.",
+      "sources": [
+        "ChromaDB",
+        "OpenCodelists (bristol)",
+        "OpenCodelists (nhsd-primary-care-domain-refsets)",
+        "OpenCodelists (ons)",
+        "QOF Business Rules 2024-25"
+      ],
+      "usage_frequency": 2460,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": null,
+      "dmd_level": null
+    },
+    {
+      "code": "191629006",
+      "term": "Bipolar affective disorder, currently depressed, mild (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.95,
+      "rationale": "Bipolar affective disorder, currently depressed, mild is a bipolar affective disorder subtype, which is listed as a comorbidity, not the primary condition.",
+      "sources": [
+        "ChromaDB",
+        "OpenCodelists (bristol)",
+        "OpenCodelists (nhsd-primary-care-domain-refsets)",
+        "OpenCodelists (ons)",
+        "QOF Business Rules 2024-25"
+      ],
+      "usage_frequency": 250,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": null,
+      "dmd_level": null
+    },
+    {
+      "code": "191630001",
+      "term": "Bipolar affective disorder, currently depressed, moderate (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.95,
+      "rationale": "Bipolar affective disorder, currently depressed, moderate is a bipolar affective disorder subtype, which is listed as a comorbidity, not the primary condition.",
+      "sources": [
+        "ChromaDB",
+        "OpenCodelists (bristol)",
+        "OpenCodelists (nhsd-primary-care-domain-refsets)",
+        "OpenCodelists (ons)",
+        "QOF Business Rules 2024-25"
+      ],
+      "usage_frequency": 650,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": 437528,
+      "dmd_level": null
+    },
+    {
+      "code": "191634005",
+      "term": "Bipolar affective disorder, currently depressed, in full remission (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.95,
+      "rationale": "Bipolar affective disorder, currently depressed, in full remission is a bipolar affective disorder subtype, which is listed as a comorbidity, not the primary condition.",
+      "sources": [
+        "ChromaDB",
+        "OpenCodelists (bristol)",
+        "OpenCodelists (nhsd-primary-care-domain-refsets)",
+        "OpenCodelists (ons)",
+        "QOF Business Rules 2024-25"
+      ],
+      "usage_frequency": 420,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": null,
+      "dmd_level": null
+    },
+    {
+      "code": "191636007",
+      "term": "Mixed bipolar affective disorder (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.95,
+      "rationale": "Mixed bipolar affective disorder is a bipolar affective disorder subtype, which is listed as a comorbidity, not the primary condition.",
+      "sources": [
+        "ChromaDB",
+        "OpenCodelists (bristol)",
+        "OpenCodelists (nhsd-primary-care-domain-refsets)",
+        "OpenCodelists (ons)",
+        "QOF Business Rules 2024-25"
+      ],
+      "usage_frequency": 7370,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": 439250,
+      "dmd_level": null
+    },
+    {
+      "code": "68995007",
+      "term": "Chronic catatonic schizophrenia (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.95,
+      "rationale": "Chronic catatonic schizophrenia is a subtype of schizophrenia, which is marked as comorbidity, not primary condition; excluded under criterion 'schizophrenia (comorbidity)'.",
+      "sources": [
+        "ChromaDB",
+        "OpenCodelists (bristol)",
+        "OpenCodelists (nhsd-primary-care-domain-refsets)",
+        "OpenCodelists (ons)",
+        "QOF Business Rules 2024-25"
+      ],
+      "usage_frequency": null,
+      "usage_status": "not_in_dataset",
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": null,
+      "dmd_level": null
+    },
+    {
+      "code": "71103003",
+      "term": "Chronic residual schizophrenia (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.95,
+      "rationale": "Chronic residual schizophrenia is a subtype of schizophrenia, which is marked as comorbidity, not primary condition; excluded under criterion 'schizophrenia (comorbidity)'.",
+      "sources": [
+        "ChromaDB",
+        "OpenCodelists (bristol)",
+        "OpenCodelists (nhsd-primary-care-domain-refsets)",
+        "OpenCodelists (ons)",
+        "QOF Business Rules 2024-25"
+      ],
+      "usage_frequency": 10,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": null,
+      "dmd_level": null
+    },
+    {
+      "code": "760721000000109",
+      "term": "Mixed bipolar affective disorder, in partial remission (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.95,
+      "rationale": "Mixed bipolar affective disorder in partial remission is a subtype of bipolar affective disorder, which is marked as comorbidity, not primary condition; excluded under criterion 'bipolar affective disorder (comorbidity)'.",
+      "sources": [
+        "ChromaDB",
+        "OpenCodelists (bristol)",
+        "OpenCodelists (nhsd-primary-care-domain-refsets)",
+        "QOF Business Rules 2024-25"
+      ],
+      "usage_frequency": 20,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": null,
+      "dmd_level": null
+    },
+    {
+      "code": "764591000000108",
+      "term": "Mixed bipolar affective disorder, severe (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.95,
+      "rationale": "Mixed bipolar affective disorder, severe is a subtype of bipolar affective disorder, which is marked as comorbidity, not primary condition; excluded under criterion 'bipolar affective disorder (comorbidity)'.",
+      "sources": [
+        "ChromaDB",
+        "OpenCodelists (bristol)",
+        "OpenCodelists (nhsd-primary-care-domain-refsets)",
+        "OpenCodelists (ons)",
+        "QOF Business Rules 2024-25"
+      ],
+      "usage_frequency": 70,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": 44805540,
+      "dmd_level": null
+    },
+    {
+      "code": "76566000",
+      "term": "Subchronic residual schizophrenia (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.95,
+      "rationale": "Subchronic residual schizophrenia is a subtype of schizophrenia, which is marked as comorbidity, not primary condition; excluded under criterion 'schizophrenia (comorbidity)'.",
+      "sources": [
+        "ChromaDB",
+        "OpenCodelists (bristol)",
+        "OpenCodelists (nhsd-primary-care-domain-refsets)",
+        "OpenCodelists (ons)",
+        "QOF Business Rules 2024-25"
+      ],
+      "usage_frequency": null,
+      "usage_status": "not_in_dataset",
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": null,
+      "dmd_level": null
+    },
+    {
+      "code": "767631007",
+      "term": "Bipolar disorder, most recent episode depression (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.95,
+      "rationale": "Bipolar disorder, most recent episode depression is a subtype of bipolar affective disorder, which is marked as comorbidity, not primary condition; excluded under criterion 'bipolar affective disorder (comorbidity)'.",
+      "sources": [
+        "ChromaDB",
+        "OpenCodelists (bristol)",
+        "OpenCodelists (nhsd-primary-care-domain-refsets)",
+        "OpenCodelists (ons)",
+        "QOF Business Rules 2024-25"
+      ],
+      "usage_frequency": 80,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": 35624743,
+      "dmd_level": null
+    },
+    {
+      "code": "767632000",
+      "term": "Bipolar disorder, most recent episode manic (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.95,
+      "rationale": "Bipolar disorder, most recent episode manic is a subtype of bipolar affective disorder, which is marked as comorbidity, not primary condition; excluded under criterion 'bipolar affective disorder (comorbidity)'.",
+      "sources": [
+        "ChromaDB",
+        "OpenCodelists (bristol)",
+        "OpenCodelists (nhsd-primary-care-domain-refsets)",
+        "OpenCodelists (ons)",
+        "QOF Business Rules 2024-25"
+      ],
+      "usage_frequency": 220,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": 35624744,
+      "dmd_level": null
+    },
+    {
+      "code": "767633005",
+      "term": "Bipolar affective disorder, most recent episode mixed (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.95,
+      "rationale": "Bipolar affective disorder, most recent episode mixed is a subtype of bipolar affective disorder, which is marked as comorbidity, not primary condition; excluded under criterion 'bipolar affective disorder (comorbidity)'.",
+      "sources": [
+        "ChromaDB",
+        "OpenCodelists (bristol)",
+        "OpenCodelists (nhsd-primary-care-domain-refsets)",
+        "OpenCodelists (ons)",
+        "QOF Business Rules 2024-25"
+      ],
+      "usage_frequency": 20,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": 35624745,
+      "dmd_level": null
+    },
+    {
+      "code": "767635003",
+      "term": "Bipolar I disorder, most recent episode manic (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.95,
+      "rationale": "Bipolar I disorder, most recent episode manic is a subtype of bipolar affective disorder, which is marked as comorbidity, not primary condition; excluded under criterion 'bipolar affective disorder (comorbidity)'.",
+      "sources": [
+        "ChromaDB",
+        "OpenCodelists (bristol)",
+        "OpenCodelists (nhsd-primary-care-domain-refsets)",
+        "OpenCodelists (ons)",
+        "QOF Business Rules 2024-25"
+      ],
+      "usage_frequency": 10,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": 35624747,
+      "dmd_level": null
+    },
+    {
+      "code": "767636002",
+      "term": "Bipolar I disorder, most recent episode depression (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.95,
+      "rationale": "Bipolar I disorder, most recent episode depression is a subtype of bipolar affective disorder, which is marked as comorbidity, not primary condition; excluded under criterion 'bipolar affective disorder (comorbidity)'.",
+      "sources": [
+        "ChromaDB",
+        "OpenCodelists (bristol)",
+        "OpenCodelists (nhsd-primary-care-domain-refsets)",
+        "OpenCodelists (ons)",
+        "QOF Business Rules 2024-25"
+      ],
+      "usage_frequency": null,
+      "usage_status": "withheld_below_5",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": 35624748,
+      "dmd_level": null
+    },
+    {
+      "code": "789061003",
+      "term": "Rapid cycling bipolar II disorder (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.95,
+      "rationale": "Rapid cycling bipolar II disorder is a subtype of bipolar affective disorder, which is marked as comorbidity, not primary condition; excluded under criterion 'bipolar affective disorder (comorbidity)'.",
+      "sources": [
+        "ChromaDB",
+        "OpenCodelists (bristol)",
+        "OpenCodelists (nhsd-primary-care-domain-refsets)",
+        "OpenCodelists (ons)",
+        "QOF Business Rules 2024-25"
+      ],
+      "usage_frequency": 140,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": 37312578,
+      "dmd_level": null
+    },
+    {
+      "code": "79584002",
+      "term": "Moderate bipolar disorder (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.95,
+      "rationale": "Moderate bipolar disorder is a subtype of bipolar affective disorder, which is marked as comorbidity, not primary condition; excluded under criterion 'bipolar affective disorder (comorbidity)'.",
+      "sources": [
+        "ChromaDB",
+        "OpenCodelists (bristol)",
+        "OpenCodelists (nhsd-primary-care-domain-refsets)",
+        "OpenCodelists (ons)",
+        "QOF Business Rules 2024-25"
+      ],
+      "usage_frequency": 70,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": 4194222,
+      "dmd_level": null
+    },
+    {
+      "code": "79866005",
+      "term": "Subchronic paranoid schizophrenia (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.95,
+      "rationale": "Subchronic paranoid schizophrenia is a subtype of schizophrenia, which is marked as comorbidity, not primary condition; excluded under criterion 'schizophrenia (comorbidity)'.",
+      "sources": [
+        "ChromaDB",
+        "OpenCodelists (bristol)",
+        "OpenCodelists (nhsd-primary-care-domain-refsets)",
+        "OpenCodelists (ons)",
+        "QOF Business Rules 2024-25"
+      ],
+      "usage_frequency": 10,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": null,
+      "dmd_level": null
+    },
+    {
+      "code": "83225003",
+      "term": "Bipolar II disorder (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.95,
+      "rationale": "Bipolar II disorder is a subtype of bipolar affective disorder, which is marked as comorbidity, not primary condition; excluded under criterion 'bipolar affective disorder (comorbidity)'.",
+      "sources": [
+        "ChromaDB",
+        "OpenCodelists (bristol)",
+        "OpenCodelists (nhsd-primary-care-domain-refsets)",
+        "OpenCodelists (ons)",
+        "QOF Business Rules 2024-25"
+      ],
+      "usage_frequency": 10420,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": 4307956,
+      "dmd_level": null
+    },
+    {
+      "code": "83746006",
+      "term": "Chronic schizophrenia (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.95,
+      "rationale": "Chronic schizophrenia is a subtype of schizophrenia, which is marked as comorbidity, not primary condition; excluded under criterion 'schizophrenia (comorbidity)'.",
+      "sources": [
+        "ChromaDB",
+        "OpenCodelists (bristol)",
+        "OpenCodelists (nhsd-primary-care-domain-refsets)",
+        "OpenCodelists (ons)",
+        "QOF Business Rules 2024-25"
+      ],
+      "usage_frequency": 4550,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": 435782,
+      "dmd_level": null
     },
     {
       "code": "85248005",
       "term": "Bipolar disorder in remission (disorder)",
       "vocabulary": "SNOMED CT",
-      "decision": "include",
-      "confidence": 0.9,
-      "rationale": "Bipolar disorder in remission is a clinical state variant of bipolar affective disorder, which is explicitly listed as a comorbidity in the query.",
+      "decision": "exclude",
+      "confidence": 0.95,
+      "rationale": "Bipolar disorder in remission is a subtype of bipolar affective disorder, which is marked as comorbidity, not primary condition; excluded under criterion 'bipolar affective disorder (comorbidity)'.",
       "sources": [
         "ChromaDB",
         "OpenCodelists (bristol)",
         "OpenCodelists (nhsd-primary-care-domain-refsets)",
         "QOF Business Rules 2024-25"
       ],
-      "usage_frequency": null
+      "usage_frequency": 7450,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
-      "code": "191658009",
-      "term": "Atypical manic disorder (disorder)",
+      "code": "85861002",
+      "term": "Subchronic undifferentiated schizophrenia (disorder)",
       "vocabulary": "SNOMED CT",
-      "decision": "include",
-      "confidence": 0.85,
-      "rationale": "Atypical manic disorder is a clinical subtype of bipolar affective disorder (comorbidity), representing a variant presentation of the condition.",
-      "sources": [
-        "ChromaDB",
-        "OpenCodelists (nhsd-primary-care-domain-refsets)",
-        "OpenCodelists (ons)",
-        "QOF Business Rules 2024-25"
-      ],
-      "usage_frequency": null
-    },
-    {
-      "code": "247804008",
-      "term": "Schizophrenic prodrome (disorder)",
-      "vocabulary": "SNOMED CT",
-      "decision": "include",
-      "confidence": 0.85,
-      "rationale": "Schizophrenic prodrome is a recognized clinical stage of schizophrenia (comorbidity) representing early manifestation of the condition.",
+      "decision": "exclude",
+      "confidence": 0.95,
+      "rationale": "Subchronic undifferentiated schizophrenia is a subtype of schizophrenia, which is marked as comorbidity, not primary condition; excluded under criterion 'schizophrenia (comorbidity)'.",
       "sources": [
         "ChromaDB",
         "OpenCodelists (bristol)",
@@ -15611,178 +16351,113 @@
         "OpenCodelists (ons)",
         "QOF Business Rules 2024-25"
       ],
-      "usage_frequency": null
+      "usage_frequency": null,
+      "usage_status": "withheld_below_5",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
-      "code": "274952002",
-      "term": "Borderline schizophrenia (disorder)",
+      "code": "87950005",
+      "term": "Bipolar I disorder, single manic episode with catatonic features (disorder)",
       "vocabulary": "SNOMED CT",
-      "decision": "include",
-      "confidence": 0.85,
-      "rationale": "Borderline schizophrenia is a recognized clinical variant of schizophrenia (comorbidity).",
+      "decision": "exclude",
+      "confidence": 0.95,
+      "rationale": "Bipolar I disorder, single manic episode with catatonic features is a subtype of bipolar affective disorder, which is marked as comorbidity, not primary condition; excluded under criterion 'bipolar affective disorder (comorbidity)'.",
       "sources": [
         "ChromaDB",
+        "OpenCodelists (bristol)",
         "OpenCodelists (nhsd-primary-care-domain-refsets)",
         "OpenCodelists (ons)",
         "QOF Business Rules 2024-25"
       ],
-      "usage_frequency": null
-    },
-    {
-      "code": "441704009",
-      "term": "Affective psychosis (disorder)",
-      "vocabulary": "SNOMED CT",
-      "decision": "include",
-      "confidence": 0.85,
-      "rationale": "Affective psychosis is a primary psychosis with affective features, relevant to psychosis (primary) and bipolar affective disorder (comorbidity).",
-      "sources": [
-        "ChromaDB",
-        "OMOPHub",
-        "OpenCodelists (nhsd-primary-care-domain-refsets)",
-        "OpenCodelists (ons)",
-        "QOF Business Rules 2024-25"
-      ],
-      "usage_frequency": null
-    },
-    {
-      "code": "65971000052100",
-      "term": "Acute psychosis (disorder)",
-      "vocabulary": "SNOMED CT",
-      "decision": "include",
-      "confidence": 0.8,
-      "rationale": "Acute psychosis is a primary psychotic presentation relevant to psychosis (primary) and potentially to acute presentations of schizophrenia or bipolar affective disorder.",
-      "sources": [
-        "ChromaDB",
-        "OMOPHub",
-        "OpenCodelists (nhsd-primary-care-domain-refsets)",
-        "QOF Business Rules 2024-25"
-      ],
-      "usage_frequency": null
+      "usage_frequency": 10,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": 4338812,
+      "dmd_level": null
     },
     {
       "code": "191677006",
       "term": "Acute hysterical psychosis (disorder)",
       "vocabulary": "SNOMED CT",
       "decision": "exclude",
-      "confidence": 0.9,
-      "rationale": "Acute hysterical psychosis is a distinct primary psychotic disorder unrelated to schizophrenia or bipolar affective disorder.",
+      "confidence": 0.85,
+      "rationale": "Acute hysterical psychosis is a specific psychotic disorder distinct from primary psychosis, schizophrenia, or bipolar affective disorder.",
       "sources": [
         "ChromaDB",
-        "OMOPHub",
         "OpenCodelists (nhsd-primary-care-domain-refsets)",
         "OpenCodelists (ons)",
         "QOF Business Rules 2024-25"
       ],
-      "usage_frequency": null
+      "usage_frequency": 120,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "191680007",
       "term": "Psychogenic paranoid psychosis (disorder)",
       "vocabulary": "SNOMED CT",
       "decision": "exclude",
-      "confidence": 0.9,
-      "rationale": "Psychogenic paranoid psychosis is a distinct primary psychotic disorder not equivalent to schizophrenia or bipolar affective disorder.",
+      "confidence": 0.85,
+      "rationale": "Psychogenic paranoid psychosis is a specific psychotic disorder distinct from primary psychosis, schizophrenia, or bipolar affective disorder.",
       "sources": [
         "ChromaDB",
         "OpenCodelists (nhsd-primary-care-domain-refsets)",
         "OpenCodelists (ons)",
         "QOF Business Rules 2024-25"
       ],
-      "usage_frequency": null
+      "usage_frequency": 130,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "231449007",
       "term": "Epileptic psychosis (disorder)",
       "vocabulary": "SNOMED CT",
       "decision": "exclude",
-      "confidence": 0.9,
-      "rationale": "Epileptic psychosis is a secondary psychosis caused by epilepsy, not a primary psychotic disorder or bipolar affective disorder.",
-      "sources": [
-        "ChromaDB",
-        "OpenCodelists (nhsd-primary-care-domain-refsets)",
-        "OpenCodelists (ons)",
-        "QOF Business Rules 2024-25"
-      ],
-      "usage_frequency": null
-    },
-    {
-      "code": "238972008",
-      "term": "Cutaneous monosymptomatic delusional psychosis (disorder)",
-      "vocabulary": "SNOMED CT",
-      "decision": "exclude",
       "confidence": 0.85,
-      "rationale": "Cutaneous monosymptomatic delusional psychosis is a rare, specific primary psychotic disorder distinct from schizophrenia or bipolar affective disorder.",
+      "rationale": "Epileptic psychosis is a secondary psychosis caused by epilepsy, not primary psychosis, schizophrenia, or bipolar affective disorder.",
       "sources": [
         "ChromaDB",
-        "OMOPHub",
         "OpenCodelists (nhsd-primary-care-domain-refsets)",
         "OpenCodelists (ons)",
         "QOF Business Rules 2024-25"
       ],
-      "usage_frequency": null
+      "usage_frequency": 50,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "268622001",
       "term": "Chronic paranoid psychosis (disorder)",
       "vocabulary": "SNOMED CT",
       "decision": "exclude",
-      "confidence": 0.85,
-      "rationale": "Chronic paranoid psychosis is a primary psychotic disorder distinct from schizophrenia or bipolar affective disorder.",
-      "sources": [
-        "ChromaDB",
-        "OMOPHub",
-        "OpenCodelists (nhsd-primary-care-domain-refsets)",
-        "OpenCodelists (ons)",
-        "QOF Business Rules 2024-25"
-      ],
-      "usage_frequency": null
-    },
-    {
-      "code": "307417003",
-      "term": "Cycloid psychosis (disorder)",
-      "vocabulary": "SNOMED CT",
-      "decision": "exclude",
-      "confidence": 0.85,
-      "rationale": "Cycloid psychosis is a distinct primary psychotic disorder not equivalent to schizophrenia or bipolar affective disorder.",
-      "sources": [
-        "ChromaDB",
-        "OMOPHub",
-        "OpenCodelists (nhsd-primary-care-domain-refsets)",
-        "OpenCodelists (ons)",
-        "QOF Business Rules 2024-25"
-      ],
-      "usage_frequency": null
-    },
-    {
-      "code": "5464005",
-      "term": "Brief reactive psychosis (disorder)",
-      "vocabulary": "SNOMED CT",
-      "decision": "exclude",
-      "confidence": 0.85,
-      "rationale": "Brief reactive psychosis is a distinct primary psychotic disorder with different etiology and course than schizophrenia or bipolar affective disorder.",
-      "sources": [
-        "ChromaDB",
-        "OMOPHub",
-        "OpenCodelists (nhsd-primary-care-domain-refsets)",
-        "OpenCodelists (ons)",
-        "QOF Business Rules 2024-25"
-      ],
-      "usage_frequency": null
-    },
-    {
-      "code": "61831009",
-      "term": "Induced psychotic disorder (disorder)",
-      "vocabulary": "SNOMED CT",
-      "decision": "exclude",
-      "confidence": 0.85,
-      "rationale": "Induced psychotic disorder is a distinct primary psychotic disorder caused by external factors, not schizophrenia or bipolar affective disorder.",
+      "confidence": 0.8,
+      "rationale": "Chronic paranoid psychosis is a primary psychotic disorder but does not explicitly name schizophrenia or bipolar affective disorder in its term.",
       "sources": [
         "ChromaDB",
         "OpenCodelists (nhsd-primary-care-domain-refsets)",
         "OpenCodelists (ons)",
         "QOF Business Rules 2024-25"
       ],
-      "usage_frequency": null
+      "usage_frequency": 670,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "278853003",
@@ -15790,14 +16465,79 @@
       "vocabulary": "SNOMED CT",
       "decision": "exclude",
       "confidence": 0.8,
-      "rationale": "Acute schizophrenia-like psychotic disorder is a primary psychotic disorder distinct from schizophrenia itself.",
+      "rationale": "Acute schizophrenia-like psychotic disorder is a primary psychotic disorder but does not explicitly name schizophrenia in its term.",
       "sources": [
         "ChromaDB",
         "OpenCodelists (nhsd-primary-care-domain-refsets)",
         "OpenCodelists (ons)",
         "QOF Business Rules 2024-25"
       ],
-      "usage_frequency": null
+      "usage_frequency": 920,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": null,
+      "dmd_level": null
+    },
+    {
+      "code": "307417003",
+      "term": "Cycloid psychosis (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.8,
+      "rationale": "Cycloid psychosis is a primary psychotic disorder distinct from schizophrenia or bipolar affective disorder.",
+      "sources": [
+        "ChromaDB",
+        "OpenCodelists (nhsd-primary-care-domain-refsets)",
+        "OpenCodelists (ons)",
+        "QOF Business Rules 2024-25"
+      ],
+      "usage_frequency": 40,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": null,
+      "dmd_level": null
+    },
+    {
+      "code": "61831009",
+      "term": "Induced psychotic disorder (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.8,
+      "rationale": "Induced psychotic disorder is a primary psychotic disorder distinct from schizophrenia or bipolar affective disorder.",
+      "sources": [
+        "ChromaDB",
+        "OpenCodelists (nhsd-primary-care-domain-refsets)",
+        "OpenCodelists (ons)",
+        "QOF Business Rules 2024-25"
+      ],
+      "usage_frequency": 450,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": null,
+      "dmd_level": null
+    },
+    {
+      "code": "441704009",
+      "term": "Affective psychosis (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.75,
+      "rationale": "Affective psychosis is a primary psychotic disorder but does not explicitly name schizophrenia or bipolar affective disorder in its term.",
+      "sources": [
+        "ChromaDB",
+        "OpenCodelists (nhsd-primary-care-domain-refsets)",
+        "OpenCodelists (ons)",
+        "QOF Business Rules 2024-25"
+      ],
+      "usage_frequency": 1430,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": null,
+      "dmd_level": null
     }
   ],
   "pipeline": "rag",

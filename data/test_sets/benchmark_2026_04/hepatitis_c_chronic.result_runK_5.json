@@ -559,74 +559,13 @@
       "codelist_name": "merged_enriched",
       "n_ref_codes": 20,
       "n_output_codes": 100,
-      "recall": 0.75,
-      "precision": 0.15,
-      "f1": 0.25,
-      "tp_count": 15,
-      "fp_count": 85,
-      "fn_count": 5,
-      "tp_codes": [
-        {
-          "code": "128302006",
-          "term": "Chronic hepatitis C"
-        },
-        {
-          "code": "128971000119101",
-          "term": "Cryoglobulinemia due to chronic hepatitis C"
-        },
-        {
-          "code": "146371000119104",
-          "term": "Hepatic coma due to chronic hepatitis C"
-        },
-        {
-          "code": "347891000119103",
-          "term": "Chronic hepatitis C with stage 3 fibrosis"
-        },
-        {
-          "code": "703866000",
-          "term": "Chronic hepatitis C with stage 2 fibrosis"
-        },
-        {
-          "code": "767809001",
-          "term": "Chronic hepatitis C caused by hepatitis C virus genotype 6"
-        },
-        {
-          "code": "767810006",
-          "term": "Chronic hepatitis C caused by hepatitis C virus genotype 5"
-        },
-        {
-          "code": "768006009",
-          "term": "Chronic hepatitis C caused by Hepatitis C virus genotype 3"
-        },
-        {
-          "code": "768125005",
-          "term": "Chronic hepatitis C caused by Hepatitis C virus genotype 2"
-        },
-        {
-          "code": "768126006",
-          "term": "Chronic hepatitis C caused by Hepatitis C virus genotype 4"
-        },
-        {
-          "code": "768127002",
-          "term": "Chronic hepatitis C caused by Hepatitis C virus genotype 1"
-        },
-        {
-          "code": "768288001",
-          "term": "Chronic hepatitis C caused by Hepatitis C virus genotype 1b"
-        },
-        {
-          "code": "768289009",
-          "term": "Chronic hepatitis C caused by Hepatitis C virus genotype 1a"
-        },
-        {
-          "code": "831000119103",
-          "term": "Cirrhosis of liver due to chronic hepatitis C"
-        },
-        {
-          "code": "838377003",
-          "term": "Chronic hepatitis C co-occurrent with human immunodeficiency virus infection"
-        }
-      ],
+      "recall": 0.0,
+      "precision": 0.0,
+      "f1": 0.0,
+      "tp_count": 0,
+      "fp_count": 100,
+      "fn_count": 20,
+      "tp_codes": [],
       "fp_codes": [
         {
           "code": "109841003",
@@ -639,6 +578,10 @@
         {
           "code": "1144891007",
           "term": "Primary cholangiocarcinoma of extrahepatic bile duct (disorder)"
+        },
+        {
+          "code": "1162855005",
+          "term": "Carcinoma of gallbladder and extrahepatic biliary tract (disorder)"
         },
         {
           "code": "1186612004",
@@ -669,8 +612,16 @@
           "term": "Pediatric hepatocellular carcinoma (disorder)"
         },
         {
+          "code": "1240370001",
+          "term": "Metastatic squamous cell carcinoma to liver and intrahepatic biliary tract (disorder)"
+        },
+        {
           "code": "1259313008",
           "term": "Primary intrahepatic bile duct carcinoma (disorder)"
+        },
+        {
+          "code": "1259602004",
+          "term": "Primary carcinoma liver and/or biliary system (disorder)"
         },
         {
           "code": "1260050006",
@@ -687,6 +638,14 @@
         {
           "code": "1268541001",
           "term": "Primary squamous cell carcinoma of liver and intrahepatic biliary tract (disorder)"
+        },
+        {
+          "code": "1268544009",
+          "term": "Primary carcinoma of gallbladder and extrahepatic biliary tract (disorder)"
+        },
+        {
+          "code": "1268711001",
+          "term": "Primary hepatoblastoma of liver (disorder)"
         },
         {
           "code": "127225006",
@@ -717,8 +676,20 @@
           "term": "T-cell chronic lymphocytic leukemia (disorder)"
         },
         {
+          "code": "286887005",
+          "term": "Carcinoma liver and/or biliary system (disorder)"
+        },
+        {
           "code": "413847001",
           "term": "Chronic phase chronic myeloid leukemia (disorder)"
+        },
+        {
+          "code": "425748003",
+          "term": "Acute exacerbation of chronic bronchitis (disorder)"
+        },
+        {
+          "code": "441530006",
+          "term": "Chronic diastolic heart failure"
         },
         {
           "code": "442537007",
@@ -733,12 +704,24 @@
           "term": "Chronic heart failure"
         },
         {
+          "code": "52571006",
+          "term": "Chronic tracheobronchitis (disorder)"
+        },
+        {
+          "code": "63480004",
+          "term": "Chronic bronchitis (disorder)"
+        },
+        {
           "code": "699657009",
           "term": "Hepatosplenic gamma-delta cell lymphoma (disorder)"
         },
         {
           "code": "713718006",
           "term": "Diffuse non-Hodgkin immunoblastic lymphoma co-occurrent with human immunodeficiency virus infection (disorder)"
+        },
+        {
+          "code": "721311006",
+          "term": "Systemic Epstein-Barr virus positive T-cell lymphoproliferative disease of childhood (disorder)"
         },
         {
           "code": "721716004",
@@ -761,12 +744,28 @@
           "term": "Undifferentiated carcinoma of liver and intrahepatic biliary tract (disorder)"
         },
         {
+          "code": "787091002",
+          "term": "Adenocarcinoma of liver and intrahepatic biliary tract (disorder)"
+        },
+        {
+          "code": "847091000000104",
+          "term": "Acute non-infective exacerbation of chronic obstructive pulmonary disease (disorder)"
+        },
+        {
           "code": "92812005",
           "term": "Chronic leukemia, disease (disorder)"
         },
         {
+          "code": "92814006",
+          "term": "Chronic lymphoid leukemia, disease (disorder)"
+        },
+        {
           "code": "939211000000104",
           "term": "Chronic kidney disease resolved (finding)"
+        },
+        {
+          "code": "941201000000103",
+          "term": "Chronic obstructive pulmonary disease resolved (finding)"
         },
         {
           "code": "B15",
@@ -975,6 +974,18 @@
           "term": "Recurrent hepatitis C virus induced liver disease following liver transplant"
         },
         {
+          "code": "128302006",
+          "term": "Chronic hepatitis C"
+        },
+        {
+          "code": "128971000119101",
+          "term": "Cryoglobulinemia due to chronic hepatitis C"
+        },
+        {
+          "code": "146371000119104",
+          "term": "Hepatic coma due to chronic hepatitis C"
+        },
+        {
           "code": "16623921000119105",
           "term": "Viral hepatitis C in mother during pregnancy"
         },
@@ -983,12 +994,60 @@
           "term": "Chronic viral hepatitis C"
         },
         {
+          "code": "347891000119103",
+          "term": "Chronic hepatitis C with stage 3 fibrosis"
+        },
+        {
           "code": "702969000",
           "term": "Reactivation of hepatitis C viral hepatitis"
         },
         {
+          "code": "703866000",
+          "term": "Chronic hepatitis C with stage 2 fibrosis"
+        },
+        {
           "code": "708198006",
           "term": "Chronic active hepatitis C"
+        },
+        {
+          "code": "767809001",
+          "term": "Chronic hepatitis C caused by hepatitis C virus genotype 6"
+        },
+        {
+          "code": "767810006",
+          "term": "Chronic hepatitis C caused by hepatitis C virus genotype 5"
+        },
+        {
+          "code": "768006009",
+          "term": "Chronic hepatitis C caused by Hepatitis C virus genotype 3"
+        },
+        {
+          "code": "768125005",
+          "term": "Chronic hepatitis C caused by Hepatitis C virus genotype 2"
+        },
+        {
+          "code": "768126006",
+          "term": "Chronic hepatitis C caused by Hepatitis C virus genotype 4"
+        },
+        {
+          "code": "768127002",
+          "term": "Chronic hepatitis C caused by Hepatitis C virus genotype 1"
+        },
+        {
+          "code": "768288001",
+          "term": "Chronic hepatitis C caused by Hepatitis C virus genotype 1b"
+        },
+        {
+          "code": "768289009",
+          "term": "Chronic hepatitis C caused by Hepatitis C virus genotype 1a"
+        },
+        {
+          "code": "831000119103",
+          "term": "Cirrhosis of liver due to chronic hepatitis C"
+        },
+        {
+          "code": "838377003",
+          "term": "Chronic hepatitis C co-occurrent with human immunodeficiency virus infection"
         }
       ]
     },
@@ -996,74 +1055,13 @@
       "codelist_name": "all_scored",
       "n_ref_codes": 20,
       "n_output_codes": 100,
-      "recall": 0.75,
-      "precision": 0.15,
-      "f1": 0.25,
-      "tp_count": 15,
-      "fp_count": 85,
-      "fn_count": 5,
-      "tp_codes": [
-        {
-          "code": "128302006",
-          "term": "Chronic hepatitis C"
-        },
-        {
-          "code": "128971000119101",
-          "term": "Cryoglobulinemia due to chronic hepatitis C"
-        },
-        {
-          "code": "146371000119104",
-          "term": "Hepatic coma due to chronic hepatitis C"
-        },
-        {
-          "code": "347891000119103",
-          "term": "Chronic hepatitis C with stage 3 fibrosis"
-        },
-        {
-          "code": "703866000",
-          "term": "Chronic hepatitis C with stage 2 fibrosis"
-        },
-        {
-          "code": "767809001",
-          "term": "Chronic hepatitis C caused by hepatitis C virus genotype 6"
-        },
-        {
-          "code": "767810006",
-          "term": "Chronic hepatitis C caused by hepatitis C virus genotype 5"
-        },
-        {
-          "code": "768006009",
-          "term": "Chronic hepatitis C caused by Hepatitis C virus genotype 3"
-        },
-        {
-          "code": "768125005",
-          "term": "Chronic hepatitis C caused by Hepatitis C virus genotype 2"
-        },
-        {
-          "code": "768126006",
-          "term": "Chronic hepatitis C caused by Hepatitis C virus genotype 4"
-        },
-        {
-          "code": "768127002",
-          "term": "Chronic hepatitis C caused by Hepatitis C virus genotype 1"
-        },
-        {
-          "code": "768288001",
-          "term": "Chronic hepatitis C caused by Hepatitis C virus genotype 1b"
-        },
-        {
-          "code": "768289009",
-          "term": "Chronic hepatitis C caused by Hepatitis C virus genotype 1a"
-        },
-        {
-          "code": "831000119103",
-          "term": "Cirrhosis of liver due to chronic hepatitis C"
-        },
-        {
-          "code": "838377003",
-          "term": "Chronic hepatitis C co-occurrent with human immunodeficiency virus infection"
-        }
-      ],
+      "recall": 0.0,
+      "precision": 0.0,
+      "f1": 0.0,
+      "tp_count": 0,
+      "fp_count": 100,
+      "fn_count": 20,
+      "tp_codes": [],
       "fp_codes": [
         {
           "code": "109841003",
@@ -1076,6 +1074,10 @@
         {
           "code": "1144891007",
           "term": "Primary cholangiocarcinoma of extrahepatic bile duct (disorder)"
+        },
+        {
+          "code": "1162855005",
+          "term": "Carcinoma of gallbladder and extrahepatic biliary tract (disorder)"
         },
         {
           "code": "1186612004",
@@ -1106,8 +1108,16 @@
           "term": "Pediatric hepatocellular carcinoma (disorder)"
         },
         {
+          "code": "1240370001",
+          "term": "Metastatic squamous cell carcinoma to liver and intrahepatic biliary tract (disorder)"
+        },
+        {
           "code": "1259313008",
           "term": "Primary intrahepatic bile duct carcinoma (disorder)"
+        },
+        {
+          "code": "1259602004",
+          "term": "Primary carcinoma liver and/or biliary system (disorder)"
         },
         {
           "code": "1260050006",
@@ -1124,6 +1134,14 @@
         {
           "code": "1268541001",
           "term": "Primary squamous cell carcinoma of liver and intrahepatic biliary tract (disorder)"
+        },
+        {
+          "code": "1268544009",
+          "term": "Primary carcinoma of gallbladder and extrahepatic biliary tract (disorder)"
+        },
+        {
+          "code": "1268711001",
+          "term": "Primary hepatoblastoma of liver (disorder)"
         },
         {
           "code": "127225006",
@@ -1154,8 +1172,20 @@
           "term": "T-cell chronic lymphocytic leukemia (disorder)"
         },
         {
+          "code": "286887005",
+          "term": "Carcinoma liver and/or biliary system (disorder)"
+        },
+        {
           "code": "413847001",
           "term": "Chronic phase chronic myeloid leukemia (disorder)"
+        },
+        {
+          "code": "425748003",
+          "term": "Acute exacerbation of chronic bronchitis (disorder)"
+        },
+        {
+          "code": "441530006",
+          "term": "Chronic diastolic heart failure"
         },
         {
           "code": "442537007",
@@ -1170,12 +1200,24 @@
           "term": "Chronic heart failure"
         },
         {
+          "code": "52571006",
+          "term": "Chronic tracheobronchitis (disorder)"
+        },
+        {
+          "code": "63480004",
+          "term": "Chronic bronchitis (disorder)"
+        },
+        {
           "code": "699657009",
           "term": "Hepatosplenic gamma-delta cell lymphoma (disorder)"
         },
         {
           "code": "713718006",
           "term": "Diffuse non-Hodgkin immunoblastic lymphoma co-occurrent with human immunodeficiency virus infection (disorder)"
+        },
+        {
+          "code": "721311006",
+          "term": "Systemic Epstein-Barr virus positive T-cell lymphoproliferative disease of childhood (disorder)"
         },
         {
           "code": "721716004",
@@ -1198,12 +1240,28 @@
           "term": "Undifferentiated carcinoma of liver and intrahepatic biliary tract (disorder)"
         },
         {
+          "code": "787091002",
+          "term": "Adenocarcinoma of liver and intrahepatic biliary tract (disorder)"
+        },
+        {
+          "code": "847091000000104",
+          "term": "Acute non-infective exacerbation of chronic obstructive pulmonary disease (disorder)"
+        },
+        {
           "code": "92812005",
           "term": "Chronic leukemia, disease (disorder)"
         },
         {
+          "code": "92814006",
+          "term": "Chronic lymphoid leukemia, disease (disorder)"
+        },
+        {
           "code": "939211000000104",
           "term": "Chronic kidney disease resolved (finding)"
+        },
+        {
+          "code": "941201000000103",
+          "term": "Chronic obstructive pulmonary disease resolved (finding)"
         },
         {
           "code": "B15",
@@ -1412,35 +1470,6 @@
           "term": "Recurrent hepatitis C virus induced liver disease following liver transplant"
         },
         {
-          "code": "16623921000119105",
-          "term": "Viral hepatitis C in mother during pregnancy"
-        },
-        {
-          "code": "186640001",
-          "term": "Chronic viral hepatitis C"
-        },
-        {
-          "code": "702969000",
-          "term": "Reactivation of hepatitis C viral hepatitis"
-        },
-        {
-          "code": "708198006",
-          "term": "Chronic active hepatitis C"
-        }
-      ]
-    },
-    "included_only": {
-      "codelist_name": "included_only",
-      "n_ref_codes": 20,
-      "n_output_codes": 17,
-      "recall": 0.75,
-      "precision": 0.8824,
-      "f1": 0.8108,
-      "tp_count": 15,
-      "fp_count": 2,
-      "fn_count": 5,
-      "tp_codes": [
-        {
           "code": "128302006",
           "term": "Chronic hepatitis C"
         },
@@ -1453,12 +1482,28 @@
           "term": "Hepatic coma due to chronic hepatitis C"
         },
         {
+          "code": "16623921000119105",
+          "term": "Viral hepatitis C in mother during pregnancy"
+        },
+        {
+          "code": "186640001",
+          "term": "Chronic viral hepatitis C"
+        },
+        {
           "code": "347891000119103",
           "term": "Chronic hepatitis C with stage 3 fibrosis"
         },
         {
+          "code": "702969000",
+          "term": "Reactivation of hepatitis C viral hepatitis"
+        },
+        {
           "code": "703866000",
           "term": "Chronic hepatitis C with stage 2 fibrosis"
+        },
+        {
+          "code": "708198006",
+          "term": "Chronic active hepatitis C"
         },
         {
           "code": "767809001",
@@ -1500,7 +1545,19 @@
           "code": "838377003",
           "term": "Chronic hepatitis C co-occurrent with human immunodeficiency virus infection"
         }
-      ],
+      ]
+    },
+    "included_only": {
+      "codelist_name": "included_only",
+      "n_ref_codes": 20,
+      "n_output_codes": 2,
+      "recall": 0.0,
+      "precision": 0.0,
+      "f1": 0.0,
+      "tp_count": 0,
+      "fp_count": 2,
+      "fn_count": 20,
+      "tp_codes": [],
       "fp_codes": [
         {
           "code": "B18",
@@ -1517,35 +1574,6 @@
           "term": "Recurrent hepatitis C virus induced liver disease following liver transplant"
         },
         {
-          "code": "16623921000119105",
-          "term": "Viral hepatitis C in mother during pregnancy"
-        },
-        {
-          "code": "186640001",
-          "term": "Chronic viral hepatitis C"
-        },
-        {
-          "code": "702969000",
-          "term": "Reactivation of hepatitis C viral hepatitis"
-        },
-        {
-          "code": "708198006",
-          "term": "Chronic active hepatitis C"
-        }
-      ]
-    },
-    "included_plus_uncertain": {
-      "codelist_name": "included_plus_uncertain",
-      "n_ref_codes": 20,
-      "n_output_codes": 20,
-      "recall": 0.75,
-      "precision": 0.75,
-      "f1": 0.75,
-      "tp_count": 15,
-      "fp_count": 5,
-      "fn_count": 5,
-      "tp_codes": [
-        {
           "code": "128302006",
           "term": "Chronic hepatitis C"
         },
@@ -1558,12 +1586,28 @@
           "term": "Hepatic coma due to chronic hepatitis C"
         },
         {
+          "code": "16623921000119105",
+          "term": "Viral hepatitis C in mother during pregnancy"
+        },
+        {
+          "code": "186640001",
+          "term": "Chronic viral hepatitis C"
+        },
+        {
           "code": "347891000119103",
           "term": "Chronic hepatitis C with stage 3 fibrosis"
         },
         {
+          "code": "702969000",
+          "term": "Reactivation of hepatitis C viral hepatitis"
+        },
+        {
           "code": "703866000",
           "term": "Chronic hepatitis C with stage 2 fibrosis"
+        },
+        {
+          "code": "708198006",
+          "term": "Chronic active hepatitis C"
         },
         {
           "code": "767809001",
@@ -1605,7 +1649,19 @@
           "code": "838377003",
           "term": "Chronic hepatitis C co-occurrent with human immunodeficiency virus infection"
         }
-      ],
+      ]
+    },
+    "included_plus_uncertain": {
+      "codelist_name": "included_plus_uncertain",
+      "n_ref_codes": 20,
+      "n_output_codes": 5,
+      "recall": 0.0,
+      "precision": 0.0,
+      "f1": 0.0,
+      "tp_count": 0,
+      "fp_count": 5,
+      "fn_count": 20,
+      "tp_codes": [],
       "fp_codes": [
         {
           "code": "B18",
@@ -1634,6 +1690,18 @@
           "term": "Recurrent hepatitis C virus induced liver disease following liver transplant"
         },
         {
+          "code": "128302006",
+          "term": "Chronic hepatitis C"
+        },
+        {
+          "code": "128971000119101",
+          "term": "Cryoglobulinemia due to chronic hepatitis C"
+        },
+        {
+          "code": "146371000119104",
+          "term": "Hepatic coma due to chronic hepatitis C"
+        },
+        {
           "code": "16623921000119105",
           "term": "Viral hepatitis C in mother during pregnancy"
         },
@@ -1642,12 +1710,60 @@
           "term": "Chronic viral hepatitis C"
         },
         {
+          "code": "347891000119103",
+          "term": "Chronic hepatitis C with stage 3 fibrosis"
+        },
+        {
           "code": "702969000",
           "term": "Reactivation of hepatitis C viral hepatitis"
         },
         {
+          "code": "703866000",
+          "term": "Chronic hepatitis C with stage 2 fibrosis"
+        },
+        {
           "code": "708198006",
           "term": "Chronic active hepatitis C"
+        },
+        {
+          "code": "767809001",
+          "term": "Chronic hepatitis C caused by hepatitis C virus genotype 6"
+        },
+        {
+          "code": "767810006",
+          "term": "Chronic hepatitis C caused by hepatitis C virus genotype 5"
+        },
+        {
+          "code": "768006009",
+          "term": "Chronic hepatitis C caused by Hepatitis C virus genotype 3"
+        },
+        {
+          "code": "768125005",
+          "term": "Chronic hepatitis C caused by Hepatitis C virus genotype 2"
+        },
+        {
+          "code": "768126006",
+          "term": "Chronic hepatitis C caused by Hepatitis C virus genotype 4"
+        },
+        {
+          "code": "768127002",
+          "term": "Chronic hepatitis C caused by Hepatitis C virus genotype 1"
+        },
+        {
+          "code": "768288001",
+          "term": "Chronic hepatitis C caused by Hepatitis C virus genotype 1b"
+        },
+        {
+          "code": "768289009",
+          "term": "Chronic hepatitis C caused by Hepatitis C virus genotype 1a"
+        },
+        {
+          "code": "831000119103",
+          "term": "Cirrhosis of liver due to chronic hepatitis C"
+        },
+        {
+          "code": "838377003",
+          "term": "Chronic hepatitis C co-occurrent with human immunodeficiency virus infection"
         }
       ]
     }
@@ -1660,8 +1776,8 @@
     "count": 0,
     "codes": []
   },
-  "summary": "Recall: 75.0% (15 of 20 reference codes retrieved). Precision: 88.2%. F1: 81.1%. 0 reference codes were incorrectly excluded.",
-  "elapsed_seconds": 21.5,
+  "summary": "Recall: 0.0% (0 of 20 reference codes retrieved). Precision: 0.0%. F1: 0.0%. 0 reference codes were incorrectly excluded.",
+  "elapsed_seconds": 22.82,
   "pipeline_results_count": 100,
   "scored_codes": [
     {
@@ -1670,141 +1786,16 @@
       "vocabulary": "ICD-10 (WHO)",
       "decision": "include",
       "confidence": 1.0,
-      "rationale": "Chronic viral hepatitis C is the exact match for the queried condition.",
+      "rationale": "Chronic viral hepatitis C is the exact condition being queried.",
       "sources": [
         "ChromaDB"
       ],
-      "usage_frequency": null
-    },
-    {
-      "code": "128302006",
-      "term": "Chronic hepatitis C",
-      "vocabulary": "SNOMED CT",
-      "decision": "include",
-      "confidence": 0.99,
-      "rationale": "This is the direct SNOMED CT code for chronic hepatitis C, the primary condition being queried.",
-      "sources": [
-        "OMOPHub",
-        "OpenCodelists (nhsd-primary-care-domain-refsets)"
-      ],
-      "usage_frequency": null
-    },
-    {
-      "code": "703866000",
-      "term": "Chronic hepatitis C with stage 2 fibrosis",
-      "vocabulary": "SNOMED CT",
-      "decision": "include",
-      "confidence": 0.98,
-      "rationale": "This is a direct clinical subtype of chronic hepatitis C with specified fibrosis staging, representing a manifestation of the queried condition.",
-      "sources": [
-        "OMOPHub",
-        "OpenCodelists (nhsd-primary-care-domain-refsets)"
-      ],
-      "usage_frequency": null
-    },
-    {
-      "code": "767809001",
-      "term": "Chronic hepatitis C caused by hepatitis C virus genotype 6",
-      "vocabulary": "SNOMED CT",
-      "decision": "include",
-      "confidence": 0.98,
-      "rationale": "This is a specific genotype subtype of chronic hepatitis C (genotype 6), representing a clinical variant of the queried condition.",
-      "sources": [
-        "OMOPHub",
-        "OpenCodelists (nhsd-primary-care-domain-refsets)"
-      ],
-      "usage_frequency": null
-    },
-    {
-      "code": "767810006",
-      "term": "Chronic hepatitis C caused by hepatitis C virus genotype 5",
-      "vocabulary": "SNOMED CT",
-      "decision": "include",
-      "confidence": 0.98,
-      "rationale": "This is a specific genotype subtype of chronic hepatitis C (genotype 5), representing a clinical variant of the queried condition.",
-      "sources": [
-        "OMOPHub",
-        "OpenCodelists (nhsd-primary-care-domain-refsets)"
-      ],
-      "usage_frequency": null
-    },
-    {
-      "code": "768006009",
-      "term": "Chronic hepatitis C caused by Hepatitis C virus genotype 3",
-      "vocabulary": "SNOMED CT",
-      "decision": "include",
-      "confidence": 0.98,
-      "rationale": "This is a specific genotype subtype of chronic hepatitis C (genotype 3), representing a clinical variant of the queried condition.",
-      "sources": [
-        "OMOPHub",
-        "OpenCodelists (nhsd-primary-care-domain-refsets)"
-      ],
-      "usage_frequency": null
-    },
-    {
-      "code": "768125005",
-      "term": "Chronic hepatitis C caused by Hepatitis C virus genotype 2",
-      "vocabulary": "SNOMED CT",
-      "decision": "include",
-      "confidence": 0.98,
-      "rationale": "This is a specific genotype subtype of chronic hepatitis C (genotype 2), representing a clinical variant of the queried condition.",
-      "sources": [
-        "OMOPHub",
-        "OpenCodelists (nhsd-primary-care-domain-refsets)"
-      ],
-      "usage_frequency": null
-    },
-    {
-      "code": "768126006",
-      "term": "Chronic hepatitis C caused by Hepatitis C virus genotype 4",
-      "vocabulary": "SNOMED CT",
-      "decision": "include",
-      "confidence": 0.98,
-      "rationale": "This is a specific genotype subtype of chronic hepatitis C (genotype 4), representing a clinical variant of the queried condition.",
-      "sources": [
-        "OMOPHub",
-        "OpenCodelists (nhsd-primary-care-domain-refsets)"
-      ],
-      "usage_frequency": null
-    },
-    {
-      "code": "768127002",
-      "term": "Chronic hepatitis C caused by Hepatitis C virus genotype 1",
-      "vocabulary": "SNOMED CT",
-      "decision": "include",
-      "confidence": 0.98,
-      "rationale": "This is a specific genotype subtype of chronic hepatitis C (genotype 1), representing a clinical variant of the queried condition.",
-      "sources": [
-        "OMOPHub",
-        "OpenCodelists (nhsd-primary-care-domain-refsets)"
-      ],
-      "usage_frequency": null
-    },
-    {
-      "code": "768288001",
-      "term": "Chronic hepatitis C caused by Hepatitis C virus genotype 1b",
-      "vocabulary": "SNOMED CT",
-      "decision": "include",
-      "confidence": 0.98,
-      "rationale": "This is a specific genotype subtype of chronic hepatitis C (genotype 1b), representing a clinical variant of the queried condition.",
-      "sources": [
-        "OMOPHub",
-        "OpenCodelists (nhsd-primary-care-domain-refsets)"
-      ],
-      "usage_frequency": null
-    },
-    {
-      "code": "768289009",
-      "term": "Chronic hepatitis C caused by Hepatitis C virus genotype 1a",
-      "vocabulary": "SNOMED CT",
-      "decision": "include",
-      "confidence": 0.98,
-      "rationale": "This is a specific genotype subtype of chronic hepatitis C (genotype 1a), representing a clinical variant of the queried condition.",
-      "sources": [
-        "OMOPHub",
-        "OpenCodelists (nhsd-primary-care-domain-refsets)"
-      ],
-      "usage_frequency": null
+      "usage_frequency": 182,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital HES inpatient FCEs",
+      "usage_setting": "secondary_care_hes",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "B18",
@@ -1812,76 +1803,16 @@
       "vocabulary": "ICD-10 (WHO)",
       "decision": "include",
       "confidence": 0.95,
-      "rationale": "Chronic viral hepatitis is the parent category that includes chronic hepatitis C.",
+      "rationale": "Chronic viral hepatitis is the parent category that includes chronic hepatitis C as a subtype.",
       "sources": [
         "ChromaDB"
       ],
-      "usage_frequency": null
-    },
-    {
-      "code": "128971000119101",
-      "term": "Cryoglobulinemia due to chronic hepatitis C",
-      "vocabulary": "SNOMED CT",
-      "decision": "include",
-      "confidence": 0.95,
-      "rationale": "Cryoglobulinemia due to chronic hepatitis C explicitly names the queried condition and represents a manifestation of it.",
-      "sources": [
-        "OMOPHub",
-        "OpenCodelists (nhsd-primary-care-domain-refsets)"
-      ],
-      "usage_frequency": null
-    },
-    {
-      "code": "146371000119104",
-      "term": "Hepatic coma due to chronic hepatitis C",
-      "vocabulary": "SNOMED CT",
-      "decision": "include",
-      "confidence": 0.95,
-      "rationale": "Hepatic coma due to chronic hepatitis C explicitly names the queried condition and represents a manifestation of it.",
-      "sources": [
-        "OMOPHub",
-        "OpenCodelists (nhsd-primary-care-domain-refsets)"
-      ],
-      "usage_frequency": null
-    },
-    {
-      "code": "347891000119103",
-      "term": "Chronic hepatitis C with stage 3 fibrosis",
-      "vocabulary": "SNOMED CT",
-      "decision": "include",
-      "confidence": 0.95,
-      "rationale": "Chronic hepatitis C with stage 3 fibrosis explicitly names the queried condition and represents a severity variant of it.",
-      "sources": [
-        "OMOPHub",
-        "OpenCodelists (nhsd-primary-care-domain-refsets)"
-      ],
-      "usage_frequency": null
-    },
-    {
-      "code": "831000119103",
-      "term": "Cirrhosis of liver due to chronic hepatitis C",
-      "vocabulary": "SNOMED CT",
-      "decision": "include",
-      "confidence": 0.95,
-      "rationale": "Cirrhosis of liver due to chronic hepatitis C is a direct manifestation of chronic hepatitis C where the term explicitly names the queried condition, following NHS refset convention for condition-named manifestations.",
-      "sources": [
-        "OMOPHub",
-        "OpenCodelists (nhsd-primary-care-domain-refsets)"
-      ],
-      "usage_frequency": null
-    },
-    {
-      "code": "838377003",
-      "term": "Chronic hepatitis C co-occurrent with human immunodeficiency virus infection",
-      "vocabulary": "SNOMED CT",
-      "decision": "include",
-      "confidence": 0.95,
-      "rationale": "Chronic hepatitis C co-occurrent with HIV infection is an instance of chronic hepatitis C with a comorbidity; the term explicitly contains 'chronic hepatitis C' and follows the 'X co-occurrent with Y' refset convention.",
-      "sources": [
-        "OMOPHub",
-        "OpenCodelists (nhsd-primary-care-domain-refsets)"
-      ],
-      "usage_frequency": null
+      "usage_frequency": 514,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital HES inpatient FCEs",
+      "usage_setting": "secondary_care_hes",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "K73.2",
@@ -1889,11 +1820,16 @@
       "vocabulary": "ICD-10 (WHO)",
       "decision": "uncertain",
       "confidence": 0.6,
-      "rationale": "Chronic active hepatitis is a general category that may include hepatitis C, but lacks specificity to hepatitis C and could represent other etiologies.",
+      "rationale": "Chronic active hepatitis is a general category that may include hepatitis C, but the code does not explicitly name hepatitis C and could represent other etiologies.",
       "sources": [
         "ChromaDB"
       ],
-      "usage_frequency": null
+      "usage_frequency": 54,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital HES inpatient FCEs",
+      "usage_setting": "secondary_care_hes",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "K73.8",
@@ -1901,11 +1837,16 @@
       "vocabulary": "ICD-10 (WHO)",
       "decision": "uncertain",
       "confidence": 0.5,
-      "rationale": "Other chronic hepatitis is too non-specific and does not confirm hepatitis C as the etiology.",
+      "rationale": "Other chronic hepatitis is a non-specific category that may include hepatitis C but lacks explicit naming of the condition.",
       "sources": [
         "ChromaDB"
       ],
-      "usage_frequency": null
+      "usage_frequency": 20,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital HES inpatient FCEs",
+      "usage_setting": "secondary_care_hes",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "K73.9",
@@ -1913,11 +1854,16 @@
       "vocabulary": "ICD-10 (WHO)",
       "decision": "uncertain",
       "confidence": 0.5,
-      "rationale": "Unspecified chronic hepatitis lacks specificity to hepatitis C and could represent any chronic hepatitis etiology.",
+      "rationale": "Chronic hepatitis unspecified is too broad and does not explicitly confirm hepatitis C etiology.",
       "sources": [
         "ChromaDB"
       ],
-      "usage_frequency": null
+      "usage_frequency": 219,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital HES inpatient FCEs",
+      "usage_setting": "secondary_care_hes",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "B15",
@@ -1929,7 +1875,12 @@
       "sources": [
         "ChromaDB"
       ],
-      "usage_frequency": null
+      "usage_frequency": 927,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital HES inpatient FCEs",
+      "usage_setting": "secondary_care_hes",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "B15.0",
@@ -1937,11 +1888,16 @@
       "vocabulary": "ICD-10 (WHO)",
       "decision": "exclude",
       "confidence": 0.99,
-      "rationale": "Acute hepatitis A with hepatic coma is not chronic hepatitis C.",
+      "rationale": "Acute hepatitis A with hepatic coma is a different viral hepatitis type, not chronic hepatitis C.",
       "sources": [
         "ChromaDB"
       ],
-      "usage_frequency": null
+      "usage_frequency": 7,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital HES inpatient FCEs",
+      "usage_setting": "secondary_care_hes",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "B15.9",
@@ -1949,11 +1905,16 @@
       "vocabulary": "ICD-10 (WHO)",
       "decision": "exclude",
       "confidence": 0.99,
-      "rationale": "Acute hepatitis A without hepatic coma is not chronic hepatitis C.",
+      "rationale": "Acute hepatitis A without hepatic coma is a different viral hepatitis type, not chronic hepatitis C.",
       "sources": [
         "ChromaDB"
       ],
-      "usage_frequency": null
+      "usage_frequency": 920,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital HES inpatient FCEs",
+      "usage_setting": "secondary_care_hes",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "B16",
@@ -1965,7 +1926,12 @@
       "sources": [
         "ChromaDB"
       ],
-      "usage_frequency": null
+      "usage_frequency": 333,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital HES inpatient FCEs",
+      "usage_setting": "secondary_care_hes",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "B16.0",
@@ -1973,11 +1939,16 @@
       "vocabulary": "ICD-10 (WHO)",
       "decision": "exclude",
       "confidence": 0.99,
-      "rationale": "Acute hepatitis B with delta-agent is not chronic hepatitis C.",
+      "rationale": "Acute hepatitis B with delta-agent is a different viral hepatitis type, not chronic hepatitis C.",
       "sources": [
         "ChromaDB"
       ],
-      "usage_frequency": null
+      "usage_frequency": null,
+      "usage_status": "not_in_dataset",
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "B16.1",
@@ -1985,11 +1956,16 @@
       "vocabulary": "ICD-10 (WHO)",
       "decision": "exclude",
       "confidence": 0.99,
-      "rationale": "Acute hepatitis B with delta-agent is not chronic hepatitis C.",
+      "rationale": "Acute hepatitis B with delta-agent is a different viral hepatitis type, not chronic hepatitis C.",
       "sources": [
         "ChromaDB"
       ],
-      "usage_frequency": null
+      "usage_frequency": 9,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital HES inpatient FCEs",
+      "usage_setting": "secondary_care_hes",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "B16.2",
@@ -1997,11 +1973,16 @@
       "vocabulary": "ICD-10 (WHO)",
       "decision": "exclude",
       "confidence": 0.99,
-      "rationale": "Acute hepatitis B without delta-agent is not chronic hepatitis C.",
+      "rationale": "Acute hepatitis B without delta-agent is a different viral hepatitis type, not chronic hepatitis C.",
       "sources": [
         "ChromaDB"
       ],
-      "usage_frequency": null
+      "usage_frequency": null,
+      "usage_status": "not_in_dataset",
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "B16.9",
@@ -2009,11 +1990,16 @@
       "vocabulary": "ICD-10 (WHO)",
       "decision": "exclude",
       "confidence": 0.99,
-      "rationale": "Acute hepatitis B without delta-agent is not chronic hepatitis C.",
+      "rationale": "Acute hepatitis B without delta-agent is a different viral hepatitis type, not chronic hepatitis C.",
       "sources": [
         "ChromaDB"
       ],
-      "usage_frequency": null
+      "usage_frequency": 324,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital HES inpatient FCEs",
+      "usage_setting": "secondary_care_hes",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "B17",
@@ -2021,11 +2007,16 @@
       "vocabulary": "ICD-10 (WHO)",
       "decision": "exclude",
       "confidence": 0.99,
-      "rationale": "Other acute viral hepatitis is not chronic hepatitis C.",
+      "rationale": "Other acute viral hepatitis is a broader category that includes acute forms, not chronic hepatitis C.",
       "sources": [
         "ChromaDB"
       ],
-      "usage_frequency": null
+      "usage_frequency": 2386,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital HES inpatient FCEs",
+      "usage_setting": "secondary_care_hes",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "B17.0",
@@ -2033,11 +2024,16 @@
       "vocabulary": "ICD-10 (WHO)",
       "decision": "exclude",
       "confidence": 0.99,
-      "rationale": "Acute delta-superinfection is not chronic hepatitis C.",
+      "rationale": "Acute delta-superinfection is an acute condition, not chronic hepatitis C.",
       "sources": [
         "ChromaDB"
       ],
-      "usage_frequency": null
+      "usage_frequency": 2,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital HES inpatient FCEs",
+      "usage_setting": "secondary_care_hes",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "B17.1",
@@ -2045,11 +2041,16 @@
       "vocabulary": "ICD-10 (WHO)",
       "decision": "exclude",
       "confidence": 0.99,
-      "rationale": "Acute hepatitis C is the acute form, not the chronic form being queried.",
+      "rationale": "Acute hepatitis C is the acute form, not chronic hepatitis C.",
       "sources": [
         "ChromaDB"
       ],
-      "usage_frequency": null
+      "usage_frequency": 58,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital HES inpatient FCEs",
+      "usage_setting": "secondary_care_hes",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "B17.2",
@@ -2061,7 +2062,12 @@
       "sources": [
         "ChromaDB"
       ],
-      "usage_frequency": null
+      "usage_frequency": 439,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital HES inpatient FCEs",
+      "usage_setting": "secondary_care_hes",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "B17.8",
@@ -2069,11 +2075,16 @@
       "vocabulary": "ICD-10 (WHO)",
       "decision": "exclude",
       "confidence": 0.99,
-      "rationale": "Other specified acute viral hepatitis is not chronic hepatitis C.",
+      "rationale": "Other specified acute viral hepatitis refers to acute forms, not chronic hepatitis C.",
       "sources": [
         "ChromaDB"
       ],
-      "usage_frequency": null
+      "usage_frequency": 201,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital HES inpatient FCEs",
+      "usage_setting": "secondary_care_hes",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "B17.9",
@@ -2081,11 +2092,16 @@
       "vocabulary": "ICD-10 (WHO)",
       "decision": "exclude",
       "confidence": 0.99,
-      "rationale": "Acute viral hepatitis unspecified is not chronic hepatitis C.",
+      "rationale": "Acute viral hepatitis unspecified refers to acute forms, not chronic hepatitis C.",
       "sources": [
         "ChromaDB"
       ],
-      "usage_frequency": null
+      "usage_frequency": 1686,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital HES inpatient FCEs",
+      "usage_setting": "secondary_care_hes",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "B18.0",
@@ -2093,11 +2109,16 @@
       "vocabulary": "ICD-10 (WHO)",
       "decision": "exclude",
       "confidence": 0.99,
-      "rationale": "Chronic viral hepatitis B with delta-agent is a different hepatitis type, not hepatitis C.",
+      "rationale": "Chronic viral hepatitis B with delta-agent is a different viral hepatitis type, not chronic hepatitis C.",
       "sources": [
         "ChromaDB"
       ],
-      "usage_frequency": null
+      "usage_frequency": 18,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital HES inpatient FCEs",
+      "usage_setting": "secondary_care_hes",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "B18.1",
@@ -2105,11 +2126,16 @@
       "vocabulary": "ICD-10 (WHO)",
       "decision": "exclude",
       "confidence": 0.99,
-      "rationale": "Chronic viral hepatitis B without delta-agent is a different hepatitis type, not hepatitis C.",
+      "rationale": "Chronic viral hepatitis B without delta-agent is a different viral hepatitis type, not chronic hepatitis C.",
       "sources": [
         "ChromaDB"
       ],
-      "usage_frequency": null
+      "usage_frequency": 278,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital HES inpatient FCEs",
+      "usage_setting": "secondary_care_hes",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "B19",
@@ -2117,11 +2143,16 @@
       "vocabulary": "ICD-10 (WHO)",
       "decision": "exclude",
       "confidence": 0.99,
-      "rationale": "Unspecified viral hepatitis does not confirm chronic hepatitis C.",
+      "rationale": "Unspecified viral hepatitis does not confirm chronic hepatitis C specifically.",
       "sources": [
         "ChromaDB"
       ],
-      "usage_frequency": null
+      "usage_frequency": 448,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital HES inpatient FCEs",
+      "usage_setting": "secondary_care_hes",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "B19.0",
@@ -2129,11 +2160,16 @@
       "vocabulary": "ICD-10 (WHO)",
       "decision": "exclude",
       "confidence": 0.99,
-      "rationale": "Unspecified viral hepatitis with hepatic coma does not confirm chronic hepatitis C.",
+      "rationale": "Unspecified viral hepatitis with hepatic coma does not confirm chronic hepatitis C specifically.",
       "sources": [
         "ChromaDB"
       ],
-      "usage_frequency": null
+      "usage_frequency": null,
+      "usage_status": "not_in_dataset",
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "B19.9",
@@ -2141,11 +2177,16 @@
       "vocabulary": "ICD-10 (WHO)",
       "decision": "exclude",
       "confidence": 0.99,
-      "rationale": "Unspecified viral hepatitis without hepatic coma does not confirm chronic hepatitis C.",
+      "rationale": "Unspecified viral hepatitis without hepatic coma does not confirm chronic hepatitis C specifically.",
       "sources": [
         "ChromaDB"
       ],
-      "usage_frequency": null
+      "usage_frequency": 448,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital HES inpatient FCEs",
+      "usage_setting": "secondary_care_hes",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "B25.1",
@@ -2153,11 +2194,16 @@
       "vocabulary": "ICD-10 (WHO)",
       "decision": "exclude",
       "confidence": 0.99,
-      "rationale": "Cytomegaloviral hepatitis is a different viral hepatitis type, not hepatitis C.",
+      "rationale": "Cytomegaloviral hepatitis is a different viral hepatitis type, not chronic hepatitis C.",
       "sources": [
         "ChromaDB"
       ],
-      "usage_frequency": null
+      "usage_frequency": 100,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital HES inpatient FCEs",
+      "usage_setting": "secondary_care_hes",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "B58.1",
@@ -2165,23 +2211,16 @@
       "vocabulary": "ICD-10 (WHO)",
       "decision": "exclude",
       "confidence": 0.99,
-      "rationale": "Toxoplasma hepatitis is a different infectious hepatitis type, not hepatitis C.",
+      "rationale": "Toxoplasma hepatitis is a different infectious hepatitis type, not chronic hepatitis C.",
       "sources": [
         "ChromaDB"
       ],
-      "usage_frequency": null
-    },
-    {
-      "code": "B94.2",
-      "term": "Sequelae of viral hepatitis",
-      "vocabulary": "ICD-10 (WHO)",
-      "decision": "exclude",
-      "confidence": 0.99,
-      "rationale": "Sequelae of viral hepatitis represents a complication/aftermath, not an instance of chronic hepatitis C.",
-      "sources": [
-        "ChromaDB"
-      ],
-      "usage_frequency": null
+      "usage_frequency": 4,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital HES inpatient FCEs",
+      "usage_setting": "secondary_care_hes",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "K70",
@@ -2189,11 +2228,16 @@
       "vocabulary": "ICD-10 (WHO)",
       "decision": "exclude",
       "confidence": 0.99,
-      "rationale": "Alcoholic liver disease is a different etiology of liver disease, not hepatitis C.",
+      "rationale": "Alcoholic liver disease is a different etiology of liver disease, not chronic hepatitis C.",
       "sources": [
         "ChromaDB"
       ],
-      "usage_frequency": null
+      "usage_frequency": 57638,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital HES inpatient FCEs",
+      "usage_setting": "secondary_care_hes",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "K70.0",
@@ -2201,11 +2245,16 @@
       "vocabulary": "ICD-10 (WHO)",
       "decision": "exclude",
       "confidence": 0.99,
-      "rationale": "Alcoholic fatty liver is not hepatitis C.",
+      "rationale": "Alcoholic fatty liver is a different etiology of liver disease, not chronic hepatitis C.",
       "sources": [
         "ChromaDB"
       ],
-      "usage_frequency": null
+      "usage_frequency": 740,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital HES inpatient FCEs",
+      "usage_setting": "secondary_care_hes",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "K70.1",
@@ -2213,11 +2262,16 @@
       "vocabulary": "ICD-10 (WHO)",
       "decision": "exclude",
       "confidence": 0.99,
-      "rationale": "Alcoholic hepatitis is a different etiology of hepatitis, not hepatitis C.",
+      "rationale": "Alcoholic hepatitis is a different etiology of hepatitis, not chronic hepatitis C.",
       "sources": [
         "ChromaDB"
       ],
-      "usage_frequency": null
+      "usage_frequency": 8335,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital HES inpatient FCEs",
+      "usage_setting": "secondary_care_hes",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "K70.3",
@@ -2225,11 +2279,16 @@
       "vocabulary": "ICD-10 (WHO)",
       "decision": "exclude",
       "confidence": 0.99,
-      "rationale": "Alcoholic cirrhosis is a complication of alcoholic liver disease, not hepatitis C.",
+      "rationale": "Alcoholic cirrhosis is a complication of alcoholic liver disease, not chronic hepatitis C.",
       "sources": [
         "ChromaDB"
       ],
-      "usage_frequency": null
+      "usage_frequency": 29189,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital HES inpatient FCEs",
+      "usage_setting": "secondary_care_hes",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "K71.2",
@@ -2237,11 +2296,16 @@
       "vocabulary": "ICD-10 (WHO)",
       "decision": "exclude",
       "confidence": 0.99,
-      "rationale": "Toxic liver disease with acute hepatitis is a different etiology, not hepatitis C.",
+      "rationale": "Toxic liver disease with acute hepatitis is a different etiology, not chronic hepatitis C.",
       "sources": [
         "ChromaDB"
       ],
-      "usage_frequency": null
+      "usage_frequency": 173,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital HES inpatient FCEs",
+      "usage_setting": "secondary_care_hes",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "K71.3",
@@ -2249,11 +2313,16 @@
       "vocabulary": "ICD-10 (WHO)",
       "decision": "exclude",
       "confidence": 0.99,
-      "rationale": "Toxic liver disease with chronic persistent hepatitis is a different etiology, not hepatitis C.",
+      "rationale": "Toxic liver disease with chronic persistent hepatitis is a different etiology, not chronic hepatitis C.",
       "sources": [
         "ChromaDB"
       ],
-      "usage_frequency": null
+      "usage_frequency": 4,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital HES inpatient FCEs",
+      "usage_setting": "secondary_care_hes",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "K71.4",
@@ -2261,11 +2330,16 @@
       "vocabulary": "ICD-10 (WHO)",
       "decision": "exclude",
       "confidence": 0.99,
-      "rationale": "Toxic liver disease with chronic lobular hepatitis is a different etiology, not hepatitis C.",
+      "rationale": "Toxic liver disease with chronic lobular hepatitis is a different etiology, not chronic hepatitis C.",
       "sources": [
         "ChromaDB"
       ],
-      "usage_frequency": null
+      "usage_frequency": 3,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital HES inpatient FCEs",
+      "usage_setting": "secondary_care_hes",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "K71.5",
@@ -2273,11 +2347,16 @@
       "vocabulary": "ICD-10 (WHO)",
       "decision": "exclude",
       "confidence": 0.99,
-      "rationale": "Toxic liver disease with chronic active hepatitis is a different etiology, not hepatitis C.",
+      "rationale": "Toxic liver disease with chronic active hepatitis is a different etiology, not chronic hepatitis C.",
       "sources": [
         "ChromaDB"
       ],
-      "usage_frequency": null
+      "usage_frequency": 19,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital HES inpatient FCEs",
+      "usage_setting": "secondary_care_hes",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "K71.6",
@@ -2285,11 +2364,16 @@
       "vocabulary": "ICD-10 (WHO)",
       "decision": "exclude",
       "confidence": 0.99,
-      "rationale": "Toxic liver disease with hepatitis is a different etiology, not hepatitis C.",
+      "rationale": "Toxic liver disease with hepatitis is a different etiology, not chronic hepatitis C.",
       "sources": [
         "ChromaDB"
       ],
-      "usage_frequency": null
+      "usage_frequency": 1445,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital HES inpatient FCEs",
+      "usage_setting": "secondary_care_hes",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "K71.7",
@@ -2297,23 +2381,339 @@
       "vocabulary": "ICD-10 (WHO)",
       "decision": "exclude",
       "confidence": 0.99,
-      "rationale": "Toxic liver disease with fibrosis and cirrhosis is a different etiology, not hepatitis C.",
+      "rationale": "Toxic liver disease with fibrosis and cirrhosis is a different etiology, not chronic hepatitis C.",
       "sources": [
         "ChromaDB"
       ],
-      "usage_frequency": null
+      "usage_frequency": 45,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital HES inpatient FCEs",
+      "usage_setting": "secondary_care_hes",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
-      "code": "K72.1",
-      "term": "Chronic hepatic failure",
-      "vocabulary": "ICD-10 (WHO)",
+      "code": "127225006",
+      "term": "Chronic myelomonocytic leukemia (disorder)",
+      "vocabulary": "SNOMED CT",
       "decision": "exclude",
       "confidence": 0.99,
-      "rationale": "Chronic hepatic failure is a complication of liver disease, not an instance of hepatitis C.",
+      "rationale": "Chronic myelomonocytic leukemia is an unrelated hematologic malignancy.",
       "sources": [
         "ChromaDB"
       ],
-      "usage_frequency": null
+      "usage_frequency": 2600,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": null,
+      "dmd_level": null
+    },
+    {
+      "code": "1296659009",
+      "term": "Acute exacerbation of chronic heart failure",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.99,
+      "rationale": "Acute exacerbation of chronic heart failure is an unrelated cardiac condition.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "usage_frequency": 10,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": 1245073,
+      "dmd_level": null
+    },
+    {
+      "code": "277474005",
+      "term": "B-cell chronic lymphocytic leukemia variant (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.99,
+      "rationale": "B-cell chronic lymphocytic leukemia is an unrelated hematologic malignancy.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "usage_frequency": 410,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": null,
+      "dmd_level": null
+    },
+    {
+      "code": "277545003",
+      "term": "T-cell chronic lymphocytic leukemia (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.99,
+      "rationale": "T-cell chronic lymphocytic leukemia is an unrelated hematologic malignancy.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "usage_frequency": 80,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": null,
+      "dmd_level": null
+    },
+    {
+      "code": "413847001",
+      "term": "Chronic phase chronic myeloid leukemia (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.99,
+      "rationale": "Chronic phase chronic myeloid leukemia is an unrelated hematologic malignancy.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "usage_frequency": 60,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": null,
+      "dmd_level": null
+    },
+    {
+      "code": "425748003",
+      "term": "Acute exacerbation of chronic bronchitis (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.99,
+      "rationale": "Acute exacerbation of chronic bronchitis is an unrelated respiratory condition.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "usage_frequency": 170,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": null,
+      "dmd_level": null
+    },
+    {
+      "code": "441530006",
+      "term": "Chronic diastolic heart failure",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.99,
+      "rationale": "Chronic diastolic heart failure is unrelated to chronic hepatitis C; it is a cardiovascular condition, not a hepatic condition.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "usage_frequency": 930,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": 40479576,
+      "dmd_level": null
+    },
+    {
+      "code": "442537007",
+      "term": "Non-Hodgkin lymphoma associated with Human immunodeficiency virus infection (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.99,
+      "rationale": "Non-Hodgkin lymphoma associated with HIV is an AIDS-defining malignancy; the term does not contain 'hepatitis C' and is not an instance of chronic hepatitis C.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "usage_frequency": null,
+      "usage_status": "withheld_below_5",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": null,
+      "dmd_level": null
+    },
+    {
+      "code": "48447003",
+      "term": "Chronic heart failure",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.99,
+      "rationale": "Chronic heart failure is unrelated to chronic hepatitis C; it is a cardiovascular condition, not a hepatic condition.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "usage_frequency": 960,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": 444031,
+      "dmd_level": null
+    },
+    {
+      "code": "52571006",
+      "term": "Chronic tracheobronchitis (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.99,
+      "rationale": "Chronic tracheobronchitis is a respiratory condition unrelated to chronic hepatitis C.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "usage_frequency": null,
+      "usage_status": "withheld_below_5",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": null,
+      "dmd_level": null
+    },
+    {
+      "code": "63480004",
+      "term": "Chronic bronchitis (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.99,
+      "rationale": "Chronic bronchitis is a respiratory condition unrelated to chronic hepatitis C.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "usage_frequency": 3180,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": null,
+      "dmd_level": null
+    },
+    {
+      "code": "713718006",
+      "term": "Diffuse non-Hodgkin immunoblastic lymphoma co-occurrent with human immunodeficiency virus infection (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.99,
+      "rationale": "This lymphoma is associated with HIV infection, not hepatitis C; the term does not contain 'hepatitis C'.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "usage_frequency": null,
+      "usage_status": "not_in_dataset",
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": null,
+      "dmd_level": null
+    },
+    {
+      "code": "721311006",
+      "term": "Systemic Epstein-Barr virus positive T-cell lymphoproliferative disease of childhood (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.99,
+      "rationale": "Systemic Epstein-Barr virus positive T-cell lymphoproliferative disease is unrelated to chronic hepatitis C.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "usage_frequency": null,
+      "usage_status": "not_in_dataset",
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": null,
+      "dmd_level": null
+    },
+    {
+      "code": "721847002",
+      "term": "Joubert syndrome with congenital hepatic fibrosis (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.99,
+      "rationale": "Joubert syndrome with congenital hepatic fibrosis is a genetic disorder unrelated to chronic hepatitis C.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "usage_frequency": null,
+      "usage_status": "not_in_dataset",
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": null,
+      "dmd_level": null
+    },
+    {
+      "code": "847091000000104",
+      "term": "Acute non-infective exacerbation of chronic obstructive pulmonary disease (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.99,
+      "rationale": "Acute non-infective exacerbation of COPD is a respiratory condition unrelated to chronic hepatitis C.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "usage_frequency": 33390,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": 44807895,
+      "dmd_level": null
+    },
+    {
+      "code": "92812005",
+      "term": "Chronic leukemia, disease (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.99,
+      "rationale": "Chronic leukemia is a hematologic malignancy unrelated to chronic hepatitis C.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "usage_frequency": 190,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": null,
+      "dmd_level": null
+    },
+    {
+      "code": "92814006",
+      "term": "Chronic lymphoid leukemia, disease (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.99,
+      "rationale": "Chronic lymphoid leukemia is a hematologic malignancy unrelated to chronic hepatitis C.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "usage_frequency": 26450,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": null,
+      "dmd_level": null
+    },
+    {
+      "code": "939211000000104",
+      "term": "Chronic kidney disease resolved (finding)",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.99,
+      "rationale": "Chronic kidney disease resolved is a resolved condition and does not represent an instance of chronic hepatitis C.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "usage_frequency": 7810,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": null,
+      "dmd_level": null
+    },
+    {
+      "code": "941201000000103",
+      "term": "Chronic obstructive pulmonary disease resolved (finding)",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.99,
+      "rationale": "COPD resolved is a resolved condition and does not represent an instance of chronic hepatitis C.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "usage_frequency": 13160,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": 46284163,
+      "dmd_level": null
     },
     {
       "code": "B18.8",
@@ -2321,11 +2721,16 @@
       "vocabulary": "ICD-10 (WHO)",
       "decision": "exclude",
       "confidence": 0.95,
-      "rationale": "Other chronic viral hepatitis may include non-C hepatitis types and is too broad.",
+      "rationale": "Other chronic viral hepatitis is a broader category that may include non-C hepatitis types.",
       "sources": [
         "ChromaDB"
       ],
-      "usage_frequency": null
+      "usage_frequency": 13,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital HES inpatient FCEs",
+      "usage_setting": "secondary_care_hes",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "B18.9",
@@ -2333,11 +2738,84 @@
       "vocabulary": "ICD-10 (WHO)",
       "decision": "exclude",
       "confidence": 0.95,
-      "rationale": "Chronic viral hepatitis unspecified is too broad and does not confirm hepatitis C.",
+      "rationale": "Chronic viral hepatitis unspecified does not confirm the patient has chronic hepatitis C specifically.",
       "sources": [
         "ChromaDB"
       ],
-      "usage_frequency": null
+      "usage_frequency": 23,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital HES inpatient FCEs",
+      "usage_setting": "secondary_care_hes",
+      "concept_id": null,
+      "dmd_level": null
+    },
+    {
+      "code": "B94.2",
+      "term": "Sequelae of viral hepatitis",
+      "vocabulary": "ICD-10 (WHO)",
+      "decision": "exclude",
+      "confidence": 0.95,
+      "rationale": "Sequelae of viral hepatitis represents a complication or aftermath, not an instance of chronic hepatitis C.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "usage_frequency": null,
+      "usage_status": "not_in_dataset",
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": null,
+      "dmd_level": null
+    },
+    {
+      "code": "K72.1",
+      "term": "Chronic hepatic failure",
+      "vocabulary": "ICD-10 (WHO)",
+      "decision": "exclude",
+      "confidence": 0.95,
+      "rationale": "Chronic hepatic failure is a complication of chronic liver disease, not an instance of chronic hepatitis C.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "usage_frequency": 413,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital HES inpatient FCEs",
+      "usage_setting": "secondary_care_hes",
+      "concept_id": null,
+      "dmd_level": null
+    },
+    {
+      "code": "K74",
+      "term": "Fibrosis and cirrhosis of liver",
+      "vocabulary": "ICD-10 (WHO)",
+      "decision": "exclude",
+      "confidence": 0.95,
+      "rationale": "Fibrosis and cirrhosis are complications of chronic hepatitis C, not instances of the condition itself, and the term does not name hepatitis C.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "usage_frequency": 16421,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital HES inpatient FCEs",
+      "usage_setting": "secondary_care_hes",
+      "concept_id": null,
+      "dmd_level": null
+    },
+    {
+      "code": "K74.0",
+      "term": "Hepatic fibrosis",
+      "vocabulary": "ICD-10 (WHO)",
+      "decision": "exclude",
+      "confidence": 0.95,
+      "rationale": "Hepatic fibrosis is a complication of chronic hepatitis C, not an instance of hepatitis C itself.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "usage_frequency": 913,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital HES inpatient FCEs",
+      "usage_setting": "secondary_care_hes",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "K74.3",
@@ -2349,7 +2827,12 @@
       "sources": [
         "ChromaDB"
       ],
-      "usage_frequency": null
+      "usage_frequency": 662,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital HES inpatient FCEs",
+      "usage_setting": "secondary_care_hes",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "K75.2",
@@ -2361,7 +2844,12 @@
       "sources": [
         "ChromaDB"
       ],
-      "usage_frequency": null
+      "usage_frequency": 19,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital HES inpatient FCEs",
+      "usage_setting": "secondary_care_hes",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "K75.4",
@@ -2369,11 +2857,16 @@
       "vocabulary": "ICD-10 (WHO)",
       "decision": "exclude",
       "confidence": 0.95,
-      "rationale": "Autoimmune hepatitis is a distinct etiology, not hepatitis C.",
+      "rationale": "Autoimmune hepatitis is a distinct condition from hepatitis C.",
       "sources": [
         "ChromaDB"
       ],
-      "usage_frequency": null
+      "usage_frequency": 2557,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital HES inpatient FCEs",
+      "usage_setting": "secondary_care_hes",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "K76.4",
@@ -2381,11 +2874,16 @@
       "vocabulary": "ICD-10 (WHO)",
       "decision": "exclude",
       "confidence": 0.95,
-      "rationale": "Peliosis hepatis is an unrelated liver condition, not hepatitis C.",
+      "rationale": "Peliosis hepatis is a vascular condition of the liver, not hepatitis C.",
       "sources": [
         "ChromaDB"
       ],
-      "usage_frequency": null
+      "usage_frequency": 4,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital HES inpatient FCEs",
+      "usage_setting": "secondary_care_hes",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "P35.3",
@@ -2393,11 +2891,16 @@
       "vocabulary": "ICD-10 (WHO)",
       "decision": "exclude",
       "confidence": 0.95,
-      "rationale": "Congenital viral hepatitis is a perinatal condition, not chronic hepatitis C in adults.",
+      "rationale": "Congenital viral hepatitis is a neonatal condition, not chronic hepatitis C in adults.",
       "sources": [
         "ChromaDB"
       ],
-      "usage_frequency": null
+      "usage_frequency": 7,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital HES inpatient FCEs",
+      "usage_setting": "secondary_care_hes",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "109841003",
@@ -2405,11 +2908,16 @@
       "vocabulary": "SNOMED CT",
       "decision": "exclude",
       "confidence": 0.95,
-      "rationale": "Liver cell carcinoma is a complication of chronic hepatitis C, not an instance of the condition itself.",
+      "rationale": "Liver cell carcinoma is a complication of chronic hepatitis C, not an instance of hepatitis C itself.",
       "sources": [
         "ChromaDB"
       ],
-      "usage_frequency": null
+      "usage_frequency": 9900,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "109842005",
@@ -2417,11 +2925,16 @@
       "vocabulary": "SNOMED CT",
       "decision": "exclude",
       "confidence": 0.95,
-      "rationale": "Intrahepatic bile duct carcinoma is a complication of chronic hepatitis C, not the condition itself.",
+      "rationale": "Intrahepatic bile duct carcinoma is a malignancy complication, not hepatitis C.",
       "sources": [
         "ChromaDB"
       ],
-      "usage_frequency": null
+      "usage_frequency": 110,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "1144891007",
@@ -2429,11 +2942,33 @@
       "vocabulary": "SNOMED CT",
       "decision": "exclude",
       "confidence": 0.95,
-      "rationale": "Primary cholangiocarcinoma is a complication of chronic hepatitis C, not an instance of the condition.",
+      "rationale": "Primary cholangiocarcinoma is a malignancy complication, not hepatitis C.",
       "sources": [
         "ChromaDB"
       ],
-      "usage_frequency": null
+      "usage_frequency": 60,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": null,
+      "dmd_level": null
+    },
+    {
+      "code": "1162855005",
+      "term": "Carcinoma of gallbladder and extrahepatic biliary tract (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.95,
+      "rationale": "Carcinoma of gallbladder and extrahepatic biliary tract is a malignancy, not hepatitis C.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "usage_frequency": 10,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "1186612004",
@@ -2441,11 +2976,16 @@
       "vocabulary": "SNOMED CT",
       "decision": "exclude",
       "confidence": 0.95,
-      "rationale": "Metastatic hepatocellular carcinoma is a complication of chronic hepatitis C, not the condition itself.",
+      "rationale": "Metastatic hepatocellular carcinoma is a malignancy complication, not hepatitis C.",
       "sources": [
         "ChromaDB"
       ],
-      "usage_frequency": null
+      "usage_frequency": 290,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "1186629001",
@@ -2453,11 +2993,16 @@
       "vocabulary": "SNOMED CT",
       "decision": "exclude",
       "confidence": 0.95,
-      "rationale": "Primary fibrolamellar hepatocellular carcinoma is a complication of chronic hepatitis C, not the condition itself.",
+      "rationale": "Primary fibrolamellar hepatocellular carcinoma is a malignancy complication, not hepatitis C.",
       "sources": [
         "ChromaDB"
       ],
-      "usage_frequency": null
+      "usage_frequency": null,
+      "usage_status": "withheld_below_5",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "1186630006",
@@ -2465,11 +3010,16 @@
       "vocabulary": "SNOMED CT",
       "decision": "exclude",
       "confidence": 0.95,
-      "rationale": "Primary liver cell carcinoma is a complication of chronic hepatitis C, not an instance of the condition.",
+      "rationale": "Primary liver cell carcinoma is a malignancy complication, not hepatitis C.",
       "sources": [
         "ChromaDB"
       ],
-      "usage_frequency": null
+      "usage_frequency": 20,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "1186631005",
@@ -2477,11 +3027,16 @@
       "vocabulary": "SNOMED CT",
       "decision": "exclude",
       "confidence": 0.95,
-      "rationale": "Primary combined hepatocellular carcinoma and cholangiocarcinoma is a complication, not an instance of chronic hepatitis C.",
+      "rationale": "Primary combined hepatocellular carcinoma and cholangiocarcinoma is a malignancy complication, not hepatitis C.",
       "sources": [
         "ChromaDB"
       ],
-      "usage_frequency": null
+      "usage_frequency": null,
+      "usage_status": "withheld_below_5",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "1196846002",
@@ -2489,11 +3044,16 @@
       "vocabulary": "SNOMED CT",
       "decision": "exclude",
       "confidence": 0.95,
-      "rationale": "Primary cystadenocarcinoma of intrahepatic bile duct is a complication of chronic hepatitis C, not the condition itself.",
+      "rationale": "Primary cystadenocarcinoma of intrahepatic bile duct is a malignancy, not hepatitis C.",
       "sources": [
         "ChromaDB"
       ],
-      "usage_frequency": null
+      "usage_frequency": null,
+      "usage_status": "withheld_below_5",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "1197204009",
@@ -2501,11 +3061,16 @@
       "vocabulary": "SNOMED CT",
       "decision": "exclude",
       "confidence": 0.95,
-      "rationale": "Adult hepatocellular carcinoma is a complication of chronic hepatitis C, not an instance of the condition.",
+      "rationale": "Adult hepatocellular carcinoma is a malignancy complication, not hepatitis C.",
       "sources": [
         "ChromaDB"
       ],
-      "usage_frequency": null
+      "usage_frequency": 120,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "1208349005",
@@ -2513,11 +3078,33 @@
       "vocabulary": "SNOMED CT",
       "decision": "exclude",
       "confidence": 0.95,
-      "rationale": "Pediatric hepatocellular carcinoma is a complication of chronic hepatitis C, not the condition itself.",
+      "rationale": "Pediatric hepatocellular carcinoma is a malignancy complication, not hepatitis C.",
       "sources": [
         "ChromaDB"
       ],
-      "usage_frequency": null
+      "usage_frequency": null,
+      "usage_status": "withheld_below_5",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": null,
+      "dmd_level": null
+    },
+    {
+      "code": "1240370001",
+      "term": "Metastatic squamous cell carcinoma to liver and intrahepatic biliary tract (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.95,
+      "rationale": "Metastatic squamous cell carcinoma to liver is a malignancy, not hepatitis C.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "usage_frequency": null,
+      "usage_status": "not_in_dataset",
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "1259313008",
@@ -2525,11 +3112,33 @@
       "vocabulary": "SNOMED CT",
       "decision": "exclude",
       "confidence": 0.95,
-      "rationale": "Primary intrahepatic bile duct carcinoma is a complication of chronic hepatitis C, not an instance of the condition.",
+      "rationale": "Primary intrahepatic bile duct carcinoma is a malignancy complication, not hepatitis C.",
       "sources": [
         "ChromaDB"
       ],
-      "usage_frequency": null
+      "usage_frequency": null,
+      "usage_status": "withheld_below_5",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": null,
+      "dmd_level": null
+    },
+    {
+      "code": "1259602004",
+      "term": "Primary carcinoma liver and/or biliary system (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.95,
+      "rationale": "Primary carcinoma liver and/or biliary system is a malignancy complication, not hepatitis C.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "usage_frequency": null,
+      "usage_status": "withheld_below_5",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "1260050006",
@@ -2537,11 +3146,16 @@
       "vocabulary": "SNOMED CT",
       "decision": "exclude",
       "confidence": 0.95,
-      "rationale": "Cholangiocarcinoma of intrahepatic biliary tract is a complication of chronic hepatitis C, not the condition itself.",
+      "rationale": "Cholangiocarcinoma of intrahepatic biliary tract is a malignancy complication, not hepatitis C.",
       "sources": [
         "ChromaDB"
       ],
-      "usage_frequency": null
+      "usage_frequency": 360,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "1268390002",
@@ -2549,11 +3163,16 @@
       "vocabulary": "SNOMED CT",
       "decision": "exclude",
       "confidence": 0.95,
-      "rationale": "Metastatic undifferentiated carcinoma to liver is a complication of chronic hepatitis C, not the condition itself.",
+      "rationale": "Metastatic undifferentiated carcinoma to liver is a malignancy, not hepatitis C.",
       "sources": [
         "ChromaDB"
       ],
-      "usage_frequency": null
+      "usage_frequency": null,
+      "usage_status": "withheld_below_5",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "1268391003",
@@ -2561,11 +3180,16 @@
       "vocabulary": "SNOMED CT",
       "decision": "exclude",
       "confidence": 0.95,
-      "rationale": "Primary undifferentiated carcinoma of liver is a complication of chronic hepatitis C, not an instance of the condition.",
+      "rationale": "Primary undifferentiated carcinoma of liver is a malignancy complication, not hepatitis C.",
       "sources": [
         "ChromaDB"
       ],
-      "usage_frequency": null
+      "usage_frequency": null,
+      "usage_status": "not_in_dataset",
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "1268541001",
@@ -2573,35 +3197,50 @@
       "vocabulary": "SNOMED CT",
       "decision": "exclude",
       "confidence": 0.95,
-      "rationale": "Primary squamous cell carcinoma of liver is a complication of chronic hepatitis C, not the condition itself.",
+      "rationale": "Primary squamous cell carcinoma of liver is a malignancy complication, not hepatitis C.",
       "sources": [
         "ChromaDB"
       ],
-      "usage_frequency": null
+      "usage_frequency": null,
+      "usage_status": "withheld_below_5",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
-      "code": "127225006",
-      "term": "Chronic myelomonocytic leukemia (disorder)",
+      "code": "1268544009",
+      "term": "Primary carcinoma of gallbladder and extrahepatic biliary tract (disorder)",
       "vocabulary": "SNOMED CT",
       "decision": "exclude",
       "confidence": 0.95,
-      "rationale": "Chronic myelomonocytic leukemia is an unrelated hematologic malignancy, not hepatitis C.",
+      "rationale": "Primary carcinoma of gallbladder and extrahepatic biliary tract is a malignancy, not hepatitis C.",
       "sources": [
         "ChromaDB"
       ],
-      "usage_frequency": null
+      "usage_frequency": 10,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
-      "code": "1296659009",
-      "term": "Acute exacerbation of chronic heart failure",
+      "code": "1268711001",
+      "term": "Primary hepatoblastoma of liver (disorder)",
       "vocabulary": "SNOMED CT",
       "decision": "exclude",
       "confidence": 0.95,
-      "rationale": "Acute exacerbation of chronic heart failure is an unrelated cardiovascular condition, not hepatitis C.",
+      "rationale": "Primary hepatoblastoma is a pediatric malignancy, not hepatitis C.",
       "sources": [
         "ChromaDB"
       ],
-      "usage_frequency": null
+      "usage_frequency": null,
+      "usage_status": "withheld_below_5",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "187769009",
@@ -2609,11 +3248,16 @@
       "vocabulary": "SNOMED CT",
       "decision": "exclude",
       "confidence": 0.95,
-      "rationale": "Primary carcinoma of liver is a complication of chronic hepatitis C, not an instance of the condition itself.",
+      "rationale": "Primary carcinoma of liver is a malignancy complication, not hepatitis C.",
       "sources": [
         "ChromaDB"
       ],
-      "usage_frequency": null
+      "usage_frequency": 210,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "253018005",
@@ -2621,11 +3265,16 @@
       "vocabulary": "SNOMED CT",
       "decision": "exclude",
       "confidence": 0.95,
-      "rationale": "Fibrolamellar hepatocellular carcinoma is a complication of chronic hepatitis C, not the condition itself.",
+      "rationale": "Fibrolamellar hepatocellular carcinoma is a malignancy complication, not hepatitis C.",
       "sources": [
         "ChromaDB"
       ],
-      "usage_frequency": null
+      "usage_frequency": 30,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "274902006",
@@ -2633,59 +3282,33 @@
       "vocabulary": "SNOMED CT",
       "decision": "exclude",
       "confidence": 0.95,
-      "rationale": "Combined hepatocellular carcinoma and cholangiocarcinoma is a complication of chronic hepatitis C, not the condition itself.",
+      "rationale": "Combined hepatocellular carcinoma and cholangiocarcinoma is a malignancy complication, not hepatitis C.",
       "sources": [
         "ChromaDB"
       ],
-      "usage_frequency": null
+      "usage_frequency": 30,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
-      "code": "277474005",
-      "term": "B-cell chronic lymphocytic leukemia variant (disorder)",
+      "code": "286887005",
+      "term": "Carcinoma liver and/or biliary system (disorder)",
       "vocabulary": "SNOMED CT",
       "decision": "exclude",
       "confidence": 0.95,
-      "rationale": "B-cell chronic lymphocytic leukemia variant is an unrelated hematologic malignancy, not hepatitis C.",
+      "rationale": "Carcinoma liver and/or biliary system is a malignancy complication, not hepatitis C.",
       "sources": [
         "ChromaDB"
       ],
-      "usage_frequency": null
-    },
-    {
-      "code": "277545003",
-      "term": "T-cell chronic lymphocytic leukemia (disorder)",
-      "vocabulary": "SNOMED CT",
-      "decision": "exclude",
-      "confidence": 0.95,
-      "rationale": "T-cell chronic lymphocytic leukemia is an unrelated hematologic malignancy, not hepatitis C.",
-      "sources": [
-        "ChromaDB"
-      ],
-      "usage_frequency": null
-    },
-    {
-      "code": "413847001",
-      "term": "Chronic phase chronic myeloid leukemia (disorder)",
-      "vocabulary": "SNOMED CT",
-      "decision": "exclude",
-      "confidence": 0.95,
-      "rationale": "Chronic phase chronic myeloid leukemia is an unrelated hematologic malignancy, not hepatitis C.",
-      "sources": [
-        "ChromaDB"
-      ],
-      "usage_frequency": null
-    },
-    {
-      "code": "442537007",
-      "term": "Non-Hodgkin lymphoma associated with Human immunodeficiency virus infection (disorder)",
-      "vocabulary": "SNOMED CT",
-      "decision": "exclude",
-      "confidence": 0.95,
-      "rationale": "Non-Hodgkin lymphoma associated with HIV is an unrelated malignancy, not hepatitis C.",
-      "sources": [
-        "ChromaDB"
-      ],
-      "usage_frequency": null
+      "usage_frequency": 60,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "445406001",
@@ -2693,23 +3316,16 @@
       "vocabulary": "SNOMED CT",
       "decision": "exclude",
       "confidence": 0.95,
-      "rationale": "Hepatosplenic T-cell lymphoma is an unrelated hematologic malignancy, not hepatitis C.",
+      "rationale": "Hepatosplenic T-cell lymphoma is a malignancy that may be associated with chronic hepatitis C but is a separate condition; the term does not explicitly name hepatitis C.",
       "sources": [
         "ChromaDB"
       ],
-      "usage_frequency": null
-    },
-    {
-      "code": "48447003",
-      "term": "Chronic heart failure",
-      "vocabulary": "SNOMED CT",
-      "decision": "exclude",
-      "confidence": 0.95,
-      "rationale": "Chronic heart failure is an unrelated cardiovascular condition, not hepatitis C.",
-      "sources": [
-        "ChromaDB"
-      ],
-      "usage_frequency": null
+      "usage_frequency": 30,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "699657009",
@@ -2717,23 +3333,16 @@
       "vocabulary": "SNOMED CT",
       "decision": "exclude",
       "confidence": 0.95,
-      "rationale": "Hepatosplenic gamma-delta cell lymphoma is a malignancy complication of chronic hepatitis C, not an instance of chronic hepatitis C itself, and the term does not contain 'hepatitis C'.",
+      "rationale": "Hepatosplenic gamma-delta cell lymphoma is a malignancy that may be associated with chronic hepatitis C but is a separate condition; the term does not explicitly name hepatitis C.",
       "sources": [
         "ChromaDB"
       ],
-      "usage_frequency": null
-    },
-    {
-      "code": "713718006",
-      "term": "Diffuse non-Hodgkin immunoblastic lymphoma co-occurrent with human immunodeficiency virus infection (disorder)",
-      "vocabulary": "SNOMED CT",
-      "decision": "exclude",
-      "confidence": 0.95,
-      "rationale": "This is a lymphoma co-occurrent with HIV infection, unrelated to chronic hepatitis C; the term does not contain 'hepatitis C'.",
-      "sources": [
-        "ChromaDB"
-      ],
-      "usage_frequency": null
+      "usage_frequency": 10,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "721716004",
@@ -2741,23 +3350,16 @@
       "vocabulary": "SNOMED CT",
       "decision": "exclude",
       "confidence": 0.95,
-      "rationale": "Cholangiocarcinoma is a malignancy complication of chronic hepatitis C, not an instance of chronic hepatitis C itself, and the term does not contain 'hepatitis C'.",
+      "rationale": "Primary cholangiocarcinoma is a malignancy that may be associated with chronic hepatitis C but is a separate condition; the term does not explicitly name hepatitis C.",
       "sources": [
         "ChromaDB"
       ],
-      "usage_frequency": null
-    },
-    {
-      "code": "721847002",
-      "term": "Joubert syndrome with congenital hepatic fibrosis (disorder)",
-      "vocabulary": "SNOMED CT",
-      "decision": "exclude",
-      "confidence": 0.95,
-      "rationale": "Joubert syndrome with congenital hepatic fibrosis is a genetic disorder unrelated to chronic hepatitis C; the term does not contain 'hepatitis C'.",
-      "sources": [
-        "ChromaDB"
-      ],
-      "usage_frequency": null
+      "usage_frequency": 200,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "724647003",
@@ -2765,11 +3367,16 @@
       "vocabulary": "SNOMED CT",
       "decision": "exclude",
       "confidence": 0.95,
-      "rationale": "This is a lymphoma co-occurrent with Epstein-Barr virus infection, unrelated to chronic hepatitis C; the term does not contain 'hepatitis C'.",
+      "rationale": "Diffuse large B-cell lymphoma associated with Epstein-Barr virus is a malignancy; the term does not contain 'hepatitis C'.",
       "sources": [
         "ChromaDB"
       ],
-      "usage_frequency": null
+      "usage_frequency": null,
+      "usage_status": "withheld_below_5",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "770684008",
@@ -2777,11 +3384,16 @@
       "vocabulary": "SNOMED CT",
       "decision": "exclude",
       "confidence": 0.95,
-      "rationale": "Squamous cell carcinoma of liver is a malignancy complication of chronic hepatitis C, not an instance of chronic hepatitis C itself, and the term does not contain 'hepatitis C'.",
+      "rationale": "Squamous cell carcinoma of liver is a malignancy that may be associated with chronic hepatitis C but is a separate condition; the term does not explicitly name hepatitis C.",
       "sources": [
         "ChromaDB"
       ],
-      "usage_frequency": null
+      "usage_frequency": null,
+      "usage_status": "withheld_below_5",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "770685009",
@@ -2789,35 +3401,33 @@
       "vocabulary": "SNOMED CT",
       "decision": "exclude",
       "confidence": 0.95,
-      "rationale": "Undifferentiated carcinoma of liver is a malignancy complication of chronic hepatitis C, not an instance of chronic hepatitis C itself, and the term does not contain 'hepatitis C'.",
+      "rationale": "Undifferentiated carcinoma of liver is a malignancy that may be associated with chronic hepatitis C but is a separate condition; the term does not explicitly name hepatitis C.",
       "sources": [
         "ChromaDB"
       ],
-      "usage_frequency": null
+      "usage_frequency": null,
+      "usage_status": "not_in_dataset",
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": null,
+      "dmd_level": null
     },
     {
-      "code": "92812005",
-      "term": "Chronic leukemia, disease (disorder)",
+      "code": "787091002",
+      "term": "Adenocarcinoma of liver and intrahepatic biliary tract (disorder)",
       "vocabulary": "SNOMED CT",
       "decision": "exclude",
       "confidence": 0.95,
-      "rationale": "Chronic leukemia is an unrelated hematologic malignancy with no connection to chronic hepatitis C; the term does not contain 'hepatitis C'.",
+      "rationale": "Adenocarcinoma of liver is a malignancy that may be associated with chronic hepatitis C but is a separate condition; the term does not explicitly name hepatitis C.",
       "sources": [
         "ChromaDB"
       ],
-      "usage_frequency": null
-    },
-    {
-      "code": "939211000000104",
-      "term": "Chronic kidney disease resolved (finding)",
-      "vocabulary": "SNOMED CT",
-      "decision": "exclude",
-      "confidence": 0.95,
-      "rationale": "Chronic kidney disease resolved is a resolved condition unrelated to chronic hepatitis C; the term does not contain 'hepatitis C' and represents a past state.",
-      "sources": [
-        "ChromaDB"
-      ],
-      "usage_frequency": null
+      "usage_frequency": 20,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "K73",
@@ -2825,11 +3435,16 @@
       "vocabulary": "ICD-10 (WHO)",
       "decision": "exclude",
       "confidence": 0.9,
-      "rationale": "Chronic hepatitis not elsewhere classified is too broad and does not specifically confirm hepatitis C.",
+      "rationale": "Chronic hepatitis not elsewhere classified is a broader category that excludes viral hepatitis, which is coded in B18.",
       "sources": [
         "ChromaDB"
       ],
-      "usage_frequency": null
+      "usage_frequency": 323,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital HES inpatient FCEs",
+      "usage_setting": "secondary_care_hes",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "K73.0",
@@ -2837,11 +3452,16 @@
       "vocabulary": "ICD-10 (WHO)",
       "decision": "exclude",
       "confidence": 0.9,
-      "rationale": "Chronic persistent hepatitis not elsewhere classified does not specifically confirm hepatitis C.",
+      "rationale": "Chronic persistent hepatitis not elsewhere classified excludes viral hepatitis, which is coded in B18.",
       "sources": [
         "ChromaDB"
       ],
-      "usage_frequency": null
+      "usage_frequency": 4,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital HES inpatient FCEs",
+      "usage_setting": "secondary_care_hes",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "K73.1",
@@ -2849,35 +3469,16 @@
       "vocabulary": "ICD-10 (WHO)",
       "decision": "exclude",
       "confidence": 0.9,
-      "rationale": "Chronic lobular hepatitis not elsewhere classified does not specifically confirm hepatitis C.",
+      "rationale": "Chronic lobular hepatitis not elsewhere classified excludes viral hepatitis, which is coded in B18.",
       "sources": [
         "ChromaDB"
       ],
-      "usage_frequency": null
-    },
-    {
-      "code": "K74",
-      "term": "Fibrosis and cirrhosis of liver",
-      "vocabulary": "ICD-10 (WHO)",
-      "decision": "exclude",
-      "confidence": 0.9,
-      "rationale": "Fibrosis and cirrhosis are complications of chronic hepatitis C, not instances of the condition itself.",
-      "sources": [
-        "ChromaDB"
-      ],
-      "usage_frequency": null
-    },
-    {
-      "code": "K74.0",
-      "term": "Hepatic fibrosis",
-      "vocabulary": "ICD-10 (WHO)",
-      "decision": "exclude",
-      "confidence": 0.9,
-      "rationale": "Hepatic fibrosis is a complication of chronic hepatitis C, not an instance of the condition.",
-      "sources": [
-        "ChromaDB"
-      ],
-      "usage_frequency": null
+      "usage_frequency": 26,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital HES inpatient FCEs",
+      "usage_setting": "secondary_care_hes",
+      "concept_id": null,
+      "dmd_level": null
     }
   ],
   "pipeline": "rag",

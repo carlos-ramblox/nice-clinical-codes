@@ -6,12 +6,12 @@
     "retrieved_raw": {
       "codelist_name": "retrieved_raw",
       "n_ref_codes": 56,
-      "n_output_codes": 144,
+      "n_output_codes": 133,
       "recall": 0.9107,
-      "precision": 0.3542,
-      "f1": 0.51,
+      "precision": 0.3835,
+      "f1": 0.5397,
       "tp_count": 51,
-      "fp_count": 93,
+      "fp_count": 82,
       "fn_count": 5,
       "tp_codes": [
         {
@@ -269,10 +269,6 @@
           "term": "Chronic obstructive pulmonary disease patient unsuitable for pulmonary rehabilitation (finding)"
         },
         {
-          "code": "383611000000102",
-          "term": "At risk of chronic obstructive pulmonary disease exacerbation"
-        },
-        {
           "code": "394703002",
           "term": "Chronic obstructive pulmonary disease annual review (regime/therapy)"
         },
@@ -281,36 +277,8 @@
           "term": "Rheumatoid lung disease (disorder)"
         },
         {
-          "code": "401200002",
-          "term": "At increased risk of chronic obstructive pulmonary disease"
-        },
-        {
-          "code": "413845009",
-          "term": "Chronic obstructive pulmonary disease accident and emergency attendance since last visit"
-        },
-        {
           "code": "442025000",
           "term": "Acute exacerbation of chronic asthmatic bronchitis"
-        },
-        {
-          "code": "445602009",
-          "term": "Assessment using clinical chronic obstructive pulmonary disease questionnaire"
-        },
-        {
-          "code": "445811006",
-          "term": "Assessment using chronic obstructive pulmonary disease assessment test"
-        },
-        {
-          "code": "446660005",
-          "term": "Chronic obstructive pulmonary disease assessment test score"
-        },
-        {
-          "code": "57671000052108",
-          "term": "Chronic Obstructive Pulmonary Disease Assessment Test scale"
-        },
-        {
-          "code": "704120002",
-          "term": "Change in chronic obstructive pulmonary disease management plan"
         },
         {
           "code": "707447008",
@@ -361,24 +329,12 @@
           "term": "Number of chronic obstructive pulmonary disease exacerbations in past year (observable entity)"
         },
         {
-          "code": "736365000",
-          "term": "Acute exacerbation of chronic obstructive pulmonary disease care plan"
-        },
-        {
           "code": "760601000000107",
           "term": "Chronic obstructive pulmonary disease 3 monthly review (regime/therapy)"
         },
         {
           "code": "760621000000103",
           "term": "Chronic obstructive pulmonary disease 6 monthly review (regime/therapy)"
-        },
-        {
-          "code": "848431000000106",
-          "term": "Chronic obstructive pulmonary disease care pathway"
-        },
-        {
-          "code": "859431000000102",
-          "term": "Chronic obstructive pulmonary disease care assessment"
         },
         {
           "code": "866881000000101",
@@ -1709,13 +1665,13 @@
     "included_only": {
       "codelist_name": "included_only",
       "n_ref_codes": 56,
-      "n_output_codes": 36,
-      "recall": 0.4286,
-      "precision": 0.6667,
-      "f1": 0.5217,
-      "tp_count": 24,
-      "fp_count": 12,
-      "fn_count": 32,
+      "n_output_codes": 34,
+      "recall": 0.4107,
+      "precision": 0.6765,
+      "f1": 0.5111,
+      "tp_count": 23,
+      "fp_count": 11,
+      "fn_count": 33,
       "tp_codes": [
         {
           "code": "1010334009",
@@ -1748,10 +1704,6 @@
         {
           "code": "185086009",
           "term": "Chronic obstructive bronchitis"
-        },
-        {
-          "code": "195949008",
-          "term": "Chronic asthmatic bronchitis"
         },
         {
           "code": "195951007",
@@ -1820,10 +1772,6 @@
           "term": "Asthma-chronic obstructive pulmonary disease overlap syndrome (disorder)"
         },
         {
-          "code": "442025000",
-          "term": "Acute exacerbation of chronic asthmatic bronchitis"
-        },
-        {
           "code": "J41",
           "term": "Simple and mucopurulent chronic bronchitis"
         },
@@ -1876,6 +1824,10 @@
         {
           "code": "16003001",
           "term": "Giant bullous emphysema"
+        },
+        {
+          "code": "195949008",
+          "term": "Chronic asthmatic bronchitis"
         },
         {
           "code": "195953005",
@@ -1998,12 +1950,12 @@
     "included_plus_uncertain": {
       "codelist_name": "included_plus_uncertain",
       "n_ref_codes": 56,
-      "n_output_codes": 37,
+      "n_output_codes": 38,
       "recall": 0.4286,
-      "precision": 0.6486,
-      "f1": 0.5161,
+      "precision": 0.6316,
+      "f1": 0.5106,
       "tp_count": 24,
-      "fp_count": 13,
+      "fp_count": 14,
       "fn_count": 32,
       "tp_codes": [
         {
@@ -2111,6 +2063,10 @@
         {
           "code": "442025000",
           "term": "Acute exacerbation of chronic asthmatic bronchitis"
+        },
+        {
+          "code": "866881000000101",
+          "term": "Chronic asthma with fixed airflow obstruction"
         },
         {
           "code": "J41",
@@ -2294,11 +2250,17 @@
     "codes": []
   },
   "uncertain_in_reference": {
-    "count": 0,
-    "codes": []
+    "count": 1,
+    "codes": [
+      {
+        "code": "195949008",
+        "term": "Chronic asthmatic bronchitis",
+        "rationale": "Chronic asthmatic bronchitis may represent asthma or COPD overlap, but term does not explicitly name COPD; clinical judgment needed on whether this is a COPD subtype."
+      }
+    ]
   },
-  "summary": "Recall: 42.9% (24 of 56 reference codes retrieved). Precision: 66.7%. F1: 52.2%. 0 reference codes were incorrectly excluded.",
-  "elapsed_seconds": 23.52,
+  "summary": "Recall: 41.1% (23 of 56 reference codes retrieved). Precision: 67.7%. F1: 51.1%. 0 reference codes were incorrectly excluded.",
+  "elapsed_seconds": 25.74,
   "pipeline_results_count": 100,
   "scored_codes": [
     {
@@ -2307,12 +2269,34 @@
       "vocabulary": "ICD-10 (WHO)",
       "decision": "include",
       "confidence": 1.0,
-      "rationale": "This is the primary ICD-10 code for COPD and directly matches the query.",
+      "rationale": "This is the primary ICD-10 code for chronic obstructive pulmonary disease.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "usage_frequency": 237512,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital HES inpatient FCEs",
+      "usage_setting": "secondary_care_hes",
+      "concept_id": null,
+      "dmd_level": null
+    },
+    {
+      "code": "13645005",
+      "term": "Chronic obstructive lung disease (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.98,
+      "rationale": "Chronic obstructive lung disease is a direct synonym for COPD and represents the core condition.",
       "sources": [
         "ChromaDB",
-        "OMOPHub"
+        "QOF Business Rules 2024-25"
       ],
-      "usage_frequency": null
+      "usage_frequency": 811990,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": 255573,
+      "dmd_level": null
     },
     {
       "code": "J44.0",
@@ -2322,10 +2306,14 @@
       "confidence": 0.95,
       "rationale": "COPD with acute lower respiratory infection is a clinical variant of COPD.",
       "sources": [
-        "ChromaDB",
-        "OMOPHub"
+        "ChromaDB"
       ],
-      "usage_frequency": null
+      "usage_frequency": 162730,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital HES inpatient FCEs",
+      "usage_setting": "secondary_care_hes",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "J44.1",
@@ -2335,10 +2323,14 @@
       "confidence": 0.95,
       "rationale": "COPD with acute exacerbation is a clinical variant of COPD.",
       "sources": [
-        "ChromaDB",
-        "OMOPHub"
+        "ChromaDB"
       ],
-      "usage_frequency": null
+      "usage_frequency": 65184,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital HES inpatient FCEs",
+      "usage_setting": "secondary_care_hes",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "J44.8",
@@ -2348,10 +2340,14 @@
       "confidence": 0.95,
       "rationale": "Other specified COPD is a clinical variant of COPD.",
       "sources": [
-        "ChromaDB",
-        "OMOPHub"
+        "ChromaDB"
       ],
-      "usage_frequency": null
+      "usage_frequency": 888,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital HES inpatient FCEs",
+      "usage_setting": "secondary_care_hes",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "J44.9",
@@ -2361,10 +2357,14 @@
       "confidence": 0.95,
       "rationale": "Unspecified COPD is a clinical variant of COPD.",
       "sources": [
-        "ChromaDB",
-        "OMOPHub"
+        "ChromaDB"
       ],
-      "usage_frequency": null
+      "usage_frequency": 8710,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital HES inpatient FCEs",
+      "usage_setting": "secondary_care_hes",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "135836000",
@@ -2372,39 +2372,17 @@
       "vocabulary": "SNOMED CT",
       "decision": "include",
       "confidence": 0.95,
-      "rationale": "End stage COPD is a severity variant of COPD and represents an instance of the condition.",
+      "rationale": "End stage chronic obstructive airways disease explicitly names the condition and represents a severity variant of COPD.",
       "sources": [
         "ChromaDB",
         "QOF Business Rules 2024-25"
       ],
-      "usage_frequency": null
-    },
-    {
-      "code": "13645005",
-      "term": "Chronic obstructive lung disease (disorder)",
-      "vocabulary": "SNOMED CT",
-      "decision": "include",
-      "confidence": 0.95,
-      "rationale": "Chronic obstructive lung disease is a direct synonym for COPD and a core diagnostic code.",
-      "sources": [
-        "ChromaDB",
-        "OMOPHub",
-        "QOF Business Rules 2024-25"
-      ],
-      "usage_frequency": null
-    },
-    {
-      "code": "185086009",
-      "term": "Chronic obstructive bronchitis (disorder)",
-      "vocabulary": "SNOMED CT",
-      "decision": "include",
-      "confidence": 0.95,
-      "rationale": "Chronic obstructive bronchitis is a core component and manifestation of COPD.",
-      "sources": [
-        "ChromaDB",
-        "QOF Business Rules 2024-25"
-      ],
-      "usage_frequency": null
+      "usage_frequency": 1950,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": 4046986,
+      "dmd_level": null
     },
     {
       "code": "195951007",
@@ -2412,13 +2390,17 @@
       "vocabulary": "SNOMED CT",
       "decision": "include",
       "confidence": 0.95,
-      "rationale": "Acute exacerbation of COPD is a clinical manifestation of the underlying COPD condition.",
+      "rationale": "Acute exacerbation of chronic obstructive airways disease explicitly names the condition and represents an acute manifestation of COPD.",
       "sources": [
         "ChromaDB",
-        "OMOPHub",
         "QOF Business Rules 2024-25"
       ],
-      "usage_frequency": null
+      "usage_frequency": 278790,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "285381006",
@@ -2426,13 +2408,17 @@
       "vocabulary": "SNOMED CT",
       "decision": "include",
       "confidence": 0.95,
-      "rationale": "Acute infective exacerbation of COPD is a clinical manifestation of the underlying COPD condition.",
+      "rationale": "Acute infective exacerbation of chronic obstructive airways disease explicitly names the condition and represents an acute manifestation of COPD.",
       "sources": [
         "ChromaDB",
-        "OMOPHub",
         "QOF Business Rules 2024-25"
       ],
-      "usage_frequency": null
+      "usage_frequency": 90680,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": 4115044,
+      "dmd_level": null
     },
     {
       "code": "293991000000106",
@@ -2440,12 +2426,17 @@
       "vocabulary": "SNOMED CT",
       "decision": "include",
       "confidence": 0.95,
-      "rationale": "Very severe COPD is a severity variant of COPD and represents an instance of the condition.",
+      "rationale": "Very severe COPD explicitly names the condition and represents a severity variant of COPD.",
       "sources": [
         "ChromaDB",
         "QOF Business Rules 2024-25"
       ],
-      "usage_frequency": null
+      "usage_frequency": 10480,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": 44791725,
+      "dmd_level": null
     },
     {
       "code": "313296004",
@@ -2453,12 +2444,17 @@
       "vocabulary": "SNOMED CT",
       "decision": "include",
       "confidence": 0.95,
-      "rationale": "Mild COPD is a severity variant of COPD and represents an instance of the condition.",
+      "rationale": "Mild COPD explicitly names the condition and represents a severity variant of COPD.",
       "sources": [
         "ChromaDB",
         "QOF Business Rules 2024-25"
       ],
-      "usage_frequency": null
+      "usage_frequency": 136950,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": 4196712,
+      "dmd_level": null
     },
     {
       "code": "313297008",
@@ -2466,12 +2462,17 @@
       "vocabulary": "SNOMED CT",
       "decision": "include",
       "confidence": 0.95,
-      "rationale": "Moderate COPD is a severity variant of COPD and represents an instance of the condition.",
+      "rationale": "Moderate COPD explicitly names the condition and represents a severity variant of COPD.",
       "sources": [
         "ChromaDB",
         "QOF Business Rules 2024-25"
       ],
-      "usage_frequency": null
+      "usage_frequency": 170080,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": 4193588,
+      "dmd_level": null
     },
     {
       "code": "313299006",
@@ -2479,25 +2480,125 @@
       "vocabulary": "SNOMED CT",
       "decision": "include",
       "confidence": 0.95,
-      "rationale": "Severe COPD is a severity variant of COPD and represents an instance of the condition.",
+      "rationale": "Severe COPD explicitly names the condition and represents a severity variant of COPD.",
       "sources": [
         "ChromaDB",
         "QOF Business Rules 2024-25"
       ],
-      "usage_frequency": null
+      "usage_frequency": 65670,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": 4209097,
+      "dmd_level": null
+    },
+    {
+      "code": "847091000000104",
+      "term": "Acute non-infective exacerbation of chronic obstructive pulmonary disease (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "This code explicitly names COPD in the term and describes an acute exacerbation, a direct manifestation of COPD.",
+      "sources": [
+        "ChromaDB",
+        "QOF Business Rules 2024-25"
+      ],
+      "usage_frequency": 33390,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": 44807895,
+      "dmd_level": null
+    },
+    {
+      "code": "293241000119100",
+      "term": "Acute exacerbation of chronic obstructive bronchitis (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.93,
+      "rationale": "Acute exacerbation of chronic obstructive bronchitis explicitly names the condition and represents an acute manifestation of COPD.",
+      "sources": [
+        "ChromaDB",
+        "QOF Business Rules 2024-25"
+      ],
+      "usage_frequency": 50,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": 46270376,
+      "dmd_level": null
+    },
+    {
+      "code": "185086009",
+      "term": "Chronic obstructive bronchitis (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.92,
+      "rationale": "Chronic obstructive bronchitis is a key component and subtype of COPD, representing an instance of the condition.",
+      "sources": [
+        "ChromaDB",
+        "QOF Business Rules 2024-25"
+      ],
+      "usage_frequency": 390,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": 258780,
+      "dmd_level": null
+    },
+    {
+      "code": "196001008",
+      "term": "Chronic obstructive pulmonary disease with acute lower respiratory infection (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.92,
+      "rationale": "COPD with acute lower respiratory infection explicitly names COPD and represents an instance with acute complication.",
+      "sources": [
+        "ChromaDB",
+        "QOF Business Rules 2024-25"
+      ],
+      "usage_frequency": 3250,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": 4110056,
+      "dmd_level": null
+    },
+    {
+      "code": "425748003",
+      "term": "Acute exacerbation of chronic bronchitis (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.92,
+      "rationale": "Acute exacerbation of chronic bronchitis explicitly names the condition and represents an acute manifestation of COPD.",
+      "sources": [
+        "ChromaDB",
+        "QOF Business Rules 2024-25"
+      ],
+      "usage_frequency": 170,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "63480004",
       "term": "Chronic bronchitis (disorder)",
       "vocabulary": "SNOMED CT",
       "decision": "include",
-      "confidence": 0.95,
-      "rationale": "Chronic bronchitis is a core component and manifestation of COPD.",
+      "confidence": 0.92,
+      "rationale": "Chronic bronchitis is a key component and subtype of COPD, representing an instance of the condition.",
       "sources": [
         "ChromaDB",
         "QOF Business Rules 2024-25"
       ],
-      "usage_frequency": null
+      "usage_frequency": 3180,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "J41",
@@ -2505,11 +2606,16 @@
       "vocabulary": "ICD-10 (WHO)",
       "decision": "include",
       "confidence": 0.9,
-      "rationale": "Simple and mucopurulent chronic bronchitis is a component condition of COPD and represents chronic airway obstruction.",
+      "rationale": "Simple and mucopurulent chronic bronchitis is a component condition of COPD.",
       "sources": [
         "ChromaDB"
       ],
-      "usage_frequency": null
+      "usage_frequency": 41,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital HES inpatient FCEs",
+      "usage_setting": "secondary_care_hes",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "J41.0",
@@ -2517,11 +2623,16 @@
       "vocabulary": "ICD-10 (WHO)",
       "decision": "include",
       "confidence": 0.9,
-      "rationale": "Simple chronic bronchitis is a subtype of chronic bronchitis, a key component of COPD.",
+      "rationale": "Simple chronic bronchitis is a component condition of COPD.",
       "sources": [
         "ChromaDB"
       ],
-      "usage_frequency": null
+      "usage_frequency": 30,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital HES inpatient FCEs",
+      "usage_setting": "secondary_care_hes",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "J41.1",
@@ -2529,11 +2640,16 @@
       "vocabulary": "ICD-10 (WHO)",
       "decision": "include",
       "confidence": 0.9,
-      "rationale": "Mucopurulent chronic bronchitis is a subtype of chronic bronchitis, a key component of COPD.",
+      "rationale": "Mucopurulent chronic bronchitis is a component condition of COPD.",
       "sources": [
         "ChromaDB"
       ],
-      "usage_frequency": null
+      "usage_frequency": 11,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital HES inpatient FCEs",
+      "usage_setting": "secondary_care_hes",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "J41.8",
@@ -2541,11 +2657,16 @@
       "vocabulary": "ICD-10 (WHO)",
       "decision": "include",
       "confidence": 0.9,
-      "rationale": "Mixed simple and mucopurulent chronic bronchitis is a subtype of chronic bronchitis, a key component of COPD.",
+      "rationale": "Mixed simple and mucopurulent chronic bronchitis is a component condition of COPD.",
       "sources": [
         "ChromaDB"
       ],
-      "usage_frequency": null
+      "usage_frequency": null,
+      "usage_status": "not_in_dataset",
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "J42",
@@ -2553,24 +2674,16 @@
       "vocabulary": "ICD-10 (WHO)",
       "decision": "include",
       "confidence": 0.9,
-      "rationale": "Unspecified chronic bronchitis is a core component of COPD.",
+      "rationale": "Unspecified chronic bronchitis is a component condition of COPD.",
       "sources": [
         "ChromaDB"
       ],
-      "usage_frequency": null
-    },
-    {
-      "code": "1010334009",
-      "term": "Emphysema of right lung (disorder)",
-      "vocabulary": "SNOMED CT",
-      "decision": "include",
-      "confidence": 0.9,
-      "rationale": "Emphysema of right lung is a specific manifestation and subtype of COPD.",
-      "sources": [
-        "ChromaDB",
-        "QOF Business Rules 2024-25"
-      ],
-      "usage_frequency": null
+      "usage_frequency": 382,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital HES inpatient FCEs",
+      "usage_setting": "secondary_care_hes",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "106001000119101",
@@ -2578,12 +2691,17 @@
       "vocabulary": "SNOMED CT",
       "decision": "include",
       "confidence": 0.9,
-      "rationale": "COPD co-occurrent with acute bronchitis represents an instance of COPD with an acute exacerbation.",
+      "rationale": "Chronic obstructive lung disease co-occurrent with acute bronchitis explicitly names COPD and represents an instance with acute exacerbation.",
       "sources": [
         "ChromaDB",
         "QOF Business Rules 2024-25"
       ],
-      "usage_frequency": null
+      "usage_frequency": 10,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": 46269701,
+      "dmd_level": null
     },
     {
       "code": "16846004",
@@ -2591,64 +2709,17 @@
       "vocabulary": "SNOMED CT",
       "decision": "include",
       "confidence": 0.9,
-      "rationale": "Obstructive emphysema is a specific manifestation and subtype of COPD.",
+      "rationale": "Obstructive emphysema is a pathological manifestation and subtype of COPD, representing an instance of the condition.",
       "sources": [
         "ChromaDB",
         "QOF Business Rules 2024-25"
       ],
-      "usage_frequency": null
-    },
-    {
-      "code": "196001008",
-      "term": "Chronic obstructive pulmonary disease with acute lower respiratory infection (disorder)",
-      "vocabulary": "SNOMED CT",
-      "decision": "include",
-      "confidence": 0.9,
-      "rationale": "COPD with acute lower respiratory infection represents an instance of COPD with acute complication.",
-      "sources": [
-        "ChromaDB",
-        "QOF Business Rules 2024-25"
-      ],
-      "usage_frequency": null
-    },
-    {
-      "code": "293241000119100",
-      "term": "Acute exacerbation of chronic obstructive bronchitis (disorder)",
-      "vocabulary": "SNOMED CT",
-      "decision": "include",
-      "confidence": 0.9,
-      "rationale": "Acute exacerbation of chronic obstructive bronchitis is a manifestation of COPD.",
-      "sources": [
-        "ChromaDB",
-        "QOF Business Rules 2024-25"
-      ],
-      "usage_frequency": null
-    },
-    {
-      "code": "425748003",
-      "term": "Acute exacerbation of chronic bronchitis (disorder)",
-      "vocabulary": "SNOMED CT",
-      "decision": "include",
-      "confidence": 0.9,
-      "rationale": "Acute exacerbation of chronic bronchitis is a manifestation of COPD.",
-      "sources": [
-        "ChromaDB",
-        "QOF Business Rules 2024-25"
-      ],
-      "usage_frequency": null
-    },
-    {
-      "code": "52571006",
-      "term": "Chronic tracheobronchitis (disorder)",
-      "vocabulary": "SNOMED CT",
-      "decision": "include",
-      "confidence": 0.9,
-      "rationale": "Chronic tracheobronchitis is a manifestation and component of COPD.",
-      "sources": [
-        "ChromaDB",
-        "QOF Business Rules 2024-25"
-      ],
-      "usage_frequency": null
+      "usage_frequency": 160,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "61937009",
@@ -2656,26 +2727,17 @@
       "vocabulary": "SNOMED CT",
       "decision": "include",
       "confidence": 0.9,
-      "rationale": "Simple chronic bronchitis is a manifestation and component of COPD.",
+      "rationale": "Simple chronic bronchitis is a subtype and manifestation of COPD, representing an instance of the condition.",
       "sources": [
         "ChromaDB",
         "QOF Business Rules 2024-25"
       ],
-      "usage_frequency": null
-    },
-    {
-      "code": "847091000000104",
-      "term": "Acute non-infective exacerbation of chronic obstructive pulmonary disease (disorder)",
-      "vocabulary": "SNOMED CT",
-      "decision": "include",
-      "confidence": 0.9,
-      "rationale": "This code explicitly names acute exacerbation of COPD, a direct manifestation of the condition that confirms COPD diagnosis.",
-      "sources": [
-        "ChromaDB",
-        "OMOPHub",
-        "QOF Business Rules 2024-25"
-      ],
-      "usage_frequency": null
+      "usage_frequency": 50,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "87433001",
@@ -2683,77 +2745,107 @@
       "vocabulary": "SNOMED CT",
       "decision": "include",
       "confidence": 0.9,
-      "rationale": "Pulmonary emphysema is a primary pathological component and clinical subtype of COPD.",
+      "rationale": "Pulmonary emphysema is a major pathological component and clinical subtype of COPD.",
       "sources": [
         "ChromaDB",
         "QOF Business Rules 2024-25"
       ],
-      "usage_frequency": null
+      "usage_frequency": 93910,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "10692761000119107",
       "term": "Asthma-chronic obstructive pulmonary disease overlap syndrome",
       "vocabulary": "SNOMED CT",
       "decision": "include",
-      "confidence": 0.85,
-      "rationale": "Asthma-COPD overlap syndrome is a recognized clinical entity where COPD is explicitly named in the term.",
+      "confidence": 0.88,
+      "rationale": "Asthma-COPD overlap syndrome explicitly names COPD and represents a recognized clinical entity where COPD is present.",
       "sources": [
         "ChromaDB",
-        "OMOPHub",
         "OpenCodelists (Bennett Institute)"
       ],
-      "usage_frequency": null
+      "usage_frequency": 30650,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": 46274062,
+      "dmd_level": null
     },
     {
       "code": "10692761000119108",
       "term": "Asthma-chronic obstructive pulmonary disease overlap syndrome (disorder)",
       "vocabulary": "SNOMED CT",
       "decision": "include",
-      "confidence": 0.85,
-      "rationale": "Asthma-COPD overlap syndrome (disorder) is a recognized clinical entity where COPD is explicitly named in the term.",
+      "confidence": 0.88,
+      "rationale": "Asthma-COPD overlap syndrome (disorder) explicitly names COPD and represents a recognized clinical entity where COPD is present.",
       "sources": [
         "ChromaDB",
         "QOF Business Rules 2024-25"
       ],
-      "usage_frequency": null
+      "usage_frequency": null,
+      "usage_status": "not_in_dataset",
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "1751000119100",
       "term": "Acute exacerbation of chronic obstructive pulmonary disease with asthma",
       "vocabulary": "SNOMED CT",
       "decision": "include",
-      "confidence": 0.85,
-      "rationale": "Acute exacerbation of COPD with asthma represents an instance of COPD with acute worsening.",
+      "confidence": 0.88,
+      "rationale": "Acute exacerbation of COPD with asthma explicitly names COPD and represents an acute manifestation of the condition.",
       "sources": [
         "ChromaDB",
-        "OMOPHub",
         "OpenCodelists (Bennett Institute)"
       ],
-      "usage_frequency": null
+      "usage_frequency": 160,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
-      "code": "195949008",
-      "term": "Chronic asthmatic bronchitis",
+      "code": "52571006",
+      "term": "Chronic tracheobronchitis (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.88,
+      "rationale": "Chronic tracheobronchitis is a subtype and manifestation of COPD, representing an instance of the condition.",
+      "sources": [
+        "ChromaDB",
+        "QOF Business Rules 2024-25"
+      ],
+      "usage_frequency": null,
+      "usage_status": "withheld_below_5",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": null,
+      "dmd_level": null
+    },
+    {
+      "code": "1010334009",
+      "term": "Emphysema of right lung (disorder)",
       "vocabulary": "SNOMED CT",
       "decision": "include",
       "confidence": 0.85,
-      "rationale": "Chronic asthmatic bronchitis is a recognized COPD phenotype with asthmatic features.",
+      "rationale": "Emphysema of right lung is a pathological manifestation and subtype of COPD, representing an instance of the condition.",
       "sources": [
-        "ChromaDB"
+        "ChromaDB",
+        "QOF Business Rules 2024-25"
       ],
-      "usage_frequency": null
-    },
-    {
-      "code": "442025000",
-      "term": "Acute exacerbation of chronic asthmatic bronchitis",
-      "vocabulary": "SNOMED CT",
-      "decision": "include",
-      "confidence": 0.85,
-      "rationale": "Acute exacerbation of chronic asthmatic bronchitis is a manifestation of COPD with asthmatic features.",
-      "sources": [
-        "ChromaDB"
-      ],
-      "usage_frequency": null
+      "usage_frequency": 240,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "74417001",
@@ -2766,7 +2858,46 @@
         "ChromaDB",
         "QOF Business Rules 2024-25"
       ],
-      "usage_frequency": null
+      "usage_frequency": 50,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": null,
+      "dmd_level": null
+    },
+    {
+      "code": "442025000",
+      "term": "Acute exacerbation of chronic asthmatic bronchitis",
+      "vocabulary": "SNOMED CT",
+      "decision": "uncertain",
+      "confidence": 0.7,
+      "rationale": "Acute exacerbation of chronic asthmatic bronchitis may represent asthma or COPD overlap; term does not explicitly name COPD, clinical judgment needed.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "usage_frequency": 160,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": null,
+      "dmd_level": null
+    },
+    {
+      "code": "195949008",
+      "term": "Chronic asthmatic bronchitis",
+      "vocabulary": "SNOMED CT",
+      "decision": "uncertain",
+      "confidence": 0.65,
+      "rationale": "Chronic asthmatic bronchitis may represent asthma or COPD overlap, but term does not explicitly name COPD; clinical judgment needed on whether this is a COPD subtype.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "usage_frequency": 710,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "J66",
@@ -2774,11 +2905,206 @@
       "vocabulary": "ICD-10 (WHO)",
       "decision": "uncertain",
       "confidence": 0.6,
-      "rationale": "Airway disease due to specific organic dust (occupational lung disease) may overlap with COPD but is a distinct diagnostic category; clinical judgment needed on whether to include occupational airway diseases.",
+      "rationale": "Airway disease due to specific organic dust may represent occupational COPD but is clinically distinct; clinical judgment needed.",
       "sources": [
         "ChromaDB"
       ],
-      "usage_frequency": null
+      "usage_frequency": 2,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital HES inpatient FCEs",
+      "usage_setting": "secondary_care_hes",
+      "concept_id": null,
+      "dmd_level": null
+    },
+    {
+      "code": "866881000000101",
+      "term": "Chronic asthma with fixed airflow obstruction",
+      "vocabulary": "SNOMED CT",
+      "decision": "uncertain",
+      "confidence": 0.6,
+      "rationale": "Chronic asthma with fixed airflow obstruction may represent asthma-COPD overlap syndrome, but the term primarily names asthma rather than COPD.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "usage_frequency": 2680,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": null,
+      "dmd_level": null
+    },
+    {
+      "code": "N11.1",
+      "term": "Chronic obstructive pyelonephritis",
+      "vocabulary": "ICD-10 (WHO)",
+      "decision": "exclude",
+      "confidence": 0.99,
+      "rationale": "Chronic obstructive pyelonephritis is a urological condition unrelated to pulmonary disease.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "usage_frequency": 347,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital HES inpatient FCEs",
+      "usage_setting": "secondary_care_hes",
+      "concept_id": null,
+      "dmd_level": null
+    },
+    {
+      "code": "N18",
+      "term": "Chronic kidney disease",
+      "vocabulary": "ICD-10 (WHO)",
+      "decision": "exclude",
+      "confidence": 0.99,
+      "rationale": "Chronic kidney disease is an unrelated comorbidity, not an instance of COPD.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "usage_frequency": 79545,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital HES inpatient FCEs",
+      "usage_setting": "secondary_care_hes",
+      "concept_id": null,
+      "dmd_level": null
+    },
+    {
+      "code": "N18.1",
+      "term": "Chronic kidney disease, stage 1",
+      "vocabulary": "ICD-10 (WHO)",
+      "decision": "exclude",
+      "confidence": 0.99,
+      "rationale": "Chronic kidney disease stage 1 is an unrelated comorbidity, not an instance of COPD.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "usage_frequency": 66,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital HES inpatient FCEs",
+      "usage_setting": "secondary_care_hes",
+      "concept_id": null,
+      "dmd_level": null
+    },
+    {
+      "code": "N18.2",
+      "term": "Chronic kidney disease, stage 2",
+      "vocabulary": "ICD-10 (WHO)",
+      "decision": "exclude",
+      "confidence": 0.99,
+      "rationale": "Chronic kidney disease stage 2 is an unrelated comorbidity, not an instance of COPD.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "usage_frequency": 188,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital HES inpatient FCEs",
+      "usage_setting": "secondary_care_hes",
+      "concept_id": null,
+      "dmd_level": null
+    },
+    {
+      "code": "N18.3",
+      "term": "Chronic kidney disease, stage 3",
+      "vocabulary": "ICD-10 (WHO)",
+      "decision": "exclude",
+      "confidence": 0.99,
+      "rationale": "Chronic kidney disease stage 3 is an unrelated comorbidity, not an instance of COPD.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "usage_frequency": 2291,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital HES inpatient FCEs",
+      "usage_setting": "secondary_care_hes",
+      "concept_id": null,
+      "dmd_level": null
+    },
+    {
+      "code": "N18.5",
+      "term": "Chronic kidney disease, stage 5",
+      "vocabulary": "ICD-10 (WHO)",
+      "decision": "exclude",
+      "confidence": 0.99,
+      "rationale": "Chronic kidney disease stage 5 is an unrelated comorbidity, not an instance of COPD.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "usage_frequency": 69024,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital HES inpatient FCEs",
+      "usage_setting": "secondary_care_hes",
+      "concept_id": null,
+      "dmd_level": null
+    },
+    {
+      "code": "N71.1",
+      "term": "Chronic inflammatory disease of uterus",
+      "vocabulary": "ICD-10 (WHO)",
+      "decision": "exclude",
+      "confidence": 0.99,
+      "rationale": "Chronic inflammatory disease of uterus is an unrelated gynecological condition, not an instance of COPD.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "usage_frequency": 331,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital HES inpatient FCEs",
+      "usage_setting": "secondary_care_hes",
+      "concept_id": null,
+      "dmd_level": null
+    },
+    {
+      "code": "1066231000000103",
+      "term": "Chronic obstructive pulmonary disease monitoring email invitation (procedure)",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.98,
+      "rationale": "COPD monitoring email invitation is an administrative/screening procedure code, not a diagnosis confirming the patient has COPD.",
+      "sources": [
+        "ChromaDB",
+        "QOF Business Rules 2024-25"
+      ],
+      "usage_frequency": 6810,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": 42689618,
+      "dmd_level": null
+    },
+    {
+      "code": "1108721000000102",
+      "term": "Excepted from chronic obstructive pulmonary disease quality indicators - service unavailable (finding)",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.98,
+      "rationale": "Excepted from COPD quality indicators is an administrative/exception code, not a diagnosis confirming the patient has COPD.",
+      "sources": [
+        "ChromaDB",
+        "QOF Business Rules 2024-25"
+      ],
+      "usage_frequency": 2130,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": null,
+      "dmd_level": null
+    },
+    {
+      "code": "394703002",
+      "term": "Chronic obstructive pulmonary disease annual review (regime/therapy)",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.98,
+      "rationale": "COPD annual review is an administrative/care management procedure code, not a diagnosis confirming the patient has COPD.",
+      "sources": [
+        "ChromaDB",
+        "QOF Business Rules 2024-25"
+      ],
+      "usage_frequency": 2300440,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": 4215257,
+      "dmd_level": null
     },
     {
       "code": "B22.1",
@@ -2790,7 +3116,12 @@
       "sources": [
         "ChromaDB"
       ],
-      "usage_frequency": null
+      "usage_frequency": 3,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital HES inpatient FCEs",
+      "usage_setting": "secondary_care_hes",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "B38.1",
@@ -2802,7 +3133,12 @@
       "sources": [
         "ChromaDB"
       ],
-      "usage_frequency": null
+      "usage_frequency": null,
+      "usage_status": "not_in_dataset",
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "B40.1",
@@ -2814,7 +3150,12 @@
       "sources": [
         "ChromaDB"
       ],
-      "usage_frequency": null
+      "usage_frequency": null,
+      "usage_status": "not_in_dataset",
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "E84",
@@ -2822,11 +3163,16 @@
       "vocabulary": "ICD-10 (WHO)",
       "decision": "exclude",
       "confidence": 0.95,
-      "rationale": "Cystic fibrosis is a separate genetic disorder, not COPD, though it may cause chronic lung disease.",
+      "rationale": "Cystic fibrosis is a distinct genetic disorder, not COPD.",
       "sources": [
         "ChromaDB"
       ],
-      "usage_frequency": null
+      "usage_frequency": 7658,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital HES inpatient FCEs",
+      "usage_setting": "secondary_care_hes",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "E84.0",
@@ -2834,11 +3180,16 @@
       "vocabulary": "ICD-10 (WHO)",
       "decision": "exclude",
       "confidence": 0.95,
-      "rationale": "Cystic fibrosis with pulmonary manifestations is a distinct genetic condition, not COPD.",
+      "rationale": "Cystic fibrosis with pulmonary manifestations is a distinct genetic disorder, not COPD.",
       "sources": [
         "ChromaDB"
       ],
-      "usage_frequency": null
+      "usage_frequency": 5148,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital HES inpatient FCEs",
+      "usage_setting": "secondary_care_hes",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "I25",
@@ -2846,11 +3197,16 @@
       "vocabulary": "ICD-10 (WHO)",
       "decision": "exclude",
       "confidence": 0.95,
-      "rationale": "Chronic ischaemic heart disease is a cardiovascular condition unrelated to COPD.",
+      "rationale": "Chronic ischaemic heart disease is a cardiovascular condition, not COPD.",
       "sources": [
         "ChromaDB"
       ],
-      "usage_frequency": null
+      "usage_frequency": 110773,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital HES inpatient FCEs",
+      "usage_setting": "secondary_care_hes",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "I26.0",
@@ -2862,7 +3218,12 @@
       "sources": [
         "ChromaDB"
       ],
-      "usage_frequency": null
+      "usage_frequency": 7635,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital HES inpatient FCEs",
+      "usage_setting": "secondary_care_hes",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "I26.9",
@@ -2874,7 +3235,12 @@
       "sources": [
         "ChromaDB"
       ],
-      "usage_frequency": null
+      "usage_frequency": 60090,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital HES inpatient FCEs",
+      "usage_setting": "secondary_care_hes",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "I37",
@@ -2886,7 +3252,12 @@
       "sources": [
         "ChromaDB"
       ],
-      "usage_frequency": null
+      "usage_frequency": 599,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital HES inpatient FCEs",
+      "usage_setting": "secondary_care_hes",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "I37.0",
@@ -2898,7 +3269,12 @@
       "sources": [
         "ChromaDB"
       ],
-      "usage_frequency": null
+      "usage_frequency": 66,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital HES inpatient FCEs",
+      "usage_setting": "secondary_care_hes",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "J31.0",
@@ -2910,7 +3286,12 @@
       "sources": [
         "ChromaDB"
       ],
-      "usage_frequency": null
+      "usage_frequency": 1835,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital HES inpatient FCEs",
+      "usage_setting": "secondary_care_hes",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "J32",
@@ -2922,7 +3303,12 @@
       "sources": [
         "ChromaDB"
       ],
-      "usage_frequency": null
+      "usage_frequency": 9731,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital HES inpatient FCEs",
+      "usage_setting": "secondary_care_hes",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "J37.1",
@@ -2934,19 +3320,12 @@
       "sources": [
         "ChromaDB"
       ],
-      "usage_frequency": null
-    },
-    {
-      "code": "M05.14",
-      "term": "Rheumatoid lung disease, Hand",
-      "vocabulary": "ICD-10 (WHO)",
-      "decision": "exclude",
-      "confidence": 0.95,
-      "rationale": "Rheumatoid lung disease of the hand is a manifestation of rheumatoid arthritis, not COPD.",
-      "sources": [
-        "ChromaDB"
-      ],
-      "usage_frequency": null
+      "usage_frequency": 4,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital HES inpatient FCEs",
+      "usage_setting": "secondary_care_hes",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "M05.18",
@@ -2954,95 +3333,16 @@
       "vocabulary": "ICD-10 (WHO)",
       "decision": "exclude",
       "confidence": 0.95,
-      "rationale": "Rheumatoid lung disease is a complication of rheumatoid arthritis, not an instance of COPD.",
+      "rationale": "Rheumatoid lung disease is a complication of rheumatoid arthritis, not an instance of COPD; term does not contain 'chronic obstructive pulmonary disease' or 'COPD'.",
       "sources": [
         "ChromaDB"
       ],
-      "usage_frequency": null
-    },
-    {
-      "code": "N11.1",
-      "term": "Chronic obstructive pyelonephritis",
-      "vocabulary": "ICD-10 (WHO)",
-      "decision": "exclude",
-      "confidence": 0.95,
-      "rationale": "Chronic obstructive pyelonephritis is a renal condition unrelated to COPD.",
-      "sources": [
-        "ChromaDB"
-      ],
-      "usage_frequency": null
-    },
-    {
-      "code": "N18",
-      "term": "Chronic kidney disease",
-      "vocabulary": "ICD-10 (WHO)",
-      "decision": "exclude",
-      "confidence": 0.95,
-      "rationale": "Chronic kidney disease is an unrelated comorbidity, not an instance of COPD.",
-      "sources": [
-        "ChromaDB"
-      ],
-      "usage_frequency": null
-    },
-    {
-      "code": "N18.1",
-      "term": "Chronic kidney disease, stage 1",
-      "vocabulary": "ICD-10 (WHO)",
-      "decision": "exclude",
-      "confidence": 0.95,
-      "rationale": "Chronic kidney disease stage 1 is an unrelated comorbidity, not an instance of COPD.",
-      "sources": [
-        "ChromaDB"
-      ],
-      "usage_frequency": null
-    },
-    {
-      "code": "N18.2",
-      "term": "Chronic kidney disease, stage 2",
-      "vocabulary": "ICD-10 (WHO)",
-      "decision": "exclude",
-      "confidence": 0.95,
-      "rationale": "Chronic kidney disease stage 2 is an unrelated comorbidity, not an instance of COPD.",
-      "sources": [
-        "ChromaDB"
-      ],
-      "usage_frequency": null
-    },
-    {
-      "code": "N18.3",
-      "term": "Chronic kidney disease, stage 3",
-      "vocabulary": "ICD-10 (WHO)",
-      "decision": "exclude",
-      "confidence": 0.95,
-      "rationale": "Chronic kidney disease stage 3 is an unrelated comorbidity, not an instance of COPD.",
-      "sources": [
-        "ChromaDB"
-      ],
-      "usage_frequency": null
-    },
-    {
-      "code": "N18.5",
-      "term": "Chronic kidney disease, stage 5",
-      "vocabulary": "ICD-10 (WHO)",
-      "decision": "exclude",
-      "confidence": 0.95,
-      "rationale": "Chronic kidney disease stage 5 is an unrelated comorbidity, not an instance of COPD.",
-      "sources": [
-        "ChromaDB"
-      ],
-      "usage_frequency": null
-    },
-    {
-      "code": "N71.1",
-      "term": "Chronic inflammatory disease of uterus",
-      "vocabulary": "ICD-10 (WHO)",
-      "decision": "exclude",
-      "confidence": 0.95,
-      "rationale": "Chronic inflammatory disease of uterus is an unrelated gynecological condition, not COPD.",
-      "sources": [
-        "ChromaDB"
-      ],
-      "usage_frequency": null
+      "usage_frequency": null,
+      "usage_status": "not_in_dataset",
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "Z82.5",
@@ -3054,20 +3354,12 @@
       "sources": [
         "ChromaDB"
       ],
-      "usage_frequency": null
-    },
-    {
-      "code": "1066231000000103",
-      "term": "Chronic obstructive pulmonary disease monitoring email invitation (procedure)",
-      "vocabulary": "SNOMED CT",
-      "decision": "exclude",
-      "confidence": 0.95,
-      "rationale": "COPD monitoring email invitation is an administrative/screening code, not a diagnosis of COPD.",
-      "sources": [
-        "ChromaDB",
-        "QOF Business Rules 2024-25"
-      ],
-      "usage_frequency": null
+      "usage_frequency": null,
+      "usage_status": "not_in_dataset",
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "10713006",
@@ -3075,24 +3367,16 @@
       "vocabulary": "SNOMED CT",
       "decision": "exclude",
       "confidence": 0.95,
-      "rationale": "Diffuse interstitial rheumatoid disease of lung is a rheumatoid arthritis complication, not COPD.",
+      "rationale": "Diffuse interstitial rheumatoid disease of lung is a rheumatoid complication, not an instance of COPD; term does not contain 'COPD' or 'chronic obstructive pulmonary disease'.",
       "sources": [
         "ChromaDB"
       ],
-      "usage_frequency": null
-    },
-    {
-      "code": "1108721000000102",
-      "term": "Excepted from chronic obstructive pulmonary disease quality indicators - service unavailable (finding)",
-      "vocabulary": "SNOMED CT",
-      "decision": "exclude",
-      "confidence": 0.95,
-      "rationale": "Excepted from COPD quality indicators is an administrative/exception code, not a diagnosis of COPD.",
-      "sources": [
-        "ChromaDB",
-        "QOF Business Rules 2024-25"
-      ],
-      "usage_frequency": null
+      "usage_frequency": 70,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "371611000000107",
@@ -3100,26 +3384,17 @@
       "vocabulary": "SNOMED CT",
       "decision": "exclude",
       "confidence": 0.95,
-      "rationale": "COPD patient unsuitable for pulmonary rehabilitation is an administrative/clinical status code, not a diagnosis of COPD.",
+      "rationale": "COPD patient unsuitable for pulmonary rehabilitation is a clinical finding/status code, not a diagnosis confirming the patient has COPD.",
       "sources": [
         "ChromaDB",
         "QOF Business Rules 2024-25"
       ],
-      "usage_frequency": null
-    },
-    {
-      "code": "394703002",
-      "term": "Chronic obstructive pulmonary disease annual review (regime/therapy)",
-      "vocabulary": "SNOMED CT",
-      "decision": "exclude",
-      "confidence": 0.95,
-      "rationale": "COPD annual review is an administrative/management code, not a diagnosis of COPD.",
-      "sources": [
-        "ChromaDB",
-        "OMOPHub",
-        "QOF Business Rules 2024-25"
-      ],
-      "usage_frequency": null
+      "usage_frequency": 298060,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": 44793074,
+      "dmd_level": null
     },
     {
       "code": "398726004",
@@ -3127,11 +3402,16 @@
       "vocabulary": "SNOMED CT",
       "decision": "exclude",
       "confidence": 0.95,
-      "rationale": "Rheumatoid lung disease is a complication of rheumatoid arthritis, not an instance of COPD.",
+      "rationale": "Rheumatoid lung disease is a complication of rheumatoid arthritis, not an instance of COPD; term does not contain 'chronic obstructive pulmonary disease' or 'COPD'.",
       "sources": [
         "ChromaDB"
       ],
-      "usage_frequency": null
+      "usage_frequency": 200,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "707447008",
@@ -3143,7 +3423,12 @@
       "sources": [
         "ChromaDB"
       ],
-      "usage_frequency": null
+      "usage_frequency": 400,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "707979007",
@@ -3155,7 +3440,12 @@
       "sources": [
         "ChromaDB"
       ],
-      "usage_frequency": null
+      "usage_frequency": 70,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "708090002",
@@ -3167,7 +3457,12 @@
       "sources": [
         "ChromaDB"
       ],
-      "usage_frequency": null
+      "usage_frequency": 30340,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "711431000000109",
@@ -3175,12 +3470,17 @@
       "vocabulary": "SNOMED CT",
       "decision": "exclude",
       "confidence": 0.95,
-      "rationale": "This is an administrative/invitation code for COPD monitoring, not a diagnostic code confirming COPD itself.",
+      "rationale": "This is an administrative/screening invitation code, not a diagnostic confirmation of COPD.",
       "sources": [
         "ChromaDB",
         "QOF Business Rules 2024-25"
       ],
-      "usage_frequency": null
+      "usage_frequency": 118610,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "716241000000106",
@@ -3188,12 +3488,17 @@
       "vocabulary": "SNOMED CT",
       "decision": "exclude",
       "confidence": 0.95,
-      "rationale": "This is an administrative procedure code for sending a monitoring letter, not a diagnostic code confirming COPD.",
+      "rationale": "This is an administrative invitation procedure code, not a diagnostic confirmation of COPD.",
       "sources": [
         "ChromaDB",
         "QOF Business Rules 2024-25"
       ],
-      "usage_frequency": null
+      "usage_frequency": 208700,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": 44803708,
+      "dmd_level": null
     },
     {
       "code": "716281000000103",
@@ -3201,12 +3506,17 @@
       "vocabulary": "SNOMED CT",
       "decision": "exclude",
       "confidence": 0.95,
-      "rationale": "This is an administrative procedure code for verbal invitation to monitoring, not a diagnostic code confirming COPD.",
+      "rationale": "This is an administrative invitation procedure code, not a diagnostic confirmation of COPD.",
       "sources": [
         "ChromaDB",
         "QOF Business Rules 2024-25"
       ],
-      "usage_frequency": null
+      "usage_frequency": 17860,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": 44803711,
+      "dmd_level": null
     },
     {
       "code": "716291000000101",
@@ -3214,12 +3524,17 @@
       "vocabulary": "SNOMED CT",
       "decision": "exclude",
       "confidence": 0.95,
-      "rationale": "This is an administrative exception code for quality indicators, not a diagnostic code confirming COPD.",
+      "rationale": "This is an administrative exception/exclusion code, not a diagnostic confirmation of COPD.",
       "sources": [
         "ChromaDB",
         "QOF Business Rules 2024-25"
       ],
-      "usage_frequency": null
+      "usage_frequency": 48550,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "716311000000100",
@@ -3227,12 +3542,17 @@
       "vocabulary": "SNOMED CT",
       "decision": "exclude",
       "confidence": 0.95,
-      "rationale": "This is an administrative exception code for quality indicators, not a diagnostic code confirming COPD.",
+      "rationale": "This is an administrative exception/exclusion code, not a diagnostic confirmation of COPD.",
       "sources": [
         "ChromaDB",
         "QOF Business Rules 2024-25"
       ],
-      "usage_frequency": null
+      "usage_frequency": 38220,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "716901000000101",
@@ -3240,12 +3560,17 @@
       "vocabulary": "SNOMED CT",
       "decision": "exclude",
       "confidence": 0.95,
-      "rationale": "This is an administrative procedure code for telephone invitation to monitoring, not a diagnostic code confirming COPD.",
+      "rationale": "This is an administrative invitation procedure code, not a diagnostic confirmation of COPD.",
       "sources": [
         "ChromaDB",
         "QOF Business Rules 2024-25"
       ],
-      "usage_frequency": null
+      "usage_frequency": 61340,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": 44803835,
+      "dmd_level": null
     },
     {
       "code": "717021000000106",
@@ -3253,12 +3578,17 @@
       "vocabulary": "SNOMED CT",
       "decision": "exclude",
       "confidence": 0.95,
-      "rationale": "This is an administrative procedure code for sending a second monitoring letter, not a diagnostic code confirming COPD.",
+      "rationale": "This is an administrative invitation procedure code, not a diagnostic confirmation of COPD.",
       "sources": [
         "ChromaDB",
         "QOF Business Rules 2024-25"
       ],
-      "usage_frequency": null
+      "usage_frequency": 99800,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "717521000000104",
@@ -3266,12 +3596,17 @@
       "vocabulary": "SNOMED CT",
       "decision": "exclude",
       "confidence": 0.95,
-      "rationale": "This is an administrative procedure code for sending a third monitoring letter, not a diagnostic code confirming COPD.",
+      "rationale": "This is an administrative invitation procedure code, not a diagnostic confirmation of COPD.",
       "sources": [
         "ChromaDB",
         "QOF Business Rules 2024-25"
       ],
-      "usage_frequency": null
+      "usage_frequency": 12940,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": 44803920,
+      "dmd_level": null
     },
     {
       "code": "723245007",
@@ -3279,12 +3614,17 @@
       "vocabulary": "SNOMED CT",
       "decision": "exclude",
       "confidence": 0.95,
-      "rationale": "This is an observable entity for counting exacerbations, not a diagnostic code confirming COPD itself.",
+      "rationale": "This is an observable entity/measurement code for COPD exacerbations, not a diagnostic confirmation of COPD itself.",
       "sources": [
         "ChromaDB",
         "QOF Business Rules 2024-25"
       ],
-      "usage_frequency": null
+      "usage_frequency": 1716170,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": 36716970,
+      "dmd_level": null
     },
     {
       "code": "760601000000107",
@@ -3292,13 +3632,17 @@
       "vocabulary": "SNOMED CT",
       "decision": "exclude",
       "confidence": 0.95,
-      "rationale": "This is an administrative procedure code for COPD review scheduling, not a diagnostic code confirming COPD.",
+      "rationale": "This is an administrative review/regime code, not a diagnostic confirmation of COPD.",
       "sources": [
         "ChromaDB",
-        "OMOPHub",
         "QOF Business Rules 2024-25"
       ],
-      "usage_frequency": null
+      "usage_frequency": 32630,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "760621000000103",
@@ -3306,13 +3650,17 @@
       "vocabulary": "SNOMED CT",
       "decision": "exclude",
       "confidence": 0.95,
-      "rationale": "This is an administrative procedure code for COPD review scheduling, not a diagnostic code confirming COPD.",
+      "rationale": "This is an administrative review/regime code, not a diagnostic confirmation of COPD.",
       "sources": [
         "ChromaDB",
-        "OMOPHub",
         "QOF Business Rules 2024-25"
       ],
-      "usage_frequency": null
+      "usage_frequency": 45970,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": 44804959,
+      "dmd_level": null
     },
     {
       "code": "941201000000103",
@@ -3320,12 +3668,17 @@
       "vocabulary": "SNOMED CT",
       "decision": "exclude",
       "confidence": 0.95,
-      "rationale": "This code indicates COPD has resolved, which means the patient no longer has the active condition and should not be included in a COPD code list.",
+      "rationale": "This code indicates COPD has resolved, which does not confirm an active instance of the condition.",
       "sources": [
         "ChromaDB",
         "QOF Business Rules 2024-25"
       ],
-      "usage_frequency": null
+      "usage_frequency": 13160,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": 46284163,
+      "dmd_level": null
     },
     {
       "code": "I27",
@@ -3333,11 +3686,16 @@
       "vocabulary": "ICD-10 (WHO)",
       "decision": "exclude",
       "confidence": 0.9,
-      "rationale": "Pulmonary heart disease is a cardiovascular complication that may result from COPD but is not COPD itself.",
+      "rationale": "Pulmonary heart disease is a cardiovascular complication, not COPD itself.",
       "sources": [
         "ChromaDB"
       ],
-      "usage_frequency": null
+      "usage_frequency": 10638,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital HES inpatient FCEs",
+      "usage_setting": "secondary_care_hes",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "I27.9",
@@ -3345,59 +3703,16 @@
       "vocabulary": "ICD-10 (WHO)",
       "decision": "exclude",
       "confidence": 0.9,
-      "rationale": "Pulmonary heart disease is a cardiovascular complication, not an instance of COPD.",
+      "rationale": "Pulmonary heart disease is a cardiovascular complication, not COPD itself.",
       "sources": [
         "ChromaDB"
       ],
-      "usage_frequency": null
-    },
-    {
-      "code": "J84",
-      "term": "Other interstitial pulmonary diseases",
-      "vocabulary": "ICD-10 (WHO)",
-      "decision": "exclude",
-      "confidence": 0.9,
-      "rationale": "Interstitial pulmonary diseases are a distinct category of chronic lung disease, not COPD.",
-      "sources": [
-        "ChromaDB"
-      ],
-      "usage_frequency": null
-    },
-    {
-      "code": "J84.1",
-      "term": "Other interstitial pulmonary diseases with fibrosis",
-      "vocabulary": "ICD-10 (WHO)",
-      "decision": "exclude",
-      "confidence": 0.9,
-      "rationale": "Interstitial pulmonary disease with fibrosis is a distinct condition, not COPD.",
-      "sources": [
-        "ChromaDB"
-      ],
-      "usage_frequency": null
-    },
-    {
-      "code": "J84.8",
-      "term": "Other specified interstitial pulmonary diseases",
-      "vocabulary": "ICD-10 (WHO)",
-      "decision": "exclude",
-      "confidence": 0.9,
-      "rationale": "Specified interstitial pulmonary diseases are distinct conditions, not COPD.",
-      "sources": [
-        "ChromaDB"
-      ],
-      "usage_frequency": null
-    },
-    {
-      "code": "J84.9",
-      "term": "Interstitial pulmonary disease, unspecified",
-      "vocabulary": "ICD-10 (WHO)",
-      "decision": "exclude",
-      "confidence": 0.9,
-      "rationale": "Unspecified interstitial pulmonary disease is a distinct condition, not COPD.",
-      "sources": [
-        "ChromaDB"
-      ],
-      "usage_frequency": null
+      "usage_frequency": 1534,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital HES inpatient FCEs",
+      "usage_setting": "secondary_care_hes",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "J95.3",
@@ -3409,7 +3724,12 @@
       "sources": [
         "ChromaDB"
       ],
-      "usage_frequency": null
+      "usage_frequency": null,
+      "usage_status": "not_in_dataset",
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "J98.2",
@@ -3421,7 +3741,12 @@
       "sources": [
         "ChromaDB"
       ],
-      "usage_frequency": null
+      "usage_frequency": 599,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital HES inpatient FCEs",
+      "usage_setting": "secondary_care_hes",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "J99.0",
@@ -3429,11 +3754,16 @@
       "vocabulary": "ICD-10 (WHO)",
       "decision": "exclude",
       "confidence": 0.9,
-      "rationale": "Rheumatoid lung disease is a distinct condition associated with rheumatoid arthritis, not COPD.",
+      "rationale": "Rheumatoid lung disease is a distinct condition, not COPD.",
       "sources": [
         "ChromaDB"
       ],
-      "usage_frequency": null
+      "usage_frequency": 141,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital HES inpatient FCEs",
+      "usage_setting": "secondary_care_hes",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "M05.1",
@@ -3441,11 +3771,50 @@
       "vocabulary": "ICD-10 (WHO)",
       "decision": "exclude",
       "confidence": 0.9,
-      "rationale": "Rheumatoid lung disease is a distinct condition associated with rheumatoid arthritis, not COPD.",
+      "rationale": "Rheumatoid lung disease is a distinct condition, not COPD.",
       "sources": [
         "ChromaDB"
       ],
-      "usage_frequency": null
+      "usage_frequency": 730,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital HES inpatient FCEs",
+      "usage_setting": "secondary_care_hes",
+      "concept_id": null,
+      "dmd_level": null
+    },
+    {
+      "code": "M05.14",
+      "term": "Rheumatoid lung disease, Hand",
+      "vocabulary": "ICD-10 (WHO)",
+      "decision": "exclude",
+      "confidence": 0.9,
+      "rationale": "Rheumatoid lung disease affecting the hand is a distinct condition, not COPD.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "usage_frequency": null,
+      "usage_status": "not_in_dataset",
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": null,
+      "dmd_level": null
+    },
+    {
+      "code": "P27",
+      "term": "Chronic respiratory disease originating in the perinatal period",
+      "vocabulary": "ICD-10 (WHO)",
+      "decision": "exclude",
+      "confidence": 0.9,
+      "rationale": "Chronic respiratory disease originating in perinatal period is a neonatal condition, not an instance of primary COPD in adults.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "usage_frequency": 1014,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital HES inpatient FCEs",
+      "usage_setting": "secondary_care_hes",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "J70.3",
@@ -3453,11 +3822,84 @@
       "vocabulary": "ICD-10 (WHO)",
       "decision": "exclude",
       "confidence": 0.85,
-      "rationale": "Chronic drug-induced interstitial lung disorder is a distinct condition caused by medication, not COPD.",
+      "rationale": "Chronic drug-induced interstitial lung disorder is a distinct condition, not COPD.",
       "sources": [
         "ChromaDB"
       ],
-      "usage_frequency": null
+      "usage_frequency": 8,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital HES inpatient FCEs",
+      "usage_setting": "secondary_care_hes",
+      "concept_id": null,
+      "dmd_level": null
+    },
+    {
+      "code": "J84",
+      "term": "Other interstitial pulmonary diseases",
+      "vocabulary": "ICD-10 (WHO)",
+      "decision": "exclude",
+      "confidence": 0.85,
+      "rationale": "Other interstitial pulmonary diseases are distinct from COPD.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "usage_frequency": 23172,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital HES inpatient FCEs",
+      "usage_setting": "secondary_care_hes",
+      "concept_id": null,
+      "dmd_level": null
+    },
+    {
+      "code": "J84.1",
+      "term": "Other interstitial pulmonary diseases with fibrosis",
+      "vocabulary": "ICD-10 (WHO)",
+      "decision": "exclude",
+      "confidence": 0.85,
+      "rationale": "Interstitial pulmonary fibrosis is a distinct condition, not COPD.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "usage_frequency": 16482,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital HES inpatient FCEs",
+      "usage_setting": "secondary_care_hes",
+      "concept_id": null,
+      "dmd_level": null
+    },
+    {
+      "code": "J84.8",
+      "term": "Other specified interstitial pulmonary diseases",
+      "vocabulary": "ICD-10 (WHO)",
+      "decision": "exclude",
+      "confidence": 0.85,
+      "rationale": "Other specified interstitial pulmonary diseases are distinct from COPD.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "usage_frequency": 515,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital HES inpatient FCEs",
+      "usage_setting": "secondary_care_hes",
+      "concept_id": null,
+      "dmd_level": null
+    },
+    {
+      "code": "J84.9",
+      "term": "Interstitial pulmonary disease, unspecified",
+      "vocabulary": "ICD-10 (WHO)",
+      "decision": "exclude",
+      "confidence": 0.85,
+      "rationale": "Unspecified interstitial pulmonary disease is distinct from COPD.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "usage_frequency": 6037,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital HES inpatient FCEs",
+      "usage_setting": "secondary_care_hes",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "J96.1",
@@ -3465,11 +3907,16 @@
       "vocabulary": "ICD-10 (WHO)",
       "decision": "exclude",
       "confidence": 0.85,
-      "rationale": "Chronic respiratory failure is a complication that may result from COPD but is not COPD itself.",
+      "rationale": "Chronic respiratory failure is a complication of COPD, not an instance of COPD itself.",
       "sources": [
         "ChromaDB"
       ],
-      "usage_frequency": null
+      "usage_frequency": 5648,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital HES inpatient FCEs",
+      "usage_setting": "secondary_care_hes",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "J96.10",
@@ -3477,11 +3924,16 @@
       "vocabulary": "ICD-10 (WHO)",
       "decision": "exclude",
       "confidence": 0.85,
-      "rationale": "Chronic respiratory failure Type I is a complication, not an instance of COPD.",
+      "rationale": "Chronic respiratory failure Type I is a complication of COPD, not an instance of COPD itself.",
       "sources": [
         "ChromaDB"
       ],
-      "usage_frequency": null
+      "usage_frequency": null,
+      "usage_status": "not_in_dataset",
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "J96.11",
@@ -3489,11 +3941,16 @@
       "vocabulary": "ICD-10 (WHO)",
       "decision": "exclude",
       "confidence": 0.85,
-      "rationale": "Chronic respiratory failure Type II is a complication, not an instance of COPD.",
+      "rationale": "Chronic respiratory failure Type II is a complication of COPD, not an instance of COPD itself.",
       "sources": [
         "ChromaDB"
       ],
-      "usage_frequency": null
+      "usage_frequency": null,
+      "usage_status": "not_in_dataset",
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "J96.19",
@@ -3501,23 +3958,16 @@
       "vocabulary": "ICD-10 (WHO)",
       "decision": "exclude",
       "confidence": 0.85,
-      "rationale": "Chronic respiratory failure unspecified is a complication, not an instance of COPD.",
+      "rationale": "Chronic respiratory failure unspecified is a complication of COPD, not an instance of COPD itself.",
       "sources": [
         "ChromaDB"
       ],
-      "usage_frequency": null
-    },
-    {
-      "code": "P27",
-      "term": "Chronic respiratory disease originating in the perinatal period",
-      "vocabulary": "ICD-10 (WHO)",
-      "decision": "exclude",
-      "confidence": 0.85,
-      "rationale": "Chronic respiratory disease originating in perinatal period is a neonatal condition, not primary adult COPD.",
-      "sources": [
-        "ChromaDB"
-      ],
-      "usage_frequency": null
+      "usage_frequency": null,
+      "usage_status": "not_in_dataset",
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "10692721000119102",
@@ -3525,35 +3975,33 @@
       "vocabulary": "SNOMED CT",
       "decision": "exclude",
       "confidence": 0.85,
-      "rationale": "This code describes asthma with acute exacerbation, not COPD; the term does not clearly indicate COPD as the primary condition.",
+      "rationale": "Chronic obstructive asthma with acute exacerbation is primarily an asthma code; the overlap with COPD is unclear and term does not clearly name COPD.",
       "sources": [
         "ChromaDB"
       ],
-      "usage_frequency": null
-    },
-    {
-      "code": "866881000000101",
-      "term": "Chronic asthma with fixed airflow obstruction",
-      "vocabulary": "SNOMED CT",
-      "decision": "exclude",
-      "confidence": 0.85,
-      "rationale": "This code describes chronic asthma with fixed airflow obstruction, which is asthma-based, not COPD; these are distinct diagnostic entities.",
-      "sources": [
-        "ChromaDB"
-      ],
-      "usage_frequency": null
+      "usage_frequency": 40,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "89099002",
       "term": "Chronic allergic bronchitis",
       "vocabulary": "SNOMED CT",
       "decision": "exclude",
-      "confidence": 0.8,
-      "rationale": "Chronic allergic bronchitis is an allergic condition distinct from COPD; while it may cause airway obstruction, it is not a form of COPD.",
+      "confidence": 0.85,
+      "rationale": "Chronic allergic bronchitis is a distinct condition driven by allergic mechanisms, not a primary form of COPD.",
       "sources": [
         "ChromaDB"
       ],
-      "usage_frequency": null
+      "usage_frequency": 10,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": null,
+      "dmd_level": null
     }
   ],
   "pipeline": "rag",

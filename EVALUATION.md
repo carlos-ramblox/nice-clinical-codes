@@ -328,6 +328,26 @@ Measured headlines:
 - Aggregate decision-flip rate: **6.9 %** (97 of 1,411 pairs flipped
   on at least two of K = 5 runs)
 
+**T37 / T37g F1-neutrality verification (2026-05-12, T37b).** A
+same-day apples-to-apples K=5 sweep, with the pre-T37 worktree at
+commit `31ca009` patched to use the post-T37 OMOPHub call shape
+(T37f bulk-search + T37h `Maps to` safety net) so the comparison
+isolates only the T37 retriever wiring and the T37g per-vocab merger
+quota, returns ΔF1 mean **+0.0025** across the 15 disease codelists
+with BCa 95% CI **[−0.0006, +0.0059]** — straddling zero. Median Δ
+is 0.0000; 14 of 15 codelists fall within K=5 σ ≈ 0.012, with one
+(`heart_failure`) at +0.0172 — comfortably inside this section's own
+documented per-codelist std max of 0.025. T37 + T37g are empirically
+F1-neutral on the disease benchmark; details in
+`data/test_sets/benchmark_2026_04/T37b_path_a_summary.md`.
+
+A naive HEAD-vs-baseline comparison without controlling for time-
+separated environmental drift in OMOPHub / UMLS / OpenCodelists would
+report ΔF1 mean −0.0816 with `hepatitis_c_chronic` collapsed
+0.79 → 0.00. That drift is reproducible on `31ca009` *today* against
+the 2026-05-03 K=5 baseline files and is documented as B−A in the
+T37b summary; it is not T37-attributable.
+
 The std numbers fall inside the ±0.01–0.02 band predicted from the
 1–3 %-per-call literature; the slightly higher aggregate flip rate
 reflects cumulative compounding across 5 runs and includes a small

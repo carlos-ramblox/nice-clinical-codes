@@ -6,12 +6,12 @@
     "retrieved_raw": {
       "codelist_name": "retrieved_raw",
       "n_ref_codes": 266,
-      "n_output_codes": 396,
+      "n_output_codes": 377,
       "recall": 1.0,
-      "precision": 0.6717,
-      "f1": 0.8036,
+      "precision": 0.7056,
+      "f1": 0.8274,
       "tp_count": 266,
-      "fp_count": 130,
+      "fp_count": 111,
       "fn_count": 0,
       "tp_codes": [
         {
@@ -1085,10 +1085,6 @@
           "term": "Cerebrovascular accident due to embolism of bilateral anterior cerebral arteries (disorder)"
         },
         {
-          "code": "1085321000000100",
-          "term": "Assessment using QStroke risk calculator"
-        },
-        {
           "code": "1110981000000104",
           "term": "Quality and Outcomes Framework stroke and transient ischaemic attack quality indicator-related care invitation (procedure)"
         },
@@ -1103,22 +1099,6 @@
         {
           "code": "12204031000119100",
           "term": "Cerebrovascular accident following procedure on heart (disorder)"
-        },
-        {
-          "code": "1290002002",
-          "term": "Alberta Stroke Program Early CT score"
-        },
-        {
-          "code": "1290003007",
-          "term": "Assessment using Alberta Stroke Program Early CT Score"
-        },
-        {
-          "code": "1290004001",
-          "term": "Alberta Stroke Program Early CT Score"
-        },
-        {
-          "code": "134771000119108",
-          "term": "Alteration of sensation as late effect of stroke"
         },
         {
           "code": "143471000000105",
@@ -1193,10 +1173,6 @@
           "term": "Cerebrovascular accident due to thrombosis of bilateral posterior cerebral arteries (disorder)"
         },
         {
-          "code": "306803007",
-          "term": "Admission to stroke unit"
-        },
-        {
           "code": "384430101000119104",
           "term": "Cerebrovascular accident due to embolism of right carotid artery (disorder)"
         },
@@ -1223,14 +1199,6 @@
         {
           "code": "444172003",
           "term": "Recurrent transient cerebral ischemic attack (disorder)"
-        },
-        {
-          "code": "450742003",
-          "term": "Assessment using National Institutes of Health stroke scale"
-        },
-        {
-          "code": "504391000000101",
-          "term": "Age, blood pressure, clinical features, duration, diabetes 2 stroke risk score"
         },
         {
           "code": "511452481000119104",
@@ -1265,18 +1233,6 @@
           "term": "Cerebrovascular accident due to occlusion of right anterior cerebral artery (disorder)"
         },
         {
-          "code": "704182008",
-          "term": "Assessment using hypertension, abnormal renal/liver function, stroke, bleeding history or predisposition, labile international normalized ratio, elderly over 65, and drugs/alcohol concomitantly score"
-        },
-        {
-          "code": "705027007",
-          "term": "Assessment using stroke impact scale version 3.0"
-        },
-        {
-          "code": "708018005",
-          "term": "Assessment using congestive heart failure, hypertension, age 2, diabetes mellitus, stroke 2 - vascular disease, age, sex category score"
-        },
-        {
           "code": "716021000000109",
           "term": "Excepted from stroke quality indicators - informed dissent (finding)"
         },
@@ -1305,10 +1261,6 @@
           "term": "Congestive heart failure, hypertension, age 2, diabetes mellitus, stroke 2, vascular disease, age, sex category stroke risk score (observable entity)"
         },
         {
-          "code": "736708003",
-          "term": "Assessment using PASS (Postural Assessment Scale for Stroke Patients)"
-        },
-        {
           "code": "759950981000119040",
           "term": "Cerebrovascular accident due to thrombosis of left vertebral artery (disorder)"
         },
@@ -1325,36 +1277,12 @@
           "term": "Cerebrovascular accident of thalamus (disorder)"
         },
         {
-          "code": "771476007",
-          "term": "Autosomal recessive leukoencephalopathy, ischemic stroke, retinitis pigmentosa syndrome"
-        },
-        {
-          "code": "794231000000107",
-          "term": "Assessment using HAS-BLED (hypertension, abnormal renal and/or liver function, stroke, bleeding history or predisposition, labile INR (international normalised ratio), elderly over 65, and drugs and/or alcohol concomitantly) score"
-        },
-        {
           "code": "806161651000119040",
           "term": "Cerebrovascular accident due to embolism of right vertebral artery (disorder)"
         },
         {
-          "code": "817701000000103",
-          "term": "Acute stroke care"
-        },
-        {
-          "code": "817711000000101",
-          "term": "Management of acute stroke"
-        },
-        {
-          "code": "823971000000109",
-          "term": "Acute stroke care management"
-        },
-        {
           "code": "828066161000119040",
           "term": "Cerebrovascular accident due to thrombosis of right anterior cerebral artery (disorder)"
-        },
-        {
-          "code": "842421000000106",
-          "term": "Acute stroke management plan agreed"
         },
         {
           "code": "849488701000119040",
@@ -1375,10 +1303,6 @@
         {
           "code": "86553761000119104",
           "term": "Cerebrovascular accident due to occlusion of bilateral posterior cerebral arteries (disorder)"
-        },
-        {
-          "code": "866240007",
-          "term": "At increased risk of stroke"
         },
         {
           "code": "881694631000119040",
@@ -1607,12 +1531,12 @@
       "codelist_name": "merged_enriched",
       "n_ref_codes": 266,
       "n_output_codes": 100,
-      "recall": 0.3383,
-      "precision": 0.9,
-      "f1": 0.4918,
-      "tp_count": 90,
-      "fp_count": 10,
-      "fn_count": 176,
+      "recall": 0.3647,
+      "precision": 0.97,
+      "f1": 0.5301,
+      "tp_count": 97,
+      "fp_count": 3,
+      "fn_count": 169,
       "tp_codes": [
         {
           "code": "1078001000000105",
@@ -1815,6 +1739,38 @@
           "term": "Anterior choroidal artery syndrome"
         },
         {
+          "code": "152148641000119104",
+          "term": "Cerebrovascular accident due to embolism of bilateral carotid arteries"
+        },
+        {
+          "code": "15978431000119106",
+          "term": "Thrombosis of right vertebral artery"
+        },
+        {
+          "code": "16000391000119104",
+          "term": "Cerebrovascular accident due to occlusion of right posterior cerebral artery"
+        },
+        {
+          "code": "16002031000119102",
+          "term": "Cerebrovascular accident due to thrombus of right middle cerebral artery"
+        },
+        {
+          "code": "16002111000119106",
+          "term": "Cerebrovascular accident due to thrombus of left middle cerebral artery"
+        },
+        {
+          "code": "16023751000119106",
+          "term": "Occlusion of left anterior choroidal artery"
+        },
+        {
+          "code": "16023911000119108",
+          "term": "Cerebrovascular accident due to occlusion of right carotid artery"
+        },
+        {
+          "code": "16024071000119102",
+          "term": "Cerebrovascular accident due to occlusion of right anterior choroidal artery"
+        },
+        {
           "code": "16218291000119100",
           "term": "Acute cerebral ischemia"
         },
@@ -1873,10 +1829,6 @@
         {
           "code": "230706003",
           "term": "Hemorrhagic cerebral infarction"
-        },
-        {
-          "code": "230714009",
-          "term": "Anterior circulation stroke of uncertain pathology"
         },
         {
           "code": "25133001",
@@ -1987,34 +1939,6 @@
         {
           "code": "415631003",
           "term": "Stroke/transient ischemic attack monitoring third letter (finding)"
-        },
-        {
-          "code": "763007002",
-          "term": "Assessment using congestive heart failure, hypertension, age 75 years or older, diabetes mellitus and previous stroke or transient ischemic attack score (procedure)"
-        },
-        {
-          "code": "G463",
-          "term": "Brain stem stroke syndrome"
-        },
-        {
-          "code": "G464",
-          "term": "Cerebellar stroke syndrome"
-        },
-        {
-          "code": "I64",
-          "term": "Stroke, not specified as haemorrhage or infarction"
-        },
-        {
-          "code": "I694",
-          "term": "Sequelae of stroke, not specified as haemorrhage or infarction"
-        },
-        {
-          "code": "T670",
-          "term": "Heatstroke and sunstroke"
-        },
-        {
-          "code": "Z823",
-          "term": "Family history of stroke"
         }
       ],
       "fn_codes": [
@@ -2043,20 +1967,8 @@
           "term": "Acute cerebrovascular accident due to occlusion of right posterior cerebral artery"
         },
         {
-          "code": "152148641000119104",
-          "term": "Cerebrovascular accident due to embolism of bilateral carotid arteries"
-        },
-        {
-          "code": "15978431000119106",
-          "term": "Thrombosis of right vertebral artery"
-        },
-        {
           "code": "16000351000119109",
           "term": "Cerebrovascular accident due to occlusion of left posterior cerebral artery"
-        },
-        {
-          "code": "16000391000119104",
-          "term": "Cerebrovascular accident due to occlusion of right posterior cerebral artery"
         },
         {
           "code": "16000431000119109",
@@ -2067,32 +1979,12 @@
           "term": "Cerebrovascular accident due to occlusion of left middle cerebral artery"
         },
         {
-          "code": "16002031000119102",
-          "term": "Cerebrovascular accident due to thrombus of right middle cerebral artery"
-        },
-        {
-          "code": "16002111000119106",
-          "term": "Cerebrovascular accident due to thrombus of left middle cerebral artery"
-        },
-        {
-          "code": "16023751000119106",
-          "term": "Occlusion of left anterior choroidal artery"
-        },
-        {
           "code": "16023831000119107",
           "term": "Occlusion of right anterior choroidal artery"
         },
         {
-          "code": "16023911000119108",
-          "term": "Cerebrovascular accident due to occlusion of right carotid artery"
-        },
-        {
           "code": "16023951000119109",
           "term": "Cerebrovascular accident due to occlusion of left anterior choroidal artery"
-        },
-        {
-          "code": "16024071000119102",
-          "term": "Cerebrovascular accident due to occlusion of right anterior choroidal artery"
         },
         {
           "code": "16024111000119109",
@@ -2277,6 +2169,10 @@
         {
           "code": "230713003",
           "term": "Stroke of uncertain pathology"
+        },
+        {
+          "code": "230714009",
+          "term": "Anterior circulation stroke of uncertain pathology"
         },
         {
           "code": "230715005",
@@ -2728,12 +2624,12 @@
       "codelist_name": "all_scored",
       "n_ref_codes": 266,
       "n_output_codes": 100,
-      "recall": 0.3383,
-      "precision": 0.9,
-      "f1": 0.4918,
-      "tp_count": 90,
-      "fp_count": 10,
-      "fn_count": 176,
+      "recall": 0.3647,
+      "precision": 0.97,
+      "f1": 0.5301,
+      "tp_count": 97,
+      "fp_count": 3,
+      "fn_count": 169,
       "tp_codes": [
         {
           "code": "1078001000000105",
@@ -2936,6 +2832,38 @@
           "term": "Anterior choroidal artery syndrome"
         },
         {
+          "code": "152148641000119104",
+          "term": "Cerebrovascular accident due to embolism of bilateral carotid arteries"
+        },
+        {
+          "code": "15978431000119106",
+          "term": "Thrombosis of right vertebral artery"
+        },
+        {
+          "code": "16000391000119104",
+          "term": "Cerebrovascular accident due to occlusion of right posterior cerebral artery"
+        },
+        {
+          "code": "16002031000119102",
+          "term": "Cerebrovascular accident due to thrombus of right middle cerebral artery"
+        },
+        {
+          "code": "16002111000119106",
+          "term": "Cerebrovascular accident due to thrombus of left middle cerebral artery"
+        },
+        {
+          "code": "16023751000119106",
+          "term": "Occlusion of left anterior choroidal artery"
+        },
+        {
+          "code": "16023911000119108",
+          "term": "Cerebrovascular accident due to occlusion of right carotid artery"
+        },
+        {
+          "code": "16024071000119102",
+          "term": "Cerebrovascular accident due to occlusion of right anterior choroidal artery"
+        },
+        {
           "code": "16218291000119100",
           "term": "Acute cerebral ischemia"
         },
@@ -2994,10 +2922,6 @@
         {
           "code": "230706003",
           "term": "Hemorrhagic cerebral infarction"
-        },
-        {
-          "code": "230714009",
-          "term": "Anterior circulation stroke of uncertain pathology"
         },
         {
           "code": "25133001",
@@ -3108,34 +3032,6 @@
         {
           "code": "415631003",
           "term": "Stroke/transient ischemic attack monitoring third letter (finding)"
-        },
-        {
-          "code": "763007002",
-          "term": "Assessment using congestive heart failure, hypertension, age 75 years or older, diabetes mellitus and previous stroke or transient ischemic attack score (procedure)"
-        },
-        {
-          "code": "G463",
-          "term": "Brain stem stroke syndrome"
-        },
-        {
-          "code": "G464",
-          "term": "Cerebellar stroke syndrome"
-        },
-        {
-          "code": "I64",
-          "term": "Stroke, not specified as haemorrhage or infarction"
-        },
-        {
-          "code": "I694",
-          "term": "Sequelae of stroke, not specified as haemorrhage or infarction"
-        },
-        {
-          "code": "T670",
-          "term": "Heatstroke and sunstroke"
-        },
-        {
-          "code": "Z823",
-          "term": "Family history of stroke"
         }
       ],
       "fn_codes": [
@@ -3164,20 +3060,8 @@
           "term": "Acute cerebrovascular accident due to occlusion of right posterior cerebral artery"
         },
         {
-          "code": "152148641000119104",
-          "term": "Cerebrovascular accident due to embolism of bilateral carotid arteries"
-        },
-        {
-          "code": "15978431000119106",
-          "term": "Thrombosis of right vertebral artery"
-        },
-        {
           "code": "16000351000119109",
           "term": "Cerebrovascular accident due to occlusion of left posterior cerebral artery"
-        },
-        {
-          "code": "16000391000119104",
-          "term": "Cerebrovascular accident due to occlusion of right posterior cerebral artery"
         },
         {
           "code": "16000431000119109",
@@ -3188,32 +3072,12 @@
           "term": "Cerebrovascular accident due to occlusion of left middle cerebral artery"
         },
         {
-          "code": "16002031000119102",
-          "term": "Cerebrovascular accident due to thrombus of right middle cerebral artery"
-        },
-        {
-          "code": "16002111000119106",
-          "term": "Cerebrovascular accident due to thrombus of left middle cerebral artery"
-        },
-        {
-          "code": "16023751000119106",
-          "term": "Occlusion of left anterior choroidal artery"
-        },
-        {
           "code": "16023831000119107",
           "term": "Occlusion of right anterior choroidal artery"
         },
         {
-          "code": "16023911000119108",
-          "term": "Cerebrovascular accident due to occlusion of right carotid artery"
-        },
-        {
           "code": "16023951000119109",
           "term": "Cerebrovascular accident due to occlusion of left anterior choroidal artery"
-        },
-        {
-          "code": "16024071000119102",
-          "term": "Cerebrovascular accident due to occlusion of right anterior choroidal artery"
         },
         {
           "code": "16024111000119109",
@@ -3398,6 +3262,10 @@
         {
           "code": "230713003",
           "term": "Stroke of uncertain pathology"
+        },
+        {
+          "code": "230714009",
+          "term": "Anterior circulation stroke of uncertain pathology"
         },
         {
           "code": "230715005",
@@ -3848,13 +3716,13 @@
     "included_only": {
       "codelist_name": "included_only",
       "n_ref_codes": 266,
-      "n_output_codes": 90,
-      "recall": 0.3271,
-      "precision": 0.9667,
-      "f1": 0.4888,
-      "tp_count": 87,
-      "fp_count": 3,
-      "fn_count": 179,
+      "n_output_codes": 94,
+      "recall": 0.3534,
+      "precision": 1.0,
+      "f1": 0.5222,
+      "tp_count": 94,
+      "fp_count": 0,
+      "fn_count": 172,
       "tp_codes": [
         {
           "code": "1078001000000105",
@@ -4049,6 +3917,38 @@
           "term": "Anterior choroidal artery syndrome"
         },
         {
+          "code": "152148641000119104",
+          "term": "Cerebrovascular accident due to embolism of bilateral carotid arteries"
+        },
+        {
+          "code": "15978431000119106",
+          "term": "Thrombosis of right vertebral artery"
+        },
+        {
+          "code": "16000391000119104",
+          "term": "Cerebrovascular accident due to occlusion of right posterior cerebral artery"
+        },
+        {
+          "code": "16002031000119102",
+          "term": "Cerebrovascular accident due to thrombus of right middle cerebral artery"
+        },
+        {
+          "code": "16002111000119106",
+          "term": "Cerebrovascular accident due to thrombus of left middle cerebral artery"
+        },
+        {
+          "code": "16023751000119106",
+          "term": "Occlusion of left anterior choroidal artery"
+        },
+        {
+          "code": "16023911000119108",
+          "term": "Cerebrovascular accident due to occlusion of right carotid artery"
+        },
+        {
+          "code": "16024071000119102",
+          "term": "Cerebrovascular accident due to occlusion of right anterior choroidal artery"
+        },
+        {
           "code": "16218291000119100",
           "term": "Acute cerebral ischemia"
         },
@@ -4103,10 +4003,6 @@
         {
           "code": "230706003",
           "term": "Hemorrhagic cerebral infarction"
-        },
-        {
-          "code": "230714009",
-          "term": "Anterior circulation stroke of uncertain pathology"
         },
         {
           "code": "25133001",
@@ -4205,20 +4101,7 @@
           "term": "Brain stem infarction"
         }
       ],
-      "fp_codes": [
-        {
-          "code": "G463",
-          "term": "Brain stem stroke syndrome"
-        },
-        {
-          "code": "G464",
-          "term": "Cerebellar stroke syndrome"
-        },
-        {
-          "code": "I64",
-          "term": "Stroke, not specified as haemorrhage or infarction"
-        }
-      ],
+      "fp_codes": [],
       "fn_codes": [
         {
           "code": "107557061000119108",
@@ -4253,20 +4136,8 @@
           "term": "Acute cerebrovascular accident due to occlusion of right posterior cerebral artery"
         },
         {
-          "code": "152148641000119104",
-          "term": "Cerebrovascular accident due to embolism of bilateral carotid arteries"
-        },
-        {
-          "code": "15978431000119106",
-          "term": "Thrombosis of right vertebral artery"
-        },
-        {
           "code": "16000351000119109",
           "term": "Cerebrovascular accident due to occlusion of left posterior cerebral artery"
-        },
-        {
-          "code": "16000391000119104",
-          "term": "Cerebrovascular accident due to occlusion of right posterior cerebral artery"
         },
         {
           "code": "16000431000119109",
@@ -4277,32 +4148,12 @@
           "term": "Cerebrovascular accident due to occlusion of left middle cerebral artery"
         },
         {
-          "code": "16002031000119102",
-          "term": "Cerebrovascular accident due to thrombus of right middle cerebral artery"
-        },
-        {
-          "code": "16002111000119106",
-          "term": "Cerebrovascular accident due to thrombus of left middle cerebral artery"
-        },
-        {
-          "code": "16023751000119106",
-          "term": "Occlusion of left anterior choroidal artery"
-        },
-        {
           "code": "16023831000119107",
           "term": "Occlusion of right anterior choroidal artery"
         },
         {
-          "code": "16023911000119108",
-          "term": "Cerebrovascular accident due to occlusion of right carotid artery"
-        },
-        {
           "code": "16023951000119109",
           "term": "Cerebrovascular accident due to occlusion of left anterior choroidal artery"
-        },
-        {
-          "code": "16024071000119102",
-          "term": "Cerebrovascular accident due to occlusion of right anterior choroidal artery"
         },
         {
           "code": "16024111000119109",
@@ -4491,6 +4342,10 @@
         {
           "code": "230713003",
           "term": "Stroke of uncertain pathology"
+        },
+        {
+          "code": "230714009",
+          "term": "Anterior circulation stroke of uncertain pathology"
         },
         {
           "code": "230715005",
@@ -4941,13 +4796,13 @@
     "included_plus_uncertain": {
       "codelist_name": "included_plus_uncertain",
       "n_ref_codes": 266,
-      "n_output_codes": 92,
-      "recall": 0.3346,
-      "precision": 0.9674,
-      "f1": 0.4972,
-      "tp_count": 89,
-      "fp_count": 3,
-      "fn_count": 177,
+      "n_output_codes": 95,
+      "recall": 0.3571,
+      "precision": 1.0,
+      "f1": 0.5263,
+      "tp_count": 95,
+      "fp_count": 0,
+      "fn_count": 171,
       "tp_codes": [
         {
           "code": "1078001000000105",
@@ -5074,10 +4929,6 @@
           "term": "Hemorrhagic cerebral infarction caused by Aspergillus"
         },
         {
-          "code": "1179360000",
-          "term": "Fetal epilepsy due to perinatal stroke"
-        },
-        {
           "code": "1197363004",
           "term": "Pediatric arterial ischemic stroke"
         },
@@ -5150,6 +5001,38 @@
           "term": "Anterior choroidal artery syndrome"
         },
         {
+          "code": "152148641000119104",
+          "term": "Cerebrovascular accident due to embolism of bilateral carotid arteries"
+        },
+        {
+          "code": "15978431000119106",
+          "term": "Thrombosis of right vertebral artery"
+        },
+        {
+          "code": "16000391000119104",
+          "term": "Cerebrovascular accident due to occlusion of right posterior cerebral artery"
+        },
+        {
+          "code": "16002031000119102",
+          "term": "Cerebrovascular accident due to thrombus of right middle cerebral artery"
+        },
+        {
+          "code": "16002111000119106",
+          "term": "Cerebrovascular accident due to thrombus of left middle cerebral artery"
+        },
+        {
+          "code": "16023751000119106",
+          "term": "Occlusion of left anterior choroidal artery"
+        },
+        {
+          "code": "16023911000119108",
+          "term": "Cerebrovascular accident due to occlusion of right carotid artery"
+        },
+        {
+          "code": "16024071000119102",
+          "term": "Cerebrovascular accident due to occlusion of right anterior choroidal artery"
+        },
+        {
           "code": "16218291000119100",
           "term": "Acute cerebral ischemia"
         },
@@ -5204,10 +5087,6 @@
         {
           "code": "230706003",
           "term": "Hemorrhagic cerebral infarction"
-        },
-        {
-          "code": "230714009",
-          "term": "Anterior circulation stroke of uncertain pathology"
         },
         {
           "code": "25133001",
@@ -5306,20 +5185,7 @@
           "term": "Brain stem infarction"
         }
       ],
-      "fp_codes": [
-        {
-          "code": "G463",
-          "term": "Brain stem stroke syndrome"
-        },
-        {
-          "code": "G464",
-          "term": "Cerebellar stroke syndrome"
-        },
-        {
-          "code": "I64",
-          "term": "Stroke, not specified as haemorrhage or infarction"
-        }
-      ],
+      "fp_codes": [],
       "fn_codes": [
         {
           "code": "107557061000119108",
@@ -5328,6 +5194,10 @@
         {
           "code": "117776611000119102",
           "term": "Cerebrovascular accident due to occlusion of left posterior communicating artery"
+        },
+        {
+          "code": "1179360000",
+          "term": "Fetal epilepsy due to perinatal stroke"
         },
         {
           "code": "12204031000119101",
@@ -5346,20 +5216,8 @@
           "term": "Acute cerebrovascular accident due to occlusion of right posterior cerebral artery"
         },
         {
-          "code": "152148641000119104",
-          "term": "Cerebrovascular accident due to embolism of bilateral carotid arteries"
-        },
-        {
-          "code": "15978431000119106",
-          "term": "Thrombosis of right vertebral artery"
-        },
-        {
           "code": "16000351000119109",
           "term": "Cerebrovascular accident due to occlusion of left posterior cerebral artery"
-        },
-        {
-          "code": "16000391000119104",
-          "term": "Cerebrovascular accident due to occlusion of right posterior cerebral artery"
         },
         {
           "code": "16000431000119109",
@@ -5370,32 +5228,12 @@
           "term": "Cerebrovascular accident due to occlusion of left middle cerebral artery"
         },
         {
-          "code": "16002031000119102",
-          "term": "Cerebrovascular accident due to thrombus of right middle cerebral artery"
-        },
-        {
-          "code": "16002111000119106",
-          "term": "Cerebrovascular accident due to thrombus of left middle cerebral artery"
-        },
-        {
-          "code": "16023751000119106",
-          "term": "Occlusion of left anterior choroidal artery"
-        },
-        {
           "code": "16023831000119107",
           "term": "Occlusion of right anterior choroidal artery"
         },
         {
-          "code": "16023911000119108",
-          "term": "Cerebrovascular accident due to occlusion of right carotid artery"
-        },
-        {
           "code": "16023951000119109",
           "term": "Cerebrovascular accident due to occlusion of left anterior choroidal artery"
-        },
-        {
-          "code": "16024071000119102",
-          "term": "Cerebrovascular accident due to occlusion of right anterior choroidal artery"
         },
         {
           "code": "16024111000119109",
@@ -5584,6 +5422,10 @@
         {
           "code": "230713003",
           "term": "Stroke of uncertain pathology"
+        },
+        {
+          "code": "230714009",
+          "term": "Anterior circulation stroke of uncertain pathology"
         },
         {
           "code": "230715005",
@@ -6033,32 +5875,32 @@
     }
   },
   "false_exclusions": {
-    "count": 1,
+    "count": 2,
     "codes": [
       {
         "code": "16896891000119106",
         "term": "History of cerebrovascular accident due to ischemia (situation)",
-        "rationale": "History of cerebrovascular accident is a past event (situation) rather than an active instance of stroke; it represents a resolved condition."
-      }
-    ]
-  },
-  "uncertain_in_reference": {
-    "count": 2,
-    "codes": [
-      {
-        "code": "1204189004",
-        "term": "Asymptomatic occlusion of intracranial vertebral artery (disorder)",
-        "rationale": "Asymptomatic occlusion of intracranial vertebral artery may represent a preclinical or subclinical vascular finding rather than a symptomatic stroke event."
+        "rationale": "History of cerebrovascular accident is a past event (situation), not an active instance of primary stroke."
       },
       {
         "code": "1179360000",
         "term": "Fetal epilepsy due to perinatal stroke (disorder)",
-        "rationale": "Fetal epilepsy due to perinatal stroke names epilepsy as the primary disorder; unclear if this represents the stroke itself or a complication."
+        "rationale": "Fetal epilepsy due to perinatal stroke is a complication/sequela of perinatal stroke, not an instance of stroke itself."
       }
     ]
   },
-  "summary": "Recall: 32.7% (87 of 266 reference codes retrieved). Precision: 96.7%. F1: 48.9%. 1 reference codes were incorrectly excluded.",
-  "elapsed_seconds": 23.46,
+  "uncertain_in_reference": {
+    "count": 1,
+    "codes": [
+      {
+        "code": "1204189004",
+        "term": "Asymptomatic occlusion of intracranial vertebral artery (disorder)",
+        "rationale": "Asymptomatic occlusion of intracranial vertebral artery may represent a stroke risk factor or subclinical finding rather than a symptomatic stroke event."
+      }
+    ]
+  },
+  "summary": "Recall: 35.3% (94 of 266 reference codes retrieved). Precision: 100.0%. F1: 52.2%. 2 reference codes were incorrectly excluded.",
+  "elapsed_seconds": 26.39,
   "pipeline_results_count": 100,
   "scored_codes": [
     {
@@ -6066,289 +5908,549 @@
       "term": "Thrombotic stroke (disorder)",
       "vocabulary": "SNOMED CT",
       "decision": "include",
-      "confidence": 0.99,
-      "rationale": "Thrombotic stroke is a primary subtype of stroke and directly represents the queried condition.",
+      "confidence": 1.0,
+      "rationale": "Thrombotic stroke is a primary ischemic stroke subtype and a direct instance of the queried condition.",
       "sources": [
         "ChromaDB",
         "OpenCodelists (Bennett Institute)",
         "QOF Business Rules 2024-25"
       ],
-      "usage_frequency": null
+      "usage_frequency": 140,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": 4159140,
+      "dmd_level": null
     },
     {
       "code": "371041009",
       "term": "Embolic stroke (disorder)",
       "vocabulary": "SNOMED CT",
       "decision": "include",
-      "confidence": 0.99,
-      "rationale": "Embolic stroke is a primary subtype of stroke and directly represents the queried condition.",
+      "confidence": 1.0,
+      "rationale": "Embolic stroke is a primary ischemic stroke subtype and a direct instance of the queried condition.",
       "sources": [
         "ChromaDB",
         "OpenCodelists (Bennett Institute)",
         "QOF Business Rules 2024-25"
       ],
-      "usage_frequency": null
+      "usage_frequency": 900,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": 4153352,
+      "dmd_level": null
     },
     {
       "code": "373606000",
       "term": "Occlusive stroke (disorder)",
       "vocabulary": "SNOMED CT",
       "decision": "include",
-      "confidence": 0.99,
-      "rationale": "Occlusive stroke is a primary subtype of stroke and directly represents the queried condition.",
+      "confidence": 1.0,
+      "rationale": "Occlusive stroke is a primary ischemic stroke subtype and a direct instance of the queried condition.",
       "sources": [
         "ChromaDB",
         "OpenCodelists (Bennett Institute)",
         "QOF Business Rules 2024-25"
       ],
-      "usage_frequency": null
+      "usage_frequency": 200,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": 4189462,
+      "dmd_level": null
     },
     {
       "code": "413758000",
       "term": "Cardioembolic stroke (disorder)",
       "vocabulary": "SNOMED CT",
       "decision": "include",
-      "confidence": 0.99,
-      "rationale": "Cardioembolic stroke is a primary subtype of stroke and directly represents the queried condition.",
+      "confidence": 1.0,
+      "rationale": "Cardioembolic stroke is a primary ischemic stroke subtype and a direct instance of the queried condition.",
       "sources": [
         "ChromaDB",
         "OpenCodelists (Bennett Institute)",
         "QOF Business Rules 2024-25"
       ],
-      "usage_frequency": null
+      "usage_frequency": 280,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": 4211509,
+      "dmd_level": null
     },
     {
       "code": "422504002",
       "term": "Ischemic stroke (disorder)",
       "vocabulary": "SNOMED CT",
       "decision": "include",
-      "confidence": 0.99,
-      "rationale": "Ischemic stroke is a primary subtype of stroke and directly represents the queried condition.",
+      "confidence": 1.0,
+      "rationale": "Ischemic stroke is a primary stroke subtype and a direct instance of the queried condition.",
       "sources": [
         "ChromaDB",
         "OpenCodelists (Bennett Institute)",
         "QOF Business Rules 2024-25"
       ],
-      "usage_frequency": null
+      "usage_frequency": 17580,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": 4310996,
+      "dmd_level": null
     },
     {
       "code": "426107000",
       "term": "Acute lacunar infarction (disorder)",
       "vocabulary": "SNOMED CT",
       "decision": "include",
-      "confidence": 0.99,
-      "rationale": "Acute lacunar infarction is a primary subtype of ischemic stroke and directly represents the queried condition.",
+      "confidence": 1.0,
+      "rationale": "Acute lacunar infarction is a specific ischemic stroke subtype and a direct instance of the queried condition.",
       "sources": [
         "ChromaDB",
         "OpenCodelists (Bennett Institute)",
         "QOF Business Rules 2024-25"
       ],
-      "usage_frequency": null
+      "usage_frequency": 1100,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": 4138327,
+      "dmd_level": null
     },
     {
       "code": "432504007",
       "term": "Cerebral infarction (disorder)",
       "vocabulary": "SNOMED CT",
       "decision": "include",
-      "confidence": 0.99,
-      "rationale": "Cerebral infarction is a primary manifestation of stroke and directly represents the queried condition.",
+      "confidence": 1.0,
+      "rationale": "Cerebral infarction is a primary stroke subtype and a direct instance of the queried condition.",
       "sources": [
         "ChromaDB",
         "OpenCodelists (Bennett Institute)",
         "QOF Business Rules 2024-25"
       ],
-      "usage_frequency": null
+      "usage_frequency": 33150,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": 443454,
+      "dmd_level": null
     },
     {
       "code": "724424009",
       "term": "Cerebral ischemic stroke due to small artery occlusion (disorder)",
       "vocabulary": "SNOMED CT",
       "decision": "include",
-      "confidence": 0.99,
-      "rationale": "Cerebral ischemic stroke due to small artery occlusion is a specific subtype of ischemic stroke and directly represents the queried condition.",
+      "confidence": 1.0,
+      "rationale": "Cerebral ischemic stroke due to small artery occlusion is a specific ischemic stroke subtype and a direct instance of the queried condition.",
       "sources": [
         "ChromaDB",
         "OpenCodelists (Bennett Institute)",
         "QOF Business Rules 2024-25"
       ],
-      "usage_frequency": null
+      "usage_frequency": 80,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": 37110237,
+      "dmd_level": null
     },
     {
       "code": "75543006",
       "term": "Cerebral embolism (disorder)",
       "vocabulary": "SNOMED CT",
       "decision": "include",
-      "confidence": 0.99,
-      "rationale": "Cerebral embolism is a primary mechanism of stroke and directly represents the queried condition.",
+      "confidence": 1.0,
+      "rationale": "Cerebral embolism is a primary ischemic stroke mechanism and a direct instance of the queried condition.",
       "sources": [
         "ChromaDB",
         "OpenCodelists (Bennett Institute)",
         "QOF Business Rules 2024-25"
       ],
-      "usage_frequency": null
+      "usage_frequency": 170,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": 375557,
+      "dmd_level": null
     },
     {
       "code": "762005171000119101",
       "term": "Acute cerebrovascular accident due to ischemia",
       "vocabulary": "SNOMED CT",
       "decision": "include",
-      "confidence": 0.99,
-      "rationale": "Acute cerebrovascular accident due to ischemia is a primary manifestation of ischemic stroke and directly represents the queried condition.",
+      "confidence": 1.0,
+      "rationale": "Acute cerebrovascular accident due to ischemia is a primary ischemic stroke and a direct instance of the queried condition.",
       "sources": [
         "ChromaDB",
         "OpenCodelists (Bennett Institute)"
       ],
-      "usage_frequency": null
+      "usage_frequency": 140,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "788880006",
       "term": "Cerebral ischemic stroke due to dissection of artery (disorder)",
       "vocabulary": "SNOMED CT",
       "decision": "include",
-      "confidence": 0.99,
-      "rationale": "Cerebral ischemic stroke due to dissection of artery is a specific subtype of ischemic stroke and directly represents the queried condition.",
+      "confidence": 1.0,
+      "rationale": "Cerebral ischemic stroke due to dissection of artery is a specific ischemic stroke subtype and a direct instance of the queried condition.",
       "sources": [
         "ChromaDB",
         "OpenCodelists (Bennett Institute)",
         "QOF Business Rules 2024-25"
       ],
-      "usage_frequency": null
+      "usage_frequency": 50,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": 37312017,
+      "dmd_level": null
     },
     {
       "code": "788882003",
       "term": "Cerebral ischemic stroke due to global hypoperfusion with watershed infarct (disorder)",
       "vocabulary": "SNOMED CT",
       "decision": "include",
-      "confidence": 0.99,
-      "rationale": "Cerebral ischemic stroke due to global hypoperfusion with watershed infarct is a specific subtype of ischemic stroke and directly represents the queried condition.",
+      "confidence": 1.0,
+      "rationale": "Cerebral ischemic stroke due to global hypoperfusion with watershed infarct is a specific ischemic stroke subtype and a direct instance of the queried condition.",
       "sources": [
         "ChromaDB",
         "OpenCodelists (Bennett Institute)",
         "QOF Business Rules 2024-25"
       ],
-      "usage_frequency": null
+      "usage_frequency": 140,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": 37312015,
+      "dmd_level": null
     },
     {
       "code": "95457000",
       "term": "Brain stem infarction (disorder)",
       "vocabulary": "SNOMED CT",
       "decision": "include",
-      "confidence": 0.99,
-      "rationale": "Brain stem infarction is a specific anatomical subtype of stroke and directly represents the queried condition.",
+      "confidence": 1.0,
+      "rationale": "Brain stem infarction is a specific anatomical variant of ischemic stroke and a direct instance of the queried condition.",
       "sources": [
         "ChromaDB",
         "OpenCodelists (Bennett Institute)",
         "QOF Business Rules 2024-25"
       ],
-      "usage_frequency": null
-    },
-    {
-      "code": "I64",
-      "term": "Stroke, not specified as haemorrhage or infarction",
-      "vocabulary": "ICD-10 (WHO)",
-      "decision": "include",
-      "confidence": 0.98,
-      "rationale": "This is an unspecified stroke code representing the primary condition itself, not a complication or sequela.",
-      "sources": [
-        "ChromaDB",
-        "OMOPHub"
-      ],
-      "usage_frequency": null
-    },
-    {
-      "code": "1078001000000105",
-      "term": "Haemorrhagic stroke (disorder)",
-      "vocabulary": "SNOMED CT",
-      "decision": "include",
-      "confidence": 0.98,
-      "rationale": "Haemorrhagic stroke is a primary subtype of stroke representing bleeding in the brain.",
-      "sources": [
-        "ChromaDB",
-        "OpenCodelists (Bennett Institute)",
-        "QOF Business Rules 2024-25"
-      ],
-      "usage_frequency": null
-    },
-    {
-      "code": "1089411000000104",
-      "term": "Cerebral infarction due to occlusion of cerebral artery (disorder)",
-      "vocabulary": "SNOMED CT",
-      "decision": "include",
-      "confidence": 0.98,
-      "rationale": "Cerebral infarction due to occlusion of cerebral artery is a primary stroke subtype caused by arterial blockage.",
-      "sources": [
-        "OpenCodelists (Bennett Institute)",
-        "QOF Business Rules 2024-25"
-      ],
-      "usage_frequency": null
-    },
-    {
-      "code": "1089421000000105",
-      "term": "Cerebral infarction due to stenosis of cerebral artery (disorder)",
-      "vocabulary": "SNOMED CT",
-      "decision": "include",
-      "confidence": 0.98,
-      "rationale": "Cerebral infarction due to stenosis of cerebral artery is a primary stroke subtype caused by arterial narrowing.",
-      "sources": [
-        "ChromaDB",
-        "OpenCodelists (Bennett Institute)",
-        "QOF Business Rules 2024-25"
-      ],
-      "usage_frequency": null
-    },
-    {
-      "code": "116288000",
-      "term": "Paralytic stroke (disorder)",
-      "vocabulary": "SNOMED CT",
-      "decision": "include",
-      "confidence": 0.98,
-      "rationale": "Paralytic stroke is a clinical variant of stroke with motor deficits.",
-      "sources": [
-        "ChromaDB",
-        "OpenCodelists (Bennett Institute)",
-        "QOF Business Rules 2024-25"
-      ],
-      "usage_frequency": null
+      "usage_frequency": 870,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": 4316224,
+      "dmd_level": null
     },
     {
       "code": "230690007",
       "term": "Cerebrovascular accident (disorder)",
       "vocabulary": "SNOMED CT",
       "decision": "include",
-      "confidence": 0.98,
-      "rationale": "Cerebrovascular accident is the primary generic term for stroke and is a direct instance of the queried condition.",
+      "confidence": 0.99,
+      "rationale": "Cerebrovascular accident is the core concept for primary stroke.",
       "sources": [
         "ChromaDB",
         "OpenCodelists (Bennett Institute)",
         "QOF Business Rules 2024-25"
       ],
-      "usage_frequency": null
+      "usage_frequency": 179470,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": 381316,
+      "dmd_level": null
     },
     {
-      "code": "G46.3",
-      "term": "Brain stem stroke syndrome",
-      "vocabulary": "ICD-10 (WHO)",
+      "code": "140921000119102",
+      "term": "Ischemic stroke without coma (disorder)",
+      "vocabulary": "SNOMED CT",
       "decision": "include",
-      "confidence": 0.95,
-      "rationale": "Brain stem stroke syndrome is a direct clinical manifestation and subtype of stroke affecting a specific anatomical region.",
+      "confidence": 0.98,
+      "rationale": "Ischemic stroke without coma is a direct instance of primary stroke.",
       "sources": [
         "ChromaDB",
-        "OMOPHub"
+        "OpenCodelists (Bennett Institute)",
+        "QOF Business Rules 2024-25"
       ],
-      "usage_frequency": null
+      "usage_frequency": 340,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": 43530670,
+      "dmd_level": null
     },
     {
-      "code": "G46.4",
-      "term": "Cerebellar stroke syndrome",
-      "vocabulary": "ICD-10 (WHO)",
+      "code": "16218291000119100",
+      "term": "Acute cerebral ischemia (disorder)",
+      "vocabulary": "SNOMED CT",
       "decision": "include",
-      "confidence": 0.95,
-      "rationale": "Cerebellar stroke syndrome is a direct clinical manifestation and subtype of stroke affecting the cerebellum.",
+      "confidence": 0.98,
+      "rationale": "Acute cerebral ischemia is a direct instance of primary ischemic stroke.",
       "sources": [
         "ChromaDB",
-        "OMOPHub"
+        "OpenCodelists (Bennett Institute)",
+        "QOF Business Rules 2024-25"
       ],
-      "usage_frequency": null
+      "usage_frequency": 400,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": 42535227,
+      "dmd_level": null
+    },
+    {
+      "code": "16371781000119100",
+      "term": "Cerebellar stroke (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.98,
+      "rationale": "Cerebellar stroke is a specific anatomical variant of primary stroke.",
+      "sources": [
+        "ChromaDB",
+        "OpenCodelists (Bennett Institute)",
+        "QOF Business Rules 2024-25"
+      ],
+      "usage_frequency": 1870,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": 36716999,
+      "dmd_level": null
+    },
+    {
+      "code": "195212005",
+      "term": "Brainstem stroke syndrome (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.98,
+      "rationale": "Brainstem stroke syndrome is a specific anatomical variant of primary stroke.",
+      "sources": [
+        "ChromaDB",
+        "OpenCodelists (Bennett Institute)",
+        "QOF Business Rules 2024-25"
+      ],
+      "usage_frequency": 560,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": 4111710,
+      "dmd_level": null
+    },
+    {
+      "code": "195213000",
+      "term": "Cerebellar stroke syndrome (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.98,
+      "rationale": "Cerebellar stroke syndrome is a specific anatomical variant of primary stroke.",
+      "sources": [
+        "ChromaDB",
+        "OpenCodelists (Bennett Institute)",
+        "QOF Business Rules 2024-25"
+      ],
+      "usage_frequency": 1220,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": 4111711,
+      "dmd_level": null
+    },
+    {
+      "code": "230693009",
+      "term": "Anterior cerebral circulation infarction (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.98,
+      "rationale": "Anterior cerebral circulation infarction is a specific anatomical variant of primary stroke.",
+      "sources": [
+        "ChromaDB",
+        "OpenCodelists (Bennett Institute)",
+        "QOF Business Rules 2024-25"
+      ],
+      "usage_frequency": 920,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": 4045735,
+      "dmd_level": null
+    },
+    {
+      "code": "230696001",
+      "term": "Posterior cerebral circulation infarction (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.98,
+      "rationale": "Posterior cerebral circulation infarction is a specific anatomical variant of primary stroke.",
+      "sources": [
+        "ChromaDB",
+        "OpenCodelists (Bennett Institute)",
+        "QOF Business Rules 2024-25"
+      ],
+      "usage_frequency": 6440,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": 4045736,
+      "dmd_level": null
+    },
+    {
+      "code": "230698000",
+      "term": "Lacunar infarction (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.98,
+      "rationale": "Lacunar infarction is a specific pathological type of primary stroke.",
+      "sources": [
+        "ChromaDB",
+        "OpenCodelists (Bennett Institute)",
+        "QOF Business Rules 2024-25"
+      ],
+      "usage_frequency": 25220,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": 4046360,
+      "dmd_level": null
+    },
+    {
+      "code": "25133001",
+      "term": "Completed stroke (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.98,
+      "rationale": "Completed stroke is a temporal stage of primary stroke.",
+      "sources": [
+        "ChromaDB",
+        "OpenCodelists (Bennett Institute)",
+        "QOF Business Rules 2024-25"
+      ],
+      "usage_frequency": 170,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": 4099974,
+      "dmd_level": null
+    },
+    {
+      "code": "276219001",
+      "term": "Occipital cerebral infarction (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.98,
+      "rationale": "Occipital cerebral infarction is a specific anatomical variant of primary stroke.",
+      "sources": [
+        "ChromaDB",
+        "OpenCodelists (Bennett Institute)",
+        "QOF Business Rules 2024-25"
+      ],
+      "usage_frequency": 4370,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": 4077086,
+      "dmd_level": null
+    },
+    {
+      "code": "307766002",
+      "term": "Left sided cerebral infarction (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.98,
+      "rationale": "Left sided cerebral infarction is a specific anatomical variant of primary stroke.",
+      "sources": [
+        "ChromaDB",
+        "OpenCodelists (Bennett Institute)",
+        "QOF Business Rules 2024-25"
+      ],
+      "usage_frequency": 6820,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": 4141405,
+      "dmd_level": null
+    },
+    {
+      "code": "307767006",
+      "term": "Right sided cerebral infarction (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.98,
+      "rationale": "Right sided cerebral infarction is a specific anatomical variant of primary stroke.",
+      "sources": [
+        "ChromaDB",
+        "OpenCodelists (Bennett Institute)",
+        "QOF Business Rules 2024-25"
+      ],
+      "usage_frequency": 6090,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": 4146185,
+      "dmd_level": null
+    },
+    {
+      "code": "1078001000000105",
+      "term": "Haemorrhagic stroke (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Haemorrhagic stroke is a primary type of stroke and directly represents an instance of the queried condition.",
+      "sources": [
+        "ChromaDB",
+        "OpenCodelists (Bennett Institute)",
+        "QOF Business Rules 2024-25"
+      ],
+      "usage_frequency": 4090,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": 35609033,
+      "dmd_level": null
+    },
+    {
+      "code": "1089411000000104",
+      "term": "Cerebral infarction due to occlusion of cerebral artery (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Cerebral infarction due to occlusion of cerebral artery is a primary ischemic stroke subtype and directly represents an instance of stroke.",
+      "sources": [
+        "OpenCodelists (Bennett Institute)",
+        "QOF Business Rules 2024-25"
+      ],
+      "usage_frequency": 40,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": null,
+      "dmd_level": null
+    },
+    {
+      "code": "1089421000000105",
+      "term": "Cerebral infarction due to stenosis of cerebral artery (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Cerebral infarction due to stenosis of cerebral artery is a primary ischemic stroke subtype and directly represents an instance of stroke.",
+      "sources": [
+        "ChromaDB",
+        "OpenCodelists (Bennett Institute)",
+        "QOF Business Rules 2024-25"
+      ],
+      "usage_frequency": 40,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": 35610085,
+      "dmd_level": null
     },
     {
       "code": "111297002",
@@ -6356,286 +6458,37 @@
       "vocabulary": "SNOMED CT",
       "decision": "include",
       "confidence": 0.95,
-      "rationale": "Nonparalytic stroke is a clinical variant of stroke without motor deficits.",
+      "rationale": "Nonparalytic stroke is a clinical variant of stroke and directly represents an instance of the queried condition.",
       "sources": [
         "ChromaDB",
         "OpenCodelists (Bennett Institute)",
         "QOF Business Rules 2024-25"
       ],
-      "usage_frequency": null
+      "usage_frequency": 10,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": 4006295,
+      "dmd_level": null
     },
     {
-      "code": "1153543002",
-      "term": "Occlusion of anterior cerebral artery (disorder)",
+      "code": "116288000",
+      "term": "Paralytic stroke (disorder)",
       "vocabulary": "SNOMED CT",
       "decision": "include",
       "confidence": 0.95,
-      "rationale": "Occlusion of anterior cerebral artery is a specific anatomical manifestation of ischemic stroke.",
+      "rationale": "Paralytic stroke is a clinical variant of stroke and directly represents an instance of the queried condition.",
       "sources": [
+        "ChromaDB",
         "OpenCodelists (Bennett Institute)",
         "QOF Business Rules 2024-25"
       ],
-      "usage_frequency": null
-    },
-    {
-      "code": "1153544008",
-      "term": "Occlusion of right anterior cerebral artery (disorder)",
-      "vocabulary": "SNOMED CT",
-      "decision": "include",
-      "confidence": 0.95,
-      "rationale": "Occlusion of right anterior cerebral artery is a specific lateralized manifestation of ischemic stroke.",
-      "sources": [
-        "OpenCodelists (Bennett Institute)",
-        "QOF Business Rules 2024-25"
-      ],
-      "usage_frequency": null
-    },
-    {
-      "code": "1153545009",
-      "term": "Occlusion of left anterior cerebral artery (disorder)",
-      "vocabulary": "SNOMED CT",
-      "decision": "include",
-      "confidence": 0.95,
-      "rationale": "Occlusion of left anterior cerebral artery is a specific lateralized manifestation of ischemic stroke.",
-      "sources": [
-        "OpenCodelists (Bennett Institute)",
-        "QOF Business Rules 2024-25"
-      ],
-      "usage_frequency": null
-    },
-    {
-      "code": "1153546005",
-      "term": "Occlusion of bilateral posterior cerebral arteries (disorder)",
-      "vocabulary": "SNOMED CT",
-      "decision": "include",
-      "confidence": 0.95,
-      "rationale": "Occlusion of bilateral posterior cerebral arteries is a specific manifestation of ischemic stroke.",
-      "sources": [
-        "OpenCodelists (Bennett Institute)",
-        "QOF Business Rules 2024-25"
-      ],
-      "usage_frequency": null
-    },
-    {
-      "code": "1153611009",
-      "term": "Embolism of left anterior cerebral artery (disorder)",
-      "vocabulary": "SNOMED CT",
-      "decision": "include",
-      "confidence": 0.95,
-      "rationale": "Embolism of left anterior cerebral artery is a specific embolic stroke manifestation.",
-      "sources": [
-        "OpenCodelists (Bennett Institute)",
-        "QOF Business Rules 2024-25"
-      ],
-      "usage_frequency": null
-    },
-    {
-      "code": "1153612002",
-      "term": "Embolism of right anterior cerebral artery (disorder)",
-      "vocabulary": "SNOMED CT",
-      "decision": "include",
-      "confidence": 0.95,
-      "rationale": "Embolism of right anterior cerebral artery is a specific embolic stroke manifestation.",
-      "sources": [
-        "OpenCodelists (Bennett Institute)",
-        "QOF Business Rules 2024-25"
-      ],
-      "usage_frequency": null
-    },
-    {
-      "code": "1153630009",
-      "term": "Embolism of left carotid artery (disorder)",
-      "vocabulary": "SNOMED CT",
-      "decision": "include",
-      "confidence": 0.95,
-      "rationale": "Embolism of left carotid artery is a specific embolic stroke manifestation.",
-      "sources": [
-        "OpenCodelists (Bennett Institute)",
-        "QOF Business Rules 2024-25"
-      ],
-      "usage_frequency": null
-    },
-    {
-      "code": "1153631008",
-      "term": "Embolism of right carotid artery (disorder)",
-      "vocabulary": "SNOMED CT",
-      "decision": "include",
-      "confidence": 0.95,
-      "rationale": "Embolism of right carotid artery is a specific embolic stroke manifestation.",
-      "sources": [
-        "OpenCodelists (Bennett Institute)",
-        "QOF Business Rules 2024-25"
-      ],
-      "usage_frequency": null
-    },
-    {
-      "code": "1153632001",
-      "term": "Embolism of bilateral middle cerebral arteries (disorder)",
-      "vocabulary": "SNOMED CT",
-      "decision": "include",
-      "confidence": 0.95,
-      "rationale": "Embolism of bilateral middle cerebral arteries is a specific embolic stroke manifestation.",
-      "sources": [
-        "OpenCodelists (Bennett Institute)",
-        "QOF Business Rules 2024-25"
-      ],
-      "usage_frequency": null
-    },
-    {
-      "code": "1153633006",
-      "term": "Embolism of bilateral posterior cerebral arteries (disorder)",
-      "vocabulary": "SNOMED CT",
-      "decision": "include",
-      "confidence": 0.95,
-      "rationale": "Embolism of bilateral posterior cerebral arteries is a specific embolic stroke manifestation.",
-      "sources": [
-        "OpenCodelists (Bennett Institute)",
-        "QOF Business Rules 2024-25"
-      ],
-      "usage_frequency": null
-    },
-    {
-      "code": "1153634000",
-      "term": "Embolism of bilateral anterior cerebral arteries (disorder)",
-      "vocabulary": "SNOMED CT",
-      "decision": "include",
-      "confidence": 0.95,
-      "rationale": "Embolism of bilateral anterior cerebral arteries is a specific embolic stroke manifestation.",
-      "sources": [
-        "OpenCodelists (Bennett Institute)",
-        "QOF Business Rules 2024-25"
-      ],
-      "usage_frequency": null
-    },
-    {
-      "code": "1153638002",
-      "term": "Occlusion of bilateral cerebellar arteries (disorder)",
-      "vocabulary": "SNOMED CT",
-      "decision": "include",
-      "confidence": 0.95,
-      "rationale": "Occlusion of bilateral cerebellar arteries is a specific manifestation of cerebellar ischemic stroke.",
-      "sources": [
-        "OpenCodelists (Bennett Institute)",
-        "QOF Business Rules 2024-25"
-      ],
-      "usage_frequency": null
-    },
-    {
-      "code": "1155688007",
-      "term": "Embolism of bilateral carotid arteries (disorder)",
-      "vocabulary": "SNOMED CT",
-      "decision": "include",
-      "confidence": 0.95,
-      "rationale": "Embolism of bilateral carotid arteries is a specific embolic stroke manifestation.",
-      "sources": [
-        "OpenCodelists (Bennett Institute)",
-        "QOF Business Rules 2024-25"
-      ],
-      "usage_frequency": null
-    },
-    {
-      "code": "1155689004",
-      "term": "Embolism of bilateral cerebellar arteries (disorder)",
-      "vocabulary": "SNOMED CT",
-      "decision": "include",
-      "confidence": 0.95,
-      "rationale": "Embolism of bilateral cerebellar arteries is a specific embolic stroke manifestation.",
-      "sources": [
-        "OpenCodelists (Bennett Institute)",
-        "QOF Business Rules 2024-25"
-      ],
-      "usage_frequency": null
-    },
-    {
-      "code": "1155697006",
-      "term": "Embolism of left vertebral artery (disorder)",
-      "vocabulary": "SNOMED CT",
-      "decision": "include",
-      "confidence": 0.95,
-      "rationale": "Embolism of left vertebral artery is a specific embolic stroke manifestation.",
-      "sources": [
-        "OpenCodelists (Bennett Institute)",
-        "QOF Business Rules 2024-25"
-      ],
-      "usage_frequency": null
-    },
-    {
-      "code": "1155698001",
-      "term": "Embolism of right vertebral artery (disorder)",
-      "vocabulary": "SNOMED CT",
-      "decision": "include",
-      "confidence": 0.95,
-      "rationale": "Embolism of right vertebral artery is a specific embolic stroke manifestation.",
-      "sources": [
-        "OpenCodelists (Bennett Institute)",
-        "QOF Business Rules 2024-25"
-      ],
-      "usage_frequency": null
-    },
-    {
-      "code": "1155699009",
-      "term": "Embolism of bilateral vertebral arteries (disorder)",
-      "vocabulary": "SNOMED CT",
-      "decision": "include",
-      "confidence": 0.95,
-      "rationale": "Embolism of bilateral vertebral arteries is a specific embolic stroke manifestation.",
-      "sources": [
-        "OpenCodelists (Bennett Institute)",
-        "QOF Business Rules 2024-25"
-      ],
-      "usage_frequency": null
-    },
-    {
-      "code": "1156016006",
-      "term": "Thrombosis of left posterior cerebral artery (disorder)",
-      "vocabulary": "SNOMED CT",
-      "decision": "include",
-      "confidence": 0.95,
-      "rationale": "Thrombosis of left posterior cerebral artery is a specific thrombotic stroke manifestation.",
-      "sources": [
-        "OpenCodelists (Bennett Institute)",
-        "QOF Business Rules 2024-25"
-      ],
-      "usage_frequency": null
-    },
-    {
-      "code": "1156017002",
-      "term": "Thrombosis of right posterior cerebral artery (disorder)",
-      "vocabulary": "SNOMED CT",
-      "decision": "include",
-      "confidence": 0.95,
-      "rationale": "Thrombosis of right posterior cerebral artery is a specific thrombotic stroke manifestation.",
-      "sources": [
-        "OpenCodelists (Bennett Institute)",
-        "QOF Business Rules 2024-25"
-      ],
-      "usage_frequency": null
-    },
-    {
-      "code": "1156018007",
-      "term": "Thrombosis of left cerebellar artery (disorder)",
-      "vocabulary": "SNOMED CT",
-      "decision": "include",
-      "confidence": 0.95,
-      "rationale": "Thrombosis of left cerebellar artery is a specific thrombotic stroke manifestation.",
-      "sources": [
-        "OpenCodelists (Bennett Institute)",
-        "QOF Business Rules 2024-25"
-      ],
-      "usage_frequency": null
-    },
-    {
-      "code": "1156019004",
-      "term": "Thrombosis of right cerebellar artery (disorder)",
-      "vocabulary": "SNOMED CT",
-      "decision": "include",
-      "confidence": 0.95,
-      "rationale": "Thrombosis of right cerebellar artery is a specific thrombotic stroke manifestation.",
-      "sources": [
-        "OpenCodelists (Bennett Institute)",
-        "QOF Business Rules 2024-25"
-      ],
-      "usage_frequency": null
+      "usage_frequency": 30,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": 4023571,
+      "dmd_level": null
     },
     {
       "code": "1197363004",
@@ -6643,65 +6496,144 @@
       "vocabulary": "SNOMED CT",
       "decision": "include",
       "confidence": 0.95,
-      "rationale": "Pediatric arterial ischemic stroke is a specific age-related subtype of ischemic stroke.",
+      "rationale": "Pediatric arterial ischemic stroke is a primary stroke subtype in a specific age group and directly represents an instance of stroke.",
       "sources": [
         "ChromaDB",
         "OpenCodelists (Bennett Institute)",
         "QOF Business Rules 2024-25"
       ],
-      "usage_frequency": null
+      "usage_frequency": 10,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": 37162743,
+      "dmd_level": null
     },
     {
-      "code": "1204202004",
-      "term": "Occlusion of cerebral artery due to infection (disorder)",
+      "code": "1269238002",
+      "term": "Thrombosis of anterior cerebral artery (disorder)",
       "vocabulary": "SNOMED CT",
       "decision": "include",
       "confidence": 0.95,
-      "rationale": "Occlusion of cerebral artery due to infection is a direct instance of stroke (ischemic stroke caused by arterial occlusion).",
+      "rationale": "Thrombotic stroke of a specific cerebral artery is a direct instance of primary stroke.",
       "sources": [
         "OpenCodelists (Bennett Institute)",
         "QOF Business Rules 2024-25"
       ],
-      "usage_frequency": null
+      "usage_frequency": 10,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
-      "code": "125081000119106",
-      "term": "Cerebral infarction due to occlusion of precerebral artery (disorder)",
+      "code": "1269239005",
+      "term": "Thrombosis of left anterior cerebral artery (disorder)",
       "vocabulary": "SNOMED CT",
       "decision": "include",
       "confidence": 0.95,
-      "rationale": "Cerebral infarction due to occlusion of precerebral artery is a direct instance of ischemic stroke.",
+      "rationale": "Lateralized thrombotic stroke of anterior cerebral artery is a specific instance of primary stroke.",
       "sources": [
         "OpenCodelists (Bennett Institute)",
         "QOF Business Rules 2024-25"
       ],
-      "usage_frequency": null
+      "usage_frequency": null,
+      "usage_status": "withheld_below_5",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
-      "code": "1260271009",
-      "term": "Hemorrhagic cerebral infarction due to hypertension (disorder)",
+      "code": "1269240007",
+      "term": "Thrombosis of right anterior cerebral artery (disorder)",
       "vocabulary": "SNOMED CT",
       "decision": "include",
       "confidence": 0.95,
-      "rationale": "Hemorrhagic cerebral infarction due to hypertension is a direct instance of hemorrhagic stroke.",
+      "rationale": "Lateralized thrombotic stroke of anterior cerebral artery is a specific instance of primary stroke.",
       "sources": [
         "OpenCodelists (Bennett Institute)",
         "QOF Business Rules 2024-25"
       ],
-      "usage_frequency": null
+      "usage_frequency": null,
+      "usage_status": "withheld_below_5",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
-      "code": "1269237007",
-      "term": "Cerebrovascular accident due to thrombosis of anterior cerebral artery (disorder)",
+      "code": "1269243009",
+      "term": "Thrombosis of bilateral carotid arteries (disorder)",
       "vocabulary": "SNOMED CT",
       "decision": "include",
       "confidence": 0.95,
-      "rationale": "Cerebrovascular accident due to thrombosis of anterior cerebral artery is a direct instance of ischemic stroke.",
+      "rationale": "Bilateral carotid artery thrombosis causing stroke is a specific instance of primary stroke.",
       "sources": [
         "OpenCodelists (Bennett Institute)",
         "QOF Business Rules 2024-25"
       ],
-      "usage_frequency": null
+      "usage_frequency": null,
+      "usage_status": "withheld_below_5",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": null,
+      "dmd_level": null
+    },
+    {
+      "code": "1269244003",
+      "term": "Thrombosis of bilateral cerebellar arteries (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Bilateral cerebellar artery thrombosis causing stroke is a specific instance of primary stroke.",
+      "sources": [
+        "OpenCodelists (Bennett Institute)",
+        "QOF Business Rules 2024-25"
+      ],
+      "usage_frequency": null,
+      "usage_status": "not_in_dataset",
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": null,
+      "dmd_level": null
+    },
+    {
+      "code": "1269245002",
+      "term": "Thrombosis of bilateral posterior cerebral arteries (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Bilateral posterior cerebral artery thrombosis causing stroke is a specific instance of primary stroke.",
+      "sources": [
+        "OpenCodelists (Bennett Institute)",
+        "QOF Business Rules 2024-25"
+      ],
+      "usage_frequency": null,
+      "usage_status": "not_in_dataset",
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": null,
+      "dmd_level": null
+    },
+    {
+      "code": "1269246001",
+      "term": "Thrombosis of bilateral vertebral arteries (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Bilateral vertebral artery thrombosis causing stroke is a specific instance of primary stroke.",
+      "sources": [
+        "OpenCodelists (Bennett Institute)",
+        "QOF Business Rules 2024-25"
+      ],
+      "usage_frequency": 10,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "1269248000",
@@ -6709,124 +6641,238 @@
       "vocabulary": "SNOMED CT",
       "decision": "include",
       "confidence": 0.95,
-      "rationale": "Cerebrovascular accident due to occlusion of anterior choroidal artery is a direct instance of ischemic stroke.",
+      "rationale": "Cerebrovascular accident due to anterior choroidal artery occlusion is a specific instance of primary stroke.",
       "sources": [
         "OpenCodelists (Bennett Institute)",
         "QOF Business Rules 2024-25"
       ],
-      "usage_frequency": null
+      "usage_frequency": null,
+      "usage_status": "withheld_below_5",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
-      "code": "140921000119102",
-      "term": "Ischemic stroke without coma (disorder)",
+      "code": "152148641000119104",
+      "term": "Cerebrovascular accident due to embolism of bilateral carotid arteries (disorder)",
       "vocabulary": "SNOMED CT",
       "decision": "include",
       "confidence": 0.95,
-      "rationale": "Ischemic stroke without coma is a direct instance of acute ischemic stroke.",
+      "rationale": "Cerebrovascular accident due to bilateral carotid artery embolism is a specific instance of primary stroke.",
+      "sources": [
+        "OpenCodelists (Bennett Institute)",
+        "QOF Business Rules 2024-25"
+      ],
+      "usage_frequency": null,
+      "usage_status": "withheld_below_5",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": null,
+      "dmd_level": null
+    },
+    {
+      "code": "15978431000119106",
+      "term": "Thrombosis of right vertebral artery (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Thrombosis of right vertebral artery causing stroke is a specific instance of primary stroke.",
+      "sources": [
+        "OpenCodelists (Bennett Institute)",
+        "QOF Business Rules 2024-25"
+      ],
+      "usage_frequency": 20,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": null,
+      "dmd_level": null
+    },
+    {
+      "code": "16000391000119104",
+      "term": "Cerebrovascular accident due to occlusion of right posterior cerebral artery (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Cerebrovascular accident due to right posterior cerebral artery occlusion is a specific instance of primary stroke.",
+      "sources": [
+        "OpenCodelists (Bennett Institute)",
+        "QOF Business Rules 2024-25"
+      ],
+      "usage_frequency": 10,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": null,
+      "dmd_level": null
+    },
+    {
+      "code": "16002031000119102",
+      "term": "Cerebrovascular accident due to thrombus of right middle cerebral artery (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Cerebrovascular accident due to right middle cerebral artery thrombus is a specific instance of primary stroke.",
+      "sources": [
+        "OpenCodelists (Bennett Institute)",
+        "QOF Business Rules 2024-25"
+      ],
+      "usage_frequency": 160,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": null,
+      "dmd_level": null
+    },
+    {
+      "code": "16002111000119106",
+      "term": "Cerebrovascular accident due to thrombus of left middle cerebral artery (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Cerebrovascular accident due to left middle cerebral artery thrombus is a specific instance of primary stroke.",
+      "sources": [
+        "OpenCodelists (Bennett Institute)",
+        "QOF Business Rules 2024-25"
+      ],
+      "usage_frequency": 150,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": null,
+      "dmd_level": null
+    },
+    {
+      "code": "16023911000119108",
+      "term": "Cerebrovascular accident due to occlusion of right carotid artery (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Cerebrovascular accident due to right carotid artery occlusion is a specific instance of primary stroke.",
+      "sources": [
+        "OpenCodelists (Bennett Institute)",
+        "QOF Business Rules 2024-25"
+      ],
+      "usage_frequency": 30,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": null,
+      "dmd_level": null
+    },
+    {
+      "code": "16024071000119102",
+      "term": "Cerebrovascular accident due to occlusion of right anterior choroidal artery (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Cerebrovascular accident due to right anterior choroidal artery occlusion is a specific instance of primary stroke.",
+      "sources": [
+        "OpenCodelists (Bennett Institute)",
+        "QOF Business Rules 2024-25"
+      ],
+      "usage_frequency": 10,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": null,
+      "dmd_level": null
+    },
+    {
+      "code": "16891111000119104",
+      "term": "Cryptogenic stroke (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Cryptogenic stroke is a primary stroke of undetermined etiology, representing a specific stroke classification.",
       "sources": [
         "ChromaDB",
         "OpenCodelists (Bennett Institute)",
         "QOF Business Rules 2024-25"
       ],
-      "usage_frequency": null
+      "usage_frequency": 160,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": 603326,
+      "dmd_level": null
     },
     {
-      "code": "16218291000119100",
-      "term": "Acute cerebral ischemia (disorder)",
+      "code": "230699008",
+      "term": "Pure motor hemiparesis due to and following lacunar infarction",
       "vocabulary": "SNOMED CT",
       "decision": "include",
       "confidence": 0.95,
-      "rationale": "Acute cerebral ischemia is a direct instance of acute ischemic stroke.",
+      "rationale": "Pure motor hemiparesis due to lacunar infarction is a specific manifestation of primary stroke.",
       "sources": [
         "ChromaDB",
         "OpenCodelists (Bennett Institute)",
         "QOF Business Rules 2024-25"
       ],
-      "usage_frequency": null
+      "usage_frequency": 270,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": 4045737,
+      "dmd_level": null
     },
     {
-      "code": "16371781000119100",
-      "term": "Cerebellar stroke (disorder)",
+      "code": "230700009",
+      "term": "Pure sensory stroke due to and following lacunar infarction",
       "vocabulary": "SNOMED CT",
       "decision": "include",
       "confidence": 0.95,
-      "rationale": "Cerebellar stroke is a direct instance of stroke affecting the cerebellar territory.",
+      "rationale": "Pure sensory stroke due to lacunar infarction is a specific manifestation of primary stroke.",
       "sources": [
         "ChromaDB",
         "OpenCodelists (Bennett Institute)",
         "QOF Business Rules 2024-25"
       ],
-      "usage_frequency": null
+      "usage_frequency": 130,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": 4045738,
+      "dmd_level": null
     },
     {
-      "code": "195212005",
-      "term": "Brainstem stroke syndrome (disorder)",
+      "code": "230701008",
+      "term": "Pure sensorimotor motor hemiparesis due to and following lacunar infarction",
       "vocabulary": "SNOMED CT",
       "decision": "include",
       "confidence": 0.95,
-      "rationale": "Brainstem stroke syndrome is a direct instance of stroke affecting the brainstem.",
+      "rationale": "Pure sensorimotor hemiparesis due to lacunar infarction is a specific manifestation of primary stroke.",
       "sources": [
         "ChromaDB",
         "OpenCodelists (Bennett Institute)",
         "QOF Business Rules 2024-25"
       ],
-      "usage_frequency": null
+      "usage_frequency": 20,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": 4046361,
+      "dmd_level": null
     },
     {
-      "code": "195213000",
-      "term": "Cerebellar stroke syndrome (disorder)",
+      "code": "230702001",
+      "term": "Ataxic hemiparesis due to and following lacunar infarction",
       "vocabulary": "SNOMED CT",
       "decision": "include",
       "confidence": 0.95,
-      "rationale": "Cerebellar stroke syndrome is a direct instance of stroke affecting the cerebellum.",
+      "rationale": "Ataxic hemiparesis due to lacunar infarction is a specific manifestation of primary stroke.",
       "sources": [
         "ChromaDB",
         "OpenCodelists (Bennett Institute)",
         "QOF Business Rules 2024-25"
       ],
-      "usage_frequency": null
-    },
-    {
-      "code": "230693009",
-      "term": "Anterior cerebral circulation infarction (disorder)",
-      "vocabulary": "SNOMED CT",
-      "decision": "include",
-      "confidence": 0.95,
-      "rationale": "Anterior cerebral circulation infarction is a direct instance of stroke in the anterior circulation territory.",
-      "sources": [
-        "ChromaDB",
-        "OpenCodelists (Bennett Institute)",
-        "QOF Business Rules 2024-25"
-      ],
-      "usage_frequency": null
-    },
-    {
-      "code": "230696001",
-      "term": "Posterior cerebral circulation infarction (disorder)",
-      "vocabulary": "SNOMED CT",
-      "decision": "include",
-      "confidence": 0.95,
-      "rationale": "Posterior cerebral circulation infarction is a direct instance of stroke in the posterior circulation territory.",
-      "sources": [
-        "ChromaDB",
-        "OpenCodelists (Bennett Institute)",
-        "QOF Business Rules 2024-25"
-      ],
-      "usage_frequency": null
-    },
-    {
-      "code": "230698000",
-      "term": "Lacunar infarction (disorder)",
-      "vocabulary": "SNOMED CT",
-      "decision": "include",
-      "confidence": 0.95,
-      "rationale": "Lacunar infarction is a direct instance of small-vessel ischemic stroke.",
-      "sources": [
-        "ChromaDB",
-        "OpenCodelists (Bennett Institute)",
-        "QOF Business Rules 2024-25"
-      ],
-      "usage_frequency": null
+      "usage_frequency": 100,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": 4045740,
+      "dmd_level": null
     },
     {
       "code": "230706003",
@@ -6834,69 +6880,94 @@
       "vocabulary": "SNOMED CT",
       "decision": "include",
       "confidence": 0.95,
-      "rationale": "Hemorrhagic cerebral infarction is a direct instance of hemorrhagic stroke.",
+      "rationale": "Hemorrhagic cerebral infarction is a specific pathological type of primary stroke.",
       "sources": [
         "ChromaDB",
         "OpenCodelists (Bennett Institute)",
         "QOF Business Rules 2024-25"
       ],
-      "usage_frequency": null
+      "usage_frequency": 1190,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": 4046362,
+      "dmd_level": null
     },
     {
-      "code": "25133001",
-      "term": "Completed stroke (disorder)",
+      "code": "275434003",
+      "term": "Stroke in the puerperium (disorder)",
       "vocabulary": "SNOMED CT",
       "decision": "include",
       "confidence": 0.95,
-      "rationale": "Completed stroke is a direct instance of stroke describing the resolved acute phase.",
+      "rationale": "Stroke in the puerperium is a primary stroke occurring in a specific clinical context.",
       "sources": [
         "ChromaDB",
         "OpenCodelists (Bennett Institute)",
         "QOF Business Rules 2024-25"
       ],
-      "usage_frequency": null
+      "usage_frequency": null,
+      "usage_status": "withheld_below_5",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": 4168056,
+      "dmd_level": null
     },
     {
-      "code": "276219001",
-      "term": "Occipital cerebral infarction (disorder)",
+      "code": "292851000119109",
+      "term": "Ataxic hemiparesis of right dominant side due to and following lacunar infarction",
       "vocabulary": "SNOMED CT",
       "decision": "include",
       "confidence": 0.95,
-      "rationale": "Occipital cerebral infarction is a direct instance of stroke affecting the occipital lobe territory.",
+      "rationale": "Ataxic hemiparesis of right dominant side due to lacunar infarction is a specific manifestation of primary stroke.",
       "sources": [
         "ChromaDB",
         "OpenCodelists (Bennett Institute)",
         "QOF Business Rules 2024-25"
       ],
-      "usage_frequency": null
+      "usage_frequency": 10,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": 42535465,
+      "dmd_level": null
     },
     {
-      "code": "307766002",
-      "term": "Left sided cerebral infarction (disorder)",
+      "code": "292861000119106",
+      "term": "Ataxic hemiparesis of left dominant side due to and following lacunar infarction",
       "vocabulary": "SNOMED CT",
       "decision": "include",
       "confidence": 0.95,
-      "rationale": "Left sided cerebral infarction is a direct instance of stroke affecting the left cerebral hemisphere.",
+      "rationale": "Ataxic hemiparesis of left dominant side due to lacunar infarction is a specific manifestation of primary stroke.",
       "sources": [
         "ChromaDB",
         "OpenCodelists (Bennett Institute)",
         "QOF Business Rules 2024-25"
       ],
-      "usage_frequency": null
+      "usage_frequency": 10,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": 42535466,
+      "dmd_level": null
     },
     {
-      "code": "307767006",
-      "term": "Right sided cerebral infarction (disorder)",
+      "code": "330411000119109",
+      "term": "Ataxic hemiparesis of left nondominant side due to and following lacunar infarction",
       "vocabulary": "SNOMED CT",
       "decision": "include",
       "confidence": 0.95,
-      "rationale": "Right sided cerebral infarction is a direct instance of stroke affecting the right cerebral hemisphere.",
+      "rationale": "Ataxic hemiparesis due to lacunar infarction is a specific manifestation of stroke (ischemic subtype); term explicitly names the stroke mechanism.",
       "sources": [
         "ChromaDB",
         "OpenCodelists (Bennett Institute)",
         "QOF Business Rules 2024-25"
       ],
-      "usage_frequency": null
+      "usage_frequency": null,
+      "usage_status": "withheld_below_5",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": 42535523,
+      "dmd_level": null
     },
     {
       "code": "330421000119102",
@@ -6904,13 +6975,18 @@
       "vocabulary": "SNOMED CT",
       "decision": "include",
       "confidence": 0.95,
-      "rationale": "This is a specific manifestation of lacunar infarction (a type of ischemic stroke), representing an instance of stroke with documented neurological sequelae.",
+      "rationale": "Ataxic hemiparesis due to lacunar infarction is a specific manifestation of stroke (ischemic subtype); term explicitly names the stroke mechanism.",
       "sources": [
         "ChromaDB",
         "OpenCodelists (Bennett Institute)",
         "QOF Business Rules 2024-25"
       ],
-      "usage_frequency": null
+      "usage_frequency": null,
+      "usage_status": "withheld_below_5",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": 42535524,
+      "dmd_level": null
     },
     {
       "code": "57981008",
@@ -6918,13 +6994,90 @@
       "vocabulary": "SNOMED CT",
       "decision": "include",
       "confidence": 0.95,
-      "rationale": "Progressing stroke is a clinical variant of stroke representing an acute evolving stroke event.",
+      "rationale": "Progressing stroke is a severity variant of acute ischemic stroke and a direct instance of the queried condition.",
       "sources": [
         "ChromaDB",
         "OpenCodelists (Bennett Institute)",
         "QOF Business Rules 2024-25"
       ],
-      "usage_frequency": null
+      "usage_frequency": 10,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": 4238315,
+      "dmd_level": null
+    },
+    {
+      "code": "1153543002",
+      "term": "Occlusion of anterior cerebral artery (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.9,
+      "rationale": "Occlusion of anterior cerebral artery is an anatomically-specific stroke subtype and represents a primary instance of stroke.",
+      "sources": [
+        "OpenCodelists (Bennett Institute)",
+        "QOF Business Rules 2024-25"
+      ],
+      "usage_frequency": 10,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": null,
+      "dmd_level": null
+    },
+    {
+      "code": "1153544008",
+      "term": "Occlusion of right anterior cerebral artery (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.9,
+      "rationale": "Occlusion of right anterior cerebral artery is an anatomically-specific stroke subtype and represents a primary instance of stroke.",
+      "sources": [
+        "OpenCodelists (Bennett Institute)",
+        "QOF Business Rules 2024-25"
+      ],
+      "usage_frequency": null,
+      "usage_status": "withheld_below_5",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": null,
+      "dmd_level": null
+    },
+    {
+      "code": "1153545009",
+      "term": "Occlusion of left anterior cerebral artery (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.9,
+      "rationale": "Occlusion of left anterior cerebral artery is an anatomically-specific stroke subtype and represents a primary instance of stroke.",
+      "sources": [
+        "OpenCodelists (Bennett Institute)",
+        "QOF Business Rules 2024-25"
+      ],
+      "usage_frequency": 10,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": null,
+      "dmd_level": null
+    },
+    {
+      "code": "1153546005",
+      "term": "Occlusion of bilateral posterior cerebral arteries (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.9,
+      "rationale": "Occlusion of bilateral posterior cerebral arteries is an anatomically-specific stroke subtype and represents a primary instance of stroke.",
+      "sources": [
+        "OpenCodelists (Bennett Institute)",
+        "QOF Business Rules 2024-25"
+      ],
+      "usage_frequency": null,
+      "usage_status": "withheld_below_5",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "1153607003",
@@ -6932,12 +7085,17 @@
       "vocabulary": "SNOMED CT",
       "decision": "include",
       "confidence": 0.9,
-      "rationale": "Occlusion of right posterior communicating artery is a specific arterial manifestation of ischemic stroke.",
+      "rationale": "Occlusion of right posterior communicating artery is an anatomically-specific stroke subtype and represents a primary instance of stroke.",
       "sources": [
         "OpenCodelists (Bennett Institute)",
         "QOF Business Rules 2024-25"
       ],
-      "usage_frequency": null
+      "usage_frequency": 10,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "1153608008",
@@ -6945,103 +7103,359 @@
       "vocabulary": "SNOMED CT",
       "decision": "include",
       "confidence": 0.9,
-      "rationale": "Occlusion of left posterior communicating artery is a specific arterial manifestation of ischemic stroke.",
+      "rationale": "Occlusion of left posterior communicating artery is an anatomically-specific stroke subtype and represents a primary instance of stroke.",
       "sources": [
         "OpenCodelists (Bennett Institute)",
         "QOF Business Rules 2024-25"
       ],
-      "usage_frequency": null
+      "usage_frequency": null,
+      "usage_status": "withheld_below_5",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
-      "code": "1156027008",
-      "term": "Thrombus of dural sinus in pregnancy (disorder)",
+      "code": "1153611009",
+      "term": "Embolism of left anterior cerebral artery (disorder)",
       "vocabulary": "SNOMED CT",
       "decision": "include",
       "confidence": 0.9,
-      "rationale": "Thrombus of dural sinus in pregnancy is a specific thrombotic stroke manifestation in pregnancy.",
+      "rationale": "Embolism of left anterior cerebral artery is an anatomically-specific stroke subtype and represents a primary instance of stroke.",
       "sources": [
         "OpenCodelists (Bennett Institute)",
         "QOF Business Rules 2024-25"
       ],
-      "usage_frequency": null
+      "usage_frequency": null,
+      "usage_status": "withheld_below_5",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
-      "code": "1156029006",
-      "term": "Thrombus of dural sinus in puerperium (disorder)",
+      "code": "1153612002",
+      "term": "Embolism of right anterior cerebral artery (disorder)",
       "vocabulary": "SNOMED CT",
       "decision": "include",
       "confidence": 0.9,
-      "rationale": "Thrombus of dural sinus in puerperium is a specific thrombotic stroke manifestation in the postpartum period.",
+      "rationale": "Embolism of right anterior cerebral artery is an anatomically-specific stroke subtype and represents a primary instance of stroke.",
       "sources": [
         "OpenCodelists (Bennett Institute)",
         "QOF Business Rules 2024-25"
       ],
-      "usage_frequency": null
+      "usage_frequency": null,
+      "usage_status": "withheld_below_5",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
-      "code": "1231168008",
-      "term": "Malignant middle cerebral artery syndrome (disorder)",
+      "code": "1153630009",
+      "term": "Embolism of left carotid artery (disorder)",
       "vocabulary": "SNOMED CT",
       "decision": "include",
       "confidence": 0.9,
-      "rationale": "Malignant middle cerebral artery syndrome represents a severe stroke affecting the middle cerebral artery territory.",
+      "rationale": "Embolism of left carotid artery is an anatomically-specific stroke subtype and represents a primary instance of stroke.",
       "sources": [
         "OpenCodelists (Bennett Institute)",
         "QOF Business Rules 2024-25"
       ],
-      "usage_frequency": null
+      "usage_frequency": null,
+      "usage_status": "withheld_below_5",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
-      "code": "1263550001",
-      "term": "Infarction of brain due to migraine (disorder)",
+      "code": "1153631008",
+      "term": "Embolism of right carotid artery (disorder)",
       "vocabulary": "SNOMED CT",
       "decision": "include",
       "confidence": 0.9,
-      "rationale": "Infarction of brain due to migraine is a direct instance of stroke (migraine-associated ischemic stroke).",
+      "rationale": "Embolism of right carotid artery is an anatomically-specific stroke subtype and represents a primary instance of stroke.",
       "sources": [
         "OpenCodelists (Bennett Institute)",
         "QOF Business Rules 2024-25"
       ],
-      "usage_frequency": null
+      "usage_frequency": 10,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
-      "code": "1269238002",
-      "term": "Thrombosis of anterior cerebral artery (disorder)",
+      "code": "1153632001",
+      "term": "Embolism of bilateral middle cerebral arteries (disorder)",
       "vocabulary": "SNOMED CT",
       "decision": "include",
       "confidence": 0.9,
-      "rationale": "Thrombosis of anterior cerebral artery is a direct vascular pathology causing stroke.",
+      "rationale": "Embolism of bilateral middle cerebral arteries is an anatomically-specific stroke subtype and represents a primary instance of stroke.",
       "sources": [
         "OpenCodelists (Bennett Institute)",
         "QOF Business Rules 2024-25"
       ],
-      "usage_frequency": null
+      "usage_frequency": null,
+      "usage_status": "withheld_below_5",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
-      "code": "1269239005",
-      "term": "Thrombosis of left anterior cerebral artery (disorder)",
+      "code": "1153633006",
+      "term": "Embolism of bilateral posterior cerebral arteries (disorder)",
       "vocabulary": "SNOMED CT",
       "decision": "include",
       "confidence": 0.9,
-      "rationale": "Thrombosis of left anterior cerebral artery is a lateralized instance of stroke-causing arterial thrombosis.",
+      "rationale": "Embolism of bilateral posterior cerebral arteries is an anatomically-specific stroke subtype and represents a primary instance of stroke.",
       "sources": [
         "OpenCodelists (Bennett Institute)",
         "QOF Business Rules 2024-25"
       ],
-      "usage_frequency": null
+      "usage_frequency": null,
+      "usage_status": "not_in_dataset",
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": null,
+      "dmd_level": null
     },
     {
-      "code": "1269240007",
-      "term": "Thrombosis of right anterior cerebral artery (disorder)",
+      "code": "1153634000",
+      "term": "Embolism of bilateral anterior cerebral arteries (disorder)",
       "vocabulary": "SNOMED CT",
       "decision": "include",
       "confidence": 0.9,
-      "rationale": "Thrombosis of right anterior cerebral artery is a lateralized instance of stroke-causing arterial thrombosis.",
+      "rationale": "Embolism of bilateral anterior cerebral arteries is an anatomically-specific stroke subtype and represents a primary instance of stroke.",
       "sources": [
         "OpenCodelists (Bennett Institute)",
         "QOF Business Rules 2024-25"
       ],
-      "usage_frequency": null
+      "usage_frequency": null,
+      "usage_status": "withheld_below_5",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": null,
+      "dmd_level": null
+    },
+    {
+      "code": "1153638002",
+      "term": "Occlusion of bilateral cerebellar arteries (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.9,
+      "rationale": "Occlusion of bilateral cerebellar arteries is an anatomically-specific stroke subtype and represents a primary instance of stroke.",
+      "sources": [
+        "OpenCodelists (Bennett Institute)",
+        "QOF Business Rules 2024-25"
+      ],
+      "usage_frequency": null,
+      "usage_status": "not_in_dataset",
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": null,
+      "dmd_level": null
+    },
+    {
+      "code": "1155688007",
+      "term": "Embolism of bilateral carotid arteries (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.9,
+      "rationale": "Embolism of bilateral carotid arteries is an anatomically-specific stroke subtype and represents a primary instance of stroke.",
+      "sources": [
+        "OpenCodelists (Bennett Institute)",
+        "QOF Business Rules 2024-25"
+      ],
+      "usage_frequency": null,
+      "usage_status": "withheld_below_5",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": null,
+      "dmd_level": null
+    },
+    {
+      "code": "1155689004",
+      "term": "Embolism of bilateral cerebellar arteries (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.9,
+      "rationale": "Embolism of bilateral cerebellar arteries is an anatomically-specific stroke subtype and represents a primary instance of stroke.",
+      "sources": [
+        "OpenCodelists (Bennett Institute)",
+        "QOF Business Rules 2024-25"
+      ],
+      "usage_frequency": null,
+      "usage_status": "not_in_dataset",
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": null,
+      "dmd_level": null
+    },
+    {
+      "code": "1155697006",
+      "term": "Embolism of left vertebral artery (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.9,
+      "rationale": "Embolism of left vertebral artery is an anatomically-specific stroke subtype and represents a primary instance of stroke.",
+      "sources": [
+        "OpenCodelists (Bennett Institute)",
+        "QOF Business Rules 2024-25"
+      ],
+      "usage_frequency": null,
+      "usage_status": "not_in_dataset",
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": null,
+      "dmd_level": null
+    },
+    {
+      "code": "1155698001",
+      "term": "Embolism of right vertebral artery (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.9,
+      "rationale": "Embolism of right vertebral artery is an anatomically-specific stroke subtype and represents a primary instance of stroke.",
+      "sources": [
+        "OpenCodelists (Bennett Institute)",
+        "QOF Business Rules 2024-25"
+      ],
+      "usage_frequency": null,
+      "usage_status": "not_in_dataset",
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": null,
+      "dmd_level": null
+    },
+    {
+      "code": "1155699009",
+      "term": "Embolism of bilateral vertebral arteries (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.9,
+      "rationale": "Embolism of bilateral vertebral arteries is an anatomically-specific stroke subtype and represents a primary instance of stroke.",
+      "sources": [
+        "OpenCodelists (Bennett Institute)",
+        "QOF Business Rules 2024-25"
+      ],
+      "usage_frequency": null,
+      "usage_status": "withheld_below_5",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": null,
+      "dmd_level": null
+    },
+    {
+      "code": "1156016006",
+      "term": "Thrombosis of left posterior cerebral artery (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.9,
+      "rationale": "Thrombosis of left posterior cerebral artery is an anatomically-specific stroke subtype and represents a primary instance of stroke.",
+      "sources": [
+        "OpenCodelists (Bennett Institute)",
+        "QOF Business Rules 2024-25"
+      ],
+      "usage_frequency": 20,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": null,
+      "dmd_level": null
+    },
+    {
+      "code": "1156017002",
+      "term": "Thrombosis of right posterior cerebral artery (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.9,
+      "rationale": "Thrombosis of right posterior cerebral artery is an anatomically-specific stroke subtype and represents a primary instance of stroke.",
+      "sources": [
+        "OpenCodelists (Bennett Institute)",
+        "QOF Business Rules 2024-25"
+      ],
+      "usage_frequency": 10,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": null,
+      "dmd_level": null
+    },
+    {
+      "code": "1156018007",
+      "term": "Thrombosis of left cerebellar artery (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.9,
+      "rationale": "Thrombosis of left cerebellar artery is an anatomically-specific stroke subtype and represents a primary instance of stroke.",
+      "sources": [
+        "OpenCodelists (Bennett Institute)",
+        "QOF Business Rules 2024-25"
+      ],
+      "usage_frequency": 10,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": null,
+      "dmd_level": null
+    },
+    {
+      "code": "1156019004",
+      "term": "Thrombosis of right cerebellar artery (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.9,
+      "rationale": "Thrombosis of right cerebellar artery is an anatomically-specific stroke subtype and represents a primary instance of stroke.",
+      "sources": [
+        "OpenCodelists (Bennett Institute)",
+        "QOF Business Rules 2024-25"
+      ],
+      "usage_frequency": 10,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": null,
+      "dmd_level": null
+    },
+    {
+      "code": "125081000119106",
+      "term": "Cerebral infarction due to occlusion of precerebral artery (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.9,
+      "rationale": "Cerebral infarction due to occlusion of precerebral artery is a primary ischemic stroke subtype and directly represents an instance of stroke.",
+      "sources": [
+        "OpenCodelists (Bennett Institute)",
+        "QOF Business Rules 2024-25"
+      ],
+      "usage_frequency": 80,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": null,
+      "dmd_level": null
+    },
+    {
+      "code": "1269237007",
+      "term": "Cerebrovascular accident due to thrombosis of anterior cerebral artery (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.9,
+      "rationale": "Cerebrovascular accident due to thrombosis of anterior cerebral artery is a primary ischemic stroke subtype and directly represents an instance of stroke.",
+      "sources": [
+        "OpenCodelists (Bennett Institute)",
+        "QOF Business Rules 2024-25"
+      ],
+      "usage_frequency": null,
+      "usage_status": "withheld_below_5",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "14309005",
@@ -7049,152 +7463,35 @@
       "vocabulary": "SNOMED CT",
       "decision": "include",
       "confidence": 0.9,
-      "rationale": "Anterior choroidal artery syndrome is a stroke syndrome caused by occlusion of the anterior choroidal artery.",
+      "rationale": "Anterior choroidal artery syndrome is a stroke syndrome caused by occlusion of that artery, representing a specific stroke type.",
       "sources": [
         "OpenCodelists (Bennett Institute)",
         "QOF Business Rules 2024-25"
       ],
-      "usage_frequency": null
+      "usage_frequency": 10,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
-      "code": "16891111000119104",
-      "term": "Cryptogenic stroke (disorder)",
+      "code": "16023751000119106",
+      "term": "Occlusion of left anterior choroidal artery (disorder)",
       "vocabulary": "SNOMED CT",
       "decision": "include",
       "confidence": 0.9,
-      "rationale": "Cryptogenic stroke is a direct instance of stroke with undetermined etiology.",
+      "rationale": "Occlusion of left anterior choroidal artery is a vascular occlusion that causes stroke, representing a specific stroke type.",
       "sources": [
-        "ChromaDB",
         "OpenCodelists (Bennett Institute)",
         "QOF Business Rules 2024-25"
       ],
-      "usage_frequency": null
-    },
-    {
-      "code": "230699008",
-      "term": "Pure motor hemiparesis due to and following lacunar infarction",
-      "vocabulary": "SNOMED CT",
-      "decision": "include",
-      "confidence": 0.9,
-      "rationale": "Pure motor hemiparesis due to lacunar infarction is a manifestation of lacunar stroke with the condition explicitly named.",
-      "sources": [
-        "ChromaDB",
-        "OpenCodelists (Bennett Institute)",
-        "QOF Business Rules 2024-25"
-      ],
-      "usage_frequency": null
-    },
-    {
-      "code": "230700009",
-      "term": "Pure sensory stroke due to and following lacunar infarction",
-      "vocabulary": "SNOMED CT",
-      "decision": "include",
-      "confidence": 0.9,
-      "rationale": "Pure sensory stroke due to lacunar infarction is a manifestation of lacunar stroke with the condition explicitly named.",
-      "sources": [
-        "ChromaDB",
-        "OpenCodelists (Bennett Institute)",
-        "QOF Business Rules 2024-25"
-      ],
-      "usage_frequency": null
-    },
-    {
-      "code": "230701008",
-      "term": "Pure sensorimotor motor hemiparesis due to and following lacunar infarction",
-      "vocabulary": "SNOMED CT",
-      "decision": "include",
-      "confidence": 0.9,
-      "rationale": "Pure sensorimotor hemiparesis due to lacunar infarction is a manifestation of lacunar stroke with the condition explicitly named.",
-      "sources": [
-        "ChromaDB",
-        "OpenCodelists (Bennett Institute)",
-        "QOF Business Rules 2024-25"
-      ],
-      "usage_frequency": null
-    },
-    {
-      "code": "230702001",
-      "term": "Ataxic hemiparesis due to and following lacunar infarction",
-      "vocabulary": "SNOMED CT",
-      "decision": "include",
-      "confidence": 0.9,
-      "rationale": "Ataxic hemiparesis due to lacunar infarction is a manifestation of lacunar stroke with the condition explicitly named.",
-      "sources": [
-        "ChromaDB",
-        "OpenCodelists (Bennett Institute)",
-        "QOF Business Rules 2024-25"
-      ],
-      "usage_frequency": null
-    },
-    {
-      "code": "230714009",
-      "term": "Anterior circulation stroke of uncertain pathology (disorder)",
-      "vocabulary": "SNOMED CT",
-      "decision": "include",
-      "confidence": 0.9,
-      "rationale": "Anterior circulation stroke of uncertain pathology is a direct instance of stroke with undetermined mechanism.",
-      "sources": [
-        "OMOPHub",
-        "OpenCodelists (Bennett Institute)",
-        "QOF Business Rules 2024-25"
-      ],
-      "usage_frequency": null
-    },
-    {
-      "code": "275434003",
-      "term": "Stroke in the puerperium (disorder)",
-      "vocabulary": "SNOMED CT",
-      "decision": "include",
-      "confidence": 0.9,
-      "rationale": "Stroke in the puerperium is a direct instance of stroke occurring in the postpartum period.",
-      "sources": [
-        "ChromaDB",
-        "OpenCodelists (Bennett Institute)",
-        "QOF Business Rules 2024-25"
-      ],
-      "usage_frequency": null
-    },
-    {
-      "code": "292851000119109",
-      "term": "Ataxic hemiparesis of right dominant side due to and following lacunar infarction",
-      "vocabulary": "SNOMED CT",
-      "decision": "include",
-      "confidence": 0.9,
-      "rationale": "Ataxic hemiparesis of right dominant side due to lacunar infarction is a manifestation of lacunar stroke with the condition explicitly named.",
-      "sources": [
-        "ChromaDB",
-        "OpenCodelists (Bennett Institute)",
-        "QOF Business Rules 2024-25"
-      ],
-      "usage_frequency": null
-    },
-    {
-      "code": "292861000119106",
-      "term": "Ataxic hemiparesis of left dominant side due to and following lacunar infarction",
-      "vocabulary": "SNOMED CT",
-      "decision": "include",
-      "confidence": 0.9,
-      "rationale": "Ataxic hemiparesis of left dominant side due to lacunar infarction is a manifestation of lacunar stroke with the condition explicitly named.",
-      "sources": [
-        "ChromaDB",
-        "OpenCodelists (Bennett Institute)",
-        "QOF Business Rules 2024-25"
-      ],
-      "usage_frequency": null
-    },
-    {
-      "code": "330411000119109",
-      "term": "Ataxic hemiparesis of left nondominant side due to and following lacunar infarction",
-      "vocabulary": "SNOMED CT",
-      "decision": "include",
-      "confidence": 0.9,
-      "rationale": "Ataxic hemiparesis of left nondominant side due to lacunar infarction is a manifestation of lacunar stroke with the condition explicitly named.",
-      "sources": [
-        "ChromaDB",
-        "OpenCodelists (Bennett Institute)",
-        "QOF Business Rules 2024-25"
-      ],
-      "usage_frequency": null
+      "usage_frequency": null,
+      "usage_status": "withheld_below_5",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "723082006",
@@ -7202,13 +7499,54 @@
       "vocabulary": "SNOMED CT",
       "decision": "include",
       "confidence": 0.9,
-      "rationale": "Silent cerebral infarct is a subtype of stroke (asymptomatic ischemic stroke) and represents an instance of the condition.",
+      "rationale": "Silent cerebral infarct is an asymptomatic ischemic stroke variant; clinically a stroke event even if not acutely symptomatic.",
       "sources": [
         "ChromaDB",
         "OpenCodelists (Bennett Institute)",
         "QOF Business Rules 2024-25"
       ],
-      "usage_frequency": null
+      "usage_frequency": 180,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": 36717605,
+      "dmd_level": null
+    },
+    {
+      "code": "1156027008",
+      "term": "Thrombus of dural sinus in pregnancy (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.85,
+      "rationale": "Thrombus of dural sinus in pregnancy is a pregnancy-specific stroke subtype and represents a primary instance of stroke.",
+      "sources": [
+        "OpenCodelists (Bennett Institute)",
+        "QOF Business Rules 2024-25"
+      ],
+      "usage_frequency": 20,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": null,
+      "dmd_level": null
+    },
+    {
+      "code": "1156029006",
+      "term": "Thrombus of dural sinus in puerperium (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.85,
+      "rationale": "Thrombus of dural sinus in puerperium is a postpartum-specific stroke subtype and represents a primary instance of stroke.",
+      "sources": [
+        "OpenCodelists (Bennett Institute)",
+        "QOF Business Rules 2024-25"
+      ],
+      "usage_frequency": 20,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "1163482004",
@@ -7216,129 +7554,107 @@
       "vocabulary": "SNOMED CT",
       "decision": "include",
       "confidence": 0.85,
-      "rationale": "Hemorrhagic cerebral infarction caused by Aspergillus is a specific infectious stroke manifestation.",
+      "rationale": "Hemorrhagic cerebral infarction caused by Aspergillus is an infection-related stroke subtype and represents a primary instance of stroke.",
       "sources": [
         "OpenCodelists (Bennett Institute)",
         "QOF Business Rules 2024-25"
       ],
-      "usage_frequency": null
+      "usage_frequency": null,
+      "usage_status": "not_in_dataset",
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": null,
+      "dmd_level": null
     },
     {
-      "code": "1269243009",
-      "term": "Thrombosis of bilateral carotid arteries (disorder)",
+      "code": "1204202004",
+      "term": "Occlusion of cerebral artery due to infection (disorder)",
       "vocabulary": "SNOMED CT",
       "decision": "include",
       "confidence": 0.85,
-      "rationale": "Thrombosis of bilateral carotid arteries is a stroke-causing vascular pathology affecting major cerebral supply vessels.",
+      "rationale": "Occlusion of cerebral artery due to infection is an infection-related stroke subtype and represents a primary instance of stroke.",
       "sources": [
         "OpenCodelists (Bennett Institute)",
         "QOF Business Rules 2024-25"
       ],
-      "usage_frequency": null
+      "usage_frequency": null,
+      "usage_status": "withheld_below_5",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
-      "code": "1269244003",
-      "term": "Thrombosis of bilateral cerebellar arteries (disorder)",
+      "code": "1231168008",
+      "term": "Malignant middle cerebral artery syndrome (disorder)",
       "vocabulary": "SNOMED CT",
       "decision": "include",
       "confidence": 0.85,
-      "rationale": "Thrombosis of bilateral cerebellar arteries is a stroke-causing vascular pathology in the posterior circulation.",
+      "rationale": "Malignant middle cerebral artery syndrome is a severe stroke subtype and represents a primary instance of stroke.",
       "sources": [
         "OpenCodelists (Bennett Institute)",
         "QOF Business Rules 2024-25"
       ],
-      "usage_frequency": null
+      "usage_frequency": 50,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
-      "code": "1269245002",
-      "term": "Thrombosis of bilateral posterior cerebral arteries (disorder)",
+      "code": "1260271009",
+      "term": "Hemorrhagic cerebral infarction due to hypertension (disorder)",
       "vocabulary": "SNOMED CT",
       "decision": "include",
       "confidence": 0.85,
-      "rationale": "Thrombosis of bilateral posterior cerebral arteries is a stroke-causing vascular pathology in the posterior circulation.",
+      "rationale": "Hemorrhagic cerebral infarction due to hypertension is a hypertension-related stroke subtype and represents a primary instance of stroke.",
       "sources": [
         "OpenCodelists (Bennett Institute)",
         "QOF Business Rules 2024-25"
       ],
-      "usage_frequency": null
+      "usage_frequency": 10,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": 37166871,
+      "dmd_level": null
     },
     {
-      "code": "1269246001",
-      "term": "Thrombosis of bilateral vertebral arteries (disorder)",
+      "code": "1263550001",
+      "term": "Infarction of brain due to migraine (disorder)",
       "vocabulary": "SNOMED CT",
       "decision": "include",
       "confidence": 0.85,
-      "rationale": "Thrombosis of bilateral vertebral arteries is a stroke-causing vascular pathology affecting major cerebral supply vessels.",
+      "rationale": "Infarction of brain due to migraine is a migraine-related stroke subtype and represents a primary instance of stroke.",
       "sources": [
         "OpenCodelists (Bennett Institute)",
         "QOF Business Rules 2024-25"
       ],
-      "usage_frequency": null
+      "usage_frequency": 10,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "1204189004",
       "term": "Asymptomatic occlusion of intracranial vertebral artery (disorder)",
       "vocabulary": "SNOMED CT",
       "decision": "uncertain",
-      "confidence": 0.65,
-      "rationale": "Asymptomatic occlusion of intracranial vertebral artery may represent a preclinical or subclinical vascular finding rather than a symptomatic stroke event.",
-      "sources": [
-        "OpenCodelists (Bennett Institute)",
-        "QOF Business Rules 2024-25"
-      ],
-      "usage_frequency": null
-    },
-    {
-      "code": "1179360000",
-      "term": "Fetal epilepsy due to perinatal stroke (disorder)",
-      "vocabulary": "SNOMED CT",
-      "decision": "uncertain",
       "confidence": 0.6,
-      "rationale": "Fetal epilepsy due to perinatal stroke names epilepsy as the primary disorder; unclear if this represents the stroke itself or a complication.",
+      "rationale": "Asymptomatic occlusion of intracranial vertebral artery may represent a stroke risk factor or subclinical finding rather than a symptomatic stroke event.",
       "sources": [
         "OpenCodelists (Bennett Institute)",
         "QOF Business Rules 2024-25"
       ],
-      "usage_frequency": null
-    },
-    {
-      "code": "T67.0",
-      "term": "Heatstroke and sunstroke",
-      "vocabulary": "ICD-10 (WHO)",
-      "decision": "exclude",
-      "confidence": 0.99,
-      "rationale": "Heatstroke and sunstroke are unrelated conditions caused by heat exposure, not cerebrovascular stroke.",
-      "sources": [
-        "ChromaDB",
-        "OMOPHub"
-      ],
-      "usage_frequency": null
-    },
-    {
-      "code": "Z82.3",
-      "term": "Family history of stroke",
-      "vocabulary": "ICD-10 (WHO)",
-      "decision": "exclude",
-      "confidence": 0.99,
-      "rationale": "Family history of stroke is a risk factor and administrative code, not a diagnosis of stroke itself.",
-      "sources": [
-        "ChromaDB",
-        "OMOPHub"
-      ],
-      "usage_frequency": null
-    },
-    {
-      "code": "I69.4",
-      "term": "Sequelae of stroke, not specified as haemorrhage or infarction",
-      "vocabulary": "ICD-10 (WHO)",
-      "decision": "exclude",
-      "confidence": 0.98,
-      "rationale": "This code represents sequelae (long-term consequences) of stroke, not an instance of the primary stroke event itself.",
-      "sources": [
-        "ChromaDB",
-        "OMOPHub"
-      ],
-      "usage_frequency": null
+      "usage_frequency": 10,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "16896891000119106",
@@ -7346,13 +7662,18 @@
       "vocabulary": "SNOMED CT",
       "decision": "exclude",
       "confidence": 0.95,
-      "rationale": "History of cerebrovascular accident is a past event (situation) rather than an active instance of stroke; it represents a resolved condition.",
+      "rationale": "History of cerebrovascular accident is a past event (situation), not an active instance of primary stroke.",
       "sources": [
         "ChromaDB",
         "OpenCodelists (Bennett Institute)",
         "QOF Business Rules 2024-25"
       ],
-      "usage_frequency": null
+      "usage_frequency": 40,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "415628004",
@@ -7360,12 +7681,17 @@
       "vocabulary": "SNOMED CT",
       "decision": "exclude",
       "confidence": 0.95,
-      "rationale": "This is an administrative/monitoring code (first letter of monitoring protocol) that does not confirm the patient has had a stroke.",
+      "rationale": "Monitoring letter codes are administrative/procedural findings, not diagnostic confirmations of stroke itself.",
       "sources": [
         "ChromaDB",
         "QOF Business Rules 2024-25"
       ],
-      "usage_frequency": null
+      "usage_frequency": 173920,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": 4215085,
+      "dmd_level": null
     },
     {
       "code": "415629007",
@@ -7373,12 +7699,17 @@
       "vocabulary": "SNOMED CT",
       "decision": "exclude",
       "confidence": 0.95,
-      "rationale": "This is an administrative/monitoring code (second letter of monitoring protocol) that does not confirm the patient has had a stroke.",
+      "rationale": "Monitoring letter codes are administrative/procedural findings, not diagnostic confirmations of stroke itself.",
       "sources": [
         "ChromaDB",
         "QOF Business Rules 2024-25"
       ],
-      "usage_frequency": null
+      "usage_frequency": 87370,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": 4215086,
+      "dmd_level": null
     },
     {
       "code": "415631003",
@@ -7386,25 +7717,35 @@
       "vocabulary": "SNOMED CT",
       "decision": "exclude",
       "confidence": 0.95,
-      "rationale": "This is an administrative/monitoring code (third letter of monitoring protocol) that does not confirm the patient has had a stroke.",
+      "rationale": "Monitoring letter codes are administrative/procedural findings, not diagnostic confirmations of stroke itself.",
       "sources": [
         "ChromaDB",
         "QOF Business Rules 2024-25"
       ],
-      "usage_frequency": null
+      "usage_frequency": 4790,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": 4217709,
+      "dmd_level": null
     },
     {
-      "code": "763007002",
-      "term": "Assessment using congestive heart failure, hypertension, age 75 years or older, diabetes mellitus and previous stroke or transient ischemic attack score (procedure)",
+      "code": "1179360000",
+      "term": "Fetal epilepsy due to perinatal stroke (disorder)",
       "vocabulary": "SNOMED CT",
       "decision": "exclude",
-      "confidence": 0.95,
-      "rationale": "This is a risk assessment procedure code (CHA2DS2-VASc score) that does not confirm the patient has had a stroke.",
+      "confidence": 0.9,
+      "rationale": "Fetal epilepsy due to perinatal stroke is a complication/sequela of perinatal stroke, not an instance of stroke itself.",
       "sources": [
-        "OMOPHub",
+        "OpenCodelists (Bennett Institute)",
         "QOF Business Rules 2024-25"
       ],
-      "usage_frequency": null
+      "usage_frequency": 10,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": null,
+      "dmd_level": null
     }
   ],
   "pipeline": "rag",

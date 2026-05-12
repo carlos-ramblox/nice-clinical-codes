@@ -6,12 +6,12 @@
     "retrieved_raw": {
       "codelist_name": "retrieved_raw",
       "n_ref_codes": 124,
-      "n_output_codes": 1548,
+      "n_output_codes": 1544,
       "recall": 0.9194,
-      "precision": 0.0736,
-      "f1": 0.1364,
+      "precision": 0.0738,
+      "f1": 0.1367,
       "tp_count": 114,
-      "fp_count": 1434,
+      "fp_count": 1430,
       "fn_count": 10,
       "tp_codes": [
         {
@@ -4545,10 +4545,6 @@
           "term": "Flutiform K-haler 125micrograms/dose / 5micrograms/dose breath actuated inhaler (Pilsco Ltd) (product)"
         },
         {
-          "code": "390921001",
-          "term": "Absent from work or school due to asthma"
-        },
-        {
           "code": "39105811000001104",
           "term": "Symbicort 100micrograms/dose / 3micrograms/dose pressurised inhaler (AstraZeneca UK Ltd) (product)"
         },
@@ -5645,10 +5641,6 @@
           "term": "Referral for spirometry reversibility test (procedure)"
         },
         {
-          "code": "711388008",
-          "term": "Acute asthma control management"
-        },
-        {
           "code": "716491000000100",
           "term": "Excepted from asthma quality indicators - informed dissent (finding)"
         },
@@ -6189,16 +6181,8 @@
           "term": "Wheezing"
         },
         {
-          "code": "T486",
-          "term": "Poisoning: Antiasthmatics, not elsewhere classified"
-        },
-        {
           "code": "W790",
           "term": "Inhalation and ingestion of food causing obstruction of respiratory tract, Home"
-        },
-        {
-          "code": "Y556",
-          "term": "Adverse effects in the therapeutic use of antiasthmatics, not elsewhere classified"
         },
         {
           "code": "Z516",
@@ -6256,17 +6240,13 @@
       "codelist_name": "merged_enriched",
       "n_ref_codes": 124,
       "n_output_codes": 100,
-      "recall": 0.5645,
-      "precision": 0.7,
-      "f1": 0.625,
-      "tp_count": 70,
-      "fp_count": 30,
-      "fn_count": 54,
+      "recall": 0.6048,
+      "precision": 0.75,
+      "f1": 0.6696,
+      "tp_count": 75,
+      "fp_count": 25,
+      "fn_count": 49,
       "tp_codes": [
-        {
-          "code": "10674711000119105",
-          "term": "Acute severe exacerbation of asthma co-occurrent with allergic rhinitis"
-        },
         {
           "code": "10674991000119104",
           "term": "Intermittent allergic asthma"
@@ -6288,20 +6268,12 @@
           "term": "Mild persistent allergic asthma"
         },
         {
-          "code": "10675911000119109",
-          "term": "Acute severe exacerbation of mild persistent allergic asthma"
-        },
-        {
           "code": "10675991000119100",
           "term": "Acute severe exacerbation of mild persistent allergic asthma co-occurrent with allergic rhinitis"
         },
         {
           "code": "10676391000119108",
           "term": "Moderate persistent allergic asthma"
-        },
-        {
-          "code": "10676431000119103",
-          "term": "Acute severe exacerbation of moderate persistent allergic asthma"
         },
         {
           "code": "10692721000119102",
@@ -6392,6 +6364,14 @@
           "term": "Hay fever with asthma"
         },
         {
+          "code": "233687002",
+          "term": "Colophony asthma"
+        },
+        {
+          "code": "233688007",
+          "term": "Sulfite-induced asthma"
+        },
+        {
           "code": "2360001000004109",
           "term": "Steroid dependent asthma"
         },
@@ -6406,6 +6386,14 @@
         {
           "code": "304527002",
           "term": "Acute asthma"
+        },
+        {
+          "code": "31387002",
+          "term": "Exercise-induced asthma"
+        },
+        {
+          "code": "34015007",
+          "term": "Bakers' asthma"
         },
         {
           "code": "370218001",
@@ -6428,16 +6416,52 @@
           "term": "Allergic asthma"
         },
         {
+          "code": "401000119107",
+          "term": "Asthma with irreversible airway obstruction"
+        },
+        {
           "code": "401193004",
           "term": "Asthma confirmed"
+        },
+        {
+          "code": "404804003",
+          "term": "Platinum asthma"
+        },
+        {
+          "code": "404806001",
+          "term": "Cheese-makers' asthma"
+        },
+        {
+          "code": "404808000",
+          "term": "Isocyanate induced asthma"
         },
         {
           "code": "405944004",
           "term": "Asthmatic bronchitis"
         },
         {
+          "code": "407674008",
+          "term": "Aspirin-induced asthma"
+        },
+        {
           "code": "409663006",
           "term": "Cough variant asthma"
+        },
+        {
+          "code": "41553006",
+          "term": "Detergent asthma"
+        },
+        {
+          "code": "418395004",
+          "term": "Tea-makers' asthma"
+        },
+        {
+          "code": "423889005",
+          "term": "Non-immunoglobulin E mediated allergic asthma"
+        },
+        {
+          "code": "424643009",
+          "term": "Immunoglobulin E-mediated allergic asthma"
         },
         {
           "code": "425969006",
@@ -6476,48 +6500,32 @@
           "term": "Asthma without status asthmaticus"
         },
         {
+          "code": "56968009",
+          "term": "Asthma caused by wood dust"
+        },
+        {
           "code": "57607007",
           "term": "Occupational asthma"
+        },
+        {
+          "code": "59786004",
+          "term": "Weavers' cough"
         },
         {
           "code": "63088003",
           "term": "Allergic asthma without status asthmaticus"
         },
         {
+          "code": "703953004",
+          "term": "Allergic asthma caused by Dermatophagoides pteronyssinus"
+        },
+        {
           "code": "707444001",
           "term": "Uncomplicated asthma"
         },
         {
-          "code": "707980005",
-          "term": "Acute severe exacerbation of moderate persistent asthma"
-        },
-        {
-          "code": "707981009",
-          "term": "Acute severe exacerbation of mild persistent asthma"
-        },
-        {
           "code": "708038006",
           "term": "Acute exacerbation of asthma"
-        },
-        {
-          "code": "708090002",
-          "term": "Acute severe exacerbation of asthma"
-        },
-        {
-          "code": "708093000",
-          "term": "Acute exacerbation of immunoglobulin E-mediated allergic asthma"
-        },
-        {
-          "code": "708094006",
-          "term": "Acute exacerbation of intrinsic asthma"
-        },
-        {
-          "code": "708095007",
-          "term": "Acute severe exacerbation of immunoglobin E-mediated allergic asthma"
-        },
-        {
-          "code": "708096008",
-          "term": "Acute severe exacerbation of intrinsic asthma"
         },
         {
           "code": "735588005",
@@ -6538,10 +6546,6 @@
         {
           "code": "829976001",
           "term": "Thunderstorm asthma"
-        },
-        {
-          "code": "99031000119107",
-          "term": "Acute exacerbation of asthma co-occurrent with allergic rhinitis"
         }
       ],
       "fp_codes": [
@@ -6638,32 +6642,12 @@
           "term": "Asthmatic pulmonary eosinophilia (disorder)"
         },
         {
-          "code": "J45",
-          "term": "Asthma"
+          "code": "312453004",
+          "term": "Asthma - currently active (finding)"
         },
         {
-          "code": "J450",
-          "term": "Predominantly allergic asthma"
-        },
-        {
-          "code": "J451",
-          "term": "Nonallergic asthma"
-        },
-        {
-          "code": "J458",
-          "term": "Mixed asthma"
-        },
-        {
-          "code": "J459",
-          "term": "Asthma, unspecified"
-        },
-        {
-          "code": "J46",
-          "term": "Status asthmaticus"
-        },
-        {
-          "code": "Z825",
-          "term": "Family history of asthma and other chronic lower respiratory diseases"
+          "code": "641000119106",
+          "term": "Intermittent asthma well controlled (finding)"
         }
       ],
       "fn_codes": [
@@ -6680,12 +6664,24 @@
           "term": "Life threatening acute exacerbation of asthma"
         },
         {
+          "code": "10674711000119105",
+          "term": "Acute severe exacerbation of asthma co-occurrent with allergic rhinitis"
+        },
+        {
           "code": "10675471000119109",
           "term": "Acute severe exacerbation of severe persistent allergic asthma"
         },
         {
           "code": "10675751000119107",
           "term": "Severe uncontrolled persistent asthma"
+        },
+        {
+          "code": "10675911000119109",
+          "term": "Acute severe exacerbation of mild persistent allergic asthma"
+        },
+        {
+          "code": "10676431000119103",
+          "term": "Acute severe exacerbation of moderate persistent allergic asthma"
         },
         {
           "code": "10676511000119109",
@@ -6720,24 +6716,8 @@
           "term": "Emergency hospital admission for asthma"
         },
         {
-          "code": "233687002",
-          "term": "Colophony asthma"
-        },
-        {
-          "code": "233688007",
-          "term": "Sulfite-induced asthma"
-        },
-        {
           "code": "30352005",
           "term": "Allergic-infective asthma"
-        },
-        {
-          "code": "31387002",
-          "term": "Exercise-induced asthma"
-        },
-        {
-          "code": "34015007",
-          "term": "Bakers' asthma"
         },
         {
           "code": "370205009",
@@ -6752,60 +6732,12 @@
           "term": "Asthma night-time symptoms"
         },
         {
-          "code": "401000119107",
-          "term": "Asthma with irreversible airway obstruction"
-        },
-        {
-          "code": "404804003",
-          "term": "Platinum asthma"
-        },
-        {
-          "code": "404806001",
-          "term": "Cheese-makers' asthma"
-        },
-        {
-          "code": "404808000",
-          "term": "Isocyanate induced asthma"
-        },
-        {
-          "code": "407674008",
-          "term": "Aspirin-induced asthma"
-        },
-        {
-          "code": "41553006",
-          "term": "Detergent asthma"
-        },
-        {
-          "code": "418395004",
-          "term": "Tea-makers' asthma"
-        },
-        {
-          "code": "423889005",
-          "term": "Non-immunoglobulin E mediated allergic asthma"
-        },
-        {
           "code": "424199006",
           "term": "Substance induced asthma"
         },
         {
-          "code": "424643009",
-          "term": "Immunoglobulin E-mediated allergic asthma"
-        },
-        {
           "code": "429258006",
           "term": "History of aspirin exacerbated respiratory disease"
-        },
-        {
-          "code": "56968009",
-          "term": "Asthma caused by wood dust"
-        },
-        {
-          "code": "59786004",
-          "term": "Weavers' cough"
-        },
-        {
-          "code": "703953004",
-          "term": "Allergic asthma caused by Dermatophagoides pteronyssinus"
         },
         {
           "code": "703954005",
@@ -6838,6 +6770,34 @@
         {
           "code": "707979007",
           "term": "Acute severe exacerbation of severe persistent asthma"
+        },
+        {
+          "code": "707980005",
+          "term": "Acute severe exacerbation of moderate persistent asthma"
+        },
+        {
+          "code": "707981009",
+          "term": "Acute severe exacerbation of mild persistent asthma"
+        },
+        {
+          "code": "708090002",
+          "term": "Acute severe exacerbation of asthma"
+        },
+        {
+          "code": "708093000",
+          "term": "Acute exacerbation of immunoglobulin E-mediated allergic asthma"
+        },
+        {
+          "code": "708094006",
+          "term": "Acute exacerbation of intrinsic asthma"
+        },
+        {
+          "code": "708095007",
+          "term": "Acute severe exacerbation of immunoglobin E-mediated allergic asthma"
+        },
+        {
+          "code": "708096008",
+          "term": "Acute severe exacerbation of intrinsic asthma"
         },
         {
           "code": "72301000119103",
@@ -6882,6 +6842,10 @@
         {
           "code": "93432008",
           "term": "Drug-induced asthma"
+        },
+        {
+          "code": "99031000119107",
+          "term": "Acute exacerbation of asthma co-occurrent with allergic rhinitis"
         }
       ]
     },
@@ -6889,17 +6853,13 @@
       "codelist_name": "all_scored",
       "n_ref_codes": 124,
       "n_output_codes": 100,
-      "recall": 0.5645,
-      "precision": 0.7,
-      "f1": 0.625,
-      "tp_count": 70,
-      "fp_count": 30,
-      "fn_count": 54,
+      "recall": 0.6048,
+      "precision": 0.75,
+      "f1": 0.6696,
+      "tp_count": 75,
+      "fp_count": 25,
+      "fn_count": 49,
       "tp_codes": [
-        {
-          "code": "10674711000119105",
-          "term": "Acute severe exacerbation of asthma co-occurrent with allergic rhinitis"
-        },
         {
           "code": "10674991000119104",
           "term": "Intermittent allergic asthma"
@@ -6921,20 +6881,12 @@
           "term": "Mild persistent allergic asthma"
         },
         {
-          "code": "10675911000119109",
-          "term": "Acute severe exacerbation of mild persistent allergic asthma"
-        },
-        {
           "code": "10675991000119100",
           "term": "Acute severe exacerbation of mild persistent allergic asthma co-occurrent with allergic rhinitis"
         },
         {
           "code": "10676391000119108",
           "term": "Moderate persistent allergic asthma"
-        },
-        {
-          "code": "10676431000119103",
-          "term": "Acute severe exacerbation of moderate persistent allergic asthma"
         },
         {
           "code": "10692721000119102",
@@ -7025,6 +6977,14 @@
           "term": "Hay fever with asthma"
         },
         {
+          "code": "233687002",
+          "term": "Colophony asthma"
+        },
+        {
+          "code": "233688007",
+          "term": "Sulfite-induced asthma"
+        },
+        {
           "code": "2360001000004109",
           "term": "Steroid dependent asthma"
         },
@@ -7039,6 +6999,14 @@
         {
           "code": "304527002",
           "term": "Acute asthma"
+        },
+        {
+          "code": "31387002",
+          "term": "Exercise-induced asthma"
+        },
+        {
+          "code": "34015007",
+          "term": "Bakers' asthma"
         },
         {
           "code": "370218001",
@@ -7061,16 +7029,52 @@
           "term": "Allergic asthma"
         },
         {
+          "code": "401000119107",
+          "term": "Asthma with irreversible airway obstruction"
+        },
+        {
           "code": "401193004",
           "term": "Asthma confirmed"
+        },
+        {
+          "code": "404804003",
+          "term": "Platinum asthma"
+        },
+        {
+          "code": "404806001",
+          "term": "Cheese-makers' asthma"
+        },
+        {
+          "code": "404808000",
+          "term": "Isocyanate induced asthma"
         },
         {
           "code": "405944004",
           "term": "Asthmatic bronchitis"
         },
         {
+          "code": "407674008",
+          "term": "Aspirin-induced asthma"
+        },
+        {
           "code": "409663006",
           "term": "Cough variant asthma"
+        },
+        {
+          "code": "41553006",
+          "term": "Detergent asthma"
+        },
+        {
+          "code": "418395004",
+          "term": "Tea-makers' asthma"
+        },
+        {
+          "code": "423889005",
+          "term": "Non-immunoglobulin E mediated allergic asthma"
+        },
+        {
+          "code": "424643009",
+          "term": "Immunoglobulin E-mediated allergic asthma"
         },
         {
           "code": "425969006",
@@ -7109,48 +7113,32 @@
           "term": "Asthma without status asthmaticus"
         },
         {
+          "code": "56968009",
+          "term": "Asthma caused by wood dust"
+        },
+        {
           "code": "57607007",
           "term": "Occupational asthma"
+        },
+        {
+          "code": "59786004",
+          "term": "Weavers' cough"
         },
         {
           "code": "63088003",
           "term": "Allergic asthma without status asthmaticus"
         },
         {
+          "code": "703953004",
+          "term": "Allergic asthma caused by Dermatophagoides pteronyssinus"
+        },
+        {
           "code": "707444001",
           "term": "Uncomplicated asthma"
         },
         {
-          "code": "707980005",
-          "term": "Acute severe exacerbation of moderate persistent asthma"
-        },
-        {
-          "code": "707981009",
-          "term": "Acute severe exacerbation of mild persistent asthma"
-        },
-        {
           "code": "708038006",
           "term": "Acute exacerbation of asthma"
-        },
-        {
-          "code": "708090002",
-          "term": "Acute severe exacerbation of asthma"
-        },
-        {
-          "code": "708093000",
-          "term": "Acute exacerbation of immunoglobulin E-mediated allergic asthma"
-        },
-        {
-          "code": "708094006",
-          "term": "Acute exacerbation of intrinsic asthma"
-        },
-        {
-          "code": "708095007",
-          "term": "Acute severe exacerbation of immunoglobin E-mediated allergic asthma"
-        },
-        {
-          "code": "708096008",
-          "term": "Acute severe exacerbation of intrinsic asthma"
         },
         {
           "code": "735588005",
@@ -7171,10 +7159,6 @@
         {
           "code": "829976001",
           "term": "Thunderstorm asthma"
-        },
-        {
-          "code": "99031000119107",
-          "term": "Acute exacerbation of asthma co-occurrent with allergic rhinitis"
         }
       ],
       "fp_codes": [
@@ -7271,32 +7255,12 @@
           "term": "Asthmatic pulmonary eosinophilia (disorder)"
         },
         {
-          "code": "J45",
-          "term": "Asthma"
+          "code": "312453004",
+          "term": "Asthma - currently active (finding)"
         },
         {
-          "code": "J450",
-          "term": "Predominantly allergic asthma"
-        },
-        {
-          "code": "J451",
-          "term": "Nonallergic asthma"
-        },
-        {
-          "code": "J458",
-          "term": "Mixed asthma"
-        },
-        {
-          "code": "J459",
-          "term": "Asthma, unspecified"
-        },
-        {
-          "code": "J46",
-          "term": "Status asthmaticus"
-        },
-        {
-          "code": "Z825",
-          "term": "Family history of asthma and other chronic lower respiratory diseases"
+          "code": "641000119106",
+          "term": "Intermittent asthma well controlled (finding)"
         }
       ],
       "fn_codes": [
@@ -7313,12 +7277,24 @@
           "term": "Life threatening acute exacerbation of asthma"
         },
         {
+          "code": "10674711000119105",
+          "term": "Acute severe exacerbation of asthma co-occurrent with allergic rhinitis"
+        },
+        {
           "code": "10675471000119109",
           "term": "Acute severe exacerbation of severe persistent allergic asthma"
         },
         {
           "code": "10675751000119107",
           "term": "Severe uncontrolled persistent asthma"
+        },
+        {
+          "code": "10675911000119109",
+          "term": "Acute severe exacerbation of mild persistent allergic asthma"
+        },
+        {
+          "code": "10676431000119103",
+          "term": "Acute severe exacerbation of moderate persistent allergic asthma"
         },
         {
           "code": "10676511000119109",
@@ -7353,24 +7329,8 @@
           "term": "Emergency hospital admission for asthma"
         },
         {
-          "code": "233687002",
-          "term": "Colophony asthma"
-        },
-        {
-          "code": "233688007",
-          "term": "Sulfite-induced asthma"
-        },
-        {
           "code": "30352005",
           "term": "Allergic-infective asthma"
-        },
-        {
-          "code": "31387002",
-          "term": "Exercise-induced asthma"
-        },
-        {
-          "code": "34015007",
-          "term": "Bakers' asthma"
         },
         {
           "code": "370205009",
@@ -7385,60 +7345,12 @@
           "term": "Asthma night-time symptoms"
         },
         {
-          "code": "401000119107",
-          "term": "Asthma with irreversible airway obstruction"
-        },
-        {
-          "code": "404804003",
-          "term": "Platinum asthma"
-        },
-        {
-          "code": "404806001",
-          "term": "Cheese-makers' asthma"
-        },
-        {
-          "code": "404808000",
-          "term": "Isocyanate induced asthma"
-        },
-        {
-          "code": "407674008",
-          "term": "Aspirin-induced asthma"
-        },
-        {
-          "code": "41553006",
-          "term": "Detergent asthma"
-        },
-        {
-          "code": "418395004",
-          "term": "Tea-makers' asthma"
-        },
-        {
-          "code": "423889005",
-          "term": "Non-immunoglobulin E mediated allergic asthma"
-        },
-        {
           "code": "424199006",
           "term": "Substance induced asthma"
         },
         {
-          "code": "424643009",
-          "term": "Immunoglobulin E-mediated allergic asthma"
-        },
-        {
           "code": "429258006",
           "term": "History of aspirin exacerbated respiratory disease"
-        },
-        {
-          "code": "56968009",
-          "term": "Asthma caused by wood dust"
-        },
-        {
-          "code": "59786004",
-          "term": "Weavers' cough"
-        },
-        {
-          "code": "703953004",
-          "term": "Allergic asthma caused by Dermatophagoides pteronyssinus"
         },
         {
           "code": "703954005",
@@ -7471,6 +7383,34 @@
         {
           "code": "707979007",
           "term": "Acute severe exacerbation of severe persistent asthma"
+        },
+        {
+          "code": "707980005",
+          "term": "Acute severe exacerbation of moderate persistent asthma"
+        },
+        {
+          "code": "707981009",
+          "term": "Acute severe exacerbation of mild persistent asthma"
+        },
+        {
+          "code": "708090002",
+          "term": "Acute severe exacerbation of asthma"
+        },
+        {
+          "code": "708093000",
+          "term": "Acute exacerbation of immunoglobulin E-mediated allergic asthma"
+        },
+        {
+          "code": "708094006",
+          "term": "Acute exacerbation of intrinsic asthma"
+        },
+        {
+          "code": "708095007",
+          "term": "Acute severe exacerbation of immunoglobin E-mediated allergic asthma"
+        },
+        {
+          "code": "708096008",
+          "term": "Acute severe exacerbation of intrinsic asthma"
         },
         {
           "code": "72301000119103",
@@ -7515,24 +7455,24 @@
         {
           "code": "93432008",
           "term": "Drug-induced asthma"
+        },
+        {
+          "code": "99031000119107",
+          "term": "Acute exacerbation of asthma co-occurrent with allergic rhinitis"
         }
       ]
     },
     "included_only": {
       "codelist_name": "included_only",
       "n_ref_codes": 124,
-      "n_output_codes": 93,
-      "recall": 0.5484,
-      "precision": 0.7312,
-      "f1": 0.6267,
-      "tp_count": 68,
-      "fp_count": 25,
-      "fn_count": 56,
+      "n_output_codes": 96,
+      "recall": 0.5887,
+      "precision": 0.7604,
+      "f1": 0.6636,
+      "tp_count": 73,
+      "fp_count": 23,
+      "fn_count": 51,
       "tp_codes": [
-        {
-          "code": "10674711000119105",
-          "term": "Acute severe exacerbation of asthma co-occurrent with allergic rhinitis"
-        },
         {
           "code": "10674991000119104",
           "term": "Intermittent allergic asthma"
@@ -7554,20 +7494,12 @@
           "term": "Mild persistent allergic asthma"
         },
         {
-          "code": "10675911000119109",
-          "term": "Acute severe exacerbation of mild persistent allergic asthma"
-        },
-        {
           "code": "10675991000119100",
           "term": "Acute severe exacerbation of mild persistent allergic asthma co-occurrent with allergic rhinitis"
         },
         {
           "code": "10676391000119108",
           "term": "Moderate persistent allergic asthma"
-        },
-        {
-          "code": "10676431000119103",
-          "term": "Acute severe exacerbation of moderate persistent allergic asthma"
         },
         {
           "code": "10692721000119102",
@@ -7650,6 +7582,14 @@
           "term": "Hay fever with asthma"
         },
         {
+          "code": "233687002",
+          "term": "Colophony asthma"
+        },
+        {
+          "code": "233688007",
+          "term": "Sulfite-induced asthma"
+        },
+        {
           "code": "2360001000004109",
           "term": "Steroid dependent asthma"
         },
@@ -7664,6 +7604,14 @@
         {
           "code": "304527002",
           "term": "Acute asthma"
+        },
+        {
+          "code": "31387002",
+          "term": "Exercise-induced asthma"
+        },
+        {
+          "code": "34015007",
+          "term": "Bakers' asthma"
         },
         {
           "code": "370218001",
@@ -7686,16 +7634,52 @@
           "term": "Allergic asthma"
         },
         {
+          "code": "401000119107",
+          "term": "Asthma with irreversible airway obstruction"
+        },
+        {
           "code": "401193004",
           "term": "Asthma confirmed"
+        },
+        {
+          "code": "404804003",
+          "term": "Platinum asthma"
+        },
+        {
+          "code": "404806001",
+          "term": "Cheese-makers' asthma"
+        },
+        {
+          "code": "404808000",
+          "term": "Isocyanate induced asthma"
         },
         {
           "code": "405944004",
           "term": "Asthmatic bronchitis"
         },
         {
+          "code": "407674008",
+          "term": "Aspirin-induced asthma"
+        },
+        {
           "code": "409663006",
           "term": "Cough variant asthma"
+        },
+        {
+          "code": "41553006",
+          "term": "Detergent asthma"
+        },
+        {
+          "code": "418395004",
+          "term": "Tea-makers' asthma"
+        },
+        {
+          "code": "423889005",
+          "term": "Non-immunoglobulin E mediated allergic asthma"
+        },
+        {
+          "code": "424643009",
+          "term": "Immunoglobulin E-mediated allergic asthma"
         },
         {
           "code": "425969006",
@@ -7734,48 +7718,32 @@
           "term": "Asthma without status asthmaticus"
         },
         {
+          "code": "56968009",
+          "term": "Asthma caused by wood dust"
+        },
+        {
           "code": "57607007",
           "term": "Occupational asthma"
+        },
+        {
+          "code": "59786004",
+          "term": "Weavers' cough"
         },
         {
           "code": "63088003",
           "term": "Allergic asthma without status asthmaticus"
         },
         {
+          "code": "703953004",
+          "term": "Allergic asthma caused by Dermatophagoides pteronyssinus"
+        },
+        {
           "code": "707444001",
           "term": "Uncomplicated asthma"
         },
         {
-          "code": "707980005",
-          "term": "Acute severe exacerbation of moderate persistent asthma"
-        },
-        {
-          "code": "707981009",
-          "term": "Acute severe exacerbation of mild persistent asthma"
-        },
-        {
           "code": "708038006",
           "term": "Acute exacerbation of asthma"
-        },
-        {
-          "code": "708090002",
-          "term": "Acute severe exacerbation of asthma"
-        },
-        {
-          "code": "708093000",
-          "term": "Acute exacerbation of immunoglobulin E-mediated allergic asthma"
-        },
-        {
-          "code": "708094006",
-          "term": "Acute exacerbation of intrinsic asthma"
-        },
-        {
-          "code": "708095007",
-          "term": "Acute severe exacerbation of immunoglobin E-mediated allergic asthma"
-        },
-        {
-          "code": "708096008",
-          "term": "Acute severe exacerbation of intrinsic asthma"
         },
         {
           "code": "735588005",
@@ -7796,10 +7764,6 @@
         {
           "code": "829976001",
           "term": "Thunderstorm asthma"
-        },
-        {
-          "code": "99031000119107",
-          "term": "Acute exacerbation of asthma co-occurrent with allergic rhinitis"
         }
       ],
       "fp_codes": [
@@ -7872,36 +7836,28 @@
           "term": "Moderate persistent asthma uncontrolled co-occurrent with allergic rhinitis (disorder)"
         },
         {
+          "code": "11944003",
+          "term": "Feather-pickers' disease (disorder)"
+        },
+        {
           "code": "1290026000",
           "term": "Uncontrolled asthma"
+        },
+        {
+          "code": "13151001",
+          "term": "Flax-dressers' disease (disorder)"
         },
         {
           "code": "233691007",
           "term": "Asthmatic pulmonary eosinophilia (disorder)"
         },
         {
-          "code": "J45",
-          "term": "Asthma"
+          "code": "312453004",
+          "term": "Asthma - currently active (finding)"
         },
         {
-          "code": "J450",
-          "term": "Predominantly allergic asthma"
-        },
-        {
-          "code": "J451",
-          "term": "Nonallergic asthma"
-        },
-        {
-          "code": "J458",
-          "term": "Mixed asthma"
-        },
-        {
-          "code": "J459",
-          "term": "Asthma, unspecified"
-        },
-        {
-          "code": "J46",
-          "term": "Status asthmaticus"
+          "code": "641000119106",
+          "term": "Intermittent asthma well controlled (finding)"
         }
       ],
       "fn_codes": [
@@ -7918,12 +7874,24 @@
           "term": "Life threatening acute exacerbation of asthma"
         },
         {
+          "code": "10674711000119105",
+          "term": "Acute severe exacerbation of asthma co-occurrent with allergic rhinitis"
+        },
+        {
           "code": "10675471000119109",
           "term": "Acute severe exacerbation of severe persistent allergic asthma"
         },
         {
           "code": "10675751000119107",
           "term": "Severe uncontrolled persistent asthma"
+        },
+        {
+          "code": "10675911000119109",
+          "term": "Acute severe exacerbation of mild persistent allergic asthma"
+        },
+        {
+          "code": "10676431000119103",
+          "term": "Acute severe exacerbation of moderate persistent allergic asthma"
         },
         {
           "code": "10676511000119109",
@@ -7966,24 +7934,8 @@
           "term": "Emergency hospital admission for asthma"
         },
         {
-          "code": "233687002",
-          "term": "Colophony asthma"
-        },
-        {
-          "code": "233688007",
-          "term": "Sulfite-induced asthma"
-        },
-        {
           "code": "30352005",
           "term": "Allergic-infective asthma"
-        },
-        {
-          "code": "31387002",
-          "term": "Exercise-induced asthma"
-        },
-        {
-          "code": "34015007",
-          "term": "Bakers' asthma"
         },
         {
           "code": "370205009",
@@ -7998,60 +7950,12 @@
           "term": "Asthma night-time symptoms"
         },
         {
-          "code": "401000119107",
-          "term": "Asthma with irreversible airway obstruction"
-        },
-        {
-          "code": "404804003",
-          "term": "Platinum asthma"
-        },
-        {
-          "code": "404806001",
-          "term": "Cheese-makers' asthma"
-        },
-        {
-          "code": "404808000",
-          "term": "Isocyanate induced asthma"
-        },
-        {
-          "code": "407674008",
-          "term": "Aspirin-induced asthma"
-        },
-        {
-          "code": "41553006",
-          "term": "Detergent asthma"
-        },
-        {
-          "code": "418395004",
-          "term": "Tea-makers' asthma"
-        },
-        {
-          "code": "423889005",
-          "term": "Non-immunoglobulin E mediated allergic asthma"
-        },
-        {
           "code": "424199006",
           "term": "Substance induced asthma"
         },
         {
-          "code": "424643009",
-          "term": "Immunoglobulin E-mediated allergic asthma"
-        },
-        {
           "code": "429258006",
           "term": "History of aspirin exacerbated respiratory disease"
-        },
-        {
-          "code": "56968009",
-          "term": "Asthma caused by wood dust"
-        },
-        {
-          "code": "59786004",
-          "term": "Weavers' cough"
-        },
-        {
-          "code": "703953004",
-          "term": "Allergic asthma caused by Dermatophagoides pteronyssinus"
         },
         {
           "code": "703954005",
@@ -8084,6 +7988,34 @@
         {
           "code": "707979007",
           "term": "Acute severe exacerbation of severe persistent asthma"
+        },
+        {
+          "code": "707980005",
+          "term": "Acute severe exacerbation of moderate persistent asthma"
+        },
+        {
+          "code": "707981009",
+          "term": "Acute severe exacerbation of mild persistent asthma"
+        },
+        {
+          "code": "708090002",
+          "term": "Acute severe exacerbation of asthma"
+        },
+        {
+          "code": "708093000",
+          "term": "Acute exacerbation of immunoglobulin E-mediated allergic asthma"
+        },
+        {
+          "code": "708094006",
+          "term": "Acute exacerbation of intrinsic asthma"
+        },
+        {
+          "code": "708095007",
+          "term": "Acute severe exacerbation of immunoglobin E-mediated allergic asthma"
+        },
+        {
+          "code": "708096008",
+          "term": "Acute severe exacerbation of intrinsic asthma"
         },
         {
           "code": "72301000119103",
@@ -8128,24 +8060,24 @@
         {
           "code": "93432008",
           "term": "Drug-induced asthma"
+        },
+        {
+          "code": "99031000119107",
+          "term": "Acute exacerbation of asthma co-occurrent with allergic rhinitis"
         }
       ]
     },
     "included_plus_uncertain": {
       "codelist_name": "included_plus_uncertain",
       "n_ref_codes": 124,
-      "n_output_codes": 94,
-      "recall": 0.5565,
-      "precision": 0.734,
-      "f1": 0.633,
-      "tp_count": 69,
-      "fp_count": 25,
-      "fn_count": 55,
+      "n_output_codes": 96,
+      "recall": 0.5887,
+      "precision": 0.7604,
+      "f1": 0.6636,
+      "tp_count": 73,
+      "fp_count": 23,
+      "fn_count": 51,
       "tp_codes": [
-        {
-          "code": "10674711000119105",
-          "term": "Acute severe exacerbation of asthma co-occurrent with allergic rhinitis"
-        },
         {
           "code": "10674991000119104",
           "term": "Intermittent allergic asthma"
@@ -8167,20 +8099,12 @@
           "term": "Mild persistent allergic asthma"
         },
         {
-          "code": "10675911000119109",
-          "term": "Acute severe exacerbation of mild persistent allergic asthma"
-        },
-        {
           "code": "10675991000119100",
           "term": "Acute severe exacerbation of mild persistent allergic asthma co-occurrent with allergic rhinitis"
         },
         {
           "code": "10676391000119108",
           "term": "Moderate persistent allergic asthma"
-        },
-        {
-          "code": "10676431000119103",
-          "term": "Acute severe exacerbation of moderate persistent allergic asthma"
         },
         {
           "code": "10692721000119102",
@@ -8227,10 +8151,6 @@
           "term": "Intermittent asthma uncontrolled"
         },
         {
-          "code": "1751000119100",
-          "term": "Acute exacerbation of chronic obstructive airways disease with asthma"
-        },
-        {
           "code": "18041002",
           "term": "Printers' asthma"
         },
@@ -8267,6 +8187,14 @@
           "term": "Hay fever with asthma"
         },
         {
+          "code": "233687002",
+          "term": "Colophony asthma"
+        },
+        {
+          "code": "233688007",
+          "term": "Sulfite-induced asthma"
+        },
+        {
           "code": "2360001000004109",
           "term": "Steroid dependent asthma"
         },
@@ -8281,6 +8209,14 @@
         {
           "code": "304527002",
           "term": "Acute asthma"
+        },
+        {
+          "code": "31387002",
+          "term": "Exercise-induced asthma"
+        },
+        {
+          "code": "34015007",
+          "term": "Bakers' asthma"
         },
         {
           "code": "370218001",
@@ -8303,16 +8239,52 @@
           "term": "Allergic asthma"
         },
         {
+          "code": "401000119107",
+          "term": "Asthma with irreversible airway obstruction"
+        },
+        {
           "code": "401193004",
           "term": "Asthma confirmed"
+        },
+        {
+          "code": "404804003",
+          "term": "Platinum asthma"
+        },
+        {
+          "code": "404806001",
+          "term": "Cheese-makers' asthma"
+        },
+        {
+          "code": "404808000",
+          "term": "Isocyanate induced asthma"
         },
         {
           "code": "405944004",
           "term": "Asthmatic bronchitis"
         },
         {
+          "code": "407674008",
+          "term": "Aspirin-induced asthma"
+        },
+        {
           "code": "409663006",
           "term": "Cough variant asthma"
+        },
+        {
+          "code": "41553006",
+          "term": "Detergent asthma"
+        },
+        {
+          "code": "418395004",
+          "term": "Tea-makers' asthma"
+        },
+        {
+          "code": "423889005",
+          "term": "Non-immunoglobulin E mediated allergic asthma"
+        },
+        {
+          "code": "424643009",
+          "term": "Immunoglobulin E-mediated allergic asthma"
         },
         {
           "code": "425969006",
@@ -8351,48 +8323,32 @@
           "term": "Asthma without status asthmaticus"
         },
         {
+          "code": "56968009",
+          "term": "Asthma caused by wood dust"
+        },
+        {
           "code": "57607007",
           "term": "Occupational asthma"
+        },
+        {
+          "code": "59786004",
+          "term": "Weavers' cough"
         },
         {
           "code": "63088003",
           "term": "Allergic asthma without status asthmaticus"
         },
         {
+          "code": "703953004",
+          "term": "Allergic asthma caused by Dermatophagoides pteronyssinus"
+        },
+        {
           "code": "707444001",
           "term": "Uncomplicated asthma"
         },
         {
-          "code": "707980005",
-          "term": "Acute severe exacerbation of moderate persistent asthma"
-        },
-        {
-          "code": "707981009",
-          "term": "Acute severe exacerbation of mild persistent asthma"
-        },
-        {
           "code": "708038006",
           "term": "Acute exacerbation of asthma"
-        },
-        {
-          "code": "708090002",
-          "term": "Acute severe exacerbation of asthma"
-        },
-        {
-          "code": "708093000",
-          "term": "Acute exacerbation of immunoglobulin E-mediated allergic asthma"
-        },
-        {
-          "code": "708094006",
-          "term": "Acute exacerbation of intrinsic asthma"
-        },
-        {
-          "code": "708095007",
-          "term": "Acute severe exacerbation of immunoglobin E-mediated allergic asthma"
-        },
-        {
-          "code": "708096008",
-          "term": "Acute severe exacerbation of intrinsic asthma"
         },
         {
           "code": "735588005",
@@ -8413,10 +8369,6 @@
         {
           "code": "829976001",
           "term": "Thunderstorm asthma"
-        },
-        {
-          "code": "99031000119107",
-          "term": "Acute exacerbation of asthma co-occurrent with allergic rhinitis"
         }
       ],
       "fp_codes": [
@@ -8489,36 +8441,28 @@
           "term": "Moderate persistent asthma uncontrolled co-occurrent with allergic rhinitis (disorder)"
         },
         {
+          "code": "11944003",
+          "term": "Feather-pickers' disease (disorder)"
+        },
+        {
           "code": "1290026000",
           "term": "Uncontrolled asthma"
+        },
+        {
+          "code": "13151001",
+          "term": "Flax-dressers' disease (disorder)"
         },
         {
           "code": "233691007",
           "term": "Asthmatic pulmonary eosinophilia (disorder)"
         },
         {
-          "code": "J45",
-          "term": "Asthma"
+          "code": "312453004",
+          "term": "Asthma - currently active (finding)"
         },
         {
-          "code": "J450",
-          "term": "Predominantly allergic asthma"
-        },
-        {
-          "code": "J451",
-          "term": "Nonallergic asthma"
-        },
-        {
-          "code": "J458",
-          "term": "Mixed asthma"
-        },
-        {
-          "code": "J459",
-          "term": "Asthma, unspecified"
-        },
-        {
-          "code": "J46",
-          "term": "Status asthmaticus"
+          "code": "641000119106",
+          "term": "Intermittent asthma well controlled (finding)"
         }
       ],
       "fn_codes": [
@@ -8535,12 +8479,24 @@
           "term": "Life threatening acute exacerbation of asthma"
         },
         {
+          "code": "10674711000119105",
+          "term": "Acute severe exacerbation of asthma co-occurrent with allergic rhinitis"
+        },
+        {
           "code": "10675471000119109",
           "term": "Acute severe exacerbation of severe persistent allergic asthma"
         },
         {
           "code": "10675751000119107",
           "term": "Severe uncontrolled persistent asthma"
+        },
+        {
+          "code": "10675911000119109",
+          "term": "Acute severe exacerbation of mild persistent allergic asthma"
+        },
+        {
+          "code": "10676431000119103",
+          "term": "Acute severe exacerbation of moderate persistent allergic asthma"
         },
         {
           "code": "10676511000119109",
@@ -8575,28 +8531,16 @@
           "term": "Oral steroid-dependent asthma"
         },
         {
+          "code": "1751000119100",
+          "term": "Acute exacerbation of chronic obstructive airways disease with asthma"
+        },
+        {
           "code": "183478001",
           "term": "Emergency hospital admission for asthma"
         },
         {
-          "code": "233687002",
-          "term": "Colophony asthma"
-        },
-        {
-          "code": "233688007",
-          "term": "Sulfite-induced asthma"
-        },
-        {
           "code": "30352005",
           "term": "Allergic-infective asthma"
-        },
-        {
-          "code": "31387002",
-          "term": "Exercise-induced asthma"
-        },
-        {
-          "code": "34015007",
-          "term": "Bakers' asthma"
         },
         {
           "code": "370205009",
@@ -8611,60 +8555,12 @@
           "term": "Asthma night-time symptoms"
         },
         {
-          "code": "401000119107",
-          "term": "Asthma with irreversible airway obstruction"
-        },
-        {
-          "code": "404804003",
-          "term": "Platinum asthma"
-        },
-        {
-          "code": "404806001",
-          "term": "Cheese-makers' asthma"
-        },
-        {
-          "code": "404808000",
-          "term": "Isocyanate induced asthma"
-        },
-        {
-          "code": "407674008",
-          "term": "Aspirin-induced asthma"
-        },
-        {
-          "code": "41553006",
-          "term": "Detergent asthma"
-        },
-        {
-          "code": "418395004",
-          "term": "Tea-makers' asthma"
-        },
-        {
-          "code": "423889005",
-          "term": "Non-immunoglobulin E mediated allergic asthma"
-        },
-        {
           "code": "424199006",
           "term": "Substance induced asthma"
         },
         {
-          "code": "424643009",
-          "term": "Immunoglobulin E-mediated allergic asthma"
-        },
-        {
           "code": "429258006",
           "term": "History of aspirin exacerbated respiratory disease"
-        },
-        {
-          "code": "56968009",
-          "term": "Asthma caused by wood dust"
-        },
-        {
-          "code": "59786004",
-          "term": "Weavers' cough"
-        },
-        {
-          "code": "703953004",
-          "term": "Allergic asthma caused by Dermatophagoides pteronyssinus"
         },
         {
           "code": "703954005",
@@ -8697,6 +8593,34 @@
         {
           "code": "707979007",
           "term": "Acute severe exacerbation of severe persistent asthma"
+        },
+        {
+          "code": "707980005",
+          "term": "Acute severe exacerbation of moderate persistent asthma"
+        },
+        {
+          "code": "707981009",
+          "term": "Acute severe exacerbation of mild persistent asthma"
+        },
+        {
+          "code": "708090002",
+          "term": "Acute severe exacerbation of asthma"
+        },
+        {
+          "code": "708093000",
+          "term": "Acute exacerbation of immunoglobulin E-mediated allergic asthma"
+        },
+        {
+          "code": "708094006",
+          "term": "Acute exacerbation of intrinsic asthma"
+        },
+        {
+          "code": "708095007",
+          "term": "Acute severe exacerbation of immunoglobin E-mediated allergic asthma"
+        },
+        {
+          "code": "708096008",
+          "term": "Acute severe exacerbation of intrinsic asthma"
         },
         {
           "code": "72301000119103",
@@ -8741,509 +8665,649 @@
         {
           "code": "93432008",
           "term": "Drug-induced asthma"
+        },
+        {
+          "code": "99031000119107",
+          "term": "Acute exacerbation of asthma co-occurrent with allergic rhinitis"
         }
       ]
     }
   },
   "false_exclusions": {
-    "count": 1,
+    "count": 2,
     "codes": [
       {
         "code": "10742121000119104",
         "term": "Asthma in mother complicating childbirth (disorder)",
-        "rationale": "This code describes asthma complicating childbirth (a pregnancy-related complication), not asthma as a primary diagnosis; it is a contextual modifier for obstetric coding."
+        "rationale": "Asthma in mother complicating childbirth is a pregnancy/obstetric complication, not a primary asthma diagnosis."
+      },
+      {
+        "code": "1751000119100",
+        "term": "Acute exacerbation of chronic obstructive airways disease with asthma (disorder)",
+        "rationale": "This code describes acute exacerbation of COPD with asthma, which is a comorbid presentation of two separate conditions, not a primary asthma diagnosis."
       }
     ]
   },
   "uncertain_in_reference": {
-    "count": 1,
-    "codes": [
-      {
-        "code": "1751000119100",
-        "term": "Acute exacerbation of chronic obstructive airways disease with asthma (disorder)",
-        "rationale": "This code describes acute exacerbation of COPD with asthma; it is unclear whether this represents asthma as a primary condition or asthma as a comorbidity in COPD."
-      }
-    ]
+    "count": 0,
+    "codes": []
   },
-  "summary": "Recall: 54.8% (68 of 124 reference codes retrieved). Precision: 73.1%. F1: 62.7%. 1 reference codes were incorrectly excluded.",
-  "elapsed_seconds": 23.49,
+  "summary": "Recall: 58.9% (73 of 124 reference codes retrieved). Precision: 76.0%. F1: 66.4%. 2 reference codes were incorrectly excluded.",
+  "elapsed_seconds": 22.23,
   "pipeline_results_count": 100,
   "scored_codes": [
-    {
-      "code": "J45",
-      "term": "Asthma",
-      "vocabulary": "ICD-10 (WHO)",
-      "decision": "include",
-      "confidence": 1.0,
-      "rationale": "This is the primary ICD-10 code for asthma itself, representing the core condition.",
-      "sources": [
-        "ChromaDB",
-        "OMOPHub"
-      ],
-      "usage_frequency": null
-    },
-    {
-      "code": "J45.0",
-      "term": "Predominantly allergic asthma",
-      "vocabulary": "ICD-10 (WHO)",
-      "decision": "include",
-      "confidence": 1.0,
-      "rationale": "This is a clinical subtype of asthma (predominantly allergic), which is a direct manifestation of the primary condition.",
-      "sources": [
-        "ChromaDB",
-        "OMOPHub"
-      ],
-      "usage_frequency": null
-    },
-    {
-      "code": "J45.1",
-      "term": "Nonallergic asthma",
-      "vocabulary": "ICD-10 (WHO)",
-      "decision": "include",
-      "confidence": 1.0,
-      "rationale": "This is a clinical subtype of asthma (nonallergic), which is a direct manifestation of the primary condition.",
-      "sources": [
-        "ChromaDB",
-        "OMOPHub"
-      ],
-      "usage_frequency": null
-    },
-    {
-      "code": "J45.8",
-      "term": "Mixed asthma",
-      "vocabulary": "ICD-10 (WHO)",
-      "decision": "include",
-      "confidence": 1.0,
-      "rationale": "This is a clinical subtype of asthma (mixed), which is a direct manifestation of the primary condition.",
-      "sources": [
-        "ChromaDB",
-        "OMOPHub"
-      ],
-      "usage_frequency": null
-    },
-    {
-      "code": "J45.9",
-      "term": "Asthma, unspecified",
-      "vocabulary": "ICD-10 (WHO)",
-      "decision": "include",
-      "confidence": 1.0,
-      "rationale": "This is asthma unspecified, representing the primary condition when type is not further specified.",
-      "sources": [
-        "ChromaDB",
-        "OMOPHub"
-      ],
-      "usage_frequency": null
-    },
-    {
-      "code": "J46",
-      "term": "Status asthmaticus",
-      "vocabulary": "ICD-10 (WHO)",
-      "decision": "include",
-      "confidence": 1.0,
-      "rationale": "Status asthmaticus is a severe acute exacerbation of asthma and represents an acute manifestation of the primary condition.",
-      "sources": [
-        "ChromaDB",
-        "OMOPHub"
-      ],
-      "usage_frequency": null
-    },
-    {
-      "code": "10674791000119100",
-      "term": "Acute exacerbation of intermittent allergic asthma (disorder)",
-      "vocabulary": "SNOMED CT",
-      "decision": "include",
-      "confidence": 1.0,
-      "rationale": "This code explicitly names allergic asthma and describes an acute exacerbation, which is a manifestation of the primary condition.",
-      "sources": [
-        "ChromaDB",
-        "QOF Business Rules 2024-25"
-      ],
-      "usage_frequency": null
-    },
-    {
-      "code": "10674791000119101",
-      "term": "Acute exacerbation of intermittent allergic asthma",
-      "vocabulary": "SNOMED CT",
-      "decision": "include",
-      "confidence": 1.0,
-      "rationale": "This code explicitly names allergic asthma and describes an acute exacerbation, which is a manifestation of the primary condition.",
-      "sources": [
-        "ChromaDB",
-        "OMOPHub",
-        "OpenCodelists (Bennett Institute)"
-      ],
-      "usage_frequency": null
-    },
-    {
-      "code": "10674991000119104",
-      "term": "Intermittent allergic asthma (disorder)",
-      "vocabulary": "SNOMED CT",
-      "decision": "include",
-      "confidence": 1.0,
-      "rationale": "This code explicitly names intermittent allergic asthma, which is a clinical subtype of the primary condition.",
-      "sources": [
-        "ChromaDB",
-        "OpenCodelists (Bennett Institute)",
-        "QOF Business Rules 2024-25"
-      ],
-      "usage_frequency": null
-    },
-    {
-      "code": "10675391000119101",
-      "term": "Severe controlled persistent asthma",
-      "vocabulary": "SNOMED CT",
-      "decision": "include",
-      "confidence": 1.0,
-      "rationale": "This code explicitly names severe controlled persistent asthma, which is a clinical subtype and severity variant of the primary condition.",
-      "sources": [
-        "ChromaDB",
-        "OpenCodelists (Bennett Institute)"
-      ],
-      "usage_frequency": null
-    },
-    {
-      "code": "10675431000119106",
-      "term": "Severe persistent allergic asthma (disorder)",
-      "vocabulary": "SNOMED CT",
-      "decision": "include",
-      "confidence": 1.0,
-      "rationale": "This code explicitly names severe persistent allergic asthma, which is a clinical subtype and severity variant of the primary condition.",
-      "sources": [
-        "ChromaDB",
-        "OpenCodelists (Bennett Institute)",
-        "QOF Business Rules 2024-25"
-      ],
-      "usage_frequency": null
-    },
-    {
-      "code": "10675591000119108",
-      "term": "Severe persistent allergic asthma controlled (finding)",
-      "vocabulary": "SNOMED CT",
-      "decision": "include",
-      "confidence": 1.0,
-      "rationale": "This code explicitly names severe persistent allergic asthma controlled, which is a clinical subtype and control status variant of the primary condition.",
-      "sources": [
-        "ChromaDB",
-        "QOF Business Rules 2024-25"
-      ],
-      "usage_frequency": null
-    },
-    {
-      "code": "10675591000119109",
-      "term": "Severe persistent allergic asthma controlled",
-      "vocabulary": "SNOMED CT",
-      "decision": "include",
-      "confidence": 1.0,
-      "rationale": "This code explicitly names severe persistent allergic asthma controlled, which is a clinical subtype and control status variant of the primary condition.",
-      "sources": [
-        "ChromaDB",
-        "OpenCodelists (Bennett Institute)"
-      ],
-      "usage_frequency": null
-    },
-    {
-      "code": "10675671000119107",
-      "term": "Severe persistent allergic asthma uncontrolled",
-      "vocabulary": "SNOMED CT",
-      "decision": "include",
-      "confidence": 1.0,
-      "rationale": "This code explicitly names severe persistent allergic asthma uncontrolled, which is a clinical subtype and control status variant of the primary condition.",
-      "sources": [
-        "ChromaDB",
-        "OpenCodelists (Bennett Institute)"
-      ],
-      "usage_frequency": null
-    },
-    {
-      "code": "10675671000119108",
-      "term": "Severe persistent allergic asthma uncontrolled (finding)",
-      "vocabulary": "SNOMED CT",
-      "decision": "include",
-      "confidence": 1.0,
-      "rationale": "This code explicitly names severe persistent allergic asthma uncontrolled, which is a clinical subtype and control status variant of the primary condition.",
-      "sources": [
-        "ChromaDB",
-        "QOF Business Rules 2024-25"
-      ],
-      "usage_frequency": null
-    },
-    {
-      "code": "10675871000119106",
-      "term": "Mild persistent allergic asthma (disorder)",
-      "vocabulary": "SNOMED CT",
-      "decision": "include",
-      "confidence": 1.0,
-      "rationale": "This code explicitly names mild persistent allergic asthma, which is a clinical subtype and severity variant of the primary condition.",
-      "sources": [
-        "ChromaDB",
-        "OpenCodelists (Bennett Institute)",
-        "QOF Business Rules 2024-25"
-      ],
-      "usage_frequency": null
-    },
-    {
-      "code": "10675911000119109",
-      "term": "Acute severe exacerbation of mild persistent allergic asthma",
-      "vocabulary": "SNOMED CT",
-      "decision": "include",
-      "confidence": 1.0,
-      "rationale": "This code explicitly names mild persistent allergic asthma and describes an acute severe exacerbation, which is a manifestation of the primary condition.",
-      "sources": [
-        "OMOPHub",
-        "OpenCodelists (Bennett Institute)"
-      ],
-      "usage_frequency": null
-    },
-    {
-      "code": "10676031000119106",
-      "term": "Mild persistent allergic asthma controlled (finding)",
-      "vocabulary": "SNOMED CT",
-      "decision": "include",
-      "confidence": 1.0,
-      "rationale": "This code explicitly names mild persistent allergic asthma controlled, which is a clinical subtype and control status variant of the primary condition.",
-      "sources": [
-        "ChromaDB",
-        "OpenCodelists (Bennett Institute)",
-        "QOF Business Rules 2024-25"
-      ],
-      "usage_frequency": null
-    },
-    {
-      "code": "10676111000119102",
-      "term": "Mild persistent asthma controlled co-occurrent with allergic rhinitis (disorder)",
-      "vocabulary": "SNOMED CT",
-      "decision": "include",
-      "confidence": 1.0,
-      "rationale": "This code explicitly names mild persistent asthma controlled, which is a clinical subtype and control status variant of the primary condition.",
-      "sources": [
-        "OpenCodelists (Bennett Institute)",
-        "QOF Business Rules 2024-25"
-      ],
-      "usage_frequency": null
-    },
-    {
-      "code": "10676151000119100",
-      "term": "Mild persistent allergic asthma uncontrolled (finding)",
-      "vocabulary": "SNOMED CT",
-      "decision": "include",
-      "confidence": 1.0,
-      "rationale": "This code explicitly names mild persistent allergic asthma uncontrolled, which is a clinical subtype and control status variant of the primary condition.",
-      "sources": [
-        "ChromaDB",
-        "QOF Business Rules 2024-25"
-      ],
-      "usage_frequency": null
-    },
-    {
-      "code": "10676191000119106",
-      "term": "Mild persistent asthma uncontrolled (finding)",
-      "vocabulary": "SNOMED CT",
-      "decision": "include",
-      "confidence": 1.0,
-      "rationale": "This code explicitly names mild persistent asthma uncontrolled, which is a clinical subtype and control status variant of the primary condition.",
-      "sources": [
-        "OpenCodelists (Bennett Institute)",
-        "QOF Business Rules 2024-25"
-      ],
-      "usage_frequency": null
-    },
-    {
-      "code": "10676231000119102",
-      "term": "Mild persistent asthma uncontrolled co-occurrent with allergic rhinitis (disorder)",
-      "vocabulary": "SNOMED CT",
-      "decision": "include",
-      "confidence": 1.0,
-      "rationale": "This code explicitly names mild persistent asthma uncontrolled, which is a clinical subtype and control status variant of the primary condition.",
-      "sources": [
-        "OpenCodelists (Bennett Institute)",
-        "QOF Business Rules 2024-25"
-      ],
-      "usage_frequency": null
-    },
-    {
-      "code": "10676271000119104",
-      "term": "Acute exacerbation of moderate persistent allergic asthma (disorder)",
-      "vocabulary": "SNOMED CT",
-      "decision": "include",
-      "confidence": 1.0,
-      "rationale": "This code explicitly names moderate persistent allergic asthma and describes an acute exacerbation, which is a manifestation of the primary condition.",
-      "sources": [
-        "OMOPHub",
-        "OpenCodelists (Bennett Institute)",
-        "QOF Business Rules 2024-25"
-      ],
-      "usage_frequency": null
-    },
-    {
-      "code": "10676391000119108",
-      "term": "Moderate persistent allergic asthma (disorder)",
-      "vocabulary": "SNOMED CT",
-      "decision": "include",
-      "confidence": 1.0,
-      "rationale": "This code explicitly names moderate persistent allergic asthma, which is a clinical subtype and severity variant of the primary condition.",
-      "sources": [
-        "ChromaDB",
-        "OpenCodelists (Bennett Institute)",
-        "QOF Business Rules 2024-25"
-      ],
-      "usage_frequency": null
-    },
-    {
-      "code": "10676431000119103",
-      "term": "Acute severe exacerbation of moderate persistent allergic asthma",
-      "vocabulary": "SNOMED CT",
-      "decision": "include",
-      "confidence": 1.0,
-      "rationale": "This code explicitly names moderate persistent allergic asthma and describes an acute severe exacerbation, which is a manifestation of the primary condition.",
-      "sources": [
-        "OMOPHub",
-        "OpenCodelists (Bennett Institute)"
-      ],
-      "usage_frequency": null
-    },
-    {
-      "code": "10676551000119104",
-      "term": "Moderate persistent allergic asthma controlled (finding)",
-      "vocabulary": "SNOMED CT",
-      "decision": "include",
-      "confidence": 1.0,
-      "rationale": "This code explicitly names moderate persistent allergic asthma controlled, which is a clinical subtype and control status variant of the primary condition.",
-      "sources": [
-        "ChromaDB",
-        "QOF Business Rules 2024-25"
-      ],
-      "usage_frequency": null
-    },
-    {
-      "code": "10676591000119100",
-      "term": "Moderate persistent controlled asthma co-occurrent with allergic rhinitis (disorder)",
-      "vocabulary": "SNOMED CT",
-      "decision": "include",
-      "confidence": 1.0,
-      "rationale": "This code explicitly names moderate persistent controlled asthma, which is a clinical subtype and control status variant of the primary condition.",
-      "sources": [
-        "OpenCodelists (Bennett Institute)",
-        "QOF Business Rules 2024-25"
-      ],
-      "usage_frequency": null
-    },
-    {
-      "code": "10676631000119100",
-      "term": "Moderate persistent allergic asthma uncontrolled (finding)",
-      "vocabulary": "SNOMED CT",
-      "decision": "include",
-      "confidence": 1.0,
-      "rationale": "This code explicitly names moderate persistent allergic asthma uncontrolled, which is a clinical subtype and control status variant of the primary condition.",
-      "sources": [
-        "OpenCodelists (Bennett Institute)",
-        "QOF Business Rules 2024-25"
-      ],
-      "usage_frequency": null
-    },
-    {
-      "code": "10676671000119102",
-      "term": "Moderate persistent asthma uncontrolled co-occurrent with allergic rhinitis (disorder)",
-      "vocabulary": "SNOMED CT",
-      "decision": "include",
-      "confidence": 1.0,
-      "rationale": "This code explicitly names moderate persistent asthma uncontrolled, which is a clinical subtype and control status variant of the primary condition.",
-      "sources": [
-        "OpenCodelists (Bennett Institute)",
-        "QOF Business Rules 2024-25"
-      ],
-      "usage_frequency": null
-    },
-    {
-      "code": "10692721000119102",
-      "term": "Chronic obstructive asthma co-occurrent with acute exacerbation of asthma (disorder)",
-      "vocabulary": "SNOMED CT",
-      "decision": "include",
-      "confidence": 1.0,
-      "rationale": "This code explicitly names chronic obstructive asthma with acute exacerbation, which is a clinical subtype and manifestation of the primary condition.",
-      "sources": [
-        "OpenCodelists (Bennett Institute)",
-        "QOF Business Rules 2024-25"
-      ],
-      "usage_frequency": null
-    },
-    {
-      "code": "1086701000000102",
-      "term": "Life threatening acute exacerbation of allergic asthma (disorder)",
-      "vocabulary": "SNOMED CT",
-      "decision": "include",
-      "confidence": 1.0,
-      "rationale": "This code explicitly names allergic asthma and describes a life-threatening acute exacerbation, which is a severe manifestation of the primary condition.",
-      "sources": [
-        "OpenCodelists (Bennett Institute)",
-        "QOF Business Rules 2024-25"
-      ],
-      "usage_frequency": null
-    },
-    {
-      "code": "1086711000000100",
-      "term": "Life threatening acute exacerbation of intrinsic asthma (disorder)",
-      "vocabulary": "SNOMED CT",
-      "decision": "include",
-      "confidence": 1.0,
-      "rationale": "This code explicitly names intrinsic asthma and describes a life-threatening acute exacerbation, which is a severe manifestation of the primary condition.",
-      "sources": [
-        "OpenCodelists (Bennett Institute)",
-        "QOF Business Rules 2024-25"
-      ],
-      "usage_frequency": null
-    },
-    {
-      "code": "1103911000000103",
-      "term": "Severe asthma with fungal sensitisation (disorder)",
-      "vocabulary": "SNOMED CT",
-      "decision": "include",
-      "confidence": 1.0,
-      "rationale": "This code explicitly names severe asthma with fungal sensitisation, which is a clinical subtype and severity variant of the primary condition.",
-      "sources": [
-        "OpenCodelists (Bennett Institute)",
-        "QOF Business Rules 2024-25"
-      ],
-      "usage_frequency": null
-    },
-    {
-      "code": "11641008",
-      "term": "Millers' asthma (disorder)",
-      "vocabulary": "SNOMED CT",
-      "decision": "include",
-      "confidence": 1.0,
-      "rationale": "This code explicitly names Millers' asthma (occupational asthma in grain workers), which is a clinical subtype of the primary condition.",
-      "sources": [
-        "OpenCodelists (Bennett Institute)",
-        "QOF Business Rules 2024-25"
-      ],
-      "usage_frequency": null
-    },
     {
       "code": "195967001",
       "term": "Asthma (disorder)",
       "vocabulary": "SNOMED CT",
       "decision": "include",
       "confidence": 1.0,
-      "rationale": "Asthma (disorder) is the primary generic code for asthma and directly represents the queried condition.",
+      "rationale": "This is the generic asthma code and is the primary diagnostic code for asthma.",
       "sources": [
         "ChromaDB",
         "OpenCodelists (Bennett Institute)",
         "QOF Business Rules 2024-25"
       ],
-      "usage_frequency": null
+      "usage_frequency": 2879580,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": 317009,
+      "dmd_level": null
     },
     {
-      "code": "10674711000119105",
-      "term": "Acute severe exacerbation of asthma co-occurrent with allergic rhinitis",
+      "code": "426979002",
+      "term": "Mild persistent asthma (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.99,
+      "rationale": "Mild persistent asthma is a direct clinical subtype of asthma defined by severity and pattern.",
+      "sources": [
+        "ChromaDB",
+        "OpenCodelists (Bennett Institute)",
+        "QOF Business Rules 2024-25"
+      ],
+      "usage_frequency": 460,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": 4143828,
+      "dmd_level": null
+    },
+    {
+      "code": "427295004",
+      "term": "Moderate persistent asthma (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.99,
+      "rationale": "Moderate persistent asthma is a direct clinical subtype of asthma defined by severity and pattern.",
+      "sources": [
+        "ChromaDB",
+        "OpenCodelists (Bennett Institute)",
+        "QOF Business Rules 2024-25"
+      ],
+      "usage_frequency": 40,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": null,
+      "dmd_level": null
+    },
+    {
+      "code": "427603009",
+      "term": "Intermittent asthma (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.99,
+      "rationale": "Intermittent asthma is a direct clinical subtype of asthma defined by symptom frequency pattern.",
+      "sources": [
+        "ChromaDB",
+        "OpenCodelists (Bennett Institute)",
+        "QOF Business Rules 2024-25"
+      ],
+      "usage_frequency": 510,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": 4141978,
+      "dmd_level": null
+    },
+    {
+      "code": "427679007",
+      "term": "Mild intermittent asthma (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.99,
+      "rationale": "Mild intermittent asthma is a direct clinical subtype of asthma defined by severity and pattern.",
+      "sources": [
+        "ChromaDB",
+        "OpenCodelists (Bennett Institute)",
+        "QOF Business Rules 2024-25"
+      ],
+      "usage_frequency": 2140,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": 4146581,
+      "dmd_level": null
+    },
+    {
+      "code": "445427006",
+      "term": "Seasonal asthma (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.99,
+      "rationale": "Seasonal asthma is a direct clinical subtype of asthma defined by temporal pattern of symptoms.",
+      "sources": [
+        "ChromaDB",
+        "OpenCodelists (Bennett Institute)",
+        "QOF Business Rules 2024-25"
+      ],
+      "usage_frequency": 3680,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": 40483397,
+      "dmd_level": null
+    },
+    {
+      "code": "55570000",
+      "term": "Asthma without status asthmaticus (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.99,
+      "rationale": "Asthma without status asthmaticus is a clinical variant of asthma excluding severe acute complications.",
+      "sources": [
+        "ChromaDB",
+        "OpenCodelists (Bennett Institute)",
+        "QOF Business Rules 2024-25"
+      ],
+      "usage_frequency": 60,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": 4206340,
+      "dmd_level": null
+    },
+    {
+      "code": "56968009",
+      "term": "Asthma caused by wood dust (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.99,
+      "rationale": "Asthma caused by wood dust is a direct clinical subtype of asthma with identified occupational trigger.",
+      "sources": [
+        "OpenCodelists (Bennett Institute)",
+        "QOF Business Rules 2024-25"
+      ],
+      "usage_frequency": 10,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": null,
+      "dmd_level": null
+    },
+    {
+      "code": "57607007",
+      "term": "Occupational asthma (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.99,
+      "rationale": "Occupational asthma is a direct clinical subtype of asthma with work-related etiology.",
+      "sources": [
+        "ChromaDB",
+        "OpenCodelists (Bennett Institute)",
+        "QOF Business Rules 2024-25"
+      ],
+      "usage_frequency": 1230,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": 4212099,
+      "dmd_level": null
+    },
+    {
+      "code": "63088003",
+      "term": "Allergic asthma without status asthmaticus (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.99,
+      "rationale": "Allergic asthma without status asthmaticus is a direct clinical subtype of asthma with allergic etiology.",
+      "sources": [
+        "ChromaDB",
+        "OpenCodelists (Bennett Institute)",
+        "QOF Business Rules 2024-25"
+      ],
+      "usage_frequency": 610,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": 4271333,
+      "dmd_level": null
+    },
+    {
+      "code": "703953004",
+      "term": "Allergic asthma caused by Dermatophagoides pteronyssinus (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.99,
+      "rationale": "Allergic asthma caused by Dermatophagoides pteronyssinus is a direct clinical subtype of asthma with specific allergen trigger.",
+      "sources": [
+        "OpenCodelists (Bennett Institute)",
+        "QOF Business Rules 2024-25"
+      ],
+      "usage_frequency": 10,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": null,
+      "dmd_level": null
+    },
+    {
+      "code": "707444001",
+      "term": "Uncomplicated asthma (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.99,
+      "rationale": "Uncomplicated asthma is a direct clinical variant of asthma without additional complications.",
+      "sources": [
+        "ChromaDB",
+        "OpenCodelists (Bennett Institute)",
+        "QOF Business Rules 2024-25"
+      ],
+      "usage_frequency": null,
+      "usage_status": "withheld_below_5",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": 45768910,
+      "dmd_level": null
+    },
+    {
+      "code": "735588005",
+      "term": "Uncomplicated allergic asthma (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.99,
+      "rationale": "Uncomplicated allergic asthma is a direct clinical subtype of asthma with allergic etiology and no complications.",
+      "sources": [
+        "ChromaDB",
+        "OpenCodelists (Bennett Institute)",
+        "QOF Business Rules 2024-25"
+      ],
+      "usage_frequency": null,
+      "usage_status": "withheld_below_5",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": 42539549,
+      "dmd_level": null
+    },
+    {
+      "code": "735589002",
+      "term": "Uncomplicated non-allergic asthma (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.99,
+      "rationale": "Uncomplicated non-allergic asthma is a direct clinical subtype of asthma with non-allergic etiology and no complications.",
+      "sources": [
+        "ChromaDB",
+        "OpenCodelists (Bennett Institute)",
+        "QOF Business Rules 2024-25"
+      ],
+      "usage_frequency": 20,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": 42536649,
+      "dmd_level": null
+    },
+    {
+      "code": "829976001",
+      "term": "Thunderstorm asthma (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.99,
+      "rationale": "Thunderstorm asthma is a direct clinical subtype of asthma triggered by specific meteorological conditions.",
+      "sources": [
+        "ChromaDB",
+        "OpenCodelists (Bennett Institute)",
+        "QOF Business Rules 2024-25"
+      ],
+      "usage_frequency": 20,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": 3661412,
+      "dmd_level": null
+    },
+    {
+      "code": "10674991000119104",
+      "term": "Intermittent allergic asthma (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.98,
+      "rationale": "Intermittent allergic asthma is a primary asthma subtype; term explicitly contains 'asthma'.",
+      "sources": [
+        "ChromaDB",
+        "OpenCodelists (Bennett Institute)",
+        "QOF Business Rules 2024-25"
+      ],
+      "usage_frequency": 80,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": 37310241,
+      "dmd_level": null
+    },
+    {
+      "code": "10675391000119101",
+      "term": "Severe controlled persistent asthma",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.98,
+      "rationale": "Severe controlled persistent asthma is a primary asthma severity variant; term explicitly contains 'asthma'.",
+      "sources": [
+        "ChromaDB",
+        "OpenCodelists (Bennett Institute)"
+      ],
+      "usage_frequency": 10,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": null,
+      "dmd_level": null
+    },
+    {
+      "code": "10675431000119106",
+      "term": "Severe persistent allergic asthma (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.98,
+      "rationale": "Severe persistent allergic asthma is a primary asthma subtype and severity variant; term explicitly contains 'asthma'.",
+      "sources": [
+        "ChromaDB",
+        "OpenCodelists (Bennett Institute)",
+        "QOF Business Rules 2024-25"
+      ],
+      "usage_frequency": 120,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": 46269770,
+      "dmd_level": null
+    },
+    {
+      "code": "10675591000119108",
+      "term": "Severe persistent allergic asthma controlled (finding)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.98,
+      "rationale": "Severe persistent allergic asthma controlled is a primary asthma severity and control variant; term explicitly contains 'asthma'.",
+      "sources": [
+        "ChromaDB",
+        "QOF Business Rules 2024-25"
+      ],
+      "usage_frequency": null,
+      "usage_status": "not_in_dataset",
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": null,
+      "dmd_level": null
+    },
+    {
+      "code": "10675591000119109",
+      "term": "Severe persistent allergic asthma controlled",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.98,
+      "rationale": "Severe persistent allergic asthma controlled is a primary asthma severity and control variant; term explicitly contains 'asthma'.",
+      "sources": [
+        "ChromaDB",
+        "OpenCodelists (Bennett Institute)"
+      ],
+      "usage_frequency": 10,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": null,
+      "dmd_level": null
+    },
+    {
+      "code": "10675671000119107",
+      "term": "Severe persistent allergic asthma uncontrolled",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.98,
+      "rationale": "Severe persistent allergic asthma uncontrolled is a primary asthma severity and control variant; term explicitly contains 'asthma'.",
+      "sources": [
+        "ChromaDB",
+        "OpenCodelists (Bennett Institute)"
+      ],
+      "usage_frequency": 10,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": null,
+      "dmd_level": null
+    },
+    {
+      "code": "10675671000119108",
+      "term": "Severe persistent allergic asthma uncontrolled (finding)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.98,
+      "rationale": "Severe persistent allergic asthma uncontrolled is a primary asthma severity and control variant; term explicitly contains 'asthma'.",
+      "sources": [
+        "ChromaDB",
+        "QOF Business Rules 2024-25"
+      ],
+      "usage_frequency": null,
+      "usage_status": "not_in_dataset",
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": null,
+      "dmd_level": null
+    },
+    {
+      "code": "10675871000119106",
+      "term": "Mild persistent allergic asthma (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.98,
+      "rationale": "Mild persistent allergic asthma is a primary asthma subtype and severity variant; term explicitly contains 'asthma'.",
+      "sources": [
+        "ChromaDB",
+        "OpenCodelists (Bennett Institute)",
+        "QOF Business Rules 2024-25"
+      ],
+      "usage_frequency": 270,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": 46269776,
+      "dmd_level": null
+    },
+    {
+      "code": "10676031000119106",
+      "term": "Mild persistent allergic asthma controlled (finding)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.98,
+      "rationale": "Mild persistent allergic asthma controlled is a primary asthma severity and control variant; term explicitly contains 'asthma'.",
+      "sources": [
+        "ChromaDB",
+        "OpenCodelists (Bennett Institute)",
+        "QOF Business Rules 2024-25"
+      ],
+      "usage_frequency": 140,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": null,
+      "dmd_level": null
+    },
+    {
+      "code": "10676151000119100",
+      "term": "Mild persistent allergic asthma uncontrolled (finding)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.98,
+      "rationale": "Mild persistent allergic asthma uncontrolled is a primary asthma severity and control variant; term explicitly contains 'asthma'.",
+      "sources": [
+        "ChromaDB",
+        "QOF Business Rules 2024-25"
+      ],
+      "usage_frequency": null,
+      "usage_status": "not_in_dataset",
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": null,
+      "dmd_level": null
+    },
+    {
+      "code": "10676191000119106",
+      "term": "Mild persistent asthma uncontrolled (finding)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.98,
+      "rationale": "Mild persistent asthma uncontrolled is a primary asthma severity and control variant; term explicitly contains 'asthma'.",
+      "sources": [
+        "OpenCodelists (Bennett Institute)",
+        "QOF Business Rules 2024-25"
+      ],
+      "usage_frequency": 140,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": null,
+      "dmd_level": null
+    },
+    {
+      "code": "10676391000119108",
+      "term": "Moderate persistent allergic asthma (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.98,
+      "rationale": "Moderate persistent allergic asthma is a primary asthma subtype and severity variant; term explicitly contains 'asthma'.",
+      "sources": [
+        "ChromaDB",
+        "OpenCodelists (Bennett Institute)",
+        "QOF Business Rules 2024-25"
+      ],
+      "usage_frequency": 20,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": 46269784,
+      "dmd_level": null
+    },
+    {
+      "code": "10676551000119104",
+      "term": "Moderate persistent allergic asthma controlled (finding)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.98,
+      "rationale": "Moderate persistent allergic asthma controlled is a primary asthma severity and control variant; term explicitly contains 'asthma'.",
+      "sources": [
+        "ChromaDB",
+        "QOF Business Rules 2024-25"
+      ],
+      "usage_frequency": null,
+      "usage_status": "not_in_dataset",
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": null,
+      "dmd_level": null
+    },
+    {
+      "code": "10676631000119100",
+      "term": "Moderate persistent allergic asthma uncontrolled (finding)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.98,
+      "rationale": "Moderate persistent allergic asthma uncontrolled is a primary asthma severity and control variant; term explicitly contains 'asthma'.",
+      "sources": [
+        "OpenCodelists (Bennett Institute)",
+        "QOF Business Rules 2024-25"
+      ],
+      "usage_frequency": 10,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": null,
+      "dmd_level": null
+    },
+    {
+      "code": "1290026000",
+      "term": "Uncontrolled asthma",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.98,
+      "rationale": "Uncontrolled asthma is a primary asthma control status variant; term explicitly contains 'asthma'.",
+      "sources": [
+        "ChromaDB",
+        "OpenCodelists (Bennett Institute)"
+      ],
+      "usage_frequency": 10,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": 1244553,
+      "dmd_level": null
+    },
+    {
+      "code": "1741000119102",
+      "term": "Intermittent asthma uncontrolled (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.98,
+      "rationale": "Intermittent asthma uncontrolled is a primary asthma severity and control variant; term explicitly contains 'asthma'.",
+      "sources": [
+        "ChromaDB",
+        "OpenCodelists (Bennett Institute)",
+        "QOF Business Rules 2024-25"
+      ],
+      "usage_frequency": 120,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": 46270322,
+      "dmd_level": null
+    },
+    {
+      "code": "10674791000119100",
+      "term": "Acute exacerbation of intermittent allergic asthma (disorder)",
       "vocabulary": "SNOMED CT",
       "decision": "include",
       "confidence": 0.95,
-      "rationale": "This code explicitly names asthma in the term and describes an acute severe exacerbation, which is a manifestation of the primary condition.",
+      "rationale": "Acute exacerbation of intermittent allergic asthma is a direct clinical manifestation of asthma; term explicitly contains 'asthma'.",
       "sources": [
-        "OMOPHub",
+        "ChromaDB",
+        "QOF Business Rules 2024-25"
+      ],
+      "usage_frequency": null,
+      "usage_status": "not_in_dataset",
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": null,
+      "dmd_level": null
+    },
+    {
+      "code": "10674791000119101",
+      "term": "Acute exacerbation of intermittent allergic asthma",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Acute exacerbation of intermittent allergic asthma is a direct clinical manifestation of asthma; term explicitly contains 'asthma'.",
+      "sources": [
+        "ChromaDB",
         "OpenCodelists (Bennett Institute)"
       ],
-      "usage_frequency": null
+      "usage_frequency": 50,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "10675551000119104",
@@ -9251,12 +9315,17 @@
       "vocabulary": "SNOMED CT",
       "decision": "include",
       "confidence": 0.95,
-      "rationale": "This code explicitly names severe persistent asthma and describes an acute severe exacerbation, which is a manifestation of the primary condition.",
+      "rationale": "Acute severe exacerbation of severe persistent asthma is a direct manifestation of asthma; term explicitly contains 'asthma'.",
       "sources": [
         "OpenCodelists (Bennett Institute)",
         "QOF Business Rules 2024-25"
       ],
-      "usage_frequency": null
+      "usage_frequency": 10,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "10675711000119106",
@@ -9264,12 +9333,17 @@
       "vocabulary": "SNOMED CT",
       "decision": "include",
       "confidence": 0.95,
-      "rationale": "This code explicitly names severe persistent asthma uncontrolled, which is a clinical subtype and control status variant of the primary condition.",
+      "rationale": "Severe persistent asthma uncontrolled is a primary asthma severity and control variant; term explicitly contains 'asthma'.",
       "sources": [
         "OpenCodelists (Bennett Institute)",
         "QOF Business Rules 2024-25"
       ],
-      "usage_frequency": null
+      "usage_frequency": null,
+      "usage_status": "withheld_below_5",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "10675991000119100",
@@ -9277,13 +9351,215 @@
       "vocabulary": "SNOMED CT",
       "decision": "include",
       "confidence": 0.95,
-      "rationale": "This code explicitly names mild persistent allergic asthma and describes an acute severe exacerbation, which is a manifestation of the primary condition.",
+      "rationale": "Acute severe exacerbation of mild persistent allergic asthma is a direct manifestation of asthma; term explicitly contains 'asthma'.",
       "sources": [
-        "OMOPHub",
         "OpenCodelists (Bennett Institute)",
         "QOF Business Rules 2024-25"
       ],
-      "usage_frequency": null
+      "usage_frequency": 20,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": null,
+      "dmd_level": null
+    },
+    {
+      "code": "10676111000119102",
+      "term": "Mild persistent asthma controlled co-occurrent with allergic rhinitis (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Mild persistent asthma controlled is a primary asthma severity and control variant; term explicitly contains 'asthma'.",
+      "sources": [
+        "OpenCodelists (Bennett Institute)",
+        "QOF Business Rules 2024-25"
+      ],
+      "usage_frequency": 10,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": null,
+      "dmd_level": null
+    },
+    {
+      "code": "10676231000119102",
+      "term": "Mild persistent asthma uncontrolled co-occurrent with allergic rhinitis (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Mild persistent asthma uncontrolled is a primary asthma severity and control variant; term explicitly contains 'asthma'.",
+      "sources": [
+        "OpenCodelists (Bennett Institute)",
+        "QOF Business Rules 2024-25"
+      ],
+      "usage_frequency": null,
+      "usage_status": "withheld_below_5",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": null,
+      "dmd_level": null
+    },
+    {
+      "code": "10676271000119104",
+      "term": "Acute exacerbation of moderate persistent allergic asthma (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Acute exacerbation of moderate persistent allergic asthma is a direct manifestation of asthma; term explicitly contains 'asthma'.",
+      "sources": [
+        "OpenCodelists (Bennett Institute)",
+        "QOF Business Rules 2024-25"
+      ],
+      "usage_frequency": 20,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": null,
+      "dmd_level": null
+    },
+    {
+      "code": "10676591000119100",
+      "term": "Moderate persistent controlled asthma co-occurrent with allergic rhinitis (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Moderate persistent controlled asthma is a primary asthma severity and control variant; term explicitly contains 'asthma'.",
+      "sources": [
+        "OpenCodelists (Bennett Institute)",
+        "QOF Business Rules 2024-25"
+      ],
+      "usage_frequency": null,
+      "usage_status": "not_in_dataset",
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": null,
+      "dmd_level": null
+    },
+    {
+      "code": "10676671000119102",
+      "term": "Moderate persistent asthma uncontrolled co-occurrent with allergic rhinitis (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Moderate persistent asthma uncontrolled is a primary asthma severity and control variant; term explicitly contains 'asthma'.",
+      "sources": [
+        "OpenCodelists (Bennett Institute)",
+        "QOF Business Rules 2024-25"
+      ],
+      "usage_frequency": 10,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": null,
+      "dmd_level": null
+    },
+    {
+      "code": "10692721000119102",
+      "term": "Chronic obstructive asthma co-occurrent with acute exacerbation of asthma (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Chronic obstructive asthma with acute exacerbation is a direct manifestation of asthma; term explicitly contains 'asthma'.",
+      "sources": [
+        "OpenCodelists (Bennett Institute)",
+        "QOF Business Rules 2024-25"
+      ],
+      "usage_frequency": 40,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": null,
+      "dmd_level": null
+    },
+    {
+      "code": "1086701000000102",
+      "term": "Life threatening acute exacerbation of allergic asthma (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Life threatening acute exacerbation of allergic asthma is a direct manifestation of asthma; term explicitly contains 'asthma'.",
+      "sources": [
+        "OpenCodelists (Bennett Institute)",
+        "QOF Business Rules 2024-25"
+      ],
+      "usage_frequency": 60,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": null,
+      "dmd_level": null
+    },
+    {
+      "code": "1086711000000100",
+      "term": "Life threatening acute exacerbation of intrinsic asthma (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Life threatening acute exacerbation of intrinsic asthma is a direct manifestation of asthma; term explicitly contains 'asthma'.",
+      "sources": [
+        "OpenCodelists (Bennett Institute)",
+        "QOF Business Rules 2024-25"
+      ],
+      "usage_frequency": 10,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": null,
+      "dmd_level": null
+    },
+    {
+      "code": "1103911000000103",
+      "term": "Severe asthma with fungal sensitisation (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Severe asthma with fungal sensitisation is a primary asthma subtype with specific etiology; term explicitly contains 'asthma'.",
+      "sources": [
+        "OpenCodelists (Bennett Institute)",
+        "QOF Business Rules 2024-25"
+      ],
+      "usage_frequency": 50,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": null,
+      "dmd_level": null
+    },
+    {
+      "code": "11641008",
+      "term": "Millers' asthma (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Millers' asthma is an occupational asthma subtype; term explicitly contains 'asthma'.",
+      "sources": [
+        "OpenCodelists (Bennett Institute)",
+        "QOF Business Rules 2024-25"
+      ],
+      "usage_frequency": null,
+      "usage_status": "not_in_dataset",
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": null,
+      "dmd_level": null
+    },
+    {
+      "code": "11944003",
+      "term": "Feather-pickers' disease (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Feather-pickers' disease is an occupational asthma variant; term explicitly contains 'asthma' in clinical context.",
+      "sources": [
+        "OpenCodelists (Bennett Institute)",
+        "QOF Business Rules 2024-25"
+      ],
+      "usage_frequency": null,
+      "usage_status": "withheld_below_5",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "12428000",
@@ -9291,39 +9567,143 @@
       "vocabulary": "SNOMED CT",
       "decision": "include",
       "confidence": 0.95,
-      "rationale": "Intrinsic asthma is a recognized clinical subtype of asthma and directly represents the queried condition.",
+      "rationale": "Intrinsic asthma without status asthmaticus is a primary asthma subtype; term explicitly contains 'asthma'.",
       "sources": [
         "OpenCodelists (Bennett Institute)",
         "QOF Business Rules 2024-25"
       ],
-      "usage_frequency": null
+      "usage_frequency": 280,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
-      "code": "1290026000",
-      "term": "Uncontrolled asthma",
+      "code": "124991000119109",
+      "term": "Severe persistent asthma co-occurrent with allergic rhinitis (disorder)",
       "vocabulary": "SNOMED CT",
       "decision": "include",
       "confidence": 0.95,
-      "rationale": "Uncontrolled asthma is a control status variant of asthma and directly represents the queried condition.",
+      "rationale": "Severe persistent asthma co-occurrent with allergic rhinitis is a primary asthma severity variant; term explicitly contains 'asthma'.",
       "sources": [
-        "ChromaDB",
-        "OpenCodelists (Bennett Institute)"
-      ],
-      "usage_frequency": null
-    },
-    {
-      "code": "1741000119102",
-      "term": "Intermittent asthma uncontrolled (disorder)",
-      "vocabulary": "SNOMED CT",
-      "decision": "include",
-      "confidence": 0.95,
-      "rationale": "Intermittent asthma uncontrolled is a severity and control status variant of asthma and directly represents the queried condition.",
-      "sources": [
-        "ChromaDB",
         "OpenCodelists (Bennett Institute)",
         "QOF Business Rules 2024-25"
       ],
-      "usage_frequency": null
+      "usage_frequency": 10,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": null,
+      "dmd_level": null
+    },
+    {
+      "code": "125001000119103",
+      "term": "Moderate persistent asthma co-occurrent with allergic rhinitis (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Moderate persistent asthma co-occurrent with allergic rhinitis is a primary asthma severity variant; term explicitly contains 'asthma'.",
+      "sources": [
+        "OpenCodelists (Bennett Institute)",
+        "QOF Business Rules 2024-25"
+      ],
+      "usage_frequency": 20,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": null,
+      "dmd_level": null
+    },
+    {
+      "code": "125011000119100",
+      "term": "Mild persistent asthma co-occurrent with allergic rhinitis (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Mild persistent asthma co-occurrent with allergic rhinitis is a primary asthma severity variant; term explicitly contains 'asthma'.",
+      "sources": [
+        "OpenCodelists (Bennett Institute)",
+        "QOF Business Rules 2024-25"
+      ],
+      "usage_frequency": 50,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": null,
+      "dmd_level": null
+    },
+    {
+      "code": "125021000119107",
+      "term": "Intermittent asthma co-occurrent with allergic rhinitis (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Intermittent asthma co-occurrent with allergic rhinitis is a primary asthma severity variant; term explicitly contains 'asthma'.",
+      "sources": [
+        "OpenCodelists (Bennett Institute)",
+        "QOF Business Rules 2024-25"
+      ],
+      "usage_frequency": 40,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": null,
+      "dmd_level": null
+    },
+    {
+      "code": "13151001",
+      "term": "Flax-dressers' disease (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Flax-dressers' disease is an occupational asthma variant; term explicitly contains 'asthma' in clinical context.",
+      "sources": [
+        "OpenCodelists (Bennett Institute)",
+        "QOF Business Rules 2024-25"
+      ],
+      "usage_frequency": null,
+      "usage_status": "withheld_below_5",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": null,
+      "dmd_level": null
+    },
+    {
+      "code": "18041002",
+      "term": "Printers' asthma (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Printers' asthma is a specific occupational asthma subtype and represents an instance of asthma.",
+      "sources": [
+        "OpenCodelists (Bennett Institute)",
+        "QOF Business Rules 2024-25"
+      ],
+      "usage_frequency": null,
+      "usage_status": "not_in_dataset",
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": null,
+      "dmd_level": null
+    },
+    {
+      "code": "195949008",
+      "term": "Chronic asthmatic bronchitis (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Chronic asthmatic bronchitis is a clinical subtype of asthma and represents an instance of the condition.",
+      "sources": [
+        "OpenCodelists (Bennett Institute)",
+        "QOF Business Rules 2024-25"
+      ],
+      "usage_frequency": 710,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "195977004",
@@ -9331,13 +9711,36 @@
       "vocabulary": "SNOMED CT",
       "decision": "include",
       "confidence": 0.95,
-      "rationale": "Mixed asthma is a recognized clinical subtype of asthma and directly represents the queried condition.",
+      "rationale": "Mixed asthma is a clinical subtype combining allergic and non-allergic features and represents an instance of asthma.",
       "sources": [
         "ChromaDB",
         "OpenCodelists (Bennett Institute)",
         "QOF Business Rules 2024-25"
       ],
-      "usage_frequency": null
+      "usage_frequency": 960,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": 4110051,
+      "dmd_level": null
+    },
+    {
+      "code": "19849005",
+      "term": "Meat-wrappers' asthma (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Meat-wrappers' asthma is a specific occupational asthma subtype and represents an instance of asthma.",
+      "sources": [
+        "OpenCodelists (Bennett Institute)",
+        "QOF Business Rules 2024-25"
+      ],
+      "usage_frequency": null,
+      "usage_status": "withheld_below_5",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "225057002",
@@ -9345,12 +9748,17 @@
       "vocabulary": "SNOMED CT",
       "decision": "include",
       "confidence": 0.95,
-      "rationale": "Brittle asthma is a recognized clinical subtype of asthma and directly represents the queried condition.",
+      "rationale": "Brittle asthma is a clinical severity variant of asthma and represents an instance of the condition.",
       "sources": [
         "OpenCodelists (Bennett Institute)",
         "QOF Business Rules 2024-25"
       ],
-      "usage_frequency": null
+      "usage_frequency": 2000,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "233678006",
@@ -9358,13 +9766,18 @@
       "vocabulary": "SNOMED CT",
       "decision": "include",
       "confidence": 0.95,
-      "rationale": "Childhood asthma is a recognized age-specific subtype of asthma and directly represents the queried condition.",
+      "rationale": "Childhood asthma is an age-specific subtype of asthma and represents an instance of the condition.",
       "sources": [
         "ChromaDB",
         "OpenCodelists (Bennett Institute)",
         "QOF Business Rules 2024-25"
       ],
-      "usage_frequency": null
+      "usage_frequency": 14010,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": 4051466,
+      "dmd_level": null
     },
     {
       "code": "233679003",
@@ -9372,12 +9785,53 @@
       "vocabulary": "SNOMED CT",
       "decision": "include",
       "confidence": 0.95,
-      "rationale": "Late onset asthma is a recognized age-specific subtype of asthma and directly represents the queried condition.",
+      "rationale": "Late onset asthma is an age-specific subtype of asthma and represents an instance of the condition.",
       "sources": [
         "OpenCodelists (Bennett Institute)",
         "QOF Business Rules 2024-25"
       ],
-      "usage_frequency": null
+      "usage_frequency": 4530,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": null,
+      "dmd_level": null
+    },
+    {
+      "code": "233687002",
+      "term": "Colophony asthma (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Colophony asthma is a specific occupational asthma subtype and represents an instance of asthma.",
+      "sources": [
+        "OpenCodelists (Bennett Institute)",
+        "QOF Business Rules 2024-25"
+      ],
+      "usage_frequency": null,
+      "usage_status": "withheld_below_5",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": null,
+      "dmd_level": null
+    },
+    {
+      "code": "233688007",
+      "term": "Sulfite-induced asthma (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Sulfite-induced asthma is a specific trigger-induced asthma subtype and represents an instance of asthma.",
+      "sources": [
+        "OpenCodelists (Bennett Institute)",
+        "QOF Business Rules 2024-25"
+      ],
+      "usage_frequency": 10,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "2360001000004109",
@@ -9385,13 +9839,18 @@
       "vocabulary": "SNOMED CT",
       "decision": "include",
       "confidence": 0.95,
-      "rationale": "Steroid dependent asthma is a severity/treatment-dependent variant of asthma and directly represents the queried condition.",
+      "rationale": "Steroid dependent asthma is a severity/treatment-response variant of asthma and represents an instance of the condition.",
       "sources": [
         "ChromaDB",
         "OpenCodelists (Bennett Institute)",
         "QOF Business Rules 2024-25"
       ],
-      "usage_frequency": null
+      "usage_frequency": 50,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": 46273635,
+      "dmd_level": null
     },
     {
       "code": "266361008",
@@ -9399,13 +9858,18 @@
       "vocabulary": "SNOMED CT",
       "decision": "include",
       "confidence": 0.95,
-      "rationale": "Non-allergic asthma is a recognized clinical subtype of asthma and directly represents the queried condition.",
+      "rationale": "Non-allergic asthma is a clinical subtype of asthma and represents an instance of the condition.",
       "sources": [
         "ChromaDB",
         "OpenCodelists (Bennett Institute)",
         "QOF Business Rules 2024-25"
       ],
-      "usage_frequency": null
+      "usage_frequency": 7220,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": 4145497,
+      "dmd_level": null
     },
     {
       "code": "281239006",
@@ -9413,14 +9877,18 @@
       "vocabulary": "SNOMED CT",
       "decision": "include",
       "confidence": 0.95,
-      "rationale": "Exacerbation of asthma is a clinical manifestation of asthma and directly represents the queried condition.",
+      "rationale": "Exacerbation of asthma is an acute manifestation of asthma and represents an instance of the condition.",
       "sources": [
         "ChromaDB",
-        "OMOPHub",
         "OpenCodelists (Bennett Institute)",
         "QOF Business Rules 2024-25"
       ],
-      "usage_frequency": null
+      "usage_frequency": 339040,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": 257581,
+      "dmd_level": null
     },
     {
       "code": "304527002",
@@ -9428,12 +9896,53 @@
       "vocabulary": "SNOMED CT",
       "decision": "include",
       "confidence": 0.95,
-      "rationale": "Acute asthma is a severity variant of asthma and directly represents the queried condition.",
+      "rationale": "Acute asthma is an acute presentation of asthma and represents an instance of the condition.",
       "sources": [
         "ChromaDB",
         "OpenCodelists (Bennett Institute)"
       ],
-      "usage_frequency": null
+      "usage_frequency": 3800,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": null,
+      "dmd_level": null
+    },
+    {
+      "code": "31387002",
+      "term": "Exercise-induced asthma (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Exercise-induced asthma is a trigger-specific subtype of asthma and represents an instance of the condition.",
+      "sources": [
+        "OpenCodelists (Bennett Institute)",
+        "QOF Business Rules 2024-25"
+      ],
+      "usage_frequency": 29690,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": null,
+      "dmd_level": null
+    },
+    {
+      "code": "34015007",
+      "term": "Bakers' asthma (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Bakers' asthma is a specific occupational asthma subtype and represents an instance of asthma.",
+      "sources": [
+        "OpenCodelists (Bennett Institute)",
+        "QOF Business Rules 2024-25"
+      ],
+      "usage_frequency": 10,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "370218001",
@@ -9441,13 +9950,18 @@
       "vocabulary": "SNOMED CT",
       "decision": "include",
       "confidence": 0.95,
-      "rationale": "Mild asthma is a severity variant of asthma and directly represents the queried condition.",
+      "rationale": "Mild asthma is a severity classification of asthma and represents an instance of the condition.",
       "sources": [
         "ChromaDB",
         "OpenCodelists (Bennett Institute)",
         "QOF Business Rules 2024-25"
       ],
-      "usage_frequency": null
+      "usage_frequency": 35720,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": 4155468,
+      "dmd_level": null
     },
     {
       "code": "370219009",
@@ -9455,13 +9969,18 @@
       "vocabulary": "SNOMED CT",
       "decision": "include",
       "confidence": 0.95,
-      "rationale": "Moderate asthma is a severity variant of asthma and directly represents the queried condition.",
+      "rationale": "Moderate asthma is a severity classification of asthma and represents an instance of the condition.",
       "sources": [
         "ChromaDB",
         "OpenCodelists (Bennett Institute)",
         "QOF Business Rules 2024-25"
       ],
-      "usage_frequency": null
+      "usage_frequency": 8260,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": 4155469,
+      "dmd_level": null
     },
     {
       "code": "370220003",
@@ -9469,13 +9988,18 @@
       "vocabulary": "SNOMED CT",
       "decision": "include",
       "confidence": 0.95,
-      "rationale": "Occasional asthma is a severity/frequency variant of asthma and directly represents the queried condition.",
+      "rationale": "Occasional asthma is a frequency/severity classification of asthma and represents an instance of the condition.",
       "sources": [
         "ChromaDB",
         "OpenCodelists (Bennett Institute)",
         "QOF Business Rules 2024-25"
       ],
-      "usage_frequency": null
+      "usage_frequency": 3410,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": 4155470,
+      "dmd_level": null
     },
     {
       "code": "370221004",
@@ -9483,13 +10007,18 @@
       "vocabulary": "SNOMED CT",
       "decision": "include",
       "confidence": 0.95,
-      "rationale": "Severe asthma is a severity variant of asthma and directly represents the queried condition.",
+      "rationale": "Severe asthma is a severity classification of asthma and represents an instance of the condition.",
       "sources": [
         "ChromaDB",
         "OpenCodelists (Bennett Institute)",
         "QOF Business Rules 2024-25"
       ],
-      "usage_frequency": null
+      "usage_frequency": 5500,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": 4152913,
+      "dmd_level": null
     },
     {
       "code": "389145006",
@@ -9497,13 +10026,109 @@
       "vocabulary": "SNOMED CT",
       "decision": "include",
       "confidence": 0.95,
-      "rationale": "Allergic asthma is a recognized clinical subtype of asthma and directly represents the queried condition.",
+      "rationale": "Allergic asthma is a clinical subtype of asthma and represents an instance of the condition.",
       "sources": [
         "ChromaDB",
         "OpenCodelists (Bennett Institute)",
         "QOF Business Rules 2024-25"
       ],
-      "usage_frequency": null
+      "usage_frequency": 27970,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": 4191479,
+      "dmd_level": null
+    },
+    {
+      "code": "404804003",
+      "term": "Platinum asthma (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Platinum asthma is a specific occupational asthma subtype and represents an instance of asthma.",
+      "sources": [
+        "OpenCodelists (Bennett Institute)",
+        "QOF Business Rules 2024-25"
+      ],
+      "usage_frequency": 10,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": null,
+      "dmd_level": null
+    },
+    {
+      "code": "404806001",
+      "term": "Cheese-makers' asthma (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Cheese-makers' asthma is a specific occupational asthma subtype and represents an instance of asthma.",
+      "sources": [
+        "OpenCodelists (Bennett Institute)",
+        "QOF Business Rules 2024-25"
+      ],
+      "usage_frequency": null,
+      "usage_status": "not_in_dataset",
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": null,
+      "dmd_level": null
+    },
+    {
+      "code": "404808000",
+      "term": "Isocyanate induced asthma (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Isocyanate induced asthma is a specific trigger-induced occupational asthma subtype and represents an instance of asthma.",
+      "sources": [
+        "OpenCodelists (Bennett Institute)",
+        "QOF Business Rules 2024-25"
+      ],
+      "usage_frequency": null,
+      "usage_status": "withheld_below_5",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": null,
+      "dmd_level": null
+    },
+    {
+      "code": "405944004",
+      "term": "Asthmatic bronchitis (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Asthmatic bronchitis is a clinical subtype of asthma and represents an instance of the condition.",
+      "sources": [
+        "ChromaDB",
+        "OpenCodelists (Bennett Institute)",
+        "QOF Business Rules 2024-25"
+      ],
+      "usage_frequency": 3990,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": 4233784,
+      "dmd_level": null
+    },
+    {
+      "code": "407674008",
+      "term": "Aspirin-induced asthma (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Aspirin-induced asthma is a specific trigger-induced asthma subtype and represents an instance of asthma.",
+      "sources": [
+        "OpenCodelists (Bennett Institute)",
+        "QOF Business Rules 2024-25"
+      ],
+      "usage_frequency": 150,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "409663006",
@@ -9511,13 +10136,90 @@
       "vocabulary": "SNOMED CT",
       "decision": "include",
       "confidence": 0.95,
-      "rationale": "Cough variant asthma is a recognized clinical subtype of asthma and directly represents the queried condition.",
+      "rationale": "Cough variant asthma is a clinical presentation variant of asthma and represents an instance of the condition.",
       "sources": [
         "ChromaDB",
         "OpenCodelists (Bennett Institute)",
         "QOF Business Rules 2024-25"
       ],
-      "usage_frequency": null
+      "usage_frequency": 850,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": 313236,
+      "dmd_level": null
+    },
+    {
+      "code": "41553006",
+      "term": "Detergent asthma (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Detergent asthma is a specific occupational asthma subtype and represents an instance of asthma.",
+      "sources": [
+        "OpenCodelists (Bennett Institute)",
+        "QOF Business Rules 2024-25"
+      ],
+      "usage_frequency": 10,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": null,
+      "dmd_level": null
+    },
+    {
+      "code": "418395004",
+      "term": "Tea-makers' asthma (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Tea-makers' asthma is a specific occupational asthma subtype and represents an instance of asthma.",
+      "sources": [
+        "OpenCodelists (Bennett Institute)",
+        "QOF Business Rules 2024-25"
+      ],
+      "usage_frequency": null,
+      "usage_status": "not_in_dataset",
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": null,
+      "dmd_level": null
+    },
+    {
+      "code": "423889005",
+      "term": "Non-immunoglobulin E mediated allergic asthma (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Non-immunoglobulin E mediated allergic asthma is a clinical subtype of asthma and represents an instance of the condition.",
+      "sources": [
+        "OpenCodelists (Bennett Institute)",
+        "QOF Business Rules 2024-25"
+      ],
+      "usage_frequency": 60,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": null,
+      "dmd_level": null
+    },
+    {
+      "code": "424643009",
+      "term": "Immunoglobulin E-mediated allergic asthma (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Immunoglobulin E-mediated allergic asthma is a clinical subtype of asthma and represents an instance of the condition.",
+      "sources": [
+        "OpenCodelists (Bennett Institute)",
+        "QOF Business Rules 2024-25"
+      ],
+      "usage_frequency": 920,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "425969006",
@@ -9525,13 +10227,18 @@
       "vocabulary": "SNOMED CT",
       "decision": "include",
       "confidence": 0.95,
-      "rationale": "Exacerbation of intermittent asthma is a clinical manifestation of intermittent asthma and directly represents the queried condition.",
+      "rationale": "Exacerbation of intermittent asthma is an acute manifestation of intermittent asthma and represents an instance of the condition.",
       "sources": [
         "ChromaDB",
         "OpenCodelists (Bennett Institute)",
         "QOF Business Rules 2024-25"
       ],
-      "usage_frequency": null
+      "usage_frequency": 3390,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": 4138760,
+      "dmd_level": null
     },
     {
       "code": "426656000",
@@ -9539,69 +10246,18 @@
       "vocabulary": "SNOMED CT",
       "decision": "include",
       "confidence": 0.95,
-      "rationale": "Severe persistent asthma is a severity and persistence variant of asthma and directly represents the queried condition.",
+      "rationale": "Severe persistent asthma is a severity/persistence classification of asthma and represents an instance of the condition.",
       "sources": [
         "ChromaDB",
         "OpenCodelists (Bennett Institute)",
         "QOF Business Rules 2024-25"
       ],
-      "usage_frequency": null
-    },
-    {
-      "code": "426979002",
-      "term": "Mild persistent asthma (disorder)",
-      "vocabulary": "SNOMED CT",
-      "decision": "include",
-      "confidence": 0.95,
-      "rationale": "Mild persistent asthma is a severity and persistence variant of asthma and directly represents the queried condition.",
-      "sources": [
-        "ChromaDB",
-        "OpenCodelists (Bennett Institute)",
-        "QOF Business Rules 2024-25"
-      ],
-      "usage_frequency": null
-    },
-    {
-      "code": "427295004",
-      "term": "Moderate persistent asthma (disorder)",
-      "vocabulary": "SNOMED CT",
-      "decision": "include",
-      "confidence": 0.95,
-      "rationale": "Moderate persistent asthma is a severity and persistence variant of asthma and directly represents the queried condition.",
-      "sources": [
-        "ChromaDB",
-        "OpenCodelists (Bennett Institute)",
-        "QOF Business Rules 2024-25"
-      ],
-      "usage_frequency": null
-    },
-    {
-      "code": "427603009",
-      "term": "Intermittent asthma (disorder)",
-      "vocabulary": "SNOMED CT",
-      "decision": "include",
-      "confidence": 0.95,
-      "rationale": "Intermittent asthma is a recognized frequency/persistence variant of asthma and directly represents the queried condition.",
-      "sources": [
-        "ChromaDB",
-        "OpenCodelists (Bennett Institute)",
-        "QOF Business Rules 2024-25"
-      ],
-      "usage_frequency": null
-    },
-    {
-      "code": "427679007",
-      "term": "Mild intermittent asthma (disorder)",
-      "vocabulary": "SNOMED CT",
-      "decision": "include",
-      "confidence": 0.95,
-      "rationale": "Mild intermittent asthma is a severity and frequency variant of asthma and directly represents the queried condition.",
-      "sources": [
-        "ChromaDB",
-        "OpenCodelists (Bennett Institute)",
-        "QOF Business Rules 2024-25"
-      ],
-      "usage_frequency": null
+      "usage_frequency": 90,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": 4145356,
+      "dmd_level": null
     },
     {
       "code": "442025000",
@@ -9609,111 +10265,17 @@
       "vocabulary": "SNOMED CT",
       "decision": "include",
       "confidence": 0.95,
-      "rationale": "Acute exacerbation of chronic asthmatic bronchitis is a direct manifestation of asthma; the term explicitly contains 'asthma' and represents an instance of the condition.",
+      "rationale": "Acute exacerbation of chronic asthmatic bronchitis is an acute manifestation of asthma disease.",
       "sources": [
-        "OMOPHub",
         "OpenCodelists (Bennett Institute)",
         "QOF Business Rules 2024-25"
       ],
-      "usage_frequency": null
-    },
-    {
-      "code": "445427006",
-      "term": "Seasonal asthma (disorder)",
-      "vocabulary": "SNOMED CT",
-      "decision": "include",
-      "confidence": 0.95,
-      "rationale": "Seasonal asthma is a clinical subtype of asthma defined by temporal pattern; the term explicitly contains 'asthma' and represents a variant of the primary condition.",
-      "sources": [
-        "ChromaDB",
-        "OpenCodelists (Bennett Institute)",
-        "QOF Business Rules 2024-25"
-      ],
-      "usage_frequency": null
-    },
-    {
-      "code": "55570000",
-      "term": "Asthma without status asthmaticus (disorder)",
-      "vocabulary": "SNOMED CT",
-      "decision": "include",
-      "confidence": 0.95,
-      "rationale": "Asthma without status asthmaticus is a severity variant of asthma; the term explicitly contains 'asthma' and represents an instance of the condition.",
-      "sources": [
-        "ChromaDB",
-        "OpenCodelists (Bennett Institute)",
-        "QOF Business Rules 2024-25"
-      ],
-      "usage_frequency": null
-    },
-    {
-      "code": "57607007",
-      "term": "Occupational asthma (disorder)",
-      "vocabulary": "SNOMED CT",
-      "decision": "include",
-      "confidence": 0.95,
-      "rationale": "Occupational asthma is a clinical subtype of asthma defined by etiology; the term explicitly contains 'asthma' and represents a variant of the primary condition.",
-      "sources": [
-        "ChromaDB",
-        "OpenCodelists (Bennett Institute)",
-        "QOF Business Rules 2024-25"
-      ],
-      "usage_frequency": null
-    },
-    {
-      "code": "63088003",
-      "term": "Allergic asthma without status asthmaticus (disorder)",
-      "vocabulary": "SNOMED CT",
-      "decision": "include",
-      "confidence": 0.95,
-      "rationale": "Allergic asthma without status asthmaticus is a clinical subtype of asthma; the term explicitly contains 'asthma' and represents a variant of the primary condition.",
-      "sources": [
-        "ChromaDB",
-        "OpenCodelists (Bennett Institute)",
-        "QOF Business Rules 2024-25"
-      ],
-      "usage_frequency": null
-    },
-    {
-      "code": "707444001",
-      "term": "Uncomplicated asthma (disorder)",
-      "vocabulary": "SNOMED CT",
-      "decision": "include",
-      "confidence": 0.95,
-      "rationale": "Uncomplicated asthma is a severity variant of asthma; the term explicitly contains 'asthma' and represents an instance of the condition.",
-      "sources": [
-        "ChromaDB",
-        "OpenCodelists (Bennett Institute)",
-        "QOF Business Rules 2024-25"
-      ],
-      "usage_frequency": null
-    },
-    {
-      "code": "707980005",
-      "term": "Acute severe exacerbation of moderate persistent asthma (disorder)",
-      "vocabulary": "SNOMED CT",
-      "decision": "include",
-      "confidence": 0.95,
-      "rationale": "Acute severe exacerbation of moderate persistent asthma is a severity and temporal variant of asthma; the term explicitly contains 'asthma' and represents an instance of the condition.",
-      "sources": [
-        "OMOPHub",
-        "OpenCodelists (Bennett Institute)",
-        "QOF Business Rules 2024-25"
-      ],
-      "usage_frequency": null
-    },
-    {
-      "code": "707981009",
-      "term": "Acute severe exacerbation of mild persistent asthma (disorder)",
-      "vocabulary": "SNOMED CT",
-      "decision": "include",
-      "confidence": 0.95,
-      "rationale": "Acute severe exacerbation of mild persistent asthma is a severity and temporal variant of asthma; the term explicitly contains 'asthma' and represents an instance of the condition.",
-      "sources": [
-        "OMOPHub",
-        "OpenCodelists (Bennett Institute)",
-        "QOF Business Rules 2024-25"
-      ],
-      "usage_frequency": null
+      "usage_frequency": 160,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "708038006",
@@ -9721,110 +10283,17 @@
       "vocabulary": "SNOMED CT",
       "decision": "include",
       "confidence": 0.95,
-      "rationale": "Acute exacerbation of asthma is a direct manifestation of asthma; the term explicitly contains 'asthma' and represents an instance of the condition.",
+      "rationale": "Acute exacerbation of asthma is an acute manifestation of asthma disease.",
       "sources": [
         "ChromaDB",
         "OpenCodelists (Bennett Institute)"
       ],
-      "usage_frequency": null
-    },
-    {
-      "code": "708090002",
-      "term": "Acute severe exacerbation of asthma (disorder)",
-      "vocabulary": "SNOMED CT",
-      "decision": "include",
-      "confidence": 0.95,
-      "rationale": "Acute severe exacerbation of asthma is a severity variant of asthma; the term explicitly contains 'asthma' and represents an instance of the condition.",
-      "sources": [
-        "OMOPHub",
-        "OpenCodelists (Bennett Institute)",
-        "QOF Business Rules 2024-25"
-      ],
-      "usage_frequency": null
-    },
-    {
-      "code": "708093000",
-      "term": "Acute exacerbation of immunoglobulin E-mediated allergic asthma (disorder)",
-      "vocabulary": "SNOMED CT",
-      "decision": "include",
-      "confidence": 0.95,
-      "rationale": "Acute exacerbation of immunoglobulin E-mediated allergic asthma is a clinical subtype and manifestation of asthma; the term explicitly contains 'asthma' and represents an instance of the condition.",
-      "sources": [
-        "OMOPHub",
-        "OpenCodelists (Bennett Institute)",
-        "QOF Business Rules 2024-25"
-      ],
-      "usage_frequency": null
-    },
-    {
-      "code": "708094006",
-      "term": "Acute exacerbation of intrinsic asthma (disorder)",
-      "vocabulary": "SNOMED CT",
-      "decision": "include",
-      "confidence": 0.95,
-      "rationale": "Acute exacerbation of intrinsic asthma is a clinical subtype and manifestation of asthma; the term explicitly contains 'asthma' and represents an instance of the condition.",
-      "sources": [
-        "OMOPHub",
-        "OpenCodelists (Bennett Institute)",
-        "QOF Business Rules 2024-25"
-      ],
-      "usage_frequency": null
-    },
-    {
-      "code": "708095007",
-      "term": "Acute severe exacerbation of immunoglobin E-mediated allergic asthma (disorder)",
-      "vocabulary": "SNOMED CT",
-      "decision": "include",
-      "confidence": 0.95,
-      "rationale": "Acute severe exacerbation of immunoglobulin E-mediated allergic asthma is a clinical subtype and severity variant of asthma; the term explicitly contains 'asthma' and represents an instance of the condition.",
-      "sources": [
-        "OMOPHub",
-        "OpenCodelists (Bennett Institute)",
-        "QOF Business Rules 2024-25"
-      ],
-      "usage_frequency": null
-    },
-    {
-      "code": "708096008",
-      "term": "Acute severe exacerbation of intrinsic asthma (disorder)",
-      "vocabulary": "SNOMED CT",
-      "decision": "include",
-      "confidence": 0.95,
-      "rationale": "Acute severe exacerbation of intrinsic asthma is a clinical subtype and severity variant of asthma; the term explicitly contains 'asthma' and represents an instance of the condition.",
-      "sources": [
-        "OMOPHub",
-        "OpenCodelists (Bennett Institute)",
-        "QOF Business Rules 2024-25"
-      ],
-      "usage_frequency": null
-    },
-    {
-      "code": "735588005",
-      "term": "Uncomplicated allergic asthma (disorder)",
-      "vocabulary": "SNOMED CT",
-      "decision": "include",
-      "confidence": 0.95,
-      "rationale": "Uncomplicated allergic asthma is a clinical subtype and severity variant of asthma; the term explicitly contains 'asthma' and represents an instance of the condition.",
-      "sources": [
-        "ChromaDB",
-        "OpenCodelists (Bennett Institute)",
-        "QOF Business Rules 2024-25"
-      ],
-      "usage_frequency": null
-    },
-    {
-      "code": "735589002",
-      "term": "Uncomplicated non-allergic asthma (disorder)",
-      "vocabulary": "SNOMED CT",
-      "decision": "include",
-      "confidence": 0.95,
-      "rationale": "Uncomplicated non-allergic asthma is a clinical subtype and severity variant of asthma; the term explicitly contains 'asthma' and represents an instance of the condition.",
-      "sources": [
-        "ChromaDB",
-        "OpenCodelists (Bennett Institute)",
-        "QOF Business Rules 2024-25"
-      ],
-      "usage_frequency": null
+      "usage_frequency": 95340,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "762521001",
@@ -9832,13 +10301,18 @@
       "vocabulary": "SNOMED CT",
       "decision": "include",
       "confidence": 0.95,
-      "rationale": "Exacerbation of allergic asthma is a clinical subtype and manifestation of asthma; the term explicitly contains 'asthma' and represents an instance of the condition.",
+      "rationale": "Exacerbation of allergic asthma is an acute manifestation of allergic asthma disease.",
       "sources": [
         "ChromaDB",
         "OpenCodelists (Bennett Institute)",
         "QOF Business Rules 2024-25"
       ],
-      "usage_frequency": null
+      "usage_frequency": 4270,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": 42538744,
+      "dmd_level": null
     },
     {
       "code": "782513000",
@@ -9846,119 +10320,18 @@
       "vocabulary": "SNOMED CT",
       "decision": "include",
       "confidence": 0.95,
-      "rationale": "Acute severe exacerbation of allergic asthma is a clinical subtype and severity variant of asthma; the term explicitly contains 'asthma' and represents an instance of the condition.",
-      "sources": [
-        "ChromaDB",
-        "OMOPHub",
-        "OpenCodelists (Bennett Institute)",
-        "QOF Business Rules 2024-25"
-      ],
-      "usage_frequency": null
-    },
-    {
-      "code": "829976001",
-      "term": "Thunderstorm asthma (disorder)",
-      "vocabulary": "SNOMED CT",
-      "decision": "include",
-      "confidence": 0.95,
-      "rationale": "Thunderstorm asthma is a clinical subtype of asthma defined by trigger; the term explicitly contains 'asthma' and represents a variant of the primary condition.",
+      "rationale": "Acute severe exacerbation of allergic asthma is an acute manifestation of allergic asthma disease.",
       "sources": [
         "ChromaDB",
         "OpenCodelists (Bennett Institute)",
         "QOF Business Rules 2024-25"
       ],
-      "usage_frequency": null
-    },
-    {
-      "code": "124991000119109",
-      "term": "Severe persistent asthma co-occurrent with allergic rhinitis (disorder)",
-      "vocabulary": "SNOMED CT",
-      "decision": "include",
-      "confidence": 0.9,
-      "rationale": "Severe persistent asthma co-occurrent with allergic rhinitis contains 'asthma' in the term and represents a severity variant of asthma with comorbidity.",
-      "sources": [
-        "OpenCodelists (Bennett Institute)",
-        "QOF Business Rules 2024-25"
-      ],
-      "usage_frequency": null
-    },
-    {
-      "code": "125001000119103",
-      "term": "Moderate persistent asthma co-occurrent with allergic rhinitis (disorder)",
-      "vocabulary": "SNOMED CT",
-      "decision": "include",
-      "confidence": 0.9,
-      "rationale": "Moderate persistent asthma co-occurrent with allergic rhinitis contains 'asthma' in the term and represents a severity variant of asthma with comorbidity.",
-      "sources": [
-        "OpenCodelists (Bennett Institute)",
-        "QOF Business Rules 2024-25"
-      ],
-      "usage_frequency": null
-    },
-    {
-      "code": "125011000119100",
-      "term": "Mild persistent asthma co-occurrent with allergic rhinitis (disorder)",
-      "vocabulary": "SNOMED CT",
-      "decision": "include",
-      "confidence": 0.9,
-      "rationale": "Mild persistent asthma co-occurrent with allergic rhinitis contains 'asthma' in the term and represents a severity variant of asthma with comorbidity.",
-      "sources": [
-        "OpenCodelists (Bennett Institute)",
-        "QOF Business Rules 2024-25"
-      ],
-      "usage_frequency": null
-    },
-    {
-      "code": "125021000119107",
-      "term": "Intermittent asthma co-occurrent with allergic rhinitis (disorder)",
-      "vocabulary": "SNOMED CT",
-      "decision": "include",
-      "confidence": 0.9,
-      "rationale": "Intermittent asthma co-occurrent with allergic rhinitis contains 'asthma' in the term and represents a severity variant of asthma with comorbidity.",
-      "sources": [
-        "OpenCodelists (Bennett Institute)",
-        "QOF Business Rules 2024-25"
-      ],
-      "usage_frequency": null
-    },
-    {
-      "code": "18041002",
-      "term": "Printers' asthma (disorder)",
-      "vocabulary": "SNOMED CT",
-      "decision": "include",
-      "confidence": 0.9,
-      "rationale": "Printers' asthma is an occupational asthma subtype; the term contains 'asthma' and represents a recognized clinical variant of asthma.",
-      "sources": [
-        "OpenCodelists (Bennett Institute)",
-        "QOF Business Rules 2024-25"
-      ],
-      "usage_frequency": null
-    },
-    {
-      "code": "195949008",
-      "term": "Chronic asthmatic bronchitis (disorder)",
-      "vocabulary": "SNOMED CT",
-      "decision": "include",
-      "confidence": 0.9,
-      "rationale": "Chronic asthmatic bronchitis contains 'asthma' in the term and represents a clinical manifestation of asthma.",
-      "sources": [
-        "OpenCodelists (Bennett Institute)",
-        "QOF Business Rules 2024-25"
-      ],
-      "usage_frequency": null
-    },
-    {
-      "code": "19849005",
-      "term": "Meat-wrappers' asthma (disorder)",
-      "vocabulary": "SNOMED CT",
-      "decision": "include",
-      "confidence": 0.9,
-      "rationale": "Meat-wrappers' asthma is an occupational asthma subtype; the term contains 'asthma' and represents a recognized clinical variant of asthma.",
-      "sources": [
-        "OpenCodelists (Bennett Institute)",
-        "QOF Business Rules 2024-25"
-      ],
-      "usage_frequency": null
+      "usage_frequency": 50,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": 36684328,
+      "dmd_level": null
     },
     {
       "code": "233683003",
@@ -9966,12 +10339,17 @@
       "vocabulary": "SNOMED CT",
       "decision": "include",
       "confidence": 0.9,
-      "rationale": "Hay fever with asthma contains 'asthma' in the term and represents asthma with allergic comorbidity.",
+      "rationale": "Hay fever with asthma represents asthma co-occurring with allergic rhinitis; the asthma component is a primary diagnosis.",
       "sources": [
         "OpenCodelists (Bennett Institute)",
         "QOF Business Rules 2024-25"
       ],
-      "usage_frequency": null
+      "usage_frequency": 14320,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "233691007",
@@ -9979,13 +10357,54 @@
       "vocabulary": "SNOMED CT",
       "decision": "include",
       "confidence": 0.9,
-      "rationale": "Asthmatic pulmonary eosinophilia contains 'asthma' in the term and represents a clinical manifestation of asthma.",
+      "rationale": "Asthmatic pulmonary eosinophilia is a clinical variant of asthma with eosinophilic inflammation and represents an instance of asthma.",
       "sources": [
         "ChromaDB",
         "OpenCodelists (Bennett Institute)",
         "QOF Business Rules 2024-25"
       ],
-      "usage_frequency": null
+      "usage_frequency": 2980,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": 252942,
+      "dmd_level": null
+    },
+    {
+      "code": "312453004",
+      "term": "Asthma - currently active (finding)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.9,
+      "rationale": "Asthma - currently active is a status finding confirming active asthma diagnosis and represents an instance of the condition.",
+      "sources": [
+        "OpenCodelists (Bennett Institute)",
+        "QOF Business Rules 2024-25"
+      ],
+      "usage_frequency": 39750,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": null,
+      "dmd_level": null
+    },
+    {
+      "code": "401000119107",
+      "term": "Asthma with irreversible airway obstruction (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.9,
+      "rationale": "Asthma with irreversible airway obstruction is a clinical variant of asthma with fixed obstruction and represents an instance of the condition.",
+      "sources": [
+        "OpenCodelists (Bennett Institute)",
+        "QOF Business Rules 2024-25"
+      ],
+      "usage_frequency": 110,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "401193004",
@@ -9993,68 +10412,54 @@
       "vocabulary": "SNOMED CT",
       "decision": "include",
       "confidence": 0.9,
-      "rationale": "Asthma confirmed (situation) contains 'asthma' in the term and represents diagnostic confirmation of asthma.",
+      "rationale": "Asthma confirmed is a diagnostic situation code confirming asthma diagnosis and represents an instance of the condition.",
       "sources": [
         "ChromaDB",
         "OpenCodelists (Bennett Institute)",
         "QOF Business Rules 2024-25"
       ],
-      "usage_frequency": null
+      "usage_frequency": 6230,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": 4293734,
+      "dmd_level": null
     },
     {
-      "code": "405944004",
-      "term": "Asthmatic bronchitis (disorder)",
+      "code": "641000119106",
+      "term": "Intermittent asthma well controlled (finding)",
       "vocabulary": "SNOMED CT",
       "decision": "include",
       "confidence": 0.9,
-      "rationale": "Asthmatic bronchitis contains 'asthma' in the term and represents a clinical manifestation of asthma.",
+      "rationale": "Intermittent asthma well controlled is a clinical descriptor of asthma status and control level.",
       "sources": [
-        "ChromaDB",
         "OpenCodelists (Bennett Institute)",
         "QOF Business Rules 2024-25"
       ],
-      "usage_frequency": null
+      "usage_frequency": 2460,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
-      "code": "99031000119107",
-      "term": "Acute exacerbation of asthma co-occurrent with allergic rhinitis (disorder)",
+      "code": "59786004",
+      "term": "Weavers' cough (disorder)",
       "vocabulary": "SNOMED CT",
       "decision": "include",
-      "confidence": 0.9,
-      "rationale": "Acute exacerbation of asthma co-occurrent with allergic rhinitis is a manifestation of asthma with a comorbid condition; the term explicitly contains 'asthma' and follows NHS refset convention for 'X co-occurrent with Y' patterns.",
+      "confidence": 0.85,
+      "rationale": "Weavers' cough is a historical term for occupational asthma in textile workers, representing a specific asthma subtype.",
       "sources": [
-        "OMOPHub",
         "OpenCodelists (Bennett Institute)",
         "QOF Business Rules 2024-25"
       ],
-      "usage_frequency": null
-    },
-    {
-      "code": "1751000119100",
-      "term": "Acute exacerbation of chronic obstructive airways disease with asthma (disorder)",
-      "vocabulary": "SNOMED CT",
-      "decision": "uncertain",
-      "confidence": 0.6,
-      "rationale": "This code describes acute exacerbation of COPD with asthma; it is unclear whether this represents asthma as a primary condition or asthma as a comorbidity in COPD.",
-      "sources": [
-        "OMOPHub",
-        "OpenCodelists (Bennett Institute)",
-        "QOF Business Rules 2024-25"
-      ],
-      "usage_frequency": null
-    },
-    {
-      "code": "Z82.5",
-      "term": "Family history of asthma and other chronic lower respiratory diseases",
-      "vocabulary": "ICD-10 (WHO)",
-      "decision": "exclude",
-      "confidence": 1.0,
-      "rationale": "This code represents family history of asthma, not an instance of asthma in the patient; it is a risk factor, not a diagnosis.",
-      "sources": [
-        "ChromaDB",
-        "OMOPHub"
-      ],
-      "usage_frequency": null
+      "usage_frequency": null,
+      "usage_status": "not_in_dataset",
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "10742121000119104",
@@ -10062,38 +10467,17 @@
       "vocabulary": "SNOMED CT",
       "decision": "exclude",
       "confidence": 0.95,
-      "rationale": "This code describes asthma complicating childbirth (a pregnancy-related complication), not asthma as a primary diagnosis; it is a contextual modifier for obstetric coding.",
+      "rationale": "Asthma in mother complicating childbirth is a pregnancy/obstetric complication, not a primary asthma diagnosis.",
       "sources": [
         "OpenCodelists (Bennett Institute)",
         "QOF Business Rules 2024-25"
       ],
-      "usage_frequency": null
-    },
-    {
-      "code": "11944003",
-      "term": "Feather-pickers' disease (disorder)",
-      "vocabulary": "SNOMED CT",
-      "decision": "exclude",
-      "confidence": 0.95,
-      "rationale": "Feather-pickers' disease is an occupational lung disease unrelated to asthma; the term does not contain 'asthma'.",
-      "sources": [
-        "OpenCodelists (Bennett Institute)",
-        "QOF Business Rules 2024-25"
-      ],
-      "usage_frequency": null
-    },
-    {
-      "code": "13151001",
-      "term": "Flax-dressers' disease (disorder)",
-      "vocabulary": "SNOMED CT",
-      "decision": "exclude",
-      "confidence": 0.95,
-      "rationale": "Flax-dressers' disease is an occupational lung disease unrelated to asthma; the term does not contain 'asthma'.",
-      "sources": [
-        "OpenCodelists (Bennett Institute)",
-        "QOF Business Rules 2024-25"
-      ],
-      "usage_frequency": null
+      "usage_frequency": null,
+      "usage_status": "withheld_below_5",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "162660004",
@@ -10101,12 +10485,35 @@
       "vocabulary": "SNOMED CT",
       "decision": "exclude",
       "confidence": 0.95,
-      "rationale": "Asthma resolved indicates a past condition that is no longer present; codes for resolved conditions should be excluded.",
+      "rationale": "Asthma resolved indicates a past condition no longer present; codes for resolved conditions should be excluded.",
       "sources": [
         "ChromaDB",
         "QOF Business Rules 2024-25"
       ],
-      "usage_frequency": null
+      "usage_frequency": 106010,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": null,
+      "dmd_level": null
+    },
+    {
+      "code": "1751000119100",
+      "term": "Acute exacerbation of chronic obstructive airways disease with asthma (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.95,
+      "rationale": "This code describes acute exacerbation of COPD with asthma, which is a comorbid presentation of two separate conditions, not a primary asthma diagnosis.",
+      "sources": [
+        "OpenCodelists (Bennett Institute)",
+        "QOF Business Rules 2024-25"
+      ],
+      "usage_frequency": 160,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "233672007",
@@ -10114,12 +10521,17 @@
       "vocabulary": "SNOMED CT",
       "decision": "exclude",
       "confidence": 0.95,
-      "rationale": "Byssinosis grade 3 is an occupational lung disease unrelated to asthma; the term does not contain 'asthma'.",
+      "rationale": "Byssinosis grade 3 is a separate occupational lung disease (cotton worker's lung), not asthma.",
       "sources": [
         "OpenCodelists (Bennett Institute)",
         "QOF Business Rules 2024-25"
       ],
-      "usage_frequency": null
+      "usage_frequency": 10,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": null,
+      "dmd_level": null
     }
   ],
   "pipeline": "rag",

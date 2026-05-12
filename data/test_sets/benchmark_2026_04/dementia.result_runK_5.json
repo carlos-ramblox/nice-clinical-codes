@@ -6,12 +6,12 @@
     "retrieved_raw": {
       "codelist_name": "retrieved_raw",
       "n_ref_codes": 325,
-      "n_output_codes": 311,
+      "n_output_codes": 301,
       "recall": 0.7046,
-      "precision": 0.7363,
-      "f1": 0.7201,
+      "precision": 0.7608,
+      "f1": 0.7316,
       "tp_count": 229,
-      "fp_count": 82,
+      "fp_count": 72,
       "fn_count": 96,
       "tp_codes": [
         {
@@ -969,18 +969,6 @@
           "term": "Vascular dementia without behavioral disturbance (disorder)"
         },
         {
-          "code": "273280001",
-          "term": "Arizona battery for communication disorders of dementia"
-        },
-        {
-          "code": "473203000",
-          "term": "Assessment of dementia"
-        },
-        {
-          "code": "700214004",
-          "term": "Antipsychotic drug therapy for dementia"
-        },
-        {
           "code": "711441000000100",
           "term": "Dementia monitoring invitation (procedure)"
         },
@@ -991,10 +979,6 @@
         {
           "code": "716131000000105",
           "term": "Excepted from dementia quality indicators - informed dissent (finding)"
-        },
-        {
-          "code": "716175000",
-          "term": "Arizona Battery for Communication Disorders of Dementia score"
         },
         {
           "code": "716221000000104",
@@ -1015,26 +999,6 @@
         {
           "code": "717471000000101",
           "term": "Dementia monitoring second letter (procedure)"
-        },
-        {
-          "code": "773863001",
-          "term": "Antidementia therapeutic role"
-        },
-        {
-          "code": "788866004",
-          "term": "Anxiety due to dementia"
-        },
-        {
-          "code": "788867008",
-          "term": "Apathetic behavior due to dementia"
-        },
-        {
-          "code": "869561000000101",
-          "term": "Assessment for dementia"
-        },
-        {
-          "code": "92001000000104",
-          "term": "Anti-dementia drug therapy"
         },
         {
           "code": "956841000000106",
@@ -1131,10 +1095,6 @@
         {
           "code": "F024",
           "term": "Dementia in human immunodeficiency virus [HIV] disease"
-        },
-        {
-          "code": "F028",
-          "term": "Dementia in other specified diseases classified elsewhere"
         },
         {
           "code": "F03",
@@ -1652,12 +1612,12 @@
       "codelist_name": "merged_enriched",
       "n_ref_codes": 325,
       "n_output_codes": 100,
-      "recall": 0.1815,
-      "precision": 0.59,
-      "f1": 0.2776,
-      "tp_count": 59,
-      "fp_count": 41,
-      "fn_count": 266,
+      "recall": 0.1538,
+      "precision": 0.5,
+      "f1": 0.2353,
+      "tp_count": 50,
+      "fp_count": 50,
+      "fn_count": 275,
       "tp_codes": [
         {
           "code": "10532003",
@@ -1678,18 +1638,6 @@
         {
           "code": "12348006",
           "term": "Presenile dementia"
-        },
-        {
-          "code": "1259121008",
-          "term": "Amyotrophic lateral sclerosis, parkinsonism, dementia complex of West New Guinea"
-        },
-        {
-          "code": "1259123006",
-          "term": "Amyotrophic lateral sclerosis, parkinsonism, dementia complex of Kii Peninsula"
-        },
-        {
-          "code": "1259124000",
-          "term": "Amyotrophic lateral sclerosis with frontotemporal dementia"
         },
         {
           "code": "1259128002",
@@ -1748,20 +1696,12 @@
           "term": "Arteriosclerotic dementia with delirium"
         },
         {
-          "code": "191465006",
-          "term": "Arteriosclerotic dementia with paranoia"
-        },
-        {
           "code": "191466007",
           "term": "Arteriosclerotic dementia with depression"
         },
         {
           "code": "22381000119105",
           "term": "Primary degenerative dementia"
-        },
-        {
-          "code": "230258005",
-          "term": "Amyotrophic lateral sclerosis with dementia"
         },
         {
           "code": "230270009",
@@ -1868,28 +1808,12 @@
           "term": "Subcortical dementia"
         },
         {
-          "code": "788861009",
-          "term": "Aggression due to dementia"
-        },
-        {
-          "code": "788862002",
-          "term": "Agitation due to dementia"
-        },
-        {
           "code": "79341000119107",
           "term": "Mixed dementia"
         },
         {
-          "code": "82361000119107",
-          "term": "Altered behavior in dementia due to Huntington chorea"
-        },
-        {
           "code": "833326008",
           "term": "Cortical vascular dementia"
-        },
-        {
-          "code": "838276009",
-          "term": "Amyotrophic lateral sclerosis, parkinsonism, dementia complex"
         },
         {
           "code": "9345005",
@@ -1994,8 +1918,20 @@
           "term": "Other delirium"
         },
         {
+          "code": "F059",
+          "term": "Delirium, unspecified"
+        },
+        {
+          "code": "F065",
+          "term": "Organic dissociative disorder"
+        },
+        {
           "code": "F067",
           "term": "Mild cognitive disorder"
+        },
+        {
+          "code": "F07",
+          "term": "Personality and behavioural disorders due to brain disease, damage and dysfunction"
         },
         {
           "code": "F070",
@@ -2022,8 +1958,20 @@
           "term": "Secondary parkinsonism"
         },
         {
+          "code": "G213",
+          "term": "Postencephalitic parkinsonism"
+        },
+        {
           "code": "G214",
           "term": "Vascular parkinsonism"
+        },
+        {
+          "code": "G239",
+          "term": "Degenerative disease of basal ganglia, unspecified"
+        },
+        {
+          "code": "G24",
+          "term": "Dystonia"
         },
         {
           "code": "G30",
@@ -2056,6 +2004,18 @@
         {
           "code": "R54",
           "term": "Senility"
+        },
+        {
+          "code": "W060",
+          "term": "Fall involving bed, Home"
+        },
+        {
+          "code": "W070",
+          "term": "Fall involving chair, Home"
+        },
+        {
+          "code": "W190",
+          "term": "Unspecified fall, Home"
         },
         {
           "code": "Z636",
@@ -2138,6 +2098,18 @@
         {
           "code": "1187004001",
           "term": "Chronic traumatic encephalopathy"
+        },
+        {
+          "code": "1259121008",
+          "term": "Amyotrophic lateral sclerosis, parkinsonism, dementia complex of West New Guinea"
+        },
+        {
+          "code": "1259123006",
+          "term": "Amyotrophic lateral sclerosis, parkinsonism, dementia complex of Kii Peninsula"
+        },
+        {
+          "code": "1259124000",
+          "term": "Amyotrophic lateral sclerosis with frontotemporal dementia"
         },
         {
           "code": "1259465009",
@@ -2436,6 +2408,10 @@
           "term": "Arteriosclerotic dementia (including [multi infarct dementia])"
         },
         {
+          "code": "191465006",
+          "term": "Arteriosclerotic dementia with paranoia"
+        },
+        {
           "code": "191467003",
           "term": "Arteriosclerotic dementia NOS"
         },
@@ -2574,6 +2550,10 @@
         {
           "code": "229672009",
           "term": "Language disorder of dementia"
+        },
+        {
+          "code": "230258005",
+          "term": "Amyotrophic lateral sclerosis with dementia"
         },
         {
           "code": "230265002",
@@ -3044,6 +3024,14 @@
           "term": "Multi-infarct dementia"
         },
         {
+          "code": "788861009",
+          "term": "Aggression due to dementia"
+        },
+        {
+          "code": "788862002",
+          "term": "Agitation due to dementia"
+        },
+        {
           "code": "788898005",
           "term": "Dementia caused by volatile inhalant"
         },
@@ -3072,6 +3060,10 @@
           "term": "Altered behavior due to Pick's disease"
         },
         {
+          "code": "82361000119107",
+          "term": "Altered behavior in dementia due to Huntington chorea"
+        },
+        {
           "code": "82371000119101",
           "term": "Dementia due to multiple sclerosis with altered behavior"
         },
@@ -3082,6 +3074,10 @@
         {
           "code": "82959004",
           "term": "Dementia paralytica juvenilis"
+        },
+        {
+          "code": "838276009",
+          "term": "Amyotrophic lateral sclerosis, parkinsonism, dementia complex"
         },
         {
           "code": "840452004",
@@ -3133,12 +3129,12 @@
       "codelist_name": "all_scored",
       "n_ref_codes": 325,
       "n_output_codes": 100,
-      "recall": 0.1815,
-      "precision": 0.59,
-      "f1": 0.2776,
-      "tp_count": 59,
-      "fp_count": 41,
-      "fn_count": 266,
+      "recall": 0.1538,
+      "precision": 0.5,
+      "f1": 0.2353,
+      "tp_count": 50,
+      "fp_count": 50,
+      "fn_count": 275,
       "tp_codes": [
         {
           "code": "10532003",
@@ -3159,18 +3155,6 @@
         {
           "code": "12348006",
           "term": "Presenile dementia"
-        },
-        {
-          "code": "1259121008",
-          "term": "Amyotrophic lateral sclerosis, parkinsonism, dementia complex of West New Guinea"
-        },
-        {
-          "code": "1259123006",
-          "term": "Amyotrophic lateral sclerosis, parkinsonism, dementia complex of Kii Peninsula"
-        },
-        {
-          "code": "1259124000",
-          "term": "Amyotrophic lateral sclerosis with frontotemporal dementia"
         },
         {
           "code": "1259128002",
@@ -3229,20 +3213,12 @@
           "term": "Arteriosclerotic dementia with delirium"
         },
         {
-          "code": "191465006",
-          "term": "Arteriosclerotic dementia with paranoia"
-        },
-        {
           "code": "191466007",
           "term": "Arteriosclerotic dementia with depression"
         },
         {
           "code": "22381000119105",
           "term": "Primary degenerative dementia"
-        },
-        {
-          "code": "230258005",
-          "term": "Amyotrophic lateral sclerosis with dementia"
         },
         {
           "code": "230270009",
@@ -3349,28 +3325,12 @@
           "term": "Subcortical dementia"
         },
         {
-          "code": "788861009",
-          "term": "Aggression due to dementia"
-        },
-        {
-          "code": "788862002",
-          "term": "Agitation due to dementia"
-        },
-        {
           "code": "79341000119107",
           "term": "Mixed dementia"
         },
         {
-          "code": "82361000119107",
-          "term": "Altered behavior in dementia due to Huntington chorea"
-        },
-        {
           "code": "833326008",
           "term": "Cortical vascular dementia"
-        },
-        {
-          "code": "838276009",
-          "term": "Amyotrophic lateral sclerosis, parkinsonism, dementia complex"
         },
         {
           "code": "9345005",
@@ -3475,8 +3435,20 @@
           "term": "Other delirium"
         },
         {
+          "code": "F059",
+          "term": "Delirium, unspecified"
+        },
+        {
+          "code": "F065",
+          "term": "Organic dissociative disorder"
+        },
+        {
           "code": "F067",
           "term": "Mild cognitive disorder"
+        },
+        {
+          "code": "F07",
+          "term": "Personality and behavioural disorders due to brain disease, damage and dysfunction"
         },
         {
           "code": "F070",
@@ -3503,8 +3475,20 @@
           "term": "Secondary parkinsonism"
         },
         {
+          "code": "G213",
+          "term": "Postencephalitic parkinsonism"
+        },
+        {
           "code": "G214",
           "term": "Vascular parkinsonism"
+        },
+        {
+          "code": "G239",
+          "term": "Degenerative disease of basal ganglia, unspecified"
+        },
+        {
+          "code": "G24",
+          "term": "Dystonia"
         },
         {
           "code": "G30",
@@ -3537,6 +3521,18 @@
         {
           "code": "R54",
           "term": "Senility"
+        },
+        {
+          "code": "W060",
+          "term": "Fall involving bed, Home"
+        },
+        {
+          "code": "W070",
+          "term": "Fall involving chair, Home"
+        },
+        {
+          "code": "W190",
+          "term": "Unspecified fall, Home"
         },
         {
           "code": "Z636",
@@ -3619,6 +3615,18 @@
         {
           "code": "1187004001",
           "term": "Chronic traumatic encephalopathy"
+        },
+        {
+          "code": "1259121008",
+          "term": "Amyotrophic lateral sclerosis, parkinsonism, dementia complex of West New Guinea"
+        },
+        {
+          "code": "1259123006",
+          "term": "Amyotrophic lateral sclerosis, parkinsonism, dementia complex of Kii Peninsula"
+        },
+        {
+          "code": "1259124000",
+          "term": "Amyotrophic lateral sclerosis with frontotemporal dementia"
         },
         {
           "code": "1259465009",
@@ -3917,6 +3925,10 @@
           "term": "Arteriosclerotic dementia (including [multi infarct dementia])"
         },
         {
+          "code": "191465006",
+          "term": "Arteriosclerotic dementia with paranoia"
+        },
+        {
           "code": "191467003",
           "term": "Arteriosclerotic dementia NOS"
         },
@@ -4055,6 +4067,10 @@
         {
           "code": "229672009",
           "term": "Language disorder of dementia"
+        },
+        {
+          "code": "230258005",
+          "term": "Amyotrophic lateral sclerosis with dementia"
         },
         {
           "code": "230265002",
@@ -4525,6 +4541,14 @@
           "term": "Multi-infarct dementia"
         },
         {
+          "code": "788861009",
+          "term": "Aggression due to dementia"
+        },
+        {
+          "code": "788862002",
+          "term": "Agitation due to dementia"
+        },
+        {
           "code": "788898005",
           "term": "Dementia caused by volatile inhalant"
         },
@@ -4553,6 +4577,10 @@
           "term": "Altered behavior due to Pick's disease"
         },
         {
+          "code": "82361000119107",
+          "term": "Altered behavior in dementia due to Huntington chorea"
+        },
+        {
           "code": "82371000119101",
           "term": "Dementia due to multiple sclerosis with altered behavior"
         },
@@ -4563,6 +4591,10 @@
         {
           "code": "82959004",
           "term": "Dementia paralytica juvenilis"
+        },
+        {
+          "code": "838276009",
+          "term": "Amyotrophic lateral sclerosis, parkinsonism, dementia complex"
         },
         {
           "code": "840452004",
@@ -4613,13 +4645,13 @@
     "included_only": {
       "codelist_name": "included_only",
       "n_ref_codes": 325,
-      "n_output_codes": 62,
-      "recall": 0.1292,
-      "precision": 0.6774,
-      "f1": 0.2171,
-      "tp_count": 42,
-      "fp_count": 20,
-      "fn_count": 283,
+      "n_output_codes": 61,
+      "recall": 0.12,
+      "precision": 0.6393,
+      "f1": 0.2021,
+      "tp_count": 39,
+      "fp_count": 22,
+      "fn_count": 286,
       "tp_codes": [
         {
           "code": "10532003",
@@ -4642,16 +4674,12 @@
           "term": "Presenile dementia"
         },
         {
-          "code": "1259124000",
-          "term": "Amyotrophic lateral sclerosis with frontotemporal dementia"
-        },
-        {
           "code": "1259128002",
           "term": "Alzheimer's disease with psychosis"
         },
         {
-          "code": "141991000119109",
-          "term": "Alzheimer's disease with delusions"
+          "code": "1259499007",
+          "term": "Dementia due to hemorrhagic cerebral infarction due to hypertension"
         },
         {
           "code": "15662003",
@@ -4696,10 +4724,6 @@
         {
           "code": "191464005",
           "term": "Arteriosclerotic dementia with delirium"
-        },
-        {
-          "code": "191465006",
-          "term": "Arteriosclerotic dementia with paranoia"
         },
         {
           "code": "191466007",
@@ -4752,10 +4776,6 @@
         {
           "code": "416975007",
           "term": "Primary degenerative dementia of the Alzheimer type, senile onset"
-        },
-        {
-          "code": "429998004",
-          "term": "Vascular dementia"
         },
         {
           "code": "4817008",
@@ -4870,6 +4890,14 @@
         {
           "code": "F03",
           "term": "Unspecified dementia"
+        },
+        {
+          "code": "G309",
+          "term": "Alzheimer disease, unspecified"
+        },
+        {
+          "code": "G311",
+          "term": "Senile degeneration of brain, not elsewhere classified"
         }
       ],
       "fn_codes": [
@@ -4958,6 +4986,10 @@
           "term": "Amyotrophic lateral sclerosis, parkinsonism, dementia complex of Kii Peninsula"
         },
         {
+          "code": "1259124000",
+          "term": "Amyotrophic lateral sclerosis with frontotemporal dementia"
+        },
+        {
           "code": "1259465009",
           "term": "Dementia due to hepatic failure"
         },
@@ -5008,10 +5040,6 @@
         {
           "code": "1259496000",
           "term": "Dementia due to Lyme disease"
-        },
-        {
-          "code": "1259499007",
-          "term": "Dementia due to hemorrhagic cerebral infarction due to hypertension"
         },
         {
           "code": "1259501004",
@@ -5174,6 +5202,10 @@
           "term": "Multi-infarct dementia with depression"
         },
         {
+          "code": "141991000119109",
+          "term": "Alzheimer's disease with delusions"
+        },
+        {
           "code": "142001000119106",
           "term": "Alzheimer's disease with depressed mood"
         },
@@ -5256,6 +5288,10 @@
         {
           "code": "191462009",
           "term": "Arteriosclerotic dementia (including [multi infarct dementia])"
+        },
+        {
+          "code": "191465006",
+          "term": "Arteriosclerotic dementia with paranoia"
         },
         {
           "code": "191467003",
@@ -5604,6 +5640,10 @@
         {
           "code": "429458009",
           "term": "Dementia due to Creutzfeldt Jakob disease"
+        },
+        {
+          "code": "429998004",
+          "term": "Vascular dementia"
         },
         {
           "code": "442344002",
@@ -6011,12 +6051,12 @@
       "codelist_name": "included_plus_uncertain",
       "n_ref_codes": 325,
       "n_output_codes": 65,
-      "recall": 0.1385,
-      "precision": 0.6923,
-      "f1": 0.2308,
-      "tp_count": 45,
-      "fp_count": 20,
-      "fn_count": 280,
+      "recall": 0.1323,
+      "precision": 0.6615,
+      "f1": 0.2205,
+      "tp_count": 43,
+      "fp_count": 22,
+      "fn_count": 282,
       "tp_codes": [
         {
           "code": "10532003",
@@ -6039,16 +6079,12 @@
           "term": "Presenile dementia"
         },
         {
-          "code": "1259124000",
-          "term": "Amyotrophic lateral sclerosis with frontotemporal dementia"
-        },
-        {
           "code": "1259128002",
           "term": "Alzheimer's disease with psychosis"
         },
         {
-          "code": "141991000119109",
-          "term": "Alzheimer's disease with delusions"
+          "code": "1259499007",
+          "term": "Dementia due to hemorrhagic cerebral infarction due to hypertension"
         },
         {
           "code": "15662003",
@@ -6093,10 +6129,6 @@
         {
           "code": "191464005",
           "term": "Arteriosclerotic dementia with delirium"
-        },
-        {
-          "code": "191465006",
-          "term": "Arteriosclerotic dementia with paranoia"
         },
         {
           "code": "191466007",
@@ -6151,10 +6183,6 @@
           "term": "Primary degenerative dementia of the Alzheimer type, senile onset"
         },
         {
-          "code": "429998004",
-          "term": "Vascular dementia"
-        },
-        {
           "code": "4817008",
           "term": "Primary degenerative dementia of the Alzheimer type, senile onset, with delirium"
         },
@@ -6181,6 +6209,10 @@
         {
           "code": "66108005",
           "term": "Primary degenerative dementia of the Alzheimer type, senile onset, uncomplicated"
+        },
+        {
+          "code": "698954005",
+          "term": "Primary degenerative dementia of the Alzheimer type, senile onset in remission"
         },
         {
           "code": "722600006",
@@ -6279,6 +6311,14 @@
         {
           "code": "F03",
           "term": "Unspecified dementia"
+        },
+        {
+          "code": "G309",
+          "term": "Alzheimer disease, unspecified"
+        },
+        {
+          "code": "G311",
+          "term": "Senile degeneration of brain, not elsewhere classified"
         }
       ],
       "fn_codes": [
@@ -6367,6 +6407,10 @@
           "term": "Amyotrophic lateral sclerosis, parkinsonism, dementia complex of Kii Peninsula"
         },
         {
+          "code": "1259124000",
+          "term": "Amyotrophic lateral sclerosis with frontotemporal dementia"
+        },
+        {
           "code": "1259465009",
           "term": "Dementia due to hepatic failure"
         },
@@ -6417,10 +6461,6 @@
         {
           "code": "1259496000",
           "term": "Dementia due to Lyme disease"
-        },
-        {
-          "code": "1259499007",
-          "term": "Dementia due to hemorrhagic cerebral infarction due to hypertension"
         },
         {
           "code": "1259501004",
@@ -6583,6 +6623,10 @@
           "term": "Multi-infarct dementia with depression"
         },
         {
+          "code": "141991000119109",
+          "term": "Alzheimer's disease with delusions"
+        },
+        {
           "code": "142001000119106",
           "term": "Alzheimer's disease with depressed mood"
         },
@@ -6665,6 +6709,10 @@
         {
           "code": "191462009",
           "term": "Arteriosclerotic dementia (including [multi infarct dementia])"
+        },
+        {
+          "code": "191465006",
+          "term": "Arteriosclerotic dementia with paranoia"
         },
         {
           "code": "191467003",
@@ -7015,6 +7063,10 @@
           "term": "Dementia due to Creutzfeldt Jakob disease"
         },
         {
+          "code": "429998004",
+          "term": "Vascular dementia"
+        },
+        {
           "code": "442344002",
           "term": "Dementia due to Huntington chorea"
         },
@@ -7121,10 +7173,6 @@
         {
           "code": "698949001",
           "term": "Dementia in remission"
-        },
-        {
-          "code": "698954005",
-          "term": "Primary degenerative dementia of the Alzheimer type, senile onset in remission"
         },
         {
           "code": "698955006",
@@ -7406,102 +7454,72 @@
     }
   },
   "false_exclusions": {
-    "count": 14,
+    "count": 7,
     "codes": [
       {
-        "code": "1259121008",
-        "term": "Amyotrophic lateral sclerosis, parkinsonism, dementia complex of West New Guinea (disorder)",
-        "rationale": "This is a rare genetic syndrome (ALS-parkinsonism-dementia complex) where dementia is one component of a multi-system disorder, not a primary dementia."
+        "code": "141991000119109",
+        "term": "Delusions in Alzheimer's disease (disorder)",
+        "rationale": "Delusions in Alzheimer's disease is a symptom/manifestation of dementia rather than dementia itself."
       },
       {
-        "code": "1259123006",
-        "term": "Amyotrophic lateral sclerosis, parkinsonism, dementia complex of Kii Peninsula (disorder)",
-        "rationale": "This is a rare genetic syndrome (Kii Peninsula ALS-parkinsonism-dementia complex) where dementia is one component of a multi-system disorder, not a primary dementia."
+        "code": "429998004",
+        "term": "Vascular dementia (disorder)",
+        "rationale": "Vascular dementia is a secondary dementia type caused by cerebrovascular disease, not a primary degenerative dementia."
       },
       {
         "code": "56267009",
         "term": "Multi-infarct dementia (disorder)",
-        "rationale": "Multi-infarct dementia is a secondary dementia caused by cerebrovascular disease, not a primary dementia."
+        "rationale": "Multi-infarct dementia is a secondary vascular dementia caused by cerebrovascular infarcts, not a primary degenerative dementia."
       },
       {
         "code": "723123001",
         "term": "Ischemic vascular dementia (disorder)",
-        "rationale": "Ischemic vascular dementia is a secondary dementia caused by cerebrovascular ischemia, not a primary dementia."
-      },
-      {
-        "code": "788861009",
-        "term": "Aggression due to dementia (finding)",
-        "rationale": "Aggression due to dementia is a behavioral manifestation or complication of dementia, not an instance of primary dementia itself."
-      },
-      {
-        "code": "788862002",
-        "term": "Agitation due to dementia (finding)",
-        "rationale": "Agitation due to dementia is a behavioral manifestation or complication of dementia, not an instance of primary dementia itself."
-      },
-      {
-        "code": "82361000119107",
-        "term": "Altered behavior in dementia due to Huntington chorea (disorder)",
-        "rationale": "Altered behavior in dementia due to Huntington chorea is a secondary dementia caused by Huntington disease, not a primary dementia."
+        "rationale": "Ischemic vascular dementia is a secondary dementia caused by cerebrovascular ischemia, not a primary degenerative dementia."
       },
       {
         "code": "833326008",
         "term": "Cortical vascular dementia (disorder)",
-        "rationale": "Cortical vascular dementia is a secondary dementia caused by cerebrovascular disease, not a primary dementia."
-      },
-      {
-        "code": "838276009",
-        "term": "Amyotrophic lateral sclerosis, parkinsonism, dementia complex (disorder)",
-        "rationale": "ALS-parkinsonism-dementia complex is a secondary dementia caused by ALS, not a primary degenerative dementia."
+        "rationale": "Cortical vascular dementia is a secondary dementia caused by cerebrovascular disease, not a primary degenerative dementia."
       },
       {
         "code": "9345005",
         "term": "Dialysis dementia (disorder)",
-        "rationale": "Dialysis dementia is a secondary dementia caused by aluminum toxicity in dialysis, not a primary dementia."
-      },
-      {
-        "code": "1259499007",
-        "term": "Dementia due to hemorrhagic cerebral infarction due to hypertension (disorder)",
-        "rationale": "This is dementia secondary to a specific vascular cause (hemorrhagic infarction due to hypertension), not a primary dementia."
-      },
-      {
-        "code": "230258005",
-        "term": "Amyotrophic lateral sclerosis with dementia (disorder)",
-        "rationale": "ALS with dementia represents dementia secondary to ALS, a neurodegenerative disease, not a primary dementia."
+        "rationale": "Dialysis dementia is a secondary dementia caused by dialysis-related complications, not a primary degenerative dementia."
       },
       {
         "code": "698948009",
         "term": "Vascular dementia in remission (disorder)",
-        "rationale": "Vascular dementia in remission represents a resolved secondary dementia, not an active primary dementia."
-      },
-      {
-        "code": "698954005",
-        "term": "Primary degenerative dementia of the Alzheimer type, senile onset in remission (disorder)",
-        "rationale": "Primary degenerative dementia in remission represents a resolved condition and should be excluded as it does not confirm active disease."
+        "rationale": "Vascular dementia in remission represents a resolved secondary dementia state, not an active primary dementia."
       }
     ]
   },
   "uncertain_in_reference": {
-    "count": 3,
+    "count": 4,
     "codes": [
       {
-        "code": "79341000119107",
-        "term": "Mixed dementia (disorder)",
-        "rationale": "Mixed dementia may include both primary and secondary components; clinical judgment needed to determine if this qualifies as primary dementia."
+        "code": "698954005",
+        "term": "Primary degenerative dementia of the Alzheimer type, senile onset in remission (disorder)",
+        "rationale": "Primary degenerative dementia in remission may represent resolved disease; clinical judgment needed on whether remission codes should be included."
       },
       {
         "code": "723390000",
         "term": "Rapidly progressive dementia (disorder)",
-        "rationale": "Rapidly progressive dementia is a clinical descriptor that may apply to primary or secondary dementias; clinical context needed to determine if this represents a primary dementia."
+        "rationale": "Rapidly progressive dementia is a clinical descriptor that may encompass primary dementias but could also include secondary causes; clinical judgment needed."
       },
       {
         "code": "762707000",
         "term": "Subcortical dementia (disorder)",
-        "rationale": "Subcortical dementia is an anatomical classification that may apply to primary or secondary dementias; clinical context needed to determine if this represents a primary dementia."
+        "rationale": "Subcortical dementia is an anatomical classification that may include primary dementias but could also encompass secondary causes; clinical judgment needed."
+      },
+      {
+        "code": "79341000119107",
+        "term": "Mixed dementia (disorder)",
+        "rationale": "Mixed dementia typically combines primary and secondary components; unclear whether this should be included in a primary dementia list."
       }
     ]
   },
-  "summary": "Recall: 12.9% (42 of 325 reference codes retrieved). Precision: 67.7%. F1: 21.7%. 14 reference codes were incorrectly excluded.",
-  "elapsed_seconds": 22.21,
+  "summary": "Recall: 12.0% (39 of 325 reference codes retrieved). Precision: 63.9%. F1: 20.2%. 7 reference codes were incorrectly excluded.",
+  "elapsed_seconds": 21.25,
   "pipeline_results_count": 100,
   "scored_codes": [
     {
@@ -7509,258 +7527,358 @@
       "term": "Dementia in Alzheimer disease",
       "vocabulary": "ICD-10 (WHO)",
       "decision": "include",
-      "confidence": 0.99,
+      "confidence": 1.0,
       "rationale": "Dementia in Alzheimer disease is a primary dementia type and directly represents the queried condition.",
       "sources": [
-        "ChromaDB",
-        "OMOPHub"
+        "ChromaDB"
       ],
-      "usage_frequency": null
+      "usage_frequency": 2268,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital HES inpatient FCEs",
+      "usage_setting": "secondary_care_hes",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "F00.0",
       "term": "Dementia in Alzheimer disease with early onset",
       "vocabulary": "ICD-10 (WHO)",
       "decision": "include",
-      "confidence": 0.99,
+      "confidence": 1.0,
       "rationale": "Early-onset Alzheimer dementia is a clinical subtype of primary dementia and should be included.",
       "sources": [
-        "ChromaDB",
-        "OMOPHub"
+        "ChromaDB"
       ],
-      "usage_frequency": null
+      "usage_frequency": 108,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital HES inpatient FCEs",
+      "usage_setting": "secondary_care_hes",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "F00.1",
       "term": "Dementia in Alzheimer disease with late onset",
       "vocabulary": "ICD-10 (WHO)",
       "decision": "include",
-      "confidence": 0.99,
+      "confidence": 1.0,
       "rationale": "Late-onset Alzheimer dementia is a clinical subtype of primary dementia and should be included.",
       "sources": [
-        "ChromaDB",
-        "OMOPHub"
+        "ChromaDB"
       ],
-      "usage_frequency": null
+      "usage_frequency": 159,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital HES inpatient FCEs",
+      "usage_setting": "secondary_care_hes",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "F00.2",
       "term": "Dementia in Alzheimer disease, atypical or mixed type",
       "vocabulary": "ICD-10 (WHO)",
       "decision": "include",
-      "confidence": 0.99,
+      "confidence": 1.0,
       "rationale": "Atypical or mixed-type Alzheimer dementia is a clinical variant of primary dementia and should be included.",
       "sources": [
-        "ChromaDB",
-        "OMOPHub"
+        "ChromaDB"
       ],
-      "usage_frequency": null
+      "usage_frequency": 660,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital HES inpatient FCEs",
+      "usage_setting": "secondary_care_hes",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "F00.9",
       "term": "Dementia in Alzheimer disease, unspecified",
       "vocabulary": "ICD-10 (WHO)",
       "decision": "include",
-      "confidence": 0.99,
-      "rationale": "Unspecified Alzheimer dementia is a valid diagnostic code for primary dementia and should be included.",
+      "confidence": 1.0,
+      "rationale": "Unspecified Alzheimer dementia is a primary dementia type and should be included.",
       "sources": [
-        "ChromaDB",
-        "OMOPHub"
+        "ChromaDB"
       ],
-      "usage_frequency": null
+      "usage_frequency": 1341,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital HES inpatient FCEs",
+      "usage_setting": "secondary_care_hes",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "F01",
       "term": "Vascular dementia",
       "vocabulary": "ICD-10 (WHO)",
       "decision": "include",
-      "confidence": 0.99,
+      "confidence": 1.0,
       "rationale": "Vascular dementia is a primary dementia type and directly represents the queried condition.",
       "sources": [
-        "ChromaDB",
-        "OMOPHub"
+        "ChromaDB"
       ],
-      "usage_frequency": null
+      "usage_frequency": 4980,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital HES inpatient FCEs",
+      "usage_setting": "secondary_care_hes",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "F01.0",
       "term": "Vascular dementia of acute onset",
       "vocabulary": "ICD-10 (WHO)",
       "decision": "include",
-      "confidence": 0.99,
+      "confidence": 1.0,
       "rationale": "Acute-onset vascular dementia is a clinical subtype of primary dementia and should be included.",
       "sources": [
         "ChromaDB"
       ],
-      "usage_frequency": null
+      "usage_frequency": 16,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital HES inpatient FCEs",
+      "usage_setting": "secondary_care_hes",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "F01.1",
       "term": "Multi-infarct dementia",
       "vocabulary": "ICD-10 (WHO)",
       "decision": "include",
-      "confidence": 0.99,
+      "confidence": 1.0,
       "rationale": "Multi-infarct dementia is a clinical subtype of vascular dementia and should be included.",
       "sources": [
-        "ChromaDB",
-        "OMOPHub"
+        "ChromaDB"
       ],
-      "usage_frequency": null
+      "usage_frequency": 50,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital HES inpatient FCEs",
+      "usage_setting": "secondary_care_hes",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "F01.2",
       "term": "Subcortical vascular dementia",
       "vocabulary": "ICD-10 (WHO)",
       "decision": "include",
-      "confidence": 0.99,
+      "confidence": 1.0,
       "rationale": "Subcortical vascular dementia is a clinical subtype of vascular dementia and should be included.",
       "sources": [
-        "ChromaDB",
-        "OMOPHub"
+        "ChromaDB"
       ],
-      "usage_frequency": null
+      "usage_frequency": 27,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital HES inpatient FCEs",
+      "usage_setting": "secondary_care_hes",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "F01.3",
       "term": "Mixed cortical and subcortical vascular dementia",
       "vocabulary": "ICD-10 (WHO)",
       "decision": "include",
-      "confidence": 0.99,
+      "confidence": 1.0,
       "rationale": "Mixed cortical and subcortical vascular dementia is a clinical subtype of vascular dementia and should be included.",
       "sources": [
-        "ChromaDB",
-        "OMOPHub"
+        "ChromaDB"
       ],
-      "usage_frequency": null
+      "usage_frequency": 48,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital HES inpatient FCEs",
+      "usage_setting": "secondary_care_hes",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "F01.8",
       "term": "Other vascular dementia",
       "vocabulary": "ICD-10 (WHO)",
       "decision": "include",
-      "confidence": 0.99,
-      "rationale": "Other vascular dementia is a valid diagnostic code for primary dementia and should be included.",
+      "confidence": 1.0,
+      "rationale": "Other vascular dementia is a primary dementia type and should be included.",
       "sources": [
-        "ChromaDB",
-        "OMOPHub"
+        "ChromaDB"
       ],
-      "usage_frequency": null
+      "usage_frequency": 47,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital HES inpatient FCEs",
+      "usage_setting": "secondary_care_hes",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "F01.9",
       "term": "Vascular dementia, unspecified",
       "vocabulary": "ICD-10 (WHO)",
       "decision": "include",
-      "confidence": 0.99,
-      "rationale": "Unspecified vascular dementia is a valid diagnostic code for primary dementia and should be included.",
+      "confidence": 1.0,
+      "rationale": "Unspecified vascular dementia is a primary dementia type and should be included.",
       "sources": [
         "ChromaDB"
       ],
-      "usage_frequency": null
-    },
-    {
-      "code": "F02.0",
-      "term": "Dementia in Pick disease",
-      "vocabulary": "ICD-10 (WHO)",
-      "decision": "include",
-      "confidence": 0.99,
-      "rationale": "Dementia in Pick disease is a primary dementia type and directly represents the queried condition.",
-      "sources": [
-        "ChromaDB",
-        "OMOPHub"
-      ],
-      "usage_frequency": null
-    },
-    {
-      "code": "F02.1",
-      "term": "Dementia in Creutzfeldt-Jakob disease",
-      "vocabulary": "ICD-10 (WHO)",
-      "decision": "include",
-      "confidence": 0.99,
-      "rationale": "Dementia in Creutzfeldt-Jakob disease is a primary dementia type and directly represents the queried condition.",
-      "sources": [
-        "ChromaDB",
-        "OMOPHub"
-      ],
-      "usage_frequency": null
-    },
-    {
-      "code": "F02.2",
-      "term": "Dementia in Huntington disease",
-      "vocabulary": "ICD-10 (WHO)",
-      "decision": "include",
-      "confidence": 0.99,
-      "rationale": "Dementia in Huntington disease is a primary dementia type and directly represents the queried condition.",
-      "sources": [
-        "ChromaDB",
-        "OMOPHub"
-      ],
-      "usage_frequency": null
-    },
-    {
-      "code": "F02.3",
-      "term": "Dementia in Parkinson disease",
-      "vocabulary": "ICD-10 (WHO)",
-      "decision": "include",
-      "confidence": 0.99,
-      "rationale": "Dementia in Parkinson disease is a primary dementia type and directly represents the queried condition.",
-      "sources": [
-        "ChromaDB",
-        "OMOPHub"
-      ],
-      "usage_frequency": null
-    },
-    {
-      "code": "F02.4",
-      "term": "Dementia in human immunodeficiency virus [HIV] disease",
-      "vocabulary": "ICD-10 (WHO)",
-      "decision": "include",
-      "confidence": 0.99,
-      "rationale": "Dementia in HIV disease is a primary dementia type and directly represents the queried condition.",
-      "sources": [
-        "ChromaDB",
-        "OMOPHub"
-      ],
-      "usage_frequency": null
-    },
-    {
-      "code": "F03",
-      "term": "Unspecified dementia",
-      "vocabulary": "ICD-10 (WHO)",
-      "decision": "include",
-      "confidence": 0.99,
-      "rationale": "Unspecified dementia is a valid diagnostic code for primary dementia and should be included.",
-      "sources": [
-        "ChromaDB",
-        "OMOPHub"
-      ],
-      "usage_frequency": null
-    },
-    {
-      "code": "10532003",
-      "term": "Primary degenerative dementia of the Alzheimer type, presenile onset, with depression (disorder)",
-      "vocabulary": "SNOMED CT",
-      "decision": "include",
-      "confidence": 0.99,
-      "rationale": "Primary degenerative dementia of Alzheimer type with early onset is a specific clinical diagnosis of primary dementia and should be included.",
-      "sources": [
-        "ChromaDB",
-        "QOF Business Rules 2024-25"
-      ],
-      "usage_frequency": null
+      "usage_frequency": 4792,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital HES inpatient FCEs",
+      "usage_setting": "secondary_care_hes",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "F02",
       "term": "Dementia in other diseases classified elsewhere",
       "vocabulary": "ICD-10 (WHO)",
       "decision": "include",
+      "confidence": 1.0,
+      "rationale": "Dementia in other diseases classified elsewhere is a primary dementia category and should be included.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "usage_frequency": 493,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital HES inpatient FCEs",
+      "usage_setting": "secondary_care_hes",
+      "concept_id": null,
+      "dmd_level": null
+    },
+    {
+      "code": "F02.0",
+      "term": "Dementia in Pick disease",
+      "vocabulary": "ICD-10 (WHO)",
+      "decision": "include",
+      "confidence": 1.0,
+      "rationale": "Dementia in Pick disease is a primary dementia type and should be included.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "usage_frequency": 92,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital HES inpatient FCEs",
+      "usage_setting": "secondary_care_hes",
+      "concept_id": null,
+      "dmd_level": null
+    },
+    {
+      "code": "F02.1",
+      "term": "Dementia in Creutzfeldt-Jakob disease",
+      "vocabulary": "ICD-10 (WHO)",
+      "decision": "include",
+      "confidence": 1.0,
+      "rationale": "Dementia in Creutzfeldt-Jakob disease is a primary dementia type and should be included.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "usage_frequency": null,
+      "usage_status": "not_in_dataset",
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": null,
+      "dmd_level": null
+    },
+    {
+      "code": "F02.2",
+      "term": "Dementia in Huntington disease",
+      "vocabulary": "ICD-10 (WHO)",
+      "decision": "include",
+      "confidence": 1.0,
+      "rationale": "Dementia in Huntington disease is a primary dementia type and should be included.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "usage_frequency": 11,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital HES inpatient FCEs",
+      "usage_setting": "secondary_care_hes",
+      "concept_id": null,
+      "dmd_level": null
+    },
+    {
+      "code": "F02.3",
+      "term": "Dementia in Parkinson disease",
+      "vocabulary": "ICD-10 (WHO)",
+      "decision": "include",
+      "confidence": 1.0,
+      "rationale": "Dementia in Parkinson disease is a primary dementia type and should be included.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "usage_frequency": 147,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital HES inpatient FCEs",
+      "usage_setting": "secondary_care_hes",
+      "concept_id": null,
+      "dmd_level": null
+    },
+    {
+      "code": "F02.4",
+      "term": "Dementia in human immunodeficiency virus [HIV] disease",
+      "vocabulary": "ICD-10 (WHO)",
+      "decision": "include",
+      "confidence": 1.0,
+      "rationale": "Dementia in HIV disease is a primary dementia type and should be included; term contains 'dementia' and the underlying condition.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "usage_frequency": null,
+      "usage_status": "not_in_dataset",
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": null,
+      "dmd_level": null
+    },
+    {
+      "code": "F03",
+      "term": "Unspecified dementia",
+      "vocabulary": "ICD-10 (WHO)",
+      "decision": "include",
+      "confidence": 1.0,
+      "rationale": "Unspecified dementia is a primary dementia category and should be included.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "usage_frequency": 7032,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital HES inpatient FCEs",
+      "usage_setting": "secondary_care_hes",
+      "concept_id": null,
+      "dmd_level": null
+    },
+    {
+      "code": "G30.9",
+      "term": "Alzheimer disease, unspecified",
+      "vocabulary": "ICD-10 (WHO)",
+      "decision": "include",
       "confidence": 0.95,
-      "rationale": "Dementia in other diseases classified elsewhere includes primary dementias secondary to specific underlying conditions and should be included.",
+      "rationale": "Alzheimer disease is a primary form of dementia and directly represents the queried condition.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "usage_frequency": 7139,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital HES inpatient FCEs",
+      "usage_setting": "secondary_care_hes",
+      "concept_id": null,
+      "dmd_level": null
+    },
+    {
+      "code": "10532003",
+      "term": "Primary degenerative dementia of the Alzheimer type, presenile onset, with depression (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Primary degenerative dementia of Alzheimer type with depression is a clinical subtype of primary dementia.",
       "sources": [
         "ChromaDB",
-        "OMOPHub"
+        "QOF Business Rules 2024-25"
       ],
-      "usage_frequency": null
+      "usage_frequency": 70,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "1089501000000102",
@@ -7768,12 +7886,17 @@
       "vocabulary": "SNOMED CT",
       "decision": "include",
       "confidence": 0.95,
-      "rationale": "Presenile dementia with psychosis is a direct clinical subtype of primary dementia with a named manifestation.",
+      "rationale": "Presenile dementia with psychosis is a clinical variant of primary dementia with associated psychotic features.",
       "sources": [
         "ChromaDB",
         "QOF Business Rules 2024-25"
       ],
-      "usage_frequency": null
+      "usage_frequency": null,
+      "usage_status": "withheld_below_5",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": 35610096,
+      "dmd_level": null
     },
     {
       "code": "1089521000000106",
@@ -7781,12 +7904,17 @@
       "vocabulary": "SNOMED CT",
       "decision": "include",
       "confidence": 0.95,
-      "rationale": "Predominantly cortical dementia is a primary dementia subtype based on anatomical classification.",
+      "rationale": "Predominantly cortical dementia is a primary dementia subtype based on anatomical distribution.",
       "sources": [
         "ChromaDB",
         "QOF Business Rules 2024-25"
       ],
-      "usage_frequency": null
+      "usage_frequency": 80,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": 35610098,
+      "dmd_level": null
     },
     {
       "code": "1089531000000108",
@@ -7799,7 +7927,12 @@
         "ChromaDB",
         "QOF Business Rules 2024-25"
       ],
-      "usage_frequency": null
+      "usage_frequency": 40,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": 35610099,
+      "dmd_level": null
     },
     {
       "code": "12348006",
@@ -7807,12 +7940,17 @@
       "vocabulary": "SNOMED CT",
       "decision": "include",
       "confidence": 0.95,
-      "rationale": "Presenile dementia is a primary dementia subtype based on age of onset.",
+      "rationale": "Presenile dementia is a primary dementia occurring before age 65.",
       "sources": [
         "ChromaDB",
         "QOF Business Rules 2024-25"
       ],
-      "usage_frequency": null
+      "usage_frequency": 290,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": 378125,
+      "dmd_level": null
     },
     {
       "code": "1259128002",
@@ -7820,12 +7958,17 @@
       "vocabulary": "SNOMED CT",
       "decision": "include",
       "confidence": 0.95,
-      "rationale": "Alzheimer disease with psychosis is a primary dementia (Alzheimer's) with a named manifestation.",
+      "rationale": "Alzheimer disease with psychosis is a clinical variant of primary Alzheimer dementia.",
       "sources": [
         "ChromaDB",
         "QOF Business Rules 2024-25"
       ],
-      "usage_frequency": null
+      "usage_frequency": 40,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": 37166126,
+      "dmd_level": null
     },
     {
       "code": "15662003",
@@ -7833,12 +7976,17 @@
       "vocabulary": "SNOMED CT",
       "decision": "include",
       "confidence": 0.95,
-      "rationale": "Senile dementia is a primary dementia subtype based on age of onset.",
+      "rationale": "Senile dementia is a primary dementia occurring in older age.",
       "sources": [
         "ChromaDB",
         "QOF Business Rules 2024-25"
       ],
-      "usage_frequency": null
+      "usage_frequency": 8920,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": 4048875,
+      "dmd_level": null
     },
     {
       "code": "1581000119101",
@@ -7846,12 +7994,17 @@
       "vocabulary": "SNOMED CT",
       "decision": "include",
       "confidence": 0.95,
-      "rationale": "Dementia of the Alzheimer type with behavioral disturbance is a primary Alzheimer's dementia with a named manifestation.",
+      "rationale": "Dementia of Alzheimer type with behavioral disturbance is a clinical variant of primary Alzheimer dementia.",
       "sources": [
         "ChromaDB",
         "QOF Business Rules 2024-25"
       ],
-      "usage_frequency": null
+      "usage_frequency": 410,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "16276361000119108",
@@ -7864,7 +8017,12 @@
         "ChromaDB",
         "QOF Business Rules 2024-25"
       ],
-      "usage_frequency": null
+      "usage_frequency": null,
+      "usage_status": "not_in_dataset",
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "191449005",
@@ -7877,7 +8035,12 @@
         "ChromaDB",
         "QOF Business Rules 2024-25"
       ],
-      "usage_frequency": null
+      "usage_frequency": 720,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": 375791,
+      "dmd_level": null
     },
     {
       "code": "191451009",
@@ -7890,7 +8053,12 @@
         "ChromaDB",
         "QOF Business Rules 2024-25"
       ],
-      "usage_frequency": null
+      "usage_frequency": null,
+      "usage_status": "withheld_below_5",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": 376085,
+      "dmd_level": null
     },
     {
       "code": "191452002",
@@ -7898,12 +8066,17 @@
       "vocabulary": "SNOMED CT",
       "decision": "include",
       "confidence": 0.95,
-      "rationale": "Presenile dementia with delirium is a primary dementia with a named manifestation.",
+      "rationale": "Presenile dementia with delirium is a clinical variant of primary presenile dementia.",
       "sources": [
         "ChromaDB",
         "QOF Business Rules 2024-25"
       ],
-      "usage_frequency": null
+      "usage_frequency": 10,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": 381832,
+      "dmd_level": null
     },
     {
       "code": "191455000",
@@ -7911,12 +8084,17 @@
       "vocabulary": "SNOMED CT",
       "decision": "include",
       "confidence": 0.95,
-      "rationale": "Presenile dementia with depression is a primary dementia with a named manifestation.",
+      "rationale": "Presenile dementia with depression is a clinical variant of primary presenile dementia.",
       "sources": [
         "ChromaDB",
         "QOF Business Rules 2024-25"
       ],
-      "usage_frequency": null
+      "usage_frequency": 10,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "191458003",
@@ -7924,12 +8102,17 @@
       "vocabulary": "SNOMED CT",
       "decision": "include",
       "confidence": 0.95,
-      "rationale": "Senile dementia with paranoia is a primary dementia with a named manifestation.",
+      "rationale": "Senile dementia with paranoia is a clinical variant of primary senile dementia.",
       "sources": [
         "ChromaDB",
         "QOF Business Rules 2024-25"
       ],
-      "usage_frequency": null
+      "usage_frequency": 40,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "191459006",
@@ -7937,12 +8120,17 @@
       "vocabulary": "SNOMED CT",
       "decision": "include",
       "confidence": 0.95,
-      "rationale": "Senile dementia with depression is a primary dementia with a named manifestation.",
+      "rationale": "Senile dementia with depression is a clinical variant of primary senile dementia.",
       "sources": [
         "ChromaDB",
         "QOF Business Rules 2024-25"
       ],
-      "usage_frequency": null
+      "usage_frequency": 50,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "191461002",
@@ -7950,12 +8138,17 @@
       "vocabulary": "SNOMED CT",
       "decision": "include",
       "confidence": 0.95,
-      "rationale": "Senile dementia with delirium is a primary dementia with a named manifestation.",
+      "rationale": "Senile dementia with delirium is a clinical variant of primary senile dementia.",
       "sources": [
         "ChromaDB",
         "QOF Business Rules 2024-25"
       ],
-      "usage_frequency": null
+      "usage_frequency": 250,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": 376946,
+      "dmd_level": null
     },
     {
       "code": "191463004",
@@ -7968,7 +8161,12 @@
         "ChromaDB",
         "QOF Business Rules 2024-25"
       ],
-      "usage_frequency": null
+      "usage_frequency": 50,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": 439276,
+      "dmd_level": null
     },
     {
       "code": "191464005",
@@ -7976,26 +8174,17 @@
       "vocabulary": "SNOMED CT",
       "decision": "include",
       "confidence": 0.95,
-      "rationale": "Arteriosclerotic dementia with delirium is a primary vascular dementia with a named manifestation.",
+      "rationale": "Arteriosclerotic dementia with delirium is a clinical variant of primary vascular dementia.",
       "sources": [
         "ChromaDB",
-        "OMOPHub",
         "QOF Business Rules 2024-25"
       ],
-      "usage_frequency": null
-    },
-    {
-      "code": "191465006",
-      "term": "Arteriosclerotic dementia with paranoia (disorder)",
-      "vocabulary": "SNOMED CT",
-      "decision": "include",
-      "confidence": 0.95,
-      "rationale": "Arteriosclerotic dementia with paranoia is a primary vascular dementia with a named manifestation.",
-      "sources": [
-        "OMOPHub",
-        "QOF Business Rules 2024-25"
-      ],
-      "usage_frequency": null
+      "usage_frequency": null,
+      "usage_status": "withheld_below_5",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": 376094,
+      "dmd_level": null
     },
     {
       "code": "191466007",
@@ -8003,13 +8192,17 @@
       "vocabulary": "SNOMED CT",
       "decision": "include",
       "confidence": 0.95,
-      "rationale": "Arteriosclerotic dementia with depression is a primary vascular dementia with a named manifestation.",
+      "rationale": "Arteriosclerotic dementia with depression is a clinical variant of primary vascular dementia.",
       "sources": [
         "ChromaDB",
-        "OMOPHub",
         "QOF Business Rules 2024-25"
       ],
-      "usage_frequency": null
+      "usage_frequency": null,
+      "usage_status": "withheld_below_5",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "22381000119105",
@@ -8017,12 +8210,17 @@
       "vocabulary": "SNOMED CT",
       "decision": "include",
       "confidence": 0.95,
-      "rationale": "Primary degenerative dementia is explicitly a primary dementia subtype.",
+      "rationale": "Primary degenerative dementia is a core category of primary dementia.",
       "sources": [
         "ChromaDB",
         "QOF Business Rules 2024-25"
       ],
-      "usage_frequency": null
+      "usage_frequency": 80,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": 43020444,
+      "dmd_level": null
     },
     {
       "code": "230270009",
@@ -8035,7 +8233,12 @@
         "ChromaDB",
         "QOF Business Rules 2024-25"
       ],
-      "usage_frequency": null
+      "usage_frequency": 4370,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": 4043378,
+      "dmd_level": null
     },
     {
       "code": "230286002",
@@ -8048,7 +8251,12 @@
         "ChromaDB",
         "QOF Business Rules 2024-25"
       ],
-      "usage_frequency": null
+      "usage_frequency": 2080,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": 4047747,
+      "dmd_level": null
     },
     {
       "code": "230288001",
@@ -8056,12 +8264,35 @@
       "vocabulary": "SNOMED CT",
       "decision": "include",
       "confidence": 0.95,
-      "rationale": "Semantic dementia is a primary dementia subtype (variant of frontotemporal dementia).",
+      "rationale": "Semantic dementia is a primary dementia subtype.",
       "sources": [
         "ChromaDB",
         "QOF Business Rules 2024-25"
       ],
-      "usage_frequency": null
+      "usage_frequency": 330,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": 4046091,
+      "dmd_level": null
+    },
+    {
+      "code": "230289009",
+      "term": "Patchy dementia (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Patchy dementia is a primary dementia subtype.",
+      "sources": [
+        "ChromaDB",
+        "QOF Business Rules 2024-25"
+      ],
+      "usage_frequency": 20,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": 4047748,
+      "dmd_level": null
     },
     {
       "code": "26852004",
@@ -8069,12 +8300,17 @@
       "vocabulary": "SNOMED CT",
       "decision": "include",
       "confidence": 0.95,
-      "rationale": "Primary degenerative dementia of the Alzheimer type, senile onset, with depression is a primary Alzheimer's dementia with a named manifestation.",
+      "rationale": "Primary degenerative dementia of Alzheimer type, senile onset, with depression is a clinical variant of primary Alzheimer dementia.",
       "sources": [
         "ChromaDB",
         "QOF Business Rules 2024-25"
       ],
-      "usage_frequency": null
+      "usage_frequency": 20,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "26929004",
@@ -8082,12 +8318,17 @@
       "vocabulary": "SNOMED CT",
       "decision": "include",
       "confidence": 0.95,
-      "rationale": "Alzheimer's disease is a primary dementia subtype.",
+      "rationale": "Alzheimer's disease is a primary form of dementia and directly represents the queried condition.",
       "sources": [
         "ChromaDB",
         "QOF Business Rules 2024-25"
       ],
-      "usage_frequency": null
+      "usage_frequency": 234530,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": 378419,
+      "dmd_level": null
     },
     {
       "code": "31081000119101",
@@ -8095,12 +8336,17 @@
       "vocabulary": "SNOMED CT",
       "decision": "include",
       "confidence": 0.95,
-      "rationale": "Presenile dementia with delusions is a primary dementia with a named manifestation.",
+      "rationale": "Presenile dementia with delusions is a clinical variant of primary presenile dementia.",
       "sources": [
         "ChromaDB",
         "QOF Business Rules 2024-25"
       ],
-      "usage_frequency": null
+      "usage_frequency": 10,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "371024007",
@@ -8108,12 +8354,17 @@
       "vocabulary": "SNOMED CT",
       "decision": "include",
       "confidence": 0.95,
-      "rationale": "Senile dementia with delusion is a primary dementia with a named manifestation.",
+      "rationale": "Senile dementia with delusion is a clinical variant of primary senile dementia.",
       "sources": [
         "ChromaDB",
         "QOF Business Rules 2024-25"
       ],
-      "usage_frequency": null
+      "usage_frequency": null,
+      "usage_status": "not_in_dataset",
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": 380986,
+      "dmd_level": null
     },
     {
       "code": "371026009",
@@ -8121,12 +8372,17 @@
       "vocabulary": "SNOMED CT",
       "decision": "include",
       "confidence": 0.95,
-      "rationale": "Senile dementia with psychosis is a primary dementia with a named manifestation.",
+      "rationale": "Senile dementia with psychosis is a clinical variant of primary senile dementia.",
       "sources": [
         "ChromaDB",
         "QOF Business Rules 2024-25"
       ],
-      "usage_frequency": null
+      "usage_frequency": 80,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": 4159643,
+      "dmd_level": null
     },
     {
       "code": "416780008",
@@ -8134,12 +8390,17 @@
       "vocabulary": "SNOMED CT",
       "decision": "include",
       "confidence": 0.95,
-      "rationale": "Primary degenerative dementia of the Alzheimer type, presenile onset is a primary Alzheimer's dementia subtype.",
+      "rationale": "Primary degenerative dementia of Alzheimer type, presenile onset is a clinical subtype of primary Alzheimer dementia.",
       "sources": [
         "ChromaDB",
         "QOF Business Rules 2024-25"
       ],
-      "usage_frequency": null
+      "usage_frequency": 9360,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": 4218017,
+      "dmd_level": null
     },
     {
       "code": "416975007",
@@ -8147,25 +8408,17 @@
       "vocabulary": "SNOMED CT",
       "decision": "include",
       "confidence": 0.95,
-      "rationale": "Primary degenerative dementia of the Alzheimer type, senile onset is a primary Alzheimer's dementia subtype.",
+      "rationale": "Primary degenerative dementia of the Alzheimer type, senile onset is a direct instance of primary dementia.",
       "sources": [
         "ChromaDB",
         "QOF Business Rules 2024-25"
       ],
-      "usage_frequency": null
-    },
-    {
-      "code": "429998004",
-      "term": "Vascular dementia (disorder)",
-      "vocabulary": "SNOMED CT",
-      "decision": "include",
-      "confidence": 0.95,
-      "rationale": "Vascular dementia is a primary dementia subtype.",
-      "sources": [
-        "ChromaDB",
-        "QOF Business Rules 2024-25"
-      ],
-      "usage_frequency": null
+      "usage_frequency": 65590,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": 4220313,
+      "dmd_level": null
     },
     {
       "code": "4817008",
@@ -8173,12 +8426,17 @@
       "vocabulary": "SNOMED CT",
       "decision": "include",
       "confidence": 0.95,
-      "rationale": "Primary degenerative dementia of the Alzheimer type, senile onset, with delirium is a primary Alzheimer's dementia with a named manifestation.",
+      "rationale": "Primary degenerative dementia of the Alzheimer type with delirium is a clinical variant of primary dementia with a named manifestation.",
       "sources": [
         "ChromaDB",
         "QOF Business Rules 2024-25"
       ],
-      "usage_frequency": null
+      "usage_frequency": 10,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": 4167839,
+      "dmd_level": null
     },
     {
       "code": "52448006",
@@ -8186,12 +8444,17 @@
       "vocabulary": "SNOMED CT",
       "decision": "include",
       "confidence": 0.95,
-      "rationale": "Dementia (disorder) is the parent concept for primary dementia.",
+      "rationale": "Generic dementia code is a direct instance of the queried condition.",
       "sources": [
         "ChromaDB",
         "QOF Business Rules 2024-25"
       ],
-      "usage_frequency": null
+      "usage_frequency": 159150,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": 4182210,
+      "dmd_level": null
     },
     {
       "code": "54502004",
@@ -8199,12 +8462,17 @@
       "vocabulary": "SNOMED CT",
       "decision": "include",
       "confidence": 0.95,
-      "rationale": "Primary degenerative dementia of the Alzheimer type with presenile onset is a direct instance of primary dementia.",
+      "rationale": "Primary degenerative dementia of the Alzheimer type, presenile onset with delusions is a clinical variant of primary dementia.",
       "sources": [
         "ChromaDB",
         "QOF Business Rules 2024-25"
       ],
-      "usage_frequency": null
+      "usage_frequency": null,
+      "usage_status": "withheld_below_5",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": 4182539,
+      "dmd_level": null
     },
     {
       "code": "55009008",
@@ -8212,12 +8480,17 @@
       "vocabulary": "SNOMED CT",
       "decision": "include",
       "confidence": 0.95,
-      "rationale": "Primary degenerative dementia of the Alzheimer type with senile onset is a direct instance of primary dementia.",
+      "rationale": "Primary degenerative dementia of the Alzheimer type, senile onset with delusions is a clinical variant of primary dementia.",
       "sources": [
         "ChromaDB",
         "QOF Business Rules 2024-25"
       ],
-      "usage_frequency": null
+      "usage_frequency": null,
+      "usage_status": "withheld_below_5",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": 4204688,
+      "dmd_level": null
     },
     {
       "code": "6475002",
@@ -8225,12 +8498,17 @@
       "vocabulary": "SNOMED CT",
       "decision": "include",
       "confidence": 0.95,
-      "rationale": "Primary degenerative dementia of the Alzheimer type with presenile onset uncomplicated is a direct instance of primary dementia.",
+      "rationale": "Primary degenerative dementia of the Alzheimer type, presenile onset uncomplicated is a direct instance of primary dementia.",
       "sources": [
         "ChromaDB",
         "QOF Business Rules 2024-25"
       ],
-      "usage_frequency": null
+      "usage_frequency": 40,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": 4277444,
+      "dmd_level": null
     },
     {
       "code": "65096006",
@@ -8238,12 +8516,17 @@
       "vocabulary": "SNOMED CT",
       "decision": "include",
       "confidence": 0.95,
-      "rationale": "Primary degenerative dementia of the Alzheimer type with presenile onset and delirium is a manifestation of primary dementia.",
+      "rationale": "Primary degenerative dementia of the Alzheimer type, presenile onset with delirium is a clinical variant of primary dementia.",
       "sources": [
         "ChromaDB",
         "QOF Business Rules 2024-25"
       ],
-      "usage_frequency": null
+      "usage_frequency": null,
+      "usage_status": "withheld_below_5",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": 4277746,
+      "dmd_level": null
     },
     {
       "code": "66108005",
@@ -8251,38 +8534,52 @@
       "vocabulary": "SNOMED CT",
       "decision": "include",
       "confidence": 0.95,
-      "rationale": "Primary degenerative dementia of the Alzheimer type with senile onset uncomplicated is a direct instance of primary dementia.",
+      "rationale": "Primary degenerative dementia of the Alzheimer type, senile onset uncomplicated is a direct instance of primary dementia.",
       "sources": [
         "ChromaDB",
         "QOF Business Rules 2024-25"
       ],
-      "usage_frequency": null
+      "usage_frequency": 100,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": 4278830,
+      "dmd_level": null
     },
     {
-      "code": "141991000119109",
-      "term": "Delusions in Alzheimer's disease (disorder)",
+      "code": "G31.1",
+      "term": "Senile degeneration of brain, not elsewhere classified",
+      "vocabulary": "ICD-10 (WHO)",
+      "decision": "include",
+      "confidence": 0.9,
+      "rationale": "Senile degeneration of brain is a primary neurodegenerative process underlying dementia.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "usage_frequency": 10,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital HES inpatient FCEs",
+      "usage_setting": "secondary_care_hes",
+      "concept_id": null,
+      "dmd_level": null
+    },
+    {
+      "code": "1259499007",
+      "term": "Dementia due to hemorrhagic cerebral infarction due to hypertension (disorder)",
       "vocabulary": "SNOMED CT",
       "decision": "include",
       "confidence": 0.9,
-      "rationale": "Delusions in Alzheimer's disease is a manifestation of primary Alzheimer's dementia with the condition explicitly named.",
+      "rationale": "Dementia due to hemorrhagic cerebral infarction is a primary vascular dementia subtype.",
       "sources": [
-        "ChromaDB",
+        "OpenCodelists (Bennett Institute)",
         "QOF Business Rules 2024-25"
       ],
-      "usage_frequency": null
-    },
-    {
-      "code": "230289009",
-      "term": "Patchy dementia (disorder)",
-      "vocabulary": "SNOMED CT",
-      "decision": "include",
-      "confidence": 0.9,
-      "rationale": "Patchy dementia is a primary dementia subtype.",
-      "sources": [
-        "ChromaDB",
-        "QOF Business Rules 2024-25"
-      ],
-      "usage_frequency": null
+      "usage_frequency": null,
+      "usage_status": "not_in_dataset",
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": 37166364,
+      "dmd_level": null
     },
     {
       "code": "722600006",
@@ -8290,149 +8587,446 @@
       "vocabulary": "SNOMED CT",
       "decision": "include",
       "confidence": 0.9,
-      "rationale": "Non-amnestic Alzheimer disease is a clinical subtype of primary degenerative dementia of the Alzheimer type.",
+      "rationale": "Non-amnestic Alzheimer disease is a clinical variant of primary degenerative dementia.",
       "sources": [
         "ChromaDB",
         "QOF Business Rules 2024-25"
       ],
-      "usage_frequency": null
+      "usage_frequency": null,
+      "usage_status": "withheld_below_5",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
-      "code": "1259124000",
-      "term": "Amyotrophic lateral sclerosis with frontotemporal dementia (disorder)",
-      "vocabulary": "SNOMED CT",
-      "decision": "include",
-      "confidence": 0.85,
-      "rationale": "ALS with frontotemporal dementia represents a primary dementia (frontotemporal) that occurs with ALS; the dementia itself is a primary form.",
-      "sources": [
-        "OMOPHub",
-        "QOF Business Rules 2024-25"
-      ],
-      "usage_frequency": null
-    },
-    {
-      "code": "79341000119107",
-      "term": "Mixed dementia (disorder)",
+      "code": "698954005",
+      "term": "Primary degenerative dementia of the Alzheimer type, senile onset in remission (disorder)",
       "vocabulary": "SNOMED CT",
       "decision": "uncertain",
-      "confidence": 0.65,
-      "rationale": "Mixed dementia may include both primary and secondary components; clinical judgment needed to determine if this qualifies as primary dementia.",
+      "confidence": 0.7,
+      "rationale": "Primary degenerative dementia in remission may represent resolved disease; clinical judgment needed on whether remission codes should be included.",
       "sources": [
         "ChromaDB",
         "QOF Business Rules 2024-25"
       ],
-      "usage_frequency": null
+      "usage_frequency": 10,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": 44782940,
+      "dmd_level": null
     },
     {
       "code": "723390000",
       "term": "Rapidly progressive dementia (disorder)",
       "vocabulary": "SNOMED CT",
       "decision": "uncertain",
-      "confidence": 0.6,
-      "rationale": "Rapidly progressive dementia is a clinical descriptor that may apply to primary or secondary dementias; clinical context needed to determine if this represents a primary dementia.",
+      "confidence": 0.65,
+      "rationale": "Rapidly progressive dementia is a clinical descriptor that may encompass primary dementias but could also include secondary causes; clinical judgment needed.",
       "sources": [
         "ChromaDB",
         "QOF Business Rules 2024-25"
       ],
-      "usage_frequency": null
+      "usage_frequency": 150,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": 37109635,
+      "dmd_level": null
     },
     {
       "code": "762707000",
       "term": "Subcortical dementia (disorder)",
       "vocabulary": "SNOMED CT",
       "decision": "uncertain",
-      "confidence": 0.6,
-      "rationale": "Subcortical dementia is an anatomical classification that may apply to primary or secondary dementias; clinical context needed to determine if this represents a primary dementia.",
+      "confidence": 0.65,
+      "rationale": "Subcortical dementia is an anatomical classification that may include primary dementias but could also encompass secondary causes; clinical judgment needed.",
       "sources": [
         "ChromaDB",
         "QOF Business Rules 2024-25"
       ],
-      "usage_frequency": null
+      "usage_frequency": 90,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": 42538857,
+      "dmd_level": null
     },
     {
-      "code": "Z63.6",
-      "term": "Dependent relative needing care at home",
-      "vocabulary": "ICD-10 (WHO)",
-      "decision": "exclude",
-      "confidence": 0.99,
-      "rationale": "Dependent relative needing care at home is an administrative/social code, not a clinical diagnosis of primary dementia.",
+      "code": "79341000119107",
+      "term": "Mixed dementia (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "uncertain",
+      "confidence": 0.6,
+      "rationale": "Mixed dementia typically combines primary and secondary components; unclear whether this should be included in a primary dementia list.",
       "sources": [
-        "ChromaDB"
+        "ChromaDB",
+        "QOF Business Rules 2024-25"
       ],
-      "usage_frequency": null
+      "usage_frequency": 67540,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": 43021816,
+      "dmd_level": null
     },
     {
       "code": "F05.0",
       "term": "Delirium not superimposed on dementia, so described",
       "vocabulary": "ICD-10 (WHO)",
       "decision": "exclude",
-      "confidence": 0.95,
-      "rationale": "Delirium not superimposed on dementia is a distinct acute condition, not an instance of primary dementia.",
+      "confidence": 1.0,
+      "rationale": "Delirium is a distinct acute condition, not primary dementia; this code explicitly excludes dementia.",
       "sources": [
-        "ChromaDB",
-        "OMOPHub"
+        "ChromaDB"
       ],
-      "usage_frequency": null
+      "usage_frequency": 8333,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital HES inpatient FCEs",
+      "usage_setting": "secondary_care_hes",
+      "concept_id": null,
+      "dmd_level": null
+    },
+    {
+      "code": "F05.1",
+      "term": "Delirium superimposed on dementia",
+      "vocabulary": "ICD-10 (WHO)",
+      "decision": "exclude",
+      "confidence": 1.0,
+      "rationale": "Delirium superimposed on dementia is a complication/comorbidity, not an instance of primary dementia itself.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "usage_frequency": 25415,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital HES inpatient FCEs",
+      "usage_setting": "secondary_care_hes",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "F05.8",
       "term": "Other delirium",
       "vocabulary": "ICD-10 (WHO)",
       "decision": "exclude",
-      "confidence": 0.95,
-      "rationale": "Other delirium is a distinct acute condition, not an instance of primary dementia.",
+      "confidence": 1.0,
+      "rationale": "Other delirium is a distinct acute condition, not primary dementia.",
       "sources": [
         "ChromaDB"
       ],
-      "usage_frequency": null
+      "usage_frequency": 7420,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital HES inpatient FCEs",
+      "usage_setting": "secondary_care_hes",
+      "concept_id": null,
+      "dmd_level": null
+    },
+    {
+      "code": "F05.9",
+      "term": "Delirium, unspecified",
+      "vocabulary": "ICD-10 (WHO)",
+      "decision": "exclude",
+      "confidence": 1.0,
+      "rationale": "Unspecified delirium is a distinct acute condition, not primary dementia.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "usage_frequency": 33631,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital HES inpatient FCEs",
+      "usage_setting": "secondary_care_hes",
+      "concept_id": null,
+      "dmd_level": null
+    },
+    {
+      "code": "F06.5",
+      "term": "Organic dissociative disorder",
+      "vocabulary": "ICD-10 (WHO)",
+      "decision": "exclude",
+      "confidence": 1.0,
+      "rationale": "Organic dissociative disorder is a distinct condition, not primary dementia.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "usage_frequency": null,
+      "usage_status": "not_in_dataset",
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": null,
+      "dmd_level": null
+    },
+    {
+      "code": "F06.7",
+      "term": "Mild cognitive disorder",
+      "vocabulary": "ICD-10 (WHO)",
+      "decision": "exclude",
+      "confidence": 1.0,
+      "rationale": "Mild cognitive disorder is a precursor condition distinct from dementia; it does not meet dementia diagnostic criteria.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "usage_frequency": 1056,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital HES inpatient FCEs",
+      "usage_setting": "secondary_care_hes",
+      "concept_id": null,
+      "dmd_level": null
+    },
+    {
+      "code": "F07",
+      "term": "Personality and behavioural disorders due to brain disease, damage and dysfunction",
+      "vocabulary": "ICD-10 (WHO)",
+      "decision": "exclude",
+      "confidence": 1.0,
+      "rationale": "Personality and behavioural disorders due to brain disease are distinct conditions, not primary dementia.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "usage_frequency": 815,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital HES inpatient FCEs",
+      "usage_setting": "secondary_care_hes",
+      "concept_id": null,
+      "dmd_level": null
+    },
+    {
+      "code": "F07.0",
+      "term": "Organic personality disorder",
+      "vocabulary": "ICD-10 (WHO)",
+      "decision": "exclude",
+      "confidence": 1.0,
+      "rationale": "Organic personality disorder is a distinct condition, not primary dementia.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "usage_frequency": 32,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital HES inpatient FCEs",
+      "usage_setting": "secondary_care_hes",
+      "concept_id": null,
+      "dmd_level": null
+    },
+    {
+      "code": "F07.8",
+      "term": "Other organic personality and behavioural disorders due to brain disease, damage and dysfunction",
+      "vocabulary": "ICD-10 (WHO)",
+      "decision": "exclude",
+      "confidence": 1.0,
+      "rationale": "Other organic personality and behavioural disorders are distinct conditions, not primary dementia.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "usage_frequency": 32,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital HES inpatient FCEs",
+      "usage_setting": "secondary_care_hes",
+      "concept_id": null,
+      "dmd_level": null
+    },
+    {
+      "code": "F07.9",
+      "term": "Unspecified organic personality and behavioural disorder due to brain disease, damage and dysfunction",
+      "vocabulary": "ICD-10 (WHO)",
+      "decision": "exclude",
+      "confidence": 1.0,
+      "rationale": "Unspecified organic personality and behavioural disorder is a distinct condition, not primary dementia.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "usage_frequency": 11,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital HES inpatient FCEs",
+      "usage_setting": "secondary_care_hes",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "G10",
       "term": "Huntington disease",
       "vocabulary": "ICD-10 (WHO)",
       "decision": "exclude",
-      "confidence": 0.95,
-      "rationale": "Huntington disease is the underlying condition; dementia in Huntington disease (F02.2) is the relevant code for primary dementia.",
+      "confidence": 1.0,
+      "rationale": "Huntington disease is the underlying condition; the dementia manifestation is coded as F02.2, not G10.",
       "sources": [
         "ChromaDB"
       ],
-      "usage_frequency": null
+      "usage_frequency": 441,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital HES inpatient FCEs",
+      "usage_setting": "secondary_care_hes",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "G20",
       "term": "Parkinson disease",
       "vocabulary": "ICD-10 (WHO)",
       "decision": "exclude",
-      "confidence": 0.95,
-      "rationale": "Parkinson disease is the underlying condition; dementia in Parkinson disease (F02.3) is the relevant code for primary dementia.",
+      "confidence": 1.0,
+      "rationale": "Parkinson disease is the underlying condition; the dementia manifestation is coded as F02.3, not G20.",
       "sources": [
         "ChromaDB"
       ],
-      "usage_frequency": null
+      "usage_frequency": 11767,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital HES inpatient FCEs",
+      "usage_setting": "secondary_care_hes",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "G21",
       "term": "Secondary parkinsonism",
       "vocabulary": "ICD-10 (WHO)",
       "decision": "exclude",
-      "confidence": 0.95,
-      "rationale": "Secondary parkinsonism is a movement disorder, not an instance of primary dementia.",
+      "confidence": 1.0,
+      "rationale": "Secondary parkinsonism is a movement disorder, not primary dementia.",
       "sources": [
         "ChromaDB"
       ],
-      "usage_frequency": null
+      "usage_frequency": 868,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital HES inpatient FCEs",
+      "usage_setting": "secondary_care_hes",
+      "concept_id": null,
+      "dmd_level": null
+    },
+    {
+      "code": "G21.3",
+      "term": "Postencephalitic parkinsonism",
+      "vocabulary": "ICD-10 (WHO)",
+      "decision": "exclude",
+      "confidence": 1.0,
+      "rationale": "Postencephalitic parkinsonism is a movement disorder, not primary dementia.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "usage_frequency": null,
+      "usage_status": "not_in_dataset",
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "G21.4",
       "term": "Vascular parkinsonism",
       "vocabulary": "ICD-10 (WHO)",
       "decision": "exclude",
-      "confidence": 0.95,
-      "rationale": "Vascular parkinsonism is a movement disorder, not an instance of primary dementia.",
+      "confidence": 1.0,
+      "rationale": "Vascular parkinsonism is a movement disorder, not primary dementia.",
       "sources": [
         "ChromaDB"
       ],
-      "usage_frequency": null
+      "usage_frequency": 349,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital HES inpatient FCEs",
+      "usage_setting": "secondary_care_hes",
+      "concept_id": null,
+      "dmd_level": null
+    },
+    {
+      "code": "G23.9",
+      "term": "Degenerative disease of basal ganglia, unspecified",
+      "vocabulary": "ICD-10 (WHO)",
+      "decision": "exclude",
+      "confidence": 1.0,
+      "rationale": "Degenerative disease of basal ganglia is a movement disorder, not primary dementia.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "usage_frequency": 19,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital HES inpatient FCEs",
+      "usage_setting": "secondary_care_hes",
+      "concept_id": null,
+      "dmd_level": null
+    },
+    {
+      "code": "G24",
+      "term": "Dystonia",
+      "vocabulary": "ICD-10 (WHO)",
+      "decision": "exclude",
+      "confidence": 1.0,
+      "rationale": "Dystonia is a movement disorder, not primary dementia.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "usage_frequency": 5070,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital HES inpatient FCEs",
+      "usage_setting": "secondary_care_hes",
+      "concept_id": null,
+      "dmd_level": null
+    },
+    {
+      "code": "G30",
+      "term": "Alzheimer disease",
+      "vocabulary": "ICD-10 (WHO)",
+      "decision": "exclude",
+      "confidence": 1.0,
+      "rationale": "Alzheimer disease is the underlying neuropathological condition; the dementia manifestation is coded as F00, not G30.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "usage_frequency": 10956,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital HES inpatient FCEs",
+      "usage_setting": "secondary_care_hes",
+      "concept_id": null,
+      "dmd_level": null
+    },
+    {
+      "code": "G30.0",
+      "term": "Alzheimer disease with early onset",
+      "vocabulary": "ICD-10 (WHO)",
+      "decision": "exclude",
+      "confidence": 1.0,
+      "rationale": "Alzheimer disease with early onset is the underlying condition; the dementia manifestation is coded as F00.0, not G30.0.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "usage_frequency": 298,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital HES inpatient FCEs",
+      "usage_setting": "secondary_care_hes",
+      "concept_id": null,
+      "dmd_level": null
+    },
+    {
+      "code": "G30.1",
+      "term": "Alzheimer disease with late onset",
+      "vocabulary": "ICD-10 (WHO)",
+      "decision": "exclude",
+      "confidence": 1.0,
+      "rationale": "Alzheimer disease with late onset is the underlying condition; the dementia manifestation is coded as F00.1, not G30.1.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "usage_frequency": 427,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital HES inpatient FCEs",
+      "usage_setting": "secondary_care_hes",
+      "concept_id": null,
+      "dmd_level": null
+    },
+    {
+      "code": "G30.8",
+      "term": "Other Alzheimer disease",
+      "vocabulary": "ICD-10 (WHO)",
+      "decision": "exclude",
+      "confidence": 1.0,
+      "rationale": "Other Alzheimer disease is the underlying condition; the dementia manifestation is coded as F00, not G30.8.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "usage_frequency": 3092,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital HES inpatient FCEs",
+      "usage_setting": "secondary_care_hes",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "R45.3",
@@ -8440,11 +9034,84 @@
       "vocabulary": "ICD-10 (WHO)",
       "decision": "exclude",
       "confidence": 0.95,
-      "rationale": "Demoralization and apathy are symptoms that may accompany dementia, not instances of primary dementia itself.",
+      "rationale": "Demoralization and apathy are symptoms that may accompany dementia but do not represent dementia itself.",
       "sources": [
         "ChromaDB"
       ],
-      "usage_frequency": null
+      "usage_frequency": 5,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital HES inpatient FCEs",
+      "usage_setting": "secondary_care_hes",
+      "concept_id": null,
+      "dmd_level": null
+    },
+    {
+      "code": "W06.0",
+      "term": "Fall involving bed, Home",
+      "vocabulary": "ICD-10 (WHO)",
+      "decision": "exclude",
+      "confidence": 0.95,
+      "rationale": "Fall from bed is a complication/consequence of dementia, not an instance of dementia itself.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "usage_frequency": null,
+      "usage_status": "not_in_dataset",
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": null,
+      "dmd_level": null
+    },
+    {
+      "code": "W07.0",
+      "term": "Fall involving chair, Home",
+      "vocabulary": "ICD-10 (WHO)",
+      "decision": "exclude",
+      "confidence": 0.95,
+      "rationale": "Fall from chair is a complication/consequence of dementia, not an instance of dementia itself.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "usage_frequency": null,
+      "usage_status": "not_in_dataset",
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": null,
+      "dmd_level": null
+    },
+    {
+      "code": "W19.0",
+      "term": "Unspecified fall, Home",
+      "vocabulary": "ICD-10 (WHO)",
+      "decision": "exclude",
+      "confidence": 0.95,
+      "rationale": "Unspecified fall is a complication/consequence of dementia, not an instance of dementia itself.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "usage_frequency": null,
+      "usage_status": "not_in_dataset",
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": null,
+      "dmd_level": null
+    },
+    {
+      "code": "Z63.6",
+      "term": "Dependent relative needing care at home",
+      "vocabulary": "ICD-10 (WHO)",
+      "decision": "exclude",
+      "confidence": 0.95,
+      "rationale": "Dependent relative needing care is an administrative/social consequence of dementia, not the condition itself.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "usage_frequency": null,
+      "usage_status": "not_in_dataset",
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "956881000000103",
@@ -8452,120 +9119,17 @@
       "vocabulary": "SNOMED CT",
       "decision": "exclude",
       "confidence": 0.95,
-      "rationale": "Dementia care plan declined is an administrative situation code, not a clinical diagnosis of primary dementia.",
+      "rationale": "Dementia care plan declined is an administrative/situational code, not a clinical diagnosis of dementia.",
       "sources": [
         "ChromaDB",
         "QOF Business Rules 2024-25"
       ],
-      "usage_frequency": null
-    },
-    {
-      "code": "F06.7",
-      "term": "Mild cognitive disorder",
-      "vocabulary": "ICD-10 (WHO)",
-      "decision": "exclude",
-      "confidence": 0.9,
-      "rationale": "Mild cognitive disorder is a precursor condition distinct from dementia and should not be included in a primary dementia list.",
-      "sources": [
-        "ChromaDB"
-      ],
-      "usage_frequency": null
-    },
-    {
-      "code": "F07.0",
-      "term": "Organic personality disorder",
-      "vocabulary": "ICD-10 (WHO)",
-      "decision": "exclude",
-      "confidence": 0.9,
-      "rationale": "Organic personality disorder is a behavioural consequence of brain disease, not an instance of primary dementia.",
-      "sources": [
-        "ChromaDB"
-      ],
-      "usage_frequency": null
-    },
-    {
-      "code": "F07.8",
-      "term": "Other organic personality and behavioural disorders due to brain disease, damage and dysfunction",
-      "vocabulary": "ICD-10 (WHO)",
-      "decision": "exclude",
-      "confidence": 0.9,
-      "rationale": "Other organic personality and behavioural disorders are consequences of brain disease, not instances of primary dementia.",
-      "sources": [
-        "ChromaDB"
-      ],
-      "usage_frequency": null
-    },
-    {
-      "code": "F07.9",
-      "term": "Unspecified organic personality and behavioural disorder due to brain disease, damage and dysfunction",
-      "vocabulary": "ICD-10 (WHO)",
-      "decision": "exclude",
-      "confidence": 0.9,
-      "rationale": "Unspecified organic personality and behavioural disorder is a consequence of brain disease, not an instance of primary dementia.",
-      "sources": [
-        "ChromaDB"
-      ],
-      "usage_frequency": null
-    },
-    {
-      "code": "G30",
-      "term": "Alzheimer disease",
-      "vocabulary": "ICD-10 (WHO)",
-      "decision": "exclude",
-      "confidence": 0.9,
-      "rationale": "Alzheimer disease is the underlying neuropathological condition; dementia in Alzheimer disease (F00) is the relevant diagnostic code for primary dementia.",
-      "sources": [
-        "ChromaDB"
-      ],
-      "usage_frequency": null
-    },
-    {
-      "code": "G30.0",
-      "term": "Alzheimer disease with early onset",
-      "vocabulary": "ICD-10 (WHO)",
-      "decision": "exclude",
-      "confidence": 0.9,
-      "rationale": "Alzheimer disease with early onset is the underlying condition; dementia in Alzheimer disease with early onset (F00.0) is the relevant diagnostic code.",
-      "sources": [
-        "ChromaDB"
-      ],
-      "usage_frequency": null
-    },
-    {
-      "code": "G30.1",
-      "term": "Alzheimer disease with late onset",
-      "vocabulary": "ICD-10 (WHO)",
-      "decision": "exclude",
-      "confidence": 0.9,
-      "rationale": "Alzheimer disease with late onset is the underlying condition; dementia in Alzheimer disease with late onset (F00.1) is the relevant diagnostic code.",
-      "sources": [
-        "ChromaDB"
-      ],
-      "usage_frequency": null
-    },
-    {
-      "code": "G30.8",
-      "term": "Other Alzheimer disease",
-      "vocabulary": "ICD-10 (WHO)",
-      "decision": "exclude",
-      "confidence": 0.9,
-      "rationale": "Other Alzheimer disease is the underlying condition; dementia in Alzheimer disease (F00.2) is the relevant diagnostic code.",
-      "sources": [
-        "ChromaDB"
-      ],
-      "usage_frequency": null
-    },
-    {
-      "code": "G30.9",
-      "term": "Alzheimer disease, unspecified",
-      "vocabulary": "ICD-10 (WHO)",
-      "decision": "exclude",
-      "confidence": 0.9,
-      "rationale": "Unspecified Alzheimer disease is the underlying condition; unspecified dementia in Alzheimer disease (F00.9) is the relevant diagnostic code.",
-      "sources": [
-        "ChromaDB"
-      ],
-      "usage_frequency": null
+      "usage_frequency": 5710,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": 46287028,
+      "dmd_level": null
     },
     {
       "code": "R54",
@@ -8573,37 +9137,52 @@
       "vocabulary": "ICD-10 (WHO)",
       "decision": "exclude",
       "confidence": 0.9,
-      "rationale": "Senility is a non-specific age-related condition, not a clinical diagnosis of primary dementia.",
+      "rationale": "Senility is a general age-related condition distinct from primary dementia diagnosis.",
       "sources": [
         "ChromaDB"
       ],
-      "usage_frequency": null
+      "usage_frequency": 7747,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital HES inpatient FCEs",
+      "usage_setting": "secondary_care_hes",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
-      "code": "1259121008",
-      "term": "Amyotrophic lateral sclerosis, parkinsonism, dementia complex of West New Guinea (disorder)",
+      "code": "141991000119109",
+      "term": "Delusions in Alzheimer's disease (disorder)",
       "vocabulary": "SNOMED CT",
       "decision": "exclude",
       "confidence": 0.9,
-      "rationale": "This is a rare genetic syndrome (ALS-parkinsonism-dementia complex) where dementia is one component of a multi-system disorder, not a primary dementia.",
+      "rationale": "Delusions in Alzheimer's disease is a symptom/manifestation of dementia rather than dementia itself.",
       "sources": [
-        "OMOPHub",
+        "ChromaDB",
         "QOF Business Rules 2024-25"
       ],
-      "usage_frequency": null
+      "usage_frequency": 50,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
-      "code": "1259123006",
-      "term": "Amyotrophic lateral sclerosis, parkinsonism, dementia complex of Kii Peninsula (disorder)",
+      "code": "429998004",
+      "term": "Vascular dementia (disorder)",
       "vocabulary": "SNOMED CT",
       "decision": "exclude",
       "confidence": 0.9,
-      "rationale": "This is a rare genetic syndrome (Kii Peninsula ALS-parkinsonism-dementia complex) where dementia is one component of a multi-system disorder, not a primary dementia.",
+      "rationale": "Vascular dementia is a secondary dementia type caused by cerebrovascular disease, not a primary degenerative dementia.",
       "sources": [
-        "OMOPHub",
+        "ChromaDB",
         "QOF Business Rules 2024-25"
       ],
-      "usage_frequency": null
+      "usage_frequency": 103880,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": 443605,
+      "dmd_level": null
     },
     {
       "code": "56267009",
@@ -8611,12 +9190,17 @@
       "vocabulary": "SNOMED CT",
       "decision": "exclude",
       "confidence": 0.9,
-      "rationale": "Multi-infarct dementia is a secondary dementia caused by cerebrovascular disease, not a primary dementia.",
+      "rationale": "Multi-infarct dementia is a secondary vascular dementia caused by cerebrovascular infarcts, not a primary degenerative dementia.",
       "sources": [
         "OpenCodelists (Bennett Institute)",
         "QOF Business Rules 2024-25"
       ],
-      "usage_frequency": null
+      "usage_frequency": 2010,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "723123001",
@@ -8624,51 +9208,17 @@
       "vocabulary": "SNOMED CT",
       "decision": "exclude",
       "confidence": 0.9,
-      "rationale": "Ischemic vascular dementia is a secondary dementia caused by cerebrovascular ischemia, not a primary dementia.",
+      "rationale": "Ischemic vascular dementia is a secondary dementia caused by cerebrovascular ischemia, not a primary degenerative dementia.",
       "sources": [
         "ChromaDB",
         "QOF Business Rules 2024-25"
       ],
-      "usage_frequency": null
-    },
-    {
-      "code": "788861009",
-      "term": "Aggression due to dementia (finding)",
-      "vocabulary": "SNOMED CT",
-      "decision": "exclude",
-      "confidence": 0.9,
-      "rationale": "Aggression due to dementia is a behavioral manifestation or complication of dementia, not an instance of primary dementia itself.",
-      "sources": [
-        "OMOPHub",
-        "QOF Business Rules 2024-25"
-      ],
-      "usage_frequency": null
-    },
-    {
-      "code": "788862002",
-      "term": "Agitation due to dementia (finding)",
-      "vocabulary": "SNOMED CT",
-      "decision": "exclude",
-      "confidence": 0.9,
-      "rationale": "Agitation due to dementia is a behavioral manifestation or complication of dementia, not an instance of primary dementia itself.",
-      "sources": [
-        "OMOPHub",
-        "QOF Business Rules 2024-25"
-      ],
-      "usage_frequency": null
-    },
-    {
-      "code": "82361000119107",
-      "term": "Altered behavior in dementia due to Huntington chorea (disorder)",
-      "vocabulary": "SNOMED CT",
-      "decision": "exclude",
-      "confidence": 0.9,
-      "rationale": "Altered behavior in dementia due to Huntington chorea is a secondary dementia caused by Huntington disease, not a primary dementia.",
-      "sources": [
-        "OMOPHub",
-        "QOF Business Rules 2024-25"
-      ],
-      "usage_frequency": null
+      "usage_frequency": 40,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": 36717248,
+      "dmd_level": null
     },
     {
       "code": "833326008",
@@ -8676,25 +9226,17 @@
       "vocabulary": "SNOMED CT",
       "decision": "exclude",
       "confidence": 0.9,
-      "rationale": "Cortical vascular dementia is a secondary dementia caused by cerebrovascular disease, not a primary dementia.",
+      "rationale": "Cortical vascular dementia is a secondary dementia caused by cerebrovascular disease, not a primary degenerative dementia.",
       "sources": [
         "ChromaDB",
         "QOF Business Rules 2024-25"
       ],
-      "usage_frequency": null
-    },
-    {
-      "code": "838276009",
-      "term": "Amyotrophic lateral sclerosis, parkinsonism, dementia complex (disorder)",
-      "vocabulary": "SNOMED CT",
-      "decision": "exclude",
-      "confidence": 0.9,
-      "rationale": "ALS-parkinsonism-dementia complex is a secondary dementia caused by ALS, not a primary degenerative dementia.",
-      "sources": [
-        "OMOPHub",
-        "QOF Business Rules 2024-25"
-      ],
-      "usage_frequency": null
+      "usage_frequency": 60,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": 3654434,
+      "dmd_level": null
     },
     {
       "code": "9345005",
@@ -8702,63 +9244,17 @@
       "vocabulary": "SNOMED CT",
       "decision": "exclude",
       "confidence": 0.9,
-      "rationale": "Dialysis dementia is a secondary dementia caused by aluminum toxicity in dialysis, not a primary dementia.",
+      "rationale": "Dialysis dementia is a secondary dementia caused by dialysis-related complications, not a primary degenerative dementia.",
       "sources": [
         "ChromaDB",
         "QOF Business Rules 2024-25"
       ],
-      "usage_frequency": null
-    },
-    {
-      "code": "F05.1",
-      "term": "Delirium superimposed on dementia",
-      "vocabulary": "ICD-10 (WHO)",
-      "decision": "exclude",
-      "confidence": 0.85,
-      "rationale": "Delirium superimposed on dementia is a complication/comorbidity of dementia, not an instance of primary dementia itself.",
-      "sources": [
-        "ChromaDB",
-        "OMOPHub"
-      ],
-      "usage_frequency": null
-    },
-    {
-      "code": "G31.1",
-      "term": "Senile degeneration of brain, not elsewhere classified",
-      "vocabulary": "ICD-10 (WHO)",
-      "decision": "exclude",
-      "confidence": 0.85,
-      "rationale": "Senile degeneration of brain is a neuropathological finding, not a clinical diagnosis of primary dementia.",
-      "sources": [
-        "ChromaDB"
-      ],
-      "usage_frequency": null
-    },
-    {
-      "code": "1259499007",
-      "term": "Dementia due to hemorrhagic cerebral infarction due to hypertension (disorder)",
-      "vocabulary": "SNOMED CT",
-      "decision": "exclude",
-      "confidence": 0.85,
-      "rationale": "This is dementia secondary to a specific vascular cause (hemorrhagic infarction due to hypertension), not a primary dementia.",
-      "sources": [
-        "OpenCodelists (Bennett Institute)",
-        "QOF Business Rules 2024-25"
-      ],
-      "usage_frequency": null
-    },
-    {
-      "code": "230258005",
-      "term": "Amyotrophic lateral sclerosis with dementia (disorder)",
-      "vocabulary": "SNOMED CT",
-      "decision": "exclude",
-      "confidence": 0.85,
-      "rationale": "ALS with dementia represents dementia secondary to ALS, a neurodegenerative disease, not a primary dementia.",
-      "sources": [
-        "OMOPHub",
-        "QOF Business Rules 2024-25"
-      ],
-      "usage_frequency": null
+      "usage_frequency": null,
+      "usage_status": "withheld_below_5",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": 4244346,
+      "dmd_level": null
     },
     {
       "code": "698948009",
@@ -8766,25 +9262,17 @@
       "vocabulary": "SNOMED CT",
       "decision": "exclude",
       "confidence": 0.85,
-      "rationale": "Vascular dementia in remission represents a resolved secondary dementia, not an active primary dementia.",
+      "rationale": "Vascular dementia in remission represents a resolved secondary dementia state, not an active primary dementia.",
       "sources": [
         "ChromaDB",
         "QOF Business Rules 2024-25"
       ],
-      "usage_frequency": null
-    },
-    {
-      "code": "698954005",
-      "term": "Primary degenerative dementia of the Alzheimer type, senile onset in remission (disorder)",
-      "vocabulary": "SNOMED CT",
-      "decision": "exclude",
-      "confidence": 0.85,
-      "rationale": "Primary degenerative dementia in remission represents a resolved condition and should be excluded as it does not confirm active disease.",
-      "sources": [
-        "ChromaDB",
-        "QOF Business Rules 2024-25"
-      ],
-      "usage_frequency": null
+      "usage_frequency": null,
+      "usage_status": "withheld_below_5",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": null,
+      "dmd_level": null
     }
   ],
   "pipeline": "rag",
