@@ -74,26 +74,59 @@ def test_case_insensitive_prefix_check():
 # --- search_omophub() tier with stubbed client ------------------------------
 
 class _FakeClient:
-    """Minimal stand-in for omophub.OMOPHub used by search_omophub()."""
+    """Minimal stand-in for omophub.OMOPHub used by search_omophub().
 
-    def __init__(self, behaviour):
+    Supports both ``search.bulk_basic`` (T37f primary path) and
+    ``search.basic`` (fallback). The synthesised ``BulkSearchResponse``
+    re-uses the same per-(variant, vocab) behaviour table so a test
+    written for either path produces the same row set.
+    """
+
+    def __init__(self, behaviour, *, raise_on_bulk: bool = False):
         # behaviour: dict[(variant, vocab_id) -> list[dict]] of fake rows
         self._behaviour = behaviour
-        self.search = self  # search.basic resolves on the same object
+        self._raise_on_bulk = raise_on_bulk
+        self.basic_calls: list[tuple[str, str]] = []
+        self.bulk_calls: int = 0
+        self.search = self  # search.{basic,bulk_basic} resolve on the same object
 
     def basic(self, search_term, **kwargs):
-        # vocabulary_ids is always a single-element list in our caller
         vid = kwargs["vocabulary_ids"][0]
+        self.basic_calls.append((search_term, vid))
         return list(self._behaviour.get((search_term, vid), []))
+
+    def bulk_basic(self, searches, *, defaults=None):
+        if self._raise_on_bulk:
+            raise RuntimeError("bulk path simulated failure")
+        self.bulk_calls += 1
+        items = []
+        for s in searches:
+            vid = s["vocabulary_ids"][0]
+            q = s["query"]
+            items.append({
+                "search_id": s["search_id"],
+                "query": q,
+                "results": list(self._behaviour.get((q, vid), [])),
+                "status": "completed",
+            })
+        return {
+            "results": items,
+            "total_searches": len(items),
+            "completed_searches": len(items),
+            "failed_searches": 0,
+        }
 
 
 def _row(code, vocab_id, name="x"):
     return {"concept_code": code, "concept_name": name, "domain_id": "Condition", "_vocab": vocab_id}
 
 
-def _patched_search(behaviour):
+def _patched_search(behaviour, *, raise_on_bulk: bool = False):
     """Return a context manager that patches OMOPHub() to a _FakeClient."""
-    return patch.object(omr, "OMOPHub", lambda **_: _FakeClient(behaviour))
+    return patch.object(
+        omr, "OMOPHub",
+        lambda **_: _FakeClient(behaviour, raise_on_bulk=raise_on_bulk),
+    )
 
 
 def test_dedup_across_variants_collapses_duplicate_codes():
@@ -161,6 +194,133 @@ def test_cap_scales_with_vocab_count():
                                 vocabularies={"ICD10cm": "ICD-10-CM", "SNOMEDCT": "SNOMED CT"},
                                 page_size=20)
     assert len(df) == 120
+
+
+# --- T37f bulk-search equivalence + fallback --------------------------------
+
+def test_bulk_path_makes_single_call_not_n_times_m():
+    behaviour = {
+        ("Foo", "ICD10cm"):  [_row("I21", "ICD10cm")],
+        ("Foo", "SNOMEDCT"): [_row("S1", "SNOMEDCT")],
+        ("Acute Foo", "ICD10cm"):  [_row("I22", "ICD10cm")],
+        ("Acute Foo", "SNOMEDCT"): [_row("S2", "SNOMEDCT")],
+        ("Chronic Foo", "ICD10cm"):  [_row("I23", "ICD10cm")],
+        ("Chronic Foo", "SNOMEDCT"): [_row("S3", "SNOMEDCT")],
+    }
+    captured: dict = {}
+    def make(**_):
+        captured["client"] = _FakeClient(behaviour)
+        return captured["client"]
+    with patch.object(omr, "OMOPHub", make):
+        df = omr.search_omophub(
+            "Foo",
+            vocabularies={"ICD10cm": "ICD-10-CM", "SNOMEDCT": "SNOMED CT"},
+            page_size=20,
+        )
+    assert captured["client"].bulk_calls == 1, "T37f should issue exactly one bulk call"
+    assert captured["client"].basic_calls == [], "basic fallback must not fire on success"
+    # Sanity: every (variant, vocab) combo's row appears in the merged set.
+    assert len(df) == 6, df["concept_code"].tolist()
+
+
+def test_bulk_equivalent_to_basic_for_same_inputs():
+    behaviour = {
+        ("Foo", "ICD10cm"):         [_row("I21", "ICD10cm"), _row("I22", "ICD10cm")],
+        ("Acute Foo", "ICD10cm"):   [_row("I21", "ICD10cm"), _row("I23", "ICD10cm")],
+        ("Chronic Foo", "ICD10cm"): [_row("I21", "ICD10cm")],
+    }
+    # Bulk path (default)
+    with _patched_search(behaviour):
+        bulk_codes = sorted(omr.search_omophub("Foo",
+            vocabularies={"ICD10cm": "ICD-10-CM"}, page_size=20)["concept_code"].tolist())
+    # Forced fallback to basic by raising on bulk
+    with _patched_search(behaviour, raise_on_bulk=True):
+        basic_codes = sorted(omr.search_omophub("Foo",
+            vocabularies={"ICD10cm": "ICD-10-CM"}, page_size=20)["concept_code"].tolist())
+    assert bulk_codes == basic_codes == ["I21", "I22", "I23"]
+
+
+def test_bulk_failure_falls_back_to_basic():
+    behaviour = {
+        ("Foo", "ICD10cm"):         [_row("I21", "ICD10cm")],
+        ("Acute Foo", "ICD10cm"):   [_row("I22", "ICD10cm")],
+        ("Chronic Foo", "ICD10cm"): [_row("I23", "ICD10cm")],
+    }
+    captured: dict = {}
+    def make(**_):
+        captured["client"] = _FakeClient(behaviour, raise_on_bulk=True)
+        return captured["client"]
+    with patch.object(omr, "OMOPHub", make):
+        df = omr.search_omophub("Foo", vocabularies={"ICD10cm": "ICD-10-CM"}, page_size=20)
+    assert captured["client"].bulk_calls == 0, "bulk was raised; counter stays 0"
+    assert len(captured["client"].basic_calls) == 3, "fallback issues one basic per variant"
+    assert sorted(df["concept_code"].tolist()) == ["I21", "I22", "I23"]
+
+
+def test_empty_vocabularies_short_circuits_without_calling_omophub():
+    """T37f audit FIX: vocabularies={} must NOT fall back to all OMOP vocabs.
+    A drug-domain query whose coding_systems map down to {} should make zero
+    OMOPHub calls, not silently burn quota on SNOMED/ICD10/OPCS4."""
+    captured: dict = {}
+    def make(**_):
+        captured["client"] = _FakeClient({})
+        return captured["client"]
+    with patch.object(omr, "OMOPHub", make):
+        df = omr.search_omophub("Foo", vocabularies={}, page_size=20)
+    assert df.empty
+    assert captured.get("client") is None or captured["client"].bulk_calls == 0
+    assert captured.get("client") is None or captured["client"].basic_calls == []
+
+
+def test_none_concept_code_value_is_skipped_not_stringified():
+    """T37f audit FIX: a row with ``concept_code=None`` must be dropped, not
+    coerced to the literal string ``"None"``. Falls back to concept_id."""
+    behaviour = {
+        ("Foo", "ICD10cm"): [
+            {"concept_code": None, "concept_id": 999, "concept_name": "fallback"},
+            {"concept_code": None, "concept_id": None, "concept_name": "drop"},
+            {"concept_code": "I21", "concept_name": "kept"},
+        ],
+        ("Acute Foo", "ICD10cm"): [],
+        ("Chronic Foo", "ICD10cm"): [],
+    }
+    with _patched_search(behaviour):
+        df = omr.search_omophub("Foo", vocabularies={"ICD10cm": "ICD-10-CM"}, page_size=20)
+    codes = sorted(str(c) for c in df["concept_code"].tolist() if c is not None)
+    # The None-value row should fall back to concept_id (999) for dedup key,
+    # but its concept_code column in the DataFrame is None. Verify "None" string never appears.
+    assert "None" not in codes
+    # Two surviving rows: the fallback-to-concept_id one + the I21 one.
+    assert len(df) == 2
+
+
+def test_bulk_skips_per_item_failures_without_crashing_whole_query():
+    """One search_id fails (status != completed); other items still flow through."""
+    behaviour = {
+        ("Foo", "ICD10cm"):         [_row("I21", "ICD10cm")],
+        ("Acute Foo", "ICD10cm"):   [_row("I22", "ICD10cm")],
+        ("Chronic Foo", "ICD10cm"): [_row("I23", "ICD10cm")],
+    }
+
+    class _PartialFailClient(_FakeClient):
+        def bulk_basic(self, searches, *, defaults=None):
+            self.bulk_calls += 1
+            items = []
+            for s in searches:
+                vid = s["vocabulary_ids"][0]
+                if s["query"] == "Acute Foo":
+                    items.append({"search_id": s["search_id"], "query": s["query"],
+                                  "results": [], "status": "failed", "error": "fake"})
+                else:
+                    items.append({"search_id": s["search_id"], "query": s["query"],
+                                  "results": list(self._behaviour.get((s["query"], vid), [])),
+                                  "status": "completed"})
+            return {"results": items, "total_searches": len(items),
+                    "completed_searches": len(items) - 1, "failed_searches": 1}
+
+    with patch.object(omr, "OMOPHub", lambda **_: _PartialFailClient(behaviour)):
+        df = omr.search_omophub("Foo", vocabularies={"ICD10cm": "ICD-10-CM"}, page_size=20)
+    assert sorted(df["concept_code"].tolist()) == ["I21", "I23"], "Acute Foo dropped silently"
 
 
 # --- Runner -----------------------------------------------------------------

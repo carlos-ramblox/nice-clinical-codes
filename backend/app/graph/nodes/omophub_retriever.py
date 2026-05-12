@@ -56,7 +56,11 @@ def query_vocabulary(
     page_size: int = 20,
     domain_id: str | None = None,
 ) -> list[dict]:
-    """Query a single vocabulary and return annotated result dicts."""
+    """Query a single vocabulary and return annotated result dicts.
+
+    Retained for backward compat / fallback when bulk fails wholesale.
+    Production path is ``search_omophub`` → ``client.search.bulk_basic``.
+    """
     kwargs = dict(vocabulary_ids=[vocab_id], page_size=page_size)
     if domain_id:
         kwargs["domain_ids"] = [domain_id]
@@ -68,6 +72,15 @@ def query_vocabulary(
         logger.warning("OMOPHub query failed for %s: %s", vocab_id, exc)
         return []
 
+    return _annotate(raw, search_term, vocab_id, domain_id)
+
+
+def _annotate(
+    raw: list[dict],
+    search_term: str,
+    vocab_id: str,
+    domain_id: str | None,
+) -> list[dict]:
     query_ts = datetime.datetime.now(datetime.UTC).isoformat(timespec="seconds") + "Z"
     annotated = []
     for record in raw:
@@ -79,8 +92,46 @@ def query_vocabulary(
         row["_queried_at_utc"] = query_ts
         row["_source"] = "OMOPHub"
         annotated.append(row)
-
     return annotated
+
+
+def _accept_rows(
+    rows: list[dict],
+    vocab_id: str,
+    seen: set[tuple[str, str]],
+    merged: list[dict],
+    cap: int,
+) -> None:
+    """Dedup-cap loop shared by bulk and fallback paths."""
+    for row in rows:
+        if len(merged) >= cap:
+            return
+        raw_code = row.get("concept_code") or row.get("concept_id")
+        if not raw_code:
+            continue
+        key = (str(raw_code), vocab_id)
+        if key in seen:
+            continue
+        seen.add(key)
+        merged.append(row)
+
+
+def _bulk_searches(
+    variants: list[str], vocabs: dict[str, str], page_size: int, domain_id: str | None,
+) -> list[dict]:
+    out: list[dict] = []
+    for variant in variants:
+        for vocab_id in vocabs:
+            item = {
+                "search_id": f"{vocab_id}::{variant}",
+                "query": variant,
+                "vocabulary_ids": [vocab_id],
+                "page_size": page_size,
+            }
+            if domain_id:
+                item["domain_ids"] = [domain_id]
+            out.append(item)
+    return out
 
 
 def search_omophub(
@@ -111,43 +162,62 @@ def search_omophub(
     if not OMOPHUB_API_KEY:
         raise ValueError("OMOPHUB_API_KEY not set")
 
-    vocabs = vocabularies or OMOPHUB_VOCABULARIES
+    vocabs = OMOPHUB_VOCABULARIES if vocabularies is None else vocabularies
+    if not vocabs:
+        return pd.DataFrame()
     ps = page_size or OMOPHUB_PAGE_SIZE
 
     variants = query_variants(search_term)
     if not variants:
         return pd.DataFrame()
 
-    cap = ps * len(variants) * max(len(vocabs), 1)
+    cap = ps * len(variants) * len(vocabs)
 
     client = OMOPHub(api_key=OMOPHUB_API_KEY)
     seen: set[tuple[str, str]] = set()
     merged: list[dict] = []
 
-    for variant in variants:
-        if len(merged) >= cap:
-            break
-        for vocab_id in vocabs:
+    # T37f: single bulk call replaces N×M per-(variant, vocab) HTTP calls.
+    # Per-search status checked individually; failures degrade to that
+    # search's empty contribution, identical to the basic-call fallback.
+    searches = _bulk_searches(variants, vocabs, ps, domain_id)
+    try:
+        response = client.search.bulk_basic(searches)
+    except Exception as exc:
+        logger.warning("OMOPHub bulk_basic failed wholesale, falling back: %s", exc)
+        response = None
+
+    if response is None:
+        for variant in variants:
             if len(merged) >= cap:
                 break
-            rows = query_vocabulary(client, variant, vocab_id, ps, domain_id)
-            for row in rows:
-                code = str(row.get("concept_code", row.get("concept_id", "")))
-                if not code:
-                    continue
-                key = (code, vocab_id)
-                if key in seen:
-                    continue
-                seen.add(key)
-                merged.append(row)
+            for vocab_id in vocabs:
                 if len(merged) >= cap:
                     break
+                rows = query_vocabulary(client, variant, vocab_id, ps, domain_id)
+                _accept_rows(rows, vocab_id, seen, merged, cap)
+    else:
+        items = response.get("results", []) if isinstance(response, dict) else []
+        for item in items:
+            if len(merged) >= cap:
+                break
+            if item.get("status") != "completed":
+                logger.warning("OMOPHub bulk item failed: %s", item.get("error"))
+                continue
+            search_id = item.get("search_id", "")
+            if "::" in search_id:
+                vocab_id, variant = search_id.split("::", 1)
+            else:
+                vocab_id = ""
+                variant = item.get("query", "")
+            rows = _annotate(item.get("results", []) or [], variant, vocab_id, domain_id)
+            _accept_rows(rows, vocab_id, seen, merged, cap)
 
     if not merged:
         return pd.DataFrame()
 
     logger.info(
-        "OMOPHub multi-query: %d variants × %d vocabs → %d unique rows (cap %d) for %r",
+        "OMOPHub bulk-query: %d variants x %d vocabs -> %d unique rows (cap %d) for %r",
         len(variants), len(vocabs), len(merged), cap, search_term,
     )
     return pd.DataFrame(merged)
