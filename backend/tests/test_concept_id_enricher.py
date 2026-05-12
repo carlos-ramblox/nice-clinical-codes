@@ -26,6 +26,14 @@ from app.graph.nodes import concept_id_enricher as enricher  # noqa: E402
 
 
 class _FakeConcepts:
+    """Stub for OMOPHub `concepts.*`.
+
+    ``mapping`` accepts either an int (treated as a standard concept_id)
+    or a dict to override extra fields like ``standard_concept`` and
+    ``relationships`` for T37h coverage. Real OMOPHub always returns
+    ``standard_concept`` so the dict form is closer to production shape.
+    """
+
     def __init__(self, mapping, fail_for=None):
         self._mapping = mapping
         self._fail_for = fail_for or set()
@@ -36,7 +44,12 @@ class _FakeConcepts:
         if (vocab_id, code) in self._fail_for:
             raise RuntimeError("simulated OMOPHub failure")
         if (vocab_id, code) in self._mapping:
-            return {"concept_id": self._mapping[(vocab_id, code)]}
+            value = self._mapping[(vocab_id, code)]
+            if isinstance(value, dict):
+                # Default to standard unless the test overrides — matches what
+                # the safety net (T37h) checks before accepting the id verbatim.
+                return {"standard_concept": "S", **value}
+            return {"concept_id": value, "standard_concept": "S"}
         raise RuntimeError("not found")
 
 
@@ -152,6 +165,106 @@ def test_missing_api_key_is_a_no_op():
     assert out == {}
     assert codes[0]["concept_id"] is None
     assert fake.calls == []
+
+
+# --- T37h hallucination safety net ------------------------------------------
+
+def test_standard_concept_kept_verbatim():
+    _reset_state()
+    fake = _FakeConcepts({("SNOMED", "44054006"): {"concept_id": 201826, "standard_concept": "S"}})
+    codes = [{"code": "44054006", "vocabulary": "SNOMED CT", "concept_id": None}]
+    with _patched(fake):
+        enricher.enrich_concept_ids({"enriched_codes": codes})
+    assert codes[0]["concept_id"] == 201826
+
+
+def test_non_standard_with_maps_to_uses_target_concept_id():
+    """ICD-10-CM concept marked non-standard ('C' classification); should follow
+    the 'Maps to' relationship to its standard SNOMED equivalent."""
+    _reset_state()
+    fake = _FakeConcepts({
+        ("ICD10", "E11.9"): {
+            "concept_id": 35200012,  # non-standard ICD-10-CM concept_id
+            "standard_concept": "C",
+            "relationships": [
+                {"relationship_id": "Maps to", "target_concept_id": 201826},
+            ],
+        },
+    })
+    codes = [{"code": "E11.9", "vocabulary": "ICD-10 (WHO)", "concept_id": None}]
+    with _patched(fake):
+        enricher.enrich_concept_ids({"enriched_codes": codes})
+    assert codes[0]["concept_id"] == 201826, "should have used Maps-to target, not raw id"
+
+
+def test_non_standard_without_maps_to_returns_none():
+    """A non-standard concept with no Maps-to relationship lands in the OHDSI
+    export's unmapped array rather than ship a non-standard concept_id ATLAS
+    will reject."""
+    _reset_state()
+    fake = _FakeConcepts({
+        ("ICD10", "Z99.0"): {
+            "concept_id": 35200013,
+            "standard_concept": "C",
+            "relationships": [],
+        },
+    })
+    codes = [{"code": "Z99.0", "vocabulary": "ICD-10 (WHO)", "concept_id": None}]
+    with _patched(fake):
+        enricher.enrich_concept_ids({"enriched_codes": codes})
+    assert codes[0]["concept_id"] is None
+
+
+def test_non_standard_concept_id_is_none_with_no_relationships_field():
+    """Real OMOPHub responses may omit `relationships` entirely when no
+    include_relationships flag is honoured for that lookup. Safety net
+    should still degrade gracefully — treat absent as empty."""
+    _reset_state()
+    fake = _FakeConcepts({
+        ("ICD10", "W19"): {"concept_id": 35201000, "standard_concept": "C"},
+    })
+    codes = [{"code": "W19", "vocabulary": "ICD-10 (WHO)", "concept_id": None}]
+    with _patched(fake):
+        enricher.enrich_concept_ids({"enriched_codes": codes})
+    assert codes[0]["concept_id"] is None
+
+
+# --- direct unit test for the helper ----------------------------------------
+
+def test_safe_concept_id_helper_branches():
+    s = enricher._safe_concept_id
+    assert s({"concept_id": 1, "standard_concept": "S"}) == 1
+    assert s({"concept_id": 2, "standard_concept": "C",
+              "relationships": [{"relationship_id": "Maps to", "target_concept_id": 42}]}) == 42
+    assert s({"concept_id": 3, "standard_concept": "C"}) is None
+    assert s({"concept_id": 4, "standard_concept": "C",
+              "relationships": [{"relationship_id": "Is a", "target_concept_id": 7}]}) is None
+    assert s({}) is None
+    assert s({"concept_id": None, "standard_concept": "S"}) is None
+    # T37h audit FIX: non-dict should return None, not raise
+    assert s(None) is None  # type: ignore[arg-type]
+    assert s("not a dict") is None  # type: ignore[arg-type]
+
+
+def test_safe_concept_id_handles_target_zero_without_falling_through():
+    """T37h audit FIX: target_concept_id=0 (OMOP CDM 'no matching concept'
+    sentinel) must not fall through to a different key via `or`. The
+    explicit None check picks 0 verbatim."""
+    s = enricher._safe_concept_id
+    rel = {"relationship_id": "Maps to", "target_concept_id": 0, "concept_id": 999}
+    assert s({"concept_id": 5, "standard_concept": "C", "relationships": [rel]}) == 0
+
+
+def test_safe_concept_id_rejects_empty_relationship_id():
+    """T37h audit FIX: relationship_id='' (empty string) must not match
+    'Maps to'. The explicit truthy check guards against SDK shape edges."""
+    s = enricher._safe_concept_id
+    rel = {"relationship_id": "", "relationship_type": "Maps to", "target_concept_id": 42}
+    # relationship_id is "", so we fall back to relationship_type which IS "Maps to"
+    assert s({"concept_id": 6, "standard_concept": "C", "relationships": [rel]}) == 42
+    # But if BOTH are empty, no match
+    rel_blank = {"relationship_id": "", "relationship_type": "", "target_concept_id": 99}
+    assert s({"concept_id": 7, "standard_concept": "C", "relationships": [rel_blank]}) is None
 
 
 def _run_all():

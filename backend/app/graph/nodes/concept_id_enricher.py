@@ -77,17 +77,46 @@ def _cache_set(key: tuple[str, str], value: int | None) -> None:
         _CACHE[key] = (time.time(), value)
 
 
+def _safe_concept_id(concept: dict) -> int | None:
+    """T37h: only standard concepts (standard_concept == "S") land in the
+    OHDSI export verbatim. For non-standard concepts, follow the
+    ``Maps to`` relationship to the standard equivalent. If no Maps-to
+    exists, return None so the row routes to the export's ``unmapped``
+    array rather than ship a non-standard concept_id that ATLAS rejects.
+    """
+    if not isinstance(concept, dict):
+        return None
+    raw_id = concept.get("concept_id")
+    if raw_id is None:
+        return None
+    if concept.get("standard_concept") == "S":
+        return int(raw_id)
+    for rel in concept.get("relationships") or []:
+        rel_id = rel.get("relationship_id") or rel.get("relationship_type")
+        if rel_id != "Maps to":
+            continue
+        target = rel.get("target_concept_id")
+        if target is None:
+            target = rel.get("concept_id")
+        if target is not None:
+            try:
+                return int(target)
+            except (TypeError, ValueError):
+                continue
+    return None
+
+
 def _lookup(client: OMOPHub, vocab_id: str, code: str) -> tuple[int | None, bool]:
-    """Returns (concept_id_or_none, cache_hit)."""
+    """Returns (concept_id_or_none, cache_hit). T37h: cached value is the
+    safe (standard or Maps-to'd) concept_id, not the raw get_by_code id."""
     key = (vocab_id, code)
     hit, value = _cache_get(key)
     if hit:
         return value, True
 
     try:
-        concept = client.concepts.get_by_code(vocab_id, code)
-        cid = concept.get("concept_id") if isinstance(concept, dict) else None
-        cid_int = int(cid) if cid is not None else None
+        concept = client.concepts.get_by_code(vocab_id, code, include_relationships=True)
+        cid_int = _safe_concept_id(concept)
     except RateLimitError as exc:
         # 429 means we're being throttled — surfaces in prod under load,
         # not a routine "code not in vocab" miss.
