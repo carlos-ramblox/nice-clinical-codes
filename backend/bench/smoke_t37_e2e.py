@@ -1,16 +1,6 @@
-"""T37 end-to-end smoke test against a running FastAPI backend.
+"""T37 e2e smoke: drug query surfaces dm+d/BNF + dmd_level; disease query doesn't.
 
-Drives the live ``/api/search`` endpoint with one drug query and one
-disease query, then asserts:
-
-1. Drug query: dm+d retriever fired (source tag present in candidate
-   ``sources``) AND at least one candidate carries a non-null
-   ``dmd_level`` populated to one of the four enum values.
-2. Disease query (FR-008 negative case): no row carries the dm+d /
-   BNF source tag AND no row has a non-null ``dmd_level``.
-
-Run:
-    cd backend && python -m bench.smoke_t37_e2e
+Run: cd backend && python -m bench.smoke_t37_e2e
 """
 from __future__ import annotations
 

@@ -71,7 +71,7 @@ def bnf_chapter_prefix(code: str) -> str:
 
 
 def retrieve_from_bnf(state: dict) -> dict:
-    """LangGraph node: fan-out BNF retriever for drug-domain conditions only."""
+    """Fan-out BNF retriever; FR-008 gates on ``domain == "Drug"``."""
     conditions = state.get("parsed_conditions", [])
     drug_conditions = [c for c in conditions if c.get("domain") == "Drug" and c.get("name")]
     if not drug_conditions:
@@ -81,8 +81,6 @@ def retrieve_from_bnf(state: dict) -> dict:
     for condition in drug_conditions:
         name = condition["name"]
         rows = search_by_condition(name, vocabulary=VOCABULARY)
-        # Defensive: parallel to the dm+d retriever — surface only the
-        # OpenCodelists ingest source until a direct BNF ingest path lands.
         bnf_rows = [r for r in rows if r.get("source") == SOURCE_TAG]
         for r in bnf_rows:
             all_codes.append({

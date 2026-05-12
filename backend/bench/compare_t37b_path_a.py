@@ -1,20 +1,7 @@
-"""T37b Path A — three-way comparison.
+"""T37b Path A: three-way K=5 compare across _preT37/, _sameDayPre/, HEAD.
 
-Three K=5 baselines:
-    A = _preT37/             (pre-T37, 2026-05-03 environment, code at f4c9556)
-    B = _sameDayPre/         (pre-T37, today's environment, code at 31ca009)
-    C = data/test_sets/.../  (post-T37, today's environment, code at HEAD)
-
-Comparisons:
-    C vs B = isolate T37 code drift (same environment, code differs)
-    A vs B = environmental drift over 9 days (same code, environment differs)
-    A vs C = combined drift the original t37b PASS/FAIL check captured
-
-If |C - B| means are within K=5 σ ≈ 0.012, T37 is empirically F1-neutral.
-
-Writes summary to:
-    data/test_sets/benchmark_2026_04/T37b_path_a_summary.md
-    data/test_sets/benchmark_2026_04/result_postfix_same_day_pre.json
+C-vs-B isolates T37 code drift; B-vs-A isolates 9-day environmental drift.
+Writes data/test_sets/benchmark_2026_04/result_postfix_t37.json.
 """
 from __future__ import annotations
 

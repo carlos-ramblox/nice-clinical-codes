@@ -1,6 +1,4 @@
-"""T37d: ingest helpers must handle PermissionError / OSError on
-file-open the same way they handle missing files — log a warning, return
-zero, do not crash the sweep."""
+"""Ingest helpers degrade gracefully on PermissionError / OSError."""
 from __future__ import annotations
 
 import builtins

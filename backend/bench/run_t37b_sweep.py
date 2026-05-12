@@ -1,12 +1,6 @@
-"""T37b — K=5 v2 disease benchmark sweep wrapper.
+"""K=5 sweep wrapper; truststore-injects on the dev host (Avast).
 
-Thin entry-point that injects truststore (for Avast TLS interception
-on the dev host) and then runs the standard K=5 variance sweep. The
-sweep writes per-codelist .result_runK_<k>.json files exactly as
-``run_variance_k5`` does in CI / Docker.
-
-Usage:
-    cd backend && python -m bench.run_t37b_sweep
+Run: cd backend && python -m bench.run_t37b_sweep
 """
 from __future__ import annotations
 

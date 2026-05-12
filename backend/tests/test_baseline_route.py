@@ -1,6 +1,4 @@
-"""T37e: /api/baseline accepts only OpenRouter-slug-shaped model identifiers,
-returns 400 on shape violation, and never echoes upstream exception text into
-the 500 response body."""
+"""/api/baseline model field is slug-pattern-constrained; 500 hides exc text."""
 from __future__ import annotations
 
 import os

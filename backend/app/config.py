@@ -34,30 +34,18 @@ LLM_MODEL = os.getenv("LLM_MODEL", "claude-sonnet-4-20250514")
 LLM_SCORING_MODEL = os.getenv("LLM_SCORING_MODEL", "claude-haiku-4-5-20251001")
 RETRIEVAL_TOP_K = int(os.getenv("RETRIEVAL_TOP_K", "50"))
 MAX_CANDIDATES = int(os.getenv("MAX_CANDIDATES", "100"))
-# T37g: reserved slots per drug vocabulary inside MAX_CANDIDATES, only
-# applied when at least one parsed condition has domain="Drug". Without
-# it, single-source dm+d / BNF rows are displaced by multi-source SNOMED
-# from OMOPHub + ChromaDB and never reach the scorer.
 DRUG_VOCAB_QUOTA = int(os.getenv("DRUG_VOCAB_QUOTA", "15"))
 UMLS_EXPAND = os.getenv("UMLS_EXPAND", "yes").strip().lower() == "yes"
 
 # OMOPHub
 OMOPHUB_PAGE_SIZE = int(os.getenv("OMOPHUB_PAGE_SIZE", "20"))
-# OMOP-side vocabulary IDs surfaced by OMOPHub.concepts.get_by_code.
-# MUST NOT contain non-OMOP vocabularies (dm+d, BNF, etc.) — those
-# poison the inverse map built by concept_id_enricher and burn API
-# slots on guaranteed misses. For UI / display purposes (e.g. rendering
-# "dm+d" or future "RxNorm" labels) use VOCABULARY_DISPLAY_LABELS.
+# OMOPHub API boundary — adding non-OMOP vocabs here poisons concept_id_enricher.
 OMOPHUB_VOCABULARIES = {
     "SNOMED": "SNOMED CT",
     "ICD10": "ICD-10 (WHO)",
     "OPCS4": "OPCS-4",
 }
 
-# Canonical display labels for every vocabulary the pipeline can emit.
-# Superset of OMOPHUB_VOCABULARIES. Use this when you need the full
-# vocabulary set (UI labels, export filters); use OMOPHUB_VOCABULARIES
-# only for the OMOPHub API boundary.
 VOCABULARY_DISPLAY_LABELS = {
     **OMOPHUB_VOCABULARIES,
     "DMD": "dm+d",

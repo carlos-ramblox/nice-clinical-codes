@@ -21,8 +21,6 @@ def ingest_dmd_csv(csv_path: str | Path, codelist_name: str = "") -> int:
         logger.warning("dm+d CSV not found: %s", csv_path)
         return 0
     except OSError as exc:
-        # T37d: locked file / permission denied / disk error — degrade
-        # to empty ingest rather than crash the whole sweep.
         logger.warning("dm+d CSV could not be opened: %s -- %s", csv_path, exc)
         return 0
 
@@ -70,11 +68,7 @@ def ingest_dmd_dir(directory: str | Path) -> int:
 
 
 def retrieve_from_dmd(state: dict) -> dict:
-    """LangGraph node: fan-out dm+d retriever for drug-domain conditions only.
-
-    FR-008: skip every condition whose ``domain`` is not "Drug" so disease
-    queries see byte-identical state shape.
-    """
+    """Fan-out dm+d retriever; FR-008 gates on ``domain == "Drug"``."""
     conditions = state.get("parsed_conditions", [])
     drug_conditions = [c for c in conditions if c.get("domain") == "Drug" and c.get("name")]
     if not drug_conditions:
@@ -84,9 +78,7 @@ def retrieve_from_dmd(state: dict) -> dict:
     for condition in drug_conditions:
         name = condition["name"]
         rows = search_by_condition(name, vocabulary=VOCABULARY)
-        # Defensive: future ingest paths (NHSBSA TRUD, direct dm+d release)
-        # may write dm+d codes with a different source tag; this retriever
-        # only surfaces the OpenCodelists ingest until those land.
+        # Filter explicitly to OpenCodelists source until a TRUD ingest lands.
         dmd_rows = [r for r in rows if r.get("source") == SOURCE_TAG]
         for r in dmd_rows:
             all_codes.append({

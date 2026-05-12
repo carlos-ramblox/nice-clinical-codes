@@ -1,23 +1,6 @@
-"""T37b — compute ΔF1 between pre-T37 and post-T37/g K=5 baselines.
+"""T37b: ΔF1 between pre-T37 (_preT37/) and post-T37 K=5 baselines.
 
-Pre-T37 baseline lives at data/test_sets/benchmark_2026_04/_preT37/
-(snapshot of the original K=5 result files committed at f4c9556 / T07,
-preserved before the T37b sweep overwrote them). Post-T37 baseline is
-the fresh K=5 sweep at data/test_sets/benchmark_2026_04/.
-
-For each codelist we compute the included-only F1 mean across the 5
-runs in each baseline, then ΔF1 = post − pre. A 95% BCa bootstrap CI
-on the per-codelist mean ΔF1 across the 15 codelists tells us whether
-the cumulative delta is statistically distinguishable from zero
-within the K=5 σ ≈ 0.012 budget.
-
-Writes a summary to:
-    data/test_sets/benchmark_2026_04/result_postfix_t37.json
-
-Exit code 0 if PASS (max |Δ| ≤ σ); 1 if any per-codelist Δ exceeds σ.
-
-Run from backend/:
-    python -m bench.compare_t37b
+Run: cd backend && python -m bench.compare_t37b
 """
 from __future__ import annotations
 

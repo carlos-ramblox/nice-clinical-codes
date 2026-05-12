@@ -1,11 +1,4 @@
-"""Tests for backend/app/graph/nodes/dmd_retriever.py (T37).
-
-Three tiers:
-  - infer_dmd_level(): pure-string heuristic, runs offline.
-  - retrieve_from_dmd(): exercised against a stubbed search_by_condition
-    so we can assert FR-008 gating (no fire without Drug domain).
-  - merger preservation: dmd_level flows through merge_and_dedup intact.
-"""
+"""dm+d retriever: level heuristic, FR-008 gating, merger preservation."""
 from __future__ import annotations
 
 import sys

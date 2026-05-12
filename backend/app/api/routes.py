@@ -392,9 +392,6 @@ class BaselineRequest(BaseModel):
         ...,
         description="Same format as /api/evaluate. Runs an LLM-only baseline (no RAG) on Research_question and evaluates against Codelist.",
     )
-    # T37e: open OpenRouter slug space, but pattern-constrained to forbid
-    # log-injection / extreme length. Slug shape is "vendor/model" or bare
-    # model name; allowed chars match OpenRouter's published slug rules.
     model: Annotated[
         str,
         StringConstraints(
@@ -425,8 +422,6 @@ async def baseline_evaluate(request: BaselineRequest):
     try:
         codes = await asyncio.to_thread(run_baseline, query, model=request.model)
     except Exception as exc:
-        # T37e: log the exception server-side; the response body stays
-        # generic so error text from upstream services doesn't leak.
         logger.error("Baseline (%s) pipeline failed: %s", request.model, exc, exc_info=True)
         raise HTTPException(status_code=500, detail="Baseline processing failed") from None
 

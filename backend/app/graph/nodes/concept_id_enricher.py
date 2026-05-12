@@ -78,12 +78,8 @@ def _cache_set(key: tuple[str, str], value: int | None) -> None:
 
 
 def _safe_concept_id(concept: dict) -> int | None:
-    """T37h: only standard concepts (standard_concept == "S") land in the
-    OHDSI export verbatim. For non-standard concepts, follow the
-    ``Maps to`` relationship to the standard equivalent. If no Maps-to
-    exists, return None so the row routes to the export's ``unmapped``
-    array rather than ship a non-standard concept_id that ATLAS rejects.
-    """
+    """Standard concept_id verbatim, or follow ``Maps to`` to the standard
+    equivalent; ``None`` if no clean mapping exists."""
     if not isinstance(concept, dict):
         return None
     raw_id = concept.get("concept_id")
@@ -107,8 +103,7 @@ def _safe_concept_id(concept: dict) -> int | None:
 
 
 def _lookup(client: OMOPHub, vocab_id: str, code: str) -> tuple[int | None, bool]:
-    """Returns (concept_id_or_none, cache_hit). T37h: cached value is the
-    safe (standard or Maps-to'd) concept_id, not the raw get_by_code id."""
+    """Returns (safe_concept_id_or_none, cache_hit)."""
     key = (vocab_id, code)
     hit, value = _cache_get(key)
     if hit:

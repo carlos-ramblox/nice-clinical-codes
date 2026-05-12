@@ -177,9 +177,6 @@ def search_omophub(
     seen: set[tuple[str, str]] = set()
     merged: list[dict] = []
 
-    # T37f: single bulk call replaces N×M per-(variant, vocab) HTTP calls.
-    # Per-search status checked individually; failures degrade to that
-    # search's empty contribution, identical to the basic-call fallback.
     searches = _bulk_searches(variants, vocabs, ps, domain_id)
     try:
         response = client.search.bulk_basic(searches)

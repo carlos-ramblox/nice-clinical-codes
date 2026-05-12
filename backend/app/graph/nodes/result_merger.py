@@ -5,9 +5,6 @@ from app.graph.vocab_matching import requested_vocab_set
 
 logger = logging.getLogger(__name__)
 
-# Vocabularies that get the per-vocab quota carve-out when the query
-# is drug-domain. Single source of truth in the config map would be
-# nicer but pulls a heavier import; this short tuple is fine.
 _DRUG_VOCABS: tuple[str, ...] = ("dm+d", "BNF")
 
 
@@ -24,9 +21,7 @@ def _stable_sort_key(c: dict) -> tuple:
 def _apply_drug_quota(
     deduped: list[dict], parsed_conditions: list[dict], cap: int,
 ) -> list[dict]:
-    """Reserve DRUG_VOCAB_QUOTA slots for each drug vocab when the
-    query is drug-domain. Disease queries take the unchanged code path
-    (empty-input invariance per f1-impact-classification.md)."""
+    """Reserve quota slots per drug vocab when the query has a Drug condition."""
     has_drug = any(c.get("domain") == "Drug" for c in parsed_conditions)
     if not has_drug:
         return sorted(deduped, key=_stable_sort_key)[:cap]

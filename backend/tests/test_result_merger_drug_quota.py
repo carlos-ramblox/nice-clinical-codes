@@ -1,11 +1,4 @@
-"""T37g tests: per-vocab quota in result_merger.
-
-Three properties:
-  1. drug-condition + saturated SNOMED pool -> drug rows still surface
-  2. disease-only condition + saturated pool -> behaviour byte-identical
-     to the pre-T37g path
-  3. final sort order is deterministic on equal keys (stable tiebreaker)
-"""
+"""Per-vocab drug quota: drug rows survive saturated SNOMED pool; disease path unchanged; stable sort."""
 from __future__ import annotations
 
 import sys
