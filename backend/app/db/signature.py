@@ -83,6 +83,8 @@ def _compute_signature_v1(codelist: dict, decisions: list[dict]) -> str:
         {decision_block}
         [--criteria--                    <- conditional, only when non-empty
         {"exclude": [...], "include": [...]}]
+        [--descendants--                  <- conditional, only when True
+        true]
 
     Frozen — pre-T30 approved hashes verify byte-identical under
     this function. Any mutation here is a backward-compat break.
@@ -94,6 +96,8 @@ def _compute_signature_v1(codelist: dict, decisions: list[dict]) -> str:
             {"include": inc, "exclude": exc}, sort_keys=True,
         )
         payload += f"\n--criteria--\n{criteria_block}"
+    if codelist.get("include_descendants"):
+        payload += "\n--descendants--\ntrue"
     return hashlib.sha256(payload.encode("utf-8")).hexdigest()
 
 
@@ -109,6 +113,8 @@ def _compute_signature_v2(codelist: dict, decisions: list[dict]) -> str:
         [3, 7]
         --kappa--
         cohen-unweighted:0.5234
+        [--descendants--                  <- conditional, only when True
+        true]
 
     Always-emit-everything: the criteria block is unconditional
     (no T29-style append-only-when-non-empty), the reviewers block
@@ -164,4 +170,6 @@ def _compute_signature_v2(codelist: dict, decisions: list[dict]) -> str:
         f"\n--reviewers--\n{reviewers_block}"
         f"\n--kappa--\n{kappa_block}"
     )
+    if codelist.get("include_descendants"):
+        payload += "\n--descendants--\ntrue"
     return hashlib.sha256(payload.encode("utf-8")).hexdigest()

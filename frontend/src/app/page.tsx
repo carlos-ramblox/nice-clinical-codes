@@ -378,6 +378,9 @@ export default function Home() {
   // "diabetes" then "asthma" with the same "gestational" exclusion
   // shouldn't have to retype it.
   const [exclusionsInput, setExclusionsInput] = useState("");
+  // null = let the LLM decide; explicit bool = reviewer override
+  // that persists across searches in this session.
+  const [includeDescendants, setIncludeDescendants] = useState<boolean | null>(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [response, setResponse] = useState<SearchResponse | null>(null);
@@ -547,7 +550,10 @@ export default function Home() {
       // array is byte-identical on the wire to the pre-T29 request body
       // (searchCodes drops the field when empty).
       const exclusions = parseExclusionsInput(exclusionsInput);
-      const data = await searchCodes(q, { exclusions });
+      const data = await searchCodes(q, {
+        exclusions,
+        includeDescendants: includeDescendants ?? undefined,
+      });
       setResponse(data);
       setSearchedAt(new Date().toISOString().split("T")[0]);
       pushRecent({ query: q, codeCount: data.results.length, at: new Date().toISOString() });
@@ -732,6 +738,23 @@ export default function Home() {
               maxLength={300}
             />
           </div>
+          <div className="mt-1.5 flex items-center gap-2 text-xs">
+            <input
+              id="include-descendants-input"
+              type="checkbox"
+              checked={(includeDescendants ?? response?.include_descendants) ?? false}
+              onChange={(e) => setIncludeDescendants(e.target.checked)}
+              className="cursor-pointer"
+              aria-label="Expand OMOP descendants"
+            />
+            <label
+              htmlFor="include-descendants-input"
+              className="text-gray-500 cursor-pointer"
+              title='Include the OMOP "Is a" descendants of every retrieved parent concept (e.g. "all forms of epilepsy"). Off by default; the LLM picks an initial value from cues like "all forms of" / "diagnosis only" in the query.'
+            >
+              Expand OMOP descendants
+            </label>
+          </div>
         </form>
       </div>
 
@@ -769,9 +792,19 @@ export default function Home() {
                 <h3 className="font-[family-name:var(--font-lora)] text-lg font-semibold">Results</h3>
                 <DecisionFilter filter={decisionFilter} onChange={setDecisionFilter} counts={decisionCounts} />
               </div>
-              {response?.elapsed_seconds && (
-                <span className="text-xs text-gray-400">{response.elapsed_seconds}s</span>
-              )}
+              <div className="flex items-center gap-2 text-xs">
+                {response?.include_descendants && (
+                  <span
+                    className="inline-flex items-center px-2 py-0.5 rounded text-[10px] font-medium bg-blue-50 text-blue-700 border border-blue-200"
+                    title="OMOP 'Is a' descendants of each retrieved parent concept were merged into this result set. Untick 'Expand OMOP descendants' and re-run for parent-only."
+                  >
+                    Descendants expanded
+                  </span>
+                )}
+                {response?.elapsed_seconds && (
+                  <span className="text-gray-400">{response.elapsed_seconds}s</span>
+                )}
+              </div>
             </div>
             <div className="overflow-x-auto">
               <table className="w-full text-sm">

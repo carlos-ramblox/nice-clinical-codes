@@ -22,6 +22,7 @@ def put(
     *,
     include_criteria: list[str] | None = None,
     exclude_criteria: list[str] | None = None,
+    include_descendants: bool = False,
 ) -> None:
     if len(_entries) >= MAX_CACHE:
         _entries.pop(next(iter(_entries)))
@@ -32,9 +33,10 @@ def put(
         # draft and feed them into signature_hash on approval.
         "include_criteria": list(include_criteria or []),
         "exclude_criteria": list(exclude_criteria or []),
+        "include_descendants": bool(include_descendants),
     }
 
 
 def get(search_id: str) -> dict | None:
-    """Returns {'query', 'codes', 'include_criteria', 'exclude_criteria'} or None if missing/evicted."""
+    """Returns the stored entry or ``None`` when missing/evicted."""
     return _entries.get(search_id)

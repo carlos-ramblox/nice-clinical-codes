@@ -497,6 +497,7 @@ async def create_codelist(body: CreateCodelistRequest, user: dict = Depends(get_
         # values participate in signature_hash on approval.
         include_criteria=entry.get("include_criteria") or [],
         exclude_criteria=entry.get("exclude_criteria") or [],
+        include_descendants=bool(entry.get("include_descendants")),
     )
     # log user_id only — names are PII, don't ship them to stdout in prod
     logger.info(

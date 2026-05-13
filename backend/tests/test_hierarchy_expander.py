@@ -59,6 +59,9 @@ def _patched(hierarchy):
     return patch.object(he, "OMOPHub", lambda **_: _FakeClient(hierarchy))
 
 
+_EXPAND_PARSED = [{"include_descendants": True}]
+
+
 def test_included_parent_gets_expanded_with_standard_descendants():
     _reset_state()
     fake = _FakeHierarchy({
@@ -67,9 +70,12 @@ def test_included_parent_gets_expanded_with_standard_descendants():
             _desc(46271, "E11.9", "ICD10", "S"),
         ],
     })
-    state = {"scored_codes": [
-        _scored("PARENT", "SNOMED CT", decision="include", concept_id=201826),
-    ]}
+    state = {
+        "parsed_conditions": _EXPAND_PARSED,
+        "scored_codes": [
+            _scored("PARENT", "SNOMED CT", decision="include", concept_id=201826),
+        ],
+    }
     with _patched(fake):
         out = he.expand_hierarchy(state)
     codes = sorted(c["code"] for c in out["scored_codes"])
@@ -82,10 +88,13 @@ def test_included_parent_gets_expanded_with_standard_descendants():
 def test_uncertain_and_excluded_parents_skipped():
     _reset_state()
     fake = _FakeHierarchy({201826: [_desc(45271, "44054006")]})
-    state = {"scored_codes": [
-        _scored("X", "SNOMED CT", decision="uncertain", concept_id=201826),
-        _scored("Y", "SNOMED CT", decision="exclude", concept_id=201826),
-    ]}
+    state = {
+        "parsed_conditions": _EXPAND_PARSED,
+        "scored_codes": [
+            _scored("X", "SNOMED CT", decision="uncertain", concept_id=201826),
+            _scored("Y", "SNOMED CT", decision="exclude", concept_id=201826),
+        ],
+    }
     with _patched(fake):
         out = he.expand_hierarchy(state)
     assert out == {}
@@ -99,9 +108,12 @@ def test_non_standard_descendants_dropped():
         _desc(45272, "X2", "SNOMED", "C"),  # non-standard, dropped
         _desc(45273, "X3", "SNOMED", None),
     ]})
-    state = {"scored_codes": [
-        _scored("P", "SNOMED CT", decision="include", concept_id=201826),
-    ]}
+    state = {
+        "parsed_conditions": _EXPAND_PARSED,
+        "scored_codes": [
+            _scored("P", "SNOMED CT", decision="include", concept_id=201826),
+        ],
+    }
     with _patched(fake):
         out = he.expand_hierarchy(state)
     added = [c for c in out["scored_codes"] if "Expanded via" in c["rationale"]]
@@ -114,9 +126,12 @@ def test_non_omop_vocab_descendants_dropped():
         _desc(45271, "X1", "SNOMED", "S"),
         _desc(45272, "RX1", "RxNorm", "S"),  # outside OMOPHUB_VOCABULARIES
     ]})
-    state = {"scored_codes": [
-        _scored("P", "SNOMED CT", decision="include", concept_id=201826),
-    ]}
+    state = {
+        "parsed_conditions": _EXPAND_PARSED,
+        "scored_codes": [
+            _scored("P", "SNOMED CT", decision="include", concept_id=201826),
+        ],
+    }
     with _patched(fake):
         out = he.expand_hierarchy(state)
     added = [c for c in out["scored_codes"] if "Expanded via" in c["rationale"]]
@@ -126,10 +141,13 @@ def test_non_omop_vocab_descendants_dropped():
 def test_duplicate_descendants_collapse_against_existing_codes():
     _reset_state()
     fake = _FakeHierarchy({201826: [_desc(45271, "ALREADY", "SNOMED", "S")]})
-    state = {"scored_codes": [
-        _scored("P", "SNOMED CT", decision="include", concept_id=201826),
-        _scored("ALREADY", "SNOMED CT", decision="exclude", concept_id=999),
-    ]}
+    state = {
+        "parsed_conditions": _EXPAND_PARSED,
+        "scored_codes": [
+            _scored("P", "SNOMED CT", decision="include", concept_id=201826),
+            _scored("ALREADY", "SNOMED CT", decision="exclude", concept_id=999),
+        ],
+    }
     with _patched(fake):
         out = he.expand_hierarchy(state)
     assert out == {}, "duplicate should not be re-added"
@@ -138,9 +156,12 @@ def test_duplicate_descendants_collapse_against_existing_codes():
 def test_no_concept_id_parents_skipped():
     _reset_state()
     fake = _FakeHierarchy({})
-    state = {"scored_codes": [
-        _scored("P", "SNOMED CT", decision="include", concept_id=None),
-    ]}
+    state = {
+        "parsed_conditions": _EXPAND_PARSED,
+        "scored_codes": [
+            _scored("P", "SNOMED CT", decision="include", concept_id=None),
+        ],
+    }
     with _patched(fake):
         out = he.expand_hierarchy(state)
     assert out == {}
@@ -150,9 +171,12 @@ def test_no_concept_id_parents_skipped():
 def test_cache_avoids_second_lookup_for_same_concept_id():
     _reset_state()
     fake = _FakeHierarchy({201826: [_desc(45271, "X1", "SNOMED", "S")]})
-    state = {"scored_codes": [
-        _scored("P", "SNOMED CT", decision="include", concept_id=201826),
-    ]}
+    state = {
+        "parsed_conditions": _EXPAND_PARSED,
+        "scored_codes": [
+            _scored("P", "SNOMED CT", decision="include", concept_id=201826),
+        ],
+    }
     with _patched(fake):
         he.expand_hierarchy(state)
         he.expand_hierarchy(state)

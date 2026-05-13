@@ -127,6 +127,35 @@ def test_v1_criteria_list_order_does_not_leak_into_hash() -> None:
     assert h1 == h2
 
 
+def test_v1_include_descendants_false_preserves_pre_t37j_bytes() -> None:
+    """Conditional-append: ``include_descendants=0`` (or absent) hashes
+    byte-identical to the pre-T37j payload."""
+    legacy_hash = _compute_signature_v1(_v1_codelist(), _DECISIONS_FIXTURE)
+    t37j_false_hash = _compute_signature_v1(
+        _v1_codelist(include_descendants=0),
+        _DECISIONS_FIXTURE,
+    )
+    assert t37j_false_hash == legacy_hash
+
+
+def test_v1_include_descendants_true_appends_descendants_block() -> None:
+    """``include_descendants=1`` appends ``\\n--descendants--\\ntrue``."""
+    false_hash = _compute_signature_v1(_v1_codelist(), _DECISIONS_FIXTURE)
+    true_hash = _compute_signature_v1(
+        _v1_codelist(include_descendants=1),
+        _DECISIONS_FIXTURE,
+    )
+    assert true_hash != false_hash
+    rows = sorted(
+        _DECISIONS_FIXTURE, key=lambda d: (d["code"], d["vocabulary"])
+    )
+    expected_payload = "\n".join(
+        f"{d['code']}|{d['vocabulary']}|{d['final_decision']}" for d in rows
+    )
+    expected_payload += "\n--descendants--\ntrue"
+    assert true_hash == hashlib.sha256(expected_payload.encode("utf-8")).hexdigest()
+
+
 # ---------------------------------------------------------------------------
 # v2 canonical payload
 # ---------------------------------------------------------------------------
@@ -173,6 +202,32 @@ def test_v2_payload_format_matches_canonical_construction() -> None:
         '\n--criteria--\n{"exclude": ["gestational"], "include": ["adult"]}'
         "\n--reviewers--\n[3, 7]"
         "\n--kappa--\ncohen-unweighted:0.5234"
+    )
+    expected_hash = hashlib.sha256(expected_payload.encode("utf-8")).hexdigest()
+    assert _compute_signature_v2(codelist, _DECISIONS_FIXTURE) == expected_hash
+
+
+def test_v2_include_descendants_false_preserves_pre_t37j_bytes() -> None:
+    """v2 conditional-append: ``include_descendants=0`` hashes
+    byte-identical to the pre-T37j v2 payload."""
+    legacy_hash = _compute_signature_v2(_v2_codelist(), _DECISIONS_FIXTURE)
+    t37j_false_hash = _compute_signature_v2(
+        _v2_codelist(include_descendants=0),
+        _DECISIONS_FIXTURE,
+    )
+    assert t37j_false_hash == legacy_hash
+
+
+def test_v2_include_descendants_true_appends_descendants_block() -> None:
+    """``include_descendants=1`` appends ``\\n--descendants--\\ntrue``
+    at the end of the v2 payload, after the kappa block."""
+    codelist = _v2_codelist(include_descendants=1)
+    expected_payload = (
+        f"{_decision_block(_DECISIONS_FIXTURE)}"
+        '\n--criteria--\n{"exclude": [], "include": []}'
+        "\n--reviewers--\n[3, 7]"
+        "\n--kappa--\ncohen-unweighted:0.5234"
+        "\n--descendants--\ntrue"
     )
     expected_hash = hashlib.sha256(expected_payload.encode("utf-8")).hexdigest()
     assert _compute_signature_v2(codelist, _DECISIONS_FIXTURE) == expected_hash

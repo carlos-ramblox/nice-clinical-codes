@@ -608,6 +608,16 @@ export default function CodelistReviewPage({
             Created by {codelist.created_by_name} on{" "}
             {new Date(codelist.created_at).toLocaleString()}
           </p>
+          {codelist.include_descendants && (
+            <p className="mt-1">
+              <span
+                className="inline-flex items-center px-2 py-0.5 rounded text-[10px] font-medium bg-blue-50 text-blue-700 border border-blue-200"
+                title="OMOP 'Is a' descendants of each retrieved parent were merged into this codelist before review. Fixed in the signature on approval."
+              >
+                Descendants expanded
+              </span>
+            </p>
+          )}
         </div>
         <div className="text-right">
           <span

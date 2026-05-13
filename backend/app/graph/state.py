@@ -18,6 +18,7 @@ class ParsedCondition(TypedDict):
     # are byte-identical to the pre-T29 shape.
     include_criteria: list[str]
     exclude_criteria: list[str]
+    include_descendants: bool
 
 
 class RetrievedCode(TypedDict):
@@ -120,6 +121,7 @@ class PipelineState(TypedDict):
     # pre-T29 behaviour exactly.
     request_include_criteria: list[str]
     request_exclude_criteria: list[str]
+    request_include_descendants: bool | None
 
     # Retrieval — reducer merges parallel results
     retrieved_codes: Annotated[list[RetrievedCode], add]

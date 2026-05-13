@@ -146,6 +146,7 @@ def _migrate_schema(conn: sqlite3.Connection) -> None:
         "ALTER TABLE codelists ADD COLUMN reviewer_ids TEXT NOT NULL DEFAULT '[]'",
         "ALTER TABLE codelists ADD COLUMN agreement_kappa REAL",
         "ALTER TABLE codelists ADD COLUMN signature_version INTEGER NOT NULL DEFAULT 1",
+        "ALTER TABLE codelists ADD COLUMN include_descendants INTEGER NOT NULL DEFAULT 0",
     ):
         try:
             conn.execute(ddl)
@@ -231,7 +232,8 @@ def _migrate_codelists_for_t30(conn: sqlite3.Connection) -> None:
                 private INTEGER NOT NULL DEFAULT 0,
                 reviewer_ids TEXT NOT NULL DEFAULT '[]',
                 agreement_kappa REAL,
-                signature_version INTEGER NOT NULL DEFAULT 1
+                signature_version INTEGER NOT NULL DEFAULT 1,
+                include_descendants INTEGER NOT NULL DEFAULT 0
             )
             """
         )
@@ -243,13 +245,15 @@ def _migrate_codelists_for_t30(conn: sqlite3.Connection) -> None:
                 id, name, version, status, query, created_by, created_at,
                 reviewed_by, reviewed_at, review_notes, signature_hash, parent_id,
                 include_criteria, exclude_criteria, private,
-                reviewer_ids, agreement_kappa, signature_version
+                reviewer_ids, agreement_kappa, signature_version,
+                include_descendants
             )
             SELECT
                 id, name, version, status, query, created_by, created_at,
                 reviewed_by, reviewed_at, review_notes, signature_hash, parent_id,
                 include_criteria, exclude_criteria, private,
-                reviewer_ids, agreement_kappa, signature_version
+                reviewer_ids, agreement_kappa, signature_version,
+                include_descendants
             FROM codelists
             """
         )
@@ -359,7 +363,8 @@ def _init_schema(conn: sqlite3.Connection) -> None:
             -- fan-out) can co-exist; legacy approved hashes verify
             -- byte-identical under v1 forever. Default 1 so pre-T30
             -- rows read back as v1 without a back-fill UPDATE.
-            signature_version INTEGER NOT NULL DEFAULT 1
+            signature_version INTEGER NOT NULL DEFAULT 1,
+            include_descendants INTEGER NOT NULL DEFAULT 0
         );
 
         CREATE TABLE IF NOT EXISTS codelist_decisions (
@@ -510,6 +515,7 @@ def create_codelist(
     adopted_phenotypes: list[dict] | None = None,
     include_criteria: list[str] | None = None,
     exclude_criteria: list[str] | None = None,
+    include_descendants: bool = False,
 ) -> str:
     """Persist a search result as a draft codelist. Returns the new id.
 
@@ -530,11 +536,17 @@ def create_codelist(
     cid = uuid.uuid4().hex[:16]
     inc = list(include_criteria or [])
     exc = list(exclude_criteria or [])
+    desc = bool(include_descendants)
     conn.execute(
         """INSERT INTO codelists (id, name, query, created_by, status,
-                                  include_criteria, exclude_criteria)
-           VALUES (?, ?, ?, ?, 'draft', ?, ?)""",
-        (cid, name, query, created_by, json.dumps(inc), json.dumps(exc)),
+                                  include_criteria, exclude_criteria,
+                                  include_descendants)
+           VALUES (?, ?, ?, ?, 'draft', ?, ?, ?)""",
+        (
+            cid, name, query, created_by,
+            json.dumps(inc), json.dumps(exc),
+            int(desc),
+        ),
     )
     _insert_decisions(conn, cid, decisions)
     adoptions = adopted_phenotypes or []
@@ -547,6 +559,7 @@ def create_codelist(
             "adoption_count": len(adoptions),
             "include_criteria": inc,
             "exclude_criteria": exc,
+            "include_descendants": desc,
         },
     )
     for adoption in adoptions:
@@ -675,6 +688,7 @@ def get_codelist(cid: str) -> dict | None:
             result[key] = json.loads(raw) if raw else []
         except (TypeError, ValueError):
             result[key] = []
+    result["include_descendants"] = bool(result.get("include_descendants"))
 
     # Surface adopted phenotypes (T34b) by replaying the relevant audit
     # events. Stored audit-log only -- no separate table -- so every
@@ -1912,7 +1926,7 @@ def _compute_signature(conn: sqlite3.Connection, cid: str) -> str:
     """
     row = conn.execute(
         "SELECT signature_version, include_criteria, exclude_criteria, "
-        "       reviewer_ids, agreement_kappa "
+        "       reviewer_ids, agreement_kappa, include_descendants "
         "FROM codelists WHERE id = ?",
         (cid,),
     ).fetchone()

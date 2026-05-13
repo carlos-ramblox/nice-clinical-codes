@@ -38,10 +38,12 @@ def query_parser_node(state: dict) -> dict:
     """
     inc = state.get("request_include_criteria") or None
     exc = state.get("request_exclude_criteria") or None
+    desc = state.get("request_include_descendants")
     result = parse_query(
         state["raw_query"],
         request_include_criteria=inc,
         request_exclude_criteria=exc,
+        request_include_descendants=desc,
     )
     return {
         "parsed_conditions": result["conditions"],
@@ -180,6 +182,7 @@ async def run_pipeline(
     *,
     include_criteria: list[str] | None = None,
     exclude_criteria: list[str] | None = None,
+    include_descendants: bool | None = None,
 ) -> dict:
     """Run the full pipeline with a raw query string.
 
@@ -210,6 +213,8 @@ async def run_pipeline(
         initial["request_include_criteria"] = list(include_criteria)
     if exclude_criteria:
         initial["request_exclude_criteria"] = list(exclude_criteria)
+    if include_descendants is not None:
+        initial["request_include_descendants"] = bool(include_descendants)
     result = await pipe.ainvoke(initial)
     logger.info("Pipeline complete: %d codes in final list", len(result.get("final_code_list", [])))
     return result

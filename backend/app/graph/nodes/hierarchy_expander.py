@@ -114,6 +114,9 @@ def expand_hierarchy(state: dict) -> dict:
     scored = state.get("scored_codes", []) or []
     if not scored:
         return {}
+    parsed = state.get("parsed_conditions", []) or []
+    if not any(c.get("include_descendants", False) for c in parsed):
+        return {}
     client = _get_client()
     if client is None:
         logger.warning("OMOPHUB_API_KEY not set, skipping hierarchy expansion")

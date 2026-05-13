@@ -50,9 +50,15 @@ import logging
 import time
 from pathlib import Path
 
-from app.evaluation.evaluator import run_evaluation
-from app.graph.graph import run_pipeline
-from app.graph.nodes.llm_reasoning import BATCH_SIZE
+# Avast HTTPS interception on this dev host substitutes a CA Python's
+# certifi bundle doesn't trust. truststore makes httpx / the Anthropic
+# SDK read from the Windows cert store (which has the Avast root).
+import truststore  # noqa: E402
+truststore.inject_into_ssl()
+
+from app.evaluation.evaluator import run_evaluation  # noqa: E402
+from app.graph.graph import run_pipeline  # noqa: E402
+from app.graph.nodes.llm_reasoning import BATCH_SIZE  # noqa: E402
 
 logger = logging.getLogger(__name__)
 logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(name)s: %(message)s")
@@ -102,10 +108,20 @@ def _estimate_run_cost(scored_count: int) -> float:
     return USD_PER_QUERY_PARSE + n_batches * USD_PER_SCORING_BATCH
 
 
-async def _one_run(short: str, k: int, query: str, test_set: list[dict]) -> tuple[dict, float]:
+async def _one_run(
+    short: str,
+    k: int,
+    query: str,
+    test_set: list[dict],
+    include_descendants: bool | None = None,
+) -> tuple[dict, float]:
     """Run the pipeline once and return (envelope, elapsed_seconds)."""
     t0 = time.perf_counter()
-    pipeline_result = await run_pipeline(query, disabled_retrievers=None)
+    pipeline_result = await run_pipeline(
+        query,
+        disabled_retrievers=None,
+        include_descendants=include_descendants,
+    )
     elapsed = time.perf_counter() - t0
     envelope = _build_result_envelope(test_set, pipeline_result, elapsed)
     return envelope, elapsed
@@ -116,6 +132,7 @@ async def run(
     cap_usd: float = 20.0,
     codelists: list[str] | None = None,
     pause_after_first: bool = False,
+    include_descendants: bool | None = None,
 ) -> None:
     with open(SELECTION, encoding="utf-8") as f:
         selection = json.load(f)
@@ -166,7 +183,10 @@ async def run(
             pair_idx += 1
             logger.info("[%s run %d] starting (pair %d/%d, est-spent $%.2f)", short, k, pair_idx, total_pairs, spent_usd)
 
-            envelope, elapsed = await _one_run(short, k, query, test_set)
+            envelope, elapsed = await _one_run(
+                short, k, query, test_set,
+                include_descendants=include_descendants,
+            )
             out_path.write_text(json.dumps(envelope, indent=2), encoding="utf-8")
 
             run_cost = _estimate_run_cost(envelope["pipeline_results_count"])
@@ -214,14 +234,22 @@ def main() -> None:
     parser.add_argument("--pause-after-first", action="store_true",
                         help="Stop after the first pair, print wall-clock + cost projection, exit. "
                              "Used to sanity-check latency before committing to the full sweep.")
+    parser.add_argument("--include-descendants", choices=("true", "false"), default=None,
+                        help="Force the per-request include_descendants override on every run. "
+                             "Omit to let the LLM parser extract from the query (T37j default).")
     args = parser.parse_args()
 
     codelists = [c.strip() for c in args.codelists.split(",")] if args.codelists else None
+    include_descendants = (
+        None if args.include_descendants is None
+        else args.include_descendants == "true"
+    )
     asyncio.run(run(
         runs=args.runs,
         cap_usd=args.cap_usd,
         codelists=codelists,
         pause_after_first=args.pause_after_first,
+        include_descendants=include_descendants,
     ))
 
 

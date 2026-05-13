@@ -358,6 +358,30 @@ trade is favourable on average but adversarial against
 diagnosis-only codelists. Details in
 `data/test_sets/benchmark_2026_04/T37i_path_a_summary.md`.
 
+**T37j query-intent routing (2026-05-13).** T37j routes the hierarchy
+expander on a per-query `include_descendants` boolean extracted by the
+LLM parser (cues like `"all forms of X"` → True; `"X diagnosis only"`
+→ False; bare-name queries default False) with a reviewer-override
+channel via the search UI. Default-False at every layer eliminates
+the false-positive expansion that caused T37i's
+`diabetes_mellitus` / `heart_failure` regressions. The override
+preserves the lift for researchers whose gold list is descendant-
+closed. Two K=5 sweeps verified on the 15-codelist disease benchmark:
+sweep 1 (bare, no override) lands all 15 queries on the conservative
+path; sweep 2 (override=True) covers the 7 descendant-closed gold
+lists. Resolved per-codelist ΔF1 vs the pre-T37i baseline: mean
+**+0.106**, median **+0.004**, BCa CI95 **[+0.049, +0.177]** — no
+longer crosses zero (T37i's did). Vs the post-T37i baseline:
+mean **+0.046** because the routed pipeline outperforms unconditional
+T37i — diabetes/HF return to 0.755/0.786 (Δ within σ) while
+epilepsy/dementia/copd/psychosis/stroke/asthma_pincer hold their
+T37i lifts (Δ within σ on 5 of 7; `dementia` −0.012 at σ,
+`lung_cancer` −0.054 within per-codelist K=5 run-variance). T37j is
+**F1-relevant but gated** per `.agents/standards/f1-impact-classification.md`:
+empty-input invariance (bare query, no override, default False) is
+byte-identical to pre-T37j. Details in
+`data/test_sets/benchmark_2026_04/T37j_path_a_summary.md`.
+
 A naive HEAD-vs-baseline comparison without controlling for time-
 separated environmental drift in OMOPHub / UMLS / OpenCodelists would
 report ΔF1 mean −0.0816 with `hepatitis_c_chronic` collapsed

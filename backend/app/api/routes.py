@@ -119,6 +119,7 @@ class SearchRequest(BaseModel):
         max_length=10,
         description='Free-text exclusion phrases (Bennett 2023 mode 3 carve-outs).',
     )
+    include_descendants: bool | None = Field(default=None)
 
 
 class CodeResult(BaseModel):
@@ -155,6 +156,7 @@ class SearchResponse(BaseModel):
     summary: dict
     provenance_trail: list[dict]
     elapsed_seconds: float
+    include_descendants: bool = False
 
 
 # Endpoints
@@ -205,6 +207,7 @@ async def search_codes(
             disabled,
             include_criteria=request.inclusions,
             exclude_criteria=request.exclusions,
+            include_descendants=request.include_descendants,
         )
     except Exception as exc:
         logger.error("Pipeline failed: %s", exc)
@@ -213,6 +216,16 @@ async def search_codes(
     elapsed = round(time.time() - t0, 2)
     final_codes = result.get("final_code_list", [])
 
+    # Explicit override wins; otherwise fall back to any-True across
+    # LLM-extracted conditions (matches hierarchy_expander's gate).
+    if request.include_descendants is not None:
+        resolved_include_descendants = bool(request.include_descendants)
+    else:
+        resolved_include_descendants = any(
+            c.get("include_descendants", False)
+            for c in result.get("parsed_conditions", [])
+        )
+
     search_id = uuid.uuid4().hex[:12]
     _search_cache.put(
         search_id,
@@ -220,6 +233,7 @@ async def search_codes(
         final_codes,
         include_criteria=request.inclusions,
         exclude_criteria=request.exclusions,
+        include_descendants=resolved_include_descendants,
     )
 
     return SearchResponse(
@@ -247,6 +261,7 @@ async def search_codes(
         summary=result.get("summary", {}),
         provenance_trail=result.get("provenance_trail", []),
         elapsed_seconds=elapsed,
+        include_descendants=resolved_include_descendants,
     )
 
 

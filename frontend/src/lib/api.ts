@@ -47,6 +47,7 @@ export interface SearchResponse {
   summary: Record<string, unknown>;
   provenance_trail: Record<string, unknown>[];
   elapsed_seconds: number;
+  include_descendants: boolean;
 }
 
 export interface SearchOptions {
@@ -55,6 +56,7 @@ export interface SearchOptions {
   // identically).
   inclusions?: string[];
   exclusions?: string[];
+  includeDescendants?: boolean;
 }
 
 export async function searchCodes(
@@ -64,6 +66,7 @@ export async function searchCodes(
   const body: Record<string, unknown> = { query };
   if (opts.inclusions && opts.inclusions.length > 0) body.inclusions = opts.inclusions;
   if (opts.exclusions && opts.exclusions.length > 0) body.exclusions = opts.exclusions;
+  if (opts.includeDescendants !== undefined) body.include_descendants = opts.includeDescendants;
   const res = await fetch(`${API_BASE}/search`, {
     ...AUTH_FETCH,
     method: "POST",
@@ -326,6 +329,7 @@ export interface Codelist extends CodelistSummary {
   // (the column DEFAULT '[]' migration covers older rows).
   include_criteria: string[];
   exclude_criteria: string[];
+  include_descendants: boolean;
   // T32 — owner-flippable opt-out from the public gallery. SQLite
   // INTEGER 0/1 over the JSON wire; coerce to bool at the use site.
   private?: 0 | 1;
@@ -498,6 +502,7 @@ export interface PublicCodelist extends PublicCodelistSummary {
   adopted_phenotypes: AdoptedPhenotype[];
   include_criteria: string[];
   exclude_criteria: string[];
+  include_descendants: boolean;
 }
 
 // PUBLIC_FETCH skips credentials so cookies aren't sent on the gallery
