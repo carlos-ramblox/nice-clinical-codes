@@ -68,9 +68,11 @@ def main() -> int:
         pre = _runK_f1s(PRE, short, ts)
         post = _runK_f1s(BENCH, short, ts)
         if not pre:
-            missing_pre.append(short); continue
+            missing_pre.append(short)
+            continue
         if not post:
-            missing_post.append(short); continue
+            missing_post.append(short)
+            continue
         pre_mean = statistics.fmean(pre)
         post_mean = statistics.fmean(post)
         delta = post_mean - pre_mean

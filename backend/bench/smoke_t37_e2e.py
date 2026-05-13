@@ -4,7 +4,6 @@ Run: cd backend && python -m bench.smoke_t37_e2e
 """
 from __future__ import annotations
 
-import json
 import sys
 from collections import Counter
 

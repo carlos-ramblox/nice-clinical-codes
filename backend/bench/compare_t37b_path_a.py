@@ -78,7 +78,9 @@ def main() -> int:
         if not (a and b and c):
             missing.append(f"{short}: A={len(a)} B={len(b)} C={len(c)}")
             continue
-        a_mean = _mean(a); b_mean = _mean(b); c_mean = _mean(c)
+        a_mean = _mean(a)
+        b_mean = _mean(b)
+        c_mean = _mean(c)
         rows.append({
             "short": short,
             "A_mean": round(a_mean, 4),

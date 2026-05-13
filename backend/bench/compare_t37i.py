@@ -66,7 +66,8 @@ def main() -> int:
         if not (pre and post):
             missing.append(f"{short}: pre={len(pre)} post={len(post)}")
             continue
-        pre_mean = statistics.fmean(pre); post_mean = statistics.fmean(post)
+        pre_mean = statistics.fmean(pre)
+        post_mean = statistics.fmean(post)
         delta = post_mean - pre_mean
 
         # also compute precision/recall mean for diagnostic colour
@@ -76,9 +77,11 @@ def main() -> int:
                 with open(dir_ / f"{short}.result_runK_{k}.json", encoding="utf-8") as f:
                     run = json.load(f)
                 v = evaluate_one(ts, run)
-                ps.append(v["strict"]["precision"]); rs.append(v["strict"]["recall"])
+                ps.append(v["strict"]["precision"])
+                rs.append(v["strict"]["recall"])
             return statistics.fmean(ps), statistics.fmean(rs)
-        pre_p, pre_r = _pr(PRE); post_p, post_r = _pr(BENCH)
+        pre_p, pre_r = _pr(PRE)
+        post_p, post_r = _pr(BENCH)
 
         rows.append({
             "short": short,
