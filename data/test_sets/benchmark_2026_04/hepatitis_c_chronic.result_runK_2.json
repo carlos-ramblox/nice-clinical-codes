@@ -1773,7 +1773,7 @@
     "codes": []
   },
   "summary": "Recall: 0.0% (0 of 20 reference codes retrieved). Precision: 0.0%. F1: 0.0%. 0 reference codes were incorrectly excluded.",
-  "elapsed_seconds": 22.29,
+  "elapsed_seconds": 22.36,
   "pipeline_results_count": 100,
   "scored_codes": [
     {
@@ -1799,7 +1799,7 @@
       "vocabulary": "ICD-10 (WHO)",
       "decision": "uncertain",
       "confidence": 0.6,
-      "rationale": "Chronic viral hepatitis is a broader category that includes chronic hepatitis C but also other types; specificity may be preferred.",
+      "rationale": "Chronic viral hepatitis is a broad parent category that includes chronic hepatitis C but also other types; may be too general for a primary chronic hepatitis C list.",
       "sources": [
         "ChromaDB"
       ],
@@ -2105,7 +2105,7 @@
       "vocabulary": "ICD-10 (WHO)",
       "decision": "exclude",
       "confidence": 0.99,
-      "rationale": "Chronic viral hepatitis B with delta-agent is a different hepatitis type, not chronic hepatitis C.",
+      "rationale": "Chronic viral hepatitis B with delta-agent is a different viral hepatitis type, not chronic hepatitis C.",
       "sources": [
         "ChromaDB"
       ],
@@ -2122,7 +2122,7 @@
       "vocabulary": "ICD-10 (WHO)",
       "decision": "exclude",
       "confidence": 0.99,
-      "rationale": "Chronic viral hepatitis B without delta-agent is a different hepatitis type, not chronic hepatitis C.",
+      "rationale": "Chronic viral hepatitis B without delta-agent is a different viral hepatitis type, not chronic hepatitis C.",
       "sources": [
         "ChromaDB"
       ],
@@ -2139,7 +2139,7 @@
       "vocabulary": "ICD-10 (WHO)",
       "decision": "exclude",
       "confidence": 0.99,
-      "rationale": "Other chronic viral hepatitis is a broader category that includes other types, not specifically chronic hepatitis C.",
+      "rationale": "Other chronic viral hepatitis refers to types other than B and C, not chronic hepatitis C.",
       "sources": [
         "ChromaDB"
       ],
@@ -2156,7 +2156,7 @@
       "vocabulary": "ICD-10 (WHO)",
       "decision": "exclude",
       "confidence": 0.99,
-      "rationale": "Chronic viral hepatitis unspecified is too broad and does not specifically identify chronic hepatitis C.",
+      "rationale": "Chronic viral hepatitis unspecified is too broad and does not specifically confirm chronic hepatitis C.",
       "sources": [
         "ChromaDB"
       ],
@@ -2173,7 +2173,7 @@
       "vocabulary": "ICD-10 (WHO)",
       "decision": "exclude",
       "confidence": 0.99,
-      "rationale": "Unspecified viral hepatitis is too broad and does not specifically identify chronic hepatitis C.",
+      "rationale": "Unspecified viral hepatitis is too broad and does not specifically confirm chronic hepatitis C.",
       "sources": [
         "ChromaDB"
       ],
@@ -2190,7 +2190,7 @@
       "vocabulary": "ICD-10 (WHO)",
       "decision": "exclude",
       "confidence": 0.99,
-      "rationale": "Unspecified viral hepatitis with hepatic coma is too broad and does not specifically identify chronic hepatitis C.",
+      "rationale": "Unspecified viral hepatitis with hepatic coma is too broad and does not specifically confirm chronic hepatitis C.",
       "sources": [
         "ChromaDB"
       ],
@@ -2207,7 +2207,7 @@
       "vocabulary": "ICD-10 (WHO)",
       "decision": "exclude",
       "confidence": 0.99,
-      "rationale": "Unspecified viral hepatitis without hepatic coma is too broad and does not specifically identify chronic hepatitis C.",
+      "rationale": "Unspecified viral hepatitis without hepatic coma is too broad and does not specifically confirm chronic hepatitis C.",
       "sources": [
         "ChromaDB"
       ],
@@ -2249,6 +2249,23 @@
       "usage_status": "counted",
       "usage_source": "NHS Digital HES inpatient FCEs",
       "usage_setting": "secondary_care_hes",
+      "concept_id": null,
+      "dmd_level": null
+    },
+    {
+      "code": "B94.2",
+      "term": "Sequelae of viral hepatitis",
+      "vocabulary": "ICD-10 (WHO)",
+      "decision": "exclude",
+      "confidence": 0.99,
+      "rationale": "Sequelae of viral hepatitis represents a complication or aftermath, not an instance of chronic hepatitis C itself.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "usage_frequency": null,
+      "usage_status": "not_in_dataset",
+      "usage_source": null,
+      "usage_setting": null,
       "concept_id": null,
       "dmd_level": null
     },
@@ -2423,6 +2440,23 @@
       "dmd_level": null
     },
     {
+      "code": "K72.1",
+      "term": "Chronic hepatic failure",
+      "vocabulary": "ICD-10 (WHO)",
+      "decision": "exclude",
+      "confidence": 0.99,
+      "rationale": "Chronic hepatic failure is a complication of liver disease, not an instance of chronic hepatitis C itself.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "usage_frequency": 413,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital HES inpatient FCEs",
+      "usage_setting": "secondary_care_hes",
+      "concept_id": null,
+      "dmd_level": null
+    },
+    {
       "code": "127225006",
       "term": "Chronic myelomonocytic leukemia (disorder)",
       "vocabulary": "SNOMED CT",
@@ -2436,7 +2470,7 @@
       "usage_status": "counted",
       "usage_source": "NHS Digital primary care SNOMED reporting",
       "usage_setting": "primary_care",
-      "concept_id": null,
+      "concept_id": 4133599,
       "dmd_level": null
     },
     {
@@ -2470,7 +2504,7 @@
       "usage_status": "counted",
       "usage_source": "NHS Digital primary care SNOMED reporting",
       "usage_setting": "primary_care",
-      "concept_id": null,
+      "concept_id": 4173824,
       "dmd_level": null
     },
     {
@@ -2487,7 +2521,7 @@
       "usage_status": "counted",
       "usage_source": "NHS Digital primary care SNOMED reporting",
       "usage_setting": "primary_care",
-      "concept_id": null,
+      "concept_id": 4173955,
       "dmd_level": null
     },
     {
@@ -2504,7 +2538,7 @@
       "usage_status": "counted",
       "usage_source": "NHS Digital primary care SNOMED reporting",
       "usage_setting": "primary_care",
-      "concept_id": null,
+      "concept_id": 4188975,
       "dmd_level": null
     },
     {
@@ -2521,7 +2555,7 @@
       "usage_status": "counted",
       "usage_source": "NHS Digital primary care SNOMED reporting",
       "usage_setting": "primary_care",
-      "concept_id": null,
+      "concept_id": 4137525,
       "dmd_level": null
     },
     {
@@ -2555,7 +2589,7 @@
       "usage_status": "withheld_below_5",
       "usage_source": "NHS Digital primary care SNOMED reporting",
       "usage_setting": "primary_care",
-      "concept_id": null,
+      "concept_id": 40484012,
       "dmd_level": null
     },
     {
@@ -2589,7 +2623,7 @@
       "usage_status": "withheld_below_5",
       "usage_source": "NHS Digital primary care SNOMED reporting",
       "usage_setting": "primary_care",
-      "concept_id": null,
+      "concept_id": 4200851,
       "dmd_level": null
     },
     {
@@ -2606,7 +2640,7 @@
       "usage_status": "counted",
       "usage_source": "NHS Digital primary care SNOMED reporting",
       "usage_setting": "primary_care",
-      "concept_id": null,
+      "concept_id": 255841,
       "dmd_level": null
     },
     {
@@ -2615,7 +2649,7 @@
       "vocabulary": "SNOMED CT",
       "decision": "exclude",
       "confidence": 0.99,
-      "rationale": "This lymphoma is associated with HIV infection, not hepatitis C; the term does not contain 'hepatitis C'.",
+      "rationale": "This code describes a lymphoma co-occurrent with HIV infection, not hepatitis C; it is an AIDS-defining malignancy unrelated to chronic hepatitis C.",
       "sources": [
         "ChromaDB"
       ],
@@ -2623,7 +2657,7 @@
       "usage_status": "not_in_dataset",
       "usage_source": null,
       "usage_setting": null,
-      "concept_id": null,
+      "concept_id": 37017442,
       "dmd_level": null
     },
     {
@@ -2640,7 +2674,7 @@
       "usage_status": "not_in_dataset",
       "usage_source": null,
       "usage_setting": null,
-      "concept_id": null,
+      "concept_id": 36715590,
       "dmd_level": null
     },
     {
@@ -2657,7 +2691,7 @@
       "usage_status": "not_in_dataset",
       "usage_source": null,
       "usage_setting": null,
-      "concept_id": null,
+      "concept_id": 36716035,
       "dmd_level": null
     },
     {
@@ -2691,7 +2725,7 @@
       "usage_status": "counted",
       "usage_source": "NHS Digital primary care SNOMED reporting",
       "usage_setting": "primary_care",
-      "concept_id": null,
+      "concept_id": 140057,
       "dmd_level": null
     },
     {
@@ -2708,7 +2742,7 @@
       "usage_status": "counted",
       "usage_source": "NHS Digital primary care SNOMED reporting",
       "usage_setting": "primary_care",
-      "concept_id": null,
+      "concept_id": 138379,
       "dmd_level": null
     },
     {
@@ -2725,7 +2759,7 @@
       "usage_status": "counted",
       "usage_source": "NHS Digital primary care SNOMED reporting",
       "usage_setting": "primary_care",
-      "concept_id": null,
+      "concept_id": 46284080,
       "dmd_level": null
     },
     {
@@ -2743,40 +2777,6 @@
       "usage_source": "NHS Digital primary care SNOMED reporting",
       "usage_setting": "primary_care",
       "concept_id": 46284163,
-      "dmd_level": null
-    },
-    {
-      "code": "B94.2",
-      "term": "Sequelae of viral hepatitis",
-      "vocabulary": "ICD-10 (WHO)",
-      "decision": "exclude",
-      "confidence": 0.95,
-      "rationale": "Sequelae of viral hepatitis represents long-term consequences, not an instance of chronic hepatitis C itself.",
-      "sources": [
-        "ChromaDB"
-      ],
-      "usage_frequency": null,
-      "usage_status": "not_in_dataset",
-      "usage_source": null,
-      "usage_setting": null,
-      "concept_id": null,
-      "dmd_level": null
-    },
-    {
-      "code": "K72.1",
-      "term": "Chronic hepatic failure",
-      "vocabulary": "ICD-10 (WHO)",
-      "decision": "exclude",
-      "confidence": 0.95,
-      "rationale": "Chronic hepatic failure is a complication of chronic liver disease, not an instance of chronic hepatitis C itself.",
-      "sources": [
-        "ChromaDB"
-      ],
-      "usage_frequency": 413,
-      "usage_status": "counted",
-      "usage_source": "NHS Digital HES inpatient FCEs",
-      "usage_setting": "secondary_care_hes",
-      "concept_id": null,
       "dmd_level": null
     },
     {
@@ -2963,7 +2963,7 @@
       "usage_status": "counted",
       "usage_source": "NHS Digital primary care SNOMED reporting",
       "usage_setting": "primary_care",
-      "concept_id": null,
+      "concept_id": 4001171,
       "dmd_level": null
     },
     {
@@ -2980,7 +2980,7 @@
       "usage_status": "counted",
       "usage_source": "NHS Digital primary care SNOMED reporting",
       "usage_setting": "primary_care",
-      "concept_id": null,
+      "concept_id": 4001664,
       "dmd_level": null
     },
     {
@@ -2997,7 +2997,7 @@
       "usage_status": "counted",
       "usage_source": "NHS Digital primary care SNOMED reporting",
       "usage_setting": "primary_care",
-      "concept_id": null,
+      "concept_id": 606360,
       "dmd_level": null
     },
     {
@@ -3014,7 +3014,7 @@
       "usage_status": "counted",
       "usage_source": "NHS Digital primary care SNOMED reporting",
       "usage_setting": "primary_care",
-      "concept_id": null,
+      "concept_id": 37160608,
       "dmd_level": null
     },
     {
@@ -3031,7 +3031,7 @@
       "usage_status": "counted",
       "usage_source": "NHS Digital primary care SNOMED reporting",
       "usage_setting": "primary_care",
-      "concept_id": null,
+      "concept_id": 37162050,
       "dmd_level": null
     },
     {
@@ -3048,7 +3048,7 @@
       "usage_status": "withheld_below_5",
       "usage_source": "NHS Digital primary care SNOMED reporting",
       "usage_setting": "primary_care",
-      "concept_id": null,
+      "concept_id": 37162058,
       "dmd_level": null
     },
     {
@@ -3065,7 +3065,7 @@
       "usage_status": "counted",
       "usage_source": "NHS Digital primary care SNOMED reporting",
       "usage_setting": "primary_care",
-      "concept_id": null,
+      "concept_id": 37162059,
       "dmd_level": null
     },
     {
@@ -3082,7 +3082,7 @@
       "usage_status": "withheld_below_5",
       "usage_source": "NHS Digital primary care SNOMED reporting",
       "usage_setting": "primary_care",
-      "concept_id": null,
+      "concept_id": 37162060,
       "dmd_level": null
     },
     {
@@ -3099,7 +3099,7 @@
       "usage_status": "withheld_below_5",
       "usage_source": "NHS Digital primary care SNOMED reporting",
       "usage_setting": "primary_care",
-      "concept_id": null,
+      "concept_id": 37162572,
       "dmd_level": null
     },
     {
@@ -3116,7 +3116,7 @@
       "usage_status": "counted",
       "usage_source": "NHS Digital primary care SNOMED reporting",
       "usage_setting": "primary_care",
-      "concept_id": null,
+      "concept_id": 37162686,
       "dmd_level": null
     },
     {
@@ -3133,7 +3133,7 @@
       "usage_status": "withheld_below_5",
       "usage_source": "NHS Digital primary care SNOMED reporting",
       "usage_setting": "primary_care",
-      "concept_id": null,
+      "concept_id": 37163155,
       "dmd_level": null
     },
     {
@@ -3167,7 +3167,7 @@
       "usage_status": "withheld_below_5",
       "usage_source": "NHS Digital primary care SNOMED reporting",
       "usage_setting": "primary_care",
-      "concept_id": null,
+      "concept_id": 37166184,
       "dmd_level": null
     },
     {
@@ -3184,7 +3184,7 @@
       "usage_status": "withheld_below_5",
       "usage_source": "NHS Digital primary care SNOMED reporting",
       "usage_setting": "primary_care",
-      "concept_id": null,
+      "concept_id": 37166459,
       "dmd_level": null
     },
     {
@@ -3201,7 +3201,7 @@
       "usage_status": "counted",
       "usage_source": "NHS Digital primary care SNOMED reporting",
       "usage_setting": "primary_care",
-      "concept_id": null,
+      "concept_id": 37166753,
       "dmd_level": null
     },
     {
@@ -3235,7 +3235,7 @@
       "usage_status": "not_in_dataset",
       "usage_source": null,
       "usage_setting": null,
-      "concept_id": null,
+      "concept_id": 37167535,
       "dmd_level": null
     },
     {
@@ -3252,7 +3252,7 @@
       "usage_status": "withheld_below_5",
       "usage_source": "NHS Digital primary care SNOMED reporting",
       "usage_setting": "primary_care",
-      "concept_id": null,
+      "concept_id": 37167595,
       "dmd_level": null
     },
     {
@@ -3269,7 +3269,7 @@
       "usage_status": "counted",
       "usage_source": "NHS Digital primary care SNOMED reporting",
       "usage_setting": "primary_care",
-      "concept_id": null,
+      "concept_id": 37167598,
       "dmd_level": null
     },
     {
@@ -3286,7 +3286,7 @@
       "usage_status": "withheld_below_5",
       "usage_source": "NHS Digital primary care SNOMED reporting",
       "usage_setting": "primary_care",
-      "concept_id": null,
+      "concept_id": 37167661,
       "dmd_level": null
     },
     {
@@ -3303,7 +3303,7 @@
       "usage_status": "counted",
       "usage_source": "NHS Digital primary care SNOMED reporting",
       "usage_setting": "primary_care",
-      "concept_id": null,
+      "concept_id": 4094864,
       "dmd_level": null
     },
     {
@@ -3320,7 +3320,7 @@
       "usage_status": "counted",
       "usage_source": "NHS Digital primary care SNOMED reporting",
       "usage_setting": "primary_care",
-      "concept_id": null,
+      "concept_id": 4099699,
       "dmd_level": null
     },
     {
@@ -3337,7 +3337,7 @@
       "usage_status": "counted",
       "usage_source": "NHS Digital primary care SNOMED reporting",
       "usage_setting": "primary_care",
-      "concept_id": null,
+      "concept_id": 4166154,
       "dmd_level": null
     },
     {
@@ -3354,7 +3354,7 @@
       "usage_status": "counted",
       "usage_source": "NHS Digital primary care SNOMED reporting",
       "usage_setting": "primary_care",
-      "concept_id": null,
+      "concept_id": 199744,
       "dmd_level": null
     },
     {
@@ -3363,7 +3363,7 @@
       "vocabulary": "SNOMED CT",
       "decision": "exclude",
       "confidence": 0.95,
-      "rationale": "Hepatosplenic T-cell lymphoma is a malignancy that can be associated with chronic hepatitis C but is a separate condition; the term does not explicitly name hepatitis C.",
+      "rationale": "Hepatosplenic T-cell lymphoma is a malignancy that may be associated with chronic hepatitis C but is a separate condition; the term does not explicitly name hepatitis C.",
       "sources": [
         "ChromaDB"
       ],
@@ -3371,7 +3371,7 @@
       "usage_status": "counted",
       "usage_source": "NHS Digital primary care SNOMED reporting",
       "usage_setting": "primary_care",
-      "concept_id": null,
+      "concept_id": 40483374,
       "dmd_level": null
     },
     {
@@ -3380,7 +3380,7 @@
       "vocabulary": "SNOMED CT",
       "decision": "exclude",
       "confidence": 0.95,
-      "rationale": "Hepatosplenic gamma-delta cell lymphoma is a malignancy that can be associated with chronic hepatitis C but is a separate condition; the term does not explicitly name hepatitis C.",
+      "rationale": "Hepatosplenic gamma-delta cell lymphoma is a malignancy that may be associated with chronic hepatitis C but is a separate condition; the term does not explicitly name hepatitis C.",
       "sources": [
         "ChromaDB"
       ],
@@ -3388,7 +3388,7 @@
       "usage_status": "counted",
       "usage_source": "NHS Digital primary care SNOMED reporting",
       "usage_setting": "primary_care",
-      "concept_id": null,
+      "concept_id": 44783557,
       "dmd_level": null
     },
     {
@@ -3397,7 +3397,7 @@
       "vocabulary": "SNOMED CT",
       "decision": "exclude",
       "confidence": 0.95,
-      "rationale": "Primary cholangiocarcinoma is a malignancy that can be associated with chronic hepatitis C but is a separate condition; the term does not explicitly name hepatitis C.",
+      "rationale": "Primary cholangiocarcinoma is a malignancy that may be associated with chronic hepatitis C but is a separate condition; the term does not explicitly name hepatitis C.",
       "sources": [
         "ChromaDB"
       ],
@@ -3405,7 +3405,7 @@
       "usage_status": "counted",
       "usage_source": "NHS Digital primary care SNOMED reporting",
       "usage_setting": "primary_care",
-      "concept_id": null,
+      "concept_id": 36715927,
       "dmd_level": null
     },
     {
@@ -3414,7 +3414,7 @@
       "vocabulary": "SNOMED CT",
       "decision": "exclude",
       "confidence": 0.95,
-      "rationale": "Diffuse large B-cell lymphoma associated with Epstein-Barr virus is a malignancy; the term does not contain 'hepatitis C'.",
+      "rationale": "Diffuse large B-cell lymphoma associated with chronic EBV inflammation is a malignancy; the term does not explicitly name hepatitis C.",
       "sources": [
         "ChromaDB"
       ],
@@ -3422,7 +3422,7 @@
       "usage_status": "withheld_below_5",
       "usage_source": "NHS Digital primary care SNOMED reporting",
       "usage_setting": "primary_care",
-      "concept_id": null,
+      "concept_id": 37110401,
       "dmd_level": null
     },
     {
@@ -3431,7 +3431,7 @@
       "vocabulary": "SNOMED CT",
       "decision": "exclude",
       "confidence": 0.95,
-      "rationale": "Squamous cell carcinoma of liver is a malignancy that can be associated with chronic hepatitis C but is a separate condition; the term does not explicitly name hepatitis C.",
+      "rationale": "Squamous cell carcinoma of liver is a malignancy that may be associated with chronic hepatitis C but is a separate condition; the term does not explicitly name hepatitis C.",
       "sources": [
         "ChromaDB"
       ],
@@ -3439,7 +3439,7 @@
       "usage_status": "withheld_below_5",
       "usage_source": "NHS Digital primary care SNOMED reporting",
       "usage_setting": "primary_care",
-      "concept_id": null,
+      "concept_id": 36674831,
       "dmd_level": null
     },
     {
@@ -3448,7 +3448,7 @@
       "vocabulary": "SNOMED CT",
       "decision": "exclude",
       "confidence": 0.95,
-      "rationale": "Undifferentiated carcinoma of liver is a malignancy that can be associated with chronic hepatitis C but is a separate condition; the term does not explicitly name hepatitis C.",
+      "rationale": "Undifferentiated carcinoma of liver is a malignancy that may be associated with chronic hepatitis C but is a separate condition; the term does not explicitly name hepatitis C.",
       "sources": [
         "ChromaDB"
       ],
@@ -3456,7 +3456,7 @@
       "usage_status": "not_in_dataset",
       "usage_source": null,
       "usage_setting": null,
-      "concept_id": null,
+      "concept_id": 36674832,
       "dmd_level": null
     },
     {
@@ -3465,7 +3465,7 @@
       "vocabulary": "SNOMED CT",
       "decision": "exclude",
       "confidence": 0.95,
-      "rationale": "Adenocarcinoma of liver is a malignancy that can be associated with chronic hepatitis C but is a separate condition; the term does not explicitly name hepatitis C.",
+      "rationale": "Adenocarcinoma of liver is a malignancy that may be associated with chronic hepatitis C but is a separate condition; the term does not explicitly name hepatitis C.",
       "sources": [
         "ChromaDB"
       ],
@@ -3473,7 +3473,7 @@
       "usage_status": "counted",
       "usage_source": "NHS Digital primary care SNOMED reporting",
       "usage_setting": "primary_care",
-      "concept_id": null,
+      "concept_id": 37204022,
       "dmd_level": null
     }
   ],

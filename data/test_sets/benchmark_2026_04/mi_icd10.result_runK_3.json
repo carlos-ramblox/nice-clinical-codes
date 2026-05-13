@@ -1642,27 +1642,27 @@
       {
         "code": "I22",
         "term": "Subsequent myocardial infarction",
-        "rationale": "Subsequent myocardial infarction represents a recurrent event after the primary infarction, not the primary event itself."
+        "rationale": "Subsequent myocardial infarction represents a recurrent event after the primary infarction and falls outside the scope of 'primary' myocardial infarction."
       },
       {
         "code": "I22.0",
         "term": "Subsequent myocardial infarction of anterior wall",
-        "rationale": "Subsequent myocardial infarction of anterior wall is a recurrent event, not the primary myocardial infarction."
+        "rationale": "Subsequent myocardial infarction of anterior wall is a recurrent event and falls outside the scope of 'primary' myocardial infarction."
       },
       {
         "code": "I22.1",
         "term": "Subsequent myocardial infarction of inferior wall",
-        "rationale": "Subsequent myocardial infarction of inferior wall is a recurrent event, not the primary myocardial infarction."
+        "rationale": "Subsequent myocardial infarction of inferior wall is a recurrent event and falls outside the scope of 'primary' myocardial infarction."
       },
       {
         "code": "I22.8",
         "term": "Subsequent myocardial infarction of other sites",
-        "rationale": "Subsequent myocardial infarction of other sites is a recurrent event, not the primary myocardial infarction."
+        "rationale": "Subsequent myocardial infarction of other sites is a recurrent event and falls outside the scope of 'primary' myocardial infarction."
       },
       {
         "code": "I22.9",
         "term": "Subsequent myocardial infarction of unspecified site",
-        "rationale": "Subsequent myocardial infarction of unspecified site is a recurrent event, not the primary myocardial infarction."
+        "rationale": "Subsequent myocardial infarction of unspecified site is a recurrent event and falls outside the scope of 'primary' myocardial infarction."
       }
     ]
   },
@@ -1671,7 +1671,7 @@
     "codes": []
   },
   "summary": "Recall: 58.3% (7 of 12 reference codes retrieved). Precision: 100.0%. F1: 73.7%. 5 reference codes were incorrectly excluded.",
-  "elapsed_seconds": 27.89,
+  "elapsed_seconds": 27.63,
   "pipeline_results_count": 50,
   "scored_codes": [
     {
@@ -1697,7 +1697,7 @@
       "vocabulary": "ICD-10 (WHO)",
       "decision": "include",
       "confidence": 1.0,
-      "rationale": "Acute transmural myocardial infarction of anterior wall is a specific anatomical subtype of acute myocardial infarction.",
+      "rationale": "Acute transmural myocardial infarction of anterior wall is a clinical subtype of acute myocardial infarction.",
       "sources": [
         "ChromaDB"
       ],
@@ -1714,7 +1714,7 @@
       "vocabulary": "ICD-10 (WHO)",
       "decision": "include",
       "confidence": 1.0,
-      "rationale": "Acute transmural myocardial infarction of inferior wall is a specific anatomical subtype of acute myocardial infarction.",
+      "rationale": "Acute transmural myocardial infarction of inferior wall is a clinical subtype of acute myocardial infarction.",
       "sources": [
         "ChromaDB"
       ],
@@ -1731,7 +1731,7 @@
       "vocabulary": "ICD-10 (WHO)",
       "decision": "include",
       "confidence": 1.0,
-      "rationale": "Acute transmural myocardial infarction of other sites is a specific anatomical subtype of acute myocardial infarction.",
+      "rationale": "Acute transmural myocardial infarction of other sites is a clinical subtype of acute myocardial infarction.",
       "sources": [
         "ChromaDB"
       ],
@@ -1748,7 +1748,7 @@
       "vocabulary": "ICD-10 (WHO)",
       "decision": "include",
       "confidence": 1.0,
-      "rationale": "Acute transmural myocardial infarction of unspecified site is a specific subtype of acute myocardial infarction.",
+      "rationale": "Acute transmural myocardial infarction of unspecified site is a clinical subtype of acute myocardial infarction.",
       "sources": [
         "ChromaDB"
       ],
@@ -1765,7 +1765,7 @@
       "vocabulary": "ICD-10 (WHO)",
       "decision": "include",
       "confidence": 1.0,
-      "rationale": "Acute subendocardial myocardial infarction is a specific pathological subtype of acute myocardial infarction.",
+      "rationale": "Acute subendocardial myocardial infarction is a clinical subtype of acute myocardial infarction.",
       "sources": [
         "ChromaDB"
       ],
@@ -1782,7 +1782,7 @@
       "vocabulary": "ICD-10 (WHO)",
       "decision": "include",
       "confidence": 1.0,
-      "rationale": "Acute myocardial infarction, unspecified is a direct instance of the queried condition.",
+      "rationale": "Acute myocardial infarction, unspecified is a clinical subtype of acute myocardial infarction.",
       "sources": [
         "ChromaDB"
       ],
@@ -1816,7 +1816,7 @@
       "vocabulary": "ICD-10 (WHO)",
       "decision": "exclude",
       "confidence": 0.99,
-      "rationale": "Angina pectoris is a precursor condition and risk factor for myocardial infarction, not an instance of it.",
+      "rationale": "Angina pectoris is a precursor condition and risk factor for myocardial infarction, not an instance of myocardial infarction itself.",
       "sources": [
         "ChromaDB"
       ],
@@ -1833,7 +1833,7 @@
       "vocabulary": "ICD-10 (WHO)",
       "decision": "exclude",
       "confidence": 0.99,
-      "rationale": "Unstable angina is a precursor condition and risk factor for myocardial infarction, not an instance of it.",
+      "rationale": "Unstable angina is a precursor condition and risk factor for myocardial infarction, not an instance of myocardial infarction itself.",
       "sources": [
         "ChromaDB"
       ],
@@ -1850,164 +1850,11 @@
       "vocabulary": "ICD-10 (WHO)",
       "decision": "exclude",
       "confidence": 0.99,
-      "rationale": "Angina pectoris with documented spasm is a precursor condition, not an instance of myocardial infarction.",
+      "rationale": "Angina pectoris with documented spasm is a precursor condition and risk factor for myocardial infarction, not an instance of myocardial infarction itself.",
       "sources": [
         "ChromaDB"
       ],
       "usage_frequency": 1104,
-      "usage_status": "counted",
-      "usage_source": "NHS Digital HES inpatient FCEs",
-      "usage_setting": "secondary_care_hes",
-      "concept_id": null,
-      "dmd_level": null
-    },
-    {
-      "code": "I23",
-      "term": "Certain current complications following acute myocardial infarction",
-      "vocabulary": "ICD-10 (WHO)",
-      "decision": "exclude",
-      "confidence": 0.99,
-      "rationale": "Current complications following acute myocardial infarction are sequelae of the primary event, not instances of myocardial infarction itself.",
-      "sources": [
-        "ChromaDB"
-      ],
-      "usage_frequency": 225,
-      "usage_status": "counted",
-      "usage_source": "NHS Digital HES inpatient FCEs",
-      "usage_setting": "secondary_care_hes",
-      "concept_id": null,
-      "dmd_level": null
-    },
-    {
-      "code": "I23.0",
-      "term": "Haemopericardium as current complication following acute myocardial infarction",
-      "vocabulary": "ICD-10 (WHO)",
-      "decision": "exclude",
-      "confidence": 0.99,
-      "rationale": "Haemopericardium is a complication following acute myocardial infarction, not an instance of myocardial infarction.",
-      "sources": [
-        "ChromaDB"
-      ],
-      "usage_frequency": 20,
-      "usage_status": "counted",
-      "usage_source": "NHS Digital HES inpatient FCEs",
-      "usage_setting": "secondary_care_hes",
-      "concept_id": null,
-      "dmd_level": null
-    },
-    {
-      "code": "I23.1",
-      "term": "Atrial septal defect as current complication following acute myocardial infarction",
-      "vocabulary": "ICD-10 (WHO)",
-      "decision": "exclude",
-      "confidence": 0.99,
-      "rationale": "Atrial septal defect as a complication following acute myocardial infarction is a sequela, not an instance of myocardial infarction.",
-      "sources": [
-        "ChromaDB"
-      ],
-      "usage_frequency": 7,
-      "usage_status": "counted",
-      "usage_source": "NHS Digital HES inpatient FCEs",
-      "usage_setting": "secondary_care_hes",
-      "concept_id": null,
-      "dmd_level": null
-    },
-    {
-      "code": "I23.2",
-      "term": "Ventricular septal defect as current complication following acute myocardial infarction",
-      "vocabulary": "ICD-10 (WHO)",
-      "decision": "exclude",
-      "confidence": 0.99,
-      "rationale": "Ventricular septal defect as a complication following acute myocardial infarction is a sequela, not an instance of myocardial infarction.",
-      "sources": [
-        "ChromaDB"
-      ],
-      "usage_frequency": 75,
-      "usage_status": "counted",
-      "usage_source": "NHS Digital HES inpatient FCEs",
-      "usage_setting": "secondary_care_hes",
-      "concept_id": null,
-      "dmd_level": null
-    },
-    {
-      "code": "I23.3",
-      "term": "Rupture of cardiac wall without haemopericardium as current complication following acute myocardial infarction",
-      "vocabulary": "ICD-10 (WHO)",
-      "decision": "exclude",
-      "confidence": 0.99,
-      "rationale": "Rupture of cardiac wall is a complication following acute myocardial infarction, not an instance of myocardial infarction.",
-      "sources": [
-        "ChromaDB"
-      ],
-      "usage_frequency": 3,
-      "usage_status": "counted",
-      "usage_source": "NHS Digital HES inpatient FCEs",
-      "usage_setting": "secondary_care_hes",
-      "concept_id": null,
-      "dmd_level": null
-    },
-    {
-      "code": "I23.4",
-      "term": "Rupture of chordae tendineae as current complication following acute myocardial infarction",
-      "vocabulary": "ICD-10 (WHO)",
-      "decision": "exclude",
-      "confidence": 0.99,
-      "rationale": "Rupture of chordae tendineae is a complication following acute myocardial infarction, not an instance of myocardial infarction.",
-      "sources": [
-        "ChromaDB"
-      ],
-      "usage_frequency": null,
-      "usage_status": "not_in_dataset",
-      "usage_source": null,
-      "usage_setting": null,
-      "concept_id": null,
-      "dmd_level": null
-    },
-    {
-      "code": "I23.5",
-      "term": "Rupture of papillary muscle as current complication following acute myocardial infarction",
-      "vocabulary": "ICD-10 (WHO)",
-      "decision": "exclude",
-      "confidence": 0.99,
-      "rationale": "Rupture of papillary muscle is a complication following acute myocardial infarction, not an instance of myocardial infarction.",
-      "sources": [
-        "ChromaDB"
-      ],
-      "usage_frequency": 3,
-      "usage_status": "counted",
-      "usage_source": "NHS Digital HES inpatient FCEs",
-      "usage_setting": "secondary_care_hes",
-      "concept_id": null,
-      "dmd_level": null
-    },
-    {
-      "code": "I23.6",
-      "term": "Thrombosis of atrium, auricular appendage, and ventricle as current complications following acute myocardial infarction",
-      "vocabulary": "ICD-10 (WHO)",
-      "decision": "exclude",
-      "confidence": 0.99,
-      "rationale": "Thrombosis of cardiac chambers is a complication following acute myocardial infarction, not an instance of myocardial infarction.",
-      "sources": [
-        "ChromaDB"
-      ],
-      "usage_frequency": 62,
-      "usage_status": "counted",
-      "usage_source": "NHS Digital HES inpatient FCEs",
-      "usage_setting": "secondary_care_hes",
-      "concept_id": null,
-      "dmd_level": null
-    },
-    {
-      "code": "I23.8",
-      "term": "Other current complications following acute myocardial infarction",
-      "vocabulary": "ICD-10 (WHO)",
-      "decision": "exclude",
-      "confidence": 0.99,
-      "rationale": "Other current complications following acute myocardial infarction are sequelae, not instances of myocardial infarction.",
-      "sources": [
-        "ChromaDB"
-      ],
-      "usage_frequency": 55,
       "usage_status": "counted",
       "usage_source": "NHS Digital HES inpatient FCEs",
       "usage_setting": "secondary_care_hes",
@@ -2020,45 +1867,11 @@
       "vocabulary": "ICD-10 (WHO)",
       "decision": "exclude",
       "confidence": 0.99,
-      "rationale": "Coronary thrombosis not resulting in myocardial infarction is a related condition that does not constitute myocardial infarction.",
+      "rationale": "Coronary thrombosis not resulting in myocardial infarction is a precursor condition that did not result in infarction.",
       "sources": [
         "ChromaDB"
       ],
       "usage_frequency": 560,
-      "usage_status": "counted",
-      "usage_source": "NHS Digital HES inpatient FCEs",
-      "usage_setting": "secondary_care_hes",
-      "concept_id": null,
-      "dmd_level": null
-    },
-    {
-      "code": "I25.2",
-      "term": "Old myocardial infarction",
-      "vocabulary": "ICD-10 (WHO)",
-      "decision": "exclude",
-      "confidence": 0.99,
-      "rationale": "Old myocardial infarction represents a resolved/historical event, not a primary acute myocardial infarction.",
-      "sources": [
-        "ChromaDB"
-      ],
-      "usage_frequency": 438,
-      "usage_status": "counted",
-      "usage_source": "NHS Digital HES inpatient FCEs",
-      "usage_setting": "secondary_care_hes",
-      "concept_id": null,
-      "dmd_level": null
-    },
-    {
-      "code": "I25.5",
-      "term": "Ischaemic cardiomyopathy",
-      "vocabulary": "ICD-10 (WHO)",
-      "decision": "exclude",
-      "confidence": 0.99,
-      "rationale": "Ischaemic cardiomyopathy is a long-term complication and sequela of myocardial infarction, not an instance of it.",
-      "sources": [
-        "ChromaDB"
-      ],
-      "usage_frequency": 2340,
       "usage_status": "counted",
       "usage_source": "NHS Digital HES inpatient FCEs",
       "usage_setting": "secondary_care_hes",
@@ -2071,7 +1884,7 @@
       "vocabulary": "ICD-10 (WHO)",
       "decision": "exclude",
       "confidence": 0.99,
-      "rationale": "Silent myocardial ischaemia is a precursor condition, not an instance of acute myocardial infarction.",
+      "rationale": "Silent myocardial ischaemia is a precursor condition, not an instance of myocardial infarction itself.",
       "sources": [
         "ChromaDB"
       ],
@@ -2207,7 +2020,7 @@
       "vocabulary": "ICD-10 (WHO)",
       "decision": "exclude",
       "confidence": 0.99,
-      "rationale": "Sequelae of cerebral infarction is a neurological complication, not an instance of myocardial infarction.",
+      "rationale": "Sequelae of cerebral infarction is a complication of stroke, not myocardial infarction.",
       "sources": [
         "ChromaDB"
       ],
@@ -2224,7 +2037,7 @@
       "vocabulary": "ICD-10 (WHO)",
       "decision": "exclude",
       "confidence": 0.99,
-      "rationale": "Infarction of liver is hepatic infarction, not myocardial infarction of the heart.",
+      "rationale": "Infarction of liver is infarction of the liver, not myocardial infarction of the heart.",
       "sources": [
         "ChromaDB"
       ],
@@ -2241,7 +2054,7 @@
       "vocabulary": "ICD-10 (WHO)",
       "decision": "exclude",
       "confidence": 0.99,
-      "rationale": "Ischaemic infarction of muscle is skeletal muscle infarction, not myocardial infarction of the heart.",
+      "rationale": "Ischaemic infarction of muscle is infarction of skeletal muscle, not myocardial infarction of the heart.",
       "sources": [
         "ChromaDB"
       ],
@@ -2258,7 +2071,7 @@
       "vocabulary": "ICD-10 (WHO)",
       "decision": "exclude",
       "confidence": 0.99,
-      "rationale": "Ischaemic infarction of muscle at multiple sites is skeletal muscle infarction, not myocardial infarction of the heart.",
+      "rationale": "Ischaemic infarction of muscle, multiple sites is infarction of skeletal muscle, not myocardial infarction of the heart.",
       "sources": [
         "ChromaDB"
       ],
@@ -2275,7 +2088,7 @@
       "vocabulary": "ICD-10 (WHO)",
       "decision": "exclude",
       "confidence": 0.95,
-      "rationale": "Subsequent myocardial infarction represents a recurrent event after the primary infarction, not the primary event itself.",
+      "rationale": "Subsequent myocardial infarction represents a recurrent event after the primary infarction and falls outside the scope of 'primary' myocardial infarction.",
       "sources": [
         "ChromaDB"
       ],
@@ -2292,7 +2105,7 @@
       "vocabulary": "ICD-10 (WHO)",
       "decision": "exclude",
       "confidence": 0.95,
-      "rationale": "Subsequent myocardial infarction of anterior wall is a recurrent event, not the primary myocardial infarction.",
+      "rationale": "Subsequent myocardial infarction of anterior wall is a recurrent event and falls outside the scope of 'primary' myocardial infarction.",
       "sources": [
         "ChromaDB"
       ],
@@ -2309,7 +2122,7 @@
       "vocabulary": "ICD-10 (WHO)",
       "decision": "exclude",
       "confidence": 0.95,
-      "rationale": "Subsequent myocardial infarction of inferior wall is a recurrent event, not the primary myocardial infarction.",
+      "rationale": "Subsequent myocardial infarction of inferior wall is a recurrent event and falls outside the scope of 'primary' myocardial infarction.",
       "sources": [
         "ChromaDB"
       ],
@@ -2326,7 +2139,7 @@
       "vocabulary": "ICD-10 (WHO)",
       "decision": "exclude",
       "confidence": 0.95,
-      "rationale": "Subsequent myocardial infarction of other sites is a recurrent event, not the primary myocardial infarction.",
+      "rationale": "Subsequent myocardial infarction of other sites is a recurrent event and falls outside the scope of 'primary' myocardial infarction.",
       "sources": [
         "ChromaDB"
       ],
@@ -2343,11 +2156,198 @@
       "vocabulary": "ICD-10 (WHO)",
       "decision": "exclude",
       "confidence": 0.95,
-      "rationale": "Subsequent myocardial infarction of unspecified site is a recurrent event, not the primary myocardial infarction.",
+      "rationale": "Subsequent myocardial infarction of unspecified site is a recurrent event and falls outside the scope of 'primary' myocardial infarction.",
       "sources": [
         "ChromaDB"
       ],
       "usage_frequency": 773,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital HES inpatient FCEs",
+      "usage_setting": "secondary_care_hes",
+      "concept_id": null,
+      "dmd_level": null
+    },
+    {
+      "code": "I23",
+      "term": "Certain current complications following acute myocardial infarction",
+      "vocabulary": "ICD-10 (WHO)",
+      "decision": "exclude",
+      "confidence": 0.95,
+      "rationale": "Certain current complications following acute myocardial infarction are sequelae and complications of myocardial infarction, not instances of the condition itself.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "usage_frequency": 225,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital HES inpatient FCEs",
+      "usage_setting": "secondary_care_hes",
+      "concept_id": null,
+      "dmd_level": null
+    },
+    {
+      "code": "I23.0",
+      "term": "Haemopericardium as current complication following acute myocardial infarction",
+      "vocabulary": "ICD-10 (WHO)",
+      "decision": "exclude",
+      "confidence": 0.95,
+      "rationale": "Haemopericardium is a complication of acute myocardial infarction, not an instance of myocardial infarction itself.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "usage_frequency": 20,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital HES inpatient FCEs",
+      "usage_setting": "secondary_care_hes",
+      "concept_id": null,
+      "dmd_level": null
+    },
+    {
+      "code": "I23.1",
+      "term": "Atrial septal defect as current complication following acute myocardial infarction",
+      "vocabulary": "ICD-10 (WHO)",
+      "decision": "exclude",
+      "confidence": 0.95,
+      "rationale": "Atrial septal defect is a complication of acute myocardial infarction, not an instance of myocardial infarction itself.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "usage_frequency": 7,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital HES inpatient FCEs",
+      "usage_setting": "secondary_care_hes",
+      "concept_id": null,
+      "dmd_level": null
+    },
+    {
+      "code": "I23.2",
+      "term": "Ventricular septal defect as current complication following acute myocardial infarction",
+      "vocabulary": "ICD-10 (WHO)",
+      "decision": "exclude",
+      "confidence": 0.95,
+      "rationale": "Ventricular septal defect is a complication of acute myocardial infarction, not an instance of myocardial infarction itself.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "usage_frequency": 75,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital HES inpatient FCEs",
+      "usage_setting": "secondary_care_hes",
+      "concept_id": null,
+      "dmd_level": null
+    },
+    {
+      "code": "I23.3",
+      "term": "Rupture of cardiac wall without haemopericardium as current complication following acute myocardial infarction",
+      "vocabulary": "ICD-10 (WHO)",
+      "decision": "exclude",
+      "confidence": 0.95,
+      "rationale": "Rupture of cardiac wall is a complication of acute myocardial infarction, not an instance of myocardial infarction itself.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "usage_frequency": 3,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital HES inpatient FCEs",
+      "usage_setting": "secondary_care_hes",
+      "concept_id": null,
+      "dmd_level": null
+    },
+    {
+      "code": "I23.4",
+      "term": "Rupture of chordae tendineae as current complication following acute myocardial infarction",
+      "vocabulary": "ICD-10 (WHO)",
+      "decision": "exclude",
+      "confidence": 0.95,
+      "rationale": "Rupture of chordae tendineae is a complication of acute myocardial infarction, not an instance of myocardial infarction itself.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "usage_frequency": null,
+      "usage_status": "not_in_dataset",
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": null,
+      "dmd_level": null
+    },
+    {
+      "code": "I23.5",
+      "term": "Rupture of papillary muscle as current complication following acute myocardial infarction",
+      "vocabulary": "ICD-10 (WHO)",
+      "decision": "exclude",
+      "confidence": 0.95,
+      "rationale": "Rupture of papillary muscle is a complication of acute myocardial infarction, not an instance of myocardial infarction itself.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "usage_frequency": 3,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital HES inpatient FCEs",
+      "usage_setting": "secondary_care_hes",
+      "concept_id": null,
+      "dmd_level": null
+    },
+    {
+      "code": "I23.6",
+      "term": "Thrombosis of atrium, auricular appendage, and ventricle as current complications following acute myocardial infarction",
+      "vocabulary": "ICD-10 (WHO)",
+      "decision": "exclude",
+      "confidence": 0.95,
+      "rationale": "Thrombosis of cardiac chambers is a complication of acute myocardial infarction, not an instance of myocardial infarction itself.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "usage_frequency": 62,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital HES inpatient FCEs",
+      "usage_setting": "secondary_care_hes",
+      "concept_id": null,
+      "dmd_level": null
+    },
+    {
+      "code": "I23.8",
+      "term": "Other current complications following acute myocardial infarction",
+      "vocabulary": "ICD-10 (WHO)",
+      "decision": "exclude",
+      "confidence": 0.95,
+      "rationale": "Other current complications following acute myocardial infarction are sequelae of myocardial infarction, not instances of the condition itself.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "usage_frequency": 55,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital HES inpatient FCEs",
+      "usage_setting": "secondary_care_hes",
+      "concept_id": null,
+      "dmd_level": null
+    },
+    {
+      "code": "I25.2",
+      "term": "Old myocardial infarction",
+      "vocabulary": "ICD-10 (WHO)",
+      "decision": "exclude",
+      "confidence": 0.95,
+      "rationale": "Old myocardial infarction represents a resolved/healed prior infarction, not a primary acute myocardial infarction.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "usage_frequency": 438,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital HES inpatient FCEs",
+      "usage_setting": "secondary_care_hes",
+      "concept_id": null,
+      "dmd_level": null
+    },
+    {
+      "code": "I25.5",
+      "term": "Ischaemic cardiomyopathy",
+      "vocabulary": "ICD-10 (WHO)",
+      "decision": "exclude",
+      "confidence": 0.95,
+      "rationale": "Ischaemic cardiomyopathy is a long-term complication and sequela of myocardial infarction, not an instance of myocardial infarction itself.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "usage_frequency": 2340,
       "usage_status": "counted",
       "usage_source": "NHS Digital HES inpatient FCEs",
       "usage_setting": "secondary_care_hes",
@@ -2428,7 +2428,7 @@
       "vocabulary": "ICD-10 (WHO)",
       "decision": "exclude",
       "confidence": 0.95,
-      "rationale": "Ischaemic infarction of skeletal muscle at other sites; not myocardial (cardiac) infarction.",
+      "rationale": "Ischaemic infarction of skeletal muscle in other sites; not myocardial (cardiac) infarction.",
       "sources": [
         "ChromaDB"
       ],
@@ -2445,7 +2445,7 @@
       "vocabulary": "ICD-10 (WHO)",
       "decision": "exclude",
       "confidence": 0.95,
-      "rationale": "Ischaemic infarction of skeletal muscle at unspecified site; not myocardial (cardiac) infarction.",
+      "rationale": "Ischaemic infarction of skeletal muscle, site unspecified; not myocardial (cardiac) infarction.",
       "sources": [
         "ChromaDB"
       ],
@@ -2513,7 +2513,7 @@
       "vocabulary": "ICD-10 (WHO)",
       "decision": "exclude",
       "confidence": 0.9,
-      "rationale": "Transient myocardial ischaemia of newborn; ischaemia rather than infarction, and neonatal-specific condition.",
+      "rationale": "Transient myocardial ischaemia of newborn; ischaemia rather than infarction, and perinatal-specific condition.",
       "sources": [
         "ChromaDB"
       ],

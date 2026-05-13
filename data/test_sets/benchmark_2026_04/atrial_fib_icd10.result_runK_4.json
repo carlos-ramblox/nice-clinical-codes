@@ -887,7 +887,7 @@
     "codes": []
   },
   "summary": "Recall: 100.0% (7 of 7 reference codes retrieved). Precision: 100.0%. F1: 100.0%. 0 reference codes were incorrectly excluded.",
-  "elapsed_seconds": 23.05,
+  "elapsed_seconds": 22.16,
   "pipeline_results_count": 50,
   "scored_codes": [
     {
@@ -895,8 +895,8 @@
       "term": "Atrial fibrillation and flutter",
       "vocabulary": "ICD-10 (WHO)",
       "decision": "include",
-      "confidence": 0.99,
-      "rationale": "This is the primary ICD-10 code for atrial fibrillation and flutter, the exact condition queried.",
+      "confidence": 1.0,
+      "rationale": "This is the primary ICD-10 code for atrial fibrillation and flutter, exactly matching the query.",
       "sources": [
         "ChromaDB"
       ],
@@ -912,7 +912,7 @@
       "term": "Paroxysmal atrial fibrillation",
       "vocabulary": "ICD-10 (WHO)",
       "decision": "include",
-      "confidence": 0.99,
+      "confidence": 1.0,
       "rationale": "Paroxysmal atrial fibrillation is a clinical subtype of atrial fibrillation, a direct instance of the queried condition.",
       "sources": [
         "ChromaDB"
@@ -929,7 +929,7 @@
       "term": "Persistent atrial fibrillation",
       "vocabulary": "ICD-10 (WHO)",
       "decision": "include",
-      "confidence": 0.99,
+      "confidence": 1.0,
       "rationale": "Persistent atrial fibrillation is a clinical subtype of atrial fibrillation, a direct instance of the queried condition.",
       "sources": [
         "ChromaDB"
@@ -946,7 +946,7 @@
       "term": "Chronic atrial fibrillation",
       "vocabulary": "ICD-10 (WHO)",
       "decision": "include",
-      "confidence": 0.99,
+      "confidence": 1.0,
       "rationale": "Chronic atrial fibrillation is a clinical subtype of atrial fibrillation, a direct instance of the queried condition.",
       "sources": [
         "ChromaDB"
@@ -963,7 +963,7 @@
       "term": "Typical atrial flutter",
       "vocabulary": "ICD-10 (WHO)",
       "decision": "include",
-      "confidence": 0.99,
+      "confidence": 1.0,
       "rationale": "Typical atrial flutter is a clinical subtype of atrial flutter, a direct instance of the queried condition.",
       "sources": [
         "ChromaDB"
@@ -980,7 +980,7 @@
       "term": "Atypical atrial flutter",
       "vocabulary": "ICD-10 (WHO)",
       "decision": "include",
-      "confidence": 0.99,
+      "confidence": 1.0,
       "rationale": "Atypical atrial flutter is a clinical subtype of atrial flutter, a direct instance of the queried condition.",
       "sources": [
         "ChromaDB"
@@ -997,8 +997,8 @@
       "term": "Atrial fibrillation and atrial flutter, unspecified",
       "vocabulary": "ICD-10 (WHO)",
       "decision": "include",
-      "confidence": 0.99,
-      "rationale": "Atrial fibrillation and atrial flutter, unspecified is an unspecified variant of the queried condition.",
+      "confidence": 1.0,
+      "rationale": "Unspecified atrial fibrillation and atrial flutter is a residual category for the queried condition.",
       "sources": [
         "ChromaDB"
       ],
@@ -1100,7 +1100,7 @@
       "vocabulary": "ICD-10 (WHO)",
       "decision": "exclude",
       "confidence": 0.99,
-      "rationale": "Flax-dresser disease is an occupational lung disease unrelated to atrial fibrillation and flutter.",
+      "rationale": "Flax-dresser disease is an occupational respiratory disease unrelated to atrial fibrillation and flutter.",
       "sources": [
         "ChromaDB"
       ],
@@ -1139,6 +1139,40 @@
         "ChromaDB"
       ],
       "usage_frequency": 160,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital HES inpatient FCEs",
+      "usage_setting": "secondary_care_hes",
+      "concept_id": null,
+      "dmd_level": null
+    },
+    {
+      "code": "Q21.3",
+      "term": "Tetralogy of Fallot",
+      "vocabulary": "ICD-10 (WHO)",
+      "decision": "exclude",
+      "confidence": 0.99,
+      "rationale": "Tetralogy of Fallot is a congenital structural heart defect, not an instance of atrial fibrillation and flutter.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "usage_frequency": 1278,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital HES inpatient FCEs",
+      "usage_setting": "secondary_care_hes",
+      "concept_id": null,
+      "dmd_level": null
+    },
+    {
+      "code": "Q24.1",
+      "term": "Laevocardia",
+      "vocabulary": "ICD-10 (WHO)",
+      "decision": "exclude",
+      "confidence": 0.99,
+      "rationale": "Laevocardia is a congenital cardiac positional anomaly, not an instance of atrial fibrillation and flutter.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "usage_frequency": 6,
       "usage_status": "counted",
       "usage_source": "NHS Digital HES inpatient FCEs",
       "usage_setting": "secondary_care_hes",
@@ -1185,7 +1219,7 @@
       "vocabulary": "ICD-10 (WHO)",
       "decision": "exclude",
       "confidence": 0.98,
-      "rationale": "Atrioventricular block, first degree is a conduction disorder distinct from atrial fibrillation and flutter.",
+      "rationale": "First-degree atrioventricular block is a conduction disorder distinct from atrial fibrillation and flutter.",
       "sources": [
         "ChromaDB"
       ],
@@ -1202,7 +1236,7 @@
       "vocabulary": "ICD-10 (WHO)",
       "decision": "exclude",
       "confidence": 0.98,
-      "rationale": "Atrioventricular block, second degree is a conduction disorder distinct from atrial fibrillation and flutter.",
+      "rationale": "Second-degree atrioventricular block is a conduction disorder distinct from atrial fibrillation and flutter.",
       "sources": [
         "ChromaDB"
       ],
@@ -1219,7 +1253,7 @@
       "vocabulary": "ICD-10 (WHO)",
       "decision": "exclude",
       "confidence": 0.98,
-      "rationale": "Atrioventricular block, complete is a conduction disorder distinct from atrial fibrillation and flutter.",
+      "rationale": "Complete atrioventricular block is a conduction disorder distinct from atrial fibrillation and flutter.",
       "sources": [
         "ChromaDB"
       ],
@@ -1236,7 +1270,7 @@
       "vocabulary": "ICD-10 (WHO)",
       "decision": "exclude",
       "confidence": 0.98,
-      "rationale": "Other and unspecified atrioventricular block is a conduction disorder distinct from atrial fibrillation and flutter.",
+      "rationale": "Unspecified atrioventricular block is a conduction disorder distinct from atrial fibrillation and flutter.",
       "sources": [
         "ChromaDB"
       ],
@@ -1287,7 +1321,7 @@
       "vocabulary": "ICD-10 (WHO)",
       "decision": "exclude",
       "confidence": 0.98,
-      "rationale": "Other and unspecified fascicular block is a conduction disorder distinct from atrial fibrillation and flutter.",
+      "rationale": "Unspecified fascicular block is a conduction disorder distinct from atrial fibrillation and flutter.",
       "sources": [
         "ChromaDB"
       ],
@@ -1304,7 +1338,7 @@
       "vocabulary": "ICD-10 (WHO)",
       "decision": "exclude",
       "confidence": 0.98,
-      "rationale": "Left bundle-branch block, unspecified is a conduction disorder distinct from atrial fibrillation and flutter.",
+      "rationale": "Left bundle-branch block is a conduction disorder distinct from atrial fibrillation and flutter.",
       "sources": [
         "ChromaDB"
       ],
@@ -1338,7 +1372,7 @@
       "vocabulary": "ICD-10 (WHO)",
       "decision": "exclude",
       "confidence": 0.98,
-      "rationale": "Other and unspecified right bundle-branch block is a conduction disorder distinct from atrial fibrillation and flutter.",
+      "rationale": "Right bundle-branch block is a conduction disorder distinct from atrial fibrillation and flutter.",
       "sources": [
         "ChromaDB"
       ],
@@ -1423,7 +1457,7 @@
       "vocabulary": "ICD-10 (WHO)",
       "decision": "exclude",
       "confidence": 0.98,
-      "rationale": "Atrial premature depolarization is a distinct arrhythmia, not atrial fibrillation and flutter.",
+      "rationale": "Atrial premature depolarization is a different atrial arrhythmia distinct from atrial fibrillation and flutter.",
       "sources": [
         "ChromaDB"
       ],
@@ -1457,7 +1491,7 @@
       "vocabulary": "ICD-10 (WHO)",
       "decision": "exclude",
       "confidence": 0.95,
-      "rationale": "Thrombosis of atrium as a complication of myocardial infarction is a thrombotic complication, not an instance of atrial fibrillation and flutter.",
+      "rationale": "Thrombosis of atrium following myocardial infarction is a complication of MI, not an instance of atrial fibrillation and flutter.",
       "sources": [
         "ChromaDB"
       ],
@@ -1474,7 +1508,7 @@
       "vocabulary": "ICD-10 (WHO)",
       "decision": "exclude",
       "confidence": 0.95,
-      "rationale": "Endocardial fibroelastosis is a cardiomyopathy variant, not an instance of atrial fibrillation and flutter.",
+      "rationale": "Endocardial fibroelastosis is a cardiomyopathy, not an instance of atrial fibrillation and flutter.",
       "sources": [
         "ChromaDB"
       ],
@@ -1491,7 +1525,7 @@
       "vocabulary": "ICD-10 (WHO)",
       "decision": "exclude",
       "confidence": 0.95,
-      "rationale": "Paroxysmal tachycardia is a distinct arrhythmia category that does not include atrial fibrillation and flutter.",
+      "rationale": "Paroxysmal tachycardia is a different arrhythmia category; atrial fibrillation and flutter are not tachycardias in the I47 sense.",
       "sources": [
         "ChromaDB"
       ],
@@ -1525,7 +1559,7 @@
       "vocabulary": "ICD-10 (WHO)",
       "decision": "exclude",
       "confidence": 0.95,
-      "rationale": "Supraventricular tachycardia is a distinct supraventricular arrhythmia, not atrial fibrillation and flutter.",
+      "rationale": "Supraventricular tachycardia is a different supraventricular arrhythmia distinct from atrial fibrillation and flutter.",
       "sources": [
         "ChromaDB"
       ],
@@ -1559,7 +1593,7 @@
       "vocabulary": "ICD-10 (WHO)",
       "decision": "exclude",
       "confidence": 0.95,
-      "rationale": "Paroxysmal tachycardia, unspecified is a distinct arrhythmia category that does not include atrial fibrillation and flutter.",
+      "rationale": "Unspecified paroxysmal tachycardia is a different arrhythmia category distinct from atrial fibrillation and flutter.",
       "sources": [
         "ChromaDB"
       ],
@@ -1610,7 +1644,7 @@
       "vocabulary": "ICD-10 (WHO)",
       "decision": "exclude",
       "confidence": 0.95,
-      "rationale": "Cardiac arrhythmia, unspecified is too broad and non-specific for a code list focused on atrial fibrillation and flutter.",
+      "rationale": "Unspecified cardiac arrhythmia is a broader category that includes but is not limited to atrial fibrillation and flutter.",
       "sources": [
         "ChromaDB"
       ],
@@ -1656,45 +1690,11 @@
       "dmd_level": null
     },
     {
-      "code": "Q21.3",
-      "term": "Tetralogy of Fallot",
-      "vocabulary": "ICD-10 (WHO)",
-      "decision": "exclude",
-      "confidence": 0.95,
-      "rationale": "Tetralogy of Fallot is a congenital structural heart defect, not an instance of atrial fibrillation and flutter.",
-      "sources": [
-        "ChromaDB"
-      ],
-      "usage_frequency": 1278,
-      "usage_status": "counted",
-      "usage_source": "NHS Digital HES inpatient FCEs",
-      "usage_setting": "secondary_care_hes",
-      "concept_id": null,
-      "dmd_level": null
-    },
-    {
-      "code": "Q24.1",
-      "term": "Laevocardia",
-      "vocabulary": "ICD-10 (WHO)",
-      "decision": "exclude",
-      "confidence": 0.95,
-      "rationale": "Laevocardia is a congenital cardiac structural variant, not an instance of atrial fibrillation and flutter.",
-      "sources": [
-        "ChromaDB"
-      ],
-      "usage_frequency": 6,
-      "usage_status": "counted",
-      "usage_source": "NHS Digital HES inpatient FCEs",
-      "usage_setting": "secondary_care_hes",
-      "concept_id": null,
-      "dmd_level": null
-    },
-    {
       "code": "Q24.6",
       "term": "Congenital heart block",
       "vocabulary": "ICD-10 (WHO)",
       "decision": "exclude",
-      "confidence": 0.9,
+      "confidence": 0.95,
       "rationale": "Congenital heart block is a congenital conduction disorder, not an instance of atrial fibrillation and flutter.",
       "sources": [
         "ChromaDB"
@@ -1711,8 +1711,8 @@
       "term": "Tachycardia, unspecified",
       "vocabulary": "ICD-10 (WHO)",
       "decision": "exclude",
-      "confidence": 0.85,
-      "rationale": "Tachycardia unspecified is a symptom that may accompany atrial fibrillation but is not an instance of the condition itself.",
+      "confidence": 0.9,
+      "rationale": "Tachycardia unspecified is a symptom that may accompany atrial fibrillation but is not an instance of it.",
       "sources": [
         "ChromaDB"
       ],
@@ -1728,8 +1728,8 @@
       "term": "Palpitations",
       "vocabulary": "ICD-10 (WHO)",
       "decision": "exclude",
-      "confidence": 0.85,
-      "rationale": "Palpitations are a symptom that may accompany atrial fibrillation but are not an instance of the condition itself.",
+      "confidence": 0.9,
+      "rationale": "Palpitations are a symptom that may accompany atrial fibrillation but are not an instance of it.",
       "sources": [
         "ChromaDB"
       ],

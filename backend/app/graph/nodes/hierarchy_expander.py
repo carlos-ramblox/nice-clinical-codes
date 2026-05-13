@@ -19,7 +19,7 @@ from app.graph.nodes.concept_id_enricher import _retry_429
 
 logger = logging.getLogger(__name__)
 
-_WORKERS = 2
+_WORKERS = 4
 _CACHE_TTL_SECONDS = 7 * 24 * 3600
 
 _CACHE: dict[int, tuple[float, list[dict]]] = {}

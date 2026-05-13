@@ -1367,13 +1367,13 @@
     "all_scored": {
       "codelist_name": "all_scored",
       "n_ref_codes": 117,
-      "n_output_codes": 100,
-      "recall": 0.8205,
-      "precision": 0.96,
-      "f1": 0.8848,
-      "tp_count": 96,
-      "fp_count": 4,
-      "fn_count": 21,
+      "n_output_codes": 136,
+      "recall": 0.9145,
+      "precision": 0.7868,
+      "f1": 0.8458,
+      "tp_count": 107,
+      "fp_count": 29,
+      "fn_count": 10,
       "tp_codes": [
         {
           "code": "10562009",
@@ -1394,6 +1394,10 @@
         {
           "code": "10757441000119102",
           "term": "Pre-existing hypertensive heart disease in mother complicating childbirth"
+        },
+        {
+          "code": "10757481000119107",
+          "term": "Pre-existing hypertensive heart and chronic kidney disease in mother complicating pregnancy"
         },
         {
           "code": "10759031000119106",
@@ -1752,12 +1756,52 @@
           "term": "Rebound hypertension"
         },
         {
+          "code": "843821000000102",
+          "term": "Stage 1 hypertension (National Institute for Health and Clinical Excellence 2011)"
+        },
+        {
+          "code": "843841000000109",
+          "term": "Severe hypertension (National Institute for Health and Clinical Excellence 2011)"
+        },
+        {
+          "code": "845891000000103",
+          "term": "Hypertension resistant to drug therapy"
+        },
+        {
+          "code": "846371000000103",
+          "term": "Stage 2 hypertension (National Institute for Health and Clinical Excellence 2011)"
+        },
+        {
+          "code": "86041002",
+          "term": "Pre-existing hypertension in obstetric context"
+        },
+        {
           "code": "863191000000102",
           "term": "Nocturnal hypertension"
         },
         {
+          "code": "871642009",
+          "term": "Hypertension due to aortic arch obstruction"
+        },
+        {
+          "code": "8762007",
+          "term": "Chronic hypertension in obstetric context"
+        },
+        {
           "code": "89242004",
           "term": "Malignant secondary hypertension"
+        },
+        {
+          "code": "908631000000108",
+          "term": "Stage 1 hypertension (National Institute for Health and Clinical Excellence 2011) without evidence of end organ damage"
+        },
+        {
+          "code": "908651000000101",
+          "term": "Stage 1 hypertension (National Institute for Health and Clinical Excellence 2011) with evidence of end organ damage"
+        },
+        {
+          "code": "9901000",
+          "term": "Essential hypertension complicating AND/OR reason for care during puerperium"
         }
       ],
       "fp_codes": [
@@ -1770,19 +1814,115 @@
           "term": "Hemorrhagic cerebral infarction due to hypertension (disorder)"
         },
         {
+          "code": "1332436006",
+          "term": "Hypertension in chronic kidney disease stage 3B due to type 1 diabetes mellitus"
+        },
+        {
+          "code": "1332441003",
+          "term": "Hypertension in chronic kidney disease stage 3A due to type 1 diabetes mellitus"
+        },
+        {
+          "code": "1332442005",
+          "term": "Hypertension in chronic kidney disease stage 3 due to type 1 diabetes mellitus"
+        },
+        {
+          "code": "1332464001",
+          "term": "Hypertension in chronic kidney disease stage 2 due to type 1 diabetes mellitus"
+        },
+        {
+          "code": "1332465000",
+          "term": "Hypertension in chronic kidney disease stage 3B due to type 2 diabetes mellitus"
+        },
+        {
+          "code": "1332466004",
+          "term": "Hypertension in chronic kidney disease stage 3A due to type 2 diabetes mellitus"
+        },
+        {
+          "code": "1332467008",
+          "term": "Hypertension in chronic kidney disease stage 5 due to type 1 diabetes mellitus"
+        },
+        {
+          "code": "1332468003",
+          "term": "Hypertension in chronic kidney disease stage 4 due to type 1 diabetes mellitus"
+        },
+        {
           "code": "162659009",
           "term": "Hypertension resolved (finding)"
         },
         {
+          "code": "198941007",
+          "term": "Hypertension complicating pregnancy, childbirth and the puerperium"
+        },
+        {
+          "code": "206596003",
+          "term": "Neonatal hypertension"
+        },
+        {
+          "code": "23130000",
+          "term": "Paroxysmal hypertension"
+        },
+        {
+          "code": "288250001",
+          "term": "Maternal hypertension"
+        },
+        {
+          "code": "367390009",
+          "term": "Hypertension in the obstetric context"
+        },
+        {
           "code": "371622005",
           "term": "Elevated blood pressure reading without diagnosis of hypertension (situation)"
+        },
+        {
+          "code": "398254007",
+          "term": "Pre-eclampsia"
+        },
+        {
+          "code": "429198000",
+          "term": "Exertional hypertension"
+        },
+        {
+          "code": "434711000124103",
+          "term": "Perioperative hypertension"
+        },
+        {
+          "code": "461301000124109",
+          "term": "Resistant hypertensive disorder"
+        },
+        {
+          "code": "472749004",
+          "term": "Coronary sinus hypertension as complication of procedure"
+        },
+        {
+          "code": "48194001",
+          "term": "Pregnancy-induced hypertension"
+        },
+        {
+          "code": "52698002",
+          "term": "Transient hypertension"
+        },
+        {
+          "code": "541000119105",
+          "term": "Hypertension complicating pregnancy, childbirth and the puerperium, antepartum"
+        },
+        {
+          "code": "5501000119106",
+          "term": "Postoperative hypertension"
+        },
+        {
+          "code": "697929007",
+          "term": "Intermittent hypertension"
+        },
+        {
+          "code": "697930002",
+          "term": "Labile hypertension due to being in a clinical environment"
+        },
+        {
+          "code": "698640000",
+          "term": "Hypertension in the puerperium with pulmonary edema"
         }
       ],
       "fn_codes": [
-        {
-          "code": "10757481000119107",
-          "term": "Pre-existing hypertensive heart and chronic kidney disease in mother complicating pregnancy"
-        },
         {
           "code": "198944004",
           "term": "Benign essential hypertension complicating pregnancy, childbirth and the puerperium - delivered"
@@ -1822,63 +1962,27 @@
         {
           "code": "199002002",
           "term": "Pre-eclampsia or eclampsia with pre-existing hypertension - not delivered"
-        },
-        {
-          "code": "843821000000102",
-          "term": "Stage 1 hypertension (National Institute for Health and Clinical Excellence 2011)"
-        },
-        {
-          "code": "843841000000109",
-          "term": "Severe hypertension (National Institute for Health and Clinical Excellence 2011)"
-        },
-        {
-          "code": "845891000000103",
-          "term": "Hypertension resistant to drug therapy"
-        },
-        {
-          "code": "846371000000103",
-          "term": "Stage 2 hypertension (National Institute for Health and Clinical Excellence 2011)"
-        },
-        {
-          "code": "86041002",
-          "term": "Pre-existing hypertension in obstetric context"
-        },
-        {
-          "code": "871642009",
-          "term": "Hypertension due to aortic arch obstruction"
-        },
-        {
-          "code": "8762007",
-          "term": "Chronic hypertension in obstetric context"
-        },
-        {
-          "code": "908631000000108",
-          "term": "Stage 1 hypertension (National Institute for Health and Clinical Excellence 2011) without evidence of end organ damage"
-        },
-        {
-          "code": "908651000000101",
-          "term": "Stage 1 hypertension (National Institute for Health and Clinical Excellence 2011) with evidence of end organ damage"
-        },
-        {
-          "code": "9901000",
-          "term": "Essential hypertension complicating AND/OR reason for care during puerperium"
         }
       ]
     },
     "included_only": {
       "codelist_name": "included_only",
       "n_ref_codes": 117,
-      "n_output_codes": 21,
-      "recall": 0.1795,
-      "precision": 1.0,
-      "f1": 0.3043,
-      "tp_count": 21,
-      "fp_count": 0,
-      "fn_count": 96,
+      "n_output_codes": 57,
+      "recall": 0.2735,
+      "precision": 0.5614,
+      "f1": 0.3678,
+      "tp_count": 32,
+      "fp_count": 25,
+      "fn_count": 85,
       "tp_codes": [
         {
           "code": "10725009",
           "term": "Benign hypertension"
+        },
+        {
+          "code": "10757481000119107",
+          "term": "Pre-existing hypertensive heart and chronic kidney disease in mother complicating pregnancy"
         },
         {
           "code": "1078301000112109",
@@ -1957,11 +2061,152 @@
           "term": "Diastolic hypertension co-occurrent with systolic hypertension"
         },
         {
+          "code": "843821000000102",
+          "term": "Stage 1 hypertension (National Institute for Health and Clinical Excellence 2011)"
+        },
+        {
+          "code": "843841000000109",
+          "term": "Severe hypertension (National Institute for Health and Clinical Excellence 2011)"
+        },
+        {
+          "code": "845891000000103",
+          "term": "Hypertension resistant to drug therapy"
+        },
+        {
+          "code": "846371000000103",
+          "term": "Stage 2 hypertension (National Institute for Health and Clinical Excellence 2011)"
+        },
+        {
+          "code": "86041002",
+          "term": "Pre-existing hypertension in obstetric context"
+        },
+        {
           "code": "863191000000102",
           "term": "Nocturnal hypertension"
+        },
+        {
+          "code": "871642009",
+          "term": "Hypertension due to aortic arch obstruction"
+        },
+        {
+          "code": "8762007",
+          "term": "Chronic hypertension in obstetric context"
+        },
+        {
+          "code": "908631000000108",
+          "term": "Stage 1 hypertension (National Institute for Health and Clinical Excellence 2011) without evidence of end organ damage"
+        },
+        {
+          "code": "908651000000101",
+          "term": "Stage 1 hypertension (National Institute for Health and Clinical Excellence 2011) with evidence of end organ damage"
+        },
+        {
+          "code": "9901000",
+          "term": "Essential hypertension complicating AND/OR reason for care during puerperium"
         }
       ],
-      "fp_codes": [],
+      "fp_codes": [
+        {
+          "code": "1332436006",
+          "term": "Hypertension in chronic kidney disease stage 3B due to type 1 diabetes mellitus"
+        },
+        {
+          "code": "1332441003",
+          "term": "Hypertension in chronic kidney disease stage 3A due to type 1 diabetes mellitus"
+        },
+        {
+          "code": "1332442005",
+          "term": "Hypertension in chronic kidney disease stage 3 due to type 1 diabetes mellitus"
+        },
+        {
+          "code": "1332464001",
+          "term": "Hypertension in chronic kidney disease stage 2 due to type 1 diabetes mellitus"
+        },
+        {
+          "code": "1332465000",
+          "term": "Hypertension in chronic kidney disease stage 3B due to type 2 diabetes mellitus"
+        },
+        {
+          "code": "1332466004",
+          "term": "Hypertension in chronic kidney disease stage 3A due to type 2 diabetes mellitus"
+        },
+        {
+          "code": "1332467008",
+          "term": "Hypertension in chronic kidney disease stage 5 due to type 1 diabetes mellitus"
+        },
+        {
+          "code": "1332468003",
+          "term": "Hypertension in chronic kidney disease stage 4 due to type 1 diabetes mellitus"
+        },
+        {
+          "code": "198941007",
+          "term": "Hypertension complicating pregnancy, childbirth and the puerperium"
+        },
+        {
+          "code": "206596003",
+          "term": "Neonatal hypertension"
+        },
+        {
+          "code": "23130000",
+          "term": "Paroxysmal hypertension"
+        },
+        {
+          "code": "288250001",
+          "term": "Maternal hypertension"
+        },
+        {
+          "code": "367390009",
+          "term": "Hypertension in the obstetric context"
+        },
+        {
+          "code": "398254007",
+          "term": "Pre-eclampsia"
+        },
+        {
+          "code": "429198000",
+          "term": "Exertional hypertension"
+        },
+        {
+          "code": "434711000124103",
+          "term": "Perioperative hypertension"
+        },
+        {
+          "code": "461301000124109",
+          "term": "Resistant hypertensive disorder"
+        },
+        {
+          "code": "472749004",
+          "term": "Coronary sinus hypertension as complication of procedure"
+        },
+        {
+          "code": "48194001",
+          "term": "Pregnancy-induced hypertension"
+        },
+        {
+          "code": "52698002",
+          "term": "Transient hypertension"
+        },
+        {
+          "code": "541000119105",
+          "term": "Hypertension complicating pregnancy, childbirth and the puerperium, antepartum"
+        },
+        {
+          "code": "5501000119106",
+          "term": "Postoperative hypertension"
+        },
+        {
+          "code": "697929007",
+          "term": "Intermittent hypertension"
+        },
+        {
+          "code": "697930002",
+          "term": "Labile hypertension due to being in a clinical environment"
+        },
+        {
+          "code": "698640000",
+          "term": "Hypertension in the puerperium with pulmonary edema"
+        }
+      ],
       "fn_codes": [
         {
           "code": "10562009",
@@ -1978,10 +2223,6 @@
         {
           "code": "10757441000119102",
           "term": "Pre-existing hypertensive heart disease in mother complicating childbirth"
-        },
-        {
-          "code": "10757481000119107",
-          "term": "Pre-existing hypertensive heart and chronic kidney disease in mother complicating pregnancy"
         },
         {
           "code": "10759031000119106",
@@ -2304,65 +2545,29 @@
           "term": "Rebound hypertension"
         },
         {
-          "code": "843821000000102",
-          "term": "Stage 1 hypertension (National Institute for Health and Clinical Excellence 2011)"
-        },
-        {
-          "code": "843841000000109",
-          "term": "Severe hypertension (National Institute for Health and Clinical Excellence 2011)"
-        },
-        {
-          "code": "845891000000103",
-          "term": "Hypertension resistant to drug therapy"
-        },
-        {
-          "code": "846371000000103",
-          "term": "Stage 2 hypertension (National Institute for Health and Clinical Excellence 2011)"
-        },
-        {
-          "code": "86041002",
-          "term": "Pre-existing hypertension in obstetric context"
-        },
-        {
-          "code": "871642009",
-          "term": "Hypertension due to aortic arch obstruction"
-        },
-        {
-          "code": "8762007",
-          "term": "Chronic hypertension in obstetric context"
-        },
-        {
           "code": "89242004",
           "term": "Malignant secondary hypertension"
-        },
-        {
-          "code": "908631000000108",
-          "term": "Stage 1 hypertension (National Institute for Health and Clinical Excellence 2011) without evidence of end organ damage"
-        },
-        {
-          "code": "908651000000101",
-          "term": "Stage 1 hypertension (National Institute for Health and Clinical Excellence 2011) with evidence of end organ damage"
-        },
-        {
-          "code": "9901000",
-          "term": "Essential hypertension complicating AND/OR reason for care during puerperium"
         }
       ]
     },
     "included_plus_uncertain": {
       "codelist_name": "included_plus_uncertain",
       "n_ref_codes": 117,
-      "n_output_codes": 21,
-      "recall": 0.1795,
-      "precision": 1.0,
-      "f1": 0.3043,
-      "tp_count": 21,
-      "fp_count": 0,
-      "fn_count": 96,
+      "n_output_codes": 57,
+      "recall": 0.2735,
+      "precision": 0.5614,
+      "f1": 0.3678,
+      "tp_count": 32,
+      "fp_count": 25,
+      "fn_count": 85,
       "tp_codes": [
         {
           "code": "10725009",
           "term": "Benign hypertension"
+        },
+        {
+          "code": "10757481000119107",
+          "term": "Pre-existing hypertensive heart and chronic kidney disease in mother complicating pregnancy"
         },
         {
           "code": "1078301000112109",
@@ -2441,11 +2646,152 @@
           "term": "Diastolic hypertension co-occurrent with systolic hypertension"
         },
         {
+          "code": "843821000000102",
+          "term": "Stage 1 hypertension (National Institute for Health and Clinical Excellence 2011)"
+        },
+        {
+          "code": "843841000000109",
+          "term": "Severe hypertension (National Institute for Health and Clinical Excellence 2011)"
+        },
+        {
+          "code": "845891000000103",
+          "term": "Hypertension resistant to drug therapy"
+        },
+        {
+          "code": "846371000000103",
+          "term": "Stage 2 hypertension (National Institute for Health and Clinical Excellence 2011)"
+        },
+        {
+          "code": "86041002",
+          "term": "Pre-existing hypertension in obstetric context"
+        },
+        {
           "code": "863191000000102",
           "term": "Nocturnal hypertension"
+        },
+        {
+          "code": "871642009",
+          "term": "Hypertension due to aortic arch obstruction"
+        },
+        {
+          "code": "8762007",
+          "term": "Chronic hypertension in obstetric context"
+        },
+        {
+          "code": "908631000000108",
+          "term": "Stage 1 hypertension (National Institute for Health and Clinical Excellence 2011) without evidence of end organ damage"
+        },
+        {
+          "code": "908651000000101",
+          "term": "Stage 1 hypertension (National Institute for Health and Clinical Excellence 2011) with evidence of end organ damage"
+        },
+        {
+          "code": "9901000",
+          "term": "Essential hypertension complicating AND/OR reason for care during puerperium"
         }
       ],
-      "fp_codes": [],
+      "fp_codes": [
+        {
+          "code": "1332436006",
+          "term": "Hypertension in chronic kidney disease stage 3B due to type 1 diabetes mellitus"
+        },
+        {
+          "code": "1332441003",
+          "term": "Hypertension in chronic kidney disease stage 3A due to type 1 diabetes mellitus"
+        },
+        {
+          "code": "1332442005",
+          "term": "Hypertension in chronic kidney disease stage 3 due to type 1 diabetes mellitus"
+        },
+        {
+          "code": "1332464001",
+          "term": "Hypertension in chronic kidney disease stage 2 due to type 1 diabetes mellitus"
+        },
+        {
+          "code": "1332465000",
+          "term": "Hypertension in chronic kidney disease stage 3B due to type 2 diabetes mellitus"
+        },
+        {
+          "code": "1332466004",
+          "term": "Hypertension in chronic kidney disease stage 3A due to type 2 diabetes mellitus"
+        },
+        {
+          "code": "1332467008",
+          "term": "Hypertension in chronic kidney disease stage 5 due to type 1 diabetes mellitus"
+        },
+        {
+          "code": "1332468003",
+          "term": "Hypertension in chronic kidney disease stage 4 due to type 1 diabetes mellitus"
+        },
+        {
+          "code": "198941007",
+          "term": "Hypertension complicating pregnancy, childbirth and the puerperium"
+        },
+        {
+          "code": "206596003",
+          "term": "Neonatal hypertension"
+        },
+        {
+          "code": "23130000",
+          "term": "Paroxysmal hypertension"
+        },
+        {
+          "code": "288250001",
+          "term": "Maternal hypertension"
+        },
+        {
+          "code": "367390009",
+          "term": "Hypertension in the obstetric context"
+        },
+        {
+          "code": "398254007",
+          "term": "Pre-eclampsia"
+        },
+        {
+          "code": "429198000",
+          "term": "Exertional hypertension"
+        },
+        {
+          "code": "434711000124103",
+          "term": "Perioperative hypertension"
+        },
+        {
+          "code": "461301000124109",
+          "term": "Resistant hypertensive disorder"
+        },
+        {
+          "code": "472749004",
+          "term": "Coronary sinus hypertension as complication of procedure"
+        },
+        {
+          "code": "48194001",
+          "term": "Pregnancy-induced hypertension"
+        },
+        {
+          "code": "52698002",
+          "term": "Transient hypertension"
+        },
+        {
+          "code": "541000119105",
+          "term": "Hypertension complicating pregnancy, childbirth and the puerperium, antepartum"
+        },
+        {
+          "code": "5501000119106",
+          "term": "Postoperative hypertension"
+        },
+        {
+          "code": "697929007",
+          "term": "Intermittent hypertension"
+        },
+        {
+          "code": "697930002",
+          "term": "Labile hypertension due to being in a clinical environment"
+        },
+        {
+          "code": "698640000",
+          "term": "Hypertension in the puerperium with pulmonary edema"
+        }
+      ],
       "fn_codes": [
         {
           "code": "10562009",
@@ -2462,10 +2808,6 @@
         {
           "code": "10757441000119102",
           "term": "Pre-existing hypertensive heart disease in mother complicating childbirth"
-        },
-        {
-          "code": "10757481000119107",
-          "term": "Pre-existing hypertensive heart and chronic kidney disease in mother complicating pregnancy"
         },
         {
           "code": "10759031000119106",
@@ -2788,48 +3130,8 @@
           "term": "Rebound hypertension"
         },
         {
-          "code": "843821000000102",
-          "term": "Stage 1 hypertension (National Institute for Health and Clinical Excellence 2011)"
-        },
-        {
-          "code": "843841000000109",
-          "term": "Severe hypertension (National Institute for Health and Clinical Excellence 2011)"
-        },
-        {
-          "code": "845891000000103",
-          "term": "Hypertension resistant to drug therapy"
-        },
-        {
-          "code": "846371000000103",
-          "term": "Stage 2 hypertension (National Institute for Health and Clinical Excellence 2011)"
-        },
-        {
-          "code": "86041002",
-          "term": "Pre-existing hypertension in obstetric context"
-        },
-        {
-          "code": "871642009",
-          "term": "Hypertension due to aortic arch obstruction"
-        },
-        {
-          "code": "8762007",
-          "term": "Chronic hypertension in obstetric context"
-        },
-        {
           "code": "89242004",
           "term": "Malignant secondary hypertension"
-        },
-        {
-          "code": "908631000000108",
-          "term": "Stage 1 hypertension (National Institute for Health and Clinical Excellence 2011) without evidence of end organ damage"
-        },
-        {
-          "code": "908651000000101",
-          "term": "Stage 1 hypertension (National Institute for Health and Clinical Excellence 2011) with evidence of end organ damage"
-        },
-        {
-          "code": "9901000",
-          "term": "Essential hypertension complicating AND/OR reason for care during puerperium"
         }
       ]
     }
@@ -2840,7 +3142,7 @@
       {
         "code": "10562009",
         "term": "Malignant hypertension complicating AND/OR reason for care during childbirth (disorder)",
-        "rationale": "Malignant hypertension in childbirth context is a pregnancy-specific complication, not primary hypertension in the general population."
+        "rationale": "Malignant hypertension in childbirth is a pregnancy-specific complication, not primary hypertension in the general population."
       },
       {
         "code": "10752641000119102",
@@ -2850,132 +3152,132 @@
       {
         "code": "10757401000119104",
         "term": "Pre-existing hypertensive heart and chronic kidney disease in mother complicating childbirth (disorder)",
-        "rationale": "Pre-existing hypertensive heart and chronic kidney disease in pregnancy context is a pregnancy-specific manifestation, not primary hypertension."
+        "rationale": "Pre-existing hypertensive heart and chronic kidney disease in pregnancy is a pregnancy-specific manifestation, not primary hypertension."
       },
       {
         "code": "10757441000119102",
         "term": "Pre-existing hypertensive heart disease in mother complicating childbirth (disorder)",
-        "rationale": "Pre-existing hypertensive heart disease in pregnancy context is a pregnancy-specific manifestation, not primary hypertension."
+        "rationale": "Pre-existing hypertensive heart disease in pregnancy is a pregnancy-specific context, not primary hypertension."
       },
       {
         "code": "10759031000119106",
         "term": "Pre-existing hypertensive heart disease in mother complicating pregnancy (disorder)",
-        "rationale": "Pre-existing hypertensive heart disease in pregnancy context is a pregnancy-specific manifestation, not primary hypertension."
+        "rationale": "Pre-existing hypertensive heart disease in pregnancy is a pregnancy-specific context, not primary hypertension."
       },
       {
         "code": "111438007",
         "term": "Hypertension secondary to renal disease in obstetric context (disorder)",
-        "rationale": "Hypertension secondary to renal disease in obstetric context is pregnancy-specific and secondary hypertension, not primary hypertension."
+        "rationale": "Hypertension secondary to renal disease in obstetric context is secondary hypertension in pregnancy, not primary hypertension."
       },
       {
         "code": "118781000119108",
         "term": "Pre-existing hypertensive chronic kidney disease in mother complicating pregnancy (disorder)",
-        "rationale": "Pre-existing hypertensive chronic kidney disease in pregnancy context is a pregnancy-specific manifestation, not primary hypertension."
+        "rationale": "Pre-existing hypertensive chronic kidney disease in pregnancy is a pregnancy-specific context, not primary hypertension."
       },
       {
         "code": "1204139007",
         "term": "Hypertension due to congenital adrenal hyperplasia (disorder)",
-        "rationale": "Hypertension due to congenital adrenal hyperplasia is secondary hypertension with an identified endocrine cause, not primary hypertension."
+        "rationale": "Hypertension due to congenital adrenal hyperplasia is secondary hypertension, not primary hypertension."
       },
       {
         "code": "1208839002",
         "term": "Secondary hypertension due to renal tubular disorder (disorder)",
-        "rationale": "Secondary hypertension due to renal tubular disorder is secondary hypertension with an identified renal cause, not primary hypertension."
+        "rationale": "Secondary hypertension due to renal tubular disorder is secondary hypertension, not primary hypertension."
       },
       {
         "code": "1208845005",
         "term": "Secondary hypertension due to congenital heart disorder (disorder)",
-        "rationale": "Secondary hypertension due to congenital heart disorder is secondary hypertension with an identified cardiac cause, not primary hypertension."
+        "rationale": "Secondary hypertension due to congenital heart disorder is secondary hypertension, not primary hypertension."
       },
       {
         "code": "123799005",
         "term": "Renovascular hypertension (disorder)",
-        "rationale": "Renovascular hypertension is secondary hypertension with an identified vascular cause, not primary hypertension."
+        "rationale": "Renovascular hypertension is secondary hypertension, not primary hypertension."
       },
       {
         "code": "123800009",
         "term": "Goldblatt hypertension (disorder)",
-        "rationale": "Goldblatt hypertension is secondary hypertension with an identified renal artery stenosis cause, not primary hypertension."
+        "rationale": "Goldblatt hypertension is secondary hypertension, not primary hypertension."
       },
       {
         "code": "127991000119101",
         "term": "Hypertension concurrent and due to end stage renal disease on dialysis due to type 2 diabetes mellitus (disorder)",
-        "rationale": "Hypertension concurrent with end stage renal disease on dialysis due to type 2 diabetes is secondary hypertension with identified renal and diabetic causes, not primary hypertension."
+        "rationale": "Hypertension concurrent with end stage renal disease due to type 2 diabetes is secondary hypertension, not primary hypertension."
       },
       {
         "code": "128001000119105",
         "term": "Hypertension concurrent and due to end stage renal disease on dialysis due to type 1 diabetes mellitus (disorder)",
-        "rationale": "Hypertension concurrent with end stage renal disease on dialysis due to type 1 diabetes is secondary hypertension with identified renal and diabetic causes, not primary hypertension."
+        "rationale": "Hypertension concurrent with end stage renal disease due to type 1 diabetes is secondary hypertension, not primary hypertension."
       },
       {
         "code": "140101000119109",
         "term": "Hypertension in chronic kidney disease stage 5 due to type 2 diabetes mellitus (disorder)",
-        "rationale": "Hypertension in chronic kidney disease stage 5 due to type 2 diabetes is secondary hypertension with identified renal and diabetic causes, not primary hypertension."
+        "rationale": "Hypertension in chronic kidney disease due to type 2 diabetes is secondary hypertension, not primary hypertension."
       },
       {
         "code": "140111000119107",
         "term": "Hypertension in chronic kidney disease stage 4 due to type 2 diabetes mellitus (disorder)",
-        "rationale": "Hypertension in chronic kidney disease stage 4 due to type 2 diabetes is secondary hypertension with identified renal and diabetic causes, not primary hypertension."
+        "rationale": "Hypertension in chronic kidney disease due to type 2 diabetes is secondary hypertension, not primary hypertension."
       },
       {
         "code": "140121000119100",
         "term": "Hypertension in chronic kidney disease stage 3 due to type 2 diabetes mellitus (disorder)",
-        "rationale": "Hypertension in chronic kidney disease stage 3 due to type 2 diabetes is secondary hypertension with identified renal and diabetic causes, not primary hypertension."
+        "rationale": "Hypertension in chronic kidney disease due to type 2 diabetes is secondary hypertension, not primary hypertension."
       },
       {
         "code": "140131000119102",
         "term": "Hypertension in chronic kidney disease stage 2 due to type 2 diabetes mellitus (disorder)",
-        "rationale": "Hypertension in chronic kidney disease stage 2 due to type 2 diabetes is secondary hypertension with identified renal and diabetic causes, not primary hypertension."
+        "rationale": "Hypertension in chronic kidney disease due to type 2 diabetes is secondary hypertension, not primary hypertension."
       },
       {
         "code": "14973001",
         "term": "Renal sclerosis with hypertension (disorder)",
-        "rationale": "Renal sclerosis with hypertension is secondary hypertension with an identified renal cause, not primary hypertension."
+        "rationale": "Renal sclerosis with hypertension is secondary hypertension, not primary hypertension."
       },
       {
         "code": "169465000",
         "term": "Hypertension caused by oral contraceptive pill (disorder)",
-        "rationale": "Hypertension caused by oral contraceptive pill is secondary hypertension with an identified drug cause, not primary hypertension."
+        "rationale": "Hypertension caused by oral contraceptive pill is secondary hypertension, not primary hypertension."
       },
       {
         "code": "18416000",
         "term": "Essential hypertension complicating AND/OR reason for care during childbirth (disorder)",
-        "rationale": "Essential hypertension in childbirth context is a pregnancy-specific manifestation, not primary hypertension in the general population."
+        "rationale": "Essential hypertension in childbirth is a pregnancy-specific context, not primary hypertension in the general population."
       },
       {
         "code": "194783001",
         "term": "Secondary malignant renovascular hypertension (disorder)",
-        "rationale": "Secondary malignant renovascular hypertension is secondary hypertension with an identified vascular cause, not primary hypertension."
+        "rationale": "Secondary malignant renovascular hypertension is secondary hypertension, not primary hypertension."
       },
       {
         "code": "194785008",
         "term": "Secondary benign hypertension (disorder)",
-        "rationale": "Secondary benign hypertension is secondary hypertension by definition, not primary hypertension."
+        "rationale": "Secondary benign hypertension is secondary hypertension, not primary hypertension."
       },
       {
         "code": "194788005",
         "term": "Hypertension secondary to endocrine disorder (disorder)",
-        "rationale": "Hypertension secondary to endocrine disorder is secondary hypertension with an identified endocrine cause, not primary hypertension."
+        "rationale": "Hypertension secondary to endocrine disorder is secondary hypertension, not primary hypertension."
       },
       {
         "code": "194791005",
         "term": "Hypertension caused by drug (disorder)",
-        "rationale": "Hypertension caused by drug is secondary hypertension with an identified drug cause, not primary hypertension."
+        "rationale": "Hypertension caused by drug is secondary hypertension, not primary hypertension."
       },
       {
         "code": "198942000",
         "term": "Benign essential hypertension complicating pregnancy, childbirth and the puerperium (disorder)",
-        "rationale": "Benign essential hypertension in pregnancy context is a pregnancy-specific manifestation, not primary hypertension in the general population."
+        "rationale": "Benign essential hypertension in pregnancy is a pregnancy-specific context, not primary hypertension in the general population."
       },
       {
         "code": "198947006",
         "term": "Benign essential hypertension complicating pregnancy, childbirth and the puerperium with postnatal complication (disorder)",
-        "rationale": "Benign essential hypertension in pregnancy with postnatal complication is a pregnancy-specific manifestation, not primary hypertension."
+        "rationale": "Benign essential hypertension in pregnancy with postnatal complication is a pregnancy-specific context, not primary hypertension."
       },
       {
         "code": "198949009",
         "term": "Renal hypertension complicating pregnancy, childbirth and the puerperium (disorder)",
-        "rationale": "Renal hypertension in pregnancy context is secondary hypertension in a pregnancy-specific setting, not primary hypertension."
+        "rationale": "Renal hypertension in pregnancy is secondary hypertension in a pregnancy-specific context, not primary hypertension."
       },
       {
         "code": "198997005",
@@ -2990,7 +3292,7 @@
       {
         "code": "199005000",
         "term": "Pre-existing hypertension complicating pregnancy, childbirth and puerperium (disorder)",
-        "rationale": "Pre-existing hypertension in pregnancy context is a pregnancy-specific manifestation, not primary hypertension in the general population."
+        "rationale": "Pre-existing hypertension in pregnancy is a pregnancy-specific context, not primary hypertension in the general population."
       },
       {
         "code": "199006004",
@@ -3080,12 +3382,12 @@
       {
         "code": "40511000119107",
         "term": "Postpartum pre-existing essential hypertension (disorder)",
-        "rationale": "Postpartum pre-existing essential hypertension is a pregnancy-related manifestation, not primary hypertension itself in non-pregnant contexts."
+        "rationale": "Postpartum pre-existing essential hypertension is a pregnancy-related manifestation, not primary hypertension in non-pregnant contexts."
       },
       {
         "code": "427889009",
         "term": "Hypertension associated with transplantation (disorder)",
-        "rationale": "Hypertension associated with transplantation is secondary hypertension caused by organ transplant, not primary hypertension as specified in the query."
+        "rationale": "Hypertension associated with transplantation is secondary hypertension caused by organ transplantation, not primary hypertension as specified in the query."
       },
       {
         "code": "428575007",
@@ -3130,7 +3432,7 @@
       {
         "code": "70272006",
         "term": "Malignant hypertension (disorder)",
-        "rationale": "Malignant hypertension is a secondary hypertension type, not primary hypertension; excluded under criterion 'primary'."
+        "rationale": "Malignant hypertension is a secondary hypertension type/severity variant, not primary hypertension; excluded under criterion 'primary'."
       },
       {
         "code": "704667004",
@@ -3150,12 +3452,12 @@
       {
         "code": "720568003",
         "term": "Brachydactyly and arterial hypertension syndrome (disorder)",
-        "rationale": "Brachydactyly and arterial hypertension syndrome is a rare genetic syndrome, not primary hypertension; excluded under criterion 'primary'."
+        "rationale": "Brachydactyly and arterial hypertension syndrome is a genetic syndrome with hypertension as a feature, not primary hypertension; excluded under criterion 'primary'."
       },
       {
         "code": "73410007",
         "term": "Benign secondary renovascular hypertension (disorder)",
-        "rationale": "Benign secondary renovascular hypertension is secondary hypertension due to renal artery stenosis, not primary; excluded under criterion 'primary'."
+        "rationale": "Benign secondary renovascular hypertension is secondary hypertension due to renal artery disease, not primary; excluded under criterion 'primary'."
       },
       {
         "code": "74451002",
@@ -3170,7 +3472,7 @@
       {
         "code": "78975002",
         "term": "Malignant essential hypertension (disorder)",
-        "rationale": "Malignant essential hypertension is a severe secondary form of hypertension, not primary hypertension; excluded under criterion 'primary'."
+        "rationale": "Malignant essential hypertension is a severe secondary form/complication of hypertension, not primary hypertension; excluded under criterion 'primary'."
       },
       {
         "code": "89242004",
@@ -3185,32 +3487,32 @@
       {
         "code": "71874008",
         "term": "Benign essential hypertension complicating AND/OR reason for care during childbirth (disorder)",
-        "rationale": "Benign essential hypertension in obstetric context is a pregnancy-specific manifestation, not primary hypertension in the general population."
+        "rationale": "Benign essential hypertension in obstetric context is a pregnancy-specific manifestation, not primary hypertension in the general population; excluded under criterion 'primary'."
       },
       {
         "code": "72022006",
         "term": "Essential hypertension in obstetric context (disorder)",
-        "rationale": "Essential hypertension in obstetric context is a pregnancy-specific manifestation, not primary hypertension in the general population."
+        "rationale": "Essential hypertension in obstetric context is a pregnancy-specific manifestation, not primary hypertension in the general population; excluded under criterion 'primary'."
       },
       {
         "code": "78808002",
         "term": "Essential hypertension complicating AND/OR reason for care during pregnancy (disorder)",
-        "rationale": "Essential hypertension in pregnancy is a pregnancy-specific manifestation, not primary hypertension in the general population."
+        "rationale": "Essential hypertension in pregnancy is a pregnancy-specific manifestation, not primary hypertension in the general population; excluded under criterion 'primary'."
       },
       {
         "code": "81626002",
         "term": "Malignant hypertension in obstetric context (disorder)",
-        "rationale": "Malignant hypertension in obstetric context is a pregnancy-specific manifestation of secondary hypertension, not primary hypertension."
+        "rationale": "Malignant hypertension in obstetric context is a pregnancy-specific manifestation of secondary hypertension, not primary; excluded under criterion 'primary'."
       },
       {
         "code": "8218002",
         "term": "Chronic hypertension complicating AND/OR reason for care during childbirth (disorder)",
-        "rationale": "Chronic hypertension in childbirth is a pregnancy-specific manifestation, not primary hypertension in the general population."
+        "rationale": "Chronic hypertension in childbirth is a pregnancy-specific manifestation, not primary hypertension in the general population; excluded under criterion 'primary'."
       },
       {
         "code": "84094009",
         "term": "Rebound hypertension (disorder)",
-        "rationale": "Rebound hypertension is an acute complication/manifestation of hypertension, not an instance of primary hypertension itself."
+        "rationale": "Rebound hypertension is an acute complication/manifestation of hypertension (typically medication withdrawal), not an instance of primary hypertension."
       }
     ]
   },
@@ -3218,9 +3520,9 @@
     "count": 0,
     "codes": []
   },
-  "summary": "Recall: 17.9% (21 of 117 reference codes retrieved). Precision: 100.0%. F1: 30.4%. 75 reference codes were incorrectly excluded.",
-  "elapsed_seconds": 26.69,
-  "pipeline_results_count": 100,
+  "summary": "Recall: 27.4% (32 of 117 reference codes retrieved). Precision: 56.1%. F1: 36.8%. 75 reference codes were incorrectly excluded.",
+  "elapsed_seconds": 151.29,
+  "pipeline_results_count": 136,
   "scored_codes": [
     {
       "code": "10725009",
@@ -3261,6 +3563,25 @@
       "dmd_level": null
     },
     {
+      "code": "371125006",
+      "term": "Labile essential hypertension (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Labile essential hypertension is a clinical subtype of primary (essential) hypertension and should be included.",
+      "sources": [
+        "ChromaDB",
+        "OpenCodelists (Bennett Institute)",
+        "QOF Business Rules 2024-25"
+      ],
+      "usage_frequency": 300,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": 4159755,
+      "dmd_level": null
+    },
+    {
       "code": "38341003",
       "term": "Hypertensive disorder, systemic arterial (disorder)",
       "vocabulary": "SNOMED CT",
@@ -3296,6 +3617,25 @@
       "usage_source": "NHS Digital primary care SNOMED reporting",
       "usage_setting": "primary_care",
       "concept_id": 4180283,
+      "dmd_level": null
+    },
+    {
+      "code": "46481004",
+      "term": "Low-renin essential hypertension (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Low-renin essential hypertension is a clinical subtype of primary (essential) hypertension and should be included.",
+      "sources": [
+        "ChromaDB",
+        "OpenCodelists (Bennett Institute)",
+        "QOF Business Rules 2024-25"
+      ],
+      "usage_frequency": 20,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": 4263067,
       "dmd_level": null
     },
     {
@@ -3375,12 +3715,31 @@
       "dmd_level": null
     },
     {
+      "code": "65518004",
+      "term": "Labile diastolic hypertension (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Labile diastolic hypertension is a clinical subtype of primary hypertension and should be included.",
+      "sources": [
+        "ChromaDB",
+        "OpenCodelists (Bennett Institute)",
+        "QOF Business Rules 2024-25"
+      ],
+      "usage_frequency": 10,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": 4276511,
+      "dmd_level": null
+    },
+    {
       "code": "1078301000112109",
       "term": "Multiple drug intolerant hypertension (disorder)",
       "vocabulary": "SNOMED CT",
       "decision": "include",
       "confidence": 0.9,
-      "rationale": "Multiple drug intolerant hypertension is a clinical variant of primary hypertension describing treatment-resistant disease.",
+      "rationale": "Multiple drug intolerant hypertension is a clinical variant of primary hypertension based on treatment response.",
       "sources": [
         "OpenCodelists (Bennett Institute)",
         "QOF Business Rules 2024-25"
@@ -3398,7 +3757,7 @@
       "vocabulary": "SNOMED CT",
       "decision": "include",
       "confidence": 0.9,
-      "rationale": "Hypertensive emergency is an acute severity variant of primary hypertension representing a clinical crisis.",
+      "rationale": "Hypertensive emergency is a severity variant of primary hypertension.",
       "sources": [
         "ChromaDB",
         "OpenCodelists (Bennett Institute)",
@@ -3417,7 +3776,7 @@
       "vocabulary": "SNOMED CT",
       "decision": "include",
       "confidence": 0.9,
-      "rationale": "Labile systemic arterial hypertension is a clinical variant of primary hypertension describing variable blood pressure.",
+      "rationale": "Labile systemic arterial hypertension is a clinical variant of primary hypertension.",
       "sources": [
         "ChromaDB",
         "OpenCodelists (Bennett Institute)",
@@ -3436,7 +3795,7 @@
       "vocabulary": "SNOMED CT",
       "decision": "include",
       "confidence": 0.9,
-      "rationale": "High-renin essential hypertension is a clinical subtype of primary hypertension based on renin levels.",
+      "rationale": "High-renin essential hypertension is a clinical subtype of primary hypertension.",
       "sources": [
         "ChromaDB",
         "OpenCodelists (Bennett Institute)",
@@ -3450,88 +3809,12 @@
       "dmd_level": null
     },
     {
-      "code": "371125006",
-      "term": "Labile essential hypertension (disorder)",
-      "vocabulary": "SNOMED CT",
-      "decision": "include",
-      "confidence": 0.9,
-      "rationale": "Labile essential hypertension is a clinical subtype of primary (essential) hypertension and should be included.",
-      "sources": [
-        "ChromaDB",
-        "OpenCodelists (Bennett Institute)",
-        "QOF Business Rules 2024-25"
-      ],
-      "usage_frequency": 300,
-      "usage_status": "counted",
-      "usage_source": "NHS Digital primary care SNOMED reporting",
-      "usage_setting": "primary_care",
-      "concept_id": 4159755,
-      "dmd_level": null
-    },
-    {
-      "code": "443482000",
-      "term": "Hypertensive urgency (disorder)",
-      "vocabulary": "SNOMED CT",
-      "decision": "include",
-      "confidence": 0.9,
-      "rationale": "Hypertensive urgency is an acute manifestation/severity variant of primary hypertension and should be included.",
-      "sources": [
-        "ChromaDB",
-        "OpenCodelists (Bennett Institute)",
-        "QOF Business Rules 2024-25"
-      ],
-      "usage_frequency": 1190,
-      "usage_status": "counted",
-      "usage_source": "NHS Digital primary care SNOMED reporting",
-      "usage_setting": "primary_care",
-      "concept_id": 40481896,
-      "dmd_level": null
-    },
-    {
-      "code": "46481004",
-      "term": "Low-renin essential hypertension (disorder)",
-      "vocabulary": "SNOMED CT",
-      "decision": "include",
-      "confidence": 0.9,
-      "rationale": "Low-renin essential hypertension is a clinical subtype of primary (essential) hypertension and should be included.",
-      "sources": [
-        "ChromaDB",
-        "OpenCodelists (Bennett Institute)",
-        "QOF Business Rules 2024-25"
-      ],
-      "usage_frequency": 20,
-      "usage_status": "counted",
-      "usage_source": "NHS Digital primary care SNOMED reporting",
-      "usage_setting": "primary_care",
-      "concept_id": 4263067,
-      "dmd_level": null
-    },
-    {
-      "code": "65518004",
-      "term": "Labile diastolic hypertension (disorder)",
-      "vocabulary": "SNOMED CT",
-      "decision": "include",
-      "confidence": 0.9,
-      "rationale": "Labile diastolic hypertension is a clinical subtype of primary hypertension and should be included.",
-      "sources": [
-        "ChromaDB",
-        "OpenCodelists (Bennett Institute)",
-        "QOF Business Rules 2024-25"
-      ],
-      "usage_frequency": 10,
-      "usage_status": "counted",
-      "usage_source": "NHS Digital primary care SNOMED reporting",
-      "usage_setting": "primary_care",
-      "concept_id": 4276511,
-      "dmd_level": null
-    },
-    {
       "code": "397748008",
       "term": "Hypertension with albuminuria (disorder)",
       "vocabulary": "SNOMED CT",
       "decision": "include",
-      "confidence": 0.85,
-      "rationale": "Hypertension with albuminuria is a manifestation of primary hypertension with renal involvement and should be included as a clinical variant.",
+      "confidence": 0.9,
+      "rationale": "Hypertension with albuminuria represents a manifestation of primary hypertension with renal involvement and should be included as a clinical variant.",
       "sources": [
         "ChromaDB",
         "OpenCodelists (Bennett Institute)",
@@ -3545,11 +3828,30 @@
       "dmd_level": null
     },
     {
+      "code": "443482000",
+      "term": "Hypertensive urgency (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.9,
+      "rationale": "Hypertensive urgency is an acute manifestation of primary hypertension and should be included as a severity variant.",
+      "sources": [
+        "ChromaDB",
+        "OpenCodelists (Bennett Institute)",
+        "QOF Business Rules 2024-25"
+      ],
+      "usage_frequency": 1190,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": 40481896,
+      "dmd_level": null
+    },
+    {
       "code": "471521000000108",
       "term": "[X]Hypertensive diseases",
       "vocabulary": "SNOMED CT",
       "decision": "include",
-      "confidence": 0.85,
+      "confidence": 0.9,
       "rationale": "[X]Hypertensive diseases is a broad category that encompasses primary hypertension and should be included.",
       "sources": [
         "ChromaDB",
@@ -3563,31 +3865,12 @@
       "dmd_level": null
     },
     {
-      "code": "712832005",
-      "term": "Supine hypertension (disorder)",
-      "vocabulary": "SNOMED CT",
-      "decision": "include",
-      "confidence": 0.85,
-      "rationale": "Supine hypertension is a clinical variant of primary hypertension characterized by elevated blood pressure in supine position.",
-      "sources": [
-        "ChromaDB",
-        "OpenCodelists (Bennett Institute)",
-        "QOF Business Rules 2024-25"
-      ],
-      "usage_frequency": 150,
-      "usage_status": "counted",
-      "usage_source": "NHS Digital primary care SNOMED reporting",
-      "usage_setting": "primary_care",
-      "concept_id": 37016726,
-      "dmd_level": null
-    },
-    {
       "code": "762463000",
       "term": "Diastolic hypertension co-occurrent with systolic hypertension (disorder)",
       "vocabulary": "SNOMED CT",
       "decision": "include",
-      "confidence": 0.85,
-      "rationale": "Diastolic hypertension co-occurrent with systolic hypertension is a clinical variant of primary hypertension.",
+      "confidence": 0.9,
+      "rationale": "Diastolic hypertension co-occurrent with systolic hypertension represents a clinical subtype/pattern of primary hypertension.",
       "sources": [
         "ChromaDB",
         "OpenCodelists (Bennett Institute)",
@@ -3601,12 +3884,31 @@
       "dmd_level": null
     },
     {
+      "code": "712832005",
+      "term": "Supine hypertension (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.85,
+      "rationale": "Supine hypertension is a positional variant of primary hypertension and represents a clinical subtype of the condition.",
+      "sources": [
+        "ChromaDB",
+        "OpenCodelists (Bennett Institute)",
+        "QOF Business Rules 2024-25"
+      ],
+      "usage_frequency": 150,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": 37016726,
+      "dmd_level": null
+    },
+    {
       "code": "863191000000102",
       "term": "Nocturnal hypertension (disorder)",
       "vocabulary": "SNOMED CT",
       "decision": "include",
       "confidence": 0.85,
-      "rationale": "Nocturnal hypertension is a clinical variant of primary hypertension characterized by elevated blood pressure during sleep.",
+      "rationale": "Nocturnal hypertension is a circadian variant of primary hypertension and represents a clinical subtype of the condition.",
       "sources": [
         "ChromaDB",
         "OpenCodelists (Bennett Institute)",
@@ -3620,12 +3922,624 @@
       "dmd_level": null
     },
     {
+      "code": "198941007",
+      "term": "Hypertension complicating pregnancy, childbirth and the puerperium",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.7,
+      "rationale": "Expanded via OMOP 'Is a' from concept_id 316866",
+      "sources": [
+        "OMOPHub hierarchy"
+      ],
+      "usage_frequency": null,
+      "usage_status": null,
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": 321080,
+      "dmd_level": null
+    },
+    {
+      "code": "434711000124103",
+      "term": "Perioperative hypertension",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.7,
+      "rationale": "Expanded via OMOP 'Is a' from concept_id 316866",
+      "sources": [
+        "OMOPHub hierarchy"
+      ],
+      "usage_frequency": null,
+      "usage_status": null,
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": 762994,
+      "dmd_level": null
+    },
+    {
+      "code": "23130000",
+      "term": "Paroxysmal hypertension",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.7,
+      "rationale": "Expanded via OMOP 'Is a' from concept_id 316866",
+      "sources": [
+        "OMOPHub hierarchy"
+      ],
+      "usage_frequency": null,
+      "usage_status": null,
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": 4049389,
+      "dmd_level": null
+    },
+    {
+      "code": "206596003",
+      "term": "Neonatal hypertension",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.7,
+      "rationale": "Expanded via OMOP 'Is a' from concept_id 316866",
+      "sources": [
+        "OMOPHub hierarchy"
+      ],
+      "usage_frequency": null,
+      "usage_status": null,
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": 4071202,
+      "dmd_level": null
+    },
+    {
+      "code": "288250001",
+      "term": "Maternal hypertension",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.7,
+      "rationale": "Expanded via OMOP 'Is a' from concept_id 316866",
+      "sources": [
+        "OMOPHub hierarchy"
+      ],
+      "usage_frequency": null,
+      "usage_status": null,
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": 4118910,
+      "dmd_level": null
+    },
+    {
+      "code": "429198000",
+      "term": "Exertional hypertension",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.7,
+      "rationale": "Expanded via OMOP 'Is a' from concept_id 316866",
+      "sources": [
+        "OMOPHub hierarchy"
+      ],
+      "usage_frequency": null,
+      "usage_status": null,
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": 4179379,
+      "dmd_level": null
+    },
+    {
+      "code": "367390009",
+      "term": "Hypertension in the obstetric context",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.7,
+      "rationale": "Expanded via OMOP 'Is a' from concept_id 316866",
+      "sources": [
+        "OMOPHub hierarchy"
+      ],
+      "usage_frequency": null,
+      "usage_status": null,
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": 4279525,
+      "dmd_level": null
+    },
+    {
+      "code": "461301000124109",
+      "term": "Resistant hypertensive disorder",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.7,
+      "rationale": "Expanded via OMOP 'Is a' from concept_id 316866",
+      "sources": [
+        "OMOPHub hierarchy"
+      ],
+      "usage_frequency": null,
+      "usage_status": null,
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": 37208172,
+      "dmd_level": null
+    },
+    {
+      "code": "472749004",
+      "term": "Coronary sinus hypertension as complication of procedure",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.7,
+      "rationale": "Expanded via OMOP 'Is a' from concept_id 316866",
+      "sources": [
+        "OMOPHub hierarchy"
+      ],
+      "usage_frequency": null,
+      "usage_status": null,
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": 43020833,
+      "dmd_level": null
+    },
+    {
+      "code": "5501000119106",
+      "term": "Postoperative hypertension",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.7,
+      "rationale": "Expanded via OMOP 'Is a' from concept_id 316866",
+      "sources": [
+        "OMOPHub hierarchy"
+      ],
+      "usage_frequency": null,
+      "usage_status": null,
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": 43021830,
+      "dmd_level": null
+    },
+    {
+      "code": "697929007",
+      "term": "Intermittent hypertension",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.7,
+      "rationale": "Expanded via OMOP 'Is a' from concept_id 316866",
+      "sources": [
+        "OMOPHub hierarchy"
+      ],
+      "usage_frequency": null,
+      "usage_status": null,
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": 44783643,
+      "dmd_level": null
+    },
+    {
+      "code": "843821000000102",
+      "term": "Stage 1 hypertension (NICE - National Institute for Health and Clinical Excellence 2011)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.7,
+      "rationale": "Expanded via OMOP 'Is a' from concept_id 316866",
+      "sources": [
+        "OMOPHub hierarchy"
+      ],
+      "usage_frequency": null,
+      "usage_status": null,
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": 44809026,
+      "dmd_level": null
+    },
+    {
+      "code": "843841000000109",
+      "term": "Severe hypertension (NICE - National Institute for Health and Clinical Excellence 2011)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.7,
+      "rationale": "Expanded via OMOP 'Is a' from concept_id 316866",
+      "sources": [
+        "OMOPHub hierarchy"
+      ],
+      "usage_frequency": null,
+      "usage_status": null,
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": 44809027,
+      "dmd_level": null
+    },
+    {
+      "code": "845891000000103",
+      "term": "Hypertension resistant to drug therapy",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.7,
+      "rationale": "Expanded via OMOP 'Is a' from concept_id 316866",
+      "sources": [
+        "OMOPHub hierarchy"
+      ],
+      "usage_frequency": null,
+      "usage_status": null,
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": 44809548,
+      "dmd_level": null
+    },
+    {
+      "code": "846371000000103",
+      "term": "Stage 2 hypertension (NICE - National Institute for Health and Clinical Excellence 2011)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.7,
+      "rationale": "Expanded via OMOP 'Is a' from concept_id 316866",
+      "sources": [
+        "OMOPHub hierarchy"
+      ],
+      "usage_frequency": null,
+      "usage_status": null,
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": 44809569,
+      "dmd_level": null
+    },
+    {
+      "code": "1332442005",
+      "term": "Hypertension in chronic kidney disease stage 3 due to type 1 diabetes mellitus",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.7,
+      "rationale": "Expanded via OMOP 'Is a' from concept_id 316866",
+      "sources": [
+        "OMOPHub hierarchy"
+      ],
+      "usage_frequency": null,
+      "usage_status": null,
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": 1075888,
+      "dmd_level": null
+    },
+    {
+      "code": "1332464001",
+      "term": "Hypertension in chronic kidney disease stage 2 due to type 1 diabetes mellitus",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.7,
+      "rationale": "Expanded via OMOP 'Is a' from concept_id 316866",
+      "sources": [
+        "OMOPHub hierarchy"
+      ],
+      "usage_frequency": null,
+      "usage_status": null,
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": 1075903,
+      "dmd_level": null
+    },
+    {
+      "code": "1332467008",
+      "term": "Hypertension in chronic kidney disease stage 5 due to type 1 diabetes mellitus",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.7,
+      "rationale": "Expanded via OMOP 'Is a' from concept_id 316866",
+      "sources": [
+        "OMOPHub hierarchy"
+      ],
+      "usage_frequency": null,
+      "usage_status": null,
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": 1075906,
+      "dmd_level": null
+    },
+    {
+      "code": "1332468003",
+      "term": "Hypertension in chronic kidney disease stage 4 due to type 1 diabetes mellitus",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.7,
+      "rationale": "Expanded via OMOP 'Is a' from concept_id 316866",
+      "sources": [
+        "OMOPHub hierarchy"
+      ],
+      "usage_frequency": null,
+      "usage_status": null,
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": 1075907,
+      "dmd_level": null
+    },
+    {
+      "code": "871642009",
+      "term": "Hypertension due to aortic arch obstruction",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.7,
+      "rationale": "Expanded via OMOP 'Is a' from concept_id 316866",
+      "sources": [
+        "OMOPHub hierarchy"
+      ],
+      "usage_frequency": null,
+      "usage_status": null,
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": 3656115,
+      "dmd_level": null
+    },
+    {
+      "code": "48194001",
+      "term": "Pregnancy-induced hypertension",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.7,
+      "rationale": "Expanded via OMOP 'Is a' from concept_id 316866",
+      "sources": [
+        "OMOPHub hierarchy"
+      ],
+      "usage_frequency": null,
+      "usage_status": null,
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": 4167493,
+      "dmd_level": null
+    },
+    {
+      "code": "52698002",
+      "term": "Transient hypertension",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.7,
+      "rationale": "Expanded via OMOP 'Is a' from concept_id 316866",
+      "sources": [
+        "OMOPHub hierarchy"
+      ],
+      "usage_frequency": null,
+      "usage_status": null,
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": 4199306,
+      "dmd_level": null
+    },
+    {
+      "code": "8762007",
+      "term": "Chronic hypertension in obstetric context",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.7,
+      "rationale": "Expanded via OMOP 'Is a' from concept_id 316866",
+      "sources": [
+        "OMOPHub hierarchy"
+      ],
+      "usage_frequency": null,
+      "usage_status": null,
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": 4227607,
+      "dmd_level": null
+    },
+    {
+      "code": "86041002",
+      "term": "Pre-existing hypertension in obstetric context",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.7,
+      "rationale": "Expanded via OMOP 'Is a' from concept_id 316866",
+      "sources": [
+        "OMOPHub hierarchy"
+      ],
+      "usage_frequency": null,
+      "usage_status": null,
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": 4311246,
+      "dmd_level": null
+    },
+    {
+      "code": "541000119105",
+      "term": "Hypertension complicating pregnancy, childbirth and the puerperium, antepartum",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.7,
+      "rationale": "Expanded via OMOP 'Is a' from concept_id 316866",
+      "sources": [
+        "OMOPHub hierarchy"
+      ],
+      "usage_frequency": null,
+      "usage_status": null,
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": 42873163,
+      "dmd_level": null
+    },
+    {
+      "code": "697930002",
+      "term": "Labile hypertension due to being in a clinical environment",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.7,
+      "rationale": "Expanded via OMOP 'Is a' from concept_id 316866",
+      "sources": [
+        "OMOPHub hierarchy"
+      ],
+      "usage_frequency": null,
+      "usage_status": null,
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": 44783644,
+      "dmd_level": null
+    },
+    {
+      "code": "698640000",
+      "term": "Hypertension in the puerperium with pulmonary edema",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.7,
+      "rationale": "Expanded via OMOP 'Is a' from concept_id 316866",
+      "sources": [
+        "OMOPHub hierarchy"
+      ],
+      "usage_frequency": null,
+      "usage_status": null,
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": 44784484,
+      "dmd_level": null
+    },
+    {
+      "code": "908631000000108",
+      "term": "Stage 1 hypertension (NICE 2011) without evidence of end organ damage",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.7,
+      "rationale": "Expanded via OMOP 'Is a' from concept_id 316866",
+      "sources": [
+        "OMOPHub hierarchy"
+      ],
+      "usage_frequency": null,
+      "usage_status": null,
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": 44811932,
+      "dmd_level": null
+    },
+    {
+      "code": "908651000000101",
+      "term": "Stage 1 hypertension (NICE 2011) with evidence of end organ damage",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.7,
+      "rationale": "Expanded via OMOP 'Is a' from concept_id 316866",
+      "sources": [
+        "OMOPHub hierarchy"
+      ],
+      "usage_frequency": null,
+      "usage_status": null,
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": 44811933,
+      "dmd_level": null
+    },
+    {
+      "code": "10757481000119107",
+      "term": "Pre-existing hypertensive heart and chronic kidney disease in mother complicating pregnancy",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.7,
+      "rationale": "Expanded via OMOP 'Is a' from concept_id 316866",
+      "sources": [
+        "OMOPHub hierarchy"
+      ],
+      "usage_frequency": null,
+      "usage_status": null,
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": 45757139,
+      "dmd_level": null
+    },
+    {
+      "code": "398254007",
+      "term": "Pre-eclampsia",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.7,
+      "rationale": "Expanded via OMOP 'Is a' from concept_id 316866",
+      "sources": [
+        "OMOPHub hierarchy"
+      ],
+      "usage_frequency": null,
+      "usage_status": null,
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": 439393,
+      "dmd_level": null
+    },
+    {
+      "code": "1332436006",
+      "term": "Hypertension in chronic kidney disease stage 3B due to type 1 diabetes mellitus",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.7,
+      "rationale": "Expanded via OMOP 'Is a' from concept_id 316866",
+      "sources": [
+        "OMOPHub hierarchy"
+      ],
+      "usage_frequency": null,
+      "usage_status": null,
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": 1075886,
+      "dmd_level": null
+    },
+    {
+      "code": "1332441003",
+      "term": "Hypertension in chronic kidney disease stage 3A due to type 1 diabetes mellitus",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.7,
+      "rationale": "Expanded via OMOP 'Is a' from concept_id 316866",
+      "sources": [
+        "OMOPHub hierarchy"
+      ],
+      "usage_frequency": null,
+      "usage_status": null,
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": 1075887,
+      "dmd_level": null
+    },
+    {
+      "code": "1332465000",
+      "term": "Hypertension in chronic kidney disease stage 3B due to type 2 diabetes mellitus",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.7,
+      "rationale": "Expanded via OMOP 'Is a' from concept_id 316866",
+      "sources": [
+        "OMOPHub hierarchy"
+      ],
+      "usage_frequency": null,
+      "usage_status": null,
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": 1075904,
+      "dmd_level": null
+    },
+    {
+      "code": "1332466004",
+      "term": "Hypertension in chronic kidney disease stage 3A due to type 2 diabetes mellitus",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.7,
+      "rationale": "Expanded via OMOP 'Is a' from concept_id 316866",
+      "sources": [
+        "OMOPHub hierarchy"
+      ],
+      "usage_frequency": null,
+      "usage_status": null,
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": 1075905,
+      "dmd_level": null
+    },
+    {
+      "code": "9901000",
+      "term": "Essential hypertension complicating AND/OR reason for care during puerperium",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.7,
+      "rationale": "Expanded via OMOP 'Is a' from concept_id 320128",
+      "sources": [
+        "OMOPHub hierarchy"
+      ],
+      "usage_frequency": null,
+      "usage_status": null,
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": 4321603,
+      "dmd_level": null
+    },
+    {
       "code": "10562009",
       "term": "Malignant hypertension complicating AND/OR reason for care during childbirth (disorder)",
       "vocabulary": "SNOMED CT",
       "decision": "exclude",
       "confidence": 0.95,
-      "rationale": "Malignant hypertension in childbirth context is a pregnancy-specific complication, not primary hypertension in the general population.",
+      "rationale": "Malignant hypertension in childbirth is a pregnancy-specific complication, not primary hypertension in the general population.",
       "sources": [
         "OpenCodelists (Bennett Institute)",
         "QOF Business Rules 2024-25"
@@ -3661,7 +4575,7 @@
       "vocabulary": "SNOMED CT",
       "decision": "exclude",
       "confidence": 0.95,
-      "rationale": "Pre-existing hypertensive heart and chronic kidney disease in pregnancy context is a pregnancy-specific manifestation, not primary hypertension.",
+      "rationale": "Pre-existing hypertensive heart and chronic kidney disease in pregnancy is a pregnancy-specific manifestation, not primary hypertension.",
       "sources": [
         "OpenCodelists (Bennett Institute)",
         "QOF Business Rules 2024-25"
@@ -3679,7 +4593,7 @@
       "vocabulary": "SNOMED CT",
       "decision": "exclude",
       "confidence": 0.95,
-      "rationale": "Pre-existing hypertensive heart disease in pregnancy context is a pregnancy-specific manifestation, not primary hypertension.",
+      "rationale": "Pre-existing hypertensive heart disease in pregnancy is a pregnancy-specific context, not primary hypertension.",
       "sources": [
         "OpenCodelists (Bennett Institute)",
         "QOF Business Rules 2024-25"
@@ -3697,7 +4611,7 @@
       "vocabulary": "SNOMED CT",
       "decision": "exclude",
       "confidence": 0.95,
-      "rationale": "Pre-existing hypertensive heart disease in pregnancy context is a pregnancy-specific manifestation, not primary hypertension.",
+      "rationale": "Pre-existing hypertensive heart disease in pregnancy is a pregnancy-specific context, not primary hypertension.",
       "sources": [
         "OpenCodelists (Bennett Institute)",
         "QOF Business Rules 2024-25"
@@ -3715,7 +4629,7 @@
       "vocabulary": "SNOMED CT",
       "decision": "exclude",
       "confidence": 0.95,
-      "rationale": "Hypertension secondary to renal disease in obstetric context is pregnancy-specific and secondary hypertension, not primary hypertension.",
+      "rationale": "Hypertension secondary to renal disease in obstetric context is secondary hypertension in pregnancy, not primary hypertension.",
       "sources": [
         "OpenCodelists (Bennett Institute)",
         "QOF Business Rules 2024-25"
@@ -3733,7 +4647,7 @@
       "vocabulary": "SNOMED CT",
       "decision": "exclude",
       "confidence": 0.95,
-      "rationale": "Pre-existing hypertensive chronic kidney disease in pregnancy context is a pregnancy-specific manifestation, not primary hypertension.",
+      "rationale": "Pre-existing hypertensive chronic kidney disease in pregnancy is a pregnancy-specific context, not primary hypertension.",
       "sources": [
         "OpenCodelists (Bennett Institute)",
         "QOF Business Rules 2024-25"
@@ -3751,7 +4665,7 @@
       "vocabulary": "SNOMED CT",
       "decision": "exclude",
       "confidence": 0.95,
-      "rationale": "Hypertension due to congenital adrenal hyperplasia is secondary hypertension with an identified endocrine cause, not primary hypertension.",
+      "rationale": "Hypertension due to congenital adrenal hyperplasia is secondary hypertension, not primary hypertension.",
       "sources": [
         "OpenCodelists (Bennett Institute)",
         "QOF Business Rules 2024-25"
@@ -3769,7 +4683,7 @@
       "vocabulary": "SNOMED CT",
       "decision": "exclude",
       "confidence": 0.95,
-      "rationale": "Secondary hypertension due to renal tubular disorder is secondary hypertension with an identified renal cause, not primary hypertension.",
+      "rationale": "Secondary hypertension due to renal tubular disorder is secondary hypertension, not primary hypertension.",
       "sources": [
         "OpenCodelists (Bennett Institute)",
         "QOF Business Rules 2024-25"
@@ -3787,7 +4701,7 @@
       "vocabulary": "SNOMED CT",
       "decision": "exclude",
       "confidence": 0.95,
-      "rationale": "Secondary hypertension due to congenital heart disorder is secondary hypertension with an identified cardiac cause, not primary hypertension.",
+      "rationale": "Secondary hypertension due to congenital heart disorder is secondary hypertension, not primary hypertension.",
       "sources": [
         "OpenCodelists (Bennett Institute)",
         "QOF Business Rules 2024-25"
@@ -3805,7 +4719,7 @@
       "vocabulary": "SNOMED CT",
       "decision": "exclude",
       "confidence": 0.95,
-      "rationale": "Renovascular hypertension is secondary hypertension with an identified vascular cause, not primary hypertension.",
+      "rationale": "Renovascular hypertension is secondary hypertension, not primary hypertension.",
       "sources": [
         "ChromaDB",
         "OpenCodelists (Bennett Institute)",
@@ -3824,7 +4738,7 @@
       "vocabulary": "SNOMED CT",
       "decision": "exclude",
       "confidence": 0.95,
-      "rationale": "Goldblatt hypertension is secondary hypertension with an identified renal artery stenosis cause, not primary hypertension.",
+      "rationale": "Goldblatt hypertension is secondary hypertension, not primary hypertension.",
       "sources": [
         "ChromaDB",
         "OpenCodelists (Bennett Institute)",
@@ -3879,7 +4793,7 @@
       "vocabulary": "SNOMED CT",
       "decision": "exclude",
       "confidence": 0.95,
-      "rationale": "Hypertension concurrent with end stage renal disease on dialysis due to type 2 diabetes is secondary hypertension with identified renal and diabetic causes, not primary hypertension.",
+      "rationale": "Hypertension concurrent with end stage renal disease due to type 2 diabetes is secondary hypertension, not primary hypertension.",
       "sources": [
         "OpenCodelists (Bennett Institute)",
         "QOF Business Rules 2024-25"
@@ -3888,7 +4802,7 @@
       "usage_status": "counted",
       "usage_source": "NHS Digital primary care SNOMED reporting",
       "usage_setting": "primary_care",
-      "concept_id": null,
+      "concept_id": 45757392,
       "dmd_level": null
     },
     {
@@ -3897,7 +4811,7 @@
       "vocabulary": "SNOMED CT",
       "decision": "exclude",
       "confidence": 0.95,
-      "rationale": "Hypertension concurrent with end stage renal disease on dialysis due to type 1 diabetes is secondary hypertension with identified renal and diabetic causes, not primary hypertension.",
+      "rationale": "Hypertension concurrent with end stage renal disease due to type 1 diabetes is secondary hypertension, not primary hypertension.",
       "sources": [
         "OpenCodelists (Bennett Institute)",
         "QOF Business Rules 2024-25"
@@ -3906,7 +4820,7 @@
       "usage_status": "not_in_dataset",
       "usage_source": null,
       "usage_setting": null,
-      "concept_id": null,
+      "concept_id": 45757393,
       "dmd_level": null
     },
     {
@@ -3915,7 +4829,7 @@
       "vocabulary": "SNOMED CT",
       "decision": "exclude",
       "confidence": 0.95,
-      "rationale": "Hypertension in chronic kidney disease stage 5 due to type 2 diabetes is secondary hypertension with identified renal and diabetic causes, not primary hypertension.",
+      "rationale": "Hypertension in chronic kidney disease due to type 2 diabetes is secondary hypertension, not primary hypertension.",
       "sources": [
         "OpenCodelists (Bennett Institute)",
         "QOF Business Rules 2024-25"
@@ -3924,7 +4838,7 @@
       "usage_status": "not_in_dataset",
       "usage_source": null,
       "usage_setting": null,
-      "concept_id": null,
+      "concept_id": 45757444,
       "dmd_level": null
     },
     {
@@ -3933,7 +4847,7 @@
       "vocabulary": "SNOMED CT",
       "decision": "exclude",
       "confidence": 0.95,
-      "rationale": "Hypertension in chronic kidney disease stage 4 due to type 2 diabetes is secondary hypertension with identified renal and diabetic causes, not primary hypertension.",
+      "rationale": "Hypertension in chronic kidney disease due to type 2 diabetes is secondary hypertension, not primary hypertension.",
       "sources": [
         "OpenCodelists (Bennett Institute)",
         "QOF Business Rules 2024-25"
@@ -3942,7 +4856,7 @@
       "usage_status": "withheld_below_5",
       "usage_source": "NHS Digital primary care SNOMED reporting",
       "usage_setting": "primary_care",
-      "concept_id": null,
+      "concept_id": 45757445,
       "dmd_level": null
     },
     {
@@ -3951,7 +4865,7 @@
       "vocabulary": "SNOMED CT",
       "decision": "exclude",
       "confidence": 0.95,
-      "rationale": "Hypertension in chronic kidney disease stage 3 due to type 2 diabetes is secondary hypertension with identified renal and diabetic causes, not primary hypertension.",
+      "rationale": "Hypertension in chronic kidney disease due to type 2 diabetes is secondary hypertension, not primary hypertension.",
       "sources": [
         "OpenCodelists (Bennett Institute)",
         "QOF Business Rules 2024-25"
@@ -3960,7 +4874,7 @@
       "usage_status": "withheld_below_5",
       "usage_source": "NHS Digital primary care SNOMED reporting",
       "usage_setting": "primary_care",
-      "concept_id": null,
+      "concept_id": 45757446,
       "dmd_level": null
     },
     {
@@ -3969,7 +4883,7 @@
       "vocabulary": "SNOMED CT",
       "decision": "exclude",
       "confidence": 0.95,
-      "rationale": "Hypertension in chronic kidney disease stage 2 due to type 2 diabetes is secondary hypertension with identified renal and diabetic causes, not primary hypertension.",
+      "rationale": "Hypertension in chronic kidney disease due to type 2 diabetes is secondary hypertension, not primary hypertension.",
       "sources": [
         "OpenCodelists (Bennett Institute)",
         "QOF Business Rules 2024-25"
@@ -3978,7 +4892,7 @@
       "usage_status": "withheld_below_5",
       "usage_source": "NHS Digital primary care SNOMED reporting",
       "usage_setting": "primary_care",
-      "concept_id": null,
+      "concept_id": 45757447,
       "dmd_level": null
     },
     {
@@ -3987,7 +4901,7 @@
       "vocabulary": "SNOMED CT",
       "decision": "exclude",
       "confidence": 0.95,
-      "rationale": "Renal sclerosis with hypertension is secondary hypertension with an identified renal cause, not primary hypertension.",
+      "rationale": "Renal sclerosis with hypertension is secondary hypertension, not primary hypertension.",
       "sources": [
         "OpenCodelists (Bennett Institute)",
         "QOF Business Rules 2024-25"
@@ -4005,7 +4919,7 @@
       "vocabulary": "SNOMED CT",
       "decision": "exclude",
       "confidence": 0.95,
-      "rationale": "Hypertension resolved is a historical finding indicating the condition is no longer present, not an active instance of primary hypertension.",
+      "rationale": "Hypertension resolved is a past history finding, not an active instance of primary hypertension.",
       "sources": [
         "ChromaDB",
         "QOF Business Rules 2024-25"
@@ -4023,7 +4937,7 @@
       "vocabulary": "SNOMED CT",
       "decision": "exclude",
       "confidence": 0.95,
-      "rationale": "Hypertension caused by oral contraceptive pill is secondary hypertension with an identified drug cause, not primary hypertension.",
+      "rationale": "Hypertension caused by oral contraceptive pill is secondary hypertension, not primary hypertension.",
       "sources": [
         "OpenCodelists (Bennett Institute)",
         "QOF Business Rules 2024-25"
@@ -4041,7 +4955,7 @@
       "vocabulary": "SNOMED CT",
       "decision": "exclude",
       "confidence": 0.95,
-      "rationale": "Essential hypertension in childbirth context is a pregnancy-specific manifestation, not primary hypertension in the general population.",
+      "rationale": "Essential hypertension in childbirth is a pregnancy-specific context, not primary hypertension in the general population.",
       "sources": [
         "OpenCodelists (Bennett Institute)",
         "QOF Business Rules 2024-25"
@@ -4050,7 +4964,7 @@
       "usage_status": "withheld_below_5",
       "usage_source": "NHS Digital primary care SNOMED reporting",
       "usage_setting": "primary_care",
-      "concept_id": null,
+      "concept_id": 4083723,
       "dmd_level": null
     },
     {
@@ -4059,7 +4973,7 @@
       "vocabulary": "SNOMED CT",
       "decision": "exclude",
       "confidence": 0.95,
-      "rationale": "Secondary malignant renovascular hypertension is secondary hypertension with an identified vascular cause, not primary hypertension.",
+      "rationale": "Secondary malignant renovascular hypertension is secondary hypertension, not primary hypertension.",
       "sources": [
         "ChromaDB",
         "OpenCodelists (Bennett Institute)",
@@ -4078,7 +4992,7 @@
       "vocabulary": "SNOMED CT",
       "decision": "exclude",
       "confidence": 0.95,
-      "rationale": "Secondary benign hypertension is secondary hypertension by definition, not primary hypertension.",
+      "rationale": "Secondary benign hypertension is secondary hypertension, not primary hypertension.",
       "sources": [
         "ChromaDB",
         "OpenCodelists (Bennett Institute)",
@@ -4097,7 +5011,7 @@
       "vocabulary": "SNOMED CT",
       "decision": "exclude",
       "confidence": 0.95,
-      "rationale": "Hypertension secondary to endocrine disorder is secondary hypertension with an identified endocrine cause, not primary hypertension.",
+      "rationale": "Hypertension secondary to endocrine disorder is secondary hypertension, not primary hypertension.",
       "sources": [
         "ChromaDB",
         "OpenCodelists (Bennett Institute)",
@@ -4116,7 +5030,7 @@
       "vocabulary": "SNOMED CT",
       "decision": "exclude",
       "confidence": 0.95,
-      "rationale": "Hypertension caused by drug is secondary hypertension with an identified drug cause, not primary hypertension.",
+      "rationale": "Hypertension caused by drug is secondary hypertension, not primary hypertension.",
       "sources": [
         "ChromaDB",
         "OpenCodelists (Bennett Institute)",
@@ -4135,7 +5049,7 @@
       "vocabulary": "SNOMED CT",
       "decision": "exclude",
       "confidence": 0.95,
-      "rationale": "Benign essential hypertension in pregnancy context is a pregnancy-specific manifestation, not primary hypertension in the general population.",
+      "rationale": "Benign essential hypertension in pregnancy is a pregnancy-specific context, not primary hypertension in the general population.",
       "sources": [
         "OpenCodelists (Bennett Institute)",
         "QOF Business Rules 2024-25"
@@ -4144,7 +5058,7 @@
       "usage_status": "counted",
       "usage_source": "NHS Digital primary care SNOMED reporting",
       "usage_setting": "primary_care",
-      "concept_id": null,
+      "concept_id": 321638,
       "dmd_level": null
     },
     {
@@ -4153,7 +5067,7 @@
       "vocabulary": "SNOMED CT",
       "decision": "exclude",
       "confidence": 0.95,
-      "rationale": "Benign essential hypertension in pregnancy with postnatal complication is a pregnancy-specific manifestation, not primary hypertension.",
+      "rationale": "Benign essential hypertension in pregnancy with postnatal complication is a pregnancy-specific context, not primary hypertension.",
       "sources": [
         "OpenCodelists (Bennett Institute)",
         "QOF Business Rules 2024-25"
@@ -4171,7 +5085,7 @@
       "vocabulary": "SNOMED CT",
       "decision": "exclude",
       "confidence": 0.95,
-      "rationale": "Renal hypertension in pregnancy context is secondary hypertension in a pregnancy-specific setting, not primary hypertension.",
+      "rationale": "Renal hypertension in pregnancy is secondary hypertension in a pregnancy-specific context, not primary hypertension.",
       "sources": [
         "OpenCodelists (Bennett Institute)",
         "QOF Business Rules 2024-25"
@@ -4180,7 +5094,7 @@
       "usage_status": "withheld_below_5",
       "usage_source": "NHS Digital primary care SNOMED reporting",
       "usage_setting": "primary_care",
-      "concept_id": null,
+      "concept_id": 197930,
       "dmd_level": null
     },
     {
@@ -4198,7 +5112,7 @@
       "usage_status": "counted",
       "usage_source": "NHS Digital primary care SNOMED reporting",
       "usage_setting": "primary_care",
-      "concept_id": null,
+      "concept_id": 141084,
       "dmd_level": null
     },
     {
@@ -4225,7 +5139,7 @@
       "vocabulary": "SNOMED CT",
       "decision": "exclude",
       "confidence": 0.95,
-      "rationale": "Pre-existing hypertension in pregnancy context is a pregnancy-specific manifestation, not primary hypertension in the general population.",
+      "rationale": "Pre-existing hypertension in pregnancy is a pregnancy-specific context, not primary hypertension in the general population.",
       "sources": [
         "OpenCodelists (Bennett Institute)",
         "QOF Business Rules 2024-25"
@@ -4234,7 +5148,7 @@
       "usage_status": "counted",
       "usage_source": "NHS Digital primary care SNOMED reporting",
       "usage_setting": "primary_care",
-      "concept_id": null,
+      "concept_id": 321074,
       "dmd_level": null
     },
     {
@@ -4252,7 +5166,7 @@
       "usage_status": "withheld_below_5",
       "usage_source": "NHS Digital primary care SNOMED reporting",
       "usage_setting": "primary_care",
-      "concept_id": null,
+      "concept_id": 4062552,
       "dmd_level": null
     },
     {
@@ -4270,7 +5184,7 @@
       "usage_status": "withheld_below_5",
       "usage_source": "NHS Digital primary care SNOMED reporting",
       "usage_setting": "primary_care",
-      "concept_id": null,
+      "concept_id": 4057978,
       "dmd_level": null
     },
     {
@@ -4288,7 +5202,7 @@
       "usage_status": "withheld_below_5",
       "usage_source": "NHS Digital primary care SNOMED reporting",
       "usage_setting": "primary_care",
-      "concept_id": null,
+      "concept_id": 4057979,
       "dmd_level": null
     },
     {
@@ -4306,7 +5220,7 @@
       "usage_status": "counted",
       "usage_source": "NHS Digital primary care SNOMED reporting",
       "usage_setting": "primary_care",
-      "concept_id": null,
+      "concept_id": 4034031,
       "dmd_level": null
     },
     {
@@ -4324,7 +5238,7 @@
       "usage_status": "not_in_dataset",
       "usage_source": null,
       "usage_setting": null,
-      "concept_id": null,
+      "concept_id": 4028951,
       "dmd_level": null
     },
     {
@@ -4342,7 +5256,7 @@
       "usage_status": "withheld_below_5",
       "usage_source": "NHS Digital primary care SNOMED reporting",
       "usage_setting": "primary_care",
-      "concept_id": null,
+      "concept_id": 4080325,
       "dmd_level": null
     },
     {
@@ -4360,7 +5274,7 @@
       "usage_status": "not_in_dataset",
       "usage_source": null,
       "usage_setting": null,
-      "concept_id": null,
+      "concept_id": 4094374,
       "dmd_level": null
     },
     {
@@ -4397,7 +5311,7 @@
       "usage_status": "not_in_dataset",
       "usage_source": null,
       "usage_setting": null,
-      "concept_id": null,
+      "concept_id": 4162306,
       "dmd_level": null
     },
     {
@@ -4415,7 +5329,7 @@
       "usage_status": "not_in_dataset",
       "usage_source": null,
       "usage_setting": null,
-      "concept_id": null,
+      "concept_id": 4151903,
       "dmd_level": null
     },
     {
@@ -4452,7 +5366,7 @@
       "usage_status": "not_in_dataset",
       "usage_source": null,
       "usage_setting": null,
-      "concept_id": null,
+      "concept_id": 4146816,
       "dmd_level": null
     },
     {
@@ -4470,7 +5384,7 @@
       "usage_status": "withheld_below_5",
       "usage_source": "NHS Digital primary care SNOMED reporting",
       "usage_setting": "primary_care",
-      "concept_id": null,
+      "concept_id": 4148205,
       "dmd_level": null
     },
     {
@@ -4488,7 +5402,7 @@
       "usage_status": "withheld_below_5",
       "usage_source": "NHS Digital primary care SNOMED reporting",
       "usage_setting": "primary_care",
-      "concept_id": null,
+      "concept_id": 45757756,
       "dmd_level": null
     },
     {
@@ -4524,7 +5438,7 @@
       "usage_status": "counted",
       "usage_source": "NHS Digital primary care SNOMED reporting",
       "usage_setting": "primary_care",
-      "concept_id": null,
+      "concept_id": 4291933,
       "dmd_level": null
     },
     {
@@ -4561,7 +5475,7 @@
       "usage_status": "not_in_dataset",
       "usage_source": null,
       "usage_setting": null,
-      "concept_id": null,
+      "concept_id": 4219323,
       "dmd_level": null
     },
     {
@@ -4570,7 +5484,7 @@
       "vocabulary": "SNOMED CT",
       "decision": "exclude",
       "confidence": 0.95,
-      "rationale": "Postpartum pre-existing essential hypertension is a pregnancy-related manifestation, not primary hypertension itself in non-pregnant contexts.",
+      "rationale": "Postpartum pre-existing essential hypertension is a pregnancy-related manifestation, not primary hypertension in non-pregnant contexts.",
       "sources": [
         "OpenCodelists (Bennett Institute)",
         "QOF Business Rules 2024-25"
@@ -4579,7 +5493,7 @@
       "usage_status": "counted",
       "usage_source": "NHS Digital primary care SNOMED reporting",
       "usage_setting": "primary_care",
-      "concept_id": null,
+      "concept_id": 45757787,
       "dmd_level": null
     },
     {
@@ -4588,7 +5502,7 @@
       "vocabulary": "SNOMED CT",
       "decision": "exclude",
       "confidence": 0.95,
-      "rationale": "Hypertension associated with transplantation is secondary hypertension caused by organ transplant, not primary hypertension as specified in the query.",
+      "rationale": "Hypertension associated with transplantation is secondary hypertension caused by organ transplantation, not primary hypertension as specified in the query.",
       "sources": [
         "OpenCodelists (Bennett Institute)",
         "QOF Business Rules 2024-25"
@@ -4597,7 +5511,7 @@
       "usage_status": "counted",
       "usage_source": "NHS Digital primary care SNOMED reporting",
       "usage_setting": "primary_care",
-      "concept_id": null,
+      "concept_id": 4322735,
       "dmd_level": null
     },
     {
@@ -4615,7 +5529,7 @@
       "usage_status": "withheld_below_5",
       "usage_source": "NHS Digital primary care SNOMED reporting",
       "usage_setting": "primary_care",
-      "concept_id": null,
+      "concept_id": 4178312,
       "dmd_level": null
     },
     {
@@ -4633,7 +5547,7 @@
       "usage_status": "not_in_dataset",
       "usage_source": null,
       "usage_setting": null,
-      "concept_id": null,
+      "concept_id": 4174979,
       "dmd_level": null
     },
     {
@@ -4651,7 +5565,7 @@
       "usage_status": "counted",
       "usage_source": "NHS Digital primary care SNOMED reporting",
       "usage_setting": "primary_care",
-      "concept_id": null,
+      "concept_id": 4212496,
       "dmd_level": null
     },
     {
@@ -4687,7 +5601,7 @@
       "usage_status": "counted",
       "usage_source": "NHS Digital primary care SNOMED reporting",
       "usage_setting": "primary_care",
-      "concept_id": null,
+      "concept_id": 4269358,
       "dmd_level": null
     },
     {
@@ -4705,7 +5619,7 @@
       "usage_status": "withheld_below_5",
       "usage_source": "NHS Digital primary care SNOMED reporting",
       "usage_setting": "primary_care",
-      "concept_id": null,
+      "concept_id": 4277110,
       "dmd_level": null
     },
     {
@@ -4723,7 +5637,7 @@
       "usage_status": "counted",
       "usage_source": "NHS Digital primary care SNOMED reporting",
       "usage_setting": "primary_care",
-      "concept_id": null,
+      "concept_id": 4283352,
       "dmd_level": null
     },
     {
@@ -4741,7 +5655,7 @@
       "usage_status": "withheld_below_5",
       "usage_source": "NHS Digital primary care SNOMED reporting",
       "usage_setting": "primary_care",
-      "concept_id": null,
+      "concept_id": 4289142,
       "dmd_level": null
     },
     {
@@ -4750,7 +5664,7 @@
       "vocabulary": "SNOMED CT",
       "decision": "exclude",
       "confidence": 0.95,
-      "rationale": "Malignant hypertension is a secondary hypertension type, not primary hypertension; excluded under criterion 'primary'.",
+      "rationale": "Malignant hypertension is a secondary hypertension type/severity variant, not primary hypertension; excluded under criterion 'primary'.",
       "sources": [
         "ChromaDB",
         "OpenCodelists (Bennett Institute)",
@@ -4778,7 +5692,7 @@
       "usage_status": "counted",
       "usage_source": "NHS Digital primary care SNOMED reporting",
       "usage_setting": "primary_care",
-      "concept_id": null,
+      "concept_id": 45772751,
       "dmd_level": null
     },
     {
@@ -4796,7 +5710,7 @@
       "usage_status": "withheld_below_5",
       "usage_source": "NHS Digital primary care SNOMED reporting",
       "usage_setting": "primary_care",
-      "concept_id": null,
+      "concept_id": 45771064,
       "dmd_level": null
     },
     {
@@ -4814,7 +5728,7 @@
       "usage_status": "not_in_dataset",
       "usage_source": null,
       "usage_setting": null,
-      "concept_id": null,
+      "concept_id": 45771067,
       "dmd_level": null
     },
     {
@@ -4823,7 +5737,7 @@
       "vocabulary": "SNOMED CT",
       "decision": "exclude",
       "confidence": 0.95,
-      "rationale": "Brachydactyly and arterial hypertension syndrome is a rare genetic syndrome, not primary hypertension; excluded under criterion 'primary'.",
+      "rationale": "Brachydactyly and arterial hypertension syndrome is a genetic syndrome with hypertension as a feature, not primary hypertension; excluded under criterion 'primary'.",
       "sources": [
         "ChromaDB",
         "OpenCodelists (Bennett Institute)",
@@ -4842,7 +5756,7 @@
       "vocabulary": "SNOMED CT",
       "decision": "exclude",
       "confidence": 0.95,
-      "rationale": "Benign secondary renovascular hypertension is secondary hypertension due to renal artery stenosis, not primary; excluded under criterion 'primary'.",
+      "rationale": "Benign secondary renovascular hypertension is secondary hypertension due to renal artery disease, not primary; excluded under criterion 'primary'.",
       "sources": [
         "ChromaDB",
         "OpenCodelists (Bennett Institute)",
@@ -4889,7 +5803,7 @@
       "usage_status": "withheld_below_5",
       "usage_source": "NHS Digital primary care SNOMED reporting",
       "usage_setting": "primary_care",
-      "concept_id": null,
+      "concept_id": 35624277,
       "dmd_level": null
     },
     {
@@ -4898,7 +5812,7 @@
       "vocabulary": "SNOMED CT",
       "decision": "exclude",
       "confidence": 0.95,
-      "rationale": "Malignant essential hypertension is a severe secondary form of hypertension, not primary hypertension; excluded under criterion 'primary'.",
+      "rationale": "Malignant essential hypertension is a severe secondary form/complication of hypertension, not primary hypertension; excluded under criterion 'primary'.",
       "sources": [
         "ChromaDB",
         "OpenCodelists (Bennett Institute)",
@@ -4955,7 +5869,7 @@
       "vocabulary": "SNOMED CT",
       "decision": "exclude",
       "confidence": 0.9,
-      "rationale": "Benign essential hypertension in obstetric context is a pregnancy-specific manifestation, not primary hypertension in the general population.",
+      "rationale": "Benign essential hypertension in obstetric context is a pregnancy-specific manifestation, not primary hypertension in the general population; excluded under criterion 'primary'.",
       "sources": [
         "OpenCodelists (Bennett Institute)",
         "QOF Business Rules 2024-25"
@@ -4964,7 +5878,7 @@
       "usage_status": "withheld_below_5",
       "usage_source": "NHS Digital primary care SNOMED reporting",
       "usage_setting": "primary_care",
-      "concept_id": null,
+      "concept_id": 4215640,
       "dmd_level": null
     },
     {
@@ -4973,7 +5887,7 @@
       "vocabulary": "SNOMED CT",
       "decision": "exclude",
       "confidence": 0.9,
-      "rationale": "Essential hypertension in obstetric context is a pregnancy-specific manifestation, not primary hypertension in the general population.",
+      "rationale": "Essential hypertension in obstetric context is a pregnancy-specific manifestation, not primary hypertension in the general population; excluded under criterion 'primary'.",
       "sources": [
         "OpenCodelists (Bennett Institute)",
         "QOF Business Rules 2024-25"
@@ -4982,7 +5896,7 @@
       "usage_status": "counted",
       "usage_source": "NHS Digital primary care SNOMED reporting",
       "usage_setting": "primary_care",
-      "concept_id": null,
+      "concept_id": 4217486,
       "dmd_level": null
     },
     {
@@ -4991,7 +5905,7 @@
       "vocabulary": "SNOMED CT",
       "decision": "exclude",
       "confidence": 0.9,
-      "rationale": "Essential hypertension in pregnancy is a pregnancy-specific manifestation, not primary hypertension in the general population.",
+      "rationale": "Essential hypertension in pregnancy is a pregnancy-specific manifestation, not primary hypertension in the general population; excluded under criterion 'primary'.",
       "sources": [
         "OpenCodelists (Bennett Institute)",
         "QOF Business Rules 2024-25"
@@ -5000,7 +5914,7 @@
       "usage_status": "counted",
       "usage_source": "NHS Digital primary care SNOMED reporting",
       "usage_setting": "primary_care",
-      "concept_id": null,
+      "concept_id": 4302591,
       "dmd_level": null
     },
     {
@@ -5009,7 +5923,7 @@
       "vocabulary": "SNOMED CT",
       "decision": "exclude",
       "confidence": 0.9,
-      "rationale": "Malignant hypertension in obstetric context is a pregnancy-specific manifestation of secondary hypertension, not primary hypertension.",
+      "rationale": "Malignant hypertension in obstetric context is a pregnancy-specific manifestation of secondary hypertension, not primary; excluded under criterion 'primary'.",
       "sources": [
         "OpenCodelists (Bennett Institute)",
         "QOF Business Rules 2024-25"
@@ -5018,7 +5932,7 @@
       "usage_status": "not_in_dataset",
       "usage_source": null,
       "usage_setting": null,
-      "concept_id": null,
+      "concept_id": 4218088,
       "dmd_level": null
     },
     {
@@ -5027,7 +5941,7 @@
       "vocabulary": "SNOMED CT",
       "decision": "exclude",
       "confidence": 0.9,
-      "rationale": "Chronic hypertension in childbirth is a pregnancy-specific manifestation, not primary hypertension in the general population.",
+      "rationale": "Chronic hypertension in childbirth is a pregnancy-specific manifestation, not primary hypertension in the general population; excluded under criterion 'primary'.",
       "sources": [
         "OpenCodelists (Bennett Institute)",
         "QOF Business Rules 2024-25"
@@ -5036,7 +5950,7 @@
       "usage_status": "counted",
       "usage_source": "NHS Digital primary care SNOMED reporting",
       "usage_setting": "primary_care",
-      "concept_id": null,
+      "concept_id": 4304837,
       "dmd_level": null
     },
     {
@@ -5045,7 +5959,7 @@
       "vocabulary": "SNOMED CT",
       "decision": "exclude",
       "confidence": 0.9,
-      "rationale": "Rebound hypertension is an acute complication/manifestation of hypertension, not an instance of primary hypertension itself.",
+      "rationale": "Rebound hypertension is an acute complication/manifestation of hypertension (typically medication withdrawal), not an instance of primary hypertension.",
       "sources": [
         "ChromaDB",
         "OpenCodelists (Bennett Institute)",

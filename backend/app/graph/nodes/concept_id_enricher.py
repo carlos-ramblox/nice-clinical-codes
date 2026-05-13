@@ -29,7 +29,7 @@ from app.config import OMOPHUB_API_KEY, OMOPHUB_VOCABULARIES
 
 logger = logging.getLogger(__name__)
 
-_WORKERS = 4
+_WORKERS = 6
 _MAX_429_RETRIES = 4
 
 

@@ -3343,13 +3343,13 @@
     "all_scored": {
       "codelist_name": "all_scored",
       "n_ref_codes": 363,
-      "n_output_codes": 100,
-      "recall": 0.1598,
-      "precision": 0.58,
-      "f1": 0.2505,
-      "tp_count": 58,
-      "fp_count": 42,
-      "fn_count": 305,
+      "n_output_codes": 178,
+      "recall": 0.3691,
+      "precision": 0.7528,
+      "f1": 0.4954,
+      "tp_count": 134,
+      "fp_count": 44,
+      "fn_count": 229,
       "tp_codes": [
         {
           "code": "1078881000119102",
@@ -3358,6 +3358,38 @@
         {
           "code": "1078901000119100",
           "term": "Primary adenocarcinoma of upper lobe of left lung"
+        },
+        {
+          "code": "1078931000119107",
+          "term": "Primary adenocarcinoma of lower lobe of right lung"
+        },
+        {
+          "code": "1078951000119101",
+          "term": "Primary adenocarcinoma of middle lobe of right lung"
+        },
+        {
+          "code": "1078961000119104",
+          "term": "Primary adenocarcinoma of upper lobe of right lung"
+        },
+        {
+          "code": "1080451000119101",
+          "term": "Primary large cell carcinoma of lower lobe of left lung"
+        },
+        {
+          "code": "1080471000119105",
+          "term": "Primary large cell carcinoma of upper lobe of left lung"
+        },
+        {
+          "code": "1080501000119104",
+          "term": "Primary large cell carcinoma of lower lobe of right lung"
+        },
+        {
+          "code": "1080521000119108",
+          "term": "Primary large cell carcinoma of middle lobe of right lung"
+        },
+        {
+          "code": "1080531000119106",
+          "term": "Primary large cell carcinoma of upper lobe of right lung"
         },
         {
           "code": "1081841000119106",
@@ -3372,6 +3404,10 @@
           "term": "Primary small cell carcinoma of lower lobe of right lung"
         },
         {
+          "code": "1081911000119101",
+          "term": "Primary small cell carcinoma of middle lobe of right lung"
+        },
+        {
           "code": "1081921000119108",
           "term": "Primary small cell carcinoma of upper lobe of right lung"
         },
@@ -3380,8 +3416,28 @@
           "term": "Primary squamous cell carcinoma of lower lobe of left lung"
         },
         {
+          "code": "1082141000119108",
+          "term": "Primary squamous cell carcinoma of upper lobe of left lung"
+        },
+        {
           "code": "1082231000119109",
           "term": "Primary squamous cell carcinoma of lower lobe of right lung"
+        },
+        {
+          "code": "1082251000119103",
+          "term": "Primary squamous cell carcinoma of middle lobe of right lung"
+        },
+        {
+          "code": "1082271000119107",
+          "term": "Primary squamous cell carcinoma of upper lobe of right lung"
+        },
+        {
+          "code": "1141627001",
+          "term": "Non-small cell lung carcinoma with neuregulin 1 gene fusion"
+        },
+        {
+          "code": "12240951000119107",
+          "term": "Squamous cell carcinoma of left lung"
         },
         {
           "code": "12240991000119102",
@@ -3400,12 +3456,44 @@
           "term": "Metastatic carcinoma to lower lobe of lung"
         },
         {
+          "code": "1255651005",
+          "term": "Basaloid squamous cell carcinoma of lung"
+        },
+        {
           "code": "1255725002",
           "term": "Non-small cell adenocarcinoma of lung"
         },
         {
+          "code": "1259368007",
+          "term": "Primary large cell carcinoma of lung"
+        },
+        {
+          "code": "1259369004",
+          "term": "Primary giant cell carcinoma of lung"
+        },
+        {
           "code": "1259371004",
           "term": "Primary squamous cell carcinoma of lung"
+        },
+        {
+          "code": "1259409000",
+          "term": "Primary squamous cell carcinoma of bronchus in left lower lobe"
+        },
+        {
+          "code": "1259410005",
+          "term": "Primary squamous cell carcinoma of bronchus in left upper lobe"
+        },
+        {
+          "code": "1259411009",
+          "term": "Primary squamous cell carcinoma of bronchus in right lower lobe"
+        },
+        {
+          "code": "1259412002",
+          "term": "Primary squamous cell carcinoma of bronchus of middle lobe of right lung"
+        },
+        {
+          "code": "1259413007",
+          "term": "Primary squamous cell carcinoma of bronchus in right upper lobe"
         },
         {
           "code": "1259461000",
@@ -3416,12 +3504,20 @@
           "term": "Primary squamous cell carcinoma of left lung"
         },
         {
+          "code": "1259686004",
+          "term": "Primary non-small cell lung carcinoma with neuregulin 1 gene fusion"
+        },
+        {
           "code": "1259727001",
           "term": "Primary non-small cell lung cancer"
         },
         {
           "code": "1259754003",
           "term": "Primary squamous non-small cell lung cancer"
+        },
+        {
+          "code": "1259757005",
+          "term": "Primary nonsquamous nonsmall cell neoplasm of lung"
         },
         {
           "code": "1259758000",
@@ -3464,12 +3560,52 @@
           "term": "Adenosquamous carcinoma of lung"
         },
         {
+          "code": "1260056000",
+          "term": "Clear cell squamous cell carcinoma of lung"
+        },
+        {
+          "code": "1260057009",
+          "term": "Mucinous adenocarcinoma of lung"
+        },
+        {
+          "code": "1260059007",
+          "term": "Mucinous bronchiolo-alveolar carcinoma of lung"
+        },
+        {
+          "code": "1260065007",
+          "term": "Mucinous cystadenocarcinoma of lung"
+        },
+        {
           "code": "1260068009",
           "term": "Papillary adenocarcinoma of lung"
         },
         {
+          "code": "1260070000",
+          "term": "Non-mucinous bronchiolo-alveolar carcinoma of lung"
+        },
+        {
+          "code": "1260071001",
+          "term": "Papillary squamous cell carcinoma of lung"
+        },
+        {
+          "code": "1260076006",
+          "term": "Small cell non-keratinizing squamous cell carcinoma of lung"
+        },
+        {
           "code": "1260077002",
           "term": "Solid carcinoma of lung"
+        },
+        {
+          "code": "1260087003",
+          "term": "Fetal adenocarcinoma of lung"
+        },
+        {
+          "code": "1260093006",
+          "term": "Mixed subtype adenocarcinoma of lung"
+        },
+        {
+          "code": "1260115001",
+          "term": "Salivary gland type carcinoma of lung"
         },
         {
           "code": "1268348008",
@@ -3488,8 +3624,44 @@
           "term": "Metastatic adenocarcinoma to left lung"
         },
         {
+          "code": "15956341000119105",
+          "term": "Adenocarcinoma of left lung"
+        },
+        {
+          "code": "15956381000119100",
+          "term": "Adenocarcinoma of right lung"
+        },
+        {
           "code": "15957181000119104",
           "term": "Metastatic squamous cell carcinoma to right lung"
+        },
+        {
+          "code": "16527441000119105",
+          "term": "Primary non-small cell carcinoma of lower lobe of left lung"
+        },
+        {
+          "code": "16527481000119100",
+          "term": "Primary non-small cell carcinoma of middle lobe of right lung"
+        },
+        {
+          "code": "16527521000119100",
+          "term": "Primary non-small cell carcinoma of upper lobe of left lung"
+        },
+        {
+          "code": "16527561000119105",
+          "term": "Primary non-small cell carcinoma of lower lobe of right lung"
+        },
+        {
+          "code": "16527601000119105",
+          "term": "Primary non-small cell carcinoma of right lung"
+        },
+        {
+          "code": "16527641000119107",
+          "term": "Primary non-small cell carcinoma of left lung"
+        },
+        {
+          "code": "16527721000119108",
+          "term": "Primary non-small cell carcinoma of upper lobe of right lung"
         },
         {
           "code": "254626006",
@@ -3498,6 +3670,10 @@
         {
           "code": "254629004",
           "term": "Large cell carcinoma of lung"
+        },
+        {
+          "code": "254631008",
+          "term": "Giant cell carcinoma of lung"
         },
         {
           "code": "254632001",
@@ -3516,6 +3692,26 @@
           "term": "Malignant neoplasm of upper lobe, bronchus or lung"
         },
         {
+          "code": "313353007",
+          "term": "Squamous cell carcinoma of bronchus in left lower lobe"
+        },
+        {
+          "code": "313354001",
+          "term": "Squamous cell carcinoma of bronchus in left upper lobe"
+        },
+        {
+          "code": "313355000",
+          "term": "Squamous cell carcinoma of bronchus in right lower lobe"
+        },
+        {
+          "code": "313356004",
+          "term": "Squamous cell carcinoma of bronchus of middle lobe of right lung"
+        },
+        {
+          "code": "313357008",
+          "term": "Squamous cell carcinoma of bronchus in right upper lobe"
+        },
+        {
           "code": "372110008",
           "term": "Primary malignant neoplasm of lower lobe, bronchus or lung"
         },
@@ -3524,8 +3720,68 @@
           "term": "Carcinoma of lower lobe of lung"
         },
         {
+          "code": "422968005",
+          "term": "Non-small cell carcinoma of lung, TNM stage 3"
+        },
+        {
+          "code": "423050000",
+          "term": "Large cell carcinoma of lung, TNM stage 2"
+        },
+        {
+          "code": "423121009",
+          "term": "Non-small cell carcinoma of lung, TNM stage 4"
+        },
+        {
+          "code": "423295000",
+          "term": "Squamous cell carcinoma of lung, TNM stage 1"
+        },
+        {
+          "code": "423468007",
+          "term": "Squamous cell carcinoma of lung, TNM stage 2"
+        },
+        {
+          "code": "423600008",
+          "term": "Large cell carcinoma of lung, TNM stage 4"
+        },
+        {
           "code": "424078005",
           "term": "Adenocarcinoma of lung, stage I"
+        },
+        {
+          "code": "424132000",
+          "term": "Non-small cell carcinoma of lung, TNM stage 1"
+        },
+        {
+          "code": "424454009",
+          "term": "Adenocarcinoma of lung, stage III"
+        },
+        {
+          "code": "424632001",
+          "term": "Adenocarcinoma of lung, stage II"
+        },
+        {
+          "code": "424938000",
+          "term": "Large cell carcinoma of lung, TNM stage 1"
+        },
+        {
+          "code": "424970000",
+          "term": "Large cell carcinoma of lung, TNM stage 3"
+        },
+        {
+          "code": "424993006",
+          "term": "Adenocarcinoma of lung, stage IV"
+        },
+        {
+          "code": "425048006",
+          "term": "Non-small cell carcinoma of lung, TNM stage 2"
+        },
+        {
+          "code": "425230006",
+          "term": "Squamous cell carcinoma of lung, TNM stage 3"
+        },
+        {
+          "code": "425376008",
+          "term": "Squamous cell carcinoma of lung, TNM stage 4"
         },
         {
           "code": "426964009",
@@ -3534,6 +3790,26 @@
         {
           "code": "427038005",
           "term": "Non-small cell lung cancer, negative for epidermal growth factor receptor expression"
+        },
+        {
+          "code": "440173001",
+          "term": "Nonsquamous nonsmall cell neoplasm of lung"
+        },
+        {
+          "code": "67811000119102",
+          "term": "Primary small cell malignant neoplasm of lung, TNM stage 1"
+        },
+        {
+          "code": "67821000119109",
+          "term": "Primary small cell malignant neoplasm of lung, TNM stage 2"
+        },
+        {
+          "code": "67831000119107",
+          "term": "Primary small cell malignant neoplasm of lung, TNM stage 3"
+        },
+        {
+          "code": "67841000119103",
+          "term": "Primary small cell malignant neoplasm of lung, TNM stage 4"
         },
         {
           "code": "683991000119103",
@@ -3552,6 +3828,10 @@
           "term": "Primary adenosquamous carcinoma of lung"
         },
         {
+          "code": "707408006",
+          "term": "Primary small cell non-keratinizing squamous cell carcinoma of lung"
+        },
+        {
           "code": "707410008",
           "term": "Primary solid carcinoma of lung"
         },
@@ -3562,6 +3842,22 @@
         {
           "code": "707451005",
           "term": "Primary adenocarcinoma of lung"
+        },
+        {
+          "code": "707453008",
+          "term": "Primary clear cell squamous cell carcinoma of lung"
+        },
+        {
+          "code": "707454002",
+          "term": "Primary basaloid squamous cell carcinoma of lung"
+        },
+        {
+          "code": "707455001",
+          "term": "Primary papillary squamous cell carcinoma of lung"
+        },
+        {
+          "code": "711414003",
+          "term": "Primary clear cell adenocarcinoma of lung"
         },
         {
           "code": "722425009",
@@ -3582,12 +3878,28 @@
         {
           "code": "830151004",
           "term": "Anaplastic lymphoma kinase fusion oncogene positive non-small cell lung cancer"
+        },
+        {
+          "code": "93864006",
+          "term": "Primary malignant neoplasm of lower lobe of left lung"
+        },
+        {
+          "code": "93991009",
+          "term": "Primary malignant neoplasm of right lower lobe of lung"
         }
       ],
       "fp_codes": [
         {
           "code": "105041000119109",
           "term": "Metastatic squamous cell carcinoma to lung (disorder)"
+        },
+        {
+          "code": "12235561000119105",
+          "term": "Large cell carcinoma of left lung"
+        },
+        {
+          "code": "12235601000119105",
+          "term": "Large cell carcinoma of right lung"
         },
         {
           "code": "12240951000119108",
@@ -3756,60 +4068,12 @@
       ],
       "fn_codes": [
         {
-          "code": "1078931000119107",
-          "term": "Primary adenocarcinoma of lower lobe of right lung"
-        },
-        {
-          "code": "1078951000119101",
-          "term": "Primary adenocarcinoma of middle lobe of right lung"
-        },
-        {
-          "code": "1078961000119104",
-          "term": "Primary adenocarcinoma of upper lobe of right lung"
-        },
-        {
-          "code": "1080451000119101",
-          "term": "Primary large cell carcinoma of lower lobe of left lung"
-        },
-        {
-          "code": "1080471000119105",
-          "term": "Primary large cell carcinoma of upper lobe of left lung"
-        },
-        {
-          "code": "1080501000119104",
-          "term": "Primary large cell carcinoma of lower lobe of right lung"
-        },
-        {
-          "code": "1080521000119108",
-          "term": "Primary large cell carcinoma of middle lobe of right lung"
-        },
-        {
-          "code": "1080531000119106",
-          "term": "Primary large cell carcinoma of upper lobe of right lung"
-        },
-        {
-          "code": "1081911000119101",
-          "term": "Primary small cell carcinoma of middle lobe of right lung"
-        },
-        {
           "code": "1082121000119102",
           "term": "Primary squamous cell carcinoma of left main bronchus"
         },
         {
-          "code": "1082141000119108",
-          "term": "Primary squamous cell carcinoma of upper lobe of left lung"
-        },
-        {
           "code": "1082241000119100",
           "term": "Primary squamous cell carcinoma of right main bronchus"
-        },
-        {
-          "code": "1082251000119103",
-          "term": "Primary squamous cell carcinoma of middle lobe of right lung"
-        },
-        {
-          "code": "1082271000119107",
-          "term": "Primary squamous cell carcinoma of upper lobe of right lung"
         },
         {
           "code": "109371002",
@@ -3822,10 +4086,6 @@
         {
           "code": "10995411000119108",
           "term": "History of malignant carcinoid tumor of bronchus"
-        },
-        {
-          "code": "1141627001",
-          "term": "Non-small cell lung carcinoma with neuregulin 1 gene fusion"
         },
         {
           "code": "1179762006",
@@ -3850,10 +4110,6 @@
         {
           "code": "1197296004",
           "term": "Primary malignant germ cell neoplasm of pleura"
-        },
-        {
-          "code": "12240951000119107",
-          "term": "Squamous cell carcinoma of left lung"
         },
         {
           "code": "1237466009",
@@ -3976,10 +4232,6 @@
           "term": "Acinar cell carcinoma of lung"
         },
         {
-          "code": "1255651005",
-          "term": "Basaloid squamous cell carcinoma of lung"
-        },
-        {
           "code": "1255655001",
           "term": "Giant cell carcinoma of trachea"
         },
@@ -4004,36 +4256,8 @@
           "term": "Primary squamous cell carcinoma of bronchus"
         },
         {
-          "code": "1259368007",
-          "term": "Primary large cell carcinoma of lung"
-        },
-        {
-          "code": "1259369004",
-          "term": "Primary giant cell carcinoma of lung"
-        },
-        {
           "code": "1259370003",
           "term": "Primary oat cell carcinoma of lung"
-        },
-        {
-          "code": "1259409000",
-          "term": "Primary squamous cell carcinoma of bronchus in left lower lobe"
-        },
-        {
-          "code": "1259410005",
-          "term": "Primary squamous cell carcinoma of bronchus in left upper lobe"
-        },
-        {
-          "code": "1259411009",
-          "term": "Primary squamous cell carcinoma of bronchus in right lower lobe"
-        },
-        {
-          "code": "1259412002",
-          "term": "Primary squamous cell carcinoma of bronchus of middle lobe of right lung"
-        },
-        {
-          "code": "1259413007",
-          "term": "Primary squamous cell carcinoma of bronchus in right upper lobe"
         },
         {
           "code": "1259528009",
@@ -4044,20 +4268,12 @@
           "term": "Primary acinar cell cystadenocarcinoma of lung"
         },
         {
-          "code": "1259686004",
-          "term": "Primary non-small cell lung carcinoma with neuregulin 1 gene fusion"
-        },
-        {
           "code": "1259716003",
           "term": "Primary malignant mesothelioma"
         },
         {
           "code": "1259726005",
           "term": "Primary epithelioid hemangioendothelioma of lung"
-        },
-        {
-          "code": "1259757005",
-          "term": "Primary nonsquamous nonsmall cell neoplasm of lung"
         },
         {
           "code": "1259794001",
@@ -4076,18 +4292,6 @@
           "term": "Adenosquamous carcinoma of trachea"
         },
         {
-          "code": "1260056000",
-          "term": "Clear cell squamous cell carcinoma of lung"
-        },
-        {
-          "code": "1260057009",
-          "term": "Mucinous adenocarcinoma of lung"
-        },
-        {
-          "code": "1260059007",
-          "term": "Mucinous bronchiolo-alveolar carcinoma of lung"
-        },
-        {
           "code": "1260060002",
           "term": "Mucinous adenocarcinoma of trachea"
         },
@@ -4100,20 +4304,8 @@
           "term": "Mucinous cystadenocarcinoma of trachea"
         },
         {
-          "code": "1260065007",
-          "term": "Mucinous cystadenocarcinoma of lung"
-        },
-        {
           "code": "1260066008",
           "term": "Papillary adenocarcinoma of trachea"
-        },
-        {
-          "code": "1260070000",
-          "term": "Non-mucinous bronchiolo-alveolar carcinoma of lung"
-        },
-        {
-          "code": "1260071001",
-          "term": "Papillary squamous cell carcinoma of lung"
         },
         {
           "code": "1260072008",
@@ -4124,24 +4316,8 @@
           "term": "Solid carcinoma of trachea"
         },
         {
-          "code": "1260076006",
-          "term": "Small cell non-keratinizing squamous cell carcinoma of lung"
-        },
-        {
-          "code": "1260087003",
-          "term": "Fetal adenocarcinoma of lung"
-        },
-        {
           "code": "1260092001",
           "term": "Mixed mucinous and non-mucinous bronchiolo-alveolar carcinoma of lung"
-        },
-        {
-          "code": "1260093006",
-          "term": "Mixed subtype adenocarcinoma of lung"
-        },
-        {
-          "code": "1260115001",
-          "term": "Salivary gland type carcinoma of lung"
         },
         {
           "code": "1268704000",
@@ -4180,14 +4356,6 @@
           "term": "Metastatic adenocarcinoma to right lung"
         },
         {
-          "code": "15956341000119105",
-          "term": "Adenocarcinoma of left lung"
-        },
-        {
-          "code": "15956381000119100",
-          "term": "Adenocarcinoma of right lung"
-        },
-        {
           "code": "15956661000119102",
           "term": "Metastatic small cell carcinoma to right lung"
         },
@@ -4214,34 +4382,6 @@
         {
           "code": "161428004",
           "term": "History of - * bronchus (context-dependent category)"
-        },
-        {
-          "code": "16527441000119105",
-          "term": "Primary non-small cell carcinoma of lower lobe of left lung"
-        },
-        {
-          "code": "16527481000119100",
-          "term": "Primary non-small cell carcinoma of middle lobe of right lung"
-        },
-        {
-          "code": "16527521000119100",
-          "term": "Primary non-small cell carcinoma of upper lobe of left lung"
-        },
-        {
-          "code": "16527561000119105",
-          "term": "Primary non-small cell carcinoma of lower lobe of right lung"
-        },
-        {
-          "code": "16527601000119105",
-          "term": "Primary non-small cell carcinoma of right lung"
-        },
-        {
-          "code": "16527641000119107",
-          "term": "Primary non-small cell carcinoma of left lung"
-        },
-        {
-          "code": "16527721000119108",
-          "term": "Primary non-small cell carcinoma of upper lobe of right lung"
         },
         {
           "code": "16848061000119103",
@@ -4380,10 +4520,6 @@
           "term": "Clear cell carcinoma of lung"
         },
         {
-          "code": "254631008",
-          "term": "Giant cell carcinoma of lung"
-        },
-        {
           "code": "254633006",
           "term": "Oat cell carcinoma of lung"
         },
@@ -4410,26 +4546,6 @@
         {
           "code": "275533006",
           "term": "History of - * trachea (context-dependent category)"
-        },
-        {
-          "code": "313353007",
-          "term": "Squamous cell carcinoma of bronchus in left lower lobe"
-        },
-        {
-          "code": "313354001",
-          "term": "Squamous cell carcinoma of bronchus in left upper lobe"
-        },
-        {
-          "code": "313355000",
-          "term": "Squamous cell carcinoma of bronchus in right lower lobe"
-        },
-        {
-          "code": "313356004",
-          "term": "Squamous cell carcinoma of bronchus of middle lobe of right lung"
-        },
-        {
-          "code": "313357008",
-          "term": "Squamous cell carcinoma of bronchus in right upper lobe"
         },
         {
           "code": "314954002",
@@ -4508,66 +4624,6 @@
           "term": "History of primary malignant neoplasm of trachea"
         },
         {
-          "code": "422968005",
-          "term": "Non-small cell carcinoma of lung, TNM stage 3"
-        },
-        {
-          "code": "423050000",
-          "term": "Large cell carcinoma of lung, TNM stage 2"
-        },
-        {
-          "code": "423121009",
-          "term": "Non-small cell carcinoma of lung, TNM stage 4"
-        },
-        {
-          "code": "423295000",
-          "term": "Squamous cell carcinoma of lung, TNM stage 1"
-        },
-        {
-          "code": "423468007",
-          "term": "Squamous cell carcinoma of lung, TNM stage 2"
-        },
-        {
-          "code": "423600008",
-          "term": "Large cell carcinoma of lung, TNM stage 4"
-        },
-        {
-          "code": "424132000",
-          "term": "Non-small cell carcinoma of lung, TNM stage 1"
-        },
-        {
-          "code": "424454009",
-          "term": "Adenocarcinoma of lung, stage III"
-        },
-        {
-          "code": "424632001",
-          "term": "Adenocarcinoma of lung, stage II"
-        },
-        {
-          "code": "424938000",
-          "term": "Large cell carcinoma of lung, TNM stage 1"
-        },
-        {
-          "code": "424970000",
-          "term": "Large cell carcinoma of lung, TNM stage 3"
-        },
-        {
-          "code": "424993006",
-          "term": "Adenocarcinoma of lung, stage IV"
-        },
-        {
-          "code": "425048006",
-          "term": "Non-small cell carcinoma of lung, TNM stage 2"
-        },
-        {
-          "code": "425230006",
-          "term": "Squamous cell carcinoma of lung, TNM stage 3"
-        },
-        {
-          "code": "425376008",
-          "term": "Squamous cell carcinoma of lung, TNM stage 4"
-        },
-        {
           "code": "429226001",
           "term": "History of non-small cell malignant neoplasm of lung"
         },
@@ -4578,10 +4634,6 @@
         {
           "code": "432007009",
           "term": "History of malignant mesothelioma of pleura"
-        },
-        {
-          "code": "440173001",
-          "term": "Nonsquamous nonsmall cell neoplasm of lung"
         },
         {
           "code": "448372003",
@@ -4626,22 +4678,6 @@
         {
           "code": "619792361000119102",
           "term": "History of primary small cell carcinoma of lung"
-        },
-        {
-          "code": "67811000119102",
-          "term": "Primary small cell malignant neoplasm of lung, TNM stage 1"
-        },
-        {
-          "code": "67821000119109",
-          "term": "Primary small cell malignant neoplasm of lung, TNM stage 2"
-        },
-        {
-          "code": "67831000119107",
-          "term": "Primary small cell malignant neoplasm of lung, TNM stage 3"
-        },
-        {
-          "code": "67841000119103",
-          "term": "Primary small cell malignant neoplasm of lung, TNM stage 4"
         },
         {
           "code": "707377003",
@@ -4716,28 +4752,12 @@
           "term": "Primary signet ring cell carcinoma of lung"
         },
         {
-          "code": "707408006",
-          "term": "Primary small cell non-keratinizing squamous cell carcinoma of lung"
-        },
-        {
           "code": "707409003",
           "term": "Primary acinar cell carcinoma of lung"
         },
         {
           "code": "707452003",
           "term": "Primary mucinous adenocarcinoma of lung"
-        },
-        {
-          "code": "707453008",
-          "term": "Primary clear cell squamous cell carcinoma of lung"
-        },
-        {
-          "code": "707454002",
-          "term": "Primary basaloid squamous cell carcinoma of lung"
-        },
-        {
-          "code": "707455001",
-          "term": "Primary papillary squamous cell carcinoma of lung"
         },
         {
           "code": "707456000",
@@ -4844,10 +4864,6 @@
           "term": "Primary malignant epithelial neoplasm of trachea"
         },
         {
-          "code": "711414003",
-          "term": "Primary clear cell adenocarcinoma of lung"
-        },
-        {
           "code": "722527003",
           "term": "Primary malignant neuroendocrine neoplasm of bronchus"
         },
@@ -4944,10 +4960,6 @@
           "term": "Primary malignant neoplasm of hilus of lung"
         },
         {
-          "code": "93864006",
-          "term": "Primary malignant neoplasm of lower lobe of left lung"
-        },
-        {
           "code": "93865007",
           "term": "Primary malignant neoplasm of upper lobe of left lung"
         },
@@ -4958,10 +4970,6 @@
         {
           "code": "93882009",
           "term": "Primary malignant neoplasm of main bronchus"
-        },
-        {
-          "code": "93991009",
-          "term": "Primary malignant neoplasm of right lower lobe of lung"
         },
         {
           "code": "93992002",
@@ -4980,13 +4988,13 @@
     "included_only": {
       "codelist_name": "included_only",
       "n_ref_codes": 363,
-      "n_output_codes": 65,
-      "recall": 0.146,
-      "precision": 0.8154,
-      "f1": 0.2477,
-      "tp_count": 53,
-      "fp_count": 12,
-      "fn_count": 310,
+      "n_output_codes": 143,
+      "recall": 0.3554,
+      "precision": 0.9021,
+      "f1": 0.5099,
+      "tp_count": 129,
+      "fp_count": 14,
+      "fn_count": 234,
       "tp_codes": [
         {
           "code": "1078881000119102",
@@ -4995,6 +5003,38 @@
         {
           "code": "1078901000119100",
           "term": "Primary adenocarcinoma of upper lobe of left lung"
+        },
+        {
+          "code": "1078931000119107",
+          "term": "Primary adenocarcinoma of lower lobe of right lung"
+        },
+        {
+          "code": "1078951000119101",
+          "term": "Primary adenocarcinoma of middle lobe of right lung"
+        },
+        {
+          "code": "1078961000119104",
+          "term": "Primary adenocarcinoma of upper lobe of right lung"
+        },
+        {
+          "code": "1080451000119101",
+          "term": "Primary large cell carcinoma of lower lobe of left lung"
+        },
+        {
+          "code": "1080471000119105",
+          "term": "Primary large cell carcinoma of upper lobe of left lung"
+        },
+        {
+          "code": "1080501000119104",
+          "term": "Primary large cell carcinoma of lower lobe of right lung"
+        },
+        {
+          "code": "1080521000119108",
+          "term": "Primary large cell carcinoma of middle lobe of right lung"
+        },
+        {
+          "code": "1080531000119106",
+          "term": "Primary large cell carcinoma of upper lobe of right lung"
         },
         {
           "code": "1081841000119106",
@@ -5009,6 +5049,10 @@
           "term": "Primary small cell carcinoma of lower lobe of right lung"
         },
         {
+          "code": "1081911000119101",
+          "term": "Primary small cell carcinoma of middle lobe of right lung"
+        },
+        {
           "code": "1081921000119108",
           "term": "Primary small cell carcinoma of upper lobe of right lung"
         },
@@ -5017,20 +5061,72 @@
           "term": "Primary squamous cell carcinoma of lower lobe of left lung"
         },
         {
+          "code": "1082141000119108",
+          "term": "Primary squamous cell carcinoma of upper lobe of left lung"
+        },
+        {
           "code": "1082231000119109",
           "term": "Primary squamous cell carcinoma of lower lobe of right lung"
+        },
+        {
+          "code": "1082251000119103",
+          "term": "Primary squamous cell carcinoma of middle lobe of right lung"
+        },
+        {
+          "code": "1082271000119107",
+          "term": "Primary squamous cell carcinoma of upper lobe of right lung"
+        },
+        {
+          "code": "1141627001",
+          "term": "Non-small cell lung carcinoma with neuregulin 1 gene fusion"
+        },
+        {
+          "code": "12240951000119107",
+          "term": "Squamous cell carcinoma of left lung"
         },
         {
           "code": "12240991000119102",
           "term": "Squamous cell carcinoma of right lung"
         },
         {
+          "code": "1255651005",
+          "term": "Basaloid squamous cell carcinoma of lung"
+        },
+        {
           "code": "1255725002",
           "term": "Non-small cell adenocarcinoma of lung"
         },
         {
+          "code": "1259368007",
+          "term": "Primary large cell carcinoma of lung"
+        },
+        {
+          "code": "1259369004",
+          "term": "Primary giant cell carcinoma of lung"
+        },
+        {
           "code": "1259371004",
           "term": "Primary squamous cell carcinoma of lung"
+        },
+        {
+          "code": "1259409000",
+          "term": "Primary squamous cell carcinoma of bronchus in left lower lobe"
+        },
+        {
+          "code": "1259410005",
+          "term": "Primary squamous cell carcinoma of bronchus in left upper lobe"
+        },
+        {
+          "code": "1259411009",
+          "term": "Primary squamous cell carcinoma of bronchus in right lower lobe"
+        },
+        {
+          "code": "1259412002",
+          "term": "Primary squamous cell carcinoma of bronchus of middle lobe of right lung"
+        },
+        {
+          "code": "1259413007",
+          "term": "Primary squamous cell carcinoma of bronchus in right upper lobe"
         },
         {
           "code": "1259461000",
@@ -5041,12 +5137,20 @@
           "term": "Primary squamous cell carcinoma of left lung"
         },
         {
+          "code": "1259686004",
+          "term": "Primary non-small cell lung carcinoma with neuregulin 1 gene fusion"
+        },
+        {
           "code": "1259727001",
           "term": "Primary non-small cell lung cancer"
         },
         {
           "code": "1259754003",
           "term": "Primary squamous non-small cell lung cancer"
+        },
+        {
+          "code": "1259757005",
+          "term": "Primary nonsquamous nonsmall cell neoplasm of lung"
         },
         {
           "code": "1259758000",
@@ -5089,12 +5193,52 @@
           "term": "Adenosquamous carcinoma of lung"
         },
         {
+          "code": "1260056000",
+          "term": "Clear cell squamous cell carcinoma of lung"
+        },
+        {
+          "code": "1260057009",
+          "term": "Mucinous adenocarcinoma of lung"
+        },
+        {
+          "code": "1260059007",
+          "term": "Mucinous bronchiolo-alveolar carcinoma of lung"
+        },
+        {
+          "code": "1260065007",
+          "term": "Mucinous cystadenocarcinoma of lung"
+        },
+        {
           "code": "1260068009",
           "term": "Papillary adenocarcinoma of lung"
         },
         {
+          "code": "1260070000",
+          "term": "Non-mucinous bronchiolo-alveolar carcinoma of lung"
+        },
+        {
+          "code": "1260071001",
+          "term": "Papillary squamous cell carcinoma of lung"
+        },
+        {
+          "code": "1260076006",
+          "term": "Small cell non-keratinizing squamous cell carcinoma of lung"
+        },
+        {
           "code": "1260077002",
           "term": "Solid carcinoma of lung"
+        },
+        {
+          "code": "1260087003",
+          "term": "Fetal adenocarcinoma of lung"
+        },
+        {
+          "code": "1260093006",
+          "term": "Mixed subtype adenocarcinoma of lung"
+        },
+        {
+          "code": "1260115001",
+          "term": "Salivary gland type carcinoma of lung"
         },
         {
           "code": "1268348008",
@@ -5109,12 +5253,52 @@
           "term": "Primary small cell carcinoma of left lung"
         },
         {
+          "code": "15956341000119105",
+          "term": "Adenocarcinoma of left lung"
+        },
+        {
+          "code": "15956381000119100",
+          "term": "Adenocarcinoma of right lung"
+        },
+        {
+          "code": "16527441000119105",
+          "term": "Primary non-small cell carcinoma of lower lobe of left lung"
+        },
+        {
+          "code": "16527481000119100",
+          "term": "Primary non-small cell carcinoma of middle lobe of right lung"
+        },
+        {
+          "code": "16527521000119100",
+          "term": "Primary non-small cell carcinoma of upper lobe of left lung"
+        },
+        {
+          "code": "16527561000119105",
+          "term": "Primary non-small cell carcinoma of lower lobe of right lung"
+        },
+        {
+          "code": "16527601000119105",
+          "term": "Primary non-small cell carcinoma of right lung"
+        },
+        {
+          "code": "16527641000119107",
+          "term": "Primary non-small cell carcinoma of left lung"
+        },
+        {
+          "code": "16527721000119108",
+          "term": "Primary non-small cell carcinoma of upper lobe of right lung"
+        },
+        {
           "code": "254626006",
           "term": "Adenocarcinoma of lung"
         },
         {
           "code": "254629004",
           "term": "Large cell carcinoma of lung"
+        },
+        {
+          "code": "254631008",
+          "term": "Giant cell carcinoma of lung"
         },
         {
           "code": "254632001",
@@ -5133,6 +5317,26 @@
           "term": "Malignant neoplasm of upper lobe, bronchus or lung"
         },
         {
+          "code": "313353007",
+          "term": "Squamous cell carcinoma of bronchus in left lower lobe"
+        },
+        {
+          "code": "313354001",
+          "term": "Squamous cell carcinoma of bronchus in left upper lobe"
+        },
+        {
+          "code": "313355000",
+          "term": "Squamous cell carcinoma of bronchus in right lower lobe"
+        },
+        {
+          "code": "313356004",
+          "term": "Squamous cell carcinoma of bronchus of middle lobe of right lung"
+        },
+        {
+          "code": "313357008",
+          "term": "Squamous cell carcinoma of bronchus in right upper lobe"
+        },
+        {
           "code": "372110008",
           "term": "Primary malignant neoplasm of lower lobe, bronchus or lung"
         },
@@ -5141,8 +5345,68 @@
           "term": "Carcinoma of lower lobe of lung"
         },
         {
+          "code": "422968005",
+          "term": "Non-small cell carcinoma of lung, TNM stage 3"
+        },
+        {
+          "code": "423050000",
+          "term": "Large cell carcinoma of lung, TNM stage 2"
+        },
+        {
+          "code": "423121009",
+          "term": "Non-small cell carcinoma of lung, TNM stage 4"
+        },
+        {
+          "code": "423295000",
+          "term": "Squamous cell carcinoma of lung, TNM stage 1"
+        },
+        {
+          "code": "423468007",
+          "term": "Squamous cell carcinoma of lung, TNM stage 2"
+        },
+        {
+          "code": "423600008",
+          "term": "Large cell carcinoma of lung, TNM stage 4"
+        },
+        {
           "code": "424078005",
           "term": "Adenocarcinoma of lung, stage I"
+        },
+        {
+          "code": "424132000",
+          "term": "Non-small cell carcinoma of lung, TNM stage 1"
+        },
+        {
+          "code": "424454009",
+          "term": "Adenocarcinoma of lung, stage III"
+        },
+        {
+          "code": "424632001",
+          "term": "Adenocarcinoma of lung, stage II"
+        },
+        {
+          "code": "424938000",
+          "term": "Large cell carcinoma of lung, TNM stage 1"
+        },
+        {
+          "code": "424970000",
+          "term": "Large cell carcinoma of lung, TNM stage 3"
+        },
+        {
+          "code": "424993006",
+          "term": "Adenocarcinoma of lung, stage IV"
+        },
+        {
+          "code": "425048006",
+          "term": "Non-small cell carcinoma of lung, TNM stage 2"
+        },
+        {
+          "code": "425230006",
+          "term": "Squamous cell carcinoma of lung, TNM stage 3"
+        },
+        {
+          "code": "425376008",
+          "term": "Squamous cell carcinoma of lung, TNM stage 4"
         },
         {
           "code": "426964009",
@@ -5151,6 +5415,26 @@
         {
           "code": "427038005",
           "term": "Non-small cell lung cancer, negative for epidermal growth factor receptor expression"
+        },
+        {
+          "code": "440173001",
+          "term": "Nonsquamous nonsmall cell neoplasm of lung"
+        },
+        {
+          "code": "67811000119102",
+          "term": "Primary small cell malignant neoplasm of lung, TNM stage 1"
+        },
+        {
+          "code": "67821000119109",
+          "term": "Primary small cell malignant neoplasm of lung, TNM stage 2"
+        },
+        {
+          "code": "67831000119107",
+          "term": "Primary small cell malignant neoplasm of lung, TNM stage 3"
+        },
+        {
+          "code": "67841000119103",
+          "term": "Primary small cell malignant neoplasm of lung, TNM stage 4"
         },
         {
           "code": "683991000119103",
@@ -5169,6 +5453,10 @@
           "term": "Primary adenosquamous carcinoma of lung"
         },
         {
+          "code": "707408006",
+          "term": "Primary small cell non-keratinizing squamous cell carcinoma of lung"
+        },
+        {
           "code": "707410008",
           "term": "Primary solid carcinoma of lung"
         },
@@ -5179,6 +5467,22 @@
         {
           "code": "707451005",
           "term": "Primary adenocarcinoma of lung"
+        },
+        {
+          "code": "707453008",
+          "term": "Primary clear cell squamous cell carcinoma of lung"
+        },
+        {
+          "code": "707454002",
+          "term": "Primary basaloid squamous cell carcinoma of lung"
+        },
+        {
+          "code": "707455001",
+          "term": "Primary papillary squamous cell carcinoma of lung"
+        },
+        {
+          "code": "711414003",
+          "term": "Primary clear cell adenocarcinoma of lung"
         },
         {
           "code": "722425009",
@@ -5199,9 +5503,25 @@
         {
           "code": "830151004",
           "term": "Anaplastic lymphoma kinase fusion oncogene positive non-small cell lung cancer"
+        },
+        {
+          "code": "93864006",
+          "term": "Primary malignant neoplasm of lower lobe of left lung"
+        },
+        {
+          "code": "93991009",
+          "term": "Primary malignant neoplasm of right lower lobe of lung"
         }
       ],
       "fp_codes": [
+        {
+          "code": "12235561000119105",
+          "term": "Large cell carcinoma of left lung"
+        },
+        {
+          "code": "12235601000119105",
+          "term": "Large cell carcinoma of right lung"
+        },
         {
           "code": "12240951000119108",
           "term": "Squamous cell carcinoma of left lung (disorder)"
@@ -5253,60 +5573,12 @@
       ],
       "fn_codes": [
         {
-          "code": "1078931000119107",
-          "term": "Primary adenocarcinoma of lower lobe of right lung"
-        },
-        {
-          "code": "1078951000119101",
-          "term": "Primary adenocarcinoma of middle lobe of right lung"
-        },
-        {
-          "code": "1078961000119104",
-          "term": "Primary adenocarcinoma of upper lobe of right lung"
-        },
-        {
-          "code": "1080451000119101",
-          "term": "Primary large cell carcinoma of lower lobe of left lung"
-        },
-        {
-          "code": "1080471000119105",
-          "term": "Primary large cell carcinoma of upper lobe of left lung"
-        },
-        {
-          "code": "1080501000119104",
-          "term": "Primary large cell carcinoma of lower lobe of right lung"
-        },
-        {
-          "code": "1080521000119108",
-          "term": "Primary large cell carcinoma of middle lobe of right lung"
-        },
-        {
-          "code": "1080531000119106",
-          "term": "Primary large cell carcinoma of upper lobe of right lung"
-        },
-        {
-          "code": "1081911000119101",
-          "term": "Primary small cell carcinoma of middle lobe of right lung"
-        },
-        {
           "code": "1082121000119102",
           "term": "Primary squamous cell carcinoma of left main bronchus"
         },
         {
-          "code": "1082141000119108",
-          "term": "Primary squamous cell carcinoma of upper lobe of left lung"
-        },
-        {
           "code": "1082241000119100",
           "term": "Primary squamous cell carcinoma of right main bronchus"
-        },
-        {
-          "code": "1082251000119103",
-          "term": "Primary squamous cell carcinoma of middle lobe of right lung"
-        },
-        {
-          "code": "1082271000119107",
-          "term": "Primary squamous cell carcinoma of upper lobe of right lung"
         },
         {
           "code": "109371002",
@@ -5319,10 +5591,6 @@
         {
           "code": "10995411000119108",
           "term": "History of malignant carcinoid tumor of bronchus"
-        },
-        {
-          "code": "1141627001",
-          "term": "Non-small cell lung carcinoma with neuregulin 1 gene fusion"
         },
         {
           "code": "1179762006",
@@ -5347,10 +5615,6 @@
         {
           "code": "1197296004",
           "term": "Primary malignant germ cell neoplasm of pleura"
-        },
-        {
-          "code": "12240951000119107",
-          "term": "Squamous cell carcinoma of left lung"
         },
         {
           "code": "1237048006",
@@ -5485,10 +5749,6 @@
           "term": "Acinar cell carcinoma of lung"
         },
         {
-          "code": "1255651005",
-          "term": "Basaloid squamous cell carcinoma of lung"
-        },
-        {
           "code": "1255655001",
           "term": "Giant cell carcinoma of trachea"
         },
@@ -5513,36 +5773,8 @@
           "term": "Primary squamous cell carcinoma of bronchus"
         },
         {
-          "code": "1259368007",
-          "term": "Primary large cell carcinoma of lung"
-        },
-        {
-          "code": "1259369004",
-          "term": "Primary giant cell carcinoma of lung"
-        },
-        {
           "code": "1259370003",
           "term": "Primary oat cell carcinoma of lung"
-        },
-        {
-          "code": "1259409000",
-          "term": "Primary squamous cell carcinoma of bronchus in left lower lobe"
-        },
-        {
-          "code": "1259410005",
-          "term": "Primary squamous cell carcinoma of bronchus in left upper lobe"
-        },
-        {
-          "code": "1259411009",
-          "term": "Primary squamous cell carcinoma of bronchus in right lower lobe"
-        },
-        {
-          "code": "1259412002",
-          "term": "Primary squamous cell carcinoma of bronchus of middle lobe of right lung"
-        },
-        {
-          "code": "1259413007",
-          "term": "Primary squamous cell carcinoma of bronchus in right upper lobe"
         },
         {
           "code": "1259528009",
@@ -5553,20 +5785,12 @@
           "term": "Primary acinar cell cystadenocarcinoma of lung"
         },
         {
-          "code": "1259686004",
-          "term": "Primary non-small cell lung carcinoma with neuregulin 1 gene fusion"
-        },
-        {
           "code": "1259716003",
           "term": "Primary malignant mesothelioma"
         },
         {
           "code": "1259726005",
           "term": "Primary epithelioid hemangioendothelioma of lung"
-        },
-        {
-          "code": "1259757005",
-          "term": "Primary nonsquamous nonsmall cell neoplasm of lung"
         },
         {
           "code": "1259794001",
@@ -5585,18 +5809,6 @@
           "term": "Adenosquamous carcinoma of trachea"
         },
         {
-          "code": "1260056000",
-          "term": "Clear cell squamous cell carcinoma of lung"
-        },
-        {
-          "code": "1260057009",
-          "term": "Mucinous adenocarcinoma of lung"
-        },
-        {
-          "code": "1260059007",
-          "term": "Mucinous bronchiolo-alveolar carcinoma of lung"
-        },
-        {
           "code": "1260060002",
           "term": "Mucinous adenocarcinoma of trachea"
         },
@@ -5609,20 +5821,8 @@
           "term": "Mucinous cystadenocarcinoma of trachea"
         },
         {
-          "code": "1260065007",
-          "term": "Mucinous cystadenocarcinoma of lung"
-        },
-        {
           "code": "1260066008",
           "term": "Papillary adenocarcinoma of trachea"
-        },
-        {
-          "code": "1260070000",
-          "term": "Non-mucinous bronchiolo-alveolar carcinoma of lung"
-        },
-        {
-          "code": "1260071001",
-          "term": "Papillary squamous cell carcinoma of lung"
         },
         {
           "code": "1260072008",
@@ -5633,24 +5833,8 @@
           "term": "Solid carcinoma of trachea"
         },
         {
-          "code": "1260076006",
-          "term": "Small cell non-keratinizing squamous cell carcinoma of lung"
-        },
-        {
-          "code": "1260087003",
-          "term": "Fetal adenocarcinoma of lung"
-        },
-        {
           "code": "1260092001",
           "term": "Mixed mucinous and non-mucinous bronchiolo-alveolar carcinoma of lung"
-        },
-        {
-          "code": "1260093006",
-          "term": "Mixed subtype adenocarcinoma of lung"
-        },
-        {
-          "code": "1260115001",
-          "term": "Salivary gland type carcinoma of lung"
         },
         {
           "code": "1268704000",
@@ -5693,14 +5877,6 @@
           "term": "Metastatic adenocarcinoma to left lung"
         },
         {
-          "code": "15956341000119105",
-          "term": "Adenocarcinoma of left lung"
-        },
-        {
-          "code": "15956381000119100",
-          "term": "Adenocarcinoma of right lung"
-        },
-        {
           "code": "15956661000119102",
           "term": "Metastatic small cell carcinoma to right lung"
         },
@@ -5731,34 +5907,6 @@
         {
           "code": "161428004",
           "term": "History of - * bronchus (context-dependent category)"
-        },
-        {
-          "code": "16527441000119105",
-          "term": "Primary non-small cell carcinoma of lower lobe of left lung"
-        },
-        {
-          "code": "16527481000119100",
-          "term": "Primary non-small cell carcinoma of middle lobe of right lung"
-        },
-        {
-          "code": "16527521000119100",
-          "term": "Primary non-small cell carcinoma of upper lobe of left lung"
-        },
-        {
-          "code": "16527561000119105",
-          "term": "Primary non-small cell carcinoma of lower lobe of right lung"
-        },
-        {
-          "code": "16527601000119105",
-          "term": "Primary non-small cell carcinoma of right lung"
-        },
-        {
-          "code": "16527641000119107",
-          "term": "Primary non-small cell carcinoma of left lung"
-        },
-        {
-          "code": "16527721000119108",
-          "term": "Primary non-small cell carcinoma of upper lobe of right lung"
         },
         {
           "code": "16848061000119103",
@@ -5897,10 +6045,6 @@
           "term": "Clear cell carcinoma of lung"
         },
         {
-          "code": "254631008",
-          "term": "Giant cell carcinoma of lung"
-        },
-        {
           "code": "254633006",
           "term": "Oat cell carcinoma of lung"
         },
@@ -5927,26 +6071,6 @@
         {
           "code": "275533006",
           "term": "History of - * trachea (context-dependent category)"
-        },
-        {
-          "code": "313353007",
-          "term": "Squamous cell carcinoma of bronchus in left lower lobe"
-        },
-        {
-          "code": "313354001",
-          "term": "Squamous cell carcinoma of bronchus in left upper lobe"
-        },
-        {
-          "code": "313355000",
-          "term": "Squamous cell carcinoma of bronchus in right lower lobe"
-        },
-        {
-          "code": "313356004",
-          "term": "Squamous cell carcinoma of bronchus of middle lobe of right lung"
-        },
-        {
-          "code": "313357008",
-          "term": "Squamous cell carcinoma of bronchus in right upper lobe"
         },
         {
           "code": "314954002",
@@ -6025,66 +6149,6 @@
           "term": "History of primary malignant neoplasm of trachea"
         },
         {
-          "code": "422968005",
-          "term": "Non-small cell carcinoma of lung, TNM stage 3"
-        },
-        {
-          "code": "423050000",
-          "term": "Large cell carcinoma of lung, TNM stage 2"
-        },
-        {
-          "code": "423121009",
-          "term": "Non-small cell carcinoma of lung, TNM stage 4"
-        },
-        {
-          "code": "423295000",
-          "term": "Squamous cell carcinoma of lung, TNM stage 1"
-        },
-        {
-          "code": "423468007",
-          "term": "Squamous cell carcinoma of lung, TNM stage 2"
-        },
-        {
-          "code": "423600008",
-          "term": "Large cell carcinoma of lung, TNM stage 4"
-        },
-        {
-          "code": "424132000",
-          "term": "Non-small cell carcinoma of lung, TNM stage 1"
-        },
-        {
-          "code": "424454009",
-          "term": "Adenocarcinoma of lung, stage III"
-        },
-        {
-          "code": "424632001",
-          "term": "Adenocarcinoma of lung, stage II"
-        },
-        {
-          "code": "424938000",
-          "term": "Large cell carcinoma of lung, TNM stage 1"
-        },
-        {
-          "code": "424970000",
-          "term": "Large cell carcinoma of lung, TNM stage 3"
-        },
-        {
-          "code": "424993006",
-          "term": "Adenocarcinoma of lung, stage IV"
-        },
-        {
-          "code": "425048006",
-          "term": "Non-small cell carcinoma of lung, TNM stage 2"
-        },
-        {
-          "code": "425230006",
-          "term": "Squamous cell carcinoma of lung, TNM stage 3"
-        },
-        {
-          "code": "425376008",
-          "term": "Squamous cell carcinoma of lung, TNM stage 4"
-        },
-        {
           "code": "429226001",
           "term": "History of non-small cell malignant neoplasm of lung"
         },
@@ -6095,10 +6159,6 @@
         {
           "code": "432007009",
           "term": "History of malignant mesothelioma of pleura"
-        },
-        {
-          "code": "440173001",
-          "term": "Nonsquamous nonsmall cell neoplasm of lung"
         },
         {
           "code": "448372003",
@@ -6143,22 +6203,6 @@
         {
           "code": "619792361000119102",
           "term": "History of primary small cell carcinoma of lung"
-        },
-        {
-          "code": "67811000119102",
-          "term": "Primary small cell malignant neoplasm of lung, TNM stage 1"
-        },
-        {
-          "code": "67821000119109",
-          "term": "Primary small cell malignant neoplasm of lung, TNM stage 2"
-        },
-        {
-          "code": "67831000119107",
-          "term": "Primary small cell malignant neoplasm of lung, TNM stage 3"
-        },
-        {
-          "code": "67841000119103",
-          "term": "Primary small cell malignant neoplasm of lung, TNM stage 4"
         },
         {
           "code": "707377003",
@@ -6233,28 +6277,12 @@
           "term": "Primary signet ring cell carcinoma of lung"
         },
         {
-          "code": "707408006",
-          "term": "Primary small cell non-keratinizing squamous cell carcinoma of lung"
-        },
-        {
           "code": "707409003",
           "term": "Primary acinar cell carcinoma of lung"
         },
         {
           "code": "707452003",
           "term": "Primary mucinous adenocarcinoma of lung"
-        },
-        {
-          "code": "707453008",
-          "term": "Primary clear cell squamous cell carcinoma of lung"
-        },
-        {
-          "code": "707454002",
-          "term": "Primary basaloid squamous cell carcinoma of lung"
-        },
-        {
-          "code": "707455001",
-          "term": "Primary papillary squamous cell carcinoma of lung"
         },
         {
           "code": "707456000",
@@ -6361,10 +6389,6 @@
           "term": "Primary malignant epithelial neoplasm of trachea"
         },
         {
-          "code": "711414003",
-          "term": "Primary clear cell adenocarcinoma of lung"
-        },
-        {
           "code": "722527003",
           "term": "Primary malignant neuroendocrine neoplasm of bronchus"
         },
@@ -6461,10 +6485,6 @@
           "term": "Primary malignant neoplasm of hilus of lung"
         },
         {
-          "code": "93864006",
-          "term": "Primary malignant neoplasm of lower lobe of left lung"
-        },
-        {
           "code": "93865007",
           "term": "Primary malignant neoplasm of upper lobe of left lung"
         },
@@ -6475,10 +6495,6 @@
         {
           "code": "93882009",
           "term": "Primary malignant neoplasm of main bronchus"
-        },
-        {
-          "code": "93991009",
-          "term": "Primary malignant neoplasm of right lower lobe of lung"
         },
         {
           "code": "93992002",
@@ -6497,13 +6513,13 @@
     "included_plus_uncertain": {
       "codelist_name": "included_plus_uncertain",
       "n_ref_codes": 363,
-      "n_output_codes": 66,
-      "recall": 0.146,
-      "precision": 0.803,
-      "f1": 0.2471,
-      "tp_count": 53,
-      "fp_count": 13,
-      "fn_count": 310,
+      "n_output_codes": 143,
+      "recall": 0.3554,
+      "precision": 0.9021,
+      "f1": 0.5099,
+      "tp_count": 129,
+      "fp_count": 14,
+      "fn_count": 234,
       "tp_codes": [
         {
           "code": "1078881000119102",
@@ -6512,6 +6528,38 @@
         {
           "code": "1078901000119100",
           "term": "Primary adenocarcinoma of upper lobe of left lung"
+        },
+        {
+          "code": "1078931000119107",
+          "term": "Primary adenocarcinoma of lower lobe of right lung"
+        },
+        {
+          "code": "1078951000119101",
+          "term": "Primary adenocarcinoma of middle lobe of right lung"
+        },
+        {
+          "code": "1078961000119104",
+          "term": "Primary adenocarcinoma of upper lobe of right lung"
+        },
+        {
+          "code": "1080451000119101",
+          "term": "Primary large cell carcinoma of lower lobe of left lung"
+        },
+        {
+          "code": "1080471000119105",
+          "term": "Primary large cell carcinoma of upper lobe of left lung"
+        },
+        {
+          "code": "1080501000119104",
+          "term": "Primary large cell carcinoma of lower lobe of right lung"
+        },
+        {
+          "code": "1080521000119108",
+          "term": "Primary large cell carcinoma of middle lobe of right lung"
+        },
+        {
+          "code": "1080531000119106",
+          "term": "Primary large cell carcinoma of upper lobe of right lung"
         },
         {
           "code": "1081841000119106",
@@ -6526,6 +6574,10 @@
           "term": "Primary small cell carcinoma of lower lobe of right lung"
         },
         {
+          "code": "1081911000119101",
+          "term": "Primary small cell carcinoma of middle lobe of right lung"
+        },
+        {
           "code": "1081921000119108",
           "term": "Primary small cell carcinoma of upper lobe of right lung"
         },
@@ -6534,20 +6586,72 @@
           "term": "Primary squamous cell carcinoma of lower lobe of left lung"
         },
         {
+          "code": "1082141000119108",
+          "term": "Primary squamous cell carcinoma of upper lobe of left lung"
+        },
+        {
           "code": "1082231000119109",
           "term": "Primary squamous cell carcinoma of lower lobe of right lung"
+        },
+        {
+          "code": "1082251000119103",
+          "term": "Primary squamous cell carcinoma of middle lobe of right lung"
+        },
+        {
+          "code": "1082271000119107",
+          "term": "Primary squamous cell carcinoma of upper lobe of right lung"
+        },
+        {
+          "code": "1141627001",
+          "term": "Non-small cell lung carcinoma with neuregulin 1 gene fusion"
+        },
+        {
+          "code": "12240951000119107",
+          "term": "Squamous cell carcinoma of left lung"
         },
         {
           "code": "12240991000119102",
           "term": "Squamous cell carcinoma of right lung"
         },
         {
+          "code": "1255651005",
+          "term": "Basaloid squamous cell carcinoma of lung"
+        },
+        {
           "code": "1255725002",
           "term": "Non-small cell adenocarcinoma of lung"
         },
         {
+          "code": "1259368007",
+          "term": "Primary large cell carcinoma of lung"
+        },
+        {
+          "code": "1259369004",
+          "term": "Primary giant cell carcinoma of lung"
+        },
+        {
           "code": "1259371004",
           "term": "Primary squamous cell carcinoma of lung"
+        },
+        {
+          "code": "1259409000",
+          "term": "Primary squamous cell carcinoma of bronchus in left lower lobe"
+        },
+        {
+          "code": "1259410005",
+          "term": "Primary squamous cell carcinoma of bronchus in left upper lobe"
+        },
+        {
+          "code": "1259411009",
+          "term": "Primary squamous cell carcinoma of bronchus in right lower lobe"
+        },
+        {
+          "code": "1259412002",
+          "term": "Primary squamous cell carcinoma of bronchus of middle lobe of right lung"
+        },
+        {
+          "code": "1259413007",
+          "term": "Primary squamous cell carcinoma of bronchus in right upper lobe"
         },
         {
           "code": "1259461000",
@@ -6558,12 +6662,20 @@
           "term": "Primary squamous cell carcinoma of left lung"
         },
         {
+          "code": "1259686004",
+          "term": "Primary non-small cell lung carcinoma with neuregulin 1 gene fusion"
+        },
+        {
           "code": "1259727001",
           "term": "Primary non-small cell lung cancer"
         },
         {
           "code": "1259754003",
           "term": "Primary squamous non-small cell lung cancer"
+        },
+        {
+          "code": "1259757005",
+          "term": "Primary nonsquamous nonsmall cell neoplasm of lung"
         },
         {
           "code": "1259758000",
@@ -6606,12 +6718,52 @@
           "term": "Adenosquamous carcinoma of lung"
         },
         {
+          "code": "1260056000",
+          "term": "Clear cell squamous cell carcinoma of lung"
+        },
+        {
+          "code": "1260057009",
+          "term": "Mucinous adenocarcinoma of lung"
+        },
+        {
+          "code": "1260059007",
+          "term": "Mucinous bronchiolo-alveolar carcinoma of lung"
+        },
+        {
+          "code": "1260065007",
+          "term": "Mucinous cystadenocarcinoma of lung"
+        },
+        {
           "code": "1260068009",
           "term": "Papillary adenocarcinoma of lung"
         },
         {
+          "code": "1260070000",
+          "term": "Non-mucinous bronchiolo-alveolar carcinoma of lung"
+        },
+        {
+          "code": "1260071001",
+          "term": "Papillary squamous cell carcinoma of lung"
+        },
+        {
+          "code": "1260076006",
+          "term": "Small cell non-keratinizing squamous cell carcinoma of lung"
+        },
+        {
           "code": "1260077002",
           "term": "Solid carcinoma of lung"
+        },
+        {
+          "code": "1260087003",
+          "term": "Fetal adenocarcinoma of lung"
+        },
+        {
+          "code": "1260093006",
+          "term": "Mixed subtype adenocarcinoma of lung"
+        },
+        {
+          "code": "1260115001",
+          "term": "Salivary gland type carcinoma of lung"
         },
         {
           "code": "1268348008",
@@ -6626,12 +6778,52 @@
           "term": "Primary small cell carcinoma of left lung"
         },
         {
+          "code": "15956341000119105",
+          "term": "Adenocarcinoma of left lung"
+        },
+        {
+          "code": "15956381000119100",
+          "term": "Adenocarcinoma of right lung"
+        },
+        {
+          "code": "16527441000119105",
+          "term": "Primary non-small cell carcinoma of lower lobe of left lung"
+        },
+        {
+          "code": "16527481000119100",
+          "term": "Primary non-small cell carcinoma of middle lobe of right lung"
+        },
+        {
+          "code": "16527521000119100",
+          "term": "Primary non-small cell carcinoma of upper lobe of left lung"
+        },
+        {
+          "code": "16527561000119105",
+          "term": "Primary non-small cell carcinoma of lower lobe of right lung"
+        },
+        {
+          "code": "16527601000119105",
+          "term": "Primary non-small cell carcinoma of right lung"
+        },
+        {
+          "code": "16527641000119107",
+          "term": "Primary non-small cell carcinoma of left lung"
+        },
+        {
+          "code": "16527721000119108",
+          "term": "Primary non-small cell carcinoma of upper lobe of right lung"
+        },
+        {
           "code": "254626006",
           "term": "Adenocarcinoma of lung"
         },
         {
           "code": "254629004",
           "term": "Large cell carcinoma of lung"
+        },
+        {
+          "code": "254631008",
+          "term": "Giant cell carcinoma of lung"
         },
         {
           "code": "254632001",
@@ -6650,6 +6842,26 @@
           "term": "Malignant neoplasm of upper lobe, bronchus or lung"
         },
         {
+          "code": "313353007",
+          "term": "Squamous cell carcinoma of bronchus in left lower lobe"
+        },
+        {
+          "code": "313354001",
+          "term": "Squamous cell carcinoma of bronchus in left upper lobe"
+        },
+        {
+          "code": "313355000",
+          "term": "Squamous cell carcinoma of bronchus in right lower lobe"
+        },
+        {
+          "code": "313356004",
+          "term": "Squamous cell carcinoma of bronchus of middle lobe of right lung"
+        },
+        {
+          "code": "313357008",
+          "term": "Squamous cell carcinoma of bronchus in right upper lobe"
+        },
+        {
           "code": "372110008",
           "term": "Primary malignant neoplasm of lower lobe, bronchus or lung"
         },
@@ -6658,8 +6870,68 @@
           "term": "Carcinoma of lower lobe of lung"
         },
         {
+          "code": "422968005",
+          "term": "Non-small cell carcinoma of lung, TNM stage 3"
+        },
+        {
+          "code": "423050000",
+          "term": "Large cell carcinoma of lung, TNM stage 2"
+        },
+        {
+          "code": "423121009",
+          "term": "Non-small cell carcinoma of lung, TNM stage 4"
+        },
+        {
+          "code": "423295000",
+          "term": "Squamous cell carcinoma of lung, TNM stage 1"
+        },
+        {
+          "code": "423468007",
+          "term": "Squamous cell carcinoma of lung, TNM stage 2"
+        },
+        {
+          "code": "423600008",
+          "term": "Large cell carcinoma of lung, TNM stage 4"
+        },
+        {
           "code": "424078005",
           "term": "Adenocarcinoma of lung, stage I"
+        },
+        {
+          "code": "424132000",
+          "term": "Non-small cell carcinoma of lung, TNM stage 1"
+        },
+        {
+          "code": "424454009",
+          "term": "Adenocarcinoma of lung, stage III"
+        },
+        {
+          "code": "424632001",
+          "term": "Adenocarcinoma of lung, stage II"
+        },
+        {
+          "code": "424938000",
+          "term": "Large cell carcinoma of lung, TNM stage 1"
+        },
+        {
+          "code": "424970000",
+          "term": "Large cell carcinoma of lung, TNM stage 3"
+        },
+        {
+          "code": "424993006",
+          "term": "Adenocarcinoma of lung, stage IV"
+        },
+        {
+          "code": "425048006",
+          "term": "Non-small cell carcinoma of lung, TNM stage 2"
+        },
+        {
+          "code": "425230006",
+          "term": "Squamous cell carcinoma of lung, TNM stage 3"
+        },
+        {
+          "code": "425376008",
+          "term": "Squamous cell carcinoma of lung, TNM stage 4"
         },
         {
           "code": "426964009",
@@ -6668,6 +6940,26 @@
         {
           "code": "427038005",
           "term": "Non-small cell lung cancer, negative for epidermal growth factor receptor expression"
+        },
+        {
+          "code": "440173001",
+          "term": "Nonsquamous nonsmall cell neoplasm of lung"
+        },
+        {
+          "code": "67811000119102",
+          "term": "Primary small cell malignant neoplasm of lung, TNM stage 1"
+        },
+        {
+          "code": "67821000119109",
+          "term": "Primary small cell malignant neoplasm of lung, TNM stage 2"
+        },
+        {
+          "code": "67831000119107",
+          "term": "Primary small cell malignant neoplasm of lung, TNM stage 3"
+        },
+        {
+          "code": "67841000119103",
+          "term": "Primary small cell malignant neoplasm of lung, TNM stage 4"
         },
         {
           "code": "683991000119103",
@@ -6686,6 +6978,10 @@
           "term": "Primary adenosquamous carcinoma of lung"
         },
         {
+          "code": "707408006",
+          "term": "Primary small cell non-keratinizing squamous cell carcinoma of lung"
+        },
+        {
           "code": "707410008",
           "term": "Primary solid carcinoma of lung"
         },
@@ -6696,6 +6992,22 @@
         {
           "code": "707451005",
           "term": "Primary adenocarcinoma of lung"
+        },
+        {
+          "code": "707453008",
+          "term": "Primary clear cell squamous cell carcinoma of lung"
+        },
+        {
+          "code": "707454002",
+          "term": "Primary basaloid squamous cell carcinoma of lung"
+        },
+        {
+          "code": "707455001",
+          "term": "Primary papillary squamous cell carcinoma of lung"
+        },
+        {
+          "code": "711414003",
+          "term": "Primary clear cell adenocarcinoma of lung"
         },
         {
           "code": "722425009",
@@ -6716,9 +7028,25 @@
         {
           "code": "830151004",
           "term": "Anaplastic lymphoma kinase fusion oncogene positive non-small cell lung cancer"
+        },
+        {
+          "code": "93864006",
+          "term": "Primary malignant neoplasm of lower lobe of left lung"
+        },
+        {
+          "code": "93991009",
+          "term": "Primary malignant neoplasm of right lower lobe of lung"
         }
       ],
       "fp_codes": [
+        {
+          "code": "12235561000119105",
+          "term": "Large cell carcinoma of left lung"
+        },
+        {
+          "code": "12235601000119105",
+          "term": "Large cell carcinoma of right lung"
+        },
         {
           "code": "12240951000119108",
           "term": "Squamous cell carcinoma of left lung (disorder)"
@@ -6734,10 +7062,6 @@
         {
           "code": "16527641000119108",
           "term": "Primary non-small cell carcinoma of left lung (disorder)"
-        },
-        {
-          "code": "C33",
-          "term": "Malignant neoplasm of trachea"
         },
         {
           "code": "C34",
@@ -6774,60 +7098,12 @@
       ],
       "fn_codes": [
         {
-          "code": "1078931000119107",
-          "term": "Primary adenocarcinoma of lower lobe of right lung"
-        },
-        {
-          "code": "1078951000119101",
-          "term": "Primary adenocarcinoma of middle lobe of right lung"
-        },
-        {
-          "code": "1078961000119104",
-          "term": "Primary adenocarcinoma of upper lobe of right lung"
-        },
-        {
-          "code": "1080451000119101",
-          "term": "Primary large cell carcinoma of lower lobe of left lung"
-        },
-        {
-          "code": "1080471000119105",
-          "term": "Primary large cell carcinoma of upper lobe of left lung"
-        },
-        {
-          "code": "1080501000119104",
-          "term": "Primary large cell carcinoma of lower lobe of right lung"
-        },
-        {
-          "code": "1080521000119108",
-          "term": "Primary large cell carcinoma of middle lobe of right lung"
-        },
-        {
-          "code": "1080531000119106",
-          "term": "Primary large cell carcinoma of upper lobe of right lung"
-        },
-        {
-          "code": "1081911000119101",
-          "term": "Primary small cell carcinoma of middle lobe of right lung"
-        },
-        {
           "code": "1082121000119102",
           "term": "Primary squamous cell carcinoma of left main bronchus"
         },
         {
-          "code": "1082141000119108",
-          "term": "Primary squamous cell carcinoma of upper lobe of left lung"
-        },
-        {
           "code": "1082241000119100",
           "term": "Primary squamous cell carcinoma of right main bronchus"
-        },
-        {
-          "code": "1082251000119103",
-          "term": "Primary squamous cell carcinoma of middle lobe of right lung"
-        },
-        {
-          "code": "1082271000119107",
-          "term": "Primary squamous cell carcinoma of upper lobe of right lung"
         },
         {
           "code": "109371002",
@@ -6840,10 +7116,6 @@
         {
           "code": "10995411000119108",
           "term": "History of malignant carcinoid tumor of bronchus"
-        },
-        {
-          "code": "1141627001",
-          "term": "Non-small cell lung carcinoma with neuregulin 1 gene fusion"
         },
         {
           "code": "1179762006",
@@ -6868,10 +7140,6 @@
         {
           "code": "1197296004",
           "term": "Primary malignant germ cell neoplasm of pleura"
-        },
-        {
-          "code": "12240951000119107",
-          "term": "Squamous cell carcinoma of left lung"
         },
         {
           "code": "1237048006",
@@ -7006,10 +7274,6 @@
           "term": "Acinar cell carcinoma of lung"
         },
         {
-          "code": "1255651005",
-          "term": "Basaloid squamous cell carcinoma of lung"
-        },
-        {
           "code": "1255655001",
           "term": "Giant cell carcinoma of trachea"
         },
@@ -7034,36 +7298,8 @@
           "term": "Primary squamous cell carcinoma of bronchus"
         },
         {
-          "code": "1259368007",
-          "term": "Primary large cell carcinoma of lung"
-        },
-        {
-          "code": "1259369004",
-          "term": "Primary giant cell carcinoma of lung"
-        },
-        {
           "code": "1259370003",
           "term": "Primary oat cell carcinoma of lung"
-        },
-        {
-          "code": "1259409000",
-          "term": "Primary squamous cell carcinoma of bronchus in left lower lobe"
-        },
-        {
-          "code": "1259410005",
-          "term": "Primary squamous cell carcinoma of bronchus in left upper lobe"
-        },
-        {
-          "code": "1259411009",
-          "term": "Primary squamous cell carcinoma of bronchus in right lower lobe"
-        },
-        {
-          "code": "1259412002",
-          "term": "Primary squamous cell carcinoma of bronchus of middle lobe of right lung"
-        },
-        {
-          "code": "1259413007",
-          "term": "Primary squamous cell carcinoma of bronchus in right upper lobe"
         },
         {
           "code": "1259528009",
@@ -7074,20 +7310,12 @@
           "term": "Primary acinar cell cystadenocarcinoma of lung"
         },
         {
-          "code": "1259686004",
-          "term": "Primary non-small cell lung carcinoma with neuregulin 1 gene fusion"
-        },
-        {
           "code": "1259716003",
           "term": "Primary malignant mesothelioma"
         },
         {
           "code": "1259726005",
           "term": "Primary epithelioid hemangioendothelioma of lung"
-        },
-        {
-          "code": "1259757005",
-          "term": "Primary nonsquamous nonsmall cell neoplasm of lung"
         },
         {
           "code": "1259794001",
@@ -7106,18 +7334,6 @@
           "term": "Adenosquamous carcinoma of trachea"
         },
         {
-          "code": "1260056000",
-          "term": "Clear cell squamous cell carcinoma of lung"
-        },
-        {
-          "code": "1260057009",
-          "term": "Mucinous adenocarcinoma of lung"
-        },
-        {
-          "code": "1260059007",
-          "term": "Mucinous bronchiolo-alveolar carcinoma of lung"
-        },
-        {
           "code": "1260060002",
           "term": "Mucinous adenocarcinoma of trachea"
         },
@@ -7130,20 +7346,8 @@
           "term": "Mucinous cystadenocarcinoma of trachea"
         },
         {
-          "code": "1260065007",
-          "term": "Mucinous cystadenocarcinoma of lung"
-        },
-        {
           "code": "1260066008",
           "term": "Papillary adenocarcinoma of trachea"
-        },
-        {
-          "code": "1260070000",
-          "term": "Non-mucinous bronchiolo-alveolar carcinoma of lung"
-        },
-        {
-          "code": "1260071001",
-          "term": "Papillary squamous cell carcinoma of lung"
         },
         {
           "code": "1260072008",
@@ -7154,24 +7358,8 @@
           "term": "Solid carcinoma of trachea"
         },
         {
-          "code": "1260076006",
-          "term": "Small cell non-keratinizing squamous cell carcinoma of lung"
-        },
-        {
-          "code": "1260087003",
-          "term": "Fetal adenocarcinoma of lung"
-        },
-        {
           "code": "1260092001",
           "term": "Mixed mucinous and non-mucinous bronchiolo-alveolar carcinoma of lung"
-        },
-        {
-          "code": "1260093006",
-          "term": "Mixed subtype adenocarcinoma of lung"
-        },
-        {
-          "code": "1260115001",
-          "term": "Salivary gland type carcinoma of lung"
         },
         {
           "code": "1268704000",
@@ -7214,14 +7402,6 @@
           "term": "Metastatic adenocarcinoma to left lung"
         },
         {
-          "code": "15956341000119105",
-          "term": "Adenocarcinoma of left lung"
-        },
-        {
-          "code": "15956381000119100",
-          "term": "Adenocarcinoma of right lung"
-        },
-        {
           "code": "15956661000119102",
           "term": "Metastatic small cell carcinoma to right lung"
         },
@@ -7252,34 +7432,6 @@
         {
           "code": "161428004",
           "term": "History of - * bronchus (context-dependent category)"
-        },
-        {
-          "code": "16527441000119105",
-          "term": "Primary non-small cell carcinoma of lower lobe of left lung"
-        },
-        {
-          "code": "16527481000119100",
-          "term": "Primary non-small cell carcinoma of middle lobe of right lung"
-        },
-        {
-          "code": "16527521000119100",
-          "term": "Primary non-small cell carcinoma of upper lobe of left lung"
-        },
-        {
-          "code": "16527561000119105",
-          "term": "Primary non-small cell carcinoma of lower lobe of right lung"
-        },
-        {
-          "code": "16527601000119105",
-          "term": "Primary non-small cell carcinoma of right lung"
-        },
-        {
-          "code": "16527641000119107",
-          "term": "Primary non-small cell carcinoma of left lung"
-        },
-        {
-          "code": "16527721000119108",
-          "term": "Primary non-small cell carcinoma of upper lobe of right lung"
         },
         {
           "code": "16848061000119103",
@@ -7418,10 +7570,6 @@
           "term": "Clear cell carcinoma of lung"
         },
         {
-          "code": "254631008",
-          "term": "Giant cell carcinoma of lung"
-        },
-        {
           "code": "254633006",
           "term": "Oat cell carcinoma of lung"
         },
@@ -7448,26 +7596,6 @@
         {
           "code": "275533006",
           "term": "History of - * trachea (context-dependent category)"
-        },
-        {
-          "code": "313353007",
-          "term": "Squamous cell carcinoma of bronchus in left lower lobe"
-        },
-        {
-          "code": "313354001",
-          "term": "Squamous cell carcinoma of bronchus in left upper lobe"
-        },
-        {
-          "code": "313355000",
-          "term": "Squamous cell carcinoma of bronchus in right lower lobe"
-        },
-        {
-          "code": "313356004",
-          "term": "Squamous cell carcinoma of bronchus of middle lobe of right lung"
-        },
-        {
-          "code": "313357008",
-          "term": "Squamous cell carcinoma of bronchus in right upper lobe"
         },
         {
           "code": "314954002",
@@ -7546,66 +7674,6 @@
           "term": "History of primary malignant neoplasm of trachea"
         },
         {
-          "code": "422968005",
-          "term": "Non-small cell carcinoma of lung, TNM stage 3"
-        },
-        {
-          "code": "423050000",
-          "term": "Large cell carcinoma of lung, TNM stage 2"
-        },
-        {
-          "code": "423121009",
-          "term": "Non-small cell carcinoma of lung, TNM stage 4"
-        },
-        {
-          "code": "423295000",
-          "term": "Squamous cell carcinoma of lung, TNM stage 1"
-        },
-        {
-          "code": "423468007",
-          "term": "Squamous cell carcinoma of lung, TNM stage 2"
-        },
-        {
-          "code": "423600008",
-          "term": "Large cell carcinoma of lung, TNM stage 4"
-        },
-        {
-          "code": "424132000",
-          "term": "Non-small cell carcinoma of lung, TNM stage 1"
-        },
-        {
-          "code": "424454009",
-          "term": "Adenocarcinoma of lung, stage III"
-        },
-        {
-          "code": "424632001",
-          "term": "Adenocarcinoma of lung, stage II"
-        },
-        {
-          "code": "424938000",
-          "term": "Large cell carcinoma of lung, TNM stage 1"
-        },
-        {
-          "code": "424970000",
-          "term": "Large cell carcinoma of lung, TNM stage 3"
-        },
-        {
-          "code": "424993006",
-          "term": "Adenocarcinoma of lung, stage IV"
-        },
-        {
-          "code": "425048006",
-          "term": "Non-small cell carcinoma of lung, TNM stage 2"
-        },
-        {
-          "code": "425230006",
-          "term": "Squamous cell carcinoma of lung, TNM stage 3"
-        },
-        {
-          "code": "425376008",
-          "term": "Squamous cell carcinoma of lung, TNM stage 4"
-        },
-        {
           "code": "429226001",
           "term": "History of non-small cell malignant neoplasm of lung"
         },
@@ -7616,10 +7684,6 @@
         {
           "code": "432007009",
           "term": "History of malignant mesothelioma of pleura"
-        },
-        {
-          "code": "440173001",
-          "term": "Nonsquamous nonsmall cell neoplasm of lung"
         },
         {
           "code": "448372003",
@@ -7664,22 +7728,6 @@
         {
           "code": "619792361000119102",
           "term": "History of primary small cell carcinoma of lung"
-        },
-        {
-          "code": "67811000119102",
-          "term": "Primary small cell malignant neoplasm of lung, TNM stage 1"
-        },
-        {
-          "code": "67821000119109",
-          "term": "Primary small cell malignant neoplasm of lung, TNM stage 2"
-        },
-        {
-          "code": "67831000119107",
-          "term": "Primary small cell malignant neoplasm of lung, TNM stage 3"
-        },
-        {
-          "code": "67841000119103",
-          "term": "Primary small cell malignant neoplasm of lung, TNM stage 4"
         },
         {
           "code": "707377003",
@@ -7754,28 +7802,12 @@
           "term": "Primary signet ring cell carcinoma of lung"
         },
         {
-          "code": "707408006",
-          "term": "Primary small cell non-keratinizing squamous cell carcinoma of lung"
-        },
-        {
           "code": "707409003",
           "term": "Primary acinar cell carcinoma of lung"
         },
         {
           "code": "707452003",
           "term": "Primary mucinous adenocarcinoma of lung"
-        },
-        {
-          "code": "707453008",
-          "term": "Primary clear cell squamous cell carcinoma of lung"
-        },
-        {
-          "code": "707454002",
-          "term": "Primary basaloid squamous cell carcinoma of lung"
-        },
-        {
-          "code": "707455001",
-          "term": "Primary papillary squamous cell carcinoma of lung"
         },
         {
           "code": "707456000",
@@ -7882,10 +7914,6 @@
           "term": "Primary malignant epithelial neoplasm of trachea"
         },
         {
-          "code": "711414003",
-          "term": "Primary clear cell adenocarcinoma of lung"
-        },
-        {
           "code": "722527003",
           "term": "Primary malignant neuroendocrine neoplasm of bronchus"
         },
@@ -7982,10 +8010,6 @@
           "term": "Primary malignant neoplasm of hilus of lung"
         },
         {
-          "code": "93864006",
-          "term": "Primary malignant neoplasm of lower lobe of left lung"
-        },
-        {
           "code": "93865007",
           "term": "Primary malignant neoplasm of upper lobe of left lung"
         },
@@ -7996,10 +8020,6 @@
         {
           "code": "93882009",
           "term": "Primary malignant neoplasm of main bronchus"
-        },
-        {
-          "code": "93991009",
-          "term": "Primary malignant neoplasm of right lower lobe of lung"
         },
         {
           "code": "93992002",
@@ -8022,27 +8042,27 @@
       {
         "code": "1237048006",
         "term": "Metastatic squamous cell carcinoma to bronchus (disorder)",
-        "rationale": "Metastatic squamous cell carcinoma to bronchus indicates secondary/metastatic disease, not primary lung cancer."
+        "rationale": "Metastatic squamous cell carcinoma to bronchus represents secondary lung involvement from a cancer originating elsewhere, not primary lung cancer."
       },
       {
         "code": "1237469002",
         "term": "Metastatic squamous cell carcinoma to bronchus of left lower lobe (disorder)",
-        "rationale": "Metastatic squamous cell carcinoma to bronchus of left lower lobe indicates secondary/metastatic disease, not primary lung cancer."
+        "rationale": "Metastatic squamous cell carcinoma to bronchus of left lower lobe represents secondary lung involvement, not primary lung cancer."
       },
       {
         "code": "1237516000",
         "term": "Metastatic carcinoma to lower lobe of lung (disorder)",
-        "rationale": "Metastatic carcinoma to lower lobe of lung indicates secondary/metastatic disease, not primary lung cancer."
+        "rationale": "Metastatic carcinoma to lower lobe of lung represents secondary lung involvement from a cancer originating elsewhere, not primary lung cancer."
       },
       {
         "code": "15956261000119100",
         "term": "Metastatic adenocarcinoma to left lung (disorder)",
-        "rationale": "Metastatic adenocarcinoma to left lung indicates secondary/metastatic disease, not primary lung cancer."
+        "rationale": "Metastatic adenocarcinoma to left lung represents secondary lung involvement from a cancer originating elsewhere, not primary lung cancer."
       },
       {
         "code": "15957181000119104",
         "term": "Metastatic squamous cell carcinoma to right lung (disorder)",
-        "rationale": "Metastatic squamous cell carcinoma to right lung indicates secondary/metastatic disease, not primary lung cancer."
+        "rationale": "Metastatic squamous cell carcinoma to right lung represents secondary lung involvement from a cancer originating elsewhere, not primary lung cancer."
       }
     ]
   },
@@ -8050,9 +8070,9 @@
     "count": 0,
     "codes": []
   },
-  "summary": "Recall: 14.6% (53 of 363 reference codes retrieved). Precision: 81.5%. F1: 24.8%. 5 reference codes were incorrectly excluded.",
-  "elapsed_seconds": 37.56,
-  "pipeline_results_count": 100,
+  "summary": "Recall: 35.5% (129 of 363 reference codes retrieved). Precision: 90.2%. F1: 51.0%. 5 reference codes were incorrectly excluded.",
+  "elapsed_seconds": 225.62,
+  "pipeline_results_count": 178,
   "scored_codes": [
     {
       "code": "C34",
@@ -8060,7 +8080,7 @@
       "vocabulary": "ICD-10 (WHO)",
       "decision": "include",
       "confidence": 0.99,
-      "rationale": "Direct code for malignant neoplasm of bronchus and lung, the primary condition being queried.",
+      "rationale": "ICD-10 code for malignant neoplasm of bronchus and lung, the primary diagnosis for lung cancer.",
       "sources": [
         "ChromaDB"
       ],
@@ -8077,7 +8097,7 @@
       "vocabulary": "ICD-10 (WHO)",
       "decision": "include",
       "confidence": 0.99,
-      "rationale": "Anatomically-specific subtype of primary lung cancer (main bronchus); represents an instance of the queried condition.",
+      "rationale": "Anatomically-specific subtype of primary lung cancer affecting the main bronchus.",
       "sources": [
         "ChromaDB"
       ],
@@ -8094,7 +8114,7 @@
       "vocabulary": "ICD-10 (WHO)",
       "decision": "include",
       "confidence": 0.99,
-      "rationale": "Anatomically-specific subtype of primary lung cancer (upper lobe); represents an instance of the queried condition.",
+      "rationale": "Anatomically-specific subtype of primary lung cancer affecting the upper lobe.",
       "sources": [
         "ChromaDB"
       ],
@@ -8111,7 +8131,7 @@
       "vocabulary": "ICD-10 (WHO)",
       "decision": "include",
       "confidence": 0.99,
-      "rationale": "Anatomically-specific subtype of primary lung cancer (middle lobe); represents an instance of the queried condition.",
+      "rationale": "Anatomically-specific subtype of primary lung cancer affecting the middle lobe.",
       "sources": [
         "ChromaDB"
       ],
@@ -8128,7 +8148,7 @@
       "vocabulary": "ICD-10 (WHO)",
       "decision": "include",
       "confidence": 0.99,
-      "rationale": "Anatomically-specific subtype of primary lung cancer (lower lobe); represents an instance of the queried condition.",
+      "rationale": "Anatomically-specific subtype of primary lung cancer affecting the lower lobe.",
       "sources": [
         "ChromaDB"
       ],
@@ -8145,7 +8165,7 @@
       "vocabulary": "ICD-10 (WHO)",
       "decision": "include",
       "confidence": 0.99,
-      "rationale": "Overlapping lesion of bronchus and lung is a subtype of primary lung cancer; represents an instance of the queried condition.",
+      "rationale": "Anatomically-specific subtype of primary lung cancer with overlapping lesions.",
       "sources": [
         "ChromaDB"
       ],
@@ -8162,7 +8182,7 @@
       "vocabulary": "ICD-10 (WHO)",
       "decision": "include",
       "confidence": 0.99,
-      "rationale": "Unspecified bronchus or lung malignancy is a subtype of primary lung cancer; represents an instance of the queried condition.",
+      "rationale": "Unspecified primary lung cancer, a valid instance of the queried condition.",
       "sources": [
         "ChromaDB"
       ],
@@ -8179,7 +8199,7 @@
       "vocabulary": "SNOMED CT",
       "decision": "include",
       "confidence": 0.99,
-      "rationale": "Primary adenocarcinoma of lower lobe of left lung is a histological subtype of primary lung cancer; represents an instance of the queried condition.",
+      "rationale": "Primary adenocarcinoma of lower lobe of left lung is a histological subtype of primary lung cancer.",
       "sources": [
         "ChromaDB",
         "OpenCodelists (nhsd-primary-care-domain-refsets)"
@@ -8188,7 +8208,7 @@
       "usage_status": "counted",
       "usage_source": "NHS Digital primary care SNOMED reporting",
       "usage_setting": "primary_care",
-      "concept_id": null,
+      "concept_id": 36712707,
       "dmd_level": null
     },
     {
@@ -8197,7 +8217,7 @@
       "vocabulary": "SNOMED CT",
       "decision": "include",
       "confidence": 0.99,
-      "rationale": "Primary adenocarcinoma of upper lobe of left lung is a histological subtype of primary lung cancer; represents an instance of the queried condition.",
+      "rationale": "Primary adenocarcinoma of upper lobe of left lung is a histological subtype of primary lung cancer.",
       "sources": [
         "ChromaDB",
         "OpenCodelists (nhsd-primary-care-domain-refsets)"
@@ -8206,7 +8226,7 @@
       "usage_status": "counted",
       "usage_source": "NHS Digital primary care SNOMED reporting",
       "usage_setting": "primary_care",
-      "concept_id": null,
+      "concept_id": 36712708,
       "dmd_level": null
     },
     {
@@ -8215,7 +8235,7 @@
       "vocabulary": "SNOMED CT",
       "decision": "include",
       "confidence": 0.99,
-      "rationale": "Primary small cell carcinoma of lower lobe of left lung is a histological subtype of primary lung cancer; represents an instance of the queried condition.",
+      "rationale": "Primary small cell carcinoma of lower lobe of left lung is a histological subtype of primary lung cancer.",
       "sources": [
         "ChromaDB",
         "OpenCodelists (nhsd-primary-care-domain-refsets)"
@@ -8224,7 +8244,7 @@
       "usage_status": "counted",
       "usage_source": "NHS Digital primary care SNOMED reporting",
       "usage_setting": "primary_care",
-      "concept_id": null,
+      "concept_id": 602159,
       "dmd_level": null
     },
     {
@@ -8233,7 +8253,7 @@
       "vocabulary": "SNOMED CT",
       "decision": "include",
       "confidence": 0.99,
-      "rationale": "Primary small cell carcinoma of upper lobe of left lung is a histological subtype of primary lung cancer; represents an instance of the queried condition.",
+      "rationale": "Primary small cell carcinoma of upper lobe of left lung is a histological subtype of primary lung cancer.",
       "sources": [
         "ChromaDB",
         "OpenCodelists (nhsd-primary-care-domain-refsets)"
@@ -8242,7 +8262,7 @@
       "usage_status": "counted",
       "usage_source": "NHS Digital primary care SNOMED reporting",
       "usage_setting": "primary_care",
-      "concept_id": null,
+      "concept_id": 602161,
       "dmd_level": null
     },
     {
@@ -8251,7 +8271,7 @@
       "vocabulary": "SNOMED CT",
       "decision": "include",
       "confidence": 0.99,
-      "rationale": "Primary small cell carcinoma of lower lobe of right lung is a histological subtype of primary lung cancer; represents an instance of the queried condition.",
+      "rationale": "Primary small cell carcinoma of lower lobe of right lung is a histological subtype of primary lung cancer.",
       "sources": [
         "ChromaDB",
         "OpenCodelists (nhsd-primary-care-domain-refsets)"
@@ -8260,7 +8280,7 @@
       "usage_status": "counted",
       "usage_source": "NHS Digital primary care SNOMED reporting",
       "usage_setting": "primary_care",
-      "concept_id": null,
+      "concept_id": 605476,
       "dmd_level": null
     },
     {
@@ -8288,7 +8308,7 @@
       "vocabulary": "SNOMED CT",
       "decision": "include",
       "confidence": 0.99,
-      "rationale": "Malignant neoplasm of upper lobe bronchus or lung is an anatomically-specific variant of primary lung cancer and directly represents the condition.",
+      "rationale": "Malignant neoplasm of upper lobe lung is a primary lung cancer with anatomical specificity; term explicitly names the primary condition.",
       "sources": [
         "ChromaDB",
         "OpenCodelists (nhsd-primary-care-domain-refsets)"
@@ -8297,7 +8317,7 @@
       "usage_status": "counted",
       "usage_source": "NHS Digital primary care SNOMED reporting",
       "usage_setting": "primary_care",
-      "concept_id": null,
+      "concept_id": 4151250,
       "dmd_level": null
     },
     {
@@ -8306,7 +8326,7 @@
       "vocabulary": "SNOMED CT",
       "decision": "include",
       "confidence": 0.99,
-      "rationale": "Primary malignant neoplasm of lower lobe bronchus or lung is an anatomically-specific variant of primary lung cancer explicitly marked as primary.",
+      "rationale": "Primary malignant neoplasm of lower lobe lung is a primary lung cancer with anatomical specificity; term explicitly names the primary condition.",
       "sources": [
         "ChromaDB",
         "OpenCodelists (nhsd-primary-care-domain-refsets)"
@@ -8315,7 +8335,7 @@
       "usage_status": "counted",
       "usage_source": "NHS Digital primary care SNOMED reporting",
       "usage_setting": "primary_care",
-      "concept_id": null,
+      "concept_id": 4157454,
       "dmd_level": null
     },
     {
@@ -8324,7 +8344,7 @@
       "vocabulary": "SNOMED CT",
       "decision": "include",
       "confidence": 0.99,
-      "rationale": "Carcinoma of lower lobe of lung is an anatomically-specific variant of primary lung cancer and directly represents the condition.",
+      "rationale": "Carcinoma of lower lobe of lung is a primary lung cancer with anatomical specificity; term explicitly names the primary condition.",
       "sources": [
         "ChromaDB",
         "OpenCodelists (nhsd-primary-care-domain-refsets)"
@@ -8333,7 +8353,7 @@
       "usage_status": "counted",
       "usage_source": "NHS Digital primary care SNOMED reporting",
       "usage_setting": "primary_care",
-      "concept_id": null,
+      "concept_id": 4155293,
       "dmd_level": null
     },
     {
@@ -8342,7 +8362,7 @@
       "vocabulary": "SNOMED CT",
       "decision": "include",
       "confidence": 0.99,
-      "rationale": "Adenocarcinoma of lung stage I is a histological subtype with staging information for primary lung cancer and directly represents the condition.",
+      "rationale": "Adenocarcinoma of lung stage I is a histological subtype and severity variant of primary lung cancer; directly represents the queried condition.",
       "sources": [
         "ChromaDB",
         "OpenCodelists (nhsd-primary-care-domain-refsets)"
@@ -8351,7 +8371,7 @@
       "usage_status": "counted",
       "usage_source": "NHS Digital primary care SNOMED reporting",
       "usage_setting": "primary_care",
-      "concept_id": null,
+      "concept_id": 4308784,
       "dmd_level": null
     },
     {
@@ -8360,7 +8380,7 @@
       "vocabulary": "SNOMED CT",
       "decision": "include",
       "confidence": 0.99,
-      "rationale": "Non-small cell lung cancer with EGFR expression status is a molecular subtype of primary lung cancer and directly represents the condition.",
+      "rationale": "Non-small cell lung cancer with EGFR expression is a molecular subtype of primary lung cancer; directly represents the queried condition.",
       "sources": [
         "OpenCodelists (nhsd-primary-care-domain-refsets)",
         "QOF Business Rules 2024-25"
@@ -8369,7 +8389,7 @@
       "usage_status": "withheld_below_5",
       "usage_source": "NHS Digital primary care SNOMED reporting",
       "usage_setting": "primary_care",
-      "concept_id": null,
+      "concept_id": 4143825,
       "dmd_level": null
     },
     {
@@ -8378,7 +8398,7 @@
       "vocabulary": "SNOMED CT",
       "decision": "include",
       "confidence": 0.99,
-      "rationale": "Non-small cell lung cancer negative for EGFR expression is a molecular subtype of primary lung cancer and directly represents the condition.",
+      "rationale": "Non-small cell lung cancer negative for EGFR expression is a molecular subtype of primary lung cancer; directly represents the queried condition.",
       "sources": [
         "OpenCodelists (nhsd-primary-care-domain-refsets)",
         "QOF Business Rules 2024-25"
@@ -8387,7 +8407,7 @@
       "usage_status": "withheld_below_5",
       "usage_source": "NHS Digital primary care SNOMED reporting",
       "usage_setting": "primary_care",
-      "concept_id": null,
+      "concept_id": 4140471,
       "dmd_level": null
     },
     {
@@ -8396,7 +8416,7 @@
       "vocabulary": "SNOMED CT",
       "decision": "include",
       "confidence": 0.99,
-      "rationale": "Extensive stage primary small cell carcinoma of lung is a staging variant of primary small cell lung cancer and directly represents the condition.",
+      "rationale": "Extensive stage primary small cell carcinoma of lung is a severity variant of primary lung cancer; directly represents the queried condition.",
       "sources": [
         "ChromaDB",
         "OpenCodelists (nhsd-primary-care-domain-refsets)"
@@ -8405,7 +8425,7 @@
       "usage_status": "counted",
       "usage_source": "NHS Digital primary care SNOMED reporting",
       "usage_setting": "primary_care",
-      "concept_id": null,
+      "concept_id": 36713366,
       "dmd_level": null
     },
     {
@@ -8414,7 +8434,7 @@
       "vocabulary": "SNOMED CT",
       "decision": "include",
       "confidence": 0.99,
-      "rationale": "Non-small cell lung cancer with EGFR mutation is a molecular subtype of primary lung cancer and directly represents the condition.",
+      "rationale": "Non-small cell lung cancer with EGFR mutation is a molecular subtype of primary lung cancer; directly represents the queried condition.",
       "sources": [
         "OpenCodelists (nhsd-primary-care-domain-refsets)",
         "QOF Business Rules 2024-25"
@@ -8423,7 +8443,7 @@
       "usage_status": "withheld_below_5",
       "usage_source": "NHS Digital primary care SNOMED reporting",
       "usage_setting": "primary_care",
-      "concept_id": null,
+      "concept_id": 45766129,
       "dmd_level": null
     },
     {
@@ -8432,7 +8452,7 @@
       "vocabulary": "SNOMED CT",
       "decision": "include",
       "confidence": 0.99,
-      "rationale": "Non-small cell lung cancer without EGFR mutation is a molecular subtype of primary lung cancer and directly represents the condition.",
+      "rationale": "Non-small cell lung cancer without EGFR mutation is a molecular subtype of primary lung cancer; directly represents the queried condition.",
       "sources": [
         "OpenCodelists (nhsd-primary-care-domain-refsets)",
         "QOF Business Rules 2024-25"
@@ -8441,7 +8461,7 @@
       "usage_status": "not_in_dataset",
       "usage_source": null,
       "usage_setting": null,
-      "concept_id": null,
+      "concept_id": 45766131,
       "dmd_level": null
     },
     {
@@ -8450,7 +8470,7 @@
       "vocabulary": "SNOMED CT",
       "decision": "include",
       "confidence": 0.99,
-      "rationale": "Primary adenosquamous carcinoma of lung is a histological subtype explicitly marked as primary and directly represents the condition.",
+      "rationale": "Primary adenosquamous carcinoma of lung is a histological subtype of primary lung cancer; directly represents the queried condition.",
       "sources": [
         "ChromaDB",
         "OpenCodelists (nhsd-primary-care-domain-refsets)"
@@ -8459,7 +8479,7 @@
       "usage_status": "counted",
       "usage_source": "NHS Digital primary care SNOMED reporting",
       "usage_setting": "primary_care",
-      "concept_id": null,
+      "concept_id": 45768881,
       "dmd_level": null
     },
     {
@@ -8468,7 +8488,7 @@
       "vocabulary": "SNOMED CT",
       "decision": "include",
       "confidence": 0.99,
-      "rationale": "Primary solid carcinoma of lung is a histological subtype explicitly marked as primary and directly represents the condition.",
+      "rationale": "Primary solid carcinoma of lung is a histological subtype of primary lung cancer; directly represents the queried condition.",
       "sources": [
         "ChromaDB",
         "OpenCodelists (nhsd-primary-care-domain-refsets)"
@@ -8477,7 +8497,7 @@
       "usage_status": "withheld_below_5",
       "usage_source": "NHS Digital primary care SNOMED reporting",
       "usage_setting": "primary_care",
-      "concept_id": null,
+      "concept_id": 45768885,
       "dmd_level": null
     },
     {
@@ -8486,7 +8506,7 @@
       "vocabulary": "SNOMED CT",
       "decision": "include",
       "confidence": 0.99,
-      "rationale": "Primary papillary adenocarcinoma of lung is a histological subtype explicitly marked as primary and directly represents the condition.",
+      "rationale": "Primary papillary adenocarcinoma of lung is a histological subtype of primary lung cancer; directly represents the queried condition.",
       "sources": [
         "ChromaDB",
         "OpenCodelists (nhsd-primary-care-domain-refsets)"
@@ -8495,7 +8515,7 @@
       "usage_status": "withheld_below_5",
       "usage_source": "NHS Digital primary care SNOMED reporting",
       "usage_setting": "primary_care",
-      "concept_id": null,
+      "concept_id": 45768886,
       "dmd_level": null
     },
     {
@@ -8504,7 +8524,7 @@
       "vocabulary": "SNOMED CT",
       "decision": "include",
       "confidence": 0.99,
-      "rationale": "Primary adenocarcinoma of lung is a major histological subtype explicitly marked as primary and directly represents the condition.",
+      "rationale": "Primary adenocarcinoma of lung is a major histological subtype of primary lung cancer; directly represents the queried condition.",
       "sources": [
         "ChromaDB",
         "OpenCodelists (nhsd-primary-care-domain-refsets)"
@@ -8522,7 +8542,7 @@
       "vocabulary": "SNOMED CT",
       "decision": "include",
       "confidence": 0.99,
-      "rationale": "ROS1 positive non-small cell lung cancer is a molecular subtype of primary lung cancer and directly represents the condition.",
+      "rationale": "ROS1 positive non-small cell lung cancer is a molecular subtype of primary lung cancer; directly represents the queried condition.",
       "sources": [
         "OpenCodelists (nhsd-primary-care-domain-refsets)",
         "QOF Business Rules 2024-25"
@@ -8531,7 +8551,7 @@
       "usage_status": "withheld_below_5",
       "usage_source": "NHS Digital primary care SNOMED reporting",
       "usage_setting": "primary_care",
-      "concept_id": null,
+      "concept_id": 36716426,
       "dmd_level": null
     },
     {
@@ -8540,7 +8560,7 @@
       "vocabulary": "SNOMED CT",
       "decision": "include",
       "confidence": 0.99,
-      "rationale": "Squamous non-small cell lung cancer is a histological subtype of primary lung cancer and directly represents the condition.",
+      "rationale": "Squamous non-small cell lung cancer is a histological subtype of primary lung cancer; directly represents the queried condition.",
       "sources": [
         "ChromaDB",
         "OpenCodelists (nhsd-primary-care-domain-refsets)",
@@ -8550,7 +8570,7 @@
       "usage_status": "counted",
       "usage_source": "NHS Digital primary care SNOMED reporting",
       "usage_setting": "primary_care",
-      "concept_id": 37109576,
+      "concept_id": null,
       "dmd_level": null
     },
     {
@@ -8559,7 +8579,7 @@
       "vocabulary": "SNOMED CT",
       "decision": "include",
       "confidence": 0.99,
-      "rationale": "ALK fusion oncogene negative non-small cell lung cancer is a molecular subtype of primary lung cancer and directly represents the condition.",
+      "rationale": "ALK fusion oncogene negative non-small cell lung cancer is a molecular subtype of primary lung cancer; directly represents the queried condition.",
       "sources": [
         "OpenCodelists (nhsd-primary-care-domain-refsets)",
         "QOF Business Rules 2024-25"
@@ -8568,7 +8588,7 @@
       "usage_status": "not_in_dataset",
       "usage_source": null,
       "usage_setting": null,
-      "concept_id": null,
+      "concept_id": 3654297,
       "dmd_level": null
     },
     {
@@ -8577,7 +8597,7 @@
       "vocabulary": "SNOMED CT",
       "decision": "include",
       "confidence": 0.99,
-      "rationale": "ROS1 negative non-small cell lung cancer is a molecular subtype of primary lung cancer and directly represents the condition.",
+      "rationale": "ROS1 negative non-small cell lung cancer is a molecular subtype of primary lung cancer; directly represents the queried condition.",
       "sources": [
         "OpenCodelists (nhsd-primary-care-domain-refsets)",
         "QOF Business Rules 2024-25"
@@ -8586,7 +8606,7 @@
       "usage_status": "not_in_dataset",
       "usage_source": null,
       "usage_setting": null,
-      "concept_id": null,
+      "concept_id": 3654301,
       "dmd_level": null
     },
     {
@@ -8595,7 +8615,7 @@
       "vocabulary": "SNOMED CT",
       "decision": "include",
       "confidence": 0.99,
-      "rationale": "ALK fusion oncogene positive non-small cell lung cancer is a molecular subtype of primary lung cancer and directly represents the condition.",
+      "rationale": "ALK fusion oncogene positive non-small cell lung cancer is a molecular subtype of primary lung cancer; directly represents the queried condition.",
       "sources": [
         "OpenCodelists (nhsd-primary-care-domain-refsets)",
         "QOF Business Rules 2024-25"
@@ -8604,7 +8624,63 @@
       "usage_status": "not_in_dataset",
       "usage_source": null,
       "usage_setting": null,
-      "concept_id": null,
+      "concept_id": 3654352,
+      "dmd_level": null
+    },
+    {
+      "code": "1259727001",
+      "term": "Primary non-small cell lung cancer (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.98,
+      "rationale": "Primary non-small cell lung cancer explicitly names the queried condition and is a major histological category.",
+      "sources": [
+        "ChromaDB",
+        "OpenCodelists (nhsd-primary-care-domain-refsets)",
+        "QOF Business Rules 2024-25"
+      ],
+      "usage_frequency": 520,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": 37166577,
+      "dmd_level": null
+    },
+    {
+      "code": "1259754003",
+      "term": "Primary squamous non-small cell lung cancer (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.98,
+      "rationale": "Primary squamous non-small cell lung cancer is a specific histological subtype of primary lung cancer.",
+      "sources": [
+        "ChromaDB",
+        "OpenCodelists (nhsd-primary-care-domain-refsets)",
+        "QOF Business Rules 2024-25"
+      ],
+      "usage_frequency": 90,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": 37166601,
+      "dmd_level": null
+    },
+    {
+      "code": "1268348008",
+      "term": "Primary small cell carcinoma of lung (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.98,
+      "rationale": "Primary small cell carcinoma of lung explicitly names the queried condition and is a major histological category.",
+      "sources": [
+        "ChromaDB",
+        "OpenCodelists (nhsd-primary-care-domain-refsets)"
+      ],
+      "usage_frequency": 310,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": 37167517,
       "dmd_level": null
     },
     {
@@ -8622,7 +8698,7 @@
       "usage_status": "counted",
       "usage_source": "NHS Digital primary care SNOMED reporting",
       "usage_setting": "primary_care",
-      "concept_id": null,
+      "concept_id": 602696,
       "dmd_level": null
     },
     {
@@ -8640,7 +8716,7 @@
       "usage_status": "counted",
       "usage_source": "NHS Digital primary care SNOMED reporting",
       "usage_setting": "primary_care",
-      "concept_id": null,
+      "concept_id": 602697,
       "dmd_level": null
     },
     {
@@ -8658,7 +8734,7 @@
       "usage_status": "counted",
       "usage_source": "NHS Digital primary care SNOMED reporting",
       "usage_setting": "primary_care",
-      "concept_id": null,
+      "concept_id": 602167,
       "dmd_level": null
     },
     {
@@ -8703,7 +8779,7 @@
       "vocabulary": "SNOMED CT",
       "decision": "include",
       "confidence": 0.95,
-      "rationale": "Primary squamous cell carcinoma of right lung explicitly names primary lung cancer with anatomical specificity.",
+      "rationale": "Primary squamous cell carcinoma of right lung is a specific anatomical variant of primary lung cancer.",
       "sources": [
         "ChromaDB",
         "OpenCodelists (nhsd-primary-care-domain-refsets)"
@@ -8712,7 +8788,7 @@
       "usage_status": "withheld_below_5",
       "usage_source": "NHS Digital primary care SNOMED reporting",
       "usage_setting": "primary_care",
-      "concept_id": null,
+      "concept_id": 37166328,
       "dmd_level": null
     },
     {
@@ -8721,7 +8797,7 @@
       "vocabulary": "SNOMED CT",
       "decision": "include",
       "confidence": 0.95,
-      "rationale": "Primary squamous cell carcinoma of left lung explicitly names primary lung cancer with anatomical specificity.",
+      "rationale": "Primary squamous cell carcinoma of left lung is a specific anatomical variant of primary lung cancer.",
       "sources": [
         "ChromaDB",
         "OpenCodelists (nhsd-primary-care-domain-refsets)"
@@ -8730,45 +8806,7 @@
       "usage_status": "counted",
       "usage_source": "NHS Digital primary care SNOMED reporting",
       "usage_setting": "primary_care",
-      "concept_id": null,
-      "dmd_level": null
-    },
-    {
-      "code": "1259727001",
-      "term": "Primary non-small cell lung cancer (disorder)",
-      "vocabulary": "SNOMED CT",
-      "decision": "include",
-      "confidence": 0.95,
-      "rationale": "Primary non-small cell lung cancer explicitly names primary lung cancer and is a major histological category.",
-      "sources": [
-        "ChromaDB",
-        "OpenCodelists (nhsd-primary-care-domain-refsets)",
-        "QOF Business Rules 2024-25"
-      ],
-      "usage_frequency": 520,
-      "usage_status": "counted",
-      "usage_source": "NHS Digital primary care SNOMED reporting",
-      "usage_setting": "primary_care",
-      "concept_id": 37166577,
-      "dmd_level": null
-    },
-    {
-      "code": "1259754003",
-      "term": "Primary squamous non-small cell lung cancer (disorder)",
-      "vocabulary": "SNOMED CT",
-      "decision": "include",
-      "confidence": 0.95,
-      "rationale": "Primary squamous non-small cell lung cancer explicitly names primary lung cancer with histological specificity.",
-      "sources": [
-        "ChromaDB",
-        "OpenCodelists (nhsd-primary-care-domain-refsets)",
-        "QOF Business Rules 2024-25"
-      ],
-      "usage_frequency": 90,
-      "usage_status": "counted",
-      "usage_source": "NHS Digital primary care SNOMED reporting",
-      "usage_setting": "primary_care",
-      "concept_id": 37166601,
+      "concept_id": 37166330,
       "dmd_level": null
     },
     {
@@ -8777,7 +8815,7 @@
       "vocabulary": "SNOMED CT",
       "decision": "include",
       "confidence": 0.95,
-      "rationale": "Primary reactive oxygen species 1 positive non-small cell lung cancer explicitly names primary lung cancer with molecular marker.",
+      "rationale": "Primary ROS1 positive non-small cell lung cancer is a molecular variant of primary lung cancer.",
       "sources": [
         "OpenCodelists (nhsd-primary-care-domain-refsets)",
         "QOF Business Rules 2024-25"
@@ -8786,7 +8824,7 @@
       "usage_status": "counted",
       "usage_source": "NHS Digital primary care SNOMED reporting",
       "usage_setting": "primary_care",
-      "concept_id": null,
+      "concept_id": 37166605,
       "dmd_level": null
     },
     {
@@ -8795,7 +8833,7 @@
       "vocabulary": "SNOMED CT",
       "decision": "include",
       "confidence": 0.95,
-      "rationale": "Primary non-small cell lung cancer with EGFR mutation explicitly names primary lung cancer with molecular marker.",
+      "rationale": "Primary non-small cell lung cancer with EGFR mutation is a molecular variant of primary lung cancer.",
       "sources": [
         "OpenCodelists (nhsd-primary-care-domain-refsets)",
         "QOF Business Rules 2024-25"
@@ -8804,7 +8842,7 @@
       "usage_status": "not_in_dataset",
       "usage_source": null,
       "usage_setting": null,
-      "concept_id": null,
+      "concept_id": 37166607,
       "dmd_level": null
     },
     {
@@ -8813,7 +8851,7 @@
       "vocabulary": "SNOMED CT",
       "decision": "include",
       "confidence": 0.95,
-      "rationale": "Primary non-small cell lung cancer without EGFR mutation explicitly names primary lung cancer with molecular marker.",
+      "rationale": "Primary non-small cell lung cancer without EGFR mutation is a molecular variant of primary lung cancer.",
       "sources": [
         "OpenCodelists (nhsd-primary-care-domain-refsets)",
         "QOF Business Rules 2024-25"
@@ -8822,7 +8860,7 @@
       "usage_status": "not_in_dataset",
       "usage_source": null,
       "usage_setting": null,
-      "concept_id": null,
+      "concept_id": 37166608,
       "dmd_level": null
     },
     {
@@ -8831,7 +8869,7 @@
       "vocabulary": "SNOMED CT",
       "decision": "include",
       "confidence": 0.95,
-      "rationale": "Primary non-small cell lung cancer negative for EGFR expression explicitly names primary lung cancer with molecular marker.",
+      "rationale": "Primary non-small cell lung cancer negative for EGFR expression is a molecular variant of primary lung cancer.",
       "sources": [
         "OpenCodelists (nhsd-primary-care-domain-refsets)",
         "QOF Business Rules 2024-25"
@@ -8840,7 +8878,7 @@
       "usage_status": "not_in_dataset",
       "usage_source": null,
       "usage_setting": null,
-      "concept_id": null,
+      "concept_id": 37166615,
       "dmd_level": null
     },
     {
@@ -8849,7 +8887,7 @@
       "vocabulary": "SNOMED CT",
       "decision": "include",
       "confidence": 0.95,
-      "rationale": "Primary non-small cell lung cancer positive for EGFR expression explicitly names primary lung cancer with molecular marker.",
+      "rationale": "Primary non-small cell lung cancer positive for EGFR expression is a molecular variant of primary lung cancer.",
       "sources": [
         "OpenCodelists (nhsd-primary-care-domain-refsets)",
         "QOF Business Rules 2024-25"
@@ -8858,7 +8896,7 @@
       "usage_status": "withheld_below_5",
       "usage_source": "NHS Digital primary care SNOMED reporting",
       "usage_setting": "primary_care",
-      "concept_id": null,
+      "concept_id": 37166624,
       "dmd_level": null
     },
     {
@@ -8867,7 +8905,7 @@
       "vocabulary": "SNOMED CT",
       "decision": "include",
       "confidence": 0.95,
-      "rationale": "Primary ROS1 negative non-small cell lung cancer explicitly names primary lung cancer with molecular marker.",
+      "rationale": "Primary ROS1 negative non-small cell lung cancer is a molecular variant of primary lung cancer.",
       "sources": [
         "OpenCodelists (nhsd-primary-care-domain-refsets)",
         "QOF Business Rules 2024-25"
@@ -8876,7 +8914,7 @@
       "usage_status": "withheld_below_5",
       "usage_source": "NHS Digital primary care SNOMED reporting",
       "usage_setting": "primary_care",
-      "concept_id": null,
+      "concept_id": 37166666,
       "dmd_level": null
     },
     {
@@ -8885,7 +8923,7 @@
       "vocabulary": "SNOMED CT",
       "decision": "include",
       "confidence": 0.95,
-      "rationale": "Primary ALK fusion oncogene positive non-small cell lung cancer explicitly names primary lung cancer with molecular marker.",
+      "rationale": "Primary ALK fusion oncogene positive non-small cell lung cancer is a molecular variant of primary lung cancer.",
       "sources": [
         "OpenCodelists (nhsd-primary-care-domain-refsets)",
         "QOF Business Rules 2024-25"
@@ -8894,7 +8932,7 @@
       "usage_status": "withheld_below_5",
       "usage_source": "NHS Digital primary care SNOMED reporting",
       "usage_setting": "primary_care",
-      "concept_id": null,
+      "concept_id": 37166667,
       "dmd_level": null
     },
     {
@@ -8903,7 +8941,7 @@
       "vocabulary": "SNOMED CT",
       "decision": "include",
       "confidence": 0.95,
-      "rationale": "Primary ALK fusion oncogene negative non-small cell lung cancer explicitly names primary lung cancer with molecular marker.",
+      "rationale": "Primary ALK fusion oncogene negative non-small cell lung cancer is a molecular variant of primary lung cancer.",
       "sources": [
         "OpenCodelists (nhsd-primary-care-domain-refsets)",
         "QOF Business Rules 2024-25"
@@ -8912,25 +8950,7 @@
       "usage_status": "not_in_dataset",
       "usage_source": null,
       "usage_setting": null,
-      "concept_id": null,
-      "dmd_level": null
-    },
-    {
-      "code": "1268348008",
-      "term": "Primary small cell carcinoma of lung (disorder)",
-      "vocabulary": "SNOMED CT",
-      "decision": "include",
-      "confidence": 0.95,
-      "rationale": "Primary small cell carcinoma of lung explicitly names primary lung cancer and is a major histological category.",
-      "sources": [
-        "ChromaDB",
-        "OpenCodelists (nhsd-primary-care-domain-refsets)"
-      ],
-      "usage_frequency": 310,
-      "usage_status": "counted",
-      "usage_source": "NHS Digital primary care SNOMED reporting",
-      "usage_setting": "primary_care",
-      "concept_id": 37167517,
+      "concept_id": 37166668,
       "dmd_level": null
     },
     {
@@ -8939,7 +8959,7 @@
       "vocabulary": "SNOMED CT",
       "decision": "include",
       "confidence": 0.95,
-      "rationale": "Primary small cell carcinoma of right lung explicitly names primary lung cancer with anatomical specificity.",
+      "rationale": "Primary small cell carcinoma of right lung is a specific anatomical variant of primary lung cancer.",
       "sources": [
         "ChromaDB",
         "OpenCodelists (nhsd-primary-care-domain-refsets)"
@@ -8948,7 +8968,7 @@
       "usage_status": "counted",
       "usage_source": "NHS Digital primary care SNOMED reporting",
       "usage_setting": "primary_care",
-      "concept_id": null,
+      "concept_id": 608925,
       "dmd_level": null
     },
     {
@@ -8957,7 +8977,7 @@
       "vocabulary": "SNOMED CT",
       "decision": "include",
       "confidence": 0.95,
-      "rationale": "Primary small cell carcinoma of left lung explicitly names primary lung cancer with anatomical specificity.",
+      "rationale": "Primary small cell carcinoma of left lung is a specific anatomical variant of primary lung cancer.",
       "sources": [
         "ChromaDB",
         "OpenCodelists (nhsd-primary-care-domain-refsets)"
@@ -8966,7 +8986,7 @@
       "usage_status": "counted",
       "usage_source": "NHS Digital primary care SNOMED reporting",
       "usage_setting": "primary_care",
-      "concept_id": null,
+      "concept_id": 608926,
       "dmd_level": null
     },
     {
@@ -8975,7 +8995,7 @@
       "vocabulary": "SNOMED CT",
       "decision": "include",
       "confidence": 0.95,
-      "rationale": "Primary non-small cell carcinoma of lower lobe of left lung explicitly names primary lung cancer with anatomical specificity.",
+      "rationale": "Primary non-small cell carcinoma of lower lobe of left lung is a specific anatomical variant of primary lung cancer.",
       "sources": [
         "ChromaDB"
       ],
@@ -8992,7 +9012,7 @@
       "vocabulary": "SNOMED CT",
       "decision": "include",
       "confidence": 0.95,
-      "rationale": "Primary non-small cell carcinoma of left lung explicitly names primary lung cancer with anatomical specificity.",
+      "rationale": "Primary non-small cell carcinoma of left lung is a specific anatomical variant of primary lung cancer.",
       "sources": [
         "ChromaDB"
       ],
@@ -9000,6 +9020,23 @@
       "usage_status": "not_in_dataset",
       "usage_source": null,
       "usage_setting": null,
+      "concept_id": null,
+      "dmd_level": null
+    },
+    {
+      "code": "D02.2",
+      "term": "Carcinoma in situ: Bronchus and lung",
+      "vocabulary": "ICD-10 (WHO)",
+      "decision": "include",
+      "confidence": 0.9,
+      "rationale": "Carcinoma in situ of bronchus and lung is a pre-malignant/early stage form of primary lung cancer.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "usage_frequency": 181,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital HES inpatient FCEs",
+      "usage_setting": "secondary_care_hes",
       "concept_id": null,
       "dmd_level": null
     },
@@ -9044,7 +9081,7 @@
       "vocabulary": "SNOMED CT",
       "decision": "include",
       "confidence": 0.9,
-      "rationale": "Clear cell adenocarcinoma of lung is a primary lung cancer histological subtype without explicit 'metastatic' designation.",
+      "rationale": "Clear cell adenocarcinoma of lung is a histological subtype of primary lung cancer.",
       "sources": [
         "ChromaDB",
         "OpenCodelists (nhsd-primary-care-domain-refsets)"
@@ -9062,7 +9099,7 @@
       "vocabulary": "SNOMED CT",
       "decision": "include",
       "confidence": 0.9,
-      "rationale": "Adenosquamous carcinoma of lung is a primary lung cancer histological subtype without explicit 'metastatic' designation.",
+      "rationale": "Adenosquamous carcinoma of lung is a histological subtype of primary lung cancer.",
       "sources": [
         "ChromaDB",
         "OpenCodelists (nhsd-primary-care-domain-refsets)"
@@ -9080,7 +9117,7 @@
       "vocabulary": "SNOMED CT",
       "decision": "include",
       "confidence": 0.9,
-      "rationale": "Papillary adenocarcinoma of lung is a primary lung cancer histological subtype without explicit 'metastatic' designation.",
+      "rationale": "Papillary adenocarcinoma of lung is a histological subtype of primary lung cancer.",
       "sources": [
         "ChromaDB",
         "OpenCodelists (nhsd-primary-care-domain-refsets)"
@@ -9098,7 +9135,7 @@
       "vocabulary": "SNOMED CT",
       "decision": "include",
       "confidence": 0.9,
-      "rationale": "Solid carcinoma of lung is a primary lung cancer histological subtype without explicit 'metastatic' designation.",
+      "rationale": "Solid carcinoma of lung is a histological subtype of primary lung cancer.",
       "sources": [
         "ChromaDB",
         "OpenCodelists (nhsd-primary-care-domain-refsets)"
@@ -9107,24 +9144,7 @@
       "usage_status": "withheld_below_5",
       "usage_source": "NHS Digital primary care SNOMED reporting",
       "usage_setting": "primary_care",
-      "concept_id": null,
-      "dmd_level": null
-    },
-    {
-      "code": "15956341000119104",
-      "term": "Adenocarcinoma of left lung (disorder)",
-      "vocabulary": "SNOMED CT",
-      "decision": "include",
-      "confidence": 0.9,
-      "rationale": "Adenocarcinoma of left lung is a primary lung cancer histological type without explicit 'metastatic' designation.",
-      "sources": [
-        "ChromaDB"
-      ],
-      "usage_frequency": null,
-      "usage_status": "not_in_dataset",
-      "usage_source": null,
-      "usage_setting": null,
-      "concept_id": null,
+      "concept_id": 37166780,
       "dmd_level": null
     },
     {
@@ -9133,7 +9153,7 @@
       "vocabulary": "SNOMED CT",
       "decision": "include",
       "confidence": 0.9,
-      "rationale": "Adenocarcinoma of lung is a primary lung cancer histological type without explicit 'metastatic' designation.",
+      "rationale": "Adenocarcinoma of lung represents a primary lung cancer histological type without explicit 'metastatic' designation.",
       "sources": [
         "ChromaDB",
         "OpenCodelists (nhsd-primary-care-domain-refsets)"
@@ -9151,7 +9171,7 @@
       "vocabulary": "SNOMED CT",
       "decision": "include",
       "confidence": 0.9,
-      "rationale": "Large cell carcinoma of lung is a primary lung cancer histological type without explicit 'metastatic' designation.",
+      "rationale": "Large cell carcinoma of lung is a histological subtype of primary lung cancer.",
       "sources": [
         "ChromaDB",
         "OpenCodelists (nhsd-primary-care-domain-refsets)"
@@ -9169,7 +9189,7 @@
       "vocabulary": "SNOMED CT",
       "decision": "include",
       "confidence": 0.9,
-      "rationale": "Small cell carcinoma of lung is a primary lung cancer histological type without explicit 'metastatic' designation.",
+      "rationale": "Small cell carcinoma of lung is a major histological category of primary lung cancer.",
       "sources": [
         "ChromaDB",
         "OpenCodelists (nhsd-primary-care-domain-refsets)"
@@ -9187,7 +9207,7 @@
       "vocabulary": "SNOMED CT",
       "decision": "include",
       "confidence": 0.9,
-      "rationale": "Squamous cell carcinoma of lung is a primary lung cancer histological type without explicit 'metastatic' designation.",
+      "rationale": "Squamous cell carcinoma of lung is a major histological category of primary lung cancer.",
       "sources": [
         "ChromaDB",
         "OpenCodelists (nhsd-primary-care-domain-refsets)"
@@ -9200,37 +9220,1346 @@
       "dmd_level": null
     },
     {
-      "code": "D02.2",
-      "term": "Carcinoma in situ: Bronchus and lung",
-      "vocabulary": "ICD-10 (WHO)",
+      "code": "15956341000119104",
+      "term": "Adenocarcinoma of left lung (disorder)",
+      "vocabulary": "SNOMED CT",
       "decision": "include",
       "confidence": 0.85,
-      "rationale": "Carcinoma in situ of bronchus and lung is a pre-malignant/early stage form of primary lung cancer; clinically relevant to the condition.",
+      "rationale": "Adenocarcinoma of left lung represents a primary lung cancer histological type without explicit 'metastatic' designation.",
       "sources": [
         "ChromaDB"
       ],
-      "usage_frequency": 181,
-      "usage_status": "counted",
-      "usage_source": "NHS Digital HES inpatient FCEs",
-      "usage_setting": "secondary_care_hes",
+      "usage_frequency": null,
+      "usage_status": "not_in_dataset",
+      "usage_source": null,
+      "usage_setting": null,
       "concept_id": null,
       "dmd_level": null
     },
     {
-      "code": "C33",
-      "term": "Malignant neoplasm of trachea",
-      "vocabulary": "ICD-10 (WHO)",
-      "decision": "uncertain",
-      "confidence": 0.65,
-      "rationale": "Tracheal malignancy is anatomically adjacent to lung but distinct; may be considered part of primary respiratory tract cancer depending on scope.",
+      "code": "1259411009",
+      "term": "Primary squamous cell carcinoma of bronchus in right lower lobe",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.7,
+      "rationale": "Expanded via OMOP 'Is a' from concept_id 602167",
       "sources": [
-        "ChromaDB"
+        "OMOPHub hierarchy"
       ],
-      "usage_frequency": 155,
-      "usage_status": "counted",
-      "usage_source": "NHS Digital HES inpatient FCEs",
-      "usage_setting": "secondary_care_hes",
-      "concept_id": null,
+      "usage_frequency": null,
+      "usage_status": null,
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": 37166278,
+      "dmd_level": null
+    },
+    {
+      "code": "1259409000",
+      "term": "Primary squamous cell carcinoma of bronchus in left lower lobe",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.7,
+      "rationale": "Expanded via OMOP 'Is a' from concept_id 602697",
+      "sources": [
+        "OMOPHub hierarchy"
+      ],
+      "usage_frequency": null,
+      "usage_status": null,
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": 37166276,
+      "dmd_level": null
+    },
+    {
+      "code": "1082251000119103",
+      "term": "Primary squamous cell carcinoma of middle lobe of right lung",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.7,
+      "rationale": "Expanded via OMOP 'Is a' from concept_id 37166328",
+      "sources": [
+        "OMOPHub hierarchy"
+      ],
+      "usage_frequency": null,
+      "usage_status": null,
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": 602169,
+      "dmd_level": null
+    },
+    {
+      "code": "1082271000119107",
+      "term": "Primary squamous cell carcinoma of upper lobe of right lung",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.7,
+      "rationale": "Expanded via OMOP 'Is a' from concept_id 37166328",
+      "sources": [
+        "OMOPHub hierarchy"
+      ],
+      "usage_frequency": null,
+      "usage_status": null,
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": 602171,
+      "dmd_level": null
+    },
+    {
+      "code": "1259412002",
+      "term": "Primary squamous cell carcinoma of bronchus of middle lobe of right lung",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.7,
+      "rationale": "Expanded via OMOP 'Is a' from concept_id 37166328",
+      "sources": [
+        "OMOPHub hierarchy"
+      ],
+      "usage_frequency": null,
+      "usage_status": null,
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": 37166279,
+      "dmd_level": null
+    },
+    {
+      "code": "1259413007",
+      "term": "Primary squamous cell carcinoma of bronchus in right upper lobe",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.7,
+      "rationale": "Expanded via OMOP 'Is a' from concept_id 37166328",
+      "sources": [
+        "OMOPHub hierarchy"
+      ],
+      "usage_frequency": null,
+      "usage_status": null,
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": 37166280,
+      "dmd_level": null
+    },
+    {
+      "code": "313355000",
+      "term": "Squamous cell carcinoma of bronchus in right lower lobe",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.7,
+      "rationale": "Expanded via OMOP 'Is a' from concept_id 36712816",
+      "sources": [
+        "OMOPHub hierarchy"
+      ],
+      "usage_frequency": null,
+      "usage_status": null,
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": 4196725,
+      "dmd_level": null
+    },
+    {
+      "code": "313356004",
+      "term": "Squamous cell carcinoma of bronchus of middle lobe of right lung",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.7,
+      "rationale": "Expanded via OMOP 'Is a' from concept_id 36712816",
+      "sources": [
+        "OMOPHub hierarchy"
+      ],
+      "usage_frequency": null,
+      "usage_status": null,
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": 4197582,
+      "dmd_level": null
+    },
+    {
+      "code": "313357008",
+      "term": "Squamous cell carcinoma of bronchus in right upper lobe",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.7,
+      "rationale": "Expanded via OMOP 'Is a' from concept_id 36712816",
+      "sources": [
+        "OMOPHub hierarchy"
+      ],
+      "usage_frequency": null,
+      "usage_status": null,
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": 4197583,
+      "dmd_level": null
+    },
+    {
+      "code": "707408006",
+      "term": "Primary small cell non-keratinizing squamous cell carcinoma of lung",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.7,
+      "rationale": "Expanded via OMOP 'Is a' from concept_id 37166238",
+      "sources": [
+        "OMOPHub hierarchy"
+      ],
+      "usage_frequency": null,
+      "usage_status": null,
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": 45768883,
+      "dmd_level": null
+    },
+    {
+      "code": "707453008",
+      "term": "Primary clear cell squamous cell carcinoma of lung",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.7,
+      "rationale": "Expanded via OMOP 'Is a' from concept_id 37166238",
+      "sources": [
+        "OMOPHub hierarchy"
+      ],
+      "usage_frequency": null,
+      "usage_status": null,
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": 45768918,
+      "dmd_level": null
+    },
+    {
+      "code": "707454002",
+      "term": "Primary basaloid squamous cell carcinoma of lung",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.7,
+      "rationale": "Expanded via OMOP 'Is a' from concept_id 37166238",
+      "sources": [
+        "OMOPHub hierarchy"
+      ],
+      "usage_frequency": null,
+      "usage_status": null,
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": 45768919,
+      "dmd_level": null
+    },
+    {
+      "code": "707455001",
+      "term": "Primary papillary squamous cell carcinoma of lung",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.7,
+      "rationale": "Expanded via OMOP 'Is a' from concept_id 37166238",
+      "sources": [
+        "OMOPHub hierarchy"
+      ],
+      "usage_frequency": null,
+      "usage_status": null,
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": 45772938,
+      "dmd_level": null
+    },
+    {
+      "code": "1082141000119108",
+      "term": "Primary squamous cell carcinoma of upper lobe of left lung",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.7,
+      "rationale": "Expanded via OMOP 'Is a' from concept_id 37166238",
+      "sources": [
+        "OMOPHub hierarchy"
+      ],
+      "usage_frequency": null,
+      "usage_status": null,
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": 602163,
+      "dmd_level": null
+    },
+    {
+      "code": "1259410005",
+      "term": "Primary squamous cell carcinoma of bronchus in left upper lobe",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.7,
+      "rationale": "Expanded via OMOP 'Is a' from concept_id 37166238",
+      "sources": [
+        "OMOPHub hierarchy"
+      ],
+      "usage_frequency": null,
+      "usage_status": null,
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": 37166277,
+      "dmd_level": null
+    },
+    {
+      "code": "16527601000119105",
+      "term": "Primary non-small cell carcinoma of right lung",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.7,
+      "rationale": "Expanded via OMOP 'Is a' from concept_id 37166577",
+      "sources": [
+        "OMOPHub hierarchy"
+      ],
+      "usage_frequency": null,
+      "usage_status": null,
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": 609079,
+      "dmd_level": null
+    },
+    {
+      "code": "16527641000119107",
+      "term": "Primary non-small cell carcinoma of left lung",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.7,
+      "rationale": "Expanded via OMOP 'Is a' from concept_id 37166577",
+      "sources": [
+        "OMOPHub hierarchy"
+      ],
+      "usage_frequency": null,
+      "usage_status": null,
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": 609080,
+      "dmd_level": null
+    },
+    {
+      "code": "1259686004",
+      "term": "Primary non-small cell lung carcinoma with NRG1 fusion",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.7,
+      "rationale": "Expanded via OMOP 'Is a' from concept_id 37166577",
+      "sources": [
+        "OMOPHub hierarchy"
+      ],
+      "usage_frequency": null,
+      "usage_status": null,
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": 37166536,
+      "dmd_level": null
+    },
+    {
+      "code": "1259757005",
+      "term": "Primary nonsquamous nonsmall cell neoplasm of lung",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.7,
+      "rationale": "Expanded via OMOP 'Is a' from concept_id 37166577",
+      "sources": [
+        "OMOPHub hierarchy"
+      ],
+      "usage_frequency": null,
+      "usage_status": null,
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": 37166604,
+      "dmd_level": null
+    },
+    {
+      "code": "16527441000119105",
+      "term": "Primary non-small cell carcinoma of lower lobe of left lung",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.7,
+      "rationale": "Expanded via OMOP 'Is a' from concept_id 37166577",
+      "sources": [
+        "OMOPHub hierarchy"
+      ],
+      "usage_frequency": null,
+      "usage_status": null,
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": 609075,
+      "dmd_level": null
+    },
+    {
+      "code": "16527481000119100",
+      "term": "Primary non-small cell carcinoma of middle lobe of right lung",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.7,
+      "rationale": "Expanded via OMOP 'Is a' from concept_id 37166577",
+      "sources": [
+        "OMOPHub hierarchy"
+      ],
+      "usage_frequency": null,
+      "usage_status": null,
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": 609076,
+      "dmd_level": null
+    },
+    {
+      "code": "16527521000119100",
+      "term": "Primary non-small cell carcinoma of upper lobe of left lung",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.7,
+      "rationale": "Expanded via OMOP 'Is a' from concept_id 37166577",
+      "sources": [
+        "OMOPHub hierarchy"
+      ],
+      "usage_frequency": null,
+      "usage_status": null,
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": 609077,
+      "dmd_level": null
+    },
+    {
+      "code": "16527561000119105",
+      "term": "Primary non-small cell carcinoma of lower lobe of right lung",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.7,
+      "rationale": "Expanded via OMOP 'Is a' from concept_id 37166577",
+      "sources": [
+        "OMOPHub hierarchy"
+      ],
+      "usage_frequency": null,
+      "usage_status": null,
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": 609078,
+      "dmd_level": null
+    },
+    {
+      "code": "16527721000119108",
+      "term": "Primary non-small cell carcinoma of upper lobe of right lung",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.7,
+      "rationale": "Expanded via OMOP 'Is a' from concept_id 37166577",
+      "sources": [
+        "OMOPHub hierarchy"
+      ],
+      "usage_frequency": null,
+      "usage_status": null,
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": 609081,
+      "dmd_level": null
+    },
+    {
+      "code": "711414003",
+      "term": "Primary clear cell adenocarcinoma of lung",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.7,
+      "rationale": "Expanded via OMOP 'Is a' from concept_id 37166735",
+      "sources": [
+        "OMOPHub hierarchy"
+      ],
+      "usage_frequency": null,
+      "usage_status": null,
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": 46272955,
+      "dmd_level": null
+    },
+    {
+      "code": "67811000119102",
+      "term": "Primary small cell malignant neoplasm of lung, TNM stage 1",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.7,
+      "rationale": "Expanded via OMOP 'Is a' from concept_id 37167517",
+      "sources": [
+        "OMOPHub hierarchy"
+      ],
+      "usage_frequency": null,
+      "usage_status": null,
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": 37395648,
+      "dmd_level": null
+    },
+    {
+      "code": "67821000119109",
+      "term": "Primary small cell malignant neoplasm of lung, TNM stage 2",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.7,
+      "rationale": "Expanded via OMOP 'Is a' from concept_id 37167517",
+      "sources": [
+        "OMOPHub hierarchy"
+      ],
+      "usage_frequency": null,
+      "usage_status": null,
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": 37395649,
+      "dmd_level": null
+    },
+    {
+      "code": "67831000119107",
+      "term": "Primary small cell malignant neoplasm of lung, TNM stage 3",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.7,
+      "rationale": "Expanded via OMOP 'Is a' from concept_id 37167517",
+      "sources": [
+        "OMOPHub hierarchy"
+      ],
+      "usage_frequency": null,
+      "usage_status": null,
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": 37395650,
+      "dmd_level": null
+    },
+    {
+      "code": "67841000119103",
+      "term": "Primary small cell malignant neoplasm of lung, TNM stage 4",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.7,
+      "rationale": "Expanded via OMOP 'Is a' from concept_id 37167517",
+      "sources": [
+        "OMOPHub hierarchy"
+      ],
+      "usage_frequency": null,
+      "usage_status": null,
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": 37395651,
+      "dmd_level": null
+    },
+    {
+      "code": "1081911000119101",
+      "term": "Primary small cell carcinoma of middle lobe of right lung",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.7,
+      "rationale": "Expanded via OMOP 'Is a' from concept_id 37167517",
+      "sources": [
+        "OMOPHub hierarchy"
+      ],
+      "usage_frequency": null,
+      "usage_status": null,
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": 602695,
+      "dmd_level": null
+    },
+    {
+      "code": "254631008",
+      "term": "Giant cell carcinoma of lung",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.7,
+      "rationale": "Expanded via OMOP 'Is a' from concept_id 4110589",
+      "sources": [
+        "OMOPHub hierarchy"
+      ],
+      "usage_frequency": null,
+      "usage_status": null,
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": 4110590,
+      "dmd_level": null
+    },
+    {
+      "code": "423050000",
+      "term": "Large cell carcinoma of lung, TNM stage 2",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.7,
+      "rationale": "Expanded via OMOP 'Is a' from concept_id 4110589",
+      "sources": [
+        "OMOPHub hierarchy"
+      ],
+      "usage_frequency": null,
+      "usage_status": null,
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": 4307118,
+      "dmd_level": null
+    },
+    {
+      "code": "424970000",
+      "term": "Large cell carcinoma of lung, TNM stage 3",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.7,
+      "rationale": "Expanded via OMOP 'Is a' from concept_id 4110589",
+      "sources": [
+        "OMOPHub hierarchy"
+      ],
+      "usage_frequency": null,
+      "usage_status": null,
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": 4312768,
+      "dmd_level": null
+    },
+    {
+      "code": "423600008",
+      "term": "Large cell carcinoma of lung, TNM stage 4",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.7,
+      "rationale": "Expanded via OMOP 'Is a' from concept_id 4110589",
+      "sources": [
+        "OMOPHub hierarchy"
+      ],
+      "usage_frequency": null,
+      "usage_status": null,
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": 4313751,
+      "dmd_level": null
+    },
+    {
+      "code": "424938000",
+      "term": "Large cell carcinoma of lung, TNM stage 1",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.7,
+      "rationale": "Expanded via OMOP 'Is a' from concept_id 4110589",
+      "sources": [
+        "OMOPHub hierarchy"
+      ],
+      "usage_frequency": null,
+      "usage_status": null,
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": 4314040,
+      "dmd_level": null
+    },
+    {
+      "code": "12235561000119105",
+      "term": "Large cell carcinoma of left lung",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.7,
+      "rationale": "Expanded via OMOP 'Is a' from concept_id 4110589",
+      "sources": [
+        "OMOPHub hierarchy"
+      ],
+      "usage_frequency": null,
+      "usage_status": null,
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": 36686537,
+      "dmd_level": null
+    },
+    {
+      "code": "12235601000119105",
+      "term": "Large cell carcinoma of right lung",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.7,
+      "rationale": "Expanded via OMOP 'Is a' from concept_id 4110589",
+      "sources": [
+        "OMOPHub hierarchy"
+      ],
+      "usage_frequency": null,
+      "usage_status": null,
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": 36686538,
+      "dmd_level": null
+    },
+    {
+      "code": "1259368007",
+      "term": "Primary large cell carcinoma of lung",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.7,
+      "rationale": "Expanded via OMOP 'Is a' from concept_id 4110589",
+      "sources": [
+        "OMOPHub hierarchy"
+      ],
+      "usage_frequency": null,
+      "usage_status": null,
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": 37166235,
+      "dmd_level": null
+    },
+    {
+      "code": "1080501000119104",
+      "term": "Primary large cell carcinoma of lower lobe of right lung",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.7,
+      "rationale": "Expanded via OMOP 'Is a' from concept_id 4110589",
+      "sources": [
+        "OMOPHub hierarchy"
+      ],
+      "usage_frequency": null,
+      "usage_status": null,
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": 602682,
+      "dmd_level": null
+    },
+    {
+      "code": "1080451000119101",
+      "term": "Primary large cell carcinoma of lower lobe of left lung",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.7,
+      "rationale": "Expanded via OMOP 'Is a' from concept_id 4110589",
+      "sources": [
+        "OMOPHub hierarchy"
+      ],
+      "usage_frequency": null,
+      "usage_status": null,
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": 605445,
+      "dmd_level": null
+    },
+    {
+      "code": "1080471000119105",
+      "term": "Primary large cell carcinoma of upper lobe of left lung",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.7,
+      "rationale": "Expanded via OMOP 'Is a' from concept_id 4110589",
+      "sources": [
+        "OMOPHub hierarchy"
+      ],
+      "usage_frequency": null,
+      "usage_status": null,
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": 605446,
+      "dmd_level": null
+    },
+    {
+      "code": "1080531000119106",
+      "term": "Primary large cell carcinoma of upper lobe of right lung",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.7,
+      "rationale": "Expanded via OMOP 'Is a' from concept_id 4110589",
+      "sources": [
+        "OMOPHub hierarchy"
+      ],
+      "usage_frequency": null,
+      "usage_status": null,
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": 605447,
+      "dmd_level": null
+    },
+    {
+      "code": "1080521000119108",
+      "term": "Primary large cell carcinoma of middle lobe of right lung",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.7,
+      "rationale": "Expanded via OMOP 'Is a' from concept_id 4110589",
+      "sources": [
+        "OMOPHub hierarchy"
+      ],
+      "usage_frequency": null,
+      "usage_status": null,
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": 1244169,
+      "dmd_level": null
+    },
+    {
+      "code": "1259369004",
+      "term": "Primary giant cell carcinoma of lung",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.7,
+      "rationale": "Expanded via OMOP 'Is a' from concept_id 4110589",
+      "sources": [
+        "OMOPHub hierarchy"
+      ],
+      "usage_frequency": null,
+      "usage_status": null,
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": 37166236,
+      "dmd_level": null
+    },
+    {
+      "code": "1141627001",
+      "term": "Non-small cell lung carcinoma with NRG1 fusion",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.7,
+      "rationale": "Expanded via OMOP 'Is a' from concept_id 4115276",
+      "sources": [
+        "OMOPHub hierarchy"
+      ],
+      "usage_frequency": null,
+      "usage_status": null,
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": 605821,
+      "dmd_level": null
+    },
+    {
+      "code": "440173001",
+      "term": "Nonsquamous nonsmall cell neoplasm of lung",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.7,
+      "rationale": "Expanded via OMOP 'Is a' from concept_id 4115276",
+      "sources": [
+        "OMOPHub hierarchy"
+      ],
+      "usage_frequency": null,
+      "usage_status": null,
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": 4208307,
+      "dmd_level": null
+    },
+    {
+      "code": "423121009",
+      "term": "Non-small cell carcinoma of lung, TNM stage 4",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.7,
+      "rationale": "Expanded via OMOP 'Is a' from concept_id 4115276",
+      "sources": [
+        "OMOPHub hierarchy"
+      ],
+      "usage_frequency": null,
+      "usage_status": null,
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": 4308479,
+      "dmd_level": null
+    },
+    {
+      "code": "424132000",
+      "term": "Non-small cell carcinoma of lung, TNM stage 1",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.7,
+      "rationale": "Expanded via OMOP 'Is a' from concept_id 4115276",
+      "sources": [
+        "OMOPHub hierarchy"
+      ],
+      "usage_frequency": null,
+      "usage_status": null,
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": 4310703,
+      "dmd_level": null
+    },
+    {
+      "code": "422968005",
+      "term": "Non-small cell carcinoma of lung, TNM stage 3",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.7,
+      "rationale": "Expanded via OMOP 'Is a' from concept_id 4115276",
+      "sources": [
+        "OMOPHub hierarchy"
+      ],
+      "usage_frequency": null,
+      "usage_status": null,
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": 4311997,
+      "dmd_level": null
+    },
+    {
+      "code": "425048006",
+      "term": "Non-small cell carcinoma of lung, TNM stage 2",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.7,
+      "rationale": "Expanded via OMOP 'Is a' from concept_id 4115276",
+      "sources": [
+        "OMOPHub hierarchy"
+      ],
+      "usage_frequency": null,
+      "usage_status": null,
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": 4314172,
+      "dmd_level": null
+    },
+    {
+      "code": "423295000",
+      "term": "Squamous cell carcinoma of lung, TNM stage 1",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.7,
+      "rationale": "Expanded via OMOP 'Is a' from concept_id 4110705",
+      "sources": [
+        "OMOPHub hierarchy"
+      ],
+      "usage_frequency": null,
+      "usage_status": null,
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": 4310448,
+      "dmd_level": null
+    },
+    {
+      "code": "425376008",
+      "term": "Squamous cell carcinoma of lung, TNM stage 4",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.7,
+      "rationale": "Expanded via OMOP 'Is a' from concept_id 4110705",
+      "sources": [
+        "OMOPHub hierarchy"
+      ],
+      "usage_frequency": null,
+      "usage_status": null,
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": 4312274,
+      "dmd_level": null
+    },
+    {
+      "code": "423468007",
+      "term": "Squamous cell carcinoma of lung, TNM stage 2",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.7,
+      "rationale": "Expanded via OMOP 'Is a' from concept_id 4110705",
+      "sources": [
+        "OMOPHub hierarchy"
+      ],
+      "usage_frequency": null,
+      "usage_status": null,
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": 4313200,
+      "dmd_level": null
+    },
+    {
+      "code": "425230006",
+      "term": "Squamous cell carcinoma of lung, TNM stage 3",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.7,
+      "rationale": "Expanded via OMOP 'Is a' from concept_id 4110705",
+      "sources": [
+        "OMOPHub hierarchy"
+      ],
+      "usage_frequency": null,
+      "usage_status": null,
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": 4322387,
+      "dmd_level": null
+    },
+    {
+      "code": "12240951000119107",
+      "term": "Squamous cell carcinoma of left lung",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.7,
+      "rationale": "Expanded via OMOP 'Is a' from concept_id 4110705",
+      "sources": [
+        "OMOPHub hierarchy"
+      ],
+      "usage_frequency": null,
+      "usage_status": null,
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": 36712815,
+      "dmd_level": null
+    },
+    {
+      "code": "1255651005",
+      "term": "Basaloid squamous cell carcinoma of lung",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.7,
+      "rationale": "Expanded via OMOP 'Is a' from concept_id 4110705",
+      "sources": [
+        "OMOPHub hierarchy"
+      ],
+      "usage_frequency": null,
+      "usage_status": null,
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": 37165766,
+      "dmd_level": null
+    },
+    {
+      "code": "1260056000",
+      "term": "Clear cell squamous cell carcinoma of lung",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.7,
+      "rationale": "Expanded via OMOP 'Is a' from concept_id 4110705",
+      "sources": [
+        "OMOPHub hierarchy"
+      ],
+      "usage_frequency": null,
+      "usage_status": null,
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": 37166759,
+      "dmd_level": null
+    },
+    {
+      "code": "1260071001",
+      "term": "Papillary squamous cell carcinoma of lung",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.7,
+      "rationale": "Expanded via OMOP 'Is a' from concept_id 4110705",
+      "sources": [
+        "OMOPHub hierarchy"
+      ],
+      "usage_frequency": null,
+      "usage_status": null,
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": 37166774,
+      "dmd_level": null
+    },
+    {
+      "code": "1260076006",
+      "term": "Small cell non-keratinizing squamous cell carcinoma of lung",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.7,
+      "rationale": "Expanded via OMOP 'Is a' from concept_id 4110705",
+      "sources": [
+        "OMOPHub hierarchy"
+      ],
+      "usage_frequency": null,
+      "usage_status": null,
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": 37166779,
+      "dmd_level": null
+    },
+    {
+      "code": "313353007",
+      "term": "Squamous cell carcinoma of bronchus in left lower lobe",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.7,
+      "rationale": "Expanded via OMOP 'Is a' from concept_id 4110705",
+      "sources": [
+        "OMOPHub hierarchy"
+      ],
+      "usage_frequency": null,
+      "usage_status": null,
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": 4196724,
+      "dmd_level": null
+    },
+    {
+      "code": "313354001",
+      "term": "Squamous cell carcinoma of bronchus in left upper lobe",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.7,
+      "rationale": "Expanded via OMOP 'Is a' from concept_id 4110705",
+      "sources": [
+        "OMOPHub hierarchy"
+      ],
+      "usage_frequency": null,
+      "usage_status": null,
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": 4197581,
+      "dmd_level": null
+    },
+    {
+      "code": "424454009",
+      "term": "Adenocarcinoma of lung, stage III",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.7,
+      "rationale": "Expanded via OMOP 'Is a' from concept_id 4112738",
+      "sources": [
+        "OMOPHub hierarchy"
+      ],
+      "usage_frequency": null,
+      "usage_status": null,
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": 4311452,
+      "dmd_level": null
+    },
+    {
+      "code": "424993006",
+      "term": "Adenocarcinoma of lung, stage IV",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.7,
+      "rationale": "Expanded via OMOP 'Is a' from concept_id 4112738",
+      "sources": [
+        "OMOPHub hierarchy"
+      ],
+      "usage_frequency": null,
+      "usage_status": null,
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": 4314156,
+      "dmd_level": null
+    },
+    {
+      "code": "424632001",
+      "term": "Adenocarcinoma of lung, stage II",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.7,
+      "rationale": "Expanded via OMOP 'Is a' from concept_id 4112738",
+      "sources": [
+        "OMOPHub hierarchy"
+      ],
+      "usage_frequency": null,
+      "usage_status": null,
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": 4314832,
+      "dmd_level": null
+    },
+    {
+      "code": "15956381000119100",
+      "term": "Adenocarcinoma of right lung",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.7,
+      "rationale": "Expanded via OMOP 'Is a' from concept_id 4112738",
+      "sources": [
+        "OMOPHub hierarchy"
+      ],
+      "usage_frequency": null,
+      "usage_status": null,
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": 36712981,
+      "dmd_level": null
+    },
+    {
+      "code": "1260057009",
+      "term": "Mucinous adenocarcinoma of lung",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.7,
+      "rationale": "Expanded via OMOP 'Is a' from concept_id 4112738",
+      "sources": [
+        "OMOPHub hierarchy"
+      ],
+      "usage_frequency": null,
+      "usage_status": null,
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": 37166760,
+      "dmd_level": null
+    },
+    {
+      "code": "1260059007",
+      "term": "Mucinous bronchiolo-alveolar carcinoma of lung",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.7,
+      "rationale": "Expanded via OMOP 'Is a' from concept_id 4112738",
+      "sources": [
+        "OMOPHub hierarchy"
+      ],
+      "usage_frequency": null,
+      "usage_status": null,
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": 37166762,
+      "dmd_level": null
+    },
+    {
+      "code": "1260065007",
+      "term": "Mucinous cystadenocarcinoma of lung",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.7,
+      "rationale": "Expanded via OMOP 'Is a' from concept_id 4112738",
+      "sources": [
+        "OMOPHub hierarchy"
+      ],
+      "usage_frequency": null,
+      "usage_status": null,
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": 37166768,
+      "dmd_level": null
+    },
+    {
+      "code": "1260070000",
+      "term": "Non-mucinous bronchiolo-alveolar carcinoma of lung",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.7,
+      "rationale": "Expanded via OMOP 'Is a' from concept_id 4112738",
+      "sources": [
+        "OMOPHub hierarchy"
+      ],
+      "usage_frequency": null,
+      "usage_status": null,
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": 37166773,
+      "dmd_level": null
+    },
+    {
+      "code": "1260087003",
+      "term": "Fetal adenocarcinoma of lung",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.7,
+      "rationale": "Expanded via OMOP 'Is a' from concept_id 4112738",
+      "sources": [
+        "OMOPHub hierarchy"
+      ],
+      "usage_frequency": null,
+      "usage_status": null,
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": 37166789,
+      "dmd_level": null
+    },
+    {
+      "code": "1260093006",
+      "term": "Mixed subtype adenocarcinoma of lung",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.7,
+      "rationale": "Expanded via OMOP 'Is a' from concept_id 4112738",
+      "sources": [
+        "OMOPHub hierarchy"
+      ],
+      "usage_frequency": null,
+      "usage_status": null,
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": 37166795,
+      "dmd_level": null
+    },
+    {
+      "code": "1260115001",
+      "term": "Salivary gland type carcinoma of lung",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.7,
+      "rationale": "Expanded via OMOP 'Is a' from concept_id 4112738",
+      "sources": [
+        "OMOPHub hierarchy"
+      ],
+      "usage_frequency": null,
+      "usage_status": null,
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": 37166809,
+      "dmd_level": null
+    },
+    {
+      "code": "15956341000119105",
+      "term": "Adenocarcinoma of left lung",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.7,
+      "rationale": "Expanded via OMOP 'Is a' from concept_id 4112738",
+      "sources": [
+        "OMOPHub hierarchy"
+      ],
+      "usage_frequency": null,
+      "usage_status": null,
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": 42539251,
+      "dmd_level": null
+    },
+    {
+      "code": "1078951000119101",
+      "term": "Primary adenocarcinoma of middle lobe of right lung",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.7,
+      "rationale": "Expanded via OMOP 'Is a' from concept_id 4112738",
+      "sources": [
+        "OMOPHub hierarchy"
+      ],
+      "usage_frequency": null,
+      "usage_status": null,
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": 602150,
+      "dmd_level": null
+    },
+    {
+      "code": "93991009",
+      "term": "Primary malignant neoplasm of right lower lobe of lung",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.7,
+      "rationale": "Expanded via OMOP 'Is a' from concept_id 4157454",
+      "sources": [
+        "OMOPHub hierarchy"
+      ],
+      "usage_frequency": null,
+      "usage_status": null,
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": 4246148,
+      "dmd_level": null
+    },
+    {
+      "code": "93864006",
+      "term": "Primary malignant neoplasm of lower lobe of left lung",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.7,
+      "rationale": "Expanded via OMOP 'Is a' from concept_id 4157454",
+      "sources": [
+        "OMOPHub hierarchy"
+      ],
+      "usage_frequency": null,
+      "usage_status": null,
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": 4247832,
+      "dmd_level": null
+    },
+    {
+      "code": "1078931000119107",
+      "term": "Primary adenocarcinoma of lower lobe of right lung",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.7,
+      "rationale": "Expanded via OMOP 'Is a' from concept_id 45768916",
+      "sources": [
+        "OMOPHub hierarchy"
+      ],
+      "usage_frequency": null,
+      "usage_status": null,
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": 36712709,
+      "dmd_level": null
+    },
+    {
+      "code": "1078961000119104",
+      "term": "Primary adenocarcinoma of upper lobe of right lung",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.7,
+      "rationale": "Expanded via OMOP 'Is a' from concept_id 45768916",
+      "sources": [
+        "OMOPHub hierarchy"
+      ],
+      "usage_frequency": null,
+      "usage_status": null,
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": 36717017,
       "dmd_level": null
     },
     {
@@ -9239,7 +10568,7 @@
       "vocabulary": "ICD-10 (WHO)",
       "decision": "exclude",
       "confidence": 0.99,
-      "rationale": "Liver cell carcinoma is a malignancy of the liver, not the lung; unrelated to primary lung cancer.",
+      "rationale": "Liver cell carcinoma is a malignancy of the liver, not primary lung cancer.",
       "sources": [
         "ChromaDB"
       ],
@@ -9256,7 +10585,7 @@
       "vocabulary": "ICD-10 (WHO)",
       "decision": "exclude",
       "confidence": 0.99,
-      "rationale": "Secondary malignant neoplasm of lung represents metastatic disease, not primary lung cancer; explicitly excluded by query specification.",
+      "rationale": "Secondary malignant neoplasm of lung represents metastatic disease, not primary lung cancer.",
       "sources": [
         "ChromaDB"
       ],
@@ -9273,7 +10602,7 @@
       "vocabulary": "ICD-10 (WHO)",
       "decision": "exclude",
       "confidence": 0.99,
-      "rationale": "Benign neoplasm of bronchus and lung is not malignant cancer; does not represent the queried condition of primary lung cancer.",
+      "rationale": "Benign neoplasm of bronchus and lung is not malignant cancer; query specifies lung cancer.",
       "sources": [
         "ChromaDB"
       ],
@@ -9290,7 +10619,7 @@
       "vocabulary": "ICD-10 (WHO)",
       "decision": "exclude",
       "confidence": 0.99,
-      "rationale": "Sarcoidosis of lung is an inflammatory condition, not malignant cancer; unrelated to primary lung cancer.",
+      "rationale": "Sarcoidosis of lung is an inflammatory condition, not primary lung cancer.",
       "sources": [
         "ChromaDB"
       ],
@@ -9307,7 +10636,7 @@
       "vocabulary": "ICD-10 (WHO)",
       "decision": "exclude",
       "confidence": 0.99,
-      "rationale": "Lobar pneumonia is an infectious/inflammatory condition, not malignant cancer; unrelated to primary lung cancer.",
+      "rationale": "Lobar pneumonia is an infectious lung condition, not primary lung cancer.",
       "sources": [
         "ChromaDB"
       ],
@@ -9324,7 +10653,7 @@
       "vocabulary": "ICD-10 (WHO)",
       "decision": "exclude",
       "confidence": 0.99,
-      "rationale": "Emphysema is a chronic obstructive pulmonary disease, not malignant cancer; a risk factor but not an instance of primary lung cancer.",
+      "rationale": "Emphysema is a chronic obstructive pulmonary disease, not primary lung cancer.",
       "sources": [
         "ChromaDB"
       ],
@@ -9341,7 +10670,7 @@
       "vocabulary": "ICD-10 (WHO)",
       "decision": "exclude",
       "confidence": 0.99,
-      "rationale": "Other emphysema is a chronic obstructive pulmonary disease, not malignant cancer; unrelated to primary lung cancer.",
+      "rationale": "Other emphysema is a chronic obstructive pulmonary disease, not primary lung cancer.",
       "sources": [
         "ChromaDB"
       ],
@@ -9358,7 +10687,7 @@
       "vocabulary": "ICD-10 (WHO)",
       "decision": "exclude",
       "confidence": 0.99,
-      "rationale": "Chronic obstructive pulmonary disease is not malignant cancer; a risk factor but not an instance of primary lung cancer.",
+      "rationale": "Chronic obstructive pulmonary disease is a separate respiratory condition, not primary lung cancer.",
       "sources": [
         "ChromaDB"
       ],
@@ -9375,7 +10704,7 @@
       "vocabulary": "ICD-10 (WHO)",
       "decision": "exclude",
       "confidence": 0.99,
-      "rationale": "Other specified COPD is not malignant cancer; unrelated to primary lung cancer.",
+      "rationale": "Other specified COPD is a separate respiratory condition, not primary lung cancer.",
       "sources": [
         "ChromaDB"
       ],
@@ -9392,7 +10721,7 @@
       "vocabulary": "ICD-10 (WHO)",
       "decision": "exclude",
       "confidence": 0.99,
-      "rationale": "Bronchiectasis is a chronic airway disease, not malignant cancer; unrelated to primary lung cancer.",
+      "rationale": "Bronchiectasis is a chronic airway condition, not primary lung cancer.",
       "sources": [
         "ChromaDB"
       ],
@@ -9409,7 +10738,7 @@
       "vocabulary": "ICD-10 (WHO)",
       "decision": "exclude",
       "confidence": 0.99,
-      "rationale": "Farmer lung (hypersensitivity pneumonitis) is an occupational lung disease, not malignant cancer; unrelated to primary lung cancer.",
+      "rationale": "Farmer lung (hypersensitivity pneumonitis) is an occupational lung disease, not primary lung cancer.",
       "sources": [
         "ChromaDB"
       ],
@@ -9426,7 +10755,7 @@
       "vocabulary": "ICD-10 (WHO)",
       "decision": "exclude",
       "confidence": 0.99,
-      "rationale": "Lung abscess with pneumonia is an infectious condition, not malignant cancer; unrelated to primary lung cancer.",
+      "rationale": "Lung abscess with pneumonia is an infectious condition, not primary lung cancer.",
       "sources": [
         "ChromaDB"
       ],
@@ -9443,7 +10772,7 @@
       "vocabulary": "ICD-10 (WHO)",
       "decision": "exclude",
       "confidence": 0.99,
-      "rationale": "Interstitial emphysema is a pulmonary condition, not malignant cancer; unrelated to primary lung cancer.",
+      "rationale": "Interstitial emphysema is a pulmonary condition, not primary lung cancer.",
       "sources": [
         "ChromaDB"
       ],
@@ -9460,7 +10789,7 @@
       "vocabulary": "ICD-10 (WHO)",
       "decision": "exclude",
       "confidence": 0.99,
-      "rationale": "Other disorders of lung is a non-specific code for non-malignant lung disease; unrelated to primary lung cancer.",
+      "rationale": "Other disorders of lung is a non-specific code for various lung conditions, not primary lung cancer.",
       "sources": [
         "ChromaDB"
       ],
@@ -9477,7 +10806,7 @@
       "vocabulary": "ICD-10 (WHO)",
       "decision": "exclude",
       "confidence": 0.99,
-      "rationale": "Rheumatoid lung disease is an autoimmune/inflammatory condition, not malignant cancer; unrelated to primary lung cancer.",
+      "rationale": "Rheumatoid lung disease is an autoimmune-related lung condition, not primary lung cancer.",
       "sources": [
         "ChromaDB"
       ],
@@ -9494,7 +10823,7 @@
       "vocabulary": "ICD-10 (WHO)",
       "decision": "exclude",
       "confidence": 0.99,
-      "rationale": "Rheumatoid lung disease is an autoimmune/inflammatory condition, not malignant cancer; unrelated to primary lung cancer.",
+      "rationale": "Rheumatoid lung disease is an autoimmune-related lung condition, not primary lung cancer.",
       "sources": [
         "ChromaDB"
       ],
@@ -9511,7 +10840,7 @@
       "vocabulary": "ICD-10 (WHO)",
       "decision": "exclude",
       "confidence": 0.99,
-      "rationale": "Rheumatoid lung disease (lower leg) is an autoimmune/inflammatory condition, not malignant cancer; unrelated to primary lung cancer.",
+      "rationale": "Rheumatoid lung disease affecting lower leg is an autoimmune condition, not primary lung cancer.",
       "sources": [
         "ChromaDB"
       ],
@@ -9528,7 +10857,7 @@
       "vocabulary": "ICD-10 (WHO)",
       "decision": "exclude",
       "confidence": 0.99,
-      "rationale": "Rheumatoid lung disease (other) is an autoimmune/inflammatory condition, not malignant cancer; unrelated to primary lung cancer.",
+      "rationale": "Rheumatoid lung disease (other) is an autoimmune-related lung condition, not primary lung cancer.",
       "sources": [
         "ChromaDB"
       ],
@@ -9545,7 +10874,7 @@
       "vocabulary": "ICD-10 (WHO)",
       "decision": "exclude",
       "confidence": 0.99,
-      "rationale": "Accessory lobe of lung is a congenital anatomical variant, not malignant cancer; unrelated to primary lung cancer.",
+      "rationale": "Accessory lobe of lung is a congenital anatomical variant, not primary lung cancer.",
       "sources": [
         "ChromaDB"
       ],
@@ -9562,7 +10891,7 @@
       "vocabulary": "ICD-10 (WHO)",
       "decision": "exclude",
       "confidence": 0.99,
-      "rationale": "Sequestration of lung is a congenital anatomical variant, not malignant cancer; unrelated to primary lung cancer.",
+      "rationale": "Sequestration of lung is a congenital anatomical variant, not primary lung cancer.",
       "sources": [
         "ChromaDB"
       ],
@@ -9579,7 +10908,7 @@
       "vocabulary": "ICD-10 (WHO)",
       "decision": "exclude",
       "confidence": 0.99,
-      "rationale": "Agenesis of lung is a congenital anatomical variant, not malignant cancer; unrelated to primary lung cancer.",
+      "rationale": "Agenesis of lung is a congenital anatomical variant, not primary lung cancer.",
       "sources": [
         "ChromaDB"
       ],
@@ -9596,7 +10925,7 @@
       "vocabulary": "ICD-10 (WHO)",
       "decision": "exclude",
       "confidence": 0.99,
-      "rationale": "Family history of lung cancer is a risk factor/administrative code, not a diagnosis of primary lung cancer itself.",
+      "rationale": "Family history of lung cancer is a risk factor code, not a diagnosis of primary lung cancer.",
       "sources": [
         "ChromaDB"
       ],
@@ -9604,23 +10933,6 @@
       "usage_status": "not_in_dataset",
       "usage_source": null,
       "usage_setting": null,
-      "concept_id": null,
-      "dmd_level": null
-    },
-    {
-      "code": "Z85.1",
-      "term": "Personal history of malignant neoplasm of trachea, bronchus and lung",
-      "vocabulary": "ICD-10 (WHO)",
-      "decision": "exclude",
-      "confidence": 0.99,
-      "rationale": "Personal history of lung cancer indicates resolved/past disease, not current primary lung cancer diagnosis.",
-      "sources": [
-        "ChromaDB"
-      ],
-      "usage_frequency": 1,
-      "usage_status": "counted",
-      "usage_source": "NHS Digital HES inpatient FCEs",
-      "usage_setting": "secondary_care_hes",
       "concept_id": null,
       "dmd_level": null
     },
@@ -9647,7 +10959,7 @@
       "vocabulary": "SNOMED CT",
       "decision": "exclude",
       "confidence": 0.99,
-      "rationale": "Metastatic squamous cell carcinoma to lung represents secondary malignancy, not primary lung cancer; explicitly excluded by query specification.",
+      "rationale": "Metastatic squamous cell carcinoma to lung represents secondary malignancy, not primary lung cancer.",
       "sources": [
         "ChromaDB"
       ],
@@ -9659,12 +10971,46 @@
       "dmd_level": null
     },
     {
+      "code": "C33",
+      "term": "Malignant neoplasm of trachea",
+      "vocabulary": "ICD-10 (WHO)",
+      "decision": "exclude",
+      "confidence": 0.95,
+      "rationale": "Tracheal malignancy is anatomically distinct from lung cancer; query specifies primary lung cancer.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "usage_frequency": 155,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital HES inpatient FCEs",
+      "usage_setting": "secondary_care_hes",
+      "concept_id": null,
+      "dmd_level": null
+    },
+    {
+      "code": "Z85.1",
+      "term": "Personal history of malignant neoplasm of trachea, bronchus and lung",
+      "vocabulary": "ICD-10 (WHO)",
+      "decision": "exclude",
+      "confidence": 0.95,
+      "rationale": "Personal history of lung cancer indicates resolved/past disease, not current primary lung cancer.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "usage_frequency": 1,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital HES inpatient FCEs",
+      "usage_setting": "secondary_care_hes",
+      "concept_id": null,
+      "dmd_level": null
+    },
+    {
       "code": "1237048006",
       "term": "Metastatic squamous cell carcinoma to bronchus (disorder)",
       "vocabulary": "SNOMED CT",
       "decision": "exclude",
       "confidence": 0.95,
-      "rationale": "Metastatic squamous cell carcinoma to bronchus indicates secondary/metastatic disease, not primary lung cancer.",
+      "rationale": "Metastatic squamous cell carcinoma to bronchus represents secondary lung involvement from a cancer originating elsewhere, not primary lung cancer.",
       "sources": [
         "ChromaDB",
         "OpenCodelists (nhsd-primary-care-domain-refsets)"
@@ -9682,7 +11028,7 @@
       "vocabulary": "SNOMED CT",
       "decision": "exclude",
       "confidence": 0.95,
-      "rationale": "Metastatic squamous cell carcinoma to bronchus of left lower lobe indicates secondary/metastatic disease, not primary lung cancer.",
+      "rationale": "Metastatic squamous cell carcinoma to bronchus of left lower lobe represents secondary lung involvement, not primary lung cancer.",
       "sources": [
         "ChromaDB",
         "OpenCodelists (nhsd-primary-care-domain-refsets)"
@@ -9700,7 +11046,7 @@
       "vocabulary": "SNOMED CT",
       "decision": "exclude",
       "confidence": 0.95,
-      "rationale": "Metastatic carcinoma to lower lobe of lung indicates secondary/metastatic disease, not primary lung cancer.",
+      "rationale": "Metastatic carcinoma to lower lobe of lung represents secondary lung involvement from a cancer originating elsewhere, not primary lung cancer.",
       "sources": [
         "ChromaDB",
         "OpenCodelists (nhsd-primary-care-domain-refsets)"
@@ -9718,7 +11064,7 @@
       "vocabulary": "SNOMED CT",
       "decision": "exclude",
       "confidence": 0.95,
-      "rationale": "Metastatic adenocarcinoma to left lung indicates secondary/metastatic disease, not primary lung cancer.",
+      "rationale": "Metastatic adenocarcinoma to left lung represents secondary lung involvement from a cancer originating elsewhere, not primary lung cancer.",
       "sources": [
         "ChromaDB",
         "OpenCodelists (nhsd-primary-care-domain-refsets)"
@@ -9736,7 +11082,7 @@
       "vocabulary": "SNOMED CT",
       "decision": "exclude",
       "confidence": 0.95,
-      "rationale": "Metastatic small cell carcinoma to left lung indicates secondary/metastatic disease, not primary lung cancer.",
+      "rationale": "Metastatic small cell carcinoma to left lung represents secondary lung involvement from a cancer originating elsewhere, not primary lung cancer.",
       "sources": [
         "ChromaDB"
       ],
@@ -9753,7 +11099,7 @@
       "vocabulary": "SNOMED CT",
       "decision": "exclude",
       "confidence": 0.95,
-      "rationale": "Metastatic squamous cell carcinoma to right lung indicates secondary/metastatic disease, not primary lung cancer.",
+      "rationale": "Metastatic squamous cell carcinoma to right lung represents secondary lung involvement from a cancer originating elsewhere, not primary lung cancer.",
       "sources": [
         "ChromaDB",
         "OpenCodelists (nhsd-primary-care-domain-refsets)"
@@ -9771,7 +11117,7 @@
       "vocabulary": "SNOMED CT",
       "decision": "exclude",
       "confidence": 0.95,
-      "rationale": "Metastatic squamous cell carcinoma to left lung indicates secondary/metastatic disease, not primary lung cancer.",
+      "rationale": "Metastatic squamous cell carcinoma to left lung represents secondary lung involvement from a cancer originating elsewhere, not primary lung cancer.",
       "sources": [
         "ChromaDB"
       ],
@@ -9788,7 +11134,7 @@
       "vocabulary": "SNOMED CT",
       "decision": "exclude",
       "confidence": 0.95,
-      "rationale": "History of primary small cell carcinoma is a resolved/past condition (situation type) and does not confirm current active primary lung cancer.",
+      "rationale": "History of primary small cell carcinoma is a resolved/past condition (situation type); does not confirm current active primary lung cancer.",
       "sources": [
         "ChromaDB"
       ],
@@ -9805,7 +11151,7 @@
       "vocabulary": "ICD-10 (WHO)",
       "decision": "exclude",
       "confidence": 0.85,
-      "rationale": "Neoplasm of uncertain or unknown behaviour is not confirmed malignancy; does not definitively represent primary lung cancer.",
+      "rationale": "Neoplasm of uncertain or unknown behaviour is not confirmed malignant lung cancer.",
       "sources": [
         "ChromaDB"
       ],

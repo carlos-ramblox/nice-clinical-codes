@@ -3128,17 +3128,29 @@
     "all_scored": {
       "codelist_name": "all_scored",
       "n_ref_codes": 325,
-      "n_output_codes": 100,
-      "recall": 0.1538,
-      "precision": 0.5,
-      "f1": 0.2353,
-      "tp_count": 50,
-      "fp_count": 50,
-      "fn_count": 275,
+      "n_output_codes": 201,
+      "recall": 0.4246,
+      "precision": 0.6866,
+      "f1": 0.5247,
+      "tp_count": 138,
+      "fp_count": 63,
+      "fn_count": 187,
       "tp_codes": [
+        {
+          "code": "10349009",
+          "term": "Multi-infarct dementia with delirium"
+        },
         {
           "code": "10532003",
           "term": "Primary degenerative dementia of the Alzheimer type, presenile onset, with depression"
+        },
+        {
+          "code": "105421000119105",
+          "term": "Early onset Alzheimer's disease with behavioral disturbance"
+        },
+        {
+          "code": "106021000119105",
+          "term": "Multi-infarct dementia due to atherosclerosis"
         },
         {
           "code": "1089501000000102",
@@ -3153,20 +3165,136 @@
           "term": "Predominantly cortical vascular dementia"
         },
         {
+          "code": "1156789004",
+          "term": "Autosomal dominant Alzheimer disease due to mutation of amyloid precursor protein"
+        },
+        {
+          "code": "1156798001",
+          "term": "Autosomal dominant Alzheimer disease due to mutation of presenilin 2"
+        },
+        {
+          "code": "1156800008",
+          "term": "Autosomal dominant Alzheimer disease due to mutation of presenilin 1"
+        },
+        {
+          "code": "1186883000",
+          "term": "Dementia due to nutritional deficiency disorder"
+        },
+        {
+          "code": "1186887004",
+          "term": "Dementia caused by manganese and/or manganese compound"
+        },
+        {
+          "code": "1187004001",
+          "term": "Chronic traumatic encephalopathy"
+        },
+        {
           "code": "12348006",
           "term": "Presenile dementia"
+        },
+        {
+          "code": "1259124000",
+          "term": "Amyotrophic lateral sclerosis with frontotemporal dementia"
         },
         {
           "code": "1259128002",
           "term": "Alzheimer's disease with psychosis"
         },
         {
+          "code": "1259465009",
+          "term": "Dementia due to hepatic failure"
+        },
+        {
+          "code": "1259476008",
+          "term": "Dementia due to genetic disease"
+        },
+        {
+          "code": "1259485008",
+          "term": "Dementia due to cerebral vasculitis"
+        },
+        {
+          "code": "1259488005",
+          "term": "Dementia due to cerebral amyloid angiopathy"
+        },
+        {
           "code": "1259499007",
           "term": "Dementia due to hemorrhagic cerebral infarction due to hypertension"
         },
         {
+          "code": "1259517005",
+          "term": "Dementia due to systemic lupus erythematosus"
+        },
+        {
+          "code": "1259579003",
+          "term": "Dementia due to Behcet syndrome"
+        },
+        {
+          "code": "1259581001",
+          "term": "Dementia due to celiac disease"
+        },
+        {
+          "code": "1259584009",
+          "term": "Dementia due to and following dialysis"
+        },
+        {
+          "code": "1259591007",
+          "term": "Dementia due to acquired hypothyroidism"
+        },
+        {
+          "code": "1259656006",
+          "term": "Dementia due to renal failure"
+        },
+        {
+          "code": "1259661008",
+          "term": "Dementia due to inflammatory disorder of musculoskeletal system"
+        },
+        {
+          "code": "1259663006",
+          "term": "Dementia due to polyarteritis nodosa"
+        },
+        {
+          "code": "1259673008",
+          "term": "Dementia due to neurofilament inclusion body disease"
+        },
+        {
+          "code": "1260352009",
+          "term": "Frontotemporal dementia due to TARDBP mutation"
+        },
+        {
+          "code": "1260353004",
+          "term": "Frontotemporal dementia due to VCP mutation"
+        },
+        {
+          "code": "1260354005",
+          "term": "Frontotemporal dementia due to C9orf72 mutation"
+        },
+        {
+          "code": "1260355006",
+          "term": "Frontotemporal dementia due to FUS mutation"
+        },
+        {
+          "code": "1263555006",
+          "term": "Logopenic non-amnestic Alzheimer disease"
+        },
+        {
+          "code": "1263585001",
+          "term": "Frontal variant non-amnestic Alzheimer disease"
+        },
+        {
+          "code": "14070001",
+          "term": "Multi-infarct dementia with depression"
+        },
+        {
           "code": "141991000119109",
           "term": "Alzheimer's disease with delusions"
+        },
+        {
+          "code": "142001000119106",
+          "term": "Alzheimer's disease with depressed mood"
+        },
+        {
+          "code": "142011000119109",
+          "term": "Alzheimer's disease with delirium"
         },
         {
           "code": "15662003",
@@ -3175,6 +3303,18 @@
         {
           "code": "1581000119101",
           "term": "Dementia of the Alzheimer type with behavioral disturbance"
+        },
+        {
+          "code": "1591000119103",
+          "term": "Dementia with behavioral disturbance"
+        },
+        {
+          "code": "16219201000119101",
+          "term": "Late onset Alzheimer's dementia with behavioral disturbance"
+        },
+        {
+          "code": "16276361000119109",
+          "term": "Vascular dementia without behavioral disturbance"
         },
         {
           "code": "191449005",
@@ -3189,8 +3329,16 @@
           "term": "Presenile dementia with delirium"
         },
         {
+          "code": "191454001",
+          "term": "Presenile dementia with paranoia"
+        },
+        {
           "code": "191455000",
           "term": "Presenile dementia with depression"
+        },
+        {
+          "code": "191457008",
+          "term": "Senile dementia with depressive or paranoid features"
         },
         {
           "code": "191458003",
@@ -3213,20 +3361,80 @@
           "term": "Arteriosclerotic dementia with delirium"
         },
         {
+          "code": "191465006",
+          "term": "Arteriosclerotic dementia with paranoia"
+        },
+        {
           "code": "191466007",
           "term": "Arteriosclerotic dementia with depression"
+        },
+        {
+          "code": "191493005",
+          "term": "Dementia caused by drug"
+        },
+        {
+          "code": "191519005",
+          "term": "Dementia associated with another disease"
+        },
+        {
+          "code": "21921000119103",
+          "term": "Dementia co-occurrent and due to Pick's disease"
         },
         {
           "code": "22381000119105",
           "term": "Primary degenerative dementia"
         },
         {
+          "code": "230265002",
+          "term": "Familial Alzheimer's disease of early onset"
+        },
+        {
+          "code": "230266001",
+          "term": "Non-familial Alzheimer's disease of early onset"
+        },
+        {
+          "code": "230267005",
+          "term": "Familial Alzheimer's disease of late onset"
+        },
+        {
+          "code": "230268000",
+          "term": "Non-familial Alzheimer's disease of late onset"
+        },
+        {
+          "code": "230269008",
+          "term": "Focal Alzheimer's disease"
+        },
+        {
           "code": "230270009",
           "term": "Frontotemporal dementia"
         },
         {
+          "code": "230271008",
+          "term": "Pick's disease with Pick bodies"
+        },
+        {
+          "code": "230272001",
+          "term": "Pick's disease with Pick cells and no Pick bodies"
+        },
+        {
+          "code": "230280008",
+          "term": "Alzheimer's disease with progressive aphasia"
+        },
+        {
+          "code": "230282000",
+          "term": "Post-traumatic dementia"
+        },
+        {
+          "code": "230285003",
+          "term": "Vascular dementia of acute onset"
+        },
+        {
           "code": "230286002",
           "term": "Subcortical vascular dementia"
+        },
+        {
+          "code": "230287006",
+          "term": "Mixed cortical and subcortical vascular dementia"
         },
         {
           "code": "230288001",
@@ -3237,6 +3445,14 @@
           "term": "Patchy dementia"
         },
         {
+          "code": "2421000119107",
+          "term": "Hallucinations co-occurrent and due to late onset dementia"
+        },
+        {
+          "code": "25772007",
+          "term": "Multi-infarct dementia with delusions"
+        },
+        {
           "code": "26852004",
           "term": "Primary degenerative dementia of the Alzheimer type, senile onset, with depression"
         },
@@ -3245,8 +3461,28 @@
           "term": "Alzheimer's disease"
         },
         {
+          "code": "278857002",
+          "term": "Dementia of frontal lobe type"
+        },
+        {
+          "code": "281004",
+          "term": "Dementia associated with alcoholism"
+        },
+        {
+          "code": "288631000119104",
+          "term": "Vascular dementia with behavioral disturbance"
+        },
+        {
+          "code": "293671000119109",
+          "term": "Behavioral disturbance due to multi-infarct dementia"
+        },
+        {
           "code": "31081000119101",
           "term": "Presenile dementia with delusions"
+        },
+        {
+          "code": "312991009",
+          "term": "Late onset dementia due to Lewy body disease"
         },
         {
           "code": "371024007",
@@ -3265,12 +3501,28 @@
           "term": "Primary degenerative dementia of the Alzheimer type, senile onset"
         },
         {
+          "code": "421023003",
+          "term": "Presenile dementia with acquired immunodeficiency syndrome"
+        },
+        {
+          "code": "421529006",
+          "term": "Dementia with acquired immunodeficiency syndrome"
+        },
+        {
+          "code": "425390006",
+          "term": "Dementia associated with Parkinson's Disease"
+        },
+        {
           "code": "429998004",
           "term": "Vascular dementia"
         },
         {
           "code": "4817008",
           "term": "Primary degenerative dementia of the Alzheimer type, senile onset, with delirium"
+        },
+        {
+          "code": "51928006",
+          "term": "General paresis - neurosyphilis"
         },
         {
           "code": "52448006",
@@ -3305,12 +3557,60 @@
           "term": "Vascular dementia in remission"
         },
         {
+          "code": "698949001",
+          "term": "Dementia in remission"
+        },
+        {
           "code": "698954005",
           "term": "Primary degenerative dementia of the Alzheimer type, senile onset in remission"
         },
         {
+          "code": "698955006",
+          "term": "Primary degenerative dementia of the Alzheimer type, presenile onset in remission"
+        },
+        {
+          "code": "702393003",
+          "term": "Frontotemporal dementia with gene located on 3p11"
+        },
+        {
+          "code": "70936005",
+          "term": "Multi-infarct dementia, uncomplicated"
+        },
+        {
+          "code": "713488003",
+          "term": "Presenile dementia co-occurrent with human immunodeficiency virus infection"
+        },
+        {
+          "code": "713844000",
+          "term": "Dementia co-occurrent with human immunodeficiency virus infection"
+        },
+        {
+          "code": "715737004",
+          "term": "Parkinsonism co-occurrent with dementia of Guadeloupe"
+        },
+        {
+          "code": "716667005",
+          "term": "Right temporal atrophy variant frontotemporal dementia"
+        },
+        {
+          "code": "716994006",
+          "term": "Behavioral variant of frontotemporal dementia"
+        },
+        {
           "code": "722600006",
           "term": "Non-amnestic Alzheimer disease"
+        },
+        {
+          "code": "722978000",
+          "term": "Toxic dementia"
+        },
+        {
+          "code": "722979008",
+          "term": "Dementia due to metabolic abnormality"
+        },
+        {
+          "code": "722980006",
+          "term": "Dementia due to chromosomal anomaly"
         },
         {
           "code": "723123001",
@@ -3321,26 +3621,130 @@
           "term": "Rapidly progressive dementia"
         },
         {
+          "code": "724776007",
+          "term": "Dementia due to disorder of central nervous system"
+        },
+        {
+          "code": "724777003",
+          "term": "Dementia due to infectious disease"
+        },
+        {
+          "code": "725898002",
+          "term": "Delirium co-occurrent with dementia"
+        },
+        {
+          "code": "733184002",
+          "term": "Dementia caused by heavy metal exposure"
+        },
+        {
           "code": "762707000",
           "term": "Subcortical dementia"
+        },
+        {
+          "code": "774069007",
+          "term": "Protein kinase cAMP-dependent type I regulatory subunit beta-related neurodegenerative dementia with intermediate filaments"
+        },
+        {
+          "code": "788898005",
+          "term": "Dementia caused by volatile inhalant"
         },
         {
           "code": "79341000119107",
           "term": "Mixed dementia"
         },
         {
+          "code": "82351000119105",
+          "term": "Altered behavior due to Pick's disease"
+        },
+        {
+          "code": "82381000119103",
+          "term": "Epileptic dementia with behavioral disturbance"
+        },
+        {
+          "code": "82959004",
+          "term": "Dementia paralytica juvenilis"
+        },
+        {
           "code": "833326008",
           "term": "Cortical vascular dementia"
         },
         {
+          "code": "838276009",
+          "term": "Amyotrophic lateral sclerosis, parkinsonism, dementia complex"
+        },
+        {
+          "code": "840464007",
+          "term": "Dementia due to carbon monoxide poisoning"
+        },
+        {
+          "code": "90099008",
+          "term": "Subcortical leukoencephalopathy"
+        },
+        {
           "code": "9345005",
           "term": "Dialysis dementia"
+        },
+        {
+          "code": "97751000119108",
+          "term": "Alzheimer's disease with altered behavior"
         }
       ],
       "fp_codes": [
         {
+          "code": "1186724002",
+          "term": "HTRA1-related autosomal dominant cerebral small vessel disease"
+        },
+        {
+          "code": "1187126002",
+          "term": "ITM2B-related amyloidosis"
+        },
+        {
+          "code": "1339031006",
+          "term": "Dementia caused by ionizing radiation"
+        },
+        {
           "code": "16276361000119108",
           "term": "Vascular dementia without behavioral disturbance (disorder)"
+        },
+        {
+          "code": "230274000",
+          "term": "Frontal lobe degeneration with motor neurone disease"
+        },
+        {
+          "code": "230299004",
+          "term": "Juvenile onset Huntington's disease"
+        },
+        {
+          "code": "230300007",
+          "term": "Late onset Huntington's disease"
+        },
+        {
+          "code": "230301006",
+          "term": "Akinetic-rigid form of Huntington's disease"
+        },
+        {
+          "code": "268612007",
+          "term": "Senile and presenile organic psychotic conditions"
+        },
+        {
+          "code": "428051000124108",
+          "term": "Mild dementia"
+        },
+        {
+          "code": "428351000124105",
+          "term": "Severe dementia"
+        },
+        {
+          "code": "429161000124103",
+          "term": "Primary degenerative dementia of the Alzheimer type, senile onset, with behavioral disturbance"
+        },
+        {
+          "code": "430771000124100",
+          "term": "Moderate dementia"
+        },
+        {
+          "code": "58756001",
+          "term": "Huntington's chorea"
         },
         {
           "code": "956881000000103",
@@ -3545,18 +3949,6 @@
           "term": "Dementia due to Parkinson's disease"
         },
         {
-          "code": "10349009",
-          "term": "Multi-infarct dementia with delirium"
-        },
-        {
-          "code": "105421000119105",
-          "term": "Early onset Alzheimer's disease with behavioral disturbance"
-        },
-        {
-          "code": "106021000119105",
-          "term": "Multi-infarct dementia due to atherosclerosis"
-        },
-        {
           "code": "1089581000000107",
           "term": "Predominantly cortical dementia"
         },
@@ -3571,18 +3963,6 @@
         {
           "code": "1148924004",
           "term": "Dementia due to deficiency of folic acid"
-        },
-        {
-          "code": "1156789004",
-          "term": "Autosomal dominant Alzheimer disease due to mutation of amyloid precursor protein"
-        },
-        {
-          "code": "1156798001",
-          "term": "Autosomal dominant Alzheimer disease due to mutation of presenilin 2"
-        },
-        {
-          "code": "1156800008",
-          "term": "Autosomal dominant Alzheimer disease due to mutation of presenilin 1"
         },
         {
           "code": "1163119007",
@@ -3605,32 +3985,12 @@
           "term": "Dementia due to niacin deficiency"
         },
         {
-          "code": "1186883000",
-          "term": "Dementia due to nutritional deficiency disorder"
-        },
-        {
-          "code": "1186887004",
-          "term": "Dementia caused by manganese and/or manganese compound"
-        },
-        {
-          "code": "1187004001",
-          "term": "Chronic traumatic encephalopathy"
-        },
-        {
           "code": "1259121008",
           "term": "Amyotrophic lateral sclerosis, parkinsonism, dementia complex of West New Guinea"
         },
         {
           "code": "1259123006",
           "term": "Amyotrophic lateral sclerosis, parkinsonism, dementia complex of Kii Peninsula"
-        },
-        {
-          "code": "1259124000",
-          "term": "Amyotrophic lateral sclerosis with frontotemporal dementia"
-        },
-        {
-          "code": "1259465009",
-          "term": "Dementia due to hepatic failure"
         },
         {
           "code": "1259467001",
@@ -3649,24 +4009,12 @@
           "term": "Dementia due to fragile X syndrome"
         },
         {
-          "code": "1259476008",
-          "term": "Dementia due to genetic disease"
-        },
-        {
           "code": "1259478009",
           "term": "Dementia due to familial Creutzfeldt-Jakob disease"
         },
         {
           "code": "1259480003",
           "term": "Dementia due to fatal familial insomnia"
-        },
-        {
-          "code": "1259485008",
-          "term": "Dementia due to cerebral vasculitis"
-        },
-        {
-          "code": "1259488005",
-          "term": "Dementia due to cerebral amyloid angiopathy"
         },
         {
           "code": "1259492003",
@@ -3697,10 +4045,6 @@
           "term": "Dementia due to Whipple disease"
         },
         {
-          "code": "1259517005",
-          "term": "Dementia due to systemic lupus erythematosus"
-        },
-        {
           "code": "1259519008",
           "term": "Dementia due to subacute sclerosing panencephalitis"
         },
@@ -3721,36 +4065,8 @@
           "term": "Dementia due to hypertensive encephalopathy"
         },
         {
-          "code": "1259579003",
-          "term": "Dementia due to Behcet syndrome"
-        },
-        {
-          "code": "1259581001",
-          "term": "Dementia due to celiac disease"
-        },
-        {
-          "code": "1259584009",
-          "term": "Dementia due to and following dialysis"
-        },
-        {
           "code": "1259586006",
           "term": "Dementia due to autoimmune encephalitis"
-        },
-        {
-          "code": "1259591007",
-          "term": "Dementia due to acquired hypothyroidism"
-        },
-        {
-          "code": "1259656006",
-          "term": "Dementia due to renal failure"
-        },
-        {
-          "code": "1259661008",
-          "term": "Dementia due to inflammatory disorder of musculoskeletal system"
-        },
-        {
-          "code": "1259663006",
-          "term": "Dementia due to polyarteritis nodosa"
         },
         {
           "code": "1259665004",
@@ -3759,10 +4075,6 @@
         {
           "code": "1259667007",
           "term": "Dementia due to paraneoplastic encephalitis"
-        },
-        {
-          "code": "1259673008",
-          "term": "Dementia due to neurofilament inclusion body disease"
         },
         {
           "code": "1259675001",
@@ -3783,30 +4095,6 @@
         {
           "code": "1260328002",
           "term": "Familial multiple system deposition of tau protein"
-        },
-        {
-          "code": "1260352009",
-          "term": "Frontotemporal dementia due to TARDBP mutation"
-        },
-        {
-          "code": "1260353004",
-          "term": "Frontotemporal dementia due to VCP mutation"
-        },
-        {
-          "code": "1260354005",
-          "term": "Frontotemporal dementia due to C9orf72 mutation"
-        },
-        {
-          "code": "1260355006",
-          "term": "Frontotemporal dementia due to FUS mutation"
-        },
-        {
-          "code": "1263555006",
-          "term": "Logopenic non-amnestic Alzheimer disease"
-        },
-        {
-          "code": "1263585001",
-          "term": "Frontal variant non-amnestic Alzheimer disease"
         },
         {
           "code": "12741002",
@@ -3835,18 +4123,6 @@
         {
           "code": "138736007",
           "term": "H/O: dementia"
-        },
-        {
-          "code": "14070001",
-          "term": "Multi-infarct dementia with depression"
-        },
-        {
-          "code": "142001000119106",
-          "term": "Alzheimer's disease with depressed mood"
-        },
-        {
-          "code": "142011000119109",
-          "term": "Alzheimer's disease with delirium"
         },
         {
           "code": "142811000119104",
@@ -3885,36 +4161,16 @@
           "term": "Creutzfeldt-Jakob disease"
         },
         {
-          "code": "1591000119103",
-          "term": "Dementia with behavioral disturbance"
-        },
-        {
           "code": "161465002",
           "term": "History of dementia"
-        },
-        {
-          "code": "16219201000119101",
-          "term": "Late onset Alzheimer's dementia with behavioral disturbance"
-        },
-        {
-          "code": "16276361000119109",
-          "term": "Vascular dementia without behavioral disturbance"
         },
         {
           "code": "191450005",
           "term": "Presenile dementia"
         },
         {
-          "code": "191454001",
-          "term": "Presenile dementia with paranoia"
-        },
-        {
           "code": "191456004",
           "term": "Presenile dementia NOS"
-        },
-        {
-          "code": "191457008",
-          "term": "Senile dementia with depressive or paranoid features"
         },
         {
           "code": "191460001",
@@ -3925,24 +4181,12 @@
           "term": "Arteriosclerotic dementia (including [multi infarct dementia])"
         },
         {
-          "code": "191465006",
-          "term": "Arteriosclerotic dementia with paranoia"
-        },
-        {
           "code": "191467003",
           "term": "Arteriosclerotic dementia NOS"
         },
         {
           "code": "191474008",
           "term": "Alcoholic dementia: [other] or [NOS]"
-        },
-        {
-          "code": "191493005",
-          "term": "Dementia caused by drug"
-        },
-        {
-          "code": "191519005",
-          "term": "Dementia associated with another disease"
         },
         {
           "code": "192160005",
@@ -4061,44 +4305,12 @@
           "term": "[X]Lewy body dementia"
         },
         {
-          "code": "21921000119103",
-          "term": "Dementia co-occurrent and due to Pick's disease"
-        },
-        {
           "code": "229672009",
           "term": "Language disorder of dementia"
         },
         {
           "code": "230258005",
           "term": "Amyotrophic lateral sclerosis with dementia"
-        },
-        {
-          "code": "230265002",
-          "term": "Familial Alzheimer's disease of early onset"
-        },
-        {
-          "code": "230266001",
-          "term": "Non-familial Alzheimer's disease of early onset"
-        },
-        {
-          "code": "230267005",
-          "term": "Familial Alzheimer's disease of late onset"
-        },
-        {
-          "code": "230268000",
-          "term": "Non-familial Alzheimer's disease of late onset"
-        },
-        {
-          "code": "230269008",
-          "term": "Focal Alzheimer's disease"
-        },
-        {
-          "code": "230271008",
-          "term": "Pick's disease with Pick bodies"
-        },
-        {
-          "code": "230272001",
-          "term": "Pick's disease with Pick cells and no Pick bodies"
         },
         {
           "code": "230275004",
@@ -4113,16 +4325,8 @@
           "term": "Lewy body disease"
         },
         {
-          "code": "230280008",
-          "term": "Alzheimer's disease with progressive aphasia"
-        },
-        {
           "code": "230281007",
           "term": "Argyrophilic grain disease"
-        },
-        {
-          "code": "230282000",
-          "term": "Post-traumatic dementia"
         },
         {
           "code": "230283005",
@@ -4133,28 +4337,12 @@
           "term": "Spongiform encephalopathy"
         },
         {
-          "code": "230285003",
-          "term": "Vascular dementia of acute onset"
-        },
-        {
-          "code": "230287006",
-          "term": "Mixed cortical and subcortical vascular dementia"
-        },
-        {
           "code": "230290000",
           "term": "Epileptic dementia"
         },
         {
           "code": "231463001",
           "term": "Alcoholic dementia NOS"
-        },
-        {
-          "code": "2421000119107",
-          "term": "Hallucinations co-occurrent and due to late onset dementia"
-        },
-        {
-          "code": "25772007",
-          "term": "Multi-infarct dementia with delusions"
         },
         {
           "code": "266134000",
@@ -4177,36 +4365,16 @@
           "term": "Dementia (& [presenile] or [senile])"
         },
         {
-          "code": "278857002",
-          "term": "Dementia of frontal lobe type"
-        },
-        {
           "code": "279982005",
           "term": "Cerebral degeneration presenting primarily with dementia"
-        },
-        {
-          "code": "281004",
-          "term": "Dementia associated with alcoholism"
         },
         {
           "code": "286932008",
           "term": "Other senile/presenile dementia"
         },
         {
-          "code": "288631000119104",
-          "term": "Vascular dementia with behavioral disturbance"
-        },
-        {
-          "code": "293671000119109",
-          "term": "Behavioral disturbance due to multi-infarct dementia"
-        },
-        {
           "code": "304603007",
           "term": "Variant Creutzfeldt-Jakob disease"
-        },
-        {
-          "code": "312991009",
-          "term": "Late onset dementia due to Lewy body disease"
         },
         {
           "code": "32875003",
@@ -4257,18 +4425,6 @@
           "term": "Organic dementia with acquired immunodeficiency syndrome"
         },
         {
-          "code": "421023003",
-          "term": "Presenile dementia with acquired immunodeficiency syndrome"
-        },
-        {
-          "code": "421529006",
-          "term": "Dementia with acquired immunodeficiency syndrome"
-        },
-        {
-          "code": "425390006",
-          "term": "Dementia associated with Parkinson's Disease"
-        },
-        {
           "code": "42769004",
           "term": "Diffuse Lewy body disease with spongiform cortical change"
         },
@@ -4307,10 +4463,6 @@
         {
           "code": "479161000000109",
           "term": "[X]Dementia in Parkinson's disease"
-        },
-        {
-          "code": "51928006",
-          "term": "General paresis - neurosyphilis"
         },
         {
           "code": "544871000000102",
@@ -4373,20 +4525,8 @@
           "term": "Dementia associated with cerebral anoxia"
         },
         {
-          "code": "698949001",
-          "term": "Dementia in remission"
-        },
-        {
-          "code": "698955006",
-          "term": "Primary degenerative dementia of the Alzheimer type, presenile onset in remission"
-        },
-        {
           "code": "700911000000100",
           "term": "Other senile/presenile dementia"
-        },
-        {
-          "code": "702393003",
-          "term": "Frontotemporal dementia with gene located on 3p11"
         },
         {
           "code": "702421006",
@@ -4405,20 +4545,8 @@
           "term": "Inclusion body myopathy with early-onset Paget disease and frontotemporal dementia"
         },
         {
-          "code": "70936005",
-          "term": "Multi-infarct dementia, uncomplicated"
-        },
-        {
           "code": "713060000",
           "term": "Sporadic Creutzfeldt-Jakob disease"
-        },
-        {
-          "code": "713488003",
-          "term": "Presenile dementia co-occurrent with human immunodeficiency virus infection"
-        },
-        {
-          "code": "713844000",
-          "term": "Dementia co-occurrent with human immunodeficiency virus infection"
         },
         {
           "code": "715574002",
@@ -4429,24 +4557,12 @@
           "term": "Iatrogenic Jakob-Creutzfeldt disease"
         },
         {
-          "code": "715737004",
-          "term": "Parkinsonism co-occurrent with dementia of Guadeloupe"
-        },
-        {
           "code": "715807002",
           "term": "Familial Creutzfeldt-Jakob"
         },
         {
           "code": "716281000",
           "term": "Primary progressive non fluent aphasia"
-        },
-        {
-          "code": "716667005",
-          "term": "Right temporal atrophy variant frontotemporal dementia"
-        },
-        {
-          "code": "716994006",
-          "term": "Behavioral variant of frontotemporal dementia"
         },
         {
           "code": "721219005",
@@ -4461,36 +4577,8 @@
           "term": "Dementia co-occurrent and due to neurocysticercosis"
         },
         {
-          "code": "722978000",
-          "term": "Toxic dementia"
-        },
-        {
-          "code": "722979008",
-          "term": "Dementia due to metabolic abnormality"
-        },
-        {
-          "code": "722980006",
-          "term": "Dementia due to chromosomal anomaly"
-        },
-        {
-          "code": "724776007",
-          "term": "Dementia due to disorder of central nervous system"
-        },
-        {
-          "code": "724777003",
-          "term": "Dementia due to infectious disease"
-        },
-        {
           "code": "724992007",
           "term": "Epilepsy co-occurrent and due to dementia"
-        },
-        {
-          "code": "725898002",
-          "term": "Delirium co-occurrent with dementia"
-        },
-        {
-          "code": "733184002",
-          "term": "Dementia caused by heavy metal exposure"
         },
         {
           "code": "733185001",
@@ -4525,10 +4613,6 @@
           "term": "Dementia due to and following injury of head"
         },
         {
-          "code": "774069007",
-          "term": "Protein kinase cAMP-dependent type I regulatory subunit beta-related neurodegenerative dementia with intermediate filaments"
-        },
-        {
           "code": "783161005",
           "term": "Familial dementia British type"
         },
@@ -4547,10 +4631,6 @@
         {
           "code": "788862002",
           "term": "Agitation due to dementia"
-        },
-        {
-          "code": "788898005",
-          "term": "Dementia caused by volatile inhalant"
         },
         {
           "code": "788899002",
@@ -4573,10 +4653,6 @@
           "term": "Diffuse Lewy body disease"
         },
         {
-          "code": "82351000119105",
-          "term": "Altered behavior due to Pick's disease"
-        },
-        {
           "code": "82361000119107",
           "term": "Altered behavior in dementia due to Huntington chorea"
         },
@@ -4585,24 +4661,8 @@
           "term": "Dementia due to multiple sclerosis with altered behavior"
         },
         {
-          "code": "82381000119103",
-          "term": "Epileptic dementia with behavioral disturbance"
-        },
-        {
-          "code": "82959004",
-          "term": "Dementia paralytica juvenilis"
-        },
-        {
-          "code": "838276009",
-          "term": "Amyotrophic lateral sclerosis, parkinsonism, dementia complex"
-        },
-        {
           "code": "840452004",
           "term": "Classical sporadic Creutzfeldt-Jakob disease"
-        },
-        {
-          "code": "840464007",
-          "term": "Dementia due to carbon monoxide poisoning"
         },
         {
           "code": "840465008",
@@ -4615,10 +4675,6 @@
         {
           "code": "88339003",
           "term": "Dementia arising in the senium AND/OR presenium"
-        },
-        {
-          "code": "90099008",
-          "term": "Subcortical leukoencephalopathy"
         },
         {
           "code": "90194001",
@@ -4635,27 +4691,35 @@
         {
           "code": "922071000000105",
           "term": "Sporadic Creutzfeldt Jakob disease"
-        },
-        {
-          "code": "97751000119108",
-          "term": "Alzheimer's disease with altered behavior"
         }
       ]
     },
     "included_only": {
       "codelist_name": "included_only",
       "n_ref_codes": 325,
-      "n_output_codes": 65,
-      "recall": 0.1323,
-      "precision": 0.6615,
-      "f1": 0.2205,
-      "tp_count": 43,
-      "fp_count": 22,
-      "fn_count": 282,
+      "n_output_codes": 170,
+      "recall": 0.4154,
+      "precision": 0.7941,
+      "f1": 0.5455,
+      "tp_count": 135,
+      "fp_count": 35,
+      "fn_count": 190,
       "tp_codes": [
+        {
+          "code": "10349009",
+          "term": "Multi-infarct dementia with delirium"
+        },
         {
           "code": "10532003",
           "term": "Primary degenerative dementia of the Alzheimer type, presenile onset, with depression"
+        },
+        {
+          "code": "105421000119105",
+          "term": "Early onset Alzheimer's disease with behavioral disturbance"
+        },
+        {
+          "code": "106021000119105",
+          "term": "Multi-infarct dementia due to atherosclerosis"
         },
         {
           "code": "1089501000000102",
@@ -4670,20 +4734,136 @@
           "term": "Predominantly cortical vascular dementia"
         },
         {
+          "code": "1156789004",
+          "term": "Autosomal dominant Alzheimer disease due to mutation of amyloid precursor protein"
+        },
+        {
+          "code": "1156798001",
+          "term": "Autosomal dominant Alzheimer disease due to mutation of presenilin 2"
+        },
+        {
+          "code": "1156800008",
+          "term": "Autosomal dominant Alzheimer disease due to mutation of presenilin 1"
+        },
+        {
+          "code": "1186883000",
+          "term": "Dementia due to nutritional deficiency disorder"
+        },
+        {
+          "code": "1186887004",
+          "term": "Dementia caused by manganese and/or manganese compound"
+        },
+        {
+          "code": "1187004001",
+          "term": "Chronic traumatic encephalopathy"
+        },
+        {
           "code": "12348006",
           "term": "Presenile dementia"
+        },
+        {
+          "code": "1259124000",
+          "term": "Amyotrophic lateral sclerosis with frontotemporal dementia"
         },
         {
           "code": "1259128002",
           "term": "Alzheimer's disease with psychosis"
         },
         {
+          "code": "1259465009",
+          "term": "Dementia due to hepatic failure"
+        },
+        {
+          "code": "1259476008",
+          "term": "Dementia due to genetic disease"
+        },
+        {
+          "code": "1259485008",
+          "term": "Dementia due to cerebral vasculitis"
+        },
+        {
+          "code": "1259488005",
+          "term": "Dementia due to cerebral amyloid angiopathy"
+        },
+        {
           "code": "1259499007",
           "term": "Dementia due to hemorrhagic cerebral infarction due to hypertension"
         },
         {
+          "code": "1259517005",
+          "term": "Dementia due to systemic lupus erythematosus"
+        },
+        {
+          "code": "1259579003",
+          "term": "Dementia due to Behcet syndrome"
+        },
+        {
+          "code": "1259581001",
+          "term": "Dementia due to celiac disease"
+        },
+        {
+          "code": "1259584009",
+          "term": "Dementia due to and following dialysis"
+        },
+        {
+          "code": "1259591007",
+          "term": "Dementia due to acquired hypothyroidism"
+        },
+        {
+          "code": "1259656006",
+          "term": "Dementia due to renal failure"
+        },
+        {
+          "code": "1259661008",
+          "term": "Dementia due to inflammatory disorder of musculoskeletal system"
+        },
+        {
+          "code": "1259663006",
+          "term": "Dementia due to polyarteritis nodosa"
+        },
+        {
+          "code": "1259673008",
+          "term": "Dementia due to neurofilament inclusion body disease"
+        },
+        {
+          "code": "1260352009",
+          "term": "Frontotemporal dementia due to TARDBP mutation"
+        },
+        {
+          "code": "1260353004",
+          "term": "Frontotemporal dementia due to VCP mutation"
+        },
+        {
+          "code": "1260354005",
+          "term": "Frontotemporal dementia due to C9orf72 mutation"
+        },
+        {
+          "code": "1260355006",
+          "term": "Frontotemporal dementia due to FUS mutation"
+        },
+        {
+          "code": "1263555006",
+          "term": "Logopenic non-amnestic Alzheimer disease"
+        },
+        {
+          "code": "1263585001",
+          "term": "Frontal variant non-amnestic Alzheimer disease"
+        },
+        {
+          "code": "14070001",
+          "term": "Multi-infarct dementia with depression"
+        },
+        {
           "code": "141991000119109",
           "term": "Alzheimer's disease with delusions"
+        },
+        {
+          "code": "142001000119106",
+          "term": "Alzheimer's disease with depressed mood"
+        },
+        {
+          "code": "142011000119109",
+          "term": "Alzheimer's disease with delirium"
         },
         {
           "code": "15662003",
@@ -4692,6 +4872,18 @@
         {
           "code": "1581000119101",
           "term": "Dementia of the Alzheimer type with behavioral disturbance"
+        },
+        {
+          "code": "1591000119103",
+          "term": "Dementia with behavioral disturbance"
+        },
+        {
+          "code": "16219201000119101",
+          "term": "Late onset Alzheimer's dementia with behavioral disturbance"
+        },
+        {
+          "code": "16276361000119109",
+          "term": "Vascular dementia without behavioral disturbance"
         },
         {
           "code": "191449005",
@@ -4706,8 +4898,16 @@
           "term": "Presenile dementia with delirium"
         },
         {
+          "code": "191454001",
+          "term": "Presenile dementia with paranoia"
+        },
+        {
           "code": "191455000",
           "term": "Presenile dementia with depression"
+        },
+        {
+          "code": "191457008",
+          "term": "Senile dementia with depressive or paranoid features"
         },
         {
           "code": "191458003",
@@ -4730,20 +4930,80 @@
           "term": "Arteriosclerotic dementia with delirium"
         },
         {
+          "code": "191465006",
+          "term": "Arteriosclerotic dementia with paranoia"
+        },
+        {
           "code": "191466007",
           "term": "Arteriosclerotic dementia with depression"
+        },
+        {
+          "code": "191493005",
+          "term": "Dementia caused by drug"
+        },
+        {
+          "code": "191519005",
+          "term": "Dementia associated with another disease"
+        },
+        {
+          "code": "21921000119103",
+          "term": "Dementia co-occurrent and due to Pick's disease"
         },
         {
           "code": "22381000119105",
           "term": "Primary degenerative dementia"
         },
         {
+          "code": "230265002",
+          "term": "Familial Alzheimer's disease of early onset"
+        },
+        {
+          "code": "230266001",
+          "term": "Non-familial Alzheimer's disease of early onset"
+        },
+        {
+          "code": "230267005",
+          "term": "Familial Alzheimer's disease of late onset"
+        },
+        {
+          "code": "230268000",
+          "term": "Non-familial Alzheimer's disease of late onset"
+        },
+        {
+          "code": "230269008",
+          "term": "Focal Alzheimer's disease"
+        },
+        {
           "code": "230270009",
           "term": "Frontotemporal dementia"
         },
         {
+          "code": "230271008",
+          "term": "Pick's disease with Pick bodies"
+        },
+        {
+          "code": "230272001",
+          "term": "Pick's disease with Pick cells and no Pick bodies"
+        },
+        {
+          "code": "230280008",
+          "term": "Alzheimer's disease with progressive aphasia"
+        },
+        {
+          "code": "230282000",
+          "term": "Post-traumatic dementia"
+        },
+        {
+          "code": "230285003",
+          "term": "Vascular dementia of acute onset"
+        },
+        {
           "code": "230286002",
           "term": "Subcortical vascular dementia"
+        },
+        {
+          "code": "230287006",
+          "term": "Mixed cortical and subcortical vascular dementia"
         },
         {
           "code": "230288001",
@@ -4754,6 +5014,14 @@
           "term": "Patchy dementia"
         },
         {
+          "code": "2421000119107",
+          "term": "Hallucinations co-occurrent and due to late onset dementia"
+        },
+        {
+          "code": "25772007",
+          "term": "Multi-infarct dementia with delusions"
+        },
+        {
           "code": "26852004",
           "term": "Primary degenerative dementia of the Alzheimer type, senile onset, with depression"
         },
@@ -4762,8 +5030,28 @@
           "term": "Alzheimer's disease"
         },
         {
+          "code": "278857002",
+          "term": "Dementia of frontal lobe type"
+        },
+        {
+          "code": "281004",
+          "term": "Dementia associated with alcoholism"
+        },
+        {
+          "code": "288631000119104",
+          "term": "Vascular dementia with behavioral disturbance"
+        },
+        {
+          "code": "293671000119109",
+          "term": "Behavioral disturbance due to multi-infarct dementia"
+        },
+        {
           "code": "31081000119101",
           "term": "Presenile dementia with delusions"
+        },
+        {
+          "code": "312991009",
+          "term": "Late onset dementia due to Lewy body disease"
         },
         {
           "code": "371024007",
@@ -4782,8 +5070,28 @@
           "term": "Primary degenerative dementia of the Alzheimer type, senile onset"
         },
         {
+          "code": "421023003",
+          "term": "Presenile dementia with acquired immunodeficiency syndrome"
+        },
+        {
+          "code": "421529006",
+          "term": "Dementia with acquired immunodeficiency syndrome"
+        },
+        {
+          "code": "425390006",
+          "term": "Dementia associated with Parkinson's Disease"
+        },
+        {
+          "code": "429998004",
+          "term": "Vascular dementia"
+        },
+        {
           "code": "4817008",
           "term": "Primary degenerative dementia of the Alzheimer type, senile onset, with delirium"
+        },
+        {
+          "code": "51928006",
+          "term": "General paresis - neurosyphilis"
         },
         {
           "code": "52448006",
@@ -4798,6 +5106,10 @@
           "term": "Primary degenerative dementia of the Alzheimer type, senile onset, with delusions"
         },
         {
+          "code": "56267009",
+          "term": "Multi-infarct dementia"
+        },
+        {
           "code": "6475002",
           "term": "Primary degenerative dementia of the Alzheimer type, presenile onset, uncomplicated"
         },
@@ -4810,26 +5122,186 @@
           "term": "Primary degenerative dementia of the Alzheimer type, senile onset, uncomplicated"
         },
         {
+          "code": "698949001",
+          "term": "Dementia in remission"
+        },
+        {
+          "code": "698955006",
+          "term": "Primary degenerative dementia of the Alzheimer type, presenile onset in remission"
+        },
+        {
+          "code": "702393003",
+          "term": "Frontotemporal dementia with gene located on 3p11"
+        },
+        {
+          "code": "70936005",
+          "term": "Multi-infarct dementia, uncomplicated"
+        },
+        {
+          "code": "713488003",
+          "term": "Presenile dementia co-occurrent with human immunodeficiency virus infection"
+        },
+        {
+          "code": "713844000",
+          "term": "Dementia co-occurrent with human immunodeficiency virus infection"
+        },
+        {
+          "code": "715737004",
+          "term": "Parkinsonism co-occurrent with dementia of Guadeloupe"
+        },
+        {
+          "code": "716667005",
+          "term": "Right temporal atrophy variant frontotemporal dementia"
+        },
+        {
+          "code": "716994006",
+          "term": "Behavioral variant of frontotemporal dementia"
+        },
+        {
           "code": "722600006",
           "term": "Non-amnestic Alzheimer disease"
+        },
+        {
+          "code": "722978000",
+          "term": "Toxic dementia"
+        },
+        {
+          "code": "722979008",
+          "term": "Dementia due to metabolic abnormality"
+        },
+        {
+          "code": "722980006",
+          "term": "Dementia due to chromosomal anomaly"
+        },
+        {
+          "code": "723123001",
+          "term": "Ischemic vascular dementia"
         },
         {
           "code": "723390000",
           "term": "Rapidly progressive dementia"
         },
         {
+          "code": "724776007",
+          "term": "Dementia due to disorder of central nervous system"
+        },
+        {
+          "code": "724777003",
+          "term": "Dementia due to infectious disease"
+        },
+        {
+          "code": "725898002",
+          "term": "Delirium co-occurrent with dementia"
+        },
+        {
+          "code": "733184002",
+          "term": "Dementia caused by heavy metal exposure"
+        },
+        {
           "code": "762707000",
           "term": "Subcortical dementia"
         },
         {
+          "code": "774069007",
+          "term": "Protein kinase cAMP-dependent type I regulatory subunit beta-related neurodegenerative dementia with intermediate filaments"
+        },
+        {
+          "code": "788898005",
+          "term": "Dementia caused by volatile inhalant"
+        },
+        {
           "code": "79341000119107",
           "term": "Mixed dementia"
+        },
+        {
+          "code": "82351000119105",
+          "term": "Altered behavior due to Pick's disease"
+        },
+        {
+          "code": "82381000119103",
+          "term": "Epileptic dementia with behavioral disturbance"
+        },
+        {
+          "code": "82959004",
+          "term": "Dementia paralytica juvenilis"
+        },
+        {
+          "code": "833326008",
+          "term": "Cortical vascular dementia"
+        },
+        {
+          "code": "838276009",
+          "term": "Amyotrophic lateral sclerosis, parkinsonism, dementia complex"
+        },
+        {
+          "code": "840464007",
+          "term": "Dementia due to carbon monoxide poisoning"
+        },
+        {
+          "code": "90099008",
+          "term": "Subcortical leukoencephalopathy"
+        },
+        {
+          "code": "97751000119108",
+          "term": "Alzheimer's disease with altered behavior"
         }
       ],
       "fp_codes": [
         {
+          "code": "1186724002",
+          "term": "HTRA1-related autosomal dominant cerebral small vessel disease"
+        },
+        {
+          "code": "1187126002",
+          "term": "ITM2B-related amyloidosis"
+        },
+        {
+          "code": "1339031006",
+          "term": "Dementia caused by ionizing radiation"
+        },
+        {
           "code": "16276361000119108",
           "term": "Vascular dementia without behavioral disturbance (disorder)"
+        },
+        {
+          "code": "230274000",
+          "term": "Frontal lobe degeneration with motor neurone disease"
+        },
+        {
+          "code": "230299004",
+          "term": "Juvenile onset Huntington's disease"
+        },
+        {
+          "code": "230300007",
+          "term": "Late onset Huntington's disease"
+        },
+        {
+          "code": "230301006",
+          "term": "Akinetic-rigid form of Huntington's disease"
+        },
+        {
+          "code": "268612007",
+          "term": "Senile and presenile organic psychotic conditions"
+        },
+        {
+          "code": "428051000124108",
+          "term": "Mild dementia"
+        },
+        {
+          "code": "428351000124105",
+          "term": "Severe dementia"
+        },
+        {
+          "code": "429161000124103",
+          "term": "Primary degenerative dementia of the Alzheimer type, senile onset, with behavioral disturbance"
+        },
+        {
+          "code": "430771000124100",
+          "term": "Moderate dementia"
+        },
+        {
+          "code": "58756001",
+          "term": "Huntington's chorea"
         },
         {
           "code": "F00",
@@ -4922,18 +5394,6 @@
           "term": "Dementia due to Parkinson's disease"
         },
         {
-          "code": "10349009",
-          "term": "Multi-infarct dementia with delirium"
-        },
-        {
-          "code": "105421000119105",
-          "term": "Early onset Alzheimer's disease with behavioral disturbance"
-        },
-        {
-          "code": "106021000119105",
-          "term": "Multi-infarct dementia due to atherosclerosis"
-        },
-        {
           "code": "1089581000000107",
           "term": "Predominantly cortical dementia"
         },
@@ -4948,18 +5408,6 @@
         {
           "code": "1148924004",
           "term": "Dementia due to deficiency of folic acid"
-        },
-        {
-          "code": "1156789004",
-          "term": "Autosomal dominant Alzheimer disease due to mutation of amyloid precursor protein"
-        },
-        {
-          "code": "1156798001",
-          "term": "Autosomal dominant Alzheimer disease due to mutation of presenilin 2"
-        },
-        {
-          "code": "1156800008",
-          "term": "Autosomal dominant Alzheimer disease due to mutation of presenilin 1"
         },
         {
           "code": "1163119007",
@@ -4982,32 +5430,12 @@
           "term": "Dementia due to niacin deficiency"
         },
         {
-          "code": "1186883000",
-          "term": "Dementia due to nutritional deficiency disorder"
-        },
-        {
-          "code": "1186887004",
-          "term": "Dementia caused by manganese and/or manganese compound"
-        },
-        {
-          "code": "1187004001",
-          "term": "Chronic traumatic encephalopathy"
-        },
-        {
           "code": "1259121008",
           "term": "Amyotrophic lateral sclerosis, parkinsonism, dementia complex of West New Guinea"
         },
         {
           "code": "1259123006",
           "term": "Amyotrophic lateral sclerosis, parkinsonism, dementia complex of Kii Peninsula"
-        },
-        {
-          "code": "1259124000",
-          "term": "Amyotrophic lateral sclerosis with frontotemporal dementia"
-        },
-        {
-          "code": "1259465009",
-          "term": "Dementia due to hepatic failure"
         },
         {
           "code": "1259467001",
@@ -5026,24 +5454,12 @@
           "term": "Dementia due to fragile X syndrome"
         },
         {
-          "code": "1259476008",
-          "term": "Dementia due to genetic disease"
-        },
-        {
           "code": "1259478009",
           "term": "Dementia due to familial Creutzfeldt-Jakob disease"
         },
         {
           "code": "1259480003",
           "term": "Dementia due to fatal familial insomnia"
-        },
-        {
-          "code": "1259485008",
-          "term": "Dementia due to cerebral vasculitis"
-        },
-        {
-          "code": "1259488005",
-          "term": "Dementia due to cerebral amyloid angiopathy"
         },
         {
           "code": "1259492003",
@@ -5074,10 +5490,6 @@
           "term": "Dementia due to Whipple disease"
         },
         {
-          "code": "1259517005",
-          "term": "Dementia due to systemic lupus erythematosus"
-        },
-        {
           "code": "1259519008",
           "term": "Dementia due to subacute sclerosing panencephalitis"
         },
@@ -5098,36 +5510,8 @@
           "term": "Dementia due to hypertensive encephalopathy"
         },
         {
-          "code": "1259579003",
-          "term": "Dementia due to Behcet syndrome"
-        },
-        {
-          "code": "1259581001",
-          "term": "Dementia due to celiac disease"
-        },
-        {
-          "code": "1259584009",
-          "term": "Dementia due to and following dialysis"
-        },
-        {
           "code": "1259586006",
           "term": "Dementia due to autoimmune encephalitis"
-        },
-        {
-          "code": "1259591007",
-          "term": "Dementia due to acquired hypothyroidism"
-        },
-        {
-          "code": "1259656006",
-          "term": "Dementia due to renal failure"
-        },
-        {
-          "code": "1259661008",
-          "term": "Dementia due to inflammatory disorder of musculoskeletal system"
-        },
-        {
-          "code": "1259663006",
-          "term": "Dementia due to polyarteritis nodosa"
         },
         {
           "code": "1259665004",
@@ -5136,10 +5520,6 @@
         {
           "code": "1259667007",
           "term": "Dementia due to paraneoplastic encephalitis"
-        },
-        {
-          "code": "1259673008",
-          "term": "Dementia due to neurofilament inclusion body disease"
         },
         {
           "code": "1259675001",
@@ -5160,30 +5540,6 @@
         {
           "code": "1260328002",
           "term": "Familial multiple system deposition of tau protein"
-        },
-        {
-          "code": "1260352009",
-          "term": "Frontotemporal dementia due to TARDBP mutation"
-        },
-        {
-          "code": "1260353004",
-          "term": "Frontotemporal dementia due to VCP mutation"
-        },
-        {
-          "code": "1260354005",
-          "term": "Frontotemporal dementia due to C9orf72 mutation"
-        },
-        {
-          "code": "1260355006",
-          "term": "Frontotemporal dementia due to FUS mutation"
-        },
-        {
-          "code": "1263555006",
-          "term": "Logopenic non-amnestic Alzheimer disease"
-        },
-        {
-          "code": "1263585001",
-          "term": "Frontal variant non-amnestic Alzheimer disease"
         },
         {
           "code": "12741002",
@@ -5212,18 +5568,6 @@
         {
           "code": "138736007",
           "term": "H/O: dementia"
-        },
-        {
-          "code": "14070001",
-          "term": "Multi-infarct dementia with depression"
-        },
-        {
-          "code": "142001000119106",
-          "term": "Alzheimer's disease with depressed mood"
-        },
-        {
-          "code": "142011000119109",
-          "term": "Alzheimer's disease with delirium"
         },
         {
           "code": "142811000119104",
@@ -5262,36 +5606,16 @@
           "term": "Creutzfeldt-Jakob disease"
         },
         {
-          "code": "1591000119103",
-          "term": "Dementia with behavioral disturbance"
-        },
-        {
           "code": "161465002",
           "term": "History of dementia"
-        },
-        {
-          "code": "16219201000119101",
-          "term": "Late onset Alzheimer's dementia with behavioral disturbance"
-        },
-        {
-          "code": "16276361000119109",
-          "term": "Vascular dementia without behavioral disturbance"
         },
         {
           "code": "191450005",
           "term": "Presenile dementia"
         },
         {
-          "code": "191454001",
-          "term": "Presenile dementia with paranoia"
-        },
-        {
           "code": "191456004",
           "term": "Presenile dementia NOS"
-        },
-        {
-          "code": "191457008",
-          "term": "Senile dementia with depressive or paranoid features"
         },
         {
           "code": "191460001",
@@ -5302,24 +5626,12 @@
           "term": "Arteriosclerotic dementia (including [multi infarct dementia])"
         },
         {
-          "code": "191465006",
-          "term": "Arteriosclerotic dementia with paranoia"
-        },
-        {
           "code": "191467003",
           "term": "Arteriosclerotic dementia NOS"
         },
         {
           "code": "191474008",
           "term": "Alcoholic dementia: [other] or [NOS]"
-        },
-        {
-          "code": "191493005",
-          "term": "Dementia caused by drug"
-        },
-        {
-          "code": "191519005",
-          "term": "Dementia associated with another disease"
         },
         {
           "code": "192160005",
@@ -5438,44 +5750,12 @@
           "term": "[X]Lewy body dementia"
         },
         {
-          "code": "21921000119103",
-          "term": "Dementia co-occurrent and due to Pick's disease"
-        },
-        {
           "code": "229672009",
           "term": "Language disorder of dementia"
         },
         {
           "code": "230258005",
           "term": "Amyotrophic lateral sclerosis with dementia"
-        },
-        {
-          "code": "230265002",
-          "term": "Familial Alzheimer's disease of early onset"
-        },
-        {
-          "code": "230266001",
-          "term": "Non-familial Alzheimer's disease of early onset"
-        },
-        {
-          "code": "230267005",
-          "term": "Familial Alzheimer's disease of late onset"
-        },
-        {
-          "code": "230268000",
-          "term": "Non-familial Alzheimer's disease of late onset"
-        },
-        {
-          "code": "230269008",
-          "term": "Focal Alzheimer's disease"
-        },
-        {
-          "code": "230271008",
-          "term": "Pick's disease with Pick bodies"
-        },
-        {
-          "code": "230272001",
-          "term": "Pick's disease with Pick cells and no Pick bodies"
         },
         {
           "code": "230275004",
@@ -5490,16 +5770,8 @@
           "term": "Lewy body disease"
         },
         {
-          "code": "230280008",
-          "term": "Alzheimer's disease with progressive aphasia"
-        },
-        {
           "code": "230281007",
           "term": "Argyrophilic grain disease"
-        },
-        {
-          "code": "230282000",
-          "term": "Post-traumatic dementia"
         },
         {
           "code": "230283005",
@@ -5510,28 +5782,12 @@
           "term": "Spongiform encephalopathy"
         },
         {
-          "code": "230285003",
-          "term": "Vascular dementia of acute onset"
-        },
-        {
-          "code": "230287006",
-          "term": "Mixed cortical and subcortical vascular dementia"
-        },
-        {
           "code": "230290000",
           "term": "Epileptic dementia"
         },
         {
           "code": "231463001",
           "term": "Alcoholic dementia NOS"
-        },
-        {
-          "code": "2421000119107",
-          "term": "Hallucinations co-occurrent and due to late onset dementia"
-        },
-        {
-          "code": "25772007",
-          "term": "Multi-infarct dementia with delusions"
         },
         {
           "code": "266134000",
@@ -5554,36 +5810,16 @@
           "term": "Dementia (& [presenile] or [senile])"
         },
         {
-          "code": "278857002",
-          "term": "Dementia of frontal lobe type"
-        },
-        {
           "code": "279982005",
           "term": "Cerebral degeneration presenting primarily with dementia"
-        },
-        {
-          "code": "281004",
-          "term": "Dementia associated with alcoholism"
         },
         {
           "code": "286932008",
           "term": "Other senile/presenile dementia"
         },
         {
-          "code": "288631000119104",
-          "term": "Vascular dementia with behavioral disturbance"
-        },
-        {
-          "code": "293671000119109",
-          "term": "Behavioral disturbance due to multi-infarct dementia"
-        },
-        {
           "code": "304603007",
           "term": "Variant Creutzfeldt-Jakob disease"
-        },
-        {
-          "code": "312991009",
-          "term": "Late onset dementia due to Lewy body disease"
         },
         {
           "code": "32875003",
@@ -5634,28 +5870,12 @@
           "term": "Organic dementia with acquired immunodeficiency syndrome"
         },
         {
-          "code": "421023003",
-          "term": "Presenile dementia with acquired immunodeficiency syndrome"
-        },
-        {
-          "code": "421529006",
-          "term": "Dementia with acquired immunodeficiency syndrome"
-        },
-        {
-          "code": "425390006",
-          "term": "Dementia associated with Parkinson's Disease"
-        },
-        {
           "code": "42769004",
           "term": "Diffuse Lewy body disease with spongiform cortical change"
         },
         {
           "code": "429458009",
           "term": "Dementia due to Creutzfeldt Jakob disease"
-        },
-        {
-          "code": "429998004",
-          "term": "Vascular dementia"
         },
         {
           "code": "442344002",
@@ -5690,16 +5910,8 @@
           "term": "[X]Dementia in Parkinson's disease"
         },
         {
-          "code": "51928006",
-          "term": "General paresis - neurosyphilis"
-        },
-        {
           "code": "544871000000102",
           "term": "Other alcoholic dementia"
-        },
-        {
-          "code": "56267009",
-          "term": "Multi-infarct dementia"
         },
         {
           "code": "59651006",
@@ -5762,24 +5974,12 @@
           "term": "Vascular dementia in remission"
         },
         {
-          "code": "698949001",
-          "term": "Dementia in remission"
-        },
-        {
           "code": "698954005",
           "term": "Primary degenerative dementia of the Alzheimer type, senile onset in remission"
         },
         {
-          "code": "698955006",
-          "term": "Primary degenerative dementia of the Alzheimer type, presenile onset in remission"
-        },
-        {
           "code": "700911000000100",
           "term": "Other senile/presenile dementia"
-        },
-        {
-          "code": "702393003",
-          "term": "Frontotemporal dementia with gene located on 3p11"
         },
         {
           "code": "702421006",
@@ -5798,20 +5998,8 @@
           "term": "Inclusion body myopathy with early-onset Paget disease and frontotemporal dementia"
         },
         {
-          "code": "70936005",
-          "term": "Multi-infarct dementia, uncomplicated"
-        },
-        {
           "code": "713060000",
           "term": "Sporadic Creutzfeldt-Jakob disease"
-        },
-        {
-          "code": "713488003",
-          "term": "Presenile dementia co-occurrent with human immunodeficiency virus infection"
-        },
-        {
-          "code": "713844000",
-          "term": "Dementia co-occurrent with human immunodeficiency virus infection"
         },
         {
           "code": "715574002",
@@ -5822,24 +6010,12 @@
           "term": "Iatrogenic Jakob-Creutzfeldt disease"
         },
         {
-          "code": "715737004",
-          "term": "Parkinsonism co-occurrent with dementia of Guadeloupe"
-        },
-        {
           "code": "715807002",
           "term": "Familial Creutzfeldt-Jakob"
         },
         {
           "code": "716281000",
           "term": "Primary progressive non fluent aphasia"
-        },
-        {
-          "code": "716667005",
-          "term": "Right temporal atrophy variant frontotemporal dementia"
-        },
-        {
-          "code": "716994006",
-          "term": "Behavioral variant of frontotemporal dementia"
         },
         {
           "code": "721219005",
@@ -5854,40 +6030,8 @@
           "term": "Dementia co-occurrent and due to neurocysticercosis"
         },
         {
-          "code": "722978000",
-          "term": "Toxic dementia"
-        },
-        {
-          "code": "722979008",
-          "term": "Dementia due to metabolic abnormality"
-        },
-        {
-          "code": "722980006",
-          "term": "Dementia due to chromosomal anomaly"
-        },
-        {
-          "code": "723123001",
-          "term": "Ischemic vascular dementia"
-        },
-        {
-          "code": "724776007",
-          "term": "Dementia due to disorder of central nervous system"
-        },
-        {
-          "code": "724777003",
-          "term": "Dementia due to infectious disease"
-        },
-        {
           "code": "724992007",
           "term": "Epilepsy co-occurrent and due to dementia"
-        },
-        {
-          "code": "725898002",
-          "term": "Delirium co-occurrent with dementia"
-        },
-        {
-          "code": "733184002",
-          "term": "Dementia caused by heavy metal exposure"
         },
         {
           "code": "733185001",
@@ -5922,10 +6066,6 @@
           "term": "Dementia due to and following injury of head"
         },
         {
-          "code": "774069007",
-          "term": "Protein kinase cAMP-dependent type I regulatory subunit beta-related neurodegenerative dementia with intermediate filaments"
-        },
-        {
           "code": "783161005",
           "term": "Familial dementia British type"
         },
@@ -5944,10 +6084,6 @@
         {
           "code": "788862002",
           "term": "Agitation due to dementia"
-        },
-        {
-          "code": "788898005",
-          "term": "Dementia caused by volatile inhalant"
         },
         {
           "code": "788899002",
@@ -5970,10 +6106,6 @@
           "term": "Diffuse Lewy body disease"
         },
         {
-          "code": "82351000119105",
-          "term": "Altered behavior due to Pick's disease"
-        },
-        {
           "code": "82361000119107",
           "term": "Altered behavior in dementia due to Huntington chorea"
         },
@@ -5982,28 +6114,8 @@
           "term": "Dementia due to multiple sclerosis with altered behavior"
         },
         {
-          "code": "82381000119103",
-          "term": "Epileptic dementia with behavioral disturbance"
-        },
-        {
-          "code": "82959004",
-          "term": "Dementia paralytica juvenilis"
-        },
-        {
-          "code": "833326008",
-          "term": "Cortical vascular dementia"
-        },
-        {
-          "code": "838276009",
-          "term": "Amyotrophic lateral sclerosis, parkinsonism, dementia complex"
-        },
-        {
           "code": "840452004",
           "term": "Classical sporadic Creutzfeldt-Jakob disease"
-        },
-        {
-          "code": "840464007",
-          "term": "Dementia due to carbon monoxide poisoning"
         },
         {
           "code": "840465008",
@@ -6016,10 +6128,6 @@
         {
           "code": "88339003",
           "term": "Dementia arising in the senium AND/OR presenium"
-        },
-        {
-          "code": "90099008",
-          "term": "Subcortical leukoencephalopathy"
         },
         {
           "code": "90194001",
@@ -6040,27 +6148,35 @@
         {
           "code": "9345005",
           "term": "Dialysis dementia"
-        },
-        {
-          "code": "97751000119108",
-          "term": "Alzheimer's disease with altered behavior"
         }
       ]
     },
     "included_plus_uncertain": {
       "codelist_name": "included_plus_uncertain",
       "n_ref_codes": 325,
-      "n_output_codes": 66,
-      "recall": 0.1354,
-      "precision": 0.6667,
-      "f1": 0.2251,
-      "tp_count": 44,
-      "fp_count": 22,
-      "fn_count": 281,
+      "n_output_codes": 170,
+      "recall": 0.4154,
+      "precision": 0.7941,
+      "f1": 0.5455,
+      "tp_count": 135,
+      "fp_count": 35,
+      "fn_count": 190,
       "tp_codes": [
+        {
+          "code": "10349009",
+          "term": "Multi-infarct dementia with delirium"
+        },
         {
           "code": "10532003",
           "term": "Primary degenerative dementia of the Alzheimer type, presenile onset, with depression"
+        },
+        {
+          "code": "105421000119105",
+          "term": "Early onset Alzheimer's disease with behavioral disturbance"
+        },
+        {
+          "code": "106021000119105",
+          "term": "Multi-infarct dementia due to atherosclerosis"
         },
         {
           "code": "1089501000000102",
@@ -6075,20 +6191,136 @@
           "term": "Predominantly cortical vascular dementia"
         },
         {
+          "code": "1156789004",
+          "term": "Autosomal dominant Alzheimer disease due to mutation of amyloid precursor protein"
+        },
+        {
+          "code": "1156798001",
+          "term": "Autosomal dominant Alzheimer disease due to mutation of presenilin 2"
+        },
+        {
+          "code": "1156800008",
+          "term": "Autosomal dominant Alzheimer disease due to mutation of presenilin 1"
+        },
+        {
+          "code": "1186883000",
+          "term": "Dementia due to nutritional deficiency disorder"
+        },
+        {
+          "code": "1186887004",
+          "term": "Dementia caused by manganese and/or manganese compound"
+        },
+        {
+          "code": "1187004001",
+          "term": "Chronic traumatic encephalopathy"
+        },
+        {
           "code": "12348006",
           "term": "Presenile dementia"
+        },
+        {
+          "code": "1259124000",
+          "term": "Amyotrophic lateral sclerosis with frontotemporal dementia"
         },
         {
           "code": "1259128002",
           "term": "Alzheimer's disease with psychosis"
         },
         {
+          "code": "1259465009",
+          "term": "Dementia due to hepatic failure"
+        },
+        {
+          "code": "1259476008",
+          "term": "Dementia due to genetic disease"
+        },
+        {
+          "code": "1259485008",
+          "term": "Dementia due to cerebral vasculitis"
+        },
+        {
+          "code": "1259488005",
+          "term": "Dementia due to cerebral amyloid angiopathy"
+        },
+        {
           "code": "1259499007",
           "term": "Dementia due to hemorrhagic cerebral infarction due to hypertension"
         },
         {
+          "code": "1259517005",
+          "term": "Dementia due to systemic lupus erythematosus"
+        },
+        {
+          "code": "1259579003",
+          "term": "Dementia due to Behcet syndrome"
+        },
+        {
+          "code": "1259581001",
+          "term": "Dementia due to celiac disease"
+        },
+        {
+          "code": "1259584009",
+          "term": "Dementia due to and following dialysis"
+        },
+        {
+          "code": "1259591007",
+          "term": "Dementia due to acquired hypothyroidism"
+        },
+        {
+          "code": "1259656006",
+          "term": "Dementia due to renal failure"
+        },
+        {
+          "code": "1259661008",
+          "term": "Dementia due to inflammatory disorder of musculoskeletal system"
+        },
+        {
+          "code": "1259663006",
+          "term": "Dementia due to polyarteritis nodosa"
+        },
+        {
+          "code": "1259673008",
+          "term": "Dementia due to neurofilament inclusion body disease"
+        },
+        {
+          "code": "1260352009",
+          "term": "Frontotemporal dementia due to TARDBP mutation"
+        },
+        {
+          "code": "1260353004",
+          "term": "Frontotemporal dementia due to VCP mutation"
+        },
+        {
+          "code": "1260354005",
+          "term": "Frontotemporal dementia due to C9orf72 mutation"
+        },
+        {
+          "code": "1260355006",
+          "term": "Frontotemporal dementia due to FUS mutation"
+        },
+        {
+          "code": "1263555006",
+          "term": "Logopenic non-amnestic Alzheimer disease"
+        },
+        {
+          "code": "1263585001",
+          "term": "Frontal variant non-amnestic Alzheimer disease"
+        },
+        {
+          "code": "14070001",
+          "term": "Multi-infarct dementia with depression"
+        },
+        {
           "code": "141991000119109",
           "term": "Alzheimer's disease with delusions"
+        },
+        {
+          "code": "142001000119106",
+          "term": "Alzheimer's disease with depressed mood"
+        },
+        {
+          "code": "142011000119109",
+          "term": "Alzheimer's disease with delirium"
         },
         {
           "code": "15662003",
@@ -6097,6 +6329,18 @@
         {
           "code": "1581000119101",
           "term": "Dementia of the Alzheimer type with behavioral disturbance"
+        },
+        {
+          "code": "1591000119103",
+          "term": "Dementia with behavioral disturbance"
+        },
+        {
+          "code": "16219201000119101",
+          "term": "Late onset Alzheimer's dementia with behavioral disturbance"
+        },
+        {
+          "code": "16276361000119109",
+          "term": "Vascular dementia without behavioral disturbance"
         },
         {
           "code": "191449005",
@@ -6111,8 +6355,16 @@
           "term": "Presenile dementia with delirium"
         },
         {
+          "code": "191454001",
+          "term": "Presenile dementia with paranoia"
+        },
+        {
           "code": "191455000",
           "term": "Presenile dementia with depression"
+        },
+        {
+          "code": "191457008",
+          "term": "Senile dementia with depressive or paranoid features"
         },
         {
           "code": "191458003",
@@ -6135,20 +6387,80 @@
           "term": "Arteriosclerotic dementia with delirium"
         },
         {
+          "code": "191465006",
+          "term": "Arteriosclerotic dementia with paranoia"
+        },
+        {
           "code": "191466007",
           "term": "Arteriosclerotic dementia with depression"
+        },
+        {
+          "code": "191493005",
+          "term": "Dementia caused by drug"
+        },
+        {
+          "code": "191519005",
+          "term": "Dementia associated with another disease"
+        },
+        {
+          "code": "21921000119103",
+          "term": "Dementia co-occurrent and due to Pick's disease"
         },
         {
           "code": "22381000119105",
           "term": "Primary degenerative dementia"
         },
         {
+          "code": "230265002",
+          "term": "Familial Alzheimer's disease of early onset"
+        },
+        {
+          "code": "230266001",
+          "term": "Non-familial Alzheimer's disease of early onset"
+        },
+        {
+          "code": "230267005",
+          "term": "Familial Alzheimer's disease of late onset"
+        },
+        {
+          "code": "230268000",
+          "term": "Non-familial Alzheimer's disease of late onset"
+        },
+        {
+          "code": "230269008",
+          "term": "Focal Alzheimer's disease"
+        },
+        {
           "code": "230270009",
           "term": "Frontotemporal dementia"
         },
         {
+          "code": "230271008",
+          "term": "Pick's disease with Pick bodies"
+        },
+        {
+          "code": "230272001",
+          "term": "Pick's disease with Pick cells and no Pick bodies"
+        },
+        {
+          "code": "230280008",
+          "term": "Alzheimer's disease with progressive aphasia"
+        },
+        {
+          "code": "230282000",
+          "term": "Post-traumatic dementia"
+        },
+        {
+          "code": "230285003",
+          "term": "Vascular dementia of acute onset"
+        },
+        {
           "code": "230286002",
           "term": "Subcortical vascular dementia"
+        },
+        {
+          "code": "230287006",
+          "term": "Mixed cortical and subcortical vascular dementia"
         },
         {
           "code": "230288001",
@@ -6159,6 +6471,14 @@
           "term": "Patchy dementia"
         },
         {
+          "code": "2421000119107",
+          "term": "Hallucinations co-occurrent and due to late onset dementia"
+        },
+        {
+          "code": "25772007",
+          "term": "Multi-infarct dementia with delusions"
+        },
+        {
           "code": "26852004",
           "term": "Primary degenerative dementia of the Alzheimer type, senile onset, with depression"
         },
@@ -6167,8 +6487,28 @@
           "term": "Alzheimer's disease"
         },
         {
+          "code": "278857002",
+          "term": "Dementia of frontal lobe type"
+        },
+        {
+          "code": "281004",
+          "term": "Dementia associated with alcoholism"
+        },
+        {
+          "code": "288631000119104",
+          "term": "Vascular dementia with behavioral disturbance"
+        },
+        {
+          "code": "293671000119109",
+          "term": "Behavioral disturbance due to multi-infarct dementia"
+        },
+        {
           "code": "31081000119101",
           "term": "Presenile dementia with delusions"
+        },
+        {
+          "code": "312991009",
+          "term": "Late onset dementia due to Lewy body disease"
         },
         {
           "code": "371024007",
@@ -6187,8 +6527,28 @@
           "term": "Primary degenerative dementia of the Alzheimer type, senile onset"
         },
         {
+          "code": "421023003",
+          "term": "Presenile dementia with acquired immunodeficiency syndrome"
+        },
+        {
+          "code": "421529006",
+          "term": "Dementia with acquired immunodeficiency syndrome"
+        },
+        {
+          "code": "425390006",
+          "term": "Dementia associated with Parkinson's Disease"
+        },
+        {
+          "code": "429998004",
+          "term": "Vascular dementia"
+        },
+        {
           "code": "4817008",
           "term": "Primary degenerative dementia of the Alzheimer type, senile onset, with delirium"
+        },
+        {
+          "code": "51928006",
+          "term": "General paresis - neurosyphilis"
         },
         {
           "code": "52448006",
@@ -6203,6 +6563,10 @@
           "term": "Primary degenerative dementia of the Alzheimer type, senile onset, with delusions"
         },
         {
+          "code": "56267009",
+          "term": "Multi-infarct dementia"
+        },
+        {
           "code": "6475002",
           "term": "Primary degenerative dementia of the Alzheimer type, presenile onset, uncomplicated"
         },
@@ -6215,30 +6579,186 @@
           "term": "Primary degenerative dementia of the Alzheimer type, senile onset, uncomplicated"
         },
         {
-          "code": "698954005",
-          "term": "Primary degenerative dementia of the Alzheimer type, senile onset in remission"
+          "code": "698949001",
+          "term": "Dementia in remission"
+        },
+        {
+          "code": "698955006",
+          "term": "Primary degenerative dementia of the Alzheimer type, presenile onset in remission"
+        },
+        {
+          "code": "702393003",
+          "term": "Frontotemporal dementia with gene located on 3p11"
+        },
+        {
+          "code": "70936005",
+          "term": "Multi-infarct dementia, uncomplicated"
+        },
+        {
+          "code": "713488003",
+          "term": "Presenile dementia co-occurrent with human immunodeficiency virus infection"
+        },
+        {
+          "code": "713844000",
+          "term": "Dementia co-occurrent with human immunodeficiency virus infection"
+        },
+        {
+          "code": "715737004",
+          "term": "Parkinsonism co-occurrent with dementia of Guadeloupe"
+        },
+        {
+          "code": "716667005",
+          "term": "Right temporal atrophy variant frontotemporal dementia"
+        },
+        {
+          "code": "716994006",
+          "term": "Behavioral variant of frontotemporal dementia"
         },
         {
           "code": "722600006",
           "term": "Non-amnestic Alzheimer disease"
         },
         {
+          "code": "722978000",
+          "term": "Toxic dementia"
+        },
+        {
+          "code": "722979008",
+          "term": "Dementia due to metabolic abnormality"
+        },
+        {
+          "code": "722980006",
+          "term": "Dementia due to chromosomal anomaly"
+        },
+        {
+          "code": "723123001",
+          "term": "Ischemic vascular dementia"
+        },
+        {
           "code": "723390000",
           "term": "Rapidly progressive dementia"
+        },
+        {
+          "code": "724776007",
+          "term": "Dementia due to disorder of central nervous system"
+        },
+        {
+          "code": "724777003",
+          "term": "Dementia due to infectious disease"
+        },
+        {
+          "code": "725898002",
+          "term": "Delirium co-occurrent with dementia"
+        },
+        {
+          "code": "733184002",
+          "term": "Dementia caused by heavy metal exposure"
         },
         {
           "code": "762707000",
           "term": "Subcortical dementia"
         },
         {
+          "code": "774069007",
+          "term": "Protein kinase cAMP-dependent type I regulatory subunit beta-related neurodegenerative dementia with intermediate filaments"
+        },
+        {
+          "code": "788898005",
+          "term": "Dementia caused by volatile inhalant"
+        },
+        {
           "code": "79341000119107",
           "term": "Mixed dementia"
+        },
+        {
+          "code": "82351000119105",
+          "term": "Altered behavior due to Pick's disease"
+        },
+        {
+          "code": "82381000119103",
+          "term": "Epileptic dementia with behavioral disturbance"
+        },
+        {
+          "code": "82959004",
+          "term": "Dementia paralytica juvenilis"
+        },
+        {
+          "code": "833326008",
+          "term": "Cortical vascular dementia"
+        },
+        {
+          "code": "838276009",
+          "term": "Amyotrophic lateral sclerosis, parkinsonism, dementia complex"
+        },
+        {
+          "code": "840464007",
+          "term": "Dementia due to carbon monoxide poisoning"
+        },
+        {
+          "code": "90099008",
+          "term": "Subcortical leukoencephalopathy"
+        },
+        {
+          "code": "97751000119108",
+          "term": "Alzheimer's disease with altered behavior"
         }
       ],
       "fp_codes": [
         {
+          "code": "1186724002",
+          "term": "HTRA1-related autosomal dominant cerebral small vessel disease"
+        },
+        {
+          "code": "1187126002",
+          "term": "ITM2B-related amyloidosis"
+        },
+        {
+          "code": "1339031006",
+          "term": "Dementia caused by ionizing radiation"
+        },
+        {
           "code": "16276361000119108",
           "term": "Vascular dementia without behavioral disturbance (disorder)"
+        },
+        {
+          "code": "230274000",
+          "term": "Frontal lobe degeneration with motor neurone disease"
+        },
+        {
+          "code": "230299004",
+          "term": "Juvenile onset Huntington's disease"
+        },
+        {
+          "code": "230300007",
+          "term": "Late onset Huntington's disease"
+        },
+        {
+          "code": "230301006",
+          "term": "Akinetic-rigid form of Huntington's disease"
+        },
+        {
+          "code": "268612007",
+          "term": "Senile and presenile organic psychotic conditions"
+        },
+        {
+          "code": "428051000124108",
+          "term": "Mild dementia"
+        },
+        {
+          "code": "428351000124105",
+          "term": "Severe dementia"
+        },
+        {
+          "code": "429161000124103",
+          "term": "Primary degenerative dementia of the Alzheimer type, senile onset, with behavioral disturbance"
+        },
+        {
+          "code": "430771000124100",
+          "term": "Moderate dementia"
+        },
+        {
+          "code": "58756001",
+          "term": "Huntington's chorea"
         },
         {
           "code": "F00",
@@ -6331,18 +6851,6 @@
           "term": "Dementia due to Parkinson's disease"
         },
         {
-          "code": "10349009",
-          "term": "Multi-infarct dementia with delirium"
-        },
-        {
-          "code": "105421000119105",
-          "term": "Early onset Alzheimer's disease with behavioral disturbance"
-        },
-        {
-          "code": "106021000119105",
-          "term": "Multi-infarct dementia due to atherosclerosis"
-        },
-        {
           "code": "1089581000000107",
           "term": "Predominantly cortical dementia"
         },
@@ -6357,18 +6865,6 @@
         {
           "code": "1148924004",
           "term": "Dementia due to deficiency of folic acid"
-        },
-        {
-          "code": "1156789004",
-          "term": "Autosomal dominant Alzheimer disease due to mutation of amyloid precursor protein"
-        },
-        {
-          "code": "1156798001",
-          "term": "Autosomal dominant Alzheimer disease due to mutation of presenilin 2"
-        },
-        {
-          "code": "1156800008",
-          "term": "Autosomal dominant Alzheimer disease due to mutation of presenilin 1"
         },
         {
           "code": "1163119007",
@@ -6391,32 +6887,12 @@
           "term": "Dementia due to niacin deficiency"
         },
         {
-          "code": "1186883000",
-          "term": "Dementia due to nutritional deficiency disorder"
-        },
-        {
-          "code": "1186887004",
-          "term": "Dementia caused by manganese and/or manganese compound"
-        },
-        {
-          "code": "1187004001",
-          "term": "Chronic traumatic encephalopathy"
-        },
-        {
           "code": "1259121008",
           "term": "Amyotrophic lateral sclerosis, parkinsonism, dementia complex of West New Guinea"
         },
         {
           "code": "1259123006",
           "term": "Amyotrophic lateral sclerosis, parkinsonism, dementia complex of Kii Peninsula"
-        },
-        {
-          "code": "1259124000",
-          "term": "Amyotrophic lateral sclerosis with frontotemporal dementia"
-        },
-        {
-          "code": "1259465009",
-          "term": "Dementia due to hepatic failure"
         },
         {
           "code": "1259467001",
@@ -6435,24 +6911,12 @@
           "term": "Dementia due to fragile X syndrome"
         },
         {
-          "code": "1259476008",
-          "term": "Dementia due to genetic disease"
-        },
-        {
           "code": "1259478009",
           "term": "Dementia due to familial Creutzfeldt-Jakob disease"
         },
         {
           "code": "1259480003",
           "term": "Dementia due to fatal familial insomnia"
-        },
-        {
-          "code": "1259485008",
-          "term": "Dementia due to cerebral vasculitis"
-        },
-        {
-          "code": "1259488005",
-          "term": "Dementia due to cerebral amyloid angiopathy"
         },
         {
           "code": "1259492003",
@@ -6483,10 +6947,6 @@
           "term": "Dementia due to Whipple disease"
         },
         {
-          "code": "1259517005",
-          "term": "Dementia due to systemic lupus erythematosus"
-        },
-        {
           "code": "1259519008",
           "term": "Dementia due to subacute sclerosing panencephalitis"
         },
@@ -6507,36 +6967,8 @@
           "term": "Dementia due to hypertensive encephalopathy"
         },
         {
-          "code": "1259579003",
-          "term": "Dementia due to Behcet syndrome"
-        },
-        {
-          "code": "1259581001",
-          "term": "Dementia due to celiac disease"
-        },
-        {
-          "code": "1259584009",
-          "term": "Dementia due to and following dialysis"
-        },
-        {
           "code": "1259586006",
           "term": "Dementia due to autoimmune encephalitis"
-        },
-        {
-          "code": "1259591007",
-          "term": "Dementia due to acquired hypothyroidism"
-        },
-        {
-          "code": "1259656006",
-          "term": "Dementia due to renal failure"
-        },
-        {
-          "code": "1259661008",
-          "term": "Dementia due to inflammatory disorder of musculoskeletal system"
-        },
-        {
-          "code": "1259663006",
-          "term": "Dementia due to polyarteritis nodosa"
         },
         {
           "code": "1259665004",
@@ -6545,10 +6977,6 @@
         {
           "code": "1259667007",
           "term": "Dementia due to paraneoplastic encephalitis"
-        },
-        {
-          "code": "1259673008",
-          "term": "Dementia due to neurofilament inclusion body disease"
         },
         {
           "code": "1259675001",
@@ -6569,30 +6997,6 @@
         {
           "code": "1260328002",
           "term": "Familial multiple system deposition of tau protein"
-        },
-        {
-          "code": "1260352009",
-          "term": "Frontotemporal dementia due to TARDBP mutation"
-        },
-        {
-          "code": "1260353004",
-          "term": "Frontotemporal dementia due to VCP mutation"
-        },
-        {
-          "code": "1260354005",
-          "term": "Frontotemporal dementia due to C9orf72 mutation"
-        },
-        {
-          "code": "1260355006",
-          "term": "Frontotemporal dementia due to FUS mutation"
-        },
-        {
-          "code": "1263555006",
-          "term": "Logopenic non-amnestic Alzheimer disease"
-        },
-        {
-          "code": "1263585001",
-          "term": "Frontal variant non-amnestic Alzheimer disease"
         },
         {
           "code": "12741002",
@@ -6621,18 +7025,6 @@
         {
           "code": "138736007",
           "term": "H/O: dementia"
-        },
-        {
-          "code": "14070001",
-          "term": "Multi-infarct dementia with depression"
-        },
-        {
-          "code": "142001000119106",
-          "term": "Alzheimer's disease with depressed mood"
-        },
-        {
-          "code": "142011000119109",
-          "term": "Alzheimer's disease with delirium"
         },
         {
           "code": "142811000119104",
@@ -6671,36 +7063,16 @@
           "term": "Creutzfeldt-Jakob disease"
         },
         {
-          "code": "1591000119103",
-          "term": "Dementia with behavioral disturbance"
-        },
-        {
           "code": "161465002",
           "term": "History of dementia"
-        },
-        {
-          "code": "16219201000119101",
-          "term": "Late onset Alzheimer's dementia with behavioral disturbance"
-        },
-        {
-          "code": "16276361000119109",
-          "term": "Vascular dementia without behavioral disturbance"
         },
         {
           "code": "191450005",
           "term": "Presenile dementia"
         },
         {
-          "code": "191454001",
-          "term": "Presenile dementia with paranoia"
-        },
-        {
           "code": "191456004",
           "term": "Presenile dementia NOS"
-        },
-        {
-          "code": "191457008",
-          "term": "Senile dementia with depressive or paranoid features"
         },
         {
           "code": "191460001",
@@ -6711,24 +7083,12 @@
           "term": "Arteriosclerotic dementia (including [multi infarct dementia])"
         },
         {
-          "code": "191465006",
-          "term": "Arteriosclerotic dementia with paranoia"
-        },
-        {
           "code": "191467003",
           "term": "Arteriosclerotic dementia NOS"
         },
         {
           "code": "191474008",
           "term": "Alcoholic dementia: [other] or [NOS]"
-        },
-        {
-          "code": "191493005",
-          "term": "Dementia caused by drug"
-        },
-        {
-          "code": "191519005",
-          "term": "Dementia associated with another disease"
         },
         {
           "code": "192160005",
@@ -6847,44 +7207,12 @@
           "term": "[X]Lewy body dementia"
         },
         {
-          "code": "21921000119103",
-          "term": "Dementia co-occurrent and due to Pick's disease"
-        },
-        {
           "code": "229672009",
           "term": "Language disorder of dementia"
         },
         {
           "code": "230258005",
           "term": "Amyotrophic lateral sclerosis with dementia"
-        },
-        {
-          "code": "230265002",
-          "term": "Familial Alzheimer's disease of early onset"
-        },
-        {
-          "code": "230266001",
-          "term": "Non-familial Alzheimer's disease of early onset"
-        },
-        {
-          "code": "230267005",
-          "term": "Familial Alzheimer's disease of late onset"
-        },
-        {
-          "code": "230268000",
-          "term": "Non-familial Alzheimer's disease of late onset"
-        },
-        {
-          "code": "230269008",
-          "term": "Focal Alzheimer's disease"
-        },
-        {
-          "code": "230271008",
-          "term": "Pick's disease with Pick bodies"
-        },
-        {
-          "code": "230272001",
-          "term": "Pick's disease with Pick cells and no Pick bodies"
         },
         {
           "code": "230275004",
@@ -6899,16 +7227,8 @@
           "term": "Lewy body disease"
         },
         {
-          "code": "230280008",
-          "term": "Alzheimer's disease with progressive aphasia"
-        },
-        {
           "code": "230281007",
           "term": "Argyrophilic grain disease"
-        },
-        {
-          "code": "230282000",
-          "term": "Post-traumatic dementia"
         },
         {
           "code": "230283005",
@@ -6919,28 +7239,12 @@
           "term": "Spongiform encephalopathy"
         },
         {
-          "code": "230285003",
-          "term": "Vascular dementia of acute onset"
-        },
-        {
-          "code": "230287006",
-          "term": "Mixed cortical and subcortical vascular dementia"
-        },
-        {
           "code": "230290000",
           "term": "Epileptic dementia"
         },
         {
           "code": "231463001",
           "term": "Alcoholic dementia NOS"
-        },
-        {
-          "code": "2421000119107",
-          "term": "Hallucinations co-occurrent and due to late onset dementia"
-        },
-        {
-          "code": "25772007",
-          "term": "Multi-infarct dementia with delusions"
         },
         {
           "code": "266134000",
@@ -6963,36 +7267,16 @@
           "term": "Dementia (& [presenile] or [senile])"
         },
         {
-          "code": "278857002",
-          "term": "Dementia of frontal lobe type"
-        },
-        {
           "code": "279982005",
           "term": "Cerebral degeneration presenting primarily with dementia"
-        },
-        {
-          "code": "281004",
-          "term": "Dementia associated with alcoholism"
         },
         {
           "code": "286932008",
           "term": "Other senile/presenile dementia"
         },
         {
-          "code": "288631000119104",
-          "term": "Vascular dementia with behavioral disturbance"
-        },
-        {
-          "code": "293671000119109",
-          "term": "Behavioral disturbance due to multi-infarct dementia"
-        },
-        {
           "code": "304603007",
           "term": "Variant Creutzfeldt-Jakob disease"
-        },
-        {
-          "code": "312991009",
-          "term": "Late onset dementia due to Lewy body disease"
         },
         {
           "code": "32875003",
@@ -7043,28 +7327,12 @@
           "term": "Organic dementia with acquired immunodeficiency syndrome"
         },
         {
-          "code": "421023003",
-          "term": "Presenile dementia with acquired immunodeficiency syndrome"
-        },
-        {
-          "code": "421529006",
-          "term": "Dementia with acquired immunodeficiency syndrome"
-        },
-        {
-          "code": "425390006",
-          "term": "Dementia associated with Parkinson's Disease"
-        },
-        {
           "code": "42769004",
           "term": "Diffuse Lewy body disease with spongiform cortical change"
         },
         {
           "code": "429458009",
           "term": "Dementia due to Creutzfeldt Jakob disease"
-        },
-        {
-          "code": "429998004",
-          "term": "Vascular dementia"
         },
         {
           "code": "442344002",
@@ -7099,16 +7367,8 @@
           "term": "[X]Dementia in Parkinson's disease"
         },
         {
-          "code": "51928006",
-          "term": "General paresis - neurosyphilis"
-        },
-        {
           "code": "544871000000102",
           "term": "Other alcoholic dementia"
-        },
-        {
-          "code": "56267009",
-          "term": "Multi-infarct dementia"
         },
         {
           "code": "59651006",
@@ -7171,20 +7431,12 @@
           "term": "Vascular dementia in remission"
         },
         {
-          "code": "698949001",
-          "term": "Dementia in remission"
-        },
-        {
-          "code": "698955006",
-          "term": "Primary degenerative dementia of the Alzheimer type, presenile onset in remission"
+          "code": "698954005",
+          "term": "Primary degenerative dementia of the Alzheimer type, senile onset in remission"
         },
         {
           "code": "700911000000100",
           "term": "Other senile/presenile dementia"
-        },
-        {
-          "code": "702393003",
-          "term": "Frontotemporal dementia with gene located on 3p11"
         },
         {
           "code": "702421006",
@@ -7203,20 +7455,8 @@
           "term": "Inclusion body myopathy with early-onset Paget disease and frontotemporal dementia"
         },
         {
-          "code": "70936005",
-          "term": "Multi-infarct dementia, uncomplicated"
-        },
-        {
           "code": "713060000",
           "term": "Sporadic Creutzfeldt-Jakob disease"
-        },
-        {
-          "code": "713488003",
-          "term": "Presenile dementia co-occurrent with human immunodeficiency virus infection"
-        },
-        {
-          "code": "713844000",
-          "term": "Dementia co-occurrent with human immunodeficiency virus infection"
         },
         {
           "code": "715574002",
@@ -7227,24 +7467,12 @@
           "term": "Iatrogenic Jakob-Creutzfeldt disease"
         },
         {
-          "code": "715737004",
-          "term": "Parkinsonism co-occurrent with dementia of Guadeloupe"
-        },
-        {
           "code": "715807002",
           "term": "Familial Creutzfeldt-Jakob"
         },
         {
           "code": "716281000",
           "term": "Primary progressive non fluent aphasia"
-        },
-        {
-          "code": "716667005",
-          "term": "Right temporal atrophy variant frontotemporal dementia"
-        },
-        {
-          "code": "716994006",
-          "term": "Behavioral variant of frontotemporal dementia"
         },
         {
           "code": "721219005",
@@ -7259,40 +7487,8 @@
           "term": "Dementia co-occurrent and due to neurocysticercosis"
         },
         {
-          "code": "722978000",
-          "term": "Toxic dementia"
-        },
-        {
-          "code": "722979008",
-          "term": "Dementia due to metabolic abnormality"
-        },
-        {
-          "code": "722980006",
-          "term": "Dementia due to chromosomal anomaly"
-        },
-        {
-          "code": "723123001",
-          "term": "Ischemic vascular dementia"
-        },
-        {
-          "code": "724776007",
-          "term": "Dementia due to disorder of central nervous system"
-        },
-        {
-          "code": "724777003",
-          "term": "Dementia due to infectious disease"
-        },
-        {
           "code": "724992007",
           "term": "Epilepsy co-occurrent and due to dementia"
-        },
-        {
-          "code": "725898002",
-          "term": "Delirium co-occurrent with dementia"
-        },
-        {
-          "code": "733184002",
-          "term": "Dementia caused by heavy metal exposure"
         },
         {
           "code": "733185001",
@@ -7327,10 +7523,6 @@
           "term": "Dementia due to and following injury of head"
         },
         {
-          "code": "774069007",
-          "term": "Protein kinase cAMP-dependent type I regulatory subunit beta-related neurodegenerative dementia with intermediate filaments"
-        },
-        {
           "code": "783161005",
           "term": "Familial dementia British type"
         },
@@ -7349,10 +7541,6 @@
         {
           "code": "788862002",
           "term": "Agitation due to dementia"
-        },
-        {
-          "code": "788898005",
-          "term": "Dementia caused by volatile inhalant"
         },
         {
           "code": "788899002",
@@ -7375,10 +7563,6 @@
           "term": "Diffuse Lewy body disease"
         },
         {
-          "code": "82351000119105",
-          "term": "Altered behavior due to Pick's disease"
-        },
-        {
           "code": "82361000119107",
           "term": "Altered behavior in dementia due to Huntington chorea"
         },
@@ -7387,28 +7571,8 @@
           "term": "Dementia due to multiple sclerosis with altered behavior"
         },
         {
-          "code": "82381000119103",
-          "term": "Epileptic dementia with behavioral disturbance"
-        },
-        {
-          "code": "82959004",
-          "term": "Dementia paralytica juvenilis"
-        },
-        {
-          "code": "833326008",
-          "term": "Cortical vascular dementia"
-        },
-        {
-          "code": "838276009",
-          "term": "Amyotrophic lateral sclerosis, parkinsonism, dementia complex"
-        },
-        {
           "code": "840452004",
           "term": "Classical sporadic Creutzfeldt-Jakob disease"
-        },
-        {
-          "code": "840464007",
-          "term": "Dementia due to carbon monoxide poisoning"
         },
         {
           "code": "840465008",
@@ -7421,10 +7585,6 @@
         {
           "code": "88339003",
           "term": "Dementia arising in the senium AND/OR presenium"
-        },
-        {
-          "code": "90099008",
-          "term": "Subcortical leukoencephalopathy"
         },
         {
           "code": "90194001",
@@ -7445,62 +7605,37 @@
         {
           "code": "9345005",
           "term": "Dialysis dementia"
-        },
-        {
-          "code": "97751000119108",
-          "term": "Alzheimer's disease with altered behavior"
         }
       ]
     }
   },
   "false_exclusions": {
-    "count": 6,
+    "count": 3,
     "codes": [
       {
-        "code": "429998004",
-        "term": "Vascular dementia (disorder)",
-        "rationale": "Vascular dementia is a secondary dementia type caused by cerebrovascular disease, not a primary degenerative dementia."
+        "code": "698948009",
+        "term": "Vascular dementia in remission (disorder)",
+        "rationale": "Vascular dementia in remission represents a resolved state and should be excluded as it does not confirm active dementia."
       },
       {
-        "code": "56267009",
-        "term": "Multi-infarct dementia (disorder)",
-        "rationale": "Multi-infarct dementia is a secondary dementia caused by cerebrovascular infarcts, not a primary degenerative dementia."
-      },
-      {
-        "code": "723123001",
-        "term": "Ischemic vascular dementia (disorder)",
-        "rationale": "Ischemic vascular dementia is a secondary dementia caused by cerebrovascular ischemia, not a primary degenerative dementia."
-      },
-      {
-        "code": "833326008",
-        "term": "Cortical vascular dementia (disorder)",
-        "rationale": "Cortical vascular dementia is a secondary dementia caused by cerebrovascular disease, not a primary degenerative dementia."
+        "code": "698954005",
+        "term": "Primary degenerative dementia of the Alzheimer type, senile onset in remission (disorder)",
+        "rationale": "Primary degenerative dementia in remission represents a resolved state and should be excluded as it does not confirm active dementia."
       },
       {
         "code": "9345005",
         "term": "Dialysis dementia (disorder)",
-        "rationale": "Dialysis dementia is a secondary dementia caused by dialysis-related complications, not a primary degenerative dementia."
-      },
-      {
-        "code": "698948009",
-        "term": "Vascular dementia in remission (disorder)",
-        "rationale": "Vascular dementia in remission represents a resolved secondary dementia, not an active primary dementia."
+        "rationale": "Dialysis dementia is a secondary dementia caused by dialysis-related complications, not a primary dementia."
       }
     ]
   },
   "uncertain_in_reference": {
-    "count": 1,
-    "codes": [
-      {
-        "code": "698954005",
-        "term": "Primary degenerative dementia of the Alzheimer type, senile onset in remission (disorder)",
-        "rationale": "Alzheimer dementia in remission is ambiguous\u2014it may represent resolved disease and should be excluded, but clinical context may warrant inclusion if remission status is tracked."
-      }
-    ]
+    "count": 0,
+    "codes": []
   },
-  "summary": "Recall: 13.2% (43 of 325 reference codes retrieved). Precision: 66.1%. F1: 22.1%. 6 reference codes were incorrectly excluded.",
-  "elapsed_seconds": 20.93,
-  "pipeline_results_count": 100,
+  "summary": "Recall: 41.5% (135 of 325 reference codes retrieved). Precision: 79.4%. F1: 54.5%. 3 reference codes were incorrectly excluded.",
+  "elapsed_seconds": 26.19,
+  "pipeline_results_count": 201,
   "scored_codes": [
     {
       "code": "F00",
@@ -7826,6 +7961,24 @@
       "dmd_level": null
     },
     {
+      "code": "52448006",
+      "term": "Dementia (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.98,
+      "rationale": "Generic dementia code is the broadest instance of the queried condition.",
+      "sources": [
+        "ChromaDB",
+        "QOF Business Rules 2024-25"
+      ],
+      "usage_frequency": 159150,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": 4182210,
+      "dmd_level": null
+    },
+    {
       "code": "G30.9",
       "term": "Alzheimer disease, unspecified",
       "vocabulary": "ICD-10 (WHO)",
@@ -7857,7 +8010,7 @@
       "usage_status": "counted",
       "usage_source": "NHS Digital primary care SNOMED reporting",
       "usage_setting": "primary_care",
-      "concept_id": null,
+      "concept_id": 4019705,
       "dmd_level": null
     },
     {
@@ -7866,7 +8019,7 @@
       "vocabulary": "SNOMED CT",
       "decision": "include",
       "confidence": 0.95,
-      "rationale": "Presenile dementia with psychosis is a clinical variant of primary dementia with a named psychiatric manifestation.",
+      "rationale": "Presenile dementia with psychosis is a clinical variant of primary dementia with a named manifestation.",
       "sources": [
         "ChromaDB",
         "QOF Business Rules 2024-25"
@@ -7920,7 +8073,7 @@
       "vocabulary": "SNOMED CT",
       "decision": "include",
       "confidence": 0.95,
-      "rationale": "Presenile dementia is a primary dementia subtype defined by age of onset.",
+      "rationale": "Presenile dementia is a primary dementia subtype distinguished by age of onset.",
       "sources": [
         "ChromaDB",
         "QOF Business Rules 2024-25"
@@ -7956,7 +8109,7 @@
       "vocabulary": "SNOMED CT",
       "decision": "include",
       "confidence": 0.95,
-      "rationale": "Senile dementia is a primary dementia subtype defined by age of onset.",
+      "rationale": "Senile dementia is a primary dementia subtype distinguished by age of onset.",
       "sources": [
         "ChromaDB",
         "QOF Business Rules 2024-25"
@@ -7983,7 +8136,7 @@
       "usage_status": "counted",
       "usage_source": "NHS Digital primary care SNOMED reporting",
       "usage_setting": "primary_care",
-      "concept_id": null,
+      "concept_id": 43530664,
       "dmd_level": null
     },
     {
@@ -8073,7 +8226,7 @@
       "usage_status": "counted",
       "usage_source": "NHS Digital primary care SNOMED reporting",
       "usage_setting": "primary_care",
-      "concept_id": null,
+      "concept_id": 377527,
       "dmd_level": null
     },
     {
@@ -8091,7 +8244,7 @@
       "usage_status": "counted",
       "usage_source": "NHS Digital primary care SNOMED reporting",
       "usage_setting": "primary_care",
-      "concept_id": null,
+      "concept_id": 4100250,
       "dmd_level": null
     },
     {
@@ -8109,7 +8262,7 @@
       "usage_status": "counted",
       "usage_source": "NHS Digital primary care SNOMED reporting",
       "usage_setting": "primary_care",
-      "concept_id": null,
+      "concept_id": 379784,
       "dmd_level": null
     },
     {
@@ -8181,7 +8334,7 @@
       "usage_status": "withheld_below_5",
       "usage_source": "NHS Digital primary care SNOMED reporting",
       "usage_setting": "primary_care",
-      "concept_id": null,
+      "concept_id": 374326,
       "dmd_level": null
     },
     {
@@ -8190,7 +8343,7 @@
       "vocabulary": "SNOMED CT",
       "decision": "include",
       "confidence": 0.95,
-      "rationale": "Primary degenerative dementia is a direct representation of the queried condition.",
+      "rationale": "Primary degenerative dementia is a core category of primary dementia.",
       "sources": [
         "ChromaDB",
         "QOF Business Rules 2024-25"
@@ -8289,7 +8442,7 @@
       "usage_status": "counted",
       "usage_source": "NHS Digital primary care SNOMED reporting",
       "usage_setting": "primary_care",
-      "concept_id": null,
+      "concept_id": 4097384,
       "dmd_level": null
     },
     {
@@ -8325,7 +8478,7 @@
       "usage_status": "counted",
       "usage_source": "NHS Digital primary care SNOMED reporting",
       "usage_setting": "primary_care",
-      "concept_id": null,
+      "concept_id": 44782771,
       "dmd_level": null
     },
     {
@@ -8388,7 +8541,7 @@
       "vocabulary": "SNOMED CT",
       "decision": "include",
       "confidence": 0.95,
-      "rationale": "Primary degenerative dementia of the Alzheimer type is a direct instance of primary dementia and explicitly matches the query.",
+      "rationale": "Primary degenerative dementia of the Alzheimer type, senile onset is a direct instance of primary dementia.",
       "sources": [
         "ChromaDB",
         "QOF Business Rules 2024-25"
@@ -8406,7 +8559,7 @@
       "vocabulary": "SNOMED CT",
       "decision": "include",
       "confidence": 0.95,
-      "rationale": "This is a clinical variant of primary degenerative Alzheimer dementia with delirium, representing an instance of primary dementia.",
+      "rationale": "Primary degenerative dementia of the Alzheimer type with delirium is a clinical variant of primary Alzheimer dementia.",
       "sources": [
         "ChromaDB",
         "QOF Business Rules 2024-25"
@@ -8419,30 +8572,12 @@
       "dmd_level": null
     },
     {
-      "code": "52448006",
-      "term": "Dementia (disorder)",
-      "vocabulary": "SNOMED CT",
-      "decision": "include",
-      "confidence": 0.95,
-      "rationale": "Generic dementia code that encompasses primary dementias and is a direct match for the query condition.",
-      "sources": [
-        "ChromaDB",
-        "QOF Business Rules 2024-25"
-      ],
-      "usage_frequency": 159150,
-      "usage_status": "counted",
-      "usage_source": "NHS Digital primary care SNOMED reporting",
-      "usage_setting": "primary_care",
-      "concept_id": 4182210,
-      "dmd_level": null
-    },
-    {
       "code": "54502004",
       "term": "Primary degenerative dementia of the Alzheimer type, presenile onset, with delusions (disorder)",
       "vocabulary": "SNOMED CT",
       "decision": "include",
       "confidence": 0.95,
-      "rationale": "Primary degenerative dementia of the Alzheimer type with delusions is a clinical variant of primary dementia.",
+      "rationale": "Primary degenerative dementia of the Alzheimer type, presenile onset with delusions is a clinical variant of primary Alzheimer dementia.",
       "sources": [
         "ChromaDB",
         "QOF Business Rules 2024-25"
@@ -8460,7 +8595,7 @@
       "vocabulary": "SNOMED CT",
       "decision": "include",
       "confidence": 0.95,
-      "rationale": "Primary degenerative dementia of the Alzheimer type with delusions is a clinical variant of primary dementia.",
+      "rationale": "Primary degenerative dementia of the Alzheimer type, senile onset with delusions is a clinical variant of primary Alzheimer dementia.",
       "sources": [
         "ChromaDB",
         "QOF Business Rules 2024-25"
@@ -8478,7 +8613,7 @@
       "vocabulary": "SNOMED CT",
       "decision": "include",
       "confidence": 0.95,
-      "rationale": "Primary degenerative dementia of the Alzheimer type, uncomplicated, is a direct instance of primary dementia.",
+      "rationale": "Primary degenerative dementia of the Alzheimer type, presenile onset uncomplicated is a direct instance of primary Alzheimer dementia.",
       "sources": [
         "ChromaDB",
         "QOF Business Rules 2024-25"
@@ -8496,7 +8631,7 @@
       "vocabulary": "SNOMED CT",
       "decision": "include",
       "confidence": 0.95,
-      "rationale": "Primary degenerative dementia of the Alzheimer type with delirium is a clinical variant of primary dementia.",
+      "rationale": "Primary degenerative dementia of the Alzheimer type, presenile onset with delirium is a clinical variant of primary Alzheimer dementia.",
       "sources": [
         "ChromaDB",
         "QOF Business Rules 2024-25"
@@ -8514,7 +8649,7 @@
       "vocabulary": "SNOMED CT",
       "decision": "include",
       "confidence": 0.95,
-      "rationale": "Primary degenerative dementia of the Alzheimer type, uncomplicated, is a direct instance of primary dementia.",
+      "rationale": "Primary degenerative dementia of the Alzheimer type, senile onset uncomplicated is a direct instance of primary Alzheimer dementia.",
       "sources": [
         "ChromaDB",
         "QOF Business Rules 2024-25"
@@ -8567,7 +8702,7 @@
       "vocabulary": "SNOMED CT",
       "decision": "include",
       "confidence": 0.9,
-      "rationale": "Delusions in Alzheimer's disease is a clinical manifestation of primary Alzheimer dementia.",
+      "rationale": "Delusions in Alzheimer's disease is a manifestation of primary Alzheimer dementia.",
       "sources": [
         "ChromaDB",
         "QOF Business Rules 2024-25"
@@ -8576,7 +8711,43 @@
       "usage_status": "counted",
       "usage_source": "NHS Digital primary care SNOMED reporting",
       "usage_setting": "primary_care",
-      "concept_id": null,
+      "concept_id": 44782726,
+      "dmd_level": null
+    },
+    {
+      "code": "429998004",
+      "term": "Vascular dementia (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.9,
+      "rationale": "Vascular dementia is a primary dementia subtype and a direct instance of the queried condition.",
+      "sources": [
+        "ChromaDB",
+        "QOF Business Rules 2024-25"
+      ],
+      "usage_frequency": 103880,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": 443605,
+      "dmd_level": null
+    },
+    {
+      "code": "56267009",
+      "term": "Multi-infarct dementia (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.9,
+      "rationale": "Multi-infarct dementia is a primary vascular dementia subtype and a direct instance of the queried condition.",
+      "sources": [
+        "OpenCodelists (Bennett Institute)",
+        "QOF Business Rules 2024-25"
+      ],
+      "usage_frequency": 2010,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": 379778,
       "dmd_level": null
     },
     {
@@ -8585,7 +8756,7 @@
       "vocabulary": "SNOMED CT",
       "decision": "include",
       "confidence": 0.9,
-      "rationale": "Non-amnestic Alzheimer disease is a clinical variant of primary Alzheimer dementia.",
+      "rationale": "Non-amnestic Alzheimer disease is a clinical subtype of primary Alzheimer dementia.",
       "sources": [
         "ChromaDB",
         "QOF Business Rules 2024-25"
@@ -8594,7 +8765,61 @@
       "usage_status": "withheld_below_5",
       "usage_source": "NHS Digital primary care SNOMED reporting",
       "usage_setting": "primary_care",
-      "concept_id": null,
+      "concept_id": 36716558,
+      "dmd_level": null
+    },
+    {
+      "code": "723123001",
+      "term": "Ischemic vascular dementia (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.9,
+      "rationale": "Ischemic vascular dementia is a primary vascular dementia subtype and a direct instance of the queried condition.",
+      "sources": [
+        "ChromaDB",
+        "QOF Business Rules 2024-25"
+      ],
+      "usage_frequency": 40,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": 36717248,
+      "dmd_level": null
+    },
+    {
+      "code": "79341000119107",
+      "term": "Mixed dementia (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.9,
+      "rationale": "Mixed dementia is a primary dementia subtype combining multiple pathological processes.",
+      "sources": [
+        "ChromaDB",
+        "QOF Business Rules 2024-25"
+      ],
+      "usage_frequency": 67540,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": 43021816,
+      "dmd_level": null
+    },
+    {
+      "code": "833326008",
+      "term": "Cortical vascular dementia (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.9,
+      "rationale": "Cortical vascular dementia is a primary vascular dementia subtype and a direct instance of the queried condition.",
+      "sources": [
+        "ChromaDB",
+        "QOF Business Rules 2024-25"
+      ],
+      "usage_frequency": 60,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": 3654434,
       "dmd_level": null
     },
     {
@@ -8603,7 +8828,7 @@
       "vocabulary": "SNOMED CT",
       "decision": "include",
       "confidence": 0.85,
-      "rationale": "Rapidly progressive dementia is a clinical severity variant that may encompass primary dementias and is relevant to dementia classification.",
+      "rationale": "Rapidly progressive dementia is a clinical severity variant of primary dementia.",
       "sources": [
         "ChromaDB",
         "QOF Business Rules 2024-25"
@@ -8621,7 +8846,7 @@
       "vocabulary": "SNOMED CT",
       "decision": "include",
       "confidence": 0.85,
-      "rationale": "Subcortical dementia is a pathoanatomical classification of primary dementia types.",
+      "rationale": "Subcortical dementia is a primary dementia subtype based on anatomical classification.",
       "sources": [
         "ChromaDB",
         "QOF Business Rules 2024-25"
@@ -8634,39 +8859,1720 @@
       "dmd_level": null
     },
     {
-      "code": "79341000119107",
-      "term": "Mixed dementia (disorder)",
+      "code": "191454001",
+      "term": "Presenile dementia with paranoia",
       "vocabulary": "SNOMED CT",
       "decision": "include",
-      "confidence": 0.85,
-      "rationale": "Mixed dementia typically includes primary degenerative components and represents a clinically relevant dementia subtype.",
+      "confidence": 0.7,
+      "rationale": "Expanded via OMOP 'Is a' from concept_id 378125",
       "sources": [
-        "ChromaDB",
-        "QOF Business Rules 2024-25"
+        "OMOPHub hierarchy"
       ],
-      "usage_frequency": 67540,
-      "usage_status": "counted",
-      "usage_source": "NHS Digital primary care SNOMED reporting",
-      "usage_setting": "primary_care",
-      "concept_id": 43021816,
+      "usage_frequency": null,
+      "usage_status": null,
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": 4098163,
       "dmd_level": null
     },
     {
-      "code": "698954005",
-      "term": "Primary degenerative dementia of the Alzheimer type, senile onset in remission (disorder)",
+      "code": "713488003",
+      "term": "Presenile dementia co-occurrent with human immunodeficiency virus infection",
       "vocabulary": "SNOMED CT",
-      "decision": "uncertain",
+      "decision": "include",
       "confidence": 0.7,
-      "rationale": "Alzheimer dementia in remission is ambiguous\u2014it may represent resolved disease and should be excluded, but clinical context may warrant inclusion if remission status is tracked.",
+      "rationale": "Expanded via OMOP 'Is a' from concept_id 378125",
       "sources": [
-        "ChromaDB",
-        "QOF Business Rules 2024-25"
+        "OMOPHub hierarchy"
       ],
-      "usage_frequency": 10,
-      "usage_status": "counted",
-      "usage_source": "NHS Digital primary care SNOMED reporting",
-      "usage_setting": "primary_care",
-      "concept_id": 44782940,
+      "usage_frequency": null,
+      "usage_status": null,
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": 37017247,
+      "dmd_level": null
+    },
+    {
+      "code": "230265002",
+      "term": "Familial Alzheimer's disease of early onset",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.7,
+      "rationale": "Expanded via OMOP 'Is a' from concept_id 378125",
+      "sources": [
+        "OMOPHub hierarchy"
+      ],
+      "usage_frequency": null,
+      "usage_status": null,
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": 4043241,
+      "dmd_level": null
+    },
+    {
+      "code": "230266001",
+      "term": "Non-familial Alzheimer's disease of early onset",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.7,
+      "rationale": "Expanded via OMOP 'Is a' from concept_id 378125",
+      "sources": [
+        "OMOPHub hierarchy"
+      ],
+      "usage_frequency": null,
+      "usage_status": null,
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": 4043242,
+      "dmd_level": null
+    },
+    {
+      "code": "421023003",
+      "term": "Presenile dementia with AIDS (acquired immunodeficiency syndrome)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.7,
+      "rationale": "Expanded via OMOP 'Is a' from concept_id 378125",
+      "sources": [
+        "OMOPHub hierarchy"
+      ],
+      "usage_frequency": null,
+      "usage_status": null,
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": 4224240,
+      "dmd_level": null
+    },
+    {
+      "code": "105421000119105",
+      "term": "Early onset Alzheimer's disease with behavioral disturbance",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.7,
+      "rationale": "Expanded via OMOP 'Is a' from concept_id 378125",
+      "sources": [
+        "OMOPHub hierarchy"
+      ],
+      "usage_frequency": null,
+      "usage_status": null,
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": 44782432,
+      "dmd_level": null
+    },
+    {
+      "code": "698955006",
+      "term": "Primary degenerative dementia of the Alzheimer type, presenile onset in remission",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.7,
+      "rationale": "Expanded via OMOP 'Is a' from concept_id 378125",
+      "sources": [
+        "OMOPHub hierarchy"
+      ],
+      "usage_frequency": null,
+      "usage_status": null,
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": 44782941,
+      "dmd_level": null
+    },
+    {
+      "code": "1156800008",
+      "term": "Autosomal dominant Alzheimer disease due to mutation of presenilin 1",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.7,
+      "rationale": "Expanded via OMOP 'Is a' from concept_id 378125",
+      "sources": [
+        "OMOPHub hierarchy"
+      ],
+      "usage_frequency": null,
+      "usage_status": null,
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": 603149,
+      "dmd_level": null
+    },
+    {
+      "code": "1156789004",
+      "term": "Autosomal dominant Alzheimer disease due to mutation of amyloid precursor protein",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.7,
+      "rationale": "Expanded via OMOP 'Is a' from concept_id 378125",
+      "sources": [
+        "OMOPHub hierarchy"
+      ],
+      "usage_frequency": null,
+      "usage_status": null,
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": 608051,
+      "dmd_level": null
+    },
+    {
+      "code": "1156798001",
+      "term": "Autosomal dominant Alzheimer disease due to mutation of presenilin 2",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.7,
+      "rationale": "Expanded via OMOP 'Is a' from concept_id 378125",
+      "sources": [
+        "OMOPHub hierarchy"
+      ],
+      "usage_frequency": null,
+      "usage_status": null,
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": 608060,
+      "dmd_level": null
+    },
+    {
+      "code": "230272001",
+      "term": "Pick's disease with Pick cells and no Pick bodies",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.7,
+      "rationale": "Expanded via OMOP 'Is a' from concept_id 4043378",
+      "sources": [
+        "OMOPHub hierarchy"
+      ],
+      "usage_frequency": null,
+      "usage_status": null,
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": 4044049,
+      "dmd_level": null
+    },
+    {
+      "code": "230274000",
+      "term": "Frontal lobe degeneration with motor neurone disease",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.7,
+      "rationale": "Expanded via OMOP 'Is a' from concept_id 4043378",
+      "sources": [
+        "OMOPHub hierarchy"
+      ],
+      "usage_frequency": null,
+      "usage_status": null,
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": 4044051,
+      "dmd_level": null
+    },
+    {
+      "code": "230271008",
+      "term": "Pick's disease with Pick bodies",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.7,
+      "rationale": "Expanded via OMOP 'Is a' from concept_id 4043378",
+      "sources": [
+        "OMOPHub hierarchy"
+      ],
+      "usage_frequency": null,
+      "usage_status": null,
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": 4047744,
+      "dmd_level": null
+    },
+    {
+      "code": "1259124000",
+      "term": "Amyotrophic lateral sclerosis with frontotemporal dementia",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.7,
+      "rationale": "Expanded via OMOP 'Is a' from concept_id 4043378",
+      "sources": [
+        "OMOPHub hierarchy"
+      ],
+      "usage_frequency": null,
+      "usage_status": null,
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": 37166122,
+      "dmd_level": null
+    },
+    {
+      "code": "1259673008",
+      "term": "Dementia due to neurofilament inclusion body disease",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.7,
+      "rationale": "Expanded via OMOP 'Is a' from concept_id 4043378",
+      "sources": [
+        "OMOPHub hierarchy"
+      ],
+      "usage_frequency": null,
+      "usage_status": null,
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": 37166524,
+      "dmd_level": null
+    },
+    {
+      "code": "1260352009",
+      "term": "Frontotemporal dementia due to TARDBP mutation",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.7,
+      "rationale": "Expanded via OMOP 'Is a' from concept_id 4043378",
+      "sources": [
+        "OMOPHub hierarchy"
+      ],
+      "usage_frequency": null,
+      "usage_status": null,
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": 37166904,
+      "dmd_level": null
+    },
+    {
+      "code": "1260353004",
+      "term": "Frontotemporal dementia due to VCP mutation",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.7,
+      "rationale": "Expanded via OMOP 'Is a' from concept_id 4043378",
+      "sources": [
+        "OMOPHub hierarchy"
+      ],
+      "usage_frequency": null,
+      "usage_status": null,
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": 37166905,
+      "dmd_level": null
+    },
+    {
+      "code": "1260354005",
+      "term": "Frontotemporal dementia due to C9orf72 mutation",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.7,
+      "rationale": "Expanded via OMOP 'Is a' from concept_id 4043378",
+      "sources": [
+        "OMOPHub hierarchy"
+      ],
+      "usage_frequency": null,
+      "usage_status": null,
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": 37166906,
+      "dmd_level": null
+    },
+    {
+      "code": "1260355006",
+      "term": "Frontotemporal dementia due to FUS mutation",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.7,
+      "rationale": "Expanded via OMOP 'Is a' from concept_id 4043378",
+      "sources": [
+        "OMOPHub hierarchy"
+      ],
+      "usage_frequency": null,
+      "usage_status": null,
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": 37166907,
+      "dmd_level": null
+    },
+    {
+      "code": "716667005",
+      "term": "Right temporal lobar atrophy",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.7,
+      "rationale": "Expanded via OMOP 'Is a' from concept_id 4043378",
+      "sources": [
+        "OMOPHub hierarchy"
+      ],
+      "usage_frequency": null,
+      "usage_status": null,
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": 37396752,
+      "dmd_level": null
+    },
+    {
+      "code": "716994006",
+      "term": "Behavioral variant of frontotemporal dementia",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.7,
+      "rationale": "Expanded via OMOP 'Is a' from concept_id 4043378",
+      "sources": [
+        "OMOPHub hierarchy"
+      ],
+      "usage_frequency": null,
+      "usage_status": null,
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": 37399020,
+      "dmd_level": null
+    },
+    {
+      "code": "21921000119103",
+      "term": "Dementia due to Pick's disease",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.7,
+      "rationale": "Expanded via OMOP 'Is a' from concept_id 4043378",
+      "sources": [
+        "OMOPHub hierarchy"
+      ],
+      "usage_frequency": null,
+      "usage_status": null,
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": 44782710,
+      "dmd_level": null
+    },
+    {
+      "code": "702393003",
+      "term": "CHMP2B-related frontotemporal dementia",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.7,
+      "rationale": "Expanded via OMOP 'Is a' from concept_id 4043378",
+      "sources": [
+        "OMOPHub hierarchy"
+      ],
+      "usage_frequency": null,
+      "usage_status": null,
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": 45771254,
+      "dmd_level": null
+    },
+    {
+      "code": "82351000119105",
+      "term": "Altered behavior due to Pick's disease",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.7,
+      "rationale": "Expanded via OMOP 'Is a' from concept_id 4043378",
+      "sources": [
+        "OMOPHub hierarchy"
+      ],
+      "usage_frequency": null,
+      "usage_status": null,
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": 37397762,
+      "dmd_level": null
+    },
+    {
+      "code": "230287006",
+      "term": "Mixed cortical and subcortical vascular dementia",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.7,
+      "rationale": "Expanded via OMOP 'Is a' from concept_id 4047747",
+      "sources": [
+        "OMOPHub hierarchy"
+      ],
+      "usage_frequency": null,
+      "usage_status": null,
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": 4046090,
+      "dmd_level": null
+    },
+    {
+      "code": "90099008",
+      "term": "Subcortical leukoencephalopathy",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.7,
+      "rationale": "Expanded via OMOP 'Is a' from concept_id 4047747",
+      "sources": [
+        "OMOPHub hierarchy"
+      ],
+      "usage_frequency": null,
+      "usage_status": null,
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": 4234089,
+      "dmd_level": null
+    },
+    {
+      "code": "230269008",
+      "term": "Focal Alzheimer's disease",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.7,
+      "rationale": "Expanded via OMOP 'Is a' from concept_id 378419",
+      "sources": [
+        "OMOPHub hierarchy"
+      ],
+      "usage_frequency": null,
+      "usage_status": null,
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": 4043377,
+      "dmd_level": null
+    },
+    {
+      "code": "230280008",
+      "term": "Progressive aphasia in Alzheimer's disease",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.7,
+      "rationale": "Expanded via OMOP 'Is a' from concept_id 378419",
+      "sources": [
+        "OMOPHub hierarchy"
+      ],
+      "usage_frequency": null,
+      "usage_status": null,
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": 4043379,
+      "dmd_level": null
+    },
+    {
+      "code": "16219201000119101",
+      "term": "Behavioral disturbance co-occurrent and due to late onset Alzheimer dementia",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.7,
+      "rationale": "Expanded via OMOP 'Is a' from concept_id 378419",
+      "sources": [
+        "OMOPHub hierarchy"
+      ],
+      "usage_frequency": null,
+      "usage_status": null,
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": 37117145,
+      "dmd_level": null
+    },
+    {
+      "code": "142011000119109",
+      "term": "Alzheimer's disease co-occurrent with delirium",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.7,
+      "rationale": "Expanded via OMOP 'Is a' from concept_id 378419",
+      "sources": [
+        "OMOPHub hierarchy"
+      ],
+      "usage_frequency": null,
+      "usage_status": null,
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": 37395572,
+      "dmd_level": null
+    },
+    {
+      "code": "142001000119106",
+      "term": "Depressed mood in Alzheimer's disease",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.7,
+      "rationale": "Expanded via OMOP 'Is a' from concept_id 378419",
+      "sources": [
+        "OMOPHub hierarchy"
+      ],
+      "usage_frequency": null,
+      "usage_status": null,
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": 44782727,
+      "dmd_level": null
+    },
+    {
+      "code": "97751000119108",
+      "term": "Altered behavior in Alzheimer's disease",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.7,
+      "rationale": "Expanded via OMOP 'Is a' from concept_id 378419",
+      "sources": [
+        "OMOPHub hierarchy"
+      ],
+      "usage_frequency": null,
+      "usage_status": null,
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": 44784643,
+      "dmd_level": null
+    },
+    {
+      "code": "429161000124103",
+      "term": "Primary degenerative dementia of the Alzheimer type, senile onset, with behavioral disturbance",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.7,
+      "rationale": "Expanded via OMOP 'Is a' from concept_id 378419",
+      "sources": [
+        "OMOPHub hierarchy"
+      ],
+      "usage_frequency": null,
+      "usage_status": null,
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": 762578,
+      "dmd_level": null
+    },
+    {
+      "code": "230267005",
+      "term": "Familial Alzheimer's disease of late onset",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.7,
+      "rationale": "Expanded via OMOP 'Is a' from concept_id 378419",
+      "sources": [
+        "OMOPHub hierarchy"
+      ],
+      "usage_frequency": null,
+      "usage_status": null,
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": 4043243,
+      "dmd_level": null
+    },
+    {
+      "code": "230268000",
+      "term": "Non-familial Alzheimer's disease of late onset",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.7,
+      "rationale": "Expanded via OMOP 'Is a' from concept_id 378419",
+      "sources": [
+        "OMOPHub hierarchy"
+      ],
+      "usage_frequency": null,
+      "usage_status": null,
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": 4043244,
+      "dmd_level": null
+    },
+    {
+      "code": "1263555006",
+      "term": "Logopenic non-amnestic Alzheimer disease",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.7,
+      "rationale": "Expanded via OMOP 'Is a' from concept_id 378419",
+      "sources": [
+        "OMOPHub hierarchy"
+      ],
+      "usage_frequency": null,
+      "usage_status": null,
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": 37167043,
+      "dmd_level": null
+    },
+    {
+      "code": "1263585001",
+      "term": "Frontal variant non-amnestic Alzheimer disease",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.7,
+      "rationale": "Expanded via OMOP 'Is a' from concept_id 378419",
+      "sources": [
+        "OMOPHub hierarchy"
+      ],
+      "usage_frequency": null,
+      "usage_status": null,
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": 37167060,
+      "dmd_level": null
+    },
+    {
+      "code": "191457008",
+      "term": "Senile dementia with depressive or paranoid features",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.7,
+      "rationale": "Expanded via OMOP 'Is a' from concept_id 4048875",
+      "sources": [
+        "OMOPHub hierarchy"
+      ],
+      "usage_frequency": null,
+      "usage_status": null,
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": 4101137,
+      "dmd_level": null
+    },
+    {
+      "code": "312991009",
+      "term": "Senile dementia of the Lewy body type",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.7,
+      "rationale": "Expanded via OMOP 'Is a' from concept_id 4048875",
+      "sources": [
+        "OMOPHub hierarchy"
+      ],
+      "usage_frequency": null,
+      "usage_status": null,
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": 4196433,
+      "dmd_level": null
+    },
+    {
+      "code": "2421000119107",
+      "term": "Hallucinations co-occurrent and due to late onset dementia",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.7,
+      "rationale": "Expanded via OMOP 'Is a' from concept_id 4048875",
+      "sources": [
+        "OMOPHub hierarchy"
+      ],
+      "usage_frequency": null,
+      "usage_status": null,
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": 37109222,
+      "dmd_level": null
+    },
+    {
+      "code": "58756001",
+      "term": "Huntington's chorea",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.7,
+      "rationale": "Expanded via OMOP 'Is a' from concept_id 4182210",
+      "sources": [
+        "OMOPHub hierarchy"
+      ],
+      "usage_frequency": null,
+      "usage_status": null,
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": 374341,
+      "dmd_level": null
+    },
+    {
+      "code": "191519005",
+      "term": "Dementia associated with another disease",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.7,
+      "rationale": "Expanded via OMOP 'Is a' from concept_id 4182210",
+      "sources": [
+        "OMOPHub hierarchy"
+      ],
+      "usage_frequency": null,
+      "usage_status": null,
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": 374888,
+      "dmd_level": null
+    },
+    {
+      "code": "51928006",
+      "term": "General paresis - neurosyphilis",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.7,
+      "rationale": "Expanded via OMOP 'Is a' from concept_id 4182210",
+      "sources": [
+        "OMOPHub hierarchy"
+      ],
+      "usage_frequency": null,
+      "usage_status": null,
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": 377788,
+      "dmd_level": null
+    },
+    {
+      "code": "278857002",
+      "term": "Dementia of frontal lobe type",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.7,
+      "rationale": "Expanded via OMOP 'Is a' from concept_id 4182210",
+      "sources": [
+        "OMOPHub hierarchy"
+      ],
+      "usage_frequency": null,
+      "usage_status": null,
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": 441002,
+      "dmd_level": null
+    },
+    {
+      "code": "428051000124108",
+      "term": "Mild dementia",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.7,
+      "rationale": "Expanded via OMOP 'Is a' from concept_id 4182210",
+      "sources": [
+        "OMOPHub hierarchy"
+      ],
+      "usage_frequency": null,
+      "usage_status": null,
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": 762497,
+      "dmd_level": null
+    },
+    {
+      "code": "430771000124100",
+      "term": "Moderate dementia",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.7,
+      "rationale": "Expanded via OMOP 'Is a' from concept_id 4182210",
+      "sources": [
+        "OMOPHub hierarchy"
+      ],
+      "usage_frequency": null,
+      "usage_status": null,
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": 762704,
+      "dmd_level": null
+    },
+    {
+      "code": "428351000124105",
+      "term": "Severe dementia",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.7,
+      "rationale": "Expanded via OMOP 'Is a' from concept_id 4182210",
+      "sources": [
+        "OMOPHub hierarchy"
+      ],
+      "usage_frequency": null,
+      "usage_status": null,
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": 765653,
+      "dmd_level": null
+    },
+    {
+      "code": "1339031006",
+      "term": "Dementia caused by ionizing radiation",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.7,
+      "rationale": "Expanded via OMOP 'Is a' from concept_id 4182210",
+      "sources": [
+        "OMOPHub hierarchy"
+      ],
+      "usage_frequency": null,
+      "usage_status": null,
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": 1076291,
+      "dmd_level": null
+    },
+    {
+      "code": "838276009",
+      "term": "Amyotrophic lateral sclerosis, parkinsonism, dementia complex",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.7,
+      "rationale": "Expanded via OMOP 'Is a' from concept_id 4182210",
+      "sources": [
+        "OMOPHub hierarchy"
+      ],
+      "usage_frequency": null,
+      "usage_status": null,
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": 3654598,
+      "dmd_level": null
+    },
+    {
+      "code": "230282000",
+      "term": "Traumatic encephalopathy",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.7,
+      "rationale": "Expanded via OMOP 'Is a' from concept_id 4182210",
+      "sources": [
+        "OMOPHub hierarchy"
+      ],
+      "usage_frequency": null,
+      "usage_status": null,
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": 4047745,
+      "dmd_level": null
+    },
+    {
+      "code": "268612007",
+      "term": "Senile and presenile organic psychotic conditions",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.7,
+      "rationale": "Expanded via OMOP 'Is a' from concept_id 4182210",
+      "sources": [
+        "OMOPHub hierarchy"
+      ],
+      "usage_frequency": null,
+      "usage_status": null,
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": 4152048,
+      "dmd_level": null
+    },
+    {
+      "code": "774069007",
+      "term": "PRKAR1B-related neurodegenerative dementia with intermediate filaments",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.7,
+      "rationale": "Expanded via OMOP 'Is a' from concept_id 4182210",
+      "sources": [
+        "OMOPHub hierarchy"
+      ],
+      "usage_frequency": null,
+      "usage_status": null,
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": 36674472,
+      "dmd_level": null
+    },
+    {
+      "code": "722978000",
+      "term": "Toxic dementia",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.7,
+      "rationale": "Expanded via OMOP 'Is a' from concept_id 4182210",
+      "sources": [
+        "OMOPHub hierarchy"
+      ],
+      "usage_frequency": null,
+      "usage_status": null,
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": 36717598,
+      "dmd_level": null
+    },
+    {
+      "code": "713844000",
+      "term": "Dementia co-occurrent with human immunodeficiency virus infection",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.7,
+      "rationale": "Expanded via OMOP 'Is a' from concept_id 4182210",
+      "sources": [
+        "OMOPHub hierarchy"
+      ],
+      "usage_frequency": null,
+      "usage_status": null,
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": 37017549,
+      "dmd_level": null
+    },
+    {
+      "code": "725898002",
+      "term": "Delirium co-occurrent with dementia",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.7,
+      "rationale": "Expanded via OMOP 'Is a' from concept_id 4182210",
+      "sources": [
+        "OMOPHub hierarchy"
+      ],
+      "usage_frequency": null,
+      "usage_status": null,
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": 37111242,
+      "dmd_level": null
+    },
+    {
+      "code": "1186724002",
+      "term": "HTRA1-related autosomal dominant cerebral small vessel disease",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.7,
+      "rationale": "Expanded via OMOP 'Is a' from concept_id 4182210",
+      "sources": [
+        "OMOPHub hierarchy"
+      ],
+      "usage_frequency": null,
+      "usage_status": null,
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": 37162098,
+      "dmd_level": null
+    },
+    {
+      "code": "1186887004",
+      "term": "Dementia caused by manganese",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.7,
+      "rationale": "Expanded via OMOP 'Is a' from concept_id 4182210",
+      "sources": [
+        "OMOPHub hierarchy"
+      ],
+      "usage_frequency": null,
+      "usage_status": null,
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": 37162187,
+      "dmd_level": null
+    },
+    {
+      "code": "1187126002",
+      "term": "ITM2B-related amyloidosis",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.7,
+      "rationale": "Expanded via OMOP 'Is a' from concept_id 4182210",
+      "sources": [
+        "OMOPHub hierarchy"
+      ],
+      "usage_frequency": null,
+      "usage_status": null,
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": 37162253,
+      "dmd_level": null
+    },
+    {
+      "code": "1259584009",
+      "term": "Post-dialysis dementia",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.7,
+      "rationale": "Expanded via OMOP 'Is a' from concept_id 4182210",
+      "sources": [
+        "OMOPHub hierarchy"
+      ],
+      "usage_frequency": null,
+      "usage_status": null,
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": 37166441,
+      "dmd_level": null
+    },
+    {
+      "code": "788898005",
+      "term": "Dementia caused by volatile inhalant",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.7,
+      "rationale": "Expanded via OMOP 'Is a' from concept_id 4182210",
+      "sources": [
+        "OMOPHub hierarchy"
+      ],
+      "usage_frequency": null,
+      "usage_status": null,
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": 37311999,
+      "dmd_level": null
+    },
+    {
+      "code": "715737004",
+      "term": "Parkinsonism with dementia of Guadeloupe",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.7,
+      "rationale": "Expanded via OMOP 'Is a' from concept_id 4182210",
+      "sources": [
+        "OMOPHub hierarchy"
+      ],
+      "usage_frequency": null,
+      "usage_status": null,
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": 37396063,
+      "dmd_level": null
+    },
+    {
+      "code": "1591000119103",
+      "term": "Dementia with behavioral disturbance",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.7,
+      "rationale": "Expanded via OMOP 'Is a' from concept_id 4182210",
+      "sources": [
+        "OMOPHub hierarchy"
+      ],
+      "usage_frequency": null,
+      "usage_status": null,
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": 43530666,
+      "dmd_level": null
+    },
+    {
+      "code": "698949001",
+      "term": "Dementia in remission",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.7,
+      "rationale": "Expanded via OMOP 'Is a' from concept_id 4182210",
+      "sources": [
+        "OMOPHub hierarchy"
+      ],
+      "usage_frequency": null,
+      "usage_status": null,
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": 44782935,
+      "dmd_level": null
+    },
+    {
+      "code": "191493005",
+      "term": "Drug-induced dementia",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.7,
+      "rationale": "Expanded via OMOP 'Is a' from concept_id 4182210",
+      "sources": [
+        "OMOPHub hierarchy"
+      ],
+      "usage_frequency": null,
+      "usage_status": null,
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": 376095,
+      "dmd_level": null
+    },
+    {
+      "code": "281004",
+      "term": "Dementia associated with alcoholism",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.7,
+      "rationale": "Expanded via OMOP 'Is a' from concept_id 4182210",
+      "sources": [
+        "OMOPHub hierarchy"
+      ],
+      "usage_frequency": null,
+      "usage_status": null,
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": 378726,
+      "dmd_level": null
+    },
+    {
+      "code": "840464007",
+      "term": "Dementia due to carbon monoxide poisoning",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.7,
+      "rationale": "Expanded via OMOP 'Is a' from concept_id 4182210",
+      "sources": [
+        "OMOPHub hierarchy"
+      ],
+      "usage_frequency": null,
+      "usage_status": null,
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": 3654920,
+      "dmd_level": null
+    },
+    {
+      "code": "230299004",
+      "term": "Juvenile onset Huntington's disease",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.7,
+      "rationale": "Expanded via OMOP 'Is a' from concept_id 4182210",
+      "sources": [
+        "OMOPHub hierarchy"
+      ],
+      "usage_frequency": null,
+      "usage_status": null,
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": 4043381,
+      "dmd_level": null
+    },
+    {
+      "code": "230301006",
+      "term": "Akinetic-rigid form of Huntington's disease",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.7,
+      "rationale": "Expanded via OMOP 'Is a' from concept_id 4182210",
+      "sources": [
+        "OMOPHub hierarchy"
+      ],
+      "usage_frequency": null,
+      "usage_status": null,
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": 4046095,
+      "dmd_level": null
+    },
+    {
+      "code": "230300007",
+      "term": "Late onset Huntington's disease",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.7,
+      "rationale": "Expanded via OMOP 'Is a' from concept_id 4182210",
+      "sources": [
+        "OMOPHub hierarchy"
+      ],
+      "usage_frequency": null,
+      "usage_status": null,
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": 4047752,
+      "dmd_level": null
+    },
+    {
+      "code": "421529006",
+      "term": "Dementia with AIDS (acquired immunodeficiency syndrome)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.7,
+      "rationale": "Expanded via OMOP 'Is a' from concept_id 4182210",
+      "sources": [
+        "OMOPHub hierarchy"
+      ],
+      "usage_frequency": null,
+      "usage_status": null,
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": 4228133,
+      "dmd_level": null
+    },
+    {
+      "code": "82959004",
+      "term": "Dementia paralytica juvenilis",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.7,
+      "rationale": "Expanded via OMOP 'Is a' from concept_id 4182210",
+      "sources": [
+        "OMOPHub hierarchy"
+      ],
+      "usage_frequency": null,
+      "usage_status": null,
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": 4307791,
+      "dmd_level": null
+    },
+    {
+      "code": "425390006",
+      "term": "Dementia associated with Parkinson's Disease",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.7,
+      "rationale": "Expanded via OMOP 'Is a' from concept_id 4182210",
+      "sources": [
+        "OMOPHub hierarchy"
+      ],
+      "usage_frequency": null,
+      "usage_status": null,
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": 4314734,
+      "dmd_level": null
+    },
+    {
+      "code": "722979008",
+      "term": "Dementia due to metabolic abnormality",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.7,
+      "rationale": "Expanded via OMOP 'Is a' from concept_id 4182210",
+      "sources": [
+        "OMOPHub hierarchy"
+      ],
+      "usage_frequency": null,
+      "usage_status": null,
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": 36716796,
+      "dmd_level": null
+    },
+    {
+      "code": "722980006",
+      "term": "Dementia due to chromosomal anomaly",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.7,
+      "rationale": "Expanded via OMOP 'Is a' from concept_id 4182210",
+      "sources": [
+        "OMOPHub hierarchy"
+      ],
+      "usage_frequency": null,
+      "usage_status": null,
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": 36716797,
+      "dmd_level": null
+    },
+    {
+      "code": "82381000119103",
+      "term": "Epileptic dementia with behavioral disturbance",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.7,
+      "rationale": "Expanded via OMOP 'Is a' from concept_id 4182210",
+      "sources": [
+        "OMOPHub hierarchy"
+      ],
+      "usage_frequency": null,
+      "usage_status": null,
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": 37018608,
+      "dmd_level": null
+    },
+    {
+      "code": "288631000119104",
+      "term": "Vascular dementia with behavioral disturbance",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.7,
+      "rationale": "Expanded via OMOP 'Is a' from concept_id 4182210",
+      "sources": [
+        "OMOPHub hierarchy"
+      ],
+      "usage_frequency": null,
+      "usage_status": null,
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": 37018688,
+      "dmd_level": null
+    },
+    {
+      "code": "724776007",
+      "term": "Dementia due to disorder of central nervous system",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.7,
+      "rationale": "Expanded via OMOP 'Is a' from concept_id 4182210",
+      "sources": [
+        "OMOPHub hierarchy"
+      ],
+      "usage_frequency": null,
+      "usage_status": null,
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": 37110513,
+      "dmd_level": null
+    },
+    {
+      "code": "733184002",
+      "term": "Dementia caused by heavy metal exposure",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.7,
+      "rationale": "Expanded via OMOP 'Is a' from concept_id 4182210",
+      "sources": [
+        "OMOPHub hierarchy"
+      ],
+      "usage_frequency": null,
+      "usage_status": null,
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": 37116464,
+      "dmd_level": null
+    },
+    {
+      "code": "724777003",
+      "term": "Dementia due to infectious disease",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.7,
+      "rationale": "Expanded via OMOP 'Is a' from concept_id 4182210",
+      "sources": [
+        "OMOPHub hierarchy"
+      ],
+      "usage_frequency": null,
+      "usage_status": null,
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": 37119154,
+      "dmd_level": null
+    },
+    {
+      "code": "1186883000",
+      "term": "Dementia due to nutritional deficiency",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.7,
+      "rationale": "Expanded via OMOP 'Is a' from concept_id 4182210",
+      "sources": [
+        "OMOPHub hierarchy"
+      ],
+      "usage_frequency": null,
+      "usage_status": null,
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": 37162183,
+      "dmd_level": null
+    },
+    {
+      "code": "1187004001",
+      "term": "Chronic traumatic encephalopathy",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.7,
+      "rationale": "Expanded via OMOP 'Is a' from concept_id 4182210",
+      "sources": [
+        "OMOPHub hierarchy"
+      ],
+      "usage_frequency": null,
+      "usage_status": null,
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": 37162223,
+      "dmd_level": null
+    },
+    {
+      "code": "1259465009",
+      "term": "Dementia due to hepatic failure",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.7,
+      "rationale": "Expanded via OMOP 'Is a' from concept_id 4182210",
+      "sources": [
+        "OMOPHub hierarchy"
+      ],
+      "usage_frequency": null,
+      "usage_status": null,
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": 37166332,
+      "dmd_level": null
+    },
+    {
+      "code": "1259476008",
+      "term": "Dementia due to genetic disease",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.7,
+      "rationale": "Expanded via OMOP 'Is a' from concept_id 4182210",
+      "sources": [
+        "OMOPHub hierarchy"
+      ],
+      "usage_frequency": null,
+      "usage_status": null,
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": 37166343,
+      "dmd_level": null
+    },
+    {
+      "code": "1259517005",
+      "term": "Dementia due to systemic lupus erythematosus",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.7,
+      "rationale": "Expanded via OMOP 'Is a' from concept_id 4182210",
+      "sources": [
+        "OMOPHub hierarchy"
+      ],
+      "usage_frequency": null,
+      "usage_status": null,
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": 37166380,
+      "dmd_level": null
+    },
+    {
+      "code": "1259579003",
+      "term": "Dementia due to Behcet syndrome",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.7,
+      "rationale": "Expanded via OMOP 'Is a' from concept_id 4182210",
+      "sources": [
+        "OMOPHub hierarchy"
+      ],
+      "usage_frequency": null,
+      "usage_status": null,
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": 37166436,
+      "dmd_level": null
+    },
+    {
+      "code": "1259581001",
+      "term": "Dementia due to celiac disease",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.7,
+      "rationale": "Expanded via OMOP 'Is a' from concept_id 4182210",
+      "sources": [
+        "OMOPHub hierarchy"
+      ],
+      "usage_frequency": null,
+      "usage_status": null,
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": 37166438,
+      "dmd_level": null
+    },
+    {
+      "code": "1259591007",
+      "term": "Dementia due to acquired hypothyroidism",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.7,
+      "rationale": "Expanded via OMOP 'Is a' from concept_id 4182210",
+      "sources": [
+        "OMOPHub hierarchy"
+      ],
+      "usage_frequency": null,
+      "usage_status": null,
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": 37166448,
+      "dmd_level": null
+    },
+    {
+      "code": "1259656006",
+      "term": "Dementia due to renal failure",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.7,
+      "rationale": "Expanded via OMOP 'Is a' from concept_id 4182210",
+      "sources": [
+        "OMOPHub hierarchy"
+      ],
+      "usage_frequency": null,
+      "usage_status": null,
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": 37166508,
+      "dmd_level": null
+    },
+    {
+      "code": "1259661008",
+      "term": "Dementia due to rheumatological disease",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.7,
+      "rationale": "Expanded via OMOP 'Is a' from concept_id 4182210",
+      "sources": [
+        "OMOPHub hierarchy"
+      ],
+      "usage_frequency": null,
+      "usage_status": null,
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": 37166513,
+      "dmd_level": null
+    },
+    {
+      "code": "1259663006",
+      "term": "Dementia due to polyarteritis nodosa",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.7,
+      "rationale": "Expanded via OMOP 'Is a' from concept_id 4182210",
+      "sources": [
+        "OMOPHub hierarchy"
+      ],
+      "usage_frequency": null,
+      "usage_status": null,
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": 37166515,
+      "dmd_level": null
+    },
+    {
+      "code": "70936005",
+      "term": "Multi-infarct dementia, uncomplicated",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.7,
+      "rationale": "Expanded via OMOP 'Is a' from concept_id 379778",
+      "sources": [
+        "OMOPHub hierarchy"
+      ],
+      "usage_frequency": null,
+      "usage_status": null,
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": 377254,
+      "dmd_level": null
+    },
+    {
+      "code": "25772007",
+      "term": "Multi-infarct dementia with delusions",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.7,
+      "rationale": "Expanded via OMOP 'Is a' from concept_id 379778",
+      "sources": [
+        "OMOPHub hierarchy"
+      ],
+      "usage_frequency": null,
+      "usage_status": null,
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": 443790,
+      "dmd_level": null
+    },
+    {
+      "code": "14070001",
+      "term": "Multi-infarct dementia with depression",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.7,
+      "rationale": "Expanded via OMOP 'Is a' from concept_id 379778",
+      "sources": [
+        "OMOPHub hierarchy"
+      ],
+      "usage_frequency": null,
+      "usage_status": null,
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": 443864,
+      "dmd_level": null
+    },
+    {
+      "code": "10349009",
+      "term": "Multi-infarct dementia with delirium",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.7,
+      "rationale": "Expanded via OMOP 'Is a' from concept_id 379778",
+      "sources": [
+        "OMOPHub hierarchy"
+      ],
+      "usage_frequency": null,
+      "usage_status": null,
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": 444091,
+      "dmd_level": null
+    },
+    {
+      "code": "293671000119109",
+      "term": "Behavioral disturbance due to multi-infarct dementia",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.7,
+      "rationale": "Expanded via OMOP 'Is a' from concept_id 379778",
+      "sources": [
+        "OMOPHub hierarchy"
+      ],
+      "usage_frequency": null,
+      "usage_status": null,
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": 37155661,
+      "dmd_level": null
+    },
+    {
+      "code": "106021000119105",
+      "term": "Multi-infarct dementia due to atherosclerosis",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.7,
+      "rationale": "Expanded via OMOP 'Is a' from concept_id 379778",
+      "sources": [
+        "OMOPHub hierarchy"
+      ],
+      "usage_frequency": null,
+      "usage_status": null,
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": 37395562,
+      "dmd_level": null
+    },
+    {
+      "code": "230285003",
+      "term": "Vascular dementia of acute onset",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.7,
+      "rationale": "Expanded via OMOP 'Is a' from concept_id 443605",
+      "sources": [
+        "OMOPHub hierarchy"
+      ],
+      "usage_frequency": null,
+      "usage_status": null,
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": 4046089,
+      "dmd_level": null
+    },
+    {
+      "code": "191465006",
+      "term": "Arteriosclerotic dementia with paranoia",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.7,
+      "rationale": "Expanded via OMOP 'Is a' from concept_id 443605",
+      "sources": [
+        "OMOPHub hierarchy"
+      ],
+      "usage_frequency": null,
+      "usage_status": null,
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": 4100252,
+      "dmd_level": null
+    },
+    {
+      "code": "16276361000119109",
+      "term": "Vascular dementia without behavioral disturbance",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.7,
+      "rationale": "Expanded via OMOP 'Is a' from concept_id 443605",
+      "sources": [
+        "OMOPHub hierarchy"
+      ],
+      "usage_frequency": null,
+      "usage_status": null,
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": 37109056,
+      "dmd_level": null
+    },
+    {
+      "code": "1259485008",
+      "term": "Dementia due to cerebral vasculitis",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.7,
+      "rationale": "Expanded via OMOP 'Is a' from concept_id 443605",
+      "sources": [
+        "OMOPHub hierarchy"
+      ],
+      "usage_frequency": null,
+      "usage_status": null,
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": 37166351,
+      "dmd_level": null
+    },
+    {
+      "code": "1259488005",
+      "term": "Dementia due to cerebral amyloid angiopathy",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.7,
+      "rationale": "Expanded via OMOP 'Is a' from concept_id 443605",
+      "sources": [
+        "OMOPHub hierarchy"
+      ],
+      "usage_frequency": null,
+      "usage_status": null,
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": 37166354,
       "dmd_level": null
     },
     {
@@ -8726,7 +10632,7 @@
       "vocabulary": "ICD-10 (WHO)",
       "decision": "exclude",
       "confidence": 1.0,
-      "rationale": "Delirium is a distinct acute condition, not dementia.",
+      "rationale": "Unspecified delirium is a distinct acute condition, not dementia.",
       "sources": [
         "ChromaDB"
       ],
@@ -8777,7 +10683,7 @@
       "vocabulary": "ICD-10 (WHO)",
       "decision": "exclude",
       "confidence": 1.0,
-      "rationale": "Personality and behavioural disorders due to brain disease are distinct from dementia.",
+      "rationale": "Personality and behavioural disorders due to brain disease are distinct conditions, not dementia.",
       "sources": [
         "ChromaDB"
       ],
@@ -8811,7 +10717,7 @@
       "vocabulary": "ICD-10 (WHO)",
       "decision": "exclude",
       "confidence": 1.0,
-      "rationale": "Other organic personality and behavioural disorders are distinct from dementia.",
+      "rationale": "Other organic personality and behavioural disorders are distinct conditions, not dementia.",
       "sources": [
         "ChromaDB"
       ],
@@ -8828,7 +10734,7 @@
       "vocabulary": "ICD-10 (WHO)",
       "decision": "exclude",
       "confidence": 1.0,
-      "rationale": "Unspecified organic personality and behavioural disorder is distinct from dementia.",
+      "rationale": "Unspecified organic personality and behavioural disorder is a distinct condition, not dementia.",
       "sources": [
         "ChromaDB"
       ],
@@ -8845,7 +10751,7 @@
       "vocabulary": "ICD-10 (WHO)",
       "decision": "exclude",
       "confidence": 1.0,
-      "rationale": "Huntington disease is the underlying condition; the dementia manifestation is coded as F02.2, not G10.",
+      "rationale": "Huntington disease is the underlying condition; dementia in Huntington disease (F02.2) is already included.",
       "sources": [
         "ChromaDB"
       ],
@@ -8862,7 +10768,7 @@
       "vocabulary": "ICD-10 (WHO)",
       "decision": "exclude",
       "confidence": 1.0,
-      "rationale": "Parkinson disease is the underlying condition; the dementia manifestation is coded as F02.3, not G20.",
+      "rationale": "Parkinson disease is the underlying condition; dementia in Parkinson disease (F02.3) is already included.",
       "sources": [
         "ChromaDB"
       ],
@@ -8879,7 +10785,7 @@
       "vocabulary": "ICD-10 (WHO)",
       "decision": "exclude",
       "confidence": 1.0,
-      "rationale": "Secondary parkinsonism is a movement disorder, not dementia.",
+      "rationale": "Secondary parkinsonism is the underlying condition, not dementia.",
       "sources": [
         "ChromaDB"
       ],
@@ -8896,7 +10802,7 @@
       "vocabulary": "ICD-10 (WHO)",
       "decision": "exclude",
       "confidence": 1.0,
-      "rationale": "Postencephalitic parkinsonism is a movement disorder, not dementia.",
+      "rationale": "Postencephalitic parkinsonism is the underlying condition, not dementia.",
       "sources": [
         "ChromaDB"
       ],
@@ -8913,7 +10819,7 @@
       "vocabulary": "ICD-10 (WHO)",
       "decision": "exclude",
       "confidence": 1.0,
-      "rationale": "Vascular parkinsonism is a movement disorder, not dementia.",
+      "rationale": "Vascular parkinsonism is the underlying condition, not dementia.",
       "sources": [
         "ChromaDB"
       ],
@@ -8930,7 +10836,7 @@
       "vocabulary": "ICD-10 (WHO)",
       "decision": "exclude",
       "confidence": 1.0,
-      "rationale": "Degenerative disease of basal ganglia is a movement disorder, not dementia.",
+      "rationale": "Degenerative disease of basal ganglia is the underlying condition, not dementia.",
       "sources": [
         "ChromaDB"
       ],
@@ -8947,7 +10853,7 @@
       "vocabulary": "ICD-10 (WHO)",
       "decision": "exclude",
       "confidence": 1.0,
-      "rationale": "Dystonia is a movement disorder, not dementia.",
+      "rationale": "Dystonia is a distinct neurological condition, not dementia.",
       "sources": [
         "ChromaDB"
       ],
@@ -8964,7 +10870,7 @@
       "vocabulary": "ICD-10 (WHO)",
       "decision": "exclude",
       "confidence": 1.0,
-      "rationale": "Alzheimer disease is the underlying pathology; the dementia manifestation is coded as F00, not G30.",
+      "rationale": "Alzheimer disease is the underlying pathology; dementia in Alzheimer disease (F00) is the appropriate dementia code.",
       "sources": [
         "ChromaDB"
       ],
@@ -8981,7 +10887,7 @@
       "vocabulary": "ICD-10 (WHO)",
       "decision": "exclude",
       "confidence": 1.0,
-      "rationale": "Alzheimer disease with early onset is the underlying pathology; the dementia manifestation is coded as F00.0, not G30.0.",
+      "rationale": "Alzheimer disease with early onset is the underlying pathology; dementia in Alzheimer disease with early onset (F00.0) is the appropriate dementia code.",
       "sources": [
         "ChromaDB"
       ],
@@ -8998,7 +10904,7 @@
       "vocabulary": "ICD-10 (WHO)",
       "decision": "exclude",
       "confidence": 1.0,
-      "rationale": "Alzheimer disease with late onset is the underlying pathology; the dementia manifestation is coded as F00.1, not G30.1.",
+      "rationale": "Alzheimer disease with late onset is the underlying pathology; dementia in Alzheimer disease with late onset (F00.1) is the appropriate dementia code.",
       "sources": [
         "ChromaDB"
       ],
@@ -9015,7 +10921,7 @@
       "vocabulary": "ICD-10 (WHO)",
       "decision": "exclude",
       "confidence": 1.0,
-      "rationale": "Other Alzheimer disease is the underlying pathology; the dementia manifestation is coded as F00, not G30.8.",
+      "rationale": "Other Alzheimer disease is the underlying pathology; dementia in Alzheimer disease (F00) is the appropriate dementia code.",
       "sources": [
         "ChromaDB"
       ],
@@ -9027,12 +10933,29 @@
       "dmd_level": null
     },
     {
+      "code": "R45.3",
+      "term": "Demoralization and apathy",
+      "vocabulary": "ICD-10 (WHO)",
+      "decision": "exclude",
+      "confidence": 0.95,
+      "rationale": "Demoralization and apathy are symptoms that may accompany dementia but do not represent dementia itself.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "usage_frequency": 5,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital HES inpatient FCEs",
+      "usage_setting": "secondary_care_hes",
+      "concept_id": null,
+      "dmd_level": null
+    },
+    {
       "code": "W06.0",
       "term": "Fall involving bed, Home",
       "vocabulary": "ICD-10 (WHO)",
       "decision": "exclude",
-      "confidence": 0.98,
-      "rationale": "Fall involving bed is a complication/consequence of dementia, not an instance of dementia itself.",
+      "confidence": 0.95,
+      "rationale": "Fall from bed is a complication/consequence of dementia, not an instance of dementia itself.",
       "sources": [
         "ChromaDB"
       ],
@@ -9048,8 +10971,8 @@
       "term": "Fall involving chair, Home",
       "vocabulary": "ICD-10 (WHO)",
       "decision": "exclude",
-      "confidence": 0.98,
-      "rationale": "Fall involving chair is a complication/consequence of dementia, not an instance of dementia itself.",
+      "confidence": 0.95,
+      "rationale": "Fall from chair is a complication/consequence of dementia, not an instance of dementia itself.",
       "sources": [
         "ChromaDB"
       ],
@@ -9065,7 +10988,7 @@
       "term": "Unspecified fall, Home",
       "vocabulary": "ICD-10 (WHO)",
       "decision": "exclude",
-      "confidence": 0.98,
+      "confidence": 0.95,
       "rationale": "Unspecified fall is a complication/consequence of dementia, not an instance of dementia itself.",
       "sources": [
         "ChromaDB"
@@ -9078,29 +11001,12 @@
       "dmd_level": null
     },
     {
-      "code": "R45.3",
-      "term": "Demoralization and apathy",
-      "vocabulary": "ICD-10 (WHO)",
-      "decision": "exclude",
-      "confidence": 0.95,
-      "rationale": "Demoralization and apathy are symptoms that may accompany dementia but do not represent the dementia diagnosis itself.",
-      "sources": [
-        "ChromaDB"
-      ],
-      "usage_frequency": 5,
-      "usage_status": "counted",
-      "usage_source": "NHS Digital HES inpatient FCEs",
-      "usage_setting": "secondary_care_hes",
-      "concept_id": null,
-      "dmd_level": null
-    },
-    {
       "code": "Z63.6",
       "term": "Dependent relative needing care at home",
       "vocabulary": "ICD-10 (WHO)",
       "decision": "exclude",
       "confidence": 0.95,
-      "rationale": "Dependent relative needing care is an administrative/social consequence of dementia, not a diagnosis of dementia.",
+      "rationale": "Dependent relative needing care is an administrative/social consequence of dementia, not the condition itself.",
       "sources": [
         "ChromaDB"
       ],
@@ -9117,7 +11023,7 @@
       "vocabulary": "SNOMED CT",
       "decision": "exclude",
       "confidence": 0.95,
-      "rationale": "This is an administrative code for declined care plan, not a clinical diagnosis of dementia itself.",
+      "rationale": "Dementia care plan declined is an administrative/situational code, not a diagnostic confirmation of dementia.",
       "sources": [
         "ChromaDB",
         "QOF Business Rules 2024-25"
@@ -9135,7 +11041,7 @@
       "vocabulary": "ICD-10 (WHO)",
       "decision": "exclude",
       "confidence": 0.9,
-      "rationale": "Senility is a non-specific age-related condition and does not confirm a primary dementia diagnosis.",
+      "rationale": "Senility is a general age-related condition distinct from primary dementia diagnosis.",
       "sources": [
         "ChromaDB"
       ],
@@ -9147,75 +11053,39 @@
       "dmd_level": null
     },
     {
-      "code": "429998004",
-      "term": "Vascular dementia (disorder)",
+      "code": "698948009",
+      "term": "Vascular dementia in remission (disorder)",
       "vocabulary": "SNOMED CT",
       "decision": "exclude",
       "confidence": 0.9,
-      "rationale": "Vascular dementia is a secondary dementia type caused by cerebrovascular disease, not a primary degenerative dementia.",
+      "rationale": "Vascular dementia in remission represents a resolved state and should be excluded as it does not confirm active dementia.",
       "sources": [
         "ChromaDB",
         "QOF Business Rules 2024-25"
       ],
-      "usage_frequency": 103880,
-      "usage_status": "counted",
+      "usage_frequency": null,
+      "usage_status": "withheld_below_5",
       "usage_source": "NHS Digital primary care SNOMED reporting",
       "usage_setting": "primary_care",
-      "concept_id": 443605,
+      "concept_id": 44782934,
       "dmd_level": null
     },
     {
-      "code": "56267009",
-      "term": "Multi-infarct dementia (disorder)",
+      "code": "698954005",
+      "term": "Primary degenerative dementia of the Alzheimer type, senile onset in remission (disorder)",
       "vocabulary": "SNOMED CT",
       "decision": "exclude",
       "confidence": 0.9,
-      "rationale": "Multi-infarct dementia is a secondary dementia caused by cerebrovascular infarcts, not a primary degenerative dementia.",
-      "sources": [
-        "OpenCodelists (Bennett Institute)",
-        "QOF Business Rules 2024-25"
-      ],
-      "usage_frequency": 2010,
-      "usage_status": "counted",
-      "usage_source": "NHS Digital primary care SNOMED reporting",
-      "usage_setting": "primary_care",
-      "concept_id": null,
-      "dmd_level": null
-    },
-    {
-      "code": "723123001",
-      "term": "Ischemic vascular dementia (disorder)",
-      "vocabulary": "SNOMED CT",
-      "decision": "exclude",
-      "confidence": 0.9,
-      "rationale": "Ischemic vascular dementia is a secondary dementia caused by cerebrovascular ischemia, not a primary degenerative dementia.",
+      "rationale": "Primary degenerative dementia in remission represents a resolved state and should be excluded as it does not confirm active dementia.",
       "sources": [
         "ChromaDB",
         "QOF Business Rules 2024-25"
       ],
-      "usage_frequency": 40,
+      "usage_frequency": 10,
       "usage_status": "counted",
       "usage_source": "NHS Digital primary care SNOMED reporting",
       "usage_setting": "primary_care",
-      "concept_id": 36717248,
-      "dmd_level": null
-    },
-    {
-      "code": "833326008",
-      "term": "Cortical vascular dementia (disorder)",
-      "vocabulary": "SNOMED CT",
-      "decision": "exclude",
-      "confidence": 0.9,
-      "rationale": "Cortical vascular dementia is a secondary dementia caused by cerebrovascular disease, not a primary degenerative dementia.",
-      "sources": [
-        "ChromaDB",
-        "QOF Business Rules 2024-25"
-      ],
-      "usage_frequency": 60,
-      "usage_status": "counted",
-      "usage_source": "NHS Digital primary care SNOMED reporting",
-      "usage_setting": "primary_care",
-      "concept_id": 3654434,
+      "concept_id": 44782940,
       "dmd_level": null
     },
     {
@@ -9223,8 +11093,8 @@
       "term": "Dialysis dementia (disorder)",
       "vocabulary": "SNOMED CT",
       "decision": "exclude",
-      "confidence": 0.9,
-      "rationale": "Dialysis dementia is a secondary dementia caused by dialysis-related complications, not a primary degenerative dementia.",
+      "confidence": 0.85,
+      "rationale": "Dialysis dementia is a secondary dementia caused by dialysis-related complications, not a primary dementia.",
       "sources": [
         "ChromaDB",
         "QOF Business Rules 2024-25"
@@ -9234,24 +11104,6 @@
       "usage_source": "NHS Digital primary care SNOMED reporting",
       "usage_setting": "primary_care",
       "concept_id": 4244346,
-      "dmd_level": null
-    },
-    {
-      "code": "698948009",
-      "term": "Vascular dementia in remission (disorder)",
-      "vocabulary": "SNOMED CT",
-      "decision": "exclude",
-      "confidence": 0.85,
-      "rationale": "Vascular dementia in remission represents a resolved secondary dementia, not an active primary dementia.",
-      "sources": [
-        "ChromaDB",
-        "QOF Business Rules 2024-25"
-      ],
-      "usage_frequency": null,
-      "usage_status": "withheld_below_5",
-      "usage_source": "NHS Digital primary care SNOMED reporting",
-      "usage_setting": "primary_care",
-      "concept_id": null,
       "dmd_level": null
     }
   ],

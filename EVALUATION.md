@@ -341,6 +341,23 @@ documented per-codelist std max of 0.025. T37 + T37g are empirically
 F1-neutral on the disease benchmark; details in
 `data/test_sets/benchmark_2026_04/T37b_path_a_summary.md`.
 
+**T37i hierarchy expansion (2026-05-13).** Adding standard "Is a"
+descendants of every LLM-included concept, fetched via
+`hierarchy.descendants(max_levels=3)` on OMOPHub, lifts ΔF1 mean
+**+0.060** (median +0.055) across the 15 disease codelists — about
+5× the K=5 σ ≈ 0.012 noise floor. BCa 95% CI **[−0.076, +0.152]**
+straddles zero because the per-codelist distribution is bimodal:
+eight codelists lift by +0.05 to +0.38 (recall-driven on
+descendant-closed gold lists such as `epilepsy`, `dementia`, `copd`),
+while two regress by −0.32 (`heart_failure`) and −0.47
+(`diabetes_mellitus`) — gold lists that deliberately prune
+descendants (NICE excludes complications like diabetic retinopathy
+from the diabetes-diagnosis list). Mean Δ precision −0.153, mean Δ
+recall +0.178: the expander trades precision for recall, and the
+trade is favourable on average but adversarial against
+diagnosis-only codelists. Details in
+`data/test_sets/benchmark_2026_04/T37i_path_a_summary.md`.
+
 A naive HEAD-vs-baseline comparison without controlling for time-
 separated environmental drift in OMOPHub / UMLS / OpenCodelists would
 report ΔF1 mean −0.0816 with `hepatitis_c_chronic` collapsed

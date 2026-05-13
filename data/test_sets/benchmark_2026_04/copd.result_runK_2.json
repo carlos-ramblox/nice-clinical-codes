@@ -1120,14 +1120,18 @@
     "all_scored": {
       "codelist_name": "all_scored",
       "n_ref_codes": 56,
-      "n_output_codes": 100,
-      "recall": 0.4286,
-      "precision": 0.24,
-      "f1": 0.3077,
-      "tp_count": 24,
-      "fp_count": 76,
-      "fn_count": 32,
+      "n_output_codes": 136,
+      "recall": 0.875,
+      "precision": 0.3603,
+      "f1": 0.5104,
+      "tp_count": 49,
+      "fp_count": 87,
+      "fn_count": 7,
       "tp_codes": [
+        {
+          "code": "1010333003",
+          "term": "Emphysema of left lung"
+        },
         {
           "code": "1010334009",
           "term": "Emphysema of right lung"
@@ -1147,6 +1151,10 @@
         {
           "code": "13645005",
           "term": "Chronic obstructive pulmonary disease"
+        },
+        {
+          "code": "16003001",
+          "term": "Giant bullous emphysema"
         },
         {
           "code": "16846004",
@@ -1169,8 +1177,52 @@
           "term": "Acute exacerbation of chronic obstructive pulmonary disease"
         },
         {
+          "code": "195953005",
+          "term": "Mixed simple and mucopurulent chronic bronchitis"
+        },
+        {
+          "code": "195957006",
+          "term": "Chronic bullous emphysema"
+        },
+        {
+          "code": "195958001",
+          "term": "Segmental bullous emphysema"
+        },
+        {
+          "code": "195959009",
+          "term": "Zonal bullous emphysema"
+        },
+        {
           "code": "196001008",
           "term": "Chronic obstructive pulmonary disease with acute lower respiratory infection"
+        },
+        {
+          "code": "196026004",
+          "term": "Chronic emphysema caused by chemical fumes"
+        },
+        {
+          "code": "233674008",
+          "term": "Pulmonary emphysema in alpha-1 primary immunodeficiency deficiency"
+        },
+        {
+          "code": "233675009",
+          "term": "Toxic emphysema"
+        },
+        {
+          "code": "233677001",
+          "term": "Scar emphysema"
+        },
+        {
+          "code": "23958009",
+          "term": "Vanishing lung"
+        },
+        {
+          "code": "266355005",
+          "term": "Bullous emphysema with collapse"
+        },
+        {
+          "code": "266356006",
+          "term": "Atrophic (senile) emphysema"
         },
         {
           "code": "285381006",
@@ -1197,12 +1249,32 @@
           "term": "Severe chronic obstructive pulmonary disease"
         },
         {
+          "code": "31898008",
+          "term": "Paraseptal emphysema"
+        },
+        {
           "code": "425748003",
           "term": "Acute exacerbation of chronic bronchitis"
         },
         {
+          "code": "47895001",
+          "term": "Congenital emphysema"
+        },
+        {
+          "code": "49691004",
+          "term": "Occupational bronchitis"
+        },
+        {
+          "code": "4981000",
+          "term": "Panacinar emphysema"
+        },
+        {
           "code": "52571006",
           "term": "Chronic tracheobronchitis"
+        },
+        {
+          "code": "60805002",
+          "term": "Hemolytic anemia with emphysema AND cutis laxa"
         },
         {
           "code": "61937009",
@@ -1213,8 +1285,36 @@
           "term": "Chronic bronchitis"
         },
         {
+          "code": "66987001",
+          "term": "Congenital lobar emphysema"
+        },
+        {
+          "code": "68328006",
+          "term": "Centriacinar emphysema"
+        },
+        {
+          "code": "70756004",
+          "term": "Bronchial atresia with segmental pulmonary emphysema"
+        },
+        {
+          "code": "708030004",
+          "term": "Pulmonary emphysema co-occurrent with fibrosis of lung"
+        },
+        {
           "code": "74417001",
           "term": "Mucopurulent chronic bronchitis"
+        },
+        {
+          "code": "785736001",
+          "term": "Chronic bronchitis co-occurrent with wheeze"
+        },
+        {
+          "code": "836477007",
+          "term": "Chronic emphysema caused by vapor"
+        },
+        {
+          "code": "84409004",
+          "term": "Fetid chronic bronchitis"
         },
         {
           "code": "847091000000104",
@@ -1247,6 +1347,14 @@
           "term": "Excepted from chronic obstructive pulmonary disease quality indicators - service unavailable (finding)"
         },
         {
+          "code": "1177120001",
+          "term": "Bronchiolitis obliterans syndrome following allogeneic stem cell transplant"
+        },
+        {
+          "code": "33325001",
+          "term": "Compensatory emphysema"
+        },
+        {
           "code": "371611000000107",
           "term": "Chronic obstructive pulmonary disease patient unsuitable for pulmonary rehabilitation (finding)"
         },
@@ -1261,6 +1369,18 @@
         {
           "code": "442025000",
           "term": "Acute exacerbation of chronic asthmatic bronchitis"
+        },
+        {
+          "code": "451981000124108",
+          "term": "Eosinophilic bronchitis"
+        },
+        {
+          "code": "47938003",
+          "term": "Chronic obliterative bronchiolitis"
+        },
+        {
+          "code": "57686001",
+          "term": "Emphysematous bleb of lung"
         },
         {
           "code": "707447008",
@@ -1311,12 +1431,36 @@
           "term": "Number of chronic obstructive pulmonary disease exacerbations in past year (observable entity)"
         },
         {
+          "code": "735465007",
+          "term": "Protracted bronchitis caused by bacterium"
+        },
+        {
           "code": "760601000000107",
           "term": "Chronic obstructive pulmonary disease 3 monthly review (regime/therapy)"
         },
         {
           "code": "760621000000103",
           "term": "Chronic obstructive pulmonary disease 6 monthly review (regime/therapy)"
+        },
+        {
+          "code": "762618008",
+          "term": "Bronchiolitis obliterans syndrome due to and after lung transplantation"
+        },
+        {
+          "code": "77690003",
+          "term": "Interstitial emphysema of lung"
+        },
+        {
+          "code": "840350008",
+          "term": "Chronic obliterative bronchiolitis caused by chemical fumes"
+        },
+        {
+          "code": "840351007",
+          "term": "Chronic obliterative bronchiolitis caused by vapor"
+        },
+        {
+          "code": "86680006",
+          "term": "Ruptured emphysematous bleb of lung"
         },
         {
           "code": "866881000000101",
@@ -1533,16 +1677,81 @@
       ],
       "fn_codes": [
         {
-          "code": "1010333003",
-          "term": "Emphysema of left lung"
-        },
-        {
           "code": "1287820006",
           "term": "Chronic respiratory disease originating in perinatal period"
         },
         {
+          "code": "195963002",
+          "term": "Acute vesicular emphysema"
+        },
+        {
+          "code": "360470001",
+          "term": "Chronic mucus hypersecretion"
+        },
+        {
+          "code": "45145000",
+          "term": "Unilateral emphysema"
+        },
+        {
+          "code": "66110007",
+          "term": "Chronic diffuse emphysema caused by inhalation of chemical fumes AND/OR vapors"
+        },
+        {
+          "code": "840493007",
+          "term": "Congenital lobar emphysema of bilateral lungs"
+        },
+        {
+          "code": "89549007",
+          "term": "Catarrhal bronchitis"
+        }
+      ]
+    },
+    "included_only": {
+      "codelist_name": "included_only",
+      "n_ref_codes": 56,
+      "n_output_codes": 68,
+      "recall": 0.8214,
+      "precision": 0.6765,
+      "f1": 0.7419,
+      "tp_count": 46,
+      "fp_count": 22,
+      "fn_count": 10,
+      "tp_codes": [
+        {
+          "code": "1010333003",
+          "term": "Emphysema of left lung"
+        },
+        {
+          "code": "106001000119101",
+          "term": "Chronic obstructive pulmonary disease with acute bronchitis"
+        },
+        {
+          "code": "10692761000119107",
+          "term": "Asthma-chronic obstructive pulmonary disease overlap syndrome"
+        },
+        {
+          "code": "135836000",
+          "term": "End stage chronic obstructive pulmonary disease"
+        },
+        {
+          "code": "13645005",
+          "term": "Chronic obstructive pulmonary disease"
+        },
+        {
           "code": "16003001",
           "term": "Giant bullous emphysema"
+        },
+        {
+          "code": "1751000119100",
+          "term": "Acute exacerbation of chronic obstructive pulmonary disease with asthma"
+        },
+        {
+          "code": "185086009",
+          "term": "Chronic obstructive bronchitis"
+        },
+        {
+          "code": "195951007",
+          "term": "Acute exacerbation of chronic obstructive pulmonary disease"
         },
         {
           "code": "195953005",
@@ -1561,8 +1770,8 @@
           "term": "Zonal bullous emphysema"
         },
         {
-          "code": "195963002",
-          "term": "Acute vesicular emphysema"
+          "code": "196001008",
+          "term": "Chronic obstructive pulmonary disease with acute lower respiratory infection"
         },
         {
           "code": "196026004",
@@ -1593,127 +1802,6 @@
           "term": "Atrophic (senile) emphysema"
         },
         {
-          "code": "31898008",
-          "term": "Paraseptal emphysema"
-        },
-        {
-          "code": "360470001",
-          "term": "Chronic mucus hypersecretion"
-        },
-        {
-          "code": "45145000",
-          "term": "Unilateral emphysema"
-        },
-        {
-          "code": "47895001",
-          "term": "Congenital emphysema"
-        },
-        {
-          "code": "49691004",
-          "term": "Occupational bronchitis"
-        },
-        {
-          "code": "4981000",
-          "term": "Panacinar emphysema"
-        },
-        {
-          "code": "60805002",
-          "term": "Hemolytic anemia with emphysema AND cutis laxa"
-        },
-        {
-          "code": "66110007",
-          "term": "Chronic diffuse emphysema caused by inhalation of chemical fumes AND/OR vapors"
-        },
-        {
-          "code": "66987001",
-          "term": "Congenital lobar emphysema"
-        },
-        {
-          "code": "68328006",
-          "term": "Centriacinar emphysema"
-        },
-        {
-          "code": "70756004",
-          "term": "Bronchial atresia with segmental pulmonary emphysema"
-        },
-        {
-          "code": "708030004",
-          "term": "Pulmonary emphysema co-occurrent with fibrosis of lung"
-        },
-        {
-          "code": "785736001",
-          "term": "Chronic bronchitis co-occurrent with wheeze"
-        },
-        {
-          "code": "836477007",
-          "term": "Chronic emphysema caused by vapor"
-        },
-        {
-          "code": "840493007",
-          "term": "Congenital lobar emphysema of bilateral lungs"
-        },
-        {
-          "code": "84409004",
-          "term": "Fetid chronic bronchitis"
-        },
-        {
-          "code": "89549007",
-          "term": "Catarrhal bronchitis"
-        }
-      ]
-    },
-    "included_only": {
-      "codelist_name": "included_only",
-      "n_ref_codes": 56,
-      "n_output_codes": 34,
-      "recall": 0.4107,
-      "precision": 0.6765,
-      "f1": 0.5111,
-      "tp_count": 23,
-      "fp_count": 11,
-      "fn_count": 33,
-      "tp_codes": [
-        {
-          "code": "1010334009",
-          "term": "Emphysema of right lung"
-        },
-        {
-          "code": "106001000119101",
-          "term": "Chronic obstructive pulmonary disease with acute bronchitis"
-        },
-        {
-          "code": "10692761000119107",
-          "term": "Asthma-chronic obstructive pulmonary disease overlap syndrome"
-        },
-        {
-          "code": "135836000",
-          "term": "End stage chronic obstructive pulmonary disease"
-        },
-        {
-          "code": "13645005",
-          "term": "Chronic obstructive pulmonary disease"
-        },
-        {
-          "code": "16846004",
-          "term": "Obstructive emphysema"
-        },
-        {
-          "code": "1751000119100",
-          "term": "Acute exacerbation of chronic obstructive pulmonary disease with asthma"
-        },
-        {
-          "code": "185086009",
-          "term": "Chronic obstructive bronchitis"
-        },
-        {
-          "code": "195951007",
-          "term": "Acute exacerbation of chronic obstructive pulmonary disease"
-        },
-        {
-          "code": "196001008",
-          "term": "Chronic obstructive pulmonary disease with acute lower respiratory infection"
-        },
-        {
           "code": "285381006",
           "term": "Acute infective exacerbation of chronic obstructive pulmonary disease"
         },
@@ -1738,12 +1826,32 @@
           "term": "Severe chronic obstructive pulmonary disease"
         },
         {
+          "code": "31898008",
+          "term": "Paraseptal emphysema"
+        },
+        {
           "code": "425748003",
           "term": "Acute exacerbation of chronic bronchitis"
         },
         {
+          "code": "47895001",
+          "term": "Congenital emphysema"
+        },
+        {
+          "code": "49691004",
+          "term": "Occupational bronchitis"
+        },
+        {
+          "code": "4981000",
+          "term": "Panacinar emphysema"
+        },
+        {
           "code": "52571006",
           "term": "Chronic tracheobronchitis"
+        },
+        {
+          "code": "60805002",
+          "term": "Hemolytic anemia with emphysema AND cutis laxa"
         },
         {
           "code": "61937009",
@@ -1754,8 +1862,36 @@
           "term": "Chronic bronchitis"
         },
         {
+          "code": "66987001",
+          "term": "Congenital lobar emphysema"
+        },
+        {
+          "code": "68328006",
+          "term": "Centriacinar emphysema"
+        },
+        {
+          "code": "70756004",
+          "term": "Bronchial atresia with segmental pulmonary emphysema"
+        },
+        {
+          "code": "708030004",
+          "term": "Pulmonary emphysema co-occurrent with fibrosis of lung"
+        },
+        {
           "code": "74417001",
           "term": "Mucopurulent chronic bronchitis"
+        },
+        {
+          "code": "785736001",
+          "term": "Chronic bronchitis co-occurrent with wheeze"
+        },
+        {
+          "code": "836477007",
+          "term": "Chronic emphysema caused by vapor"
+        },
+        {
+          "code": "84409004",
+          "term": "Fetid chronic bronchitis"
         },
         {
           "code": "847091000000104",
@@ -1770,6 +1906,50 @@
         {
           "code": "10692761000119108",
           "term": "Asthma-chronic obstructive pulmonary disease overlap syndrome (disorder)"
+        },
+        {
+          "code": "1177120001",
+          "term": "Bronchiolitis obliterans syndrome following allogeneic stem cell transplant"
+        },
+        {
+          "code": "33325001",
+          "term": "Compensatory emphysema"
+        },
+        {
+          "code": "451981000124108",
+          "term": "Eosinophilic bronchitis"
+        },
+        {
+          "code": "47938003",
+          "term": "Chronic obliterative bronchiolitis"
+        },
+        {
+          "code": "57686001",
+          "term": "Emphysematous bleb of lung"
+        },
+        {
+          "code": "735465007",
+          "term": "Protracted bronchitis caused by bacterium"
+        },
+        {
+          "code": "762618008",
+          "term": "Bronchiolitis obliterans syndrome due to and after lung transplantation"
+        },
+        {
+          "code": "77690003",
+          "term": "Interstitial emphysema of lung"
+        },
+        {
+          "code": "840350008",
+          "term": "Chronic obliterative bronchiolitis caused by chemical fumes"
+        },
+        {
+          "code": "840351007",
+          "term": "Chronic obliterative bronchiolitis caused by vapor"
+        },
+        {
+          "code": "86680006",
+          "term": "Ruptured emphysematous bleb of lung"
         },
         {
           "code": "J41",
@@ -1814,20 +1994,93 @@
       ],
       "fn_codes": [
         {
-          "code": "1010333003",
-          "term": "Emphysema of left lung"
+          "code": "1010334009",
+          "term": "Emphysema of right lung"
         },
         {
           "code": "1287820006",
           "term": "Chronic respiratory disease originating in perinatal period"
         },
         {
-          "code": "16003001",
-          "term": "Giant bullous emphysema"
+          "code": "16846004",
+          "term": "Obstructive emphysema"
         },
         {
           "code": "195949008",
           "term": "Chronic asthmatic bronchitis"
+        },
+        {
+          "code": "195963002",
+          "term": "Acute vesicular emphysema"
+        },
+        {
+          "code": "360470001",
+          "term": "Chronic mucus hypersecretion"
+        },
+        {
+          "code": "45145000",
+          "term": "Unilateral emphysema"
+        },
+        {
+          "code": "66110007",
+          "term": "Chronic diffuse emphysema caused by inhalation of chemical fumes AND/OR vapors"
+        },
+        {
+          "code": "840493007",
+          "term": "Congenital lobar emphysema of bilateral lungs"
+        },
+        {
+          "code": "89549007",
+          "term": "Catarrhal bronchitis"
+        }
+      ]
+    },
+    "included_plus_uncertain": {
+      "codelist_name": "included_plus_uncertain",
+      "n_ref_codes": 56,
+      "n_output_codes": 69,
+      "recall": 0.8214,
+      "precision": 0.6667,
+      "f1": 0.736,
+      "tp_count": 46,
+      "fp_count": 23,
+      "fn_count": 10,
+      "tp_codes": [
+        {
+          "code": "1010333003",
+          "term": "Emphysema of left lung"
+        },
+        {
+          "code": "106001000119101",
+          "term": "Chronic obstructive pulmonary disease with acute bronchitis"
+        },
+        {
+          "code": "10692761000119107",
+          "term": "Asthma-chronic obstructive pulmonary disease overlap syndrome"
+        },
+        {
+          "code": "135836000",
+          "term": "End stage chronic obstructive pulmonary disease"
+        },
+        {
+          "code": "13645005",
+          "term": "Chronic obstructive pulmonary disease"
+        },
+        {
+          "code": "16003001",
+          "term": "Giant bullous emphysema"
+        },
+        {
+          "code": "1751000119100",
+          "term": "Acute exacerbation of chronic obstructive pulmonary disease with asthma"
+        },
+        {
+          "code": "185086009",
+          "term": "Chronic obstructive bronchitis"
+        },
+        {
+          "code": "195951007",
+          "term": "Acute exacerbation of chronic obstructive pulmonary disease"
         },
         {
           "code": "195953005",
@@ -1846,8 +2099,8 @@
           "term": "Zonal bullous emphysema"
         },
         {
-          "code": "195963002",
-          "term": "Acute vesicular emphysema"
+          "code": "196001008",
+          "term": "Chronic obstructive pulmonary disease with acute lower respiratory infection"
         },
         {
           "code": "196026004",
@@ -1878,131 +2131,6 @@
           "term": "Atrophic (senile) emphysema"
         },
         {
-          "code": "31898008",
-          "term": "Paraseptal emphysema"
-        },
-        {
-          "code": "360470001",
-          "term": "Chronic mucus hypersecretion"
-        },
-        {
-          "code": "45145000",
-          "term": "Unilateral emphysema"
-        },
-        {
-          "code": "47895001",
-          "term": "Congenital emphysema"
-        },
-        {
-          "code": "49691004",
-          "term": "Occupational bronchitis"
-        },
-        {
-          "code": "4981000",
-          "term": "Panacinar emphysema"
-        },
-        {
-          "code": "60805002",
-          "term": "Hemolytic anemia with emphysema AND cutis laxa"
-        },
-        {
-          "code": "66110007",
-          "term": "Chronic diffuse emphysema caused by inhalation of chemical fumes AND/OR vapors"
-        },
-        {
-          "code": "66987001",
-          "term": "Congenital lobar emphysema"
-        },
-        {
-          "code": "68328006",
-          "term": "Centriacinar emphysema"
-        },
-        {
-          "code": "70756004",
-          "term": "Bronchial atresia with segmental pulmonary emphysema"
-        },
-        {
-          "code": "708030004",
-          "term": "Pulmonary emphysema co-occurrent with fibrosis of lung"
-        },
-        {
-          "code": "785736001",
-          "term": "Chronic bronchitis co-occurrent with wheeze"
-        },
-        {
-          "code": "836477007",
-          "term": "Chronic emphysema caused by vapor"
-        },
-        {
-          "code": "840493007",
-          "term": "Congenital lobar emphysema of bilateral lungs"
-        },
-        {
-          "code": "84409004",
-          "term": "Fetid chronic bronchitis"
-        },
-        {
-          "code": "89549007",
-          "term": "Catarrhal bronchitis"
-        }
-      ]
-    },
-    "included_plus_uncertain": {
-      "codelist_name": "included_plus_uncertain",
-      "n_ref_codes": 56,
-      "n_output_codes": 37,
-      "recall": 0.4286,
-      "precision": 0.6486,
-      "f1": 0.5161,
-      "tp_count": 24,
-      "fp_count": 13,
-      "fn_count": 32,
-      "tp_codes": [
-        {
-          "code": "1010334009",
-          "term": "Emphysema of right lung"
-        },
-        {
-          "code": "106001000119101",
-          "term": "Chronic obstructive pulmonary disease with acute bronchitis"
-        },
-        {
-          "code": "10692761000119107",
-          "term": "Asthma-chronic obstructive pulmonary disease overlap syndrome"
-        },
-        {
-          "code": "135836000",
-          "term": "End stage chronic obstructive pulmonary disease"
-        },
-        {
-          "code": "13645005",
-          "term": "Chronic obstructive pulmonary disease"
-        },
-        {
-          "code": "16846004",
-          "term": "Obstructive emphysema"
-        },
-        {
-          "code": "1751000119100",
-          "term": "Acute exacerbation of chronic obstructive pulmonary disease with asthma"
-        },
-        {
-          "code": "185086009",
-          "term": "Chronic obstructive bronchitis"
-        },
-        {
-          "code": "195949008",
-          "term": "Chronic asthmatic bronchitis"
-        },
-        {
-          "code": "195951007",
-          "term": "Acute exacerbation of chronic obstructive pulmonary disease"
-        },
-        {
-          "code": "196001008",
-          "term": "Chronic obstructive pulmonary disease with acute lower respiratory infection"
-        },
-        {
           "code": "285381006",
           "term": "Acute infective exacerbation of chronic obstructive pulmonary disease"
         },
@@ -2027,12 +2155,32 @@
           "term": "Severe chronic obstructive pulmonary disease"
         },
         {
+          "code": "31898008",
+          "term": "Paraseptal emphysema"
+        },
+        {
           "code": "425748003",
           "term": "Acute exacerbation of chronic bronchitis"
         },
         {
+          "code": "47895001",
+          "term": "Congenital emphysema"
+        },
+        {
+          "code": "49691004",
+          "term": "Occupational bronchitis"
+        },
+        {
+          "code": "4981000",
+          "term": "Panacinar emphysema"
+        },
+        {
           "code": "52571006",
           "term": "Chronic tracheobronchitis"
+        },
+        {
+          "code": "60805002",
+          "term": "Hemolytic anemia with emphysema AND cutis laxa"
         },
         {
           "code": "61937009",
@@ -2043,8 +2191,36 @@
           "term": "Chronic bronchitis"
         },
         {
+          "code": "66987001",
+          "term": "Congenital lobar emphysema"
+        },
+        {
+          "code": "68328006",
+          "term": "Centriacinar emphysema"
+        },
+        {
+          "code": "70756004",
+          "term": "Bronchial atresia with segmental pulmonary emphysema"
+        },
+        {
+          "code": "708030004",
+          "term": "Pulmonary emphysema co-occurrent with fibrosis of lung"
+        },
+        {
           "code": "74417001",
           "term": "Mucopurulent chronic bronchitis"
+        },
+        {
+          "code": "785736001",
+          "term": "Chronic bronchitis co-occurrent with wheeze"
+        },
+        {
+          "code": "836477007",
+          "term": "Chronic emphysema caused by vapor"
+        },
+        {
+          "code": "84409004",
+          "term": "Fetid chronic bronchitis"
         },
         {
           "code": "847091000000104",
@@ -2061,8 +2237,48 @@
           "term": "Asthma-chronic obstructive pulmonary disease overlap syndrome (disorder)"
         },
         {
-          "code": "442025000",
-          "term": "Acute exacerbation of chronic asthmatic bronchitis"
+          "code": "1177120001",
+          "term": "Bronchiolitis obliterans syndrome following allogeneic stem cell transplant"
+        },
+        {
+          "code": "33325001",
+          "term": "Compensatory emphysema"
+        },
+        {
+          "code": "451981000124108",
+          "term": "Eosinophilic bronchitis"
+        },
+        {
+          "code": "47938003",
+          "term": "Chronic obliterative bronchiolitis"
+        },
+        {
+          "code": "57686001",
+          "term": "Emphysematous bleb of lung"
+        },
+        {
+          "code": "735465007",
+          "term": "Protracted bronchitis caused by bacterium"
+        },
+        {
+          "code": "762618008",
+          "term": "Bronchiolitis obliterans syndrome due to and after lung transplantation"
+        },
+        {
+          "code": "77690003",
+          "term": "Interstitial emphysema of lung"
+        },
+        {
+          "code": "840350008",
+          "term": "Chronic obliterative bronchiolitis caused by chemical fumes"
+        },
+        {
+          "code": "840351007",
+          "term": "Chronic obliterative bronchiolitis caused by vapor"
+        },
+        {
+          "code": "86680006",
+          "term": "Ruptured emphysematous bleb of lung"
         },
         {
           "code": "J41",
@@ -2111,68 +2327,24 @@
       ],
       "fn_codes": [
         {
-          "code": "1010333003",
-          "term": "Emphysema of left lung"
+          "code": "1010334009",
+          "term": "Emphysema of right lung"
         },
         {
           "code": "1287820006",
           "term": "Chronic respiratory disease originating in perinatal period"
         },
         {
-          "code": "16003001",
-          "term": "Giant bullous emphysema"
+          "code": "16846004",
+          "term": "Obstructive emphysema"
         },
         {
-          "code": "195953005",
-          "term": "Mixed simple and mucopurulent chronic bronchitis"
-        },
-        {
-          "code": "195957006",
-          "term": "Chronic bullous emphysema"
-        },
-        {
-          "code": "195958001",
-          "term": "Segmental bullous emphysema"
-        },
-        {
-          "code": "195959009",
-          "term": "Zonal bullous emphysema"
+          "code": "195949008",
+          "term": "Chronic asthmatic bronchitis"
         },
         {
           "code": "195963002",
           "term": "Acute vesicular emphysema"
-        },
-        {
-          "code": "196026004",
-          "term": "Chronic emphysema caused by chemical fumes"
-        },
-        {
-          "code": "233674008",
-          "term": "Pulmonary emphysema in alpha-1 primary immunodeficiency deficiency"
-        },
-        {
-          "code": "233675009",
-          "term": "Toxic emphysema"
-        },
-        {
-          "code": "233677001",
-          "term": "Scar emphysema"
-        },
-        {
-          "code": "23958009",
-          "term": "Vanishing lung"
-        },
-        {
-          "code": "266355005",
-          "term": "Bullous emphysema with collapse"
-        },
-        {
-          "code": "266356006",
-          "term": "Atrophic (senile) emphysema"
-        },
-        {
-          "code": "31898008",
-          "term": "Paraseptal emphysema"
         },
         {
           "code": "360470001",
@@ -2183,56 +2355,12 @@
           "term": "Unilateral emphysema"
         },
         {
-          "code": "47895001",
-          "term": "Congenital emphysema"
-        },
-        {
-          "code": "49691004",
-          "term": "Occupational bronchitis"
-        },
-        {
-          "code": "4981000",
-          "term": "Panacinar emphysema"
-        },
-        {
-          "code": "60805002",
-          "term": "Hemolytic anemia with emphysema AND cutis laxa"
-        },
-        {
           "code": "66110007",
           "term": "Chronic diffuse emphysema caused by inhalation of chemical fumes AND/OR vapors"
         },
         {
-          "code": "66987001",
-          "term": "Congenital lobar emphysema"
-        },
-        {
-          "code": "68328006",
-          "term": "Centriacinar emphysema"
-        },
-        {
-          "code": "70756004",
-          "term": "Bronchial atresia with segmental pulmonary emphysema"
-        },
-        {
-          "code": "708030004",
-          "term": "Pulmonary emphysema co-occurrent with fibrosis of lung"
-        },
-        {
-          "code": "785736001",
-          "term": "Chronic bronchitis co-occurrent with wheeze"
-        },
-        {
-          "code": "836477007",
-          "term": "Chronic emphysema caused by vapor"
-        },
-        {
           "code": "840493007",
           "term": "Congenital lobar emphysema of bilateral lungs"
-        },
-        {
-          "code": "84409004",
-          "term": "Fetid chronic bronchitis"
         },
         {
           "code": "89549007",
@@ -2242,22 +2370,32 @@
     }
   },
   "false_exclusions": {
-    "count": 0,
-    "codes": []
-  },
-  "uncertain_in_reference": {
-    "count": 1,
+    "count": 3,
     "codes": [
+      {
+        "code": "1010334009",
+        "term": "Emphysema of right lung (disorder)",
+        "rationale": "Emphysema of right lung is a specific anatomical manifestation; term does not contain 'chronic obstructive pulmonary disease' or 'COPD'."
+      },
+      {
+        "code": "16846004",
+        "term": "Obstructive emphysema (disorder)",
+        "rationale": "Obstructive emphysema is a specific anatomical manifestation; term does not explicitly contain 'chronic obstructive pulmonary disease' or 'COPD'."
+      },
       {
         "code": "195949008",
         "term": "Chronic asthmatic bronchitis",
-        "rationale": "Chronic asthmatic bronchitis may represent asthma rather than COPD; clinical judgment needed to distinguish from pure COPD."
+        "rationale": "Chronic asthmatic bronchitis is primarily an asthma-related condition; does not explicitly name COPD."
       }
     ]
   },
-  "summary": "Recall: 41.1% (23 of 56 reference codes retrieved). Precision: 67.7%. F1: 51.1%. 0 reference codes were incorrectly excluded.",
-  "elapsed_seconds": 23.1,
-  "pipeline_results_count": 100,
+  "uncertain_in_reference": {
+    "count": 0,
+    "codes": []
+  },
+  "summary": "Recall: 82.1% (46 of 56 reference codes retrieved). Precision: 67.7%. F1: 74.2%. 3 reference codes were incorrectly excluded.",
+  "elapsed_seconds": 22.21,
+  "pipeline_results_count": 136,
   "scored_codes": [
     {
       "code": "J44",
@@ -2265,7 +2403,7 @@
       "vocabulary": "ICD-10 (WHO)",
       "decision": "include",
       "confidence": 1.0,
-      "rationale": "This is the primary ICD-10 code for chronic obstructive pulmonary disease and directly matches the query.",
+      "rationale": "This is the primary ICD-10 code for COPD; direct match to the queried condition.",
       "sources": [
         "ChromaDB"
       ],
@@ -2282,7 +2420,7 @@
       "vocabulary": "SNOMED CT",
       "decision": "include",
       "confidence": 0.98,
-      "rationale": "Chronic obstructive lung disease is a direct synonym for COPD and explicitly names the queried condition.",
+      "rationale": "Chronic obstructive lung disease is a direct synonym for COPD and represents the core condition.",
       "sources": [
         "ChromaDB",
         "QOF Business Rules 2024-25"
@@ -2292,6 +2430,23 @@
       "usage_source": "NHS Digital primary care SNOMED reporting",
       "usage_setting": "primary_care",
       "concept_id": 255573,
+      "dmd_level": null
+    },
+    {
+      "code": "J42",
+      "term": "Unspecified chronic bronchitis",
+      "vocabulary": "ICD-10 (WHO)",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Unspecified chronic bronchitis is a core component of COPD and represents the chronic bronchitis phenotype.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "usage_frequency": 382,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital HES inpatient FCEs",
+      "usage_setting": "secondary_care_hes",
+      "concept_id": null,
       "dmd_level": null
     },
     {
@@ -2317,7 +2472,7 @@
       "vocabulary": "ICD-10 (WHO)",
       "decision": "include",
       "confidence": 0.95,
-      "rationale": "COPD with acute exacerbation is a clinical variant of COPD representing disease progression.",
+      "rationale": "COPD with acute exacerbation is a clinical variant representing acute worsening of COPD.",
       "sources": [
         "ChromaDB"
       ],
@@ -2334,7 +2489,7 @@
       "vocabulary": "ICD-10 (WHO)",
       "decision": "include",
       "confidence": 0.95,
-      "rationale": "Other specified COPD is a clinical variant of COPD.",
+      "rationale": "Other specified COPD is a clinical variant of COPD with specific characteristics.",
       "sources": [
         "ChromaDB"
       ],
@@ -2351,7 +2506,7 @@
       "vocabulary": "ICD-10 (WHO)",
       "decision": "include",
       "confidence": 0.95,
-      "rationale": "Unspecified COPD is a clinical variant of COPD.",
+      "rationale": "Unspecified COPD is a clinical variant representing COPD without further specification.",
       "sources": [
         "ChromaDB"
       ],
@@ -2363,12 +2518,30 @@
       "dmd_level": null
     },
     {
+      "code": "106001000119101",
+      "term": "Chronic obstructive lung disease co-occurrent with acute bronchitis (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Chronic obstructive lung disease co-occurrent with acute bronchitis explicitly names COPD and represents an instance with acute exacerbation.",
+      "sources": [
+        "ChromaDB",
+        "QOF Business Rules 2024-25"
+      ],
+      "usage_frequency": 10,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": 46269701,
+      "dmd_level": null
+    },
+    {
       "code": "135836000",
       "term": "End stage chronic obstructive airways disease (disorder)",
       "vocabulary": "SNOMED CT",
       "decision": "include",
       "confidence": 0.95,
-      "rationale": "End stage chronic obstructive airways disease is a severity variant of COPD and explicitly contains the queried condition.",
+      "rationale": "End stage chronic obstructive airways disease explicitly names the condition and represents a severity variant of COPD.",
       "sources": [
         "ChromaDB",
         "QOF Business Rules 2024-25"
@@ -2381,12 +2554,30 @@
       "dmd_level": null
     },
     {
+      "code": "1751000119100",
+      "term": "Acute exacerbation of chronic obstructive pulmonary disease with asthma",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Acute exacerbation of COPD with asthma explicitly names COPD and represents an instance with acute exacerbation.",
+      "sources": [
+        "ChromaDB",
+        "OpenCodelists (Bennett Institute)"
+      ],
+      "usage_frequency": 160,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": 43530693,
+      "dmd_level": null
+    },
+    {
       "code": "185086009",
       "term": "Chronic obstructive bronchitis (disorder)",
       "vocabulary": "SNOMED CT",
       "decision": "include",
       "confidence": 0.95,
-      "rationale": "Chronic obstructive bronchitis is a primary manifestation and subtype of COPD, explicitly containing the queried condition.",
+      "rationale": "Chronic obstructive bronchitis is a core component and manifestation of COPD, explicitly naming the condition.",
       "sources": [
         "ChromaDB",
         "QOF Business Rules 2024-25"
@@ -2404,7 +2595,7 @@
       "vocabulary": "SNOMED CT",
       "decision": "include",
       "confidence": 0.95,
-      "rationale": "Acute exacerbation of chronic obstructive airways disease explicitly contains the queried condition and represents a clinical state of COPD.",
+      "rationale": "Acute exacerbation of chronic obstructive airways disease explicitly names the condition and represents an instance with acute exacerbation.",
       "sources": [
         "ChromaDB",
         "QOF Business Rules 2024-25"
@@ -2413,7 +2604,25 @@
       "usage_status": "counted",
       "usage_source": "NHS Digital primary care SNOMED reporting",
       "usage_setting": "primary_care",
-      "concept_id": null,
+      "concept_id": 257004,
+      "dmd_level": null
+    },
+    {
+      "code": "196001008",
+      "term": "Chronic obstructive pulmonary disease with acute lower respiratory infection (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "COPD with acute lower respiratory infection explicitly names COPD and represents an instance with acute complication.",
+      "sources": [
+        "ChromaDB",
+        "QOF Business Rules 2024-25"
+      ],
+      "usage_frequency": 3250,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": 4110056,
       "dmd_level": null
     },
     {
@@ -2422,7 +2631,7 @@
       "vocabulary": "SNOMED CT",
       "decision": "include",
       "confidence": 0.95,
-      "rationale": "Acute infective exacerbation of chronic obstructive airways disease explicitly contains the queried condition and represents a clinical state of COPD.",
+      "rationale": "Acute infective exacerbation of chronic obstructive airways disease explicitly names the condition and represents an instance with acute exacerbation.",
       "sources": [
         "ChromaDB",
         "QOF Business Rules 2024-25"
@@ -2440,7 +2649,7 @@
       "vocabulary": "SNOMED CT",
       "decision": "include",
       "confidence": 0.95,
-      "rationale": "Acute exacerbation of chronic obstructive bronchitis explicitly contains the queried condition and represents a clinical state of COPD.",
+      "rationale": "Acute exacerbation of chronic obstructive bronchitis explicitly names the condition and represents an instance with acute exacerbation.",
       "sources": [
         "ChromaDB",
         "QOF Business Rules 2024-25"
@@ -2458,7 +2667,7 @@
       "vocabulary": "SNOMED CT",
       "decision": "include",
       "confidence": 0.95,
-      "rationale": "Very severe COPD is a severity variant of COPD and explicitly contains the queried condition.",
+      "rationale": "Very severe COPD explicitly names the condition and represents a severity variant of COPD.",
       "sources": [
         "ChromaDB",
         "QOF Business Rules 2024-25"
@@ -2476,7 +2685,7 @@
       "vocabulary": "SNOMED CT",
       "decision": "include",
       "confidence": 0.95,
-      "rationale": "Mild COPD is a severity variant of COPD and explicitly contains the queried condition.",
+      "rationale": "Mild COPD explicitly names the condition and represents a severity variant of COPD.",
       "sources": [
         "ChromaDB",
         "QOF Business Rules 2024-25"
@@ -2494,7 +2703,7 @@
       "vocabulary": "SNOMED CT",
       "decision": "include",
       "confidence": 0.95,
-      "rationale": "Moderate COPD is a severity variant of COPD and explicitly contains the queried condition.",
+      "rationale": "Moderate COPD explicitly names the condition and represents a severity variant of COPD.",
       "sources": [
         "ChromaDB",
         "QOF Business Rules 2024-25"
@@ -2512,7 +2721,7 @@
       "vocabulary": "SNOMED CT",
       "decision": "include",
       "confidence": 0.95,
-      "rationale": "Severe COPD is a severity variant of COPD and explicitly contains the queried condition.",
+      "rationale": "Severe COPD explicitly names the condition and represents a severity variant of COPD.",
       "sources": [
         "ChromaDB",
         "QOF Business Rules 2024-25"
@@ -2525,12 +2734,30 @@
       "dmd_level": null
     },
     {
+      "code": "425748003",
+      "term": "Acute exacerbation of chronic bronchitis (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Acute exacerbation of chronic bronchitis explicitly names the condition and represents an instance with acute exacerbation.",
+      "sources": [
+        "ChromaDB",
+        "QOF Business Rules 2024-25"
+      ],
+      "usage_frequency": 170,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": 4137525,
+      "dmd_level": null
+    },
+    {
       "code": "63480004",
       "term": "Chronic bronchitis (disorder)",
       "vocabulary": "SNOMED CT",
       "decision": "include",
       "confidence": 0.95,
-      "rationale": "Chronic bronchitis is a primary manifestation and subtype of COPD, explicitly containing the queried condition.",
+      "rationale": "Chronic bronchitis is a core manifestation and component of COPD, representing an instance of chronic obstructive airway disease.",
       "sources": [
         "ChromaDB",
         "QOF Business Rules 2024-25"
@@ -2539,25 +2766,7 @@
       "usage_status": "counted",
       "usage_source": "NHS Digital primary care SNOMED reporting",
       "usage_setting": "primary_care",
-      "concept_id": null,
-      "dmd_level": null
-    },
-    {
-      "code": "196001008",
-      "term": "Chronic obstructive pulmonary disease with acute lower respiratory infection (disorder)",
-      "vocabulary": "SNOMED CT",
-      "decision": "include",
-      "confidence": 0.92,
-      "rationale": "COPD with acute lower respiratory infection explicitly contains 'chronic obstructive pulmonary disease' and represents COPD with a complication.",
-      "sources": [
-        "ChromaDB",
-        "QOF Business Rules 2024-25"
-      ],
-      "usage_frequency": 3250,
-      "usage_status": "counted",
-      "usage_source": "NHS Digital primary care SNOMED reporting",
-      "usage_setting": "primary_care",
-      "concept_id": 4110056,
+      "concept_id": 255841,
       "dmd_level": null
     },
     {
@@ -2566,7 +2775,7 @@
       "vocabulary": "ICD-10 (WHO)",
       "decision": "include",
       "confidence": 0.9,
-      "rationale": "Simple and mucopurulent chronic bronchitis is a component condition of COPD and represents chronic airway obstruction.",
+      "rationale": "Chronic bronchitis is a core component of COPD phenotype and is clinically part of the COPD spectrum.",
       "sources": [
         "ChromaDB"
       ],
@@ -2583,7 +2792,7 @@
       "vocabulary": "ICD-10 (WHO)",
       "decision": "include",
       "confidence": 0.9,
-      "rationale": "Simple chronic bronchitis is a component condition of COPD and represents chronic airway obstruction.",
+      "rationale": "Simple chronic bronchitis is a subtype of chronic bronchitis, a core COPD phenotype.",
       "sources": [
         "ChromaDB"
       ],
@@ -2600,7 +2809,7 @@
       "vocabulary": "ICD-10 (WHO)",
       "decision": "include",
       "confidence": 0.9,
-      "rationale": "Mucopurulent chronic bronchitis is a component condition of COPD and represents chronic airway obstruction.",
+      "rationale": "Mucopurulent chronic bronchitis is a subtype of chronic bronchitis, a core COPD phenotype.",
       "sources": [
         "ChromaDB"
       ],
@@ -2617,7 +2826,7 @@
       "vocabulary": "ICD-10 (WHO)",
       "decision": "include",
       "confidence": 0.9,
-      "rationale": "Mixed simple and mucopurulent chronic bronchitis is a component condition of COPD and represents chronic airway obstruction.",
+      "rationale": "Mixed chronic bronchitis is a subtype of chronic bronchitis, a core COPD phenotype.",
       "sources": [
         "ChromaDB"
       ],
@@ -2629,74 +2838,57 @@
       "dmd_level": null
     },
     {
-      "code": "J42",
-      "term": "Unspecified chronic bronchitis",
-      "vocabulary": "ICD-10 (WHO)",
-      "decision": "include",
-      "confidence": 0.9,
-      "rationale": "Unspecified chronic bronchitis is a component condition of COPD and represents chronic airway obstruction.",
-      "sources": [
-        "ChromaDB"
-      ],
-      "usage_frequency": 382,
-      "usage_status": "counted",
-      "usage_source": "NHS Digital HES inpatient FCEs",
-      "usage_setting": "secondary_care_hes",
-      "concept_id": null,
-      "dmd_level": null
-    },
-    {
-      "code": "106001000119101",
-      "term": "Chronic obstructive lung disease co-occurrent with acute bronchitis (disorder)",
+      "code": "10692761000119107",
+      "term": "Asthma-chronic obstructive pulmonary disease overlap syndrome",
       "vocabulary": "SNOMED CT",
       "decision": "include",
       "confidence": 0.9,
-      "rationale": "Term explicitly contains 'chronic obstructive lung disease' and describes an acute exacerbation state, which is a clinical variant of COPD.",
+      "rationale": "Asthma-COPD overlap syndrome explicitly names COPD and represents a distinct clinical entity where COPD is present.",
+      "sources": [
+        "ChromaDB",
+        "OpenCodelists (Bennett Institute)"
+      ],
+      "usage_frequency": 30650,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": 46274062,
+      "dmd_level": null
+    },
+    {
+      "code": "10692761000119108",
+      "term": "Asthma-chronic obstructive pulmonary disease overlap syndrome (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.9,
+      "rationale": "Asthma-COPD overlap syndrome (disorder) explicitly names COPD and represents a distinct clinical entity where COPD is present.",
       "sources": [
         "ChromaDB",
         "QOF Business Rules 2024-25"
       ],
-      "usage_frequency": 10,
-      "usage_status": "counted",
-      "usage_source": "NHS Digital primary care SNOMED reporting",
-      "usage_setting": "primary_care",
-      "concept_id": 46269701,
-      "dmd_level": null
-    },
-    {
-      "code": "16846004",
-      "term": "Obstructive emphysema (disorder)",
-      "vocabulary": "SNOMED CT",
-      "decision": "include",
-      "confidence": 0.9,
-      "rationale": "Obstructive emphysema is a primary manifestation and subtype of COPD, representing the obstructive airway disease component.",
-      "sources": [
-        "ChromaDB",
-        "QOF Business Rules 2024-25"
-      ],
-      "usage_frequency": 160,
-      "usage_status": "counted",
-      "usage_source": "NHS Digital primary care SNOMED reporting",
-      "usage_setting": "primary_care",
+      "usage_frequency": null,
+      "usage_status": "not_in_dataset",
+      "usage_source": null,
+      "usage_setting": null,
       "concept_id": null,
       "dmd_level": null
     },
     {
-      "code": "425748003",
-      "term": "Acute exacerbation of chronic bronchitis (disorder)",
+      "code": "52571006",
+      "term": "Chronic tracheobronchitis (disorder)",
       "vocabulary": "SNOMED CT",
       "decision": "include",
       "confidence": 0.9,
-      "rationale": "Acute exacerbation of chronic bronchitis is a clinical state of COPD and explicitly contains the queried condition.",
+      "rationale": "Chronic tracheobronchitis is a core manifestation of COPD and represents an instance of chronic obstructive airway disease.",
       "sources": [
         "ChromaDB",
         "QOF Business Rules 2024-25"
       ],
-      "usage_frequency": 170,
-      "usage_status": "counted",
+      "usage_frequency": null,
+      "usage_status": "withheld_below_5",
       "usage_source": "NHS Digital primary care SNOMED reporting",
       "usage_setting": "primary_care",
-      "concept_id": null,
+      "concept_id": 4200851,
       "dmd_level": null
     },
     {
@@ -2705,7 +2897,7 @@
       "vocabulary": "SNOMED CT",
       "decision": "include",
       "confidence": 0.9,
-      "rationale": "Simple chronic bronchitis is a primary manifestation and subtype of COPD, explicitly containing the queried condition.",
+      "rationale": "Simple chronic bronchitis is a core manifestation of COPD and represents an instance of chronic obstructive airway disease.",
       "sources": [
         "ChromaDB",
         "QOF Business Rules 2024-25"
@@ -2714,7 +2906,7 @@
       "usage_status": "counted",
       "usage_source": "NHS Digital primary care SNOMED reporting",
       "usage_setting": "primary_care",
-      "concept_id": null,
+      "concept_id": 261889,
       "dmd_level": null
     },
     {
@@ -2723,7 +2915,7 @@
       "vocabulary": "SNOMED CT",
       "decision": "include",
       "confidence": 0.9,
-      "rationale": "This code explicitly names COPD in its term and describes an acute exacerbation, a direct manifestation of COPD.",
+      "rationale": "This code explicitly names COPD in its term and represents an acute exacerbation manifestation of COPD, which should be included per NHS refset convention.",
       "sources": [
         "ChromaDB",
         "QOF Business Rules 2024-25"
@@ -2741,7 +2933,7 @@
       "vocabulary": "SNOMED CT",
       "decision": "include",
       "confidence": 0.9,
-      "rationale": "Pulmonary emphysema is a major pathological component and clinical subtype of COPD.",
+      "rationale": "Pulmonary emphysema is a major clinical subtype and pathological component of COPD and represents an instance of obstructive airway disease.",
       "sources": [
         "ChromaDB",
         "QOF Business Rules 2024-25"
@@ -2750,97 +2942,7 @@
       "usage_status": "counted",
       "usage_source": "NHS Digital primary care SNOMED reporting",
       "usage_setting": "primary_care",
-      "concept_id": null,
-      "dmd_level": null
-    },
-    {
-      "code": "10692761000119107",
-      "term": "Asthma-chronic obstructive pulmonary disease overlap syndrome",
-      "vocabulary": "SNOMED CT",
-      "decision": "include",
-      "confidence": 0.88,
-      "rationale": "Asthma-COPD overlap syndrome explicitly contains 'chronic obstructive pulmonary disease' and represents a recognized clinical entity where COPD is present.",
-      "sources": [
-        "ChromaDB",
-        "OpenCodelists (Bennett Institute)"
-      ],
-      "usage_frequency": 30650,
-      "usage_status": "counted",
-      "usage_source": "NHS Digital primary care SNOMED reporting",
-      "usage_setting": "primary_care",
-      "concept_id": 46274062,
-      "dmd_level": null
-    },
-    {
-      "code": "10692761000119108",
-      "term": "Asthma-chronic obstructive pulmonary disease overlap syndrome (disorder)",
-      "vocabulary": "SNOMED CT",
-      "decision": "include",
-      "confidence": 0.88,
-      "rationale": "Asthma-COPD overlap syndrome (disorder) explicitly contains 'chronic obstructive pulmonary disease' and represents a recognized clinical entity where COPD is present.",
-      "sources": [
-        "ChromaDB",
-        "QOF Business Rules 2024-25"
-      ],
-      "usage_frequency": null,
-      "usage_status": "not_in_dataset",
-      "usage_source": null,
-      "usage_setting": null,
-      "concept_id": null,
-      "dmd_level": null
-    },
-    {
-      "code": "1751000119100",
-      "term": "Acute exacerbation of chronic obstructive pulmonary disease with asthma",
-      "vocabulary": "SNOMED CT",
-      "decision": "include",
-      "confidence": 0.88,
-      "rationale": "Acute exacerbation of COPD with asthma explicitly contains 'chronic obstructive pulmonary disease' and represents a clinical state of COPD.",
-      "sources": [
-        "ChromaDB",
-        "OpenCodelists (Bennett Institute)"
-      ],
-      "usage_frequency": 160,
-      "usage_status": "counted",
-      "usage_source": "NHS Digital primary care SNOMED reporting",
-      "usage_setting": "primary_care",
-      "concept_id": null,
-      "dmd_level": null
-    },
-    {
-      "code": "1010334009",
-      "term": "Emphysema of right lung (disorder)",
-      "vocabulary": "SNOMED CT",
-      "decision": "include",
-      "confidence": 0.85,
-      "rationale": "Emphysema of right lung is a primary manifestation and subtype of COPD, representing obstructive airway disease.",
-      "sources": [
-        "ChromaDB",
-        "QOF Business Rules 2024-25"
-      ],
-      "usage_frequency": 240,
-      "usage_status": "counted",
-      "usage_source": "NHS Digital primary care SNOMED reporting",
-      "usage_setting": "primary_care",
-      "concept_id": null,
-      "dmd_level": null
-    },
-    {
-      "code": "52571006",
-      "term": "Chronic tracheobronchitis (disorder)",
-      "vocabulary": "SNOMED CT",
-      "decision": "include",
-      "confidence": 0.85,
-      "rationale": "Chronic tracheobronchitis is a manifestation of COPD, representing chronic obstructive airway disease.",
-      "sources": [
-        "ChromaDB",
-        "QOF Business Rules 2024-25"
-      ],
-      "usage_frequency": null,
-      "usage_status": "withheld_below_5",
-      "usage_source": "NHS Digital primary care SNOMED reporting",
-      "usage_setting": "primary_care",
-      "concept_id": null,
+      "concept_id": 261325,
       "dmd_level": null
     },
     {
@@ -2858,7 +2960,619 @@
       "usage_status": "counted",
       "usage_source": "NHS Digital primary care SNOMED reporting",
       "usage_setting": "primary_care",
-      "concept_id": null,
+      "concept_id": 257905,
+      "dmd_level": null
+    },
+    {
+      "code": "47938003",
+      "term": "Chronic obliterative bronchiolitis",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.7,
+      "rationale": "Expanded via OMOP 'Is a' from concept_id 255573",
+      "sources": [
+        "OMOPHub hierarchy"
+      ],
+      "usage_frequency": null,
+      "usage_status": null,
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": 4166517,
+      "dmd_level": null
+    },
+    {
+      "code": "57686001",
+      "term": "Emphysematous bleb of lung",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.7,
+      "rationale": "Expanded via OMOP 'Is a' from concept_id 255573",
+      "sources": [
+        "OMOPHub hierarchy"
+      ],
+      "usage_frequency": null,
+      "usage_status": null,
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": 259043,
+      "dmd_level": null
+    },
+    {
+      "code": "33325001",
+      "term": "Compensatory emphysema",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.7,
+      "rationale": "Expanded via OMOP 'Is a' from concept_id 255573",
+      "sources": [
+        "OMOPHub hierarchy"
+      ],
+      "usage_frequency": null,
+      "usage_status": null,
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": 261895,
+      "dmd_level": null
+    },
+    {
+      "code": "77690003",
+      "term": "Interstitial emphysema of lung",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.7,
+      "rationale": "Expanded via OMOP 'Is a' from concept_id 255573",
+      "sources": [
+        "OMOPHub hierarchy"
+      ],
+      "usage_frequency": null,
+      "usage_status": null,
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": 440748,
+      "dmd_level": null
+    },
+    {
+      "code": "1010333003",
+      "term": "Emphysema of left lung",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.7,
+      "rationale": "Expanded via OMOP 'Is a' from concept_id 255573",
+      "sources": [
+        "OMOPHub hierarchy"
+      ],
+      "usage_frequency": null,
+      "usage_status": null,
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": 605066,
+      "dmd_level": null
+    },
+    {
+      "code": "840350008",
+      "term": "Chronic obliterative bronchiolitis caused by chemical fumes",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.7,
+      "rationale": "Expanded via OMOP 'Is a' from concept_id 255573",
+      "sources": [
+        "OMOPHub hierarchy"
+      ],
+      "usage_frequency": null,
+      "usage_status": null,
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": 3654836,
+      "dmd_level": null
+    },
+    {
+      "code": "840351007",
+      "term": "Chronic obliterative bronchiolitis caused by vapor",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.7,
+      "rationale": "Expanded via OMOP 'Is a' from concept_id 255573",
+      "sources": [
+        "OMOPHub hierarchy"
+      ],
+      "usage_frequency": null,
+      "usage_status": null,
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": 3654837,
+      "dmd_level": null
+    },
+    {
+      "code": "233674008",
+      "term": "Pulmonary emphysema in alpha-1 PI deficiency",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.7,
+      "rationale": "Expanded via OMOP 'Is a' from concept_id 255573",
+      "sources": [
+        "OMOPHub hierarchy"
+      ],
+      "usage_frequency": null,
+      "usage_status": null,
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": 4050732,
+      "dmd_level": null
+    },
+    {
+      "code": "233675009",
+      "term": "Toxic emphysema",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.7,
+      "rationale": "Expanded via OMOP 'Is a' from concept_id 255573",
+      "sources": [
+        "OMOPHub hierarchy"
+      ],
+      "usage_frequency": null,
+      "usage_status": null,
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": 4050733,
+      "dmd_level": null
+    },
+    {
+      "code": "233677001",
+      "term": "Scar emphysema",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.7,
+      "rationale": "Expanded via OMOP 'Is a' from concept_id 255573",
+      "sources": [
+        "OMOPHub hierarchy"
+      ],
+      "usage_frequency": null,
+      "usage_status": null,
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": 4050734,
+      "dmd_level": null
+    },
+    {
+      "code": "195957006",
+      "term": "Chronic bullous emphysema",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.7,
+      "rationale": "Expanded via OMOP 'Is a' from concept_id 255573",
+      "sources": [
+        "OMOPHub hierarchy"
+      ],
+      "usage_frequency": null,
+      "usage_status": null,
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": 4110048,
+      "dmd_level": null
+    },
+    {
+      "code": "195959009",
+      "term": "Zonal bullous emphysema",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.7,
+      "rationale": "Expanded via OMOP 'Is a' from concept_id 255573",
+      "sources": [
+        "OMOPHub hierarchy"
+      ],
+      "usage_frequency": null,
+      "usage_status": null,
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": 4112828,
+      "dmd_level": null
+    },
+    {
+      "code": "31898008",
+      "term": "Paraseptal emphysema",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.7,
+      "rationale": "Expanded via OMOP 'Is a' from concept_id 255573",
+      "sources": [
+        "OMOPHub hierarchy"
+      ],
+      "usage_frequency": null,
+      "usage_status": null,
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": 4136683,
+      "dmd_level": null
+    },
+    {
+      "code": "266356006",
+      "term": "Atrophic (senile) emphysema",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.7,
+      "rationale": "Expanded via OMOP 'Is a' from concept_id 255573",
+      "sources": [
+        "OMOPHub hierarchy"
+      ],
+      "usage_frequency": null,
+      "usage_status": null,
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": 4148124,
+      "dmd_level": null
+    },
+    {
+      "code": "47895001",
+      "term": "Congenital emphysema",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.7,
+      "rationale": "Expanded via OMOP 'Is a' from concept_id 255573",
+      "sources": [
+        "OMOPHub hierarchy"
+      ],
+      "usage_frequency": null,
+      "usage_status": null,
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": 4166508,
+      "dmd_level": null
+    },
+    {
+      "code": "4981000",
+      "term": "Panacinar emphysema",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.7,
+      "rationale": "Expanded via OMOP 'Is a' from concept_id 255573",
+      "sources": [
+        "OMOPHub hierarchy"
+      ],
+      "usage_frequency": null,
+      "usage_status": null,
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": 4177944,
+      "dmd_level": null
+    },
+    {
+      "code": "60805002",
+      "term": "Hemolytic anemia with emphysema AND cutis laxa",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.7,
+      "rationale": "Expanded via OMOP 'Is a' from concept_id 255573",
+      "sources": [
+        "OMOPHub hierarchy"
+      ],
+      "usage_frequency": null,
+      "usage_status": null,
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": 4246105,
+      "dmd_level": null
+    },
+    {
+      "code": "68328006",
+      "term": "Centriacinar emphysema",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.7,
+      "rationale": "Expanded via OMOP 'Is a' from concept_id 255573",
+      "sources": [
+        "OMOPHub hierarchy"
+      ],
+      "usage_frequency": null,
+      "usage_status": null,
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": 4286497,
+      "dmd_level": null
+    },
+    {
+      "code": "1177120001",
+      "term": "Bronchiolitis obliterans syndrome following allogeneic stem cell transplant",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.7,
+      "rationale": "Expanded via OMOP 'Is a' from concept_id 255573",
+      "sources": [
+        "OMOPHub hierarchy"
+      ],
+      "usage_frequency": null,
+      "usage_status": null,
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": 37161191,
+      "dmd_level": null
+    },
+    {
+      "code": "762618008",
+      "term": "Bronchiolitis obliterans syndrome due to and after lung transplantation",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.7,
+      "rationale": "Expanded via OMOP 'Is a' from concept_id 255573",
+      "sources": [
+        "OMOPHub hierarchy"
+      ],
+      "usage_frequency": null,
+      "usage_status": null,
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": 42538810,
+      "dmd_level": null
+    },
+    {
+      "code": "708030004",
+      "term": "Pulmonary emphysema co-occurrent with fibrosis of lung",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.7,
+      "rationale": "Expanded via OMOP 'Is a' from concept_id 255573",
+      "sources": [
+        "OMOPHub hierarchy"
+      ],
+      "usage_frequency": null,
+      "usage_status": null,
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": 45769389,
+      "dmd_level": null
+    },
+    {
+      "code": "836477007",
+      "term": "Chronic emphysema caused by vapor",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.7,
+      "rationale": "Expanded via OMOP 'Is a' from concept_id 255573",
+      "sources": [
+        "OMOPHub hierarchy"
+      ],
+      "usage_frequency": null,
+      "usage_status": null,
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": 3654571,
+      "dmd_level": null
+    },
+    {
+      "code": "16003001",
+      "term": "Giant bullous emphysema",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.7,
+      "rationale": "Expanded via OMOP 'Is a' from concept_id 255573",
+      "sources": [
+        "OMOPHub hierarchy"
+      ],
+      "usage_frequency": null,
+      "usage_status": null,
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": 4050961,
+      "dmd_level": null
+    },
+    {
+      "code": "195958001",
+      "term": "Segmental bullous emphysema",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.7,
+      "rationale": "Expanded via OMOP 'Is a' from concept_id 255573",
+      "sources": [
+        "OMOPHub hierarchy"
+      ],
+      "usage_frequency": null,
+      "usage_status": null,
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": 4110635,
+      "dmd_level": null
+    },
+    {
+      "code": "196026004",
+      "term": "Chronic emphysema caused by chemical fumes",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.7,
+      "rationale": "Expanded via OMOP 'Is a' from concept_id 255573",
+      "sources": [
+        "OMOPHub hierarchy"
+      ],
+      "usage_frequency": null,
+      "usage_status": null,
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": 4112836,
+      "dmd_level": null
+    },
+    {
+      "code": "266355005",
+      "term": "Bullous emphysema with collapse",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.7,
+      "rationale": "Expanded via OMOP 'Is a' from concept_id 255573",
+      "sources": [
+        "OMOPHub hierarchy"
+      ],
+      "usage_frequency": null,
+      "usage_status": null,
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": 4145496,
+      "dmd_level": null
+    },
+    {
+      "code": "66987001",
+      "term": "Congenital lobar emphysema",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.7,
+      "rationale": "Expanded via OMOP 'Is a' from concept_id 255573",
+      "sources": [
+        "OMOPHub hierarchy"
+      ],
+      "usage_frequency": null,
+      "usage_status": null,
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": 4281815,
+      "dmd_level": null
+    },
+    {
+      "code": "86680006",
+      "term": "Ruptured emphysematous bleb of lung",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.7,
+      "rationale": "Expanded via OMOP 'Is a' from concept_id 255573",
+      "sources": [
+        "OMOPHub hierarchy"
+      ],
+      "usage_frequency": null,
+      "usage_status": null,
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": 4315386,
+      "dmd_level": null
+    },
+    {
+      "code": "451981000124108",
+      "term": "Eosinophilic bronchitis",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.7,
+      "rationale": "Expanded via OMOP 'Is a' from concept_id 255841",
+      "sources": [
+        "OMOPHub hierarchy"
+      ],
+      "usage_frequency": null,
+      "usage_status": null,
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": 765431,
+      "dmd_level": null
+    },
+    {
+      "code": "49691004",
+      "term": "Occupational bronchitis",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.7,
+      "rationale": "Expanded via OMOP 'Is a' from concept_id 255841",
+      "sources": [
+        "OMOPHub hierarchy"
+      ],
+      "usage_frequency": null,
+      "usage_status": null,
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": 4172303,
+      "dmd_level": null
+    },
+    {
+      "code": "84409004",
+      "term": "Fetid chronic bronchitis",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.7,
+      "rationale": "Expanded via OMOP 'Is a' from concept_id 255841",
+      "sources": [
+        "OMOPHub hierarchy"
+      ],
+      "usage_frequency": null,
+      "usage_status": null,
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": 4309350,
+      "dmd_level": null
+    },
+    {
+      "code": "785736001",
+      "term": "Chronic bronchitis co-occurrent with wheeze",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.7,
+      "rationale": "Expanded via OMOP 'Is a' from concept_id 255841",
+      "sources": [
+        "OMOPHub hierarchy"
+      ],
+      "usage_frequency": null,
+      "usage_status": null,
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": 37206130,
+      "dmd_level": null
+    },
+    {
+      "code": "735465007",
+      "term": "Protracted bronchitis caused by bacterium",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.7,
+      "rationale": "Expanded via OMOP 'Is a' from concept_id 255841",
+      "sources": [
+        "OMOPHub hierarchy"
+      ],
+      "usage_frequency": null,
+      "usage_status": null,
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": 42536541,
+      "dmd_level": null
+    },
+    {
+      "code": "195953005",
+      "term": "Mixed simple and mucopurulent chronic bronchitis",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.7,
+      "rationale": "Expanded via OMOP 'Is a' from concept_id 255841",
+      "sources": [
+        "OMOPHub hierarchy"
+      ],
+      "usage_frequency": null,
+      "usage_status": null,
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": 4112826,
+      "dmd_level": null
+    },
+    {
+      "code": "23958009",
+      "term": "Vanishing lung",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.7,
+      "rationale": "Expanded via OMOP 'Is a' from concept_id 261325",
+      "sources": [
+        "OMOPHub hierarchy"
+      ],
+      "usage_frequency": null,
+      "usage_status": null,
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": 4083395,
+      "dmd_level": null
+    },
+    {
+      "code": "70756004",
+      "term": "Bronchial atresia with segmental pulmonary emphysema",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.7,
+      "rationale": "Expanded via OMOP 'Is a' from concept_id 261325",
+      "sources": [
+        "OMOPHub hierarchy"
+      ],
+      "usage_frequency": null,
+      "usage_status": null,
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": 4321845,
       "dmd_level": null
     },
     {
@@ -2866,8 +3580,8 @@
       "term": "Airway disease due to specific organic dust",
       "vocabulary": "ICD-10 (WHO)",
       "decision": "uncertain",
-      "confidence": 0.65,
-      "rationale": "Airway disease due to specific organic dust (occupational lung disease) may overlap with COPD phenotype but represents a distinct etiology; clinical judgment needed on whether to include occupational variants.",
+      "confidence": 0.6,
+      "rationale": "Airway disease due to organic dust (occupational lung disease) may overlap with COPD phenotype but is a distinct etiology; clinical judgment needed on whether to include occupational variants.",
       "sources": [
         "ChromaDB"
       ],
@@ -2875,40 +3589,6 @@
       "usage_status": "counted",
       "usage_source": "NHS Digital HES inpatient FCEs",
       "usage_setting": "secondary_care_hes",
-      "concept_id": null,
-      "dmd_level": null
-    },
-    {
-      "code": "195949008",
-      "term": "Chronic asthmatic bronchitis",
-      "vocabulary": "SNOMED CT",
-      "decision": "uncertain",
-      "confidence": 0.65,
-      "rationale": "Chronic asthmatic bronchitis may represent asthma rather than COPD; clinical judgment needed to distinguish from pure COPD.",
-      "sources": [
-        "ChromaDB"
-      ],
-      "usage_frequency": 710,
-      "usage_status": "counted",
-      "usage_source": "NHS Digital primary care SNOMED reporting",
-      "usage_setting": "primary_care",
-      "concept_id": null,
-      "dmd_level": null
-    },
-    {
-      "code": "442025000",
-      "term": "Acute exacerbation of chronic asthmatic bronchitis",
-      "vocabulary": "SNOMED CT",
-      "decision": "uncertain",
-      "confidence": 0.6,
-      "rationale": "Acute exacerbation of chronic asthmatic bronchitis may represent asthma rather than COPD; clinical judgment needed to distinguish from pure COPD.",
-      "sources": [
-        "ChromaDB"
-      ],
-      "usage_frequency": 160,
-      "usage_status": "counted",
-      "usage_source": "NHS Digital primary care SNOMED reporting",
-      "usage_setting": "primary_care",
       "concept_id": null,
       "dmd_level": null
     },
@@ -3037,7 +3717,7 @@
       "vocabulary": "SNOMED CT",
       "decision": "exclude",
       "confidence": 0.98,
-      "rationale": "This is an administrative/invitation code for COPD monitoring, not a diagnostic confirmation of COPD itself.",
+      "rationale": "COPD monitoring email invitation is an administrative/screening procedure code, not a diagnosis confirming the patient has COPD.",
       "sources": [
         "ChromaDB",
         "QOF Business Rules 2024-25"
@@ -3055,7 +3735,7 @@
       "vocabulary": "SNOMED CT",
       "decision": "exclude",
       "confidence": 0.98,
-      "rationale": "This is an administrative exception/exclusion code, not a diagnostic confirmation of COPD.",
+      "rationale": "Excepted from COPD quality indicators is an administrative/exception code, not a diagnosis confirming the patient has COPD.",
       "sources": [
         "ChromaDB",
         "QOF Business Rules 2024-25"
@@ -3064,7 +3744,7 @@
       "usage_status": "counted",
       "usage_source": "NHS Digital primary care SNOMED reporting",
       "usage_setting": "primary_care",
-      "concept_id": null,
+      "concept_id": 37208761,
       "dmd_level": null
     },
     {
@@ -3073,7 +3753,7 @@
       "vocabulary": "SNOMED CT",
       "decision": "exclude",
       "confidence": 0.98,
-      "rationale": "COPD annual review is an administrative/management code, not a diagnostic confirmation of COPD itself.",
+      "rationale": "COPD annual review is an administrative/management procedure code, not a diagnosis confirming the patient has COPD.",
       "sources": [
         "ChromaDB",
         "QOF Business Rules 2024-25"
@@ -3091,7 +3771,7 @@
       "vocabulary": "ICD-10 (WHO)",
       "decision": "exclude",
       "confidence": 0.95,
-      "rationale": "HIV-related lymphoid interstitial pneumonitis is a complication of HIV, not an instance of COPD.",
+      "rationale": "HIV-related pneumonitis is a complication of HIV disease, not an instance of COPD; term does not contain 'chronic obstructive pulmonary disease'.",
       "sources": [
         "ChromaDB"
       ],
@@ -3108,7 +3788,7 @@
       "vocabulary": "ICD-10 (WHO)",
       "decision": "exclude",
       "confidence": 0.95,
-      "rationale": "Chronic pulmonary coccidioidomycosis is a fungal infection, not COPD.",
+      "rationale": "Chronic pulmonary coccidioidomycosis is a fungal infection, not COPD; distinct disease entity.",
       "sources": [
         "ChromaDB"
       ],
@@ -3125,7 +3805,7 @@
       "vocabulary": "ICD-10 (WHO)",
       "decision": "exclude",
       "confidence": 0.95,
-      "rationale": "Chronic pulmonary blastomycosis is a fungal infection, not COPD.",
+      "rationale": "Chronic pulmonary blastomycosis is a fungal infection, not COPD; distinct disease entity.",
       "sources": [
         "ChromaDB"
       ],
@@ -3142,7 +3822,7 @@
       "vocabulary": "ICD-10 (WHO)",
       "decision": "exclude",
       "confidence": 0.95,
-      "rationale": "Cystic fibrosis is a distinct genetic disorder, not COPD.",
+      "rationale": "Cystic fibrosis is a distinct genetic disorder; while it may cause chronic lung disease, it is not COPD.",
       "sources": [
         "ChromaDB"
       ],
@@ -3176,7 +3856,7 @@
       "vocabulary": "ICD-10 (WHO)",
       "decision": "exclude",
       "confidence": 0.95,
-      "rationale": "Chronic ischaemic heart disease is a cardiac condition, not COPD.",
+      "rationale": "Chronic ischaemic heart disease is a cardiovascular condition unrelated to COPD.",
       "sources": [
         "ChromaDB"
       ],
@@ -3193,7 +3873,7 @@
       "vocabulary": "ICD-10 (WHO)",
       "decision": "exclude",
       "confidence": 0.95,
-      "rationale": "Pulmonary embolism is a vascular condition, not COPD.",
+      "rationale": "Pulmonary embolism is an acute vascular event, not COPD; distinct condition.",
       "sources": [
         "ChromaDB"
       ],
@@ -3210,7 +3890,7 @@
       "vocabulary": "ICD-10 (WHO)",
       "decision": "exclude",
       "confidence": 0.95,
-      "rationale": "Pulmonary embolism is a vascular condition, not COPD.",
+      "rationale": "Pulmonary embolism is an acute vascular event, not COPD; distinct condition.",
       "sources": [
         "ChromaDB"
       ],
@@ -3227,7 +3907,7 @@
       "vocabulary": "ICD-10 (WHO)",
       "decision": "exclude",
       "confidence": 0.95,
-      "rationale": "Pulmonary valve disorders are cardiac structural conditions, not COPD.",
+      "rationale": "Pulmonary valve disorders are cardiac structural abnormalities, not COPD.",
       "sources": [
         "ChromaDB"
       ],
@@ -3244,7 +3924,7 @@
       "vocabulary": "ICD-10 (WHO)",
       "decision": "exclude",
       "confidence": 0.95,
-      "rationale": "Pulmonary valve stenosis is a cardiac structural condition, not COPD.",
+      "rationale": "Pulmonary valve stenosis is a cardiac structural abnormality, not COPD.",
       "sources": [
         "ChromaDB"
       ],
@@ -3261,7 +3941,7 @@
       "vocabulary": "ICD-10 (WHO)",
       "decision": "exclude",
       "confidence": 0.95,
-      "rationale": "Chronic rhinitis is an upper airway condition, not COPD.",
+      "rationale": "Chronic rhinitis is an upper airway condition, not COPD; distinct disease entity.",
       "sources": [
         "ChromaDB"
       ],
@@ -3278,7 +3958,7 @@
       "vocabulary": "ICD-10 (WHO)",
       "decision": "exclude",
       "confidence": 0.95,
-      "rationale": "Chronic sinusitis is an upper airway condition, not COPD.",
+      "rationale": "Chronic sinusitis is an upper airway condition, not COPD; distinct disease entity.",
       "sources": [
         "ChromaDB"
       ],
@@ -3295,7 +3975,7 @@
       "vocabulary": "ICD-10 (WHO)",
       "decision": "exclude",
       "confidence": 0.95,
-      "rationale": "Chronic laryngotracheitis is an upper airway condition, not COPD.",
+      "rationale": "Chronic laryngotracheitis is an upper airway condition, not COPD; distinct disease entity.",
       "sources": [
         "ChromaDB"
       ],
@@ -3303,23 +3983,6 @@
       "usage_status": "counted",
       "usage_source": "NHS Digital HES inpatient FCEs",
       "usage_setting": "secondary_care_hes",
-      "concept_id": null,
-      "dmd_level": null
-    },
-    {
-      "code": "M05.14",
-      "term": "Rheumatoid lung disease, Hand",
-      "vocabulary": "ICD-10 (WHO)",
-      "decision": "exclude",
-      "confidence": 0.95,
-      "rationale": "Rheumatoid lung disease affecting the hand is a distinct systemic condition, not COPD.",
-      "sources": [
-        "ChromaDB"
-      ],
-      "usage_frequency": null,
-      "usage_status": "not_in_dataset",
-      "usage_source": null,
-      "usage_setting": null,
       "concept_id": null,
       "dmd_level": null
     },
@@ -3363,7 +4026,7 @@
       "vocabulary": "SNOMED CT",
       "decision": "exclude",
       "confidence": 0.95,
-      "rationale": "Diffuse interstitial rheumatoid disease of lung is a complication of rheumatoid arthritis, not an instance of COPD.",
+      "rationale": "Diffuse interstitial rheumatoid disease of lung is a rheumatological complication, not an instance of COPD.",
       "sources": [
         "ChromaDB"
       ],
@@ -3371,7 +4034,7 @@
       "usage_status": "counted",
       "usage_source": "NHS Digital primary care SNOMED reporting",
       "usage_setting": "primary_care",
-      "concept_id": null,
+      "concept_id": 4028118,
       "dmd_level": null
     },
     {
@@ -3380,7 +4043,7 @@
       "vocabulary": "SNOMED CT",
       "decision": "exclude",
       "confidence": 0.95,
-      "rationale": "This is an administrative finding code indicating unsuitability for rehabilitation, not a diagnostic confirmation of COPD.",
+      "rationale": "COPD patient unsuitable for pulmonary rehabilitation is a clinical finding/status code, not a diagnosis confirming the patient has COPD.",
       "sources": [
         "ChromaDB",
         "QOF Business Rules 2024-25"
@@ -3406,7 +4069,7 @@
       "usage_status": "counted",
       "usage_source": "NHS Digital primary care SNOMED reporting",
       "usage_setting": "primary_care",
-      "concept_id": null,
+      "concept_id": 256197,
       "dmd_level": null
     },
     {
@@ -3423,7 +4086,7 @@
       "usage_status": "counted",
       "usage_source": "NHS Digital primary care SNOMED reporting",
       "usage_setting": "primary_care",
-      "concept_id": null,
+      "concept_id": 45768912,
       "dmd_level": null
     },
     {
@@ -3440,7 +4103,7 @@
       "usage_status": "counted",
       "usage_source": "NHS Digital primary care SNOMED reporting",
       "usage_setting": "primary_care",
-      "concept_id": null,
+      "concept_id": 45769350,
       "dmd_level": null
     },
     {
@@ -3457,7 +4120,7 @@
       "usage_status": "counted",
       "usage_source": "NHS Digital primary care SNOMED reporting",
       "usage_setting": "primary_care",
-      "concept_id": null,
+      "concept_id": 45769438,
       "dmd_level": null
     },
     {
@@ -3466,7 +4129,7 @@
       "vocabulary": "SNOMED CT",
       "decision": "exclude",
       "confidence": 0.95,
-      "rationale": "This is an administrative/screening invitation code, not a diagnostic confirmation of COPD.",
+      "rationale": "This is an administrative/screening invitation code, not a diagnostic code confirming COPD.",
       "sources": [
         "ChromaDB",
         "QOF Business Rules 2024-25"
@@ -3475,7 +4138,7 @@
       "usage_status": "counted",
       "usage_source": "NHS Digital primary care SNOMED reporting",
       "usage_setting": "primary_care",
-      "concept_id": null,
+      "concept_id": 44804338,
       "dmd_level": null
     },
     {
@@ -3484,7 +4147,7 @@
       "vocabulary": "SNOMED CT",
       "decision": "exclude",
       "confidence": 0.95,
-      "rationale": "This is an administrative procedure code for monitoring invitation, not a diagnostic confirmation of COPD.",
+      "rationale": "This is an administrative procedure code for monitoring invitation, not a diagnostic code confirming COPD.",
       "sources": [
         "ChromaDB",
         "QOF Business Rules 2024-25"
@@ -3502,7 +4165,7 @@
       "vocabulary": "SNOMED CT",
       "decision": "exclude",
       "confidence": 0.95,
-      "rationale": "This is an administrative procedure code for monitoring invitation, not a diagnostic confirmation of COPD.",
+      "rationale": "This is an administrative procedure code for monitoring invitation, not a diagnostic code confirming COPD.",
       "sources": [
         "ChromaDB",
         "QOF Business Rules 2024-25"
@@ -3520,7 +4183,7 @@
       "vocabulary": "SNOMED CT",
       "decision": "exclude",
       "confidence": 0.95,
-      "rationale": "This is an administrative exception/exclusion code, not a diagnostic confirmation of COPD.",
+      "rationale": "This is an administrative exception/exclusion code, not a diagnostic code confirming COPD.",
       "sources": [
         "ChromaDB",
         "QOF Business Rules 2024-25"
@@ -3529,7 +4192,7 @@
       "usage_status": "counted",
       "usage_source": "NHS Digital primary care SNOMED reporting",
       "usage_setting": "primary_care",
-      "concept_id": null,
+      "concept_id": 44803712,
       "dmd_level": null
     },
     {
@@ -3538,7 +4201,7 @@
       "vocabulary": "SNOMED CT",
       "decision": "exclude",
       "confidence": 0.95,
-      "rationale": "This is an administrative exception/exclusion code, not a diagnostic confirmation of COPD.",
+      "rationale": "This is an administrative exception/exclusion code, not a diagnostic code confirming COPD.",
       "sources": [
         "ChromaDB",
         "QOF Business Rules 2024-25"
@@ -3547,7 +4210,7 @@
       "usage_status": "counted",
       "usage_source": "NHS Digital primary care SNOMED reporting",
       "usage_setting": "primary_care",
-      "concept_id": null,
+      "concept_id": 44803714,
       "dmd_level": null
     },
     {
@@ -3556,7 +4219,7 @@
       "vocabulary": "SNOMED CT",
       "decision": "exclude",
       "confidence": 0.95,
-      "rationale": "This is an administrative procedure code for monitoring invitation, not a diagnostic confirmation of COPD.",
+      "rationale": "This is an administrative procedure code for monitoring invitation, not a diagnostic code confirming COPD.",
       "sources": [
         "ChromaDB",
         "QOF Business Rules 2024-25"
@@ -3574,7 +4237,7 @@
       "vocabulary": "SNOMED CT",
       "decision": "exclude",
       "confidence": 0.95,
-      "rationale": "This is an administrative procedure code for monitoring invitation, not a diagnostic confirmation of COPD.",
+      "rationale": "This is an administrative procedure code for monitoring invitation, not a diagnostic code confirming COPD.",
       "sources": [
         "ChromaDB",
         "QOF Business Rules 2024-25"
@@ -3583,7 +4246,7 @@
       "usage_status": "counted",
       "usage_source": "NHS Digital primary care SNOMED reporting",
       "usage_setting": "primary_care",
-      "concept_id": null,
+      "concept_id": 44803846,
       "dmd_level": null
     },
     {
@@ -3592,7 +4255,7 @@
       "vocabulary": "SNOMED CT",
       "decision": "exclude",
       "confidence": 0.95,
-      "rationale": "This is an administrative procedure code for monitoring invitation, not a diagnostic confirmation of COPD.",
+      "rationale": "This is an administrative procedure code for monitoring invitation, not a diagnostic code confirming COPD.",
       "sources": [
         "ChromaDB",
         "QOF Business Rules 2024-25"
@@ -3610,7 +4273,7 @@
       "vocabulary": "SNOMED CT",
       "decision": "exclude",
       "confidence": 0.95,
-      "rationale": "This is an observable entity/measurement code, not a diagnostic confirmation of COPD itself.",
+      "rationale": "This is an observable entity/measurement code, not a diagnostic code confirming COPD.",
       "sources": [
         "ChromaDB",
         "QOF Business Rules 2024-25"
@@ -3628,7 +4291,7 @@
       "vocabulary": "SNOMED CT",
       "decision": "exclude",
       "confidence": 0.95,
-      "rationale": "This is an administrative regime/therapy code for monitoring, not a diagnostic confirmation of COPD.",
+      "rationale": "This is an administrative regime/therapy code for monitoring review, not a diagnostic code confirming COPD.",
       "sources": [
         "ChromaDB",
         "QOF Business Rules 2024-25"
@@ -3637,7 +4300,7 @@
       "usage_status": "counted",
       "usage_source": "NHS Digital primary care SNOMED reporting",
       "usage_setting": "primary_care",
-      "concept_id": null,
+      "concept_id": 44804958,
       "dmd_level": null
     },
     {
@@ -3646,7 +4309,7 @@
       "vocabulary": "SNOMED CT",
       "decision": "exclude",
       "confidence": 0.95,
-      "rationale": "This is an administrative regime/therapy code for monitoring, not a diagnostic confirmation of COPD.",
+      "rationale": "This is an administrative regime/therapy code for monitoring review, not a diagnostic code confirming COPD.",
       "sources": [
         "ChromaDB",
         "QOF Business Rules 2024-25"
@@ -3664,7 +4327,7 @@
       "vocabulary": "SNOMED CT",
       "decision": "exclude",
       "confidence": 0.95,
-      "rationale": "This code indicates COPD has resolved, which means the patient no longer has the active condition and should not be included in a COPD code list.",
+      "rationale": "This code indicates COPD has resolved, which means the patient no longer has the active condition and should be excluded from a COPD code list.",
       "sources": [
         "ChromaDB",
         "QOF Business Rules 2024-25"
@@ -3682,7 +4345,7 @@
       "vocabulary": "ICD-10 (WHO)",
       "decision": "exclude",
       "confidence": 0.9,
-      "rationale": "Pulmonary heart disease is a cardiac complication that may result from COPD but is not COPD itself.",
+      "rationale": "Pulmonary heart disease is a cardiovascular complication that may result from COPD but is not COPD itself.",
       "sources": [
         "ChromaDB"
       ],
@@ -3699,7 +4362,7 @@
       "vocabulary": "ICD-10 (WHO)",
       "decision": "exclude",
       "confidence": 0.9,
-      "rationale": "Pulmonary heart disease is a cardiac complication that may result from COPD but is not COPD itself.",
+      "rationale": "Pulmonary heart disease is a cardiovascular complication that may result from COPD but is not COPD itself.",
       "sources": [
         "ChromaDB"
       ],
@@ -3711,33 +4374,16 @@
       "dmd_level": null
     },
     {
-      "code": "J95.3",
-      "term": "Chronic pulmonary insufficiency following surgery",
+      "code": "J84",
+      "term": "Other interstitial pulmonary diseases",
       "vocabulary": "ICD-10 (WHO)",
       "decision": "exclude",
       "confidence": 0.9,
-      "rationale": "Chronic pulmonary insufficiency following surgery is a post-surgical complication, not COPD.",
+      "rationale": "Interstitial pulmonary diseases are distinct from COPD; different pathophysiology and clinical presentation.",
       "sources": [
         "ChromaDB"
       ],
-      "usage_frequency": null,
-      "usage_status": "not_in_dataset",
-      "usage_source": null,
-      "usage_setting": null,
-      "concept_id": null,
-      "dmd_level": null
-    },
-    {
-      "code": "J98.2",
-      "term": "Interstitial emphysema",
-      "vocabulary": "ICD-10 (WHO)",
-      "decision": "exclude",
-      "confidence": 0.9,
-      "rationale": "Interstitial emphysema is a distinct condition, not COPD.",
-      "sources": [
-        "ChromaDB"
-      ],
-      "usage_frequency": 599,
+      "usage_frequency": 23172,
       "usage_status": "counted",
       "usage_source": "NHS Digital HES inpatient FCEs",
       "usage_setting": "secondary_care_hes",
@@ -3745,16 +4391,16 @@
       "dmd_level": null
     },
     {
-      "code": "J99.0",
-      "term": "Rheumatoid lung disease",
+      "code": "J84.1",
+      "term": "Other interstitial pulmonary diseases with fibrosis",
       "vocabulary": "ICD-10 (WHO)",
       "decision": "exclude",
       "confidence": 0.9,
-      "rationale": "Rheumatoid lung disease is a distinct systemic condition, not COPD.",
+      "rationale": "Interstitial pulmonary fibrosis is a distinct condition from COPD; different pathophysiology.",
       "sources": [
         "ChromaDB"
       ],
-      "usage_frequency": 141,
+      "usage_frequency": 16482,
       "usage_status": "counted",
       "usage_source": "NHS Digital HES inpatient FCEs",
       "usage_setting": "secondary_care_hes",
@@ -3762,16 +4408,33 @@
       "dmd_level": null
     },
     {
-      "code": "M05.1",
-      "term": "Rheumatoid lung disease",
+      "code": "J84.8",
+      "term": "Other specified interstitial pulmonary diseases",
       "vocabulary": "ICD-10 (WHO)",
       "decision": "exclude",
       "confidence": 0.9,
-      "rationale": "Rheumatoid lung disease is a distinct systemic condition, not COPD.",
+      "rationale": "Other interstitial pulmonary diseases are distinct from COPD; different pathophysiology.",
       "sources": [
         "ChromaDB"
       ],
-      "usage_frequency": 730,
+      "usage_frequency": 515,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital HES inpatient FCEs",
+      "usage_setting": "secondary_care_hes",
+      "concept_id": null,
+      "dmd_level": null
+    },
+    {
+      "code": "J84.9",
+      "term": "Interstitial pulmonary disease, unspecified",
+      "vocabulary": "ICD-10 (WHO)",
+      "decision": "exclude",
+      "confidence": 0.9,
+      "rationale": "Unspecified interstitial pulmonary disease is distinct from COPD; different pathophysiology.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "usage_frequency": 6037,
       "usage_status": "counted",
       "usage_source": "NHS Digital HES inpatient FCEs",
       "usage_setting": "secondary_care_hes",
@@ -3796,12 +4459,29 @@
       "dmd_level": null
     },
     {
+      "code": "10692721000119102",
+      "term": "Chronic obstructive asthma co-occurrent with acute exacerbation of asthma",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.9,
+      "rationale": "Chronic obstructive asthma with acute exacerbation is primarily an asthma code; does not explicitly name COPD in the term.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "usage_frequency": 40,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": 46269802,
+      "dmd_level": null
+    },
+    {
       "code": "J70.3",
       "term": "Chronic drug-induced interstitial lung disorders",
       "vocabulary": "ICD-10 (WHO)",
       "decision": "exclude",
       "confidence": 0.85,
-      "rationale": "Chronic drug-induced interstitial lung disorder is a distinct condition with different pathophysiology from COPD.",
+      "rationale": "Chronic drug-induced interstitial lung disease is a distinct condition with different pathophysiology from COPD.",
       "sources": [
         "ChromaDB"
       ],
@@ -3813,97 +4493,12 @@
       "dmd_level": null
     },
     {
-      "code": "J84",
-      "term": "Other interstitial pulmonary diseases",
+      "code": "J95.3",
+      "term": "Chronic pulmonary insufficiency following surgery",
       "vocabulary": "ICD-10 (WHO)",
       "decision": "exclude",
       "confidence": 0.85,
-      "rationale": "Interstitial pulmonary diseases are distinct from COPD, which is primarily an obstructive airway disease.",
-      "sources": [
-        "ChromaDB"
-      ],
-      "usage_frequency": 23172,
-      "usage_status": "counted",
-      "usage_source": "NHS Digital HES inpatient FCEs",
-      "usage_setting": "secondary_care_hes",
-      "concept_id": null,
-      "dmd_level": null
-    },
-    {
-      "code": "J84.1",
-      "term": "Other interstitial pulmonary diseases with fibrosis",
-      "vocabulary": "ICD-10 (WHO)",
-      "decision": "exclude",
-      "confidence": 0.85,
-      "rationale": "Interstitial pulmonary fibrosis is a distinct condition from COPD with different pathophysiology.",
-      "sources": [
-        "ChromaDB"
-      ],
-      "usage_frequency": 16482,
-      "usage_status": "counted",
-      "usage_source": "NHS Digital HES inpatient FCEs",
-      "usage_setting": "secondary_care_hes",
-      "concept_id": null,
-      "dmd_level": null
-    },
-    {
-      "code": "J84.8",
-      "term": "Other specified interstitial pulmonary diseases",
-      "vocabulary": "ICD-10 (WHO)",
-      "decision": "exclude",
-      "confidence": 0.85,
-      "rationale": "Other specified interstitial pulmonary diseases are distinct from COPD.",
-      "sources": [
-        "ChromaDB"
-      ],
-      "usage_frequency": 515,
-      "usage_status": "counted",
-      "usage_source": "NHS Digital HES inpatient FCEs",
-      "usage_setting": "secondary_care_hes",
-      "concept_id": null,
-      "dmd_level": null
-    },
-    {
-      "code": "J84.9",
-      "term": "Interstitial pulmonary disease, unspecified",
-      "vocabulary": "ICD-10 (WHO)",
-      "decision": "exclude",
-      "confidence": 0.85,
-      "rationale": "Unspecified interstitial pulmonary disease is distinct from COPD.",
-      "sources": [
-        "ChromaDB"
-      ],
-      "usage_frequency": 6037,
-      "usage_status": "counted",
-      "usage_source": "NHS Digital HES inpatient FCEs",
-      "usage_setting": "secondary_care_hes",
-      "concept_id": null,
-      "dmd_level": null
-    },
-    {
-      "code": "J96.1",
-      "term": "Chronic respiratory failure",
-      "vocabulary": "ICD-10 (WHO)",
-      "decision": "exclude",
-      "confidence": 0.85,
-      "rationale": "Chronic respiratory failure is a complication that may result from COPD but is not COPD itself.",
-      "sources": [
-        "ChromaDB"
-      ],
-      "usage_frequency": 5648,
-      "usage_status": "counted",
-      "usage_source": "NHS Digital HES inpatient FCEs",
-      "usage_setting": "secondary_care_hes",
-      "concept_id": null,
-      "dmd_level": null
-    },
-    {
-      "code": "J96.10",
-      "term": "Chronic respiratory failure, Type I [hypoxic]",
-      "vocabulary": "ICD-10 (WHO)",
-      "decision": "exclude",
-      "confidence": 0.85,
-      "rationale": "Chronic respiratory failure Type I is a complication that may result from COPD but is not COPD itself.",
+      "rationale": "Chronic pulmonary insufficiency following surgery is a post-surgical complication, not COPD.",
       "sources": [
         "ChromaDB"
       ],
@@ -3915,12 +4510,63 @@
       "dmd_level": null
     },
     {
-      "code": "J96.11",
-      "term": "Chronic respiratory failure, Type II [hypercapnic]",
+      "code": "J98.2",
+      "term": "Interstitial emphysema",
       "vocabulary": "ICD-10 (WHO)",
       "decision": "exclude",
       "confidence": 0.85,
-      "rationale": "Chronic respiratory failure Type II is a complication that may result from COPD but is not COPD itself.",
+      "rationale": "Interstitial emphysema is a distinct condition (air in tissue planes), not COPD.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "usage_frequency": 599,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital HES inpatient FCEs",
+      "usage_setting": "secondary_care_hes",
+      "concept_id": null,
+      "dmd_level": null
+    },
+    {
+      "code": "J99.0",
+      "term": "Rheumatoid lung disease",
+      "vocabulary": "ICD-10 (WHO)",
+      "decision": "exclude",
+      "confidence": 0.85,
+      "rationale": "Rheumatoid lung disease is a distinct autoimmune-related pulmonary condition, not COPD.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "usage_frequency": 141,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital HES inpatient FCEs",
+      "usage_setting": "secondary_care_hes",
+      "concept_id": null,
+      "dmd_level": null
+    },
+    {
+      "code": "M05.1",
+      "term": "Rheumatoid lung disease",
+      "vocabulary": "ICD-10 (WHO)",
+      "decision": "exclude",
+      "confidence": 0.85,
+      "rationale": "Rheumatoid lung disease is a distinct autoimmune-related pulmonary condition, not COPD.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "usage_frequency": 730,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital HES inpatient FCEs",
+      "usage_setting": "secondary_care_hes",
+      "concept_id": null,
+      "dmd_level": null
+    },
+    {
+      "code": "M05.14",
+      "term": "Rheumatoid lung disease, Hand",
+      "vocabulary": "ICD-10 (WHO)",
+      "decision": "exclude",
+      "confidence": 0.85,
+      "rationale": "Rheumatoid lung disease with hand involvement is a distinct autoimmune-related condition, not COPD.",
       "sources": [
         "ChromaDB"
       ],
@@ -3932,37 +4578,39 @@
       "dmd_level": null
     },
     {
-      "code": "J96.19",
-      "term": "Chronic respiratory failure, Type unspecified",
-      "vocabulary": "ICD-10 (WHO)",
-      "decision": "exclude",
-      "confidence": 0.85,
-      "rationale": "Chronic respiratory failure unspecified is a complication that may result from COPD but is not COPD itself.",
-      "sources": [
-        "ChromaDB"
-      ],
-      "usage_frequency": null,
-      "usage_status": "not_in_dataset",
-      "usage_source": null,
-      "usage_setting": null,
-      "concept_id": null,
-      "dmd_level": null
-    },
-    {
-      "code": "10692721000119102",
-      "term": "Chronic obstructive asthma co-occurrent with acute exacerbation of asthma",
+      "code": "1010334009",
+      "term": "Emphysema of right lung (disorder)",
       "vocabulary": "SNOMED CT",
       "decision": "exclude",
       "confidence": 0.85,
-      "rationale": "This code describes asthma with acute exacerbation, not COPD; the 'chronic obstructive asthma' terminology is distinct from COPD.",
+      "rationale": "Emphysema of right lung is a specific anatomical manifestation; term does not contain 'chronic obstructive pulmonary disease' or 'COPD'.",
       "sources": [
-        "ChromaDB"
+        "ChromaDB",
+        "QOF Business Rules 2024-25"
       ],
-      "usage_frequency": 40,
+      "usage_frequency": 240,
       "usage_status": "counted",
       "usage_source": "NHS Digital primary care SNOMED reporting",
       "usage_setting": "primary_care",
-      "concept_id": null,
+      "concept_id": 605067,
+      "dmd_level": null
+    },
+    {
+      "code": "16846004",
+      "term": "Obstructive emphysema (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.85,
+      "rationale": "Obstructive emphysema is a specific anatomical manifestation; term does not explicitly contain 'chronic obstructive pulmonary disease' or 'COPD'.",
+      "sources": [
+        "ChromaDB",
+        "QOF Business Rules 2024-25"
+      ],
+      "usage_frequency": 160,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": 4056405,
       "dmd_level": null
     },
     {
@@ -3983,12 +4631,114 @@
       "dmd_level": null
     },
     {
+      "code": "J96.1",
+      "term": "Chronic respiratory failure",
+      "vocabulary": "ICD-10 (WHO)",
+      "decision": "exclude",
+      "confidence": 0.8,
+      "rationale": "Chronic respiratory failure is a complication/consequence of COPD, not COPD itself; represents functional impairment rather than the disease diagnosis.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "usage_frequency": 5648,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital HES inpatient FCEs",
+      "usage_setting": "secondary_care_hes",
+      "concept_id": null,
+      "dmd_level": null
+    },
+    {
+      "code": "J96.10",
+      "term": "Chronic respiratory failure, Type I [hypoxic]",
+      "vocabulary": "ICD-10 (WHO)",
+      "decision": "exclude",
+      "confidence": 0.8,
+      "rationale": "Chronic respiratory failure Type I is a complication of COPD, not COPD itself.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "usage_frequency": null,
+      "usage_status": "not_in_dataset",
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": null,
+      "dmd_level": null
+    },
+    {
+      "code": "J96.11",
+      "term": "Chronic respiratory failure, Type II [hypercapnic]",
+      "vocabulary": "ICD-10 (WHO)",
+      "decision": "exclude",
+      "confidence": 0.8,
+      "rationale": "Chronic respiratory failure Type II is a complication of COPD, not COPD itself.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "usage_frequency": null,
+      "usage_status": "not_in_dataset",
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": null,
+      "dmd_level": null
+    },
+    {
+      "code": "J96.19",
+      "term": "Chronic respiratory failure, Type unspecified",
+      "vocabulary": "ICD-10 (WHO)",
+      "decision": "exclude",
+      "confidence": 0.8,
+      "rationale": "Chronic respiratory failure unspecified is a complication of COPD, not COPD itself.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "usage_frequency": null,
+      "usage_status": "not_in_dataset",
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": null,
+      "dmd_level": null
+    },
+    {
+      "code": "195949008",
+      "term": "Chronic asthmatic bronchitis",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.8,
+      "rationale": "Chronic asthmatic bronchitis is primarily an asthma-related condition; does not explicitly name COPD.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "usage_frequency": 710,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": 256448,
+      "dmd_level": null
+    },
+    {
+      "code": "442025000",
+      "term": "Acute exacerbation of chronic asthmatic bronchitis",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.8,
+      "rationale": "Acute exacerbation of chronic asthmatic bronchitis is primarily an asthma-related condition; does not explicitly name COPD.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "usage_frequency": 160,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": 40481763,
+      "dmd_level": null
+    },
+    {
       "code": "89099002",
       "term": "Chronic allergic bronchitis",
       "vocabulary": "SNOMED CT",
       "decision": "exclude",
       "confidence": 0.8,
-      "rationale": "Chronic allergic bronchitis is an allergic condition distinct from COPD; the term does not contain 'COPD' or indicate obstructive airway disease.",
+      "rationale": "Chronic allergic bronchitis is an allergic condition distinct from COPD; it does not represent an instance of COPD.",
       "sources": [
         "ChromaDB"
       ],
@@ -3996,7 +4746,7 @@
       "usage_status": "counted",
       "usage_source": "NHS Digital primary care SNOMED reporting",
       "usage_setting": "primary_care",
-      "concept_id": null,
+      "concept_id": 4230358,
       "dmd_level": null
     }
   ],

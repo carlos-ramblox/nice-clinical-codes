@@ -1671,7 +1671,7 @@
     "codes": []
   },
   "summary": "Recall: 58.3% (7 of 12 reference codes retrieved). Precision: 100.0%. F1: 73.7%. 5 reference codes were incorrectly excluded.",
-  "elapsed_seconds": 27.04,
+  "elapsed_seconds": 29.25,
   "pipeline_results_count": 50,
   "scored_codes": [
     {
@@ -1884,7 +1884,7 @@
       "vocabulary": "ICD-10 (WHO)",
       "decision": "exclude",
       "confidence": 0.99,
-      "rationale": "Haemopericardium is a complication of acute myocardial infarction, not an instance of myocardial infarction.",
+      "rationale": "Haemopericardium is a complication following acute myocardial infarction, not an instance of myocardial infarction.",
       "sources": [
         "ChromaDB"
       ],
@@ -1901,7 +1901,7 @@
       "vocabulary": "ICD-10 (WHO)",
       "decision": "exclude",
       "confidence": 0.99,
-      "rationale": "Atrial septal defect as a complication is a sequela of acute myocardial infarction, not an instance of myocardial infarction.",
+      "rationale": "Atrial septal defect as a complication following acute myocardial infarction is a sequela, not an instance of myocardial infarction.",
       "sources": [
         "ChromaDB"
       ],
@@ -1918,7 +1918,7 @@
       "vocabulary": "ICD-10 (WHO)",
       "decision": "exclude",
       "confidence": 0.99,
-      "rationale": "Ventricular septal defect as a complication is a sequela of acute myocardial infarction, not an instance of myocardial infarction.",
+      "rationale": "Ventricular septal defect as a complication following acute myocardial infarction is a sequela, not an instance of myocardial infarction.",
       "sources": [
         "ChromaDB"
       ],
@@ -1935,7 +1935,7 @@
       "vocabulary": "ICD-10 (WHO)",
       "decision": "exclude",
       "confidence": 0.99,
-      "rationale": "Rupture of cardiac wall is a complication of acute myocardial infarction, not an instance of myocardial infarction.",
+      "rationale": "Rupture of cardiac wall is a complication following acute myocardial infarction, not an instance of myocardial infarction.",
       "sources": [
         "ChromaDB"
       ],
@@ -1952,7 +1952,7 @@
       "vocabulary": "ICD-10 (WHO)",
       "decision": "exclude",
       "confidence": 0.99,
-      "rationale": "Rupture of chordae tendineae is a complication of acute myocardial infarction, not an instance of myocardial infarction.",
+      "rationale": "Rupture of chordae tendineae is a complication following acute myocardial infarction, not an instance of myocardial infarction.",
       "sources": [
         "ChromaDB"
       ],
@@ -1969,7 +1969,7 @@
       "vocabulary": "ICD-10 (WHO)",
       "decision": "exclude",
       "confidence": 0.99,
-      "rationale": "Rupture of papillary muscle is a complication of acute myocardial infarction, not an instance of myocardial infarction.",
+      "rationale": "Rupture of papillary muscle is a complication following acute myocardial infarction, not an instance of myocardial infarction.",
       "sources": [
         "ChromaDB"
       ],
@@ -1986,7 +1986,7 @@
       "vocabulary": "ICD-10 (WHO)",
       "decision": "exclude",
       "confidence": 0.99,
-      "rationale": "Thrombosis as a current complication is a sequela of acute myocardial infarction, not an instance of myocardial infarction.",
+      "rationale": "Thrombosis of cardiac chambers is a complication following acute myocardial infarction, not an instance of myocardial infarction.",
       "sources": [
         "ChromaDB"
       ],
@@ -2020,7 +2020,7 @@
       "vocabulary": "ICD-10 (WHO)",
       "decision": "exclude",
       "confidence": 0.99,
-      "rationale": "Coronary thrombosis not resulting in myocardial infarction is a related condition that does not constitute myocardial infarction.",
+      "rationale": "Coronary thrombosis not resulting in myocardial infarction is a distinct condition that does not result in infarction.",
       "sources": [
         "ChromaDB"
       ],
@@ -2037,7 +2037,7 @@
       "vocabulary": "ICD-10 (WHO)",
       "decision": "exclude",
       "confidence": 0.99,
-      "rationale": "Old myocardial infarction represents a resolved/historical event, not a primary acute myocardial infarction.",
+      "rationale": "Old myocardial infarction represents a resolved/healed prior event, not a primary acute myocardial infarction.",
       "sources": [
         "ChromaDB"
       ],
@@ -2139,7 +2139,7 @@
       "vocabulary": "ICD-10 (WHO)",
       "decision": "exclude",
       "confidence": 0.99,
-      "rationale": "Cardiomyopathy is a distinct condition affecting cardiac muscle, not an instance of myocardial infarction.",
+      "rationale": "Cardiomyopathy is a distinct condition affecting myocardial function, not an instance of myocardial infarction.",
       "sources": [
         "ChromaDB"
       ],
@@ -2173,7 +2173,7 @@
       "vocabulary": "ICD-10 (WHO)",
       "decision": "exclude",
       "confidence": 0.99,
-      "rationale": "Cerebral infarction is infarction of the brain, not myocardial infarction of the heart.",
+      "rationale": "Cerebral infarction affects the brain, not the myocardium; it is a distinct organ system infarction.",
       "sources": [
         "ChromaDB"
       ],
@@ -2190,7 +2190,7 @@
       "vocabulary": "ICD-10 (WHO)",
       "decision": "exclude",
       "confidence": 0.99,
-      "rationale": "Other cerebral infarction is infarction of the brain, not myocardial infarction of the heart.",
+      "rationale": "Other cerebral infarction is a brain infarction, not myocardial infarction.",
       "sources": [
         "ChromaDB"
       ],
@@ -2224,7 +2224,7 @@
       "vocabulary": "ICD-10 (WHO)",
       "decision": "exclude",
       "confidence": 0.99,
-      "rationale": "Infarction of liver is infarction of hepatic tissue, not myocardial infarction of the heart.",
+      "rationale": "Infarction of liver is a hepatic infarction, not myocardial infarction.",
       "sources": [
         "ChromaDB"
       ],
@@ -2241,7 +2241,7 @@
       "vocabulary": "ICD-10 (WHO)",
       "decision": "exclude",
       "confidence": 0.99,
-      "rationale": "Ischaemic infarction of muscle is infarction of skeletal muscle, not myocardial infarction of the heart.",
+      "rationale": "Ischaemic infarction of muscle is a skeletal muscle infarction, not myocardial infarction.",
       "sources": [
         "ChromaDB"
       ],
@@ -2258,7 +2258,7 @@
       "vocabulary": "ICD-10 (WHO)",
       "decision": "exclude",
       "confidence": 0.99,
-      "rationale": "Ischaemic infarction of muscle at multiple sites is infarction of skeletal muscle, not myocardial infarction of the heart.",
+      "rationale": "Ischaemic infarction of muscle at multiple sites is a skeletal muscle infarction, not myocardial infarction.",
       "sources": [
         "ChromaDB"
       ],
