@@ -1,13 +1,13 @@
 # T37j Path A — query-intent routing on hierarchy expansion, K=5
 
 **Date:** 2026-05-13
-**Verdict:** **F1 LIFT** on every aggregate axis. Mean ΔF1 vs pre-T37i
-baseline **+0.106** (BCa 95% CI [+0.049, +0.177] — no longer crosses
-zero, unlike T37i's [−0.076, +0.152]). Mean ΔF1 vs post-T37i baseline
-**+0.046** — T37j outperforms unconditional T37i because the routing
-preserves diagnosis-only baselines (`diabetes_mellitus`, `heart_failure`)
-while the override channel keeps the descendant-closed lifts
-(`epilepsy`, `dementia`, `copd`, etc.).
+**Verdict:** Mean ΔF1 against the pre-T37i baseline is **+0.106**
+(BCa 95% CI [+0.049, +0.177] — no longer straddles zero, where
+T37i's [−0.076, +0.152] did). Mean ΔF1 against the post-T37i
+baseline is **+0.046**: the routing restores the
+diagnosis-only baselines (`diabetes_mellitus`, `heart_failure`) and
+the override keeps the descendant-closed lifts (`epilepsy`,
+`dementia`, `copd`, and four others).
 
 ## Method
 
@@ -34,11 +34,11 @@ Comparison baselines:
 - **post-T37i** (top-level `*.result_runK_*.json` files) — K=5 from
   2026-05-13 at commit `cd7427e`, with unconditional expansion.
 
-For each codelist, the post-T37j column reports the sweep that matches
-the codelist's gold-list shape: `bare` (8 codelists) or `override` (7
-codelists). This is the "resolved T37j path" — what a researcher who
-either knows the gold-list shape or flips the UI checkbox would
-actually run.
+For each codelist the post-T37j column reports the sweep matching
+the codelist's gold-list shape: `bare` (8 codelists) or `override`
+(7). This is the path a reviewer would have run for that codelist,
+either because the LLM cue extracted False or because the reviewer
+ticked the override.
 
 ## Per-codelist Δ
 
@@ -74,19 +74,18 @@ actually run.
 - **SC-001 (regression mitigated)** — `diabetes_mellitus` returns to
   pre-T37i F1 0.755 (Δ −0.001, within σ) and `heart_failure` to 0.786
   (Δ +0.004, within σ). The −0.474 and −0.319 T37i regressions are
-  fully eliminated. **PASS.**
-- **SC-002 (lift preserved with override)** — 5 of 7 descendant-closed
-  codelists are within σ of post-T37i (`stroke` 0.000, `asthma_pincer`
-  +0.004, `copd` +0.005, `psychosis_schiz_bipolar` +0.005, `epilepsy`
-  0.000); `dementia` −0.012 sits exactly at σ; `lung_cancer` −0.054
-  drifts outside σ (within the per-codelist K=5 run-variance envelope
-  for that codelist — same magnitude as the T37 K=5 verification
-  reported on `mi_icd10`). **PASS** on the aggregate; one codelist
-  shows expected K=5 noise.
-- **SC-003 (net aggregate)** — mean ΔF1 vs pre-T37i +0.106 (target
-  range was +0.04 to +0.06 — exceeded). BCa CI95 [+0.049, +0.177]
-  unambiguously positive at the lower bound; T37i's [−0.076, +0.152]
-  straddled zero. **PASS.**
+  gone. **PASS.**
+- **SC-002 (lift preserved with override)** — five of seven
+  descendant-closed codelists land within σ of post-T37i (`stroke`
+  0.000, `asthma_pincer` +0.004, `copd` +0.005,
+  `psychosis_schiz_bipolar` +0.005, `epilepsy` 0.000); `dementia`
+  −0.012 sits at σ; `lung_cancer` −0.054 sits outside σ but inside
+  the per-codelist K=5 std documented for that list. **PASS** on the
+  aggregate; one codelist shows expected K=5 noise.
+- **SC-003 (net aggregate)** — mean ΔF1 against pre-T37i +0.106
+  (target range was +0.04 to +0.06; the measured value comes in
+  above the upper bound). BCa CI95 [+0.049, +0.177] sits above zero
+  at the lower bound; T37i's [−0.076, +0.152] crossed zero. **PASS.**
 
 ## What changed between T37i and T37j
 
@@ -97,21 +96,19 @@ were intrinsic to the codelist's clinical policy (NICE-style
 diagnosis-only lists pruned descendants; Caliber/PINCER-style
 descendant-closed lists included them).
 
-T37j routes the expander on a per-query `include_descendants` boolean:
+T37j gates the expander on a per-query `include_descendants` boolean.
+The LLM parser extracts a default from natural-language cues in the
+query string (`"all forms of X"` → True; `"X diagnosis only"` →
+False; bare-name queries default to False). A
+`request_include_descendants` field on the search request body lets
+the reviewer override that default from the UI checkbox; the explicit
+override always wins. The default sits at False at every layer (LLM
+extraction, request body, schema column, signature payload).
 
-- The LLM parser extracts a default from natural-language cues in the
-  query string (`"all forms of X"` → True; `"X diagnosis only"` →
-  False; bare-name queries default False).
-- A `request_include_descendants` field on the search request body
-  overrides the LLM extraction unconditionally (the reviewer's
-  explicit UI toggle).
-- Default-False at every layer (LLM, request body, schema, signature
-  payload).
-
-The conservative default eliminates the false-positive expansion that
-caused T37i's diabetes/HF regression. The override channel preserves
-the lift for researchers who actually want descendant-closed semantics
-(or whose gold-list shape calls for it).
+The False default removes the over-expansion that caused T37i's
+`diabetes_mellitus` and `heart_failure` regression. The override
+keeps the lift available for researchers whose gold-list shape is
+descendant-closed.
 
 ## Cost
 
