@@ -11,6 +11,8 @@ from fastapi import APIRouter, HTTPException, Query
 from fastapi.responses import StreamingResponse
 from pydantic import BaseModel, Field, StringConstraints
 
+from app.services.dmd_classification import DmdLevel
+
 _COLD_START_DESCRIPTION = (
     "When true, disables the OpenCodelists retriever for this request. "
     "Use for evaluation runs whose reference list comes from "
@@ -34,11 +36,20 @@ _DISABLE_CHROMA_DESCRIPTION = (
     "Evaluation-only flag. When true, disables the ChromaDB semantic "
     "retriever for this request; used by the per-retriever ablation."
 )
+_DISABLE_DMD_DESCRIPTION = (
+    "Evaluation-only flag. When true, disables the dm+d drug retriever "
+    "for this request."
+)
+_DISABLE_BNF_DESCRIPTION = (
+    "Evaluation-only flag. When true, disables the BNF drug retriever "
+    "for this request."
+)
 
-from app.graph.graph import run_pipeline
+from app.graph.graph import run_pipeline, RETRIEVER_NAMES
 from app.evaluation.evaluator import run_evaluation
 from app.baseline.llm_client import run_baseline
 from app.api import _search_cache
+from app.exports.ohdsi import to_ohdsi_concept_set
 
 
 def _disabled_retrievers(
@@ -46,32 +57,33 @@ def _disabled_retrievers(
     disable_omophub: bool,
     disable_qof: bool,
     disable_chroma: bool,
+    disable_dmd: bool,
+    disable_bnf: bool,
 ) -> set[str] | None:
-    """Translate the four opt-in retriever-disable flags into the
+    """Translate the opt-in retriever-disable flags into the
     ``disabled_retrievers`` set that ``run_pipeline`` accepts.
 
     Returns ``None`` (rather than an empty set) when no flag is set, so
     the cached default-graph branch in ``_get_pipeline`` is hit. Raises
-    HTTP 400 when all four flags are set — without this, ``build_graph``
-    raises ``ValueError`` deep in the pipeline and the route's catch-all
-    surfaces it as an opaque 500.
+    HTTP 400 when every retriever is disabled — without this,
+    ``build_graph`` raises ``ValueError`` deep in the pipeline and the
+    route's catch-all surfaces it as an opaque 500.
     """
-    disabled: set[str] = set()
-    if cold_start:
-        disabled.add("opencodelists")
-    if disable_omophub:
-        disabled.add("omophub")
-    if disable_qof:
-        disabled.add("qof")
-    if disable_chroma:
-        disabled.add("chroma")
-    if len(disabled) >= 4:
+    flag_map = {
+        "opencodelists": cold_start,
+        "omophub": disable_omophub,
+        "qof": disable_qof,
+        "chroma": disable_chroma,
+        "dmd": disable_dmd,
+        "bnf": disable_bnf,
+    }
+    disabled = {name for name, flag in flag_map.items() if flag}
+    if len(disabled) >= len(RETRIEVER_NAMES):
         raise HTTPException(
             status_code=400,
             detail=(
                 "Cannot disable all retrievers; the merger has no upstream input. "
-                "Leave at least one of cold_start / disable_omophub / disable_qof / "
-                "disable_chroma at the default."
+                "Leave at least one retriever enabled."
             ),
         )
     return disabled or None
@@ -79,7 +91,6 @@ def _disabled_retrievers(
 logger = logging.getLogger(__name__)
 
 router = APIRouter()
-
 
 
 # Request / Response schemas
@@ -108,6 +119,7 @@ class SearchRequest(BaseModel):
         max_length=10,
         description='Free-text exclusion phrases (Bennett 2023 mode 3 carve-outs).',
     )
+    include_descendants: bool | None = Field(default=None)
 
 
 class CodeResult(BaseModel):
@@ -132,6 +144,8 @@ class CodeResult(BaseModel):
     usage_status: str | None = None
     usage_source: str | None = None
     usage_setting: str | None = None
+    concept_id: int | None = None
+    dmd_level: DmdLevel | None = None
 
 
 class SearchResponse(BaseModel):
@@ -142,6 +156,7 @@ class SearchResponse(BaseModel):
     summary: dict
     provenance_trail: list[dict]
     elapsed_seconds: float
+    include_descendants: bool = False
 
 
 # Endpoints
@@ -153,6 +168,8 @@ async def search_codes(
     disable_omophub: bool = Query(False, description=_DISABLE_OMOPHUB_DESCRIPTION),
     disable_qof: bool = Query(False, description=_DISABLE_QOF_DESCRIPTION),
     disable_chroma: bool = Query(False, description=_DISABLE_CHROMA_DESCRIPTION),
+    disable_dmd: bool = Query(False, description=_DISABLE_DMD_DESCRIPTION),
+    disable_bnf: bool = Query(False, description=_DISABLE_BNF_DESCRIPTION),
 ):
     """Search for clinical codes matching a condition query.
 
@@ -160,12 +177,12 @@ async def search_codes(
     ----------------
     cold_start : bool, default False
         When ``True``, the OpenCodelists retriever is disabled for this
-        request. The other three retrievers (OMOPHub, ChromaDB, QOF) and
-        UMLS enrichment remain active. Intended for evaluation runs that
-        compare against an OpenCodelists-derived reference list, where
-        leaving the retriever live would bias recall upward by surfacing
-        the very list the run is meant to compare against.
-    disable_omophub, disable_qof, disable_chroma : bool, default False
+        request. The other retrievers (OMOPHub, ChromaDB, QOF, dm+d, BNF)
+        and UMLS enrichment remain active. Intended for evaluation runs
+        that compare against an OpenCodelists-derived reference list,
+        where leaving the retriever live would bias recall upward by
+        surfacing the very list the run is meant to compare against.
+    disable_omophub, disable_qof, disable_chroma, disable_dmd, disable_bnf : bool, default False
         Evaluation-only opt-in flags that disable the named retriever for
         this request. Mirror ``cold_start`` so the per-retriever ablation
         runner can isolate one retriever at a time. Production callers
@@ -179,7 +196,10 @@ async def search_codes(
              -d '{"query": "type 2 diabetes"}'
     """
     t0 = time.time()
-    disabled = _disabled_retrievers(cold_start, disable_omophub, disable_qof, disable_chroma)
+    disabled = _disabled_retrievers(
+        cold_start, disable_omophub, disable_qof, disable_chroma,
+        disable_dmd, disable_bnf,
+    )
 
     try:
         result = await run_pipeline(
@@ -187,6 +207,7 @@ async def search_codes(
             disabled,
             include_criteria=request.inclusions,
             exclude_criteria=request.exclusions,
+            include_descendants=request.include_descendants,
         )
     except Exception as exc:
         logger.error("Pipeline failed: %s", exc)
@@ -195,6 +216,16 @@ async def search_codes(
     elapsed = round(time.time() - t0, 2)
     final_codes = result.get("final_code_list", [])
 
+    # Explicit override wins; otherwise fall back to any-True across
+    # LLM-extracted conditions (matches hierarchy_expander's gate).
+    if request.include_descendants is not None:
+        resolved_include_descendants = bool(request.include_descendants)
+    else:
+        resolved_include_descendants = any(
+            c.get("include_descendants", False)
+            for c in result.get("parsed_conditions", [])
+        )
+
     search_id = uuid.uuid4().hex[:12]
     _search_cache.put(
         search_id,
@@ -202,6 +233,7 @@ async def search_codes(
         final_codes,
         include_criteria=request.inclusions,
         exclude_criteria=request.exclusions,
+        include_descendants=resolved_include_descendants,
     )
 
     return SearchResponse(
@@ -221,25 +253,40 @@ async def search_codes(
                 usage_status=c.get("usage_status"),
                 usage_source=c.get("usage_source"),
                 usage_setting=c.get("usage_setting"),
+                concept_id=c.get("concept_id"),
+                dmd_level=c.get("dmd_level"),
             )
             for c in final_codes
         ],
         summary=result.get("summary", {}),
         provenance_trail=result.get("provenance_trail", []),
         elapsed_seconds=elapsed,
+        include_descendants=resolved_include_descendants,
     )
 
 
 @router.get("/export/{search_id}")
 async def export_codes(search_id: str, output_format: str = "csv"):
-    """Export a code list as CSV or Excel."""
-    if output_format not in ("csv", "xlsx"):
-        raise HTTPException(status_code=400, detail="output_format must be 'csv' or 'xlsx'")
+    """Export a code list as CSV, Excel, or OHDSI concept-set JSON.
+
+    ``output_format=ohdsi`` returns ``{"concept_set": ..., "unmapped": ...}``;
+    paste the ``concept_set`` into ATLAS' Concept Set Import dialog.
+    ``unmapped`` lists candidates whose OMOP concept_id the corpus
+    could not resolve.
+    """
+    if output_format not in ("csv", "xlsx", "ohdsi"):
+        raise HTTPException(
+            status_code=400,
+            detail="output_format must be 'csv', 'xlsx', or 'ohdsi'",
+        )
 
     entry = _search_cache.get(search_id)
     if entry is None:
         raise HTTPException(status_code=404, detail="Search result not found")
     codes = entry["codes"]
+
+    if output_format == "ohdsi":
+        return to_ohdsi_concept_set(entry.get("query") or "", codes)
 
     export_fields = [
         "code", "term", "vocabulary", "decision", "confidence", "rationale", "sources",
@@ -294,6 +341,8 @@ async def evaluate_codes(
     disable_omophub: bool = Query(False, description=_DISABLE_OMOPHUB_DESCRIPTION),
     disable_qof: bool = Query(False, description=_DISABLE_QOF_DESCRIPTION),
     disable_chroma: bool = Query(False, description=_DISABLE_CHROMA_DESCRIPTION),
+    disable_dmd: bool = Query(False, description=_DISABLE_DMD_DESCRIPTION),
+    disable_bnf: bool = Query(False, description=_DISABLE_BNF_DESCRIPTION),
 ):
     """Run the pipeline on a test set query and evaluate against the gold standard.
 
@@ -304,7 +353,7 @@ async def evaluate_codes(
         evaluation run. Use this when the reference codelist comes from
         OpenCodelists itself, so the retriever cannot surface the
         reference and bias recall upward by construction.
-    disable_omophub, disable_qof, disable_chroma : bool, default False
+    disable_omophub, disable_qof, disable_chroma, disable_dmd, disable_bnf : bool, default False
         Evaluation-only opt-in flags that disable the named retriever for
         this request. Mirror ``cold_start`` so the per-retriever ablation
         runner can isolate one retriever at a time.
@@ -324,7 +373,10 @@ async def evaluate_codes(
         raise HTTPException(status_code=400, detail="No Research_question found in test set")
 
     t0 = time.time()
-    disabled = _disabled_retrievers(cold_start, disable_omophub, disable_qof, disable_chroma)
+    disabled = _disabled_retrievers(
+        cold_start, disable_omophub, disable_qof, disable_chroma,
+        disable_dmd, disable_bnf,
+    )
 
     try:
         pipeline_result = await run_pipeline(query, disabled)
@@ -355,7 +407,12 @@ class BaselineRequest(BaseModel):
         ...,
         description="Same format as /api/evaluate. Runs an LLM-only baseline (no RAG) on Research_question and evaluates against Codelist.",
     )
-    model: str = Field(
+    model: Annotated[
+        str,
+        StringConstraints(
+            min_length=1, max_length=100, pattern=r"^[a-zA-Z0-9._\-/]+$",
+        ),
+    ] = Field(
         default="microsoft/phi-4",
         description="OpenRouter model id, e.g. 'microsoft/phi-4', 'openai/gpt-4o-mini', 'anthropic/claude-3.5-haiku'.",
     )
@@ -380,8 +437,8 @@ async def baseline_evaluate(request: BaselineRequest):
     try:
         codes = await asyncio.to_thread(run_baseline, query, model=request.model)
     except Exception as exc:
-        logger.error("Baseline (%s) pipeline failed: %s", request.model, exc)
-        raise HTTPException(status_code=500, detail=f"Baseline failed: {exc}")
+        logger.error("Baseline (%s) pipeline failed: %s", request.model, exc, exc_info=True)
+        raise HTTPException(status_code=500, detail="Baseline processing failed") from None
 
     eval_result = run_evaluation(test_set, {"results": codes})
     eval_result["elapsed_seconds"] = round(time.time() - t0, 2)

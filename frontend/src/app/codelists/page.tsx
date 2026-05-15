@@ -14,7 +14,11 @@ type Filter = "mine" | "pending" | "approved";
 
 const statusStyles: Record<CodelistStatus, string> = {
   draft: "bg-gray-100 text-gray-800 border-gray-300",
-  in_review: "bg-amber-100 text-amber-800 border-amber-300",
+  in_review: "bg-blue-100 text-blue-800 border-blue-300",
+  // T30: adjudication is the v2-only state between in_review and
+  // approved; amber matches the kappa-warning treatment on the
+  // detail page for visual consistency.
+  adjudication: "bg-amber-100 text-amber-800 border-amber-300",
   approved: "bg-green-100 text-green-800 border-green-300",
   rejected: "bg-red-100 text-red-800 border-red-300",
 };
@@ -147,6 +151,17 @@ export default function CodelistsPage() {
                   <span className="ml-2 text-xs text-gray-400">
                     v{r.version}
                   </span>
+                  {/* Only meaningful on approved rows -- a draft with
+                      private=1 isn't hiding anything because drafts
+                      aren't on the gallery in the first place. */}
+                  {r.status === "approved" && r.private ? (
+                    <span
+                      className="ml-2 text-xs text-gray-500 border border-gray-300 px-1 py-0.5"
+                      title="Hidden from the public gallery"
+                    >
+                      hidden
+                    </span>
+                  ) : null}
                 </td>
                 <td className="px-4 py-2 text-gray-700">
                   {r.query || <em className="text-gray-400">—</em>}

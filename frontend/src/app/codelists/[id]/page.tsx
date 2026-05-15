@@ -4,16 +4,42 @@ import { use, useEffect, useMemo, useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import {
+  exportCodelistOhdsi,
+  exportCodelistOpenCodelists,
   getCodelist,
   getCrossReference,
+  getVotingState,
+  setCodelistPrivacy,
   submitReview,
   type Codelist,
   type CodelistDecision,
+  type CodelistStatus,
   type CrossReferenceRow,
+  type OhdsiExport,
   type ReviewDecisionInput,
+  type VotingState,
 } from "@/lib/api";
+import { DmdLevelBadge } from "@/lib/dmd";
 import { useUser } from "@/lib/useUser";
+import { downloadBlob, slugify } from "@/lib/download";
 import { ConfirmModal } from "../../ConfirmModal";
+import { ConsensusForm } from "./ConsensusForm";
+import { KappaHeader } from "./KappaHeader";
+import { RejectModal } from "./RejectModal";
+import { ReviewerAssignmentPanel } from "./ReviewerAssignmentPanel";
+import { V2ReviewSurface } from "./V2ReviewSurface";
+
+// Status pill palette for the codelist lifecycle. Reuses the same
+// shape as the include/exclude/uncertain decision pills below;
+// adjudication picks up the same amber as the kappa-warning
+// treatment so the visual signal lines up.
+const STATUS_PILL: Record<CodelistStatus, string> = {
+  draft: "bg-gray-100 text-gray-800 border-gray-300",
+  in_review: "bg-blue-100 text-blue-800 border-blue-300",
+  adjudication: "bg-amber-100 text-amber-800 border-amber-300",
+  approved: "bg-green-100 text-green-800 border-green-300",
+  rejected: "bg-red-100 text-red-800 border-red-300",
+};
 
 type HumanDecision = "include" | "exclude" | "uncertain";
 
@@ -271,8 +297,29 @@ export default function CodelistReviewPage({
   const [notes, setNotes] = useState("");
   const [submitting, setSubmitting] = useState(false);
   const [confirmAction, setConfirmAction] = useState<"approve" | "reject" | null>(null);
+  const [ohdsiExport, setOhdsiExport] = useState<OhdsiExport | null>(null);
+  const [ohdsiBusy, setOhdsiBusy] = useState(false);
+  const [ohdsiCopied, setOhdsiCopied] = useState(false);
+  const [ohdsiError, setOhdsiError] = useState<string | null>(null);
+  const [opencodelistsBusy, setOpencodelistsBusy] = useState(false);
+  const [opencodelistsError, setOpencodelistsError] = useState<string | null>(null);
+  // T32 — local mirror of codelist.private so the toggle reflects the
+  // mutation immediately without a refetch. null until the codelist
+  // loads. SQLite returns 0/1 so we coerce to bool on read.
+  const [isPrivate, setIsPrivate] = useState<boolean | null>(null);
+  const [privacyBusy, setPrivacyBusy] = useState(false);
+  const [privacyError, setPrivacyError] = useState<string | null>(null);
   const [filter, setFilter] = useState<"all" | HumanDecision>("all");
   const [sortMode, setSortMode] = useState<SortMode>("uncertainty");
+
+  // T30 v2 — caller-aware voting state. Fetched on demand for v2
+  // codelists; null for v1 (the legacy surface doesn't need it).
+  // Re-fetched after every successful v2 mutation so the kappa
+  // header and the table stay in sync with the server.
+  const [votingState, setVotingState] = useState<VotingState | null>(null);
+  const [rejectOpen, setRejectOpen] = useState(false);
+  const [reloadTick, setReloadTick] = useState(0);
+  const reload = () => setReloadTick((n) => n + 1);
 
   useEffect(() => {
     if (!userLoading && !user) {
@@ -291,9 +338,10 @@ export default function CodelistReviewPage({
     // eslint-disable-next-line react-hooks/set-state-in-effect
     setLoading(true);
     getCodelist(id)
-      .then((cl) => {
+      .then(async (cl) => {
         if (cancelled) return;
         setCodelist(cl);
+        setIsPrivate(Boolean(cl.private));
         const init: Record<number, DraftState> = {};
         for (const d of cl.decisions) {
           init[d.id] = {
@@ -302,11 +350,27 @@ export default function CodelistReviewPage({
           };
         }
         setDrafts(init);
+
+        // T30 v2 — fetch the voting state for codelists that have
+        // been promoted past v1. The endpoint 403s for non-reviewer
+        // non-creators; surface that as "you can read the codelist
+        // but the per-reviewer review controls aren't for you" by
+        // leaving votingState null.
+        if (cl.signature_version === 2) {
+          try {
+            const vs = await getVotingState(id);
+            if (!cancelled) setVotingState(vs);
+          } catch {
+            if (!cancelled) setVotingState(null);
+          }
+        } else {
+          setVotingState(null);
+        }
       })
       .catch((e) => { if (!cancelled) setError(String(e)); })
       .finally(() => { if (!cancelled) setLoading(false); });
     return () => { cancelled = true; };
-  }, [user, id]);
+  }, [user, id, reloadTick]);
 
   // Warn before leaving with unsaved overrides
   useEffect(() => {
@@ -411,6 +475,70 @@ export default function CodelistReviewPage({
     return errs;
   }, [codelist, drafts]);
 
+  const handleOhdsiExport = async () => {
+    if (!codelist || ohdsiBusy) return;
+    setOhdsiBusy(true);
+    setOhdsiError(null);
+    try {
+      const data = await exportCodelistOhdsi(codelist.id);
+      setOhdsiExport(data);
+      setOhdsiCopied(false);
+      const blob = new Blob([JSON.stringify(data.concept_set, null, 2)], {
+        type: "application/json",
+      });
+      downloadBlob(blob, `${slugify(codelist.name || codelist.query)}.ohdsi.json`);
+    } catch (err) {
+      setOhdsiError(err instanceof Error ? err.message : "OHDSI export failed");
+    } finally {
+      setOhdsiBusy(false);
+    }
+  };
+
+  const handleOpenCodelistsExport = async () => {
+    if (!codelist || opencodelistsBusy) return;
+    setOpencodelistsBusy(true);
+    setOpencodelistsError(null);
+    try {
+      const blob = await exportCodelistOpenCodelists(codelist.id);
+      downloadBlob(
+        blob,
+        `${slugify(codelist.name || codelist.query)}.opencodelists.zip`,
+      );
+    } catch (err) {
+      setOpencodelistsError(
+        err instanceof Error ? err.message : "OpenCodelists export failed",
+      );
+    } finally {
+      setOpencodelistsBusy(false);
+    }
+  };
+
+  const handlePrivacyToggle = async () => {
+    if (!codelist || isPrivate == null || privacyBusy) return;
+    const next = !isPrivate;
+    setPrivacyBusy(true);
+    setPrivacyError(null);
+    try {
+      const result = await setCodelistPrivacy(codelist.id, next);
+      setIsPrivate(Boolean(result.private));
+    } catch (e) {
+      setPrivacyError(e instanceof Error ? e.message : "Privacy update failed");
+    } finally {
+      setPrivacyBusy(false);
+    }
+  };
+
+  const handleOhdsiCopy = async () => {
+    if (!ohdsiExport) return;
+    try {
+      await navigator.clipboard.writeText(JSON.stringify(ohdsiExport.concept_set, null, 2));
+      setOhdsiCopied(true);
+      window.setTimeout(() => setOhdsiCopied(false), 2000);
+    } catch (err) {
+      setOhdsiError(err instanceof Error ? err.message : "Copy failed");
+    }
+  };
+
   const submit = async (action: "approve" | "reject") => {
     if (!codelist) return;
     setSubmitting(true);
@@ -447,6 +575,17 @@ export default function CodelistReviewPage({
   }
   if (!codelist) return null;
 
+  const hasTwoReviewers =
+    codelist.signature_version === 2 &&
+    (codelist.reviewer_ids?.length ?? 0) >= 2;
+  const isOclApproved = codelist.status === "approved";
+  const oclEnabled = isOclApproved && hasTwoReviewers;
+  const oclTooltip = oclEnabled
+    ? "Download a ZIP with one OpenCodelists upload-CSV per coding system plus a provenance.json. Each CSV uploads as its own OpenCodelists codelist."
+    : !isOclApproved
+      ? "Available once the codelist is approved"
+      : "Requires two-reviewer Delphi adjudication (signature v2)";
+
   return (
     <div className="max-w-6xl mx-auto px-6 py-8">
       {/* Header */}
@@ -469,16 +608,20 @@ export default function CodelistReviewPage({
             Created by {codelist.created_by_name} on{" "}
             {new Date(codelist.created_at).toLocaleString()}
           </p>
+          {codelist.include_descendants && (
+            <p className="mt-1">
+              <span
+                className="inline-flex items-center px-2 py-0.5 rounded text-[10px] font-medium bg-blue-50 text-blue-700 border border-blue-200"
+                title="OMOP 'Is a' descendants of each retrieved parent were merged into this codelist before review. Fixed in the signature on approval."
+              >
+                Descendants expanded
+              </span>
+            </p>
+          )}
         </div>
         <div className="text-right">
           <span
-            className={`inline-block text-xs px-2 py-0.5 rounded border ${
-              codelist.status === "approved"
-                ? "bg-green-100 text-green-800 border-green-300"
-                : codelist.status === "rejected"
-                ? "bg-red-100 text-red-800 border-red-300"
-                : "bg-gray-100 text-gray-800 border-gray-300"
-            }`}
+            className={`inline-block text-xs px-2 py-0.5 rounded border ${STATUS_PILL[codelist.status]}`}
           >
             {codelist.status}
           </span>
@@ -493,6 +636,91 @@ export default function CodelistReviewPage({
           >
             View audit log →
           </Link>
+          {/* T32: owner-only opt-out from /gallery. Approved + non-private
+              rows show up at /gallery; flipping this hides the row without
+              affecting the artefact, the audit log, or the signature. */}
+          {user && codelist.created_by === user.id && isPrivate != null && (
+            <div className="mt-3 text-xs">
+              <label className="inline-flex items-center gap-2 cursor-pointer">
+                <input
+                  type="checkbox"
+                  checked={isPrivate}
+                  disabled={privacyBusy}
+                  onChange={handlePrivacyToggle}
+                  className="rounded border-gray-300"
+                />
+                <span className="text-gray-700">
+                  Hide from public gallery
+                </span>
+              </label>
+              {/* Spell out the four (status × isPrivate) states explicitly
+                  so the owner knows what visibility they're committing to.
+                  The previous copy left the draft case ambiguous ("Pre-
+                  marking is supported") without saying which way it was
+                  pre-marked. */}
+              <div className="mt-0.5 text-[11px] text-gray-500">
+                {codelist.status === "approved" && isPrivate &&
+                  "Hidden from the public /gallery."}
+                {codelist.status === "approved" && !isPrivate &&
+                  "Visible at the public /gallery."}
+                {codelist.status !== "approved" && isPrivate &&
+                  "Pre-marked. This codelist will be hidden from /gallery once approved."}
+                {codelist.status !== "approved" && !isPrivate &&
+                  "Will appear at /gallery once approved. Tick to opt out before approving."}
+              </div>
+              {privacyError && (
+                <div className="mt-1 text-red-700">{privacyError}</div>
+              )}
+            </div>
+          )}
+          <div className="mt-3 flex flex-col items-end gap-1">
+            <button
+              onClick={handleOhdsiExport}
+              disabled={ohdsiBusy}
+              className="inline-flex items-center gap-2 px-3 py-1 border border-gray-300 text-xs text-gray-700 hover:bg-gray-50 disabled:opacity-50"
+              title="Download OHDSI concept-set JSON (ATLAS / CodelistGenerator)"
+            >
+              {ohdsiBusy ? "Exporting…" : "OHDSI concept set"}
+            </button>
+            <button
+              onClick={handleOpenCodelistsExport}
+              disabled={!oclEnabled || opencodelistsBusy}
+              className="inline-flex items-center gap-2 px-3 py-1 border border-gray-300 text-xs text-gray-700 hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed"
+              title={oclTooltip}
+            >
+              {opencodelistsBusy ? "Exporting…" : "Export to OpenCodelists"}
+            </button>
+            {opencodelistsError && (
+              <div className="text-xs text-red-700">{opencodelistsError}</div>
+            )}
+            {ohdsiExport && (
+              <div className="flex items-center gap-2 text-xs">
+                <span
+                  className="text-gray-700"
+                  title="Mapped: items ATLAS accepts (have OMOP concept_id). Unmapped: codes the corpus could not resolve to OMOP."
+                >
+                  <span className="font-semibold text-[#00436C]">
+                    {ohdsiExport.concept_set.expression.items.length}
+                  </span>{" "}
+                  mapped ·{" "}
+                  <span className="font-semibold text-[#7C2A00]">
+                    {ohdsiExport.unmapped.length}
+                  </span>{" "}
+                  unmapped
+                </span>
+                <button
+                  onClick={handleOhdsiCopy}
+                  className="px-2 py-0.5 border border-gray-300 text-gray-700 hover:bg-gray-50"
+                  title="Copy concept_set JSON to clipboard"
+                >
+                  {ohdsiCopied ? "Copied" : "Copy JSON"}
+                </button>
+              </div>
+            )}
+            {ohdsiError && (
+              <div className="text-xs text-red-700">{ohdsiError}</div>
+            )}
+          </div>
         </div>
       </div>
 
@@ -577,6 +805,69 @@ export default function CodelistReviewPage({
         codelistQuery={codelist.query || codelist.name}
       />
 
+      {/* T30 v1→v2 promotion panel — creator-only, draft-only. Once
+          two reviewers are assigned the codelist commits to v2 and
+          this panel disappears. */}
+      {codelist.signature_version === 1 &&
+        codelist.status === "draft" &&
+        user &&
+        user.id === codelist.created_by && (
+          <ReviewerAssignmentPanel
+            codelistId={codelist.id}
+            creatorId={codelist.created_by}
+            onAssigned={reload}
+          />
+        )}
+
+      {/* T30 v2 kappa header — visible above the decisions table for
+          v2 codelists in any non-draft state. Hidden for v1
+          codelists (no reviewer pair, no kappa concept). */}
+      {codelist.signature_version === 2 && votingState && (
+        <KappaHeader status={codelist.status} state={votingState} />
+      )}
+
+      {/* T30 v2 consensus form — only meaningful in adjudication. */}
+      {codelist.signature_version === 2 &&
+        codelist.status === "adjudication" &&
+        votingState && (
+          <ConsensusForm
+            codelistId={codelist.id}
+            decisions={codelist.decisions}
+            state={votingState}
+            onResolved={reload}
+          />
+        )}
+
+      {/* T30 v2 review surface — vote table + finalise controls.
+          Replaces the v1 stats/filter/table/submit block below for
+          v2 codelists. The dispatch is on signature_version, which
+          is immutable post-creation, so v1 and v2 stay on their
+          respective surfaces forever. */}
+      {codelist.signature_version === 2 && votingState && (
+        <V2ReviewSurface
+          codelistId={codelist.id}
+          decisions={codelist.decisions}
+          state={votingState}
+          onChanged={reload}
+        />
+      )}
+      {codelist.signature_version === 2 && votingState &&
+        votingState.is_caller_a_reviewer &&
+        (codelist.status === "in_review" || codelist.status === "adjudication") && (
+          <div className="mb-6 flex justify-end">
+            <button
+              type="button"
+              onClick={() => setRejectOpen(true)}
+              className="px-4 py-1.5 bg-red-600 text-white text-sm font-medium rounded hover:bg-red-700"
+            >
+              Reject codelist
+            </button>
+          </div>
+        )}
+
+      {/* --- v1 legacy surface (signature_version=1) ----------------- */}
+      {codelist.signature_version === 1 && (
+      <>
       {/* Stats + filter */}
       <div className="flex items-center gap-4 border-y border-gray-200 py-2 text-xs mb-4">
         <span className="text-gray-500">
@@ -675,6 +966,7 @@ export default function CodelistReviewPage({
                     <div className="text-[10px] text-gray-500">
                       {d.vocabulary}
                       {d.is_umls_suggestion ? " · UMLS" : ""}
+                      {d.dmd_level && <DmdLevelBadge level={d.dmd_level} compact />}
                     </div>
                   </td>
                   <td className="px-3 py-2">{d.term}</td>
@@ -766,6 +1058,20 @@ export default function CodelistReviewPage({
               {error}
             </div>
           )}
+          {/* T32: warn the reviewer that the codelist's query and per-code
+              AI rationales will appear publicly on approval, *unless* it's
+              already pre-marked private. The owner-only opt-out lives in
+              the right-column toggle; non-owner reviewers see a softer
+              variant of the warning since they can't flip it themselves. */}
+          {!isPrivate && (
+            <div className="text-xs text-amber-900 bg-amber-50 border border-amber-200 rounded p-2 mb-3">
+              On approval this codelist&apos;s query and per-code AI rationales
+              will appear at <code className="font-mono">/gallery</code>; reviewer
+              names and override comments are redacted. {user && codelist.created_by === user.id
+                ? "Use the privacy toggle above to opt out before approving."
+                : "Only the codelist creator can opt out."}
+            </div>
+          )}
           <div className="flex gap-2">
             <button
               onClick={() => setConfirmAction("approve")}
@@ -784,6 +1090,22 @@ export default function CodelistReviewPage({
           </div>
         </div>
       )}
+      </>
+      )}
+      {/* --- end v1 legacy surface ----------------------------------- */}
+
+      {/* T30 v2 reject modal — opened from the Reject button above.
+          Shared with the legacy ConfirmModal infrastructure for
+          focus-trap / escape / backdrop behaviours. */}
+      <RejectModal
+        codelistId={codelist.id}
+        open={rejectOpen}
+        onClose={() => setRejectOpen(false)}
+        onRejected={() => {
+          setRejectOpen(false);
+          reload();
+        }}
+      />
 
       {/* Approve/reject confirmation modal */}
       <ConfirmModal

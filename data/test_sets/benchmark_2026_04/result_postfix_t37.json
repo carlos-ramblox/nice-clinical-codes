@@ -1,0 +1,194 @@
+{
+  "ticket": "T37b Path A",
+  "n_codelists": 15,
+  "sigma_budget": 0.012,
+  "C_vs_B__t37_code_drift": {
+    "label": "C - B (T37 code drift)",
+    "mean_delta": 0.0025,
+    "median_delta": 0.0,
+    "max_abs_delta": 0.0172,
+    "bca_ci95": [
+      -0.0006,
+      0.0059
+    ]
+  },
+  "B_vs_A__environmental_drift": {
+    "label": "B - A (environmental drift over 9 days)",
+    "mean_delta": -0.0816,
+    "median_delta": -0.0094,
+    "max_abs_delta": 0.7933,
+    "bca_ci95": [
+      -0.2739,
+      -0.0114
+    ]
+  },
+  "C_vs_A__combined": {
+    "label": "C - A (combined)",
+    "mean_delta": -0.0791,
+    "median_delta": -0.003,
+    "max_abs_delta": 0.7933,
+    "bca_ci95": [
+      -0.2737,
+      -0.0089
+    ]
+  },
+  "verdict": "T37 INTRODUCES CODE DRIFT",
+  "codelists_outside_sigma_on_CB": [
+    {
+      "short": "heart_failure",
+      "delta_CB": 0.0172
+    }
+  ],
+  "per_list": [
+    {
+      "short": "heart_failure",
+      "A_mean": 0.7845,
+      "B_mean": 0.7643,
+      "C_mean": 0.7815,
+      "delta_CB": 0.0172,
+      "delta_AB": -0.0203,
+      "delta_AC": -0.003,
+      "CB_within_sigma": false
+    },
+    {
+      "short": "diabetes_mellitus",
+      "A_mean": 0.7252,
+      "B_mean": 0.7536,
+      "C_mean": 0.7551,
+      "delta_CB": 0.0016,
+      "delta_AB": 0.0284,
+      "delta_AC": 0.0299,
+      "CB_within_sigma": true
+    },
+    {
+      "short": "hypertension",
+      "A_mean": 0.4621,
+      "B_mean": 0.3201,
+      "C_mean": 0.3275,
+      "delta_CB": 0.0074,
+      "delta_AB": -0.142,
+      "delta_AC": -0.1347,
+      "CB_within_sigma": true
+    },
+    {
+      "short": "mi_icd10",
+      "A_mean": 0.7368,
+      "B_mean": 0.7368,
+      "C_mean": 0.7368,
+      "delta_CB": 0.0,
+      "delta_AB": 0.0,
+      "delta_AC": 0.0,
+      "CB_within_sigma": true
+    },
+    {
+      "short": "atrial_fib_icd10",
+      "A_mean": 1.0,
+      "B_mean": 1.0,
+      "C_mean": 1.0,
+      "delta_CB": 0.0,
+      "delta_AB": 0.0,
+      "delta_AC": 0.0,
+      "CB_within_sigma": true
+    },
+    {
+      "short": "stroke",
+      "A_mean": 0.4801,
+      "B_mean": 0.5222,
+      "C_mean": 0.5222,
+      "delta_CB": 0.0,
+      "delta_AB": 0.0421,
+      "delta_AC": 0.0421,
+      "CB_within_sigma": true
+    },
+    {
+      "short": "asthma_pincer",
+      "A_mean": 0.6216,
+      "B_mean": 0.6599,
+      "C_mean": 0.663,
+      "delta_CB": 0.0031,
+      "delta_AB": 0.0383,
+      "delta_AC": 0.0414,
+      "CB_within_sigma": true
+    },
+    {
+      "short": "copd",
+      "A_mean": 0.5397,
+      "B_mean": 0.501,
+      "C_mean": 0.5078,
+      "delta_CB": 0.0068,
+      "delta_AB": -0.0387,
+      "delta_AC": -0.0319,
+      "CB_within_sigma": true
+    },
+    {
+      "short": "depression",
+      "A_mean": 0.6364,
+      "B_mean": 0.6433,
+      "C_mean": 0.6546,
+      "delta_CB": 0.0113,
+      "delta_AB": 0.0069,
+      "delta_AC": 0.0182,
+      "CB_within_sigma": true
+    },
+    {
+      "short": "psychosis_schiz_bipolar",
+      "A_mean": 0.6519,
+      "B_mean": 0.3077,
+      "C_mean": 0.3062,
+      "delta_CB": -0.0014,
+      "delta_AB": -0.3443,
+      "delta_AC": -0.3457,
+      "CB_within_sigma": true
+    },
+    {
+      "short": "dementia",
+      "A_mean": 0.2406,
+      "B_mean": 0.2222,
+      "C_mean": 0.2104,
+      "delta_CB": -0.0119,
+      "delta_AB": -0.0184,
+      "delta_AC": -0.0302,
+      "CB_within_sigma": true
+    },
+    {
+      "short": "epilepsy",
+      "A_mean": 0.1852,
+      "B_mean": 0.1704,
+      "C_mean": 0.1704,
+      "delta_CB": 0.0,
+      "delta_AB": -0.0148,
+      "delta_AC": -0.0148,
+      "CB_within_sigma": true
+    },
+    {
+      "short": "lung_cancer",
+      "A_mean": 0.2414,
+      "B_mean": 0.2319,
+      "C_mean": 0.2359,
+      "delta_CB": 0.0039,
+      "delta_AB": -0.0094,
+      "delta_AC": -0.0055,
+      "CB_within_sigma": true
+    },
+    {
+      "short": "hepatitis_c_chronic",
+      "A_mean": 0.7933,
+      "B_mean": 0.0,
+      "C_mean": 0.0,
+      "delta_CB": 0.0,
+      "delta_AB": -0.7933,
+      "delta_AC": -0.7933,
+      "CB_within_sigma": true
+    },
+    {
+      "short": "hiv",
+      "A_mean": 0.0235,
+      "B_mean": 0.065,
+      "C_mean": 0.0644,
+      "delta_CB": -0.0006,
+      "delta_AB": 0.0415,
+      "delta_AC": 0.0408,
+      "CB_within_sigma": true
+    }
+  ]
+}

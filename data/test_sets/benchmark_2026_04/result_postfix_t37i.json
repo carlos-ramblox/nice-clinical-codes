@@ -1,0 +1,152 @@
+{
+  "ticket": "T37i",
+  "n_codelists": 15,
+  "sigma_budget": 0.012,
+  "delta_f1_mean": 0.0601,
+  "delta_f1_median": 0.0545,
+  "delta_f1_max_abs": 0.4743,
+  "delta_f1_bca_ci95": [
+    -0.0764,
+    0.1519
+  ],
+  "delta_precision_mean": -0.1529,
+  "delta_recall_mean": 0.1775,
+  "verdict": "F1 LIFT",
+  "per_list": [
+    {
+      "short": "heart_failure",
+      "pre_f1": 0.7815,
+      "post_f1": 0.4627,
+      "delta_f1": -0.3188,
+      "delta_precision": -0.4583,
+      "delta_recall": 0.1477,
+      "abs_delta_f1_within_sigma": false
+    },
+    {
+      "short": "diabetes_mellitus",
+      "pre_f1": 0.7551,
+      "post_f1": 0.2808,
+      "delta_f1": -0.4743,
+      "delta_precision": -0.6471,
+      "delta_recall": 0.0465,
+      "abs_delta_f1_within_sigma": false
+    },
+    {
+      "short": "hypertension",
+      "pre_f1": 0.3275,
+      "post_f1": 0.382,
+      "delta_f1": 0.0545,
+      "delta_precision": -0.4282,
+      "delta_recall": 0.0906,
+      "abs_delta_f1_within_sigma": false
+    },
+    {
+      "short": "mi_icd10",
+      "pre_f1": 0.7368,
+      "post_f1": 0.7368,
+      "delta_f1": 0.0,
+      "delta_precision": 0.0,
+      "delta_recall": 0.0,
+      "abs_delta_f1_within_sigma": true
+    },
+    {
+      "short": "atrial_fib_icd10",
+      "pre_f1": 1.0,
+      "post_f1": 1.0,
+      "delta_f1": 0.0,
+      "delta_precision": 0.0,
+      "delta_recall": 0.0,
+      "abs_delta_f1_within_sigma": true
+    },
+    {
+      "short": "stroke",
+      "pre_f1": 0.5222,
+      "post_f1": 0.6984,
+      "delta_f1": 0.1762,
+      "delta_precision": -0.3422,
+      "delta_recall": 0.391,
+      "abs_delta_f1_within_sigma": false
+    },
+    {
+      "short": "asthma_pincer",
+      "pre_f1": 0.663,
+      "post_f1": 0.8221,
+      "delta_f1": 0.1591,
+      "delta_precision": 0.0346,
+      "delta_recall": 0.2629,
+      "abs_delta_f1_within_sigma": false
+    },
+    {
+      "short": "copd",
+      "pre_f1": 0.5078,
+      "post_f1": 0.7519,
+      "delta_f1": 0.2442,
+      "delta_precision": 0.0066,
+      "delta_recall": 0.4321,
+      "abs_delta_f1_within_sigma": false
+    },
+    {
+      "short": "depression",
+      "pre_f1": 0.6546,
+      "post_f1": 0.6241,
+      "delta_f1": -0.0305,
+      "delta_precision": -0.2887,
+      "delta_recall": 0.2415,
+      "abs_delta_f1_within_sigma": false
+    },
+    {
+      "short": "psychosis_schiz_bipolar",
+      "pre_f1": 0.3062,
+      "post_f1": 0.5052,
+      "delta_f1": 0.199,
+      "delta_precision": -0.4842,
+      "delta_recall": 0.3141,
+      "abs_delta_f1_within_sigma": false
+    },
+    {
+      "short": "dementia",
+      "pre_f1": 0.2104,
+      "post_f1": 0.5028,
+      "delta_f1": 0.2925,
+      "delta_precision": 0.1258,
+      "delta_recall": 0.2468,
+      "abs_delta_f1_within_sigma": false
+    },
+    {
+      "short": "epilepsy",
+      "pre_f1": 0.1704,
+      "post_f1": 0.55,
+      "delta_f1": 0.3796,
+      "delta_precision": 0.0927,
+      "delta_recall": 0.3194,
+      "abs_delta_f1_within_sigma": false
+    },
+    {
+      "short": "lung_cancer",
+      "pre_f1": 0.2359,
+      "post_f1": 0.4558,
+      "delta_f1": 0.2199,
+      "delta_precision": 0.0769,
+      "delta_recall": 0.1703,
+      "abs_delta_f1_within_sigma": false
+    },
+    {
+      "short": "hepatitis_c_chronic",
+      "pre_f1": 0.0,
+      "post_f1": 0.0,
+      "delta_f1": 0.0,
+      "delta_precision": 0.0,
+      "delta_recall": 0.0,
+      "abs_delta_f1_within_sigma": true
+    },
+    {
+      "short": "hiv",
+      "pre_f1": 0.0644,
+      "post_f1": 0.065,
+      "delta_f1": 0.0006,
+      "delta_precision": 0.0181,
+      "delta_recall": 0.0,
+      "abs_delta_f1_within_sigma": true
+    }
+  ]
+}

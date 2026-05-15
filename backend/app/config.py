@@ -34,14 +34,25 @@ LLM_MODEL = os.getenv("LLM_MODEL", "claude-sonnet-4-20250514")
 LLM_SCORING_MODEL = os.getenv("LLM_SCORING_MODEL", "claude-haiku-4-5-20251001")
 RETRIEVAL_TOP_K = int(os.getenv("RETRIEVAL_TOP_K", "50"))
 MAX_CANDIDATES = int(os.getenv("MAX_CANDIDATES", "100"))
+DRUG_VOCAB_QUOTA = int(os.getenv("DRUG_VOCAB_QUOTA", "15"))
+
+HIERARCHY_EXPAND_MAX_LEVELS = int(os.getenv("HIERARCHY_EXPAND_MAX_LEVELS", "3"))
+HIERARCHY_EXPAND_MAX_PER_PARENT = int(os.getenv("HIERARCHY_EXPAND_MAX_PER_PARENT", "100"))
 UMLS_EXPAND = os.getenv("UMLS_EXPAND", "yes").strip().lower() == "yes"
 
 # OMOPHub
 OMOPHUB_PAGE_SIZE = int(os.getenv("OMOPHUB_PAGE_SIZE", "20"))
+# OMOPHub API boundary — adding non-OMOP vocabs here poisons concept_id_enricher.
 OMOPHUB_VOCABULARIES = {
     "SNOMED": "SNOMED CT",
     "ICD10": "ICD-10 (WHO)",
     "OPCS4": "OPCS-4",
+}
+
+VOCABULARY_DISPLAY_LABELS = {
+    **OMOPHUB_VOCABULARIES,
+    "DMD": "dm+d",
+    "BNF": "BNF",
 }
 
 # HDR UK Phenotype Library -- anonymous public read, no API key required.

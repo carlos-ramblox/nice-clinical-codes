@@ -6,6 +6,7 @@ import { UserBadge } from "./UserBadge";
 
 const links = [
   { href: "/", label: "Home" },
+  { href: "/gallery", label: "Gallery" },
   { href: "/codelists", label: "Codelists" },
   { href: "/audit", label: "Audit Log" },
 ];

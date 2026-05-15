@@ -7,7 +7,7 @@ from pathlib import Path
 
 import requests
 
-from app.db.code_store import search_by_condition, insert_codes
+from app.db.code_store import get_concept_id_for, insert_codes, search_by_condition
 from app.db.vector_store import add_codes as add_to_chroma
 
 logger = logging.getLogger(__name__)
@@ -26,11 +26,16 @@ def ingest_opencodelists_csv(csv_path: str | Path, codelist_name: str = ""):
     CSV format: code,term (standard OpenCodelists export).
     """
     path = Path(csv_path)
-    if not path.exists():
+    try:
+        f = open(path, encoding="utf-8")
+    except FileNotFoundError:
         logger.warning("CSV not found: %s", csv_path)
         return 0
+    except OSError as exc:
+        logger.warning("CSV could not be opened: %s -- %s", csv_path, exc)
+        return 0
 
-    with open(path, encoding="utf-8") as f:
+    with f:
         reader = csv.DictReader(f)
         codes = []
         for row in reader:
@@ -166,6 +171,7 @@ def _search_live(condition: str) -> list[dict]:
                 "domain": "Condition",
                 "similarity_score": None,
                 "usage_frequency": None,
+                "concept_id": get_concept_id_for("SNOMED CT", c["code"]),
             })
 
         logger.info("OpenCodelists live: %s/%s → %d codes", cl["org"], cl["slug"], len(codes))
@@ -205,6 +211,7 @@ def retrieve_from_opencodelists(state: dict) -> dict:
                     "domain": r["domain"],
                     "similarity_score": None,
                     "usage_frequency": None,
+                    "concept_id": get_concept_id_for(r["vocabulary"], r["code"]),
                 })
             logger.info("OpenCodelists (local): '%s' → %d codes", name, len(local_oc))
         else:

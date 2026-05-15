@@ -1,0 +1,185 @@
+{
+  "ticket": "T37j",
+  "n_codelists": 15,
+  "sigma_budget": 0.012,
+  "mean_delta_vs_pre_t37i": 0.1064,
+  "mean_delta_vs_post_t37i": 0.0462,
+  "median_delta_vs_pre_t37i": 0.0039,
+  "bca_ci95_vs_pre_t37i": [
+    0.0485,
+    0.1765
+  ],
+  "bca_ci95_vs_post_t37i": [
+    -0.0065,
+    0.1603
+  ],
+  "verdict_vs_pre_t37i": "F1 LIFT",
+  "verdict_vs_post_t37i": "F1 LIFT",
+  "per_list": [
+    {
+      "short": "heart_failure",
+      "t37j_mode": "bare",
+      "pre_t37i_f1": 0.7815,
+      "post_t37i_f1": 0.4627,
+      "post_t37j_f1": 0.7855,
+      "delta_vs_pre_t37i": 0.0039,
+      "delta_vs_post_t37i": 0.3227,
+      "abs_delta_vs_pre_within_sigma": true,
+      "abs_delta_vs_post_within_sigma": false
+    },
+    {
+      "short": "diabetes_mellitus",
+      "t37j_mode": "bare",
+      "pre_t37i_f1": 0.7551,
+      "post_t37i_f1": 0.2808,
+      "post_t37j_f1": 0.7545,
+      "delta_vs_pre_t37i": -0.0006,
+      "delta_vs_post_t37i": 0.4737,
+      "abs_delta_vs_pre_within_sigma": true,
+      "abs_delta_vs_post_within_sigma": false
+    },
+    {
+      "short": "hypertension",
+      "t37j_mode": "bare",
+      "pre_t37i_f1": 0.3275,
+      "post_t37i_f1": 0.382,
+      "post_t37j_f1": 0.3067,
+      "delta_vs_pre_t37i": -0.0208,
+      "delta_vs_post_t37i": -0.0752,
+      "abs_delta_vs_pre_within_sigma": false,
+      "abs_delta_vs_post_within_sigma": false
+    },
+    {
+      "short": "mi_icd10",
+      "t37j_mode": "bare",
+      "pre_t37i_f1": 0.7368,
+      "post_t37i_f1": 0.7368,
+      "post_t37j_f1": 0.7368,
+      "delta_vs_pre_t37i": 0.0,
+      "delta_vs_post_t37i": 0.0,
+      "abs_delta_vs_pre_within_sigma": true,
+      "abs_delta_vs_post_within_sigma": true
+    },
+    {
+      "short": "atrial_fib_icd10",
+      "t37j_mode": "bare",
+      "pre_t37i_f1": 1.0,
+      "post_t37i_f1": 1.0,
+      "post_t37j_f1": 1.0,
+      "delta_vs_pre_t37i": 0.0,
+      "delta_vs_post_t37i": 0.0,
+      "abs_delta_vs_pre_within_sigma": true,
+      "abs_delta_vs_post_within_sigma": true
+    },
+    {
+      "short": "stroke",
+      "t37j_mode": "override",
+      "pre_t37i_f1": 0.5222,
+      "post_t37i_f1": 0.6984,
+      "post_t37j_f1": 0.6984,
+      "delta_vs_pre_t37i": 0.1762,
+      "delta_vs_post_t37i": 0.0,
+      "abs_delta_vs_pre_within_sigma": false,
+      "abs_delta_vs_post_within_sigma": true
+    },
+    {
+      "short": "asthma_pincer",
+      "t37j_mode": "override",
+      "pre_t37i_f1": 0.663,
+      "post_t37i_f1": 0.8221,
+      "post_t37j_f1": 0.8259,
+      "delta_vs_pre_t37i": 0.1629,
+      "delta_vs_post_t37i": 0.0038,
+      "abs_delta_vs_pre_within_sigma": false,
+      "abs_delta_vs_post_within_sigma": true
+    },
+    {
+      "short": "copd",
+      "t37j_mode": "override",
+      "pre_t37i_f1": 0.5078,
+      "post_t37i_f1": 0.7519,
+      "post_t37j_f1": 0.7566,
+      "delta_vs_pre_t37i": 0.2488,
+      "delta_vs_post_t37i": 0.0047,
+      "abs_delta_vs_pre_within_sigma": false,
+      "abs_delta_vs_post_within_sigma": true
+    },
+    {
+      "short": "depression",
+      "t37j_mode": "bare",
+      "pre_t37i_f1": 0.6546,
+      "post_t37i_f1": 0.6241,
+      "post_t37j_f1": 0.6494,
+      "delta_vs_pre_t37i": -0.0052,
+      "delta_vs_post_t37i": 0.0253,
+      "abs_delta_vs_pre_within_sigma": true,
+      "abs_delta_vs_post_within_sigma": false
+    },
+    {
+      "short": "psychosis_schiz_bipolar",
+      "t37j_mode": "override",
+      "pre_t37i_f1": 0.3062,
+      "post_t37i_f1": 0.5052,
+      "post_t37j_f1": 0.5104,
+      "delta_vs_pre_t37i": 0.2042,
+      "delta_vs_post_t37i": 0.0052,
+      "abs_delta_vs_pre_within_sigma": false,
+      "abs_delta_vs_post_within_sigma": true
+    },
+    {
+      "short": "dementia",
+      "t37j_mode": "override",
+      "pre_t37i_f1": 0.2104,
+      "post_t37i_f1": 0.5028,
+      "post_t37j_f1": 0.4906,
+      "delta_vs_pre_t37i": 0.2802,
+      "delta_vs_post_t37i": -0.0123,
+      "abs_delta_vs_pre_within_sigma": false,
+      "abs_delta_vs_post_within_sigma": false
+    },
+    {
+      "short": "epilepsy",
+      "t37j_mode": "override",
+      "pre_t37i_f1": 0.1704,
+      "post_t37i_f1": 0.55,
+      "post_t37j_f1": 0.55,
+      "delta_vs_pre_t37i": 0.3796,
+      "delta_vs_post_t37i": 0.0,
+      "abs_delta_vs_pre_within_sigma": false,
+      "abs_delta_vs_post_within_sigma": true
+    },
+    {
+      "short": "lung_cancer",
+      "t37j_mode": "override",
+      "pre_t37i_f1": 0.2359,
+      "post_t37i_f1": 0.4558,
+      "post_t37j_f1": 0.4017,
+      "delta_vs_pre_t37i": 0.1659,
+      "delta_vs_post_t37i": -0.0541,
+      "abs_delta_vs_pre_within_sigma": false,
+      "abs_delta_vs_post_within_sigma": false
+    },
+    {
+      "short": "hepatitis_c_chronic",
+      "t37j_mode": "bare",
+      "pre_t37i_f1": 0.0,
+      "post_t37i_f1": 0.0,
+      "post_t37j_f1": 0.0,
+      "delta_vs_pre_t37i": 0.0,
+      "delta_vs_post_t37i": 0.0,
+      "abs_delta_vs_pre_within_sigma": true,
+      "abs_delta_vs_post_within_sigma": true
+    },
+    {
+      "short": "hiv",
+      "t37j_mode": "bare",
+      "pre_t37i_f1": 0.0644,
+      "post_t37i_f1": 0.065,
+      "post_t37j_f1": 0.0647,
+      "delta_vs_pre_t37i": 0.0003,
+      "delta_vs_post_t37i": -0.0003,
+      "abs_delta_vs_pre_within_sigma": true,
+      "abs_delta_vs_post_within_sigma": true
+    }
+  ]
+}

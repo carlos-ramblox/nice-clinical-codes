@@ -328,6 +328,72 @@ Measured headlines:
 - Aggregate decision-flip rate: **6.9 %** (97 of 1,411 pairs flipped
   on at least two of K = 5 runs)
 
+**T37 / T37g F1-neutrality verification (2026-05-12, T37b).** A
+same-day apples-to-apples K=5 sweep, with the pre-T37 worktree at
+commit `31ca009` patched to use the post-T37 OMOPHub call shape
+(T37f bulk-search + T37h `Maps to` safety net) so the comparison
+isolates only the T37 retriever wiring and the T37g per-vocab merger
+quota, returns ΔF1 mean **+0.0025** across the 15 disease codelists
+with BCa 95% CI **[−0.0006, +0.0059]** — straddling zero. Median Δ
+is 0.0000; 14 of 15 codelists fall within K=5 σ ≈ 0.012, with one
+(`heart_failure`) at +0.0172 — comfortably inside this section's own
+documented per-codelist std max of 0.025. T37 + T37g are empirically
+F1-neutral on the disease benchmark; details in
+`data/test_sets/benchmark_2026_04/T37b_path_a_summary.md`.
+
+**T37i hierarchy expansion (2026-05-13).** Adding standard "Is a"
+descendants of every LLM-included concept, fetched via
+`hierarchy.descendants(max_levels=3)` on OMOPHub, lifts ΔF1 mean
+**+0.060** (median +0.055) across the 15 disease codelists — about
+5× the K=5 σ ≈ 0.012 noise floor. BCa 95% CI **[−0.076, +0.152]**
+straddles zero because the per-codelist distribution is bimodal:
+eight codelists lift by +0.05 to +0.38 (recall-driven on
+descendant-closed gold lists such as `epilepsy`, `dementia`, `copd`),
+while two regress by −0.32 (`heart_failure`) and −0.47
+(`diabetes_mellitus`) — gold lists that deliberately prune
+descendants (NICE excludes complications like diabetic retinopathy
+from the diabetes-diagnosis list). Mean Δ precision −0.153, mean Δ
+recall +0.178: the expander trades precision for recall, and the
+trade is favourable on average but adversarial against
+diagnosis-only codelists. Details in
+`data/test_sets/benchmark_2026_04/T37i_path_a_summary.md`.
+
+**T37j query-intent routing (2026-05-13).** T37j gates the hierarchy
+expander on a per-query `include_descendants` boolean. The LLM parser
+extracts it from cues in the query string (`"all forms of X"` →
+True; `"X diagnosis only"` → False; bare-name queries default to
+False). A `request_include_descendants` field on `POST /api/search`
+overrides the LLM extraction, following the T29
+`request_include_criteria` / `request_exclude_criteria` pattern; the
+search page surfaces it as a checkbox the reviewer can flip. The
+False default removes the over-expansion responsible for T37i's
+`diabetes_mellitus` (−0.474) and `heart_failure` (−0.319) regressions,
+and the override keeps the lift available for queries whose gold
+list is descendant-closed. Two K=5 sweeps on the 15-codelist disease
+benchmark verified the routing: sweep 1 ran all 15 queries with no
+override (the LLM extracted False on every bare-name query); sweep 2
+ran the 7 descendant-closed gold lists (`epilepsy`, `dementia`,
+`copd`, `lung_cancer`, `psychosis_schiz_bipolar`, `stroke`,
+`asthma_pincer`) with the override set to True. Per-codelist ΔF1
+against the pre-T37i baseline came in at mean **+0.106**, median
+**+0.004**, BCa 95% CI **[+0.049, +0.177]** — no longer straddling
+zero. Against the post-T37i baseline the mean is **+0.046**:
+`diabetes_mellitus` and `heart_failure` return to 0.755 and 0.786
+(Δ within K=5 σ ≈ 0.012); five of the seven descendant-closed
+codelists hold their T37i lifts to within σ; `dementia` falls 0.012
+short and `lung_cancer` 0.054, both inside their own per-codelist
+K=5 std. T37j is **F1-relevant but gated** per
+`.agents/standards/f1-impact-classification.md`: with no cue and no
+override the pipeline takes the pre-T37j path byte-for-byte. Full
+table in `data/test_sets/benchmark_2026_04/T37j_path_a_summary.md`.
+
+A naive HEAD-vs-baseline comparison without controlling for time-
+separated environmental drift in OMOPHub / UMLS / OpenCodelists would
+report ΔF1 mean −0.0816 with `hepatitis_c_chronic` collapsed
+0.79 → 0.00. That drift is reproducible on `31ca009` *today* against
+the 2026-05-03 K=5 baseline files and is documented as B−A in the
+T37b summary; it is not T37-attributable.
+
 The std numbers fall inside the ±0.01–0.02 band predicted from the
 1–3 %-per-call literature; the slightly higher aggregate flip rate
 reflects cumulative compounding across 5 runs and includes a small
@@ -1468,6 +1534,112 @@ identified §4 failure cases, are more robust to single-judge bias.
   evaluate faithfulness; if a clinician sees the rationale during
   review, that is the only faithfulness check applied at request
   time.
+
+## Inter-rater agreement (T30; methodology)
+
+The two-reviewer Delphi flow shipped in T30 surfaces Cohen's κ on the
+review surface and uses it as the disposition signal: codelists with
+unanimous votes auto-approve on second finalisation, while any
+disagreement routes the codelist to an adjudication step where a
+proposed → acknowledged consensus mechanism resolves the disputed
+decisions. This section pins the methodology so a downstream paper
+can cite it without reading the implementation.
+
+### Formula
+
+Cohen's κ for two reviewers over a nominal label set is
+
+$$\kappa = \frac{p_o - p_e}{1 - p_e}$$
+
+where $p_o$ is the observed agreement (the fraction of items where
+both reviewers voted the same label) and $p_e$ is the expected
+agreement under independent chance, computed as the dot product of
+the two reviewers' marginal label distributions. The label set in
+this implementation is $\{$include, exclude, uncertain$\}$ — the
+DB CHECK constraint on `decision_votes.vote` enforces it.
+
+The implementation lives in
+[`backend/app/services/agreement.py::cohen_kappa`](./backend/app/services/agreement.py)
+as a pure-Python function with no I/O. It returns `None` for empty
+inputs (insufficient data is not an error), `1.0` for the
+single-category collapse case ($p_e = 1$ when both reviewers vote
+all-include or all-exclude — the standard formula's $0/0$ is
+project-locally resolved to perfect agreement, since $p_o = 1$ is
+structurally guaranteed in that case), and a `ValueError` for
+length-mismatched inputs (a programming bug at the call site, not
+a runtime condition).
+
+### Interpretation bands
+
+We surface Landis & Koch's (1977) qualitative labels alongside the
+numeric κ on the review header strip:
+
+| κ range          | Label             |
+|------------------|-------------------|
+| κ < 0            | poor              |
+| 0 ≤ κ ≤ 0.20     | slight            |
+| 0.21 ≤ κ ≤ 0.40  | fair              |
+| 0.41 ≤ κ ≤ 0.60  | moderate          |
+| 0.61 ≤ κ ≤ 0.80  | substantial       |
+| 0.81 ≤ κ ≤ 1.00  | almost perfect    |
+
+The 0.41 boundary is the UI's amber-warning threshold (κ < 0.41
+surfaces an informational caption recommending discussion before
+consensus); see [`CLINICAL_SAFETY.md`](./CLINICAL_SAFETY.md) for the
+hazard-mitigation reading.
+
+### Why unweighted
+
+Cohen's κ has weighted variants (linear, quadratic) that treat
+include↔uncertain disagreement as less severe than include↔exclude.
+The clinical case for weighted κ is real, but the choice of weights
+is itself contestable — quadratic weights aggressively reward "near
+agreement" in a way that may overstate consensus on adversarially
+ambiguous codes, while linear weights stay conservative. Watson 2017
+Stage 3 (the Delphi-adjudication paper this implementation cites) uses
+unweighted κ; we ship that first to keep the metric's interpretation
+free from a weight-choice debate. A `cohen_kappa_weighted` is the
+natural extension if a future inter-rater study or methods-paper
+reviewer asks for it.
+
+### Test fixtures
+
+The metric's correctness is pinned by three property tests in
+[`backend/tests/test_agreement.py`](./backend/tests/test_agreement.py):
+
+- **Perfect agreement** (`a == b` on every item): κ = 1, regardless
+  of marginal distribution.
+- **Inverted agreement on balanced marginals** (every item disagrees,
+  $p_a = p_b = 0.5$): κ = -1 — the worst possible value, indicating
+  systematic disagreement worse than chance.
+- **Chance-level agreement** (4-item fixture with $p_o = p_e = 0.5$):
+  κ = 0 exactly. The fixture uses a 4-item list rather than 50 because
+  with $N = 50$ split 25/25, $\kappa = 0$ is unreachable by integer
+  construction (the construction requires $k = j = 12.5$, non-integer).
+  At $N = 4$ the arithmetic is exact and verifiable at a glance.
+
+Plus three edge-case tests: empty input returns `None`; single-category
+collapse returns `1.0` (not `NaN`); length mismatch raises
+`ValueError`.
+
+### What's not measured here
+
+This section documents the metric's properties and the codebase's
+implementation; it does not constitute an inter-rater reliability
+study. The next deliverable is a real IRR study with 2-3 clinicians
+on the existing 15-codelist benchmark, gated on T30 landing and ~4
+weeks of clinician calendar time. T30 unlocks the calendar; the
+study itself is a separate ticket. When that lands, the per-codelist
+and aggregate κ values will appear here as a §Inter-rater results
+subsection and the methodology paper draft will gain a parallel
+table.
+
+The mapping from κ to clinical action is also out of scope for this
+section — see [`CLINICAL_SAFETY.md`](./CLINICAL_SAFETY.md) for how
+the `< 0.41` band is surfaced as an informational warning rather
+than a gating threshold, and for the four design decisions
+(independent voting, both-ACK consensus, the warning band, auditable
+rejection) that compose the two-reviewer mitigation.
 
 ## Limitations
 

@@ -1,9 +1,53 @@
 import logging
 
-from app.config import MAX_CANDIDATES
+from app.config import MAX_CANDIDATES, DRUG_VOCAB_QUOTA
 from app.graph.vocab_matching import requested_vocab_set
 
 logger = logging.getLogger(__name__)
+
+_DRUG_VOCABS: tuple[str, ...] = ("dm+d", "BNF")
+
+
+def _stable_sort_key(c: dict) -> tuple:
+    """Deterministic tiebreaker per determinism-invariants.md."""
+    return (
+        -c["source_count"],
+        -(c.get("similarity_score") or 0.0),
+        c["vocabulary"],
+        c["code"],
+    )
+
+
+def _apply_drug_quota(
+    deduped: list[dict], parsed_conditions: list[dict], cap: int,
+) -> list[dict]:
+    """Reserve quota slots per drug vocab when the query has a Drug condition."""
+    has_drug = any(c.get("domain") == "Drug" for c in parsed_conditions)
+    if not has_drug:
+        return sorted(deduped, key=_stable_sort_key)[:cap]
+
+    by_vocab: dict[str, list[dict]] = {}
+    for c in deduped:
+        by_vocab.setdefault(c["vocabulary"], []).append(c)
+    for rows in by_vocab.values():
+        rows.sort(key=_stable_sort_key)
+
+    reserved: list[dict] = []
+    for vocab in _DRUG_VOCABS:
+        reserved.extend(by_vocab.get(vocab, [])[:DRUG_VOCAB_QUOTA])
+
+    other_pool = [c for c in deduped if c["vocabulary"] not in _DRUG_VOCABS]
+    other_pool.sort(key=_stable_sort_key)
+    drug_pool_remainder = [
+        c for vocab in _DRUG_VOCABS for c in by_vocab.get(vocab, [])[DRUG_VOCAB_QUOTA:]
+    ]
+
+    headroom = cap - len(reserved)
+    fill_pool = sorted(other_pool + drug_pool_remainder, key=_stable_sort_key)
+    fill = fill_pool[:headroom] if headroom > 0 else []
+
+    combined = reserved + fill
+    return sorted(combined, key=_stable_sort_key)[:cap]
 
 
 def merge_and_dedup(state: dict) -> dict:
@@ -47,6 +91,8 @@ def merge_and_dedup(state: dict) -> dict:
                 "usage_status": c.get("usage_status"),
                 "usage_source": c.get("usage_source"),
                 "usage_setting": c.get("usage_setting"),
+                "concept_id": c.get("concept_id"),
+                "dmd_level": c.get("dmd_level"),
                 "sources": [c["source"]],
                 "source_count": 1,
             }
@@ -68,6 +114,15 @@ def merge_and_dedup(state: dict) -> dict:
             if c.get("usage_frequency") and not existing.get("usage_frequency"):
                 existing["usage_frequency"] = c["usage_frequency"]
 
+            # upgrade None -> non-None when a later source supplies
+            # a concept_id (typically OMOPHub for a code first seen
+            # via QOF / OpenCodelists / ChromaDB)
+            if existing.get("concept_id") is None and c.get("concept_id") is not None:
+                existing["concept_id"] = c["concept_id"]
+
+            if existing.get("dmd_level") is None and c.get("dmd_level") is not None:
+                existing["dmd_level"] = c["dmd_level"]
+
             # prefer longer/more descriptive term
             if len(c.get("term", "")) > len(existing.get("term", "")):
                 existing["term"] = c["term"]
@@ -88,22 +143,17 @@ def merge_and_dedup(state: dict) -> dict:
             len(deduped), before, allowed_vocabs,
         )
 
-    # sort: more sources first, then by similarity score
-    deduped.sort(
-        key=lambda x: (x["source_count"], x.get("similarity_score") or 0),
-        reverse=True,
-    )
-
-    # cap to top candidates to control LLM scoring cost
     total_unique = len(deduped)
+    deduped = _apply_drug_quota(deduped, conditions, MAX_CANDIDATES)
     if total_unique > MAX_CANDIDATES:
         logger.info("Capping %d candidates to top %d", total_unique, MAX_CANDIDATES)
-        deduped = deduped[:MAX_CANDIDATES]
 
     multi_source = sum(1 for d in deduped if d["source_count"] > 1)
+    drug_kept = sum(1 for d in deduped if d["vocabulary"] in _DRUG_VOCABS)
     logger.info(
-        "Merged %d codes → %d unique → %d after cap (%d from multiple sources)",
-        len(codes), total_unique, len(deduped), multi_source,
+        "Merged %d codes -> %d unique -> %d after cap "
+        "(%d from multiple sources, %d drug-vocab)",
+        len(codes), total_unique, len(deduped), multi_source, drug_kept,
     )
 
     return {"enriched_codes": deduped}

@@ -6,41 +6,21 @@
     "retrieved_raw": {
       "codelist_name": "retrieved_raw",
       "n_ref_codes": 243,
-      "n_output_codes": 119,
-      "recall": 0.1152,
-      "precision": 0.2353,
-      "f1": 0.1547,
-      "tp_count": 28,
+      "n_output_codes": 100,
+      "recall": 0.037,
+      "precision": 0.09,
+      "f1": 0.0525,
+      "tp_count": 9,
       "fp_count": 91,
-      "fn_count": 215,
+      "fn_count": 234,
       "tp_codes": [
         {
           "code": "1153348007",
           "term": "Primary effusion lymphoma due to human immune deficiency virus infection"
         },
         {
-          "code": "315019000",
-          "term": "Aseptic meningitis due to human immunodeficiency virus infection"
-        },
-        {
-          "code": "52079000",
-          "term": "Congenital human immunodeficiency virus infection"
-        },
-        {
-          "code": "713297001",
-          "term": "Candidiasis of esophagus co-occurrent with human immunodeficiency virus infection"
-        },
-        {
           "code": "713325002",
           "term": "Primary cerebral lymphoma co-occurrent with human immunodeficiency virus infection"
-        },
-        {
-          "code": "713349004",
-          "term": "Anemia co-occurrent with human immunodeficiency virus infection"
-        },
-        {
-          "code": "713446007",
-          "term": "Chronic infection caused by herpes simplex virus co-occurrent with human immunodeficiency virus infection"
         },
         {
           "code": "713483007",
@@ -51,48 +31,12 @@
           "term": "Presenile dementia co-occurrent with human immunodeficiency virus infection"
         },
         {
-          "code": "713497004",
-          "term": "Candidiasis of mouth co-occurrent with human immunodeficiency virus infection"
-        },
-        {
-          "code": "713508003",
-          "term": "Aplastic anemia co-occurrent with human immunodeficiency virus infection"
-        },
-        {
-          "code": "713511002",
-          "term": "Acute endocarditis co-occurrent with human immunodeficiency virus infection"
-        },
-        {
-          "code": "713523008",
-          "term": "Cardiomyopathy co-occurrent with human immunodeficiency virus infection"
-        },
-        {
-          "code": "713530002",
-          "term": "Agranulocytosis co-occurrent with human immunodeficiency virus infection"
-        },
-        {
-          "code": "713533000",
-          "term": "Acquired hemolytic anemia co-occurrent with human immunodeficiency virus infection"
-        },
-        {
-          "code": "713544008",
-          "term": "Bacterial pneumonia co-occurrent with human immunodeficiency virus infection"
-        },
-        {
           "code": "713572001",
           "term": "Malignant neoplastic disease co-occurrent with human immunodeficiency virus infection"
         },
         {
           "code": "713718006",
           "term": "Diffuse non-Hodgkin immunoblastic lymphoma co-occurrent with human immunodeficiency virus infection"
-        },
-        {
-          "code": "713729005",
-          "term": "Infection caused by Coccidia co-occurrent with human immunodeficiency virus infection"
-        },
-        {
-          "code": "713732008",
-          "term": "Infection caused by Aspergillus co-occurrent with human immunodeficiency virus infection"
         },
         {
           "code": "713844000",
@@ -103,28 +47,8 @@
           "term": "Burkitt lymphoma co-occurrent with human immunodeficiency virus infection"
         },
         {
-          "code": "719522009",
-          "term": "Infection of upper respiratory tract caused by Candida co-occurrent with human immunodeficiency virus infection"
-        },
-        {
           "code": "733834006",
           "term": "Invasive carcinoma of uterine cervix co-occurrent with human immunodeficiency virus infection"
-        },
-        {
-          "code": "838338001",
-          "term": "Bacterial infection due to human immunodeficiency virus infection"
-        },
-        {
-          "code": "838377003",
-          "term": "Chronic hepatitis C co-occurrent with human immunodeficiency virus infection"
-        },
-        {
-          "code": "91947003",
-          "term": "Asymptomatic human immunodeficiency virus infection"
-        },
-        {
-          "code": "91948008",
-          "term": "Asymptomatic human immunodeficiency virus infection in pregnancy"
         }
       ],
       "fp_codes": [
@@ -835,6 +759,10 @@
           "term": "Human immunodeficiency virus-related gut disease - cause unknown"
         },
         {
+          "code": "315019000",
+          "term": "Aseptic meningitis due to human immunodeficiency virus infection"
+        },
+        {
           "code": "397763006",
           "term": "Human immunodeficiency virus encephalopathy"
         },
@@ -971,6 +899,10 @@
           "term": "[D]Laboratory evidence of human immunodeficiency virus [HIV]"
         },
         {
+          "code": "52079000",
+          "term": "Congenital human immunodeficiency virus infection"
+        },
+        {
           "code": "550891000000106",
           "term": "Human immunodeficiency virus resulting in other disease"
         },
@@ -1009,6 +941,10 @@
         {
           "code": "713278001",
           "term": "Neuralgia co-occurrent with human immunodeficiency virus infection"
+        },
+        {
+          "code": "713297001",
+          "term": "Candidiasis of esophagus co-occurrent with human immunodeficiency virus infection"
         },
         {
           "code": "713298006",
@@ -1051,12 +987,20 @@
           "term": "Infection caused by Salmonella co-occurrent with human immunodeficiency virus infection"
         },
         {
+          "code": "713349004",
+          "term": "Anemia co-occurrent with human immunodeficiency virus infection"
+        },
+        {
           "code": "713444005",
           "term": "Hemophagocytic syndrome with human immunodeficiency virus infection"
         },
         {
           "code": "713445006",
           "term": "Disseminated infection caused by Strongyloides co-occurrent with human immunodeficiency virus infection"
+        },
+        {
+          "code": "713446007",
+          "term": "Chronic infection caused by herpes simplex virus co-occurrent with human immunodeficiency virus infection"
         },
         {
           "code": "713484001",
@@ -1079,6 +1023,10 @@
           "term": "Organic brain syndrome co-occurrent with human immunodeficiency virus infection"
         },
         {
+          "code": "713497004",
+          "term": "Candidiasis of mouth co-occurrent with human immunodeficiency virus infection"
+        },
+        {
           "code": "713503007",
           "term": "Disorder of spinal cord co-occurrent with human immunodeficiency virus infection"
         },
@@ -1099,8 +1047,20 @@
           "term": "Lymphadenopathy co-occurrent with human immunodeficiency virus infection"
         },
         {
+          "code": "713508003",
+          "term": "Aplastic anemia co-occurrent with human immunodeficiency virus infection"
+        },
+        {
           "code": "713510001",
           "term": "Enlargement of liver co-occurrent with human immunodeficiency virus infection"
+        },
+        {
+          "code": "713511002",
+          "term": "Acute endocarditis co-occurrent with human immunodeficiency virus infection"
+        },
+        {
+          "code": "713523008",
+          "term": "Cardiomyopathy co-occurrent with human immunodeficiency virus infection"
         },
         {
           "code": "713526000",
@@ -1111,6 +1071,10 @@
           "term": "Disorder of peripheral nervous system co-occurrent with human immunodeficiency virus infection"
         },
         {
+          "code": "713530002",
+          "term": "Agranulocytosis co-occurrent with human immunodeficiency virus infection"
+        },
+        {
           "code": "713531003",
           "term": "Visual impairment co-occurrent with human immunodeficiency virus infection"
         },
@@ -1119,8 +1083,16 @@
           "term": "Infective arthritis co-occurrent with human immunodeficiency virus infection"
         },
         {
+          "code": "713533000",
+          "term": "Acquired hemolytic anemia co-occurrent with human immunodeficiency virus infection"
+        },
+        {
           "code": "713543002",
           "term": "Demyelinating disease of central nervous system co-occurrent with human immunodeficiency virus infection"
+        },
+        {
+          "code": "713544008",
+          "term": "Bacterial pneumonia co-occurrent with human immunodeficiency virus infection"
         },
         {
           "code": "713545009",
@@ -1151,12 +1123,20 @@
           "term": "Infection caused by Cytomegalovirus co-occurrent with human immunodeficiency virus infection"
         },
         {
+          "code": "713729005",
+          "term": "Infection caused by Coccidia co-occurrent with human immunodeficiency virus infection"
+        },
+        {
           "code": "713730000",
           "term": "Infection caused by herpes simplex virus co-occurrent with human immunodeficiency virus infection"
         },
         {
           "code": "713731001",
           "term": "Pyrexia of unknown origin co-occurrent with human immunodeficiency virus infection"
+        },
+        {
+          "code": "713732008",
+          "term": "Infection caused by Aspergillus co-occurrent with human immunodeficiency virus infection"
         },
         {
           "code": "713733003",
@@ -1197,6 +1177,10 @@
         {
           "code": "714464009",
           "term": "Immune reconstitution inflammatory syndrome caused by human immunodeficiency virus infection"
+        },
+        {
+          "code": "719522009",
+          "term": "Infection of upper respiratory tract caused by Candida co-occurrent with human immunodeficiency virus infection"
         },
         {
           "code": "719789000",
@@ -1295,6 +1279,14 @@
           "term": "Symptomatic human immunodeficiency virus infection"
         },
         {
+          "code": "838338001",
+          "term": "Bacterial infection due to human immunodeficiency virus infection"
+        },
+        {
+          "code": "838377003",
+          "term": "Chronic hepatitis C co-occurrent with human immunodeficiency virus infection"
+        },
+        {
           "code": "840442003",
           "term": "Encephalitis caused by human immunodeficiency virus type 2"
         },
@@ -1349,6 +1341,14 @@
         {
           "code": "90691000119105",
           "term": "Asymptomatic human immunodeficiency virus A2 infection"
+        },
+        {
+          "code": "91947003",
+          "term": "Asymptomatic human immunodeficiency virus infection"
+        },
+        {
+          "code": "91948008",
+          "term": "Asymptomatic human immunodeficiency virus infection in pregnancy"
         },
         {
           "code": "943041000000105",
@@ -4065,13 +4065,13 @@
     "included_only": {
       "codelist_name": "included_only",
       "n_ref_codes": 243,
-      "n_output_codes": 29,
-      "recall": 0.0165,
-      "precision": 0.1379,
-      "f1": 0.0294,
-      "tp_count": 4,
+      "n_output_codes": 34,
+      "recall": 0.037,
+      "precision": 0.2647,
+      "f1": 0.065,
+      "tp_count": 9,
       "fp_count": 25,
-      "fn_count": 239,
+      "fn_count": 234,
       "tp_codes": [
         {
           "code": "1153348007",
@@ -4088,6 +4088,26 @@
         {
           "code": "713488003",
           "term": "Presenile dementia co-occurrent with human immunodeficiency virus infection"
+        },
+        {
+          "code": "713572001",
+          "term": "Malignant neoplastic disease co-occurrent with human immunodeficiency virus infection"
+        },
+        {
+          "code": "713718006",
+          "term": "Diffuse non-Hodgkin immunoblastic lymphoma co-occurrent with human immunodeficiency virus infection"
+        },
+        {
+          "code": "713844000",
+          "term": "Dementia co-occurrent with human immunodeficiency virus infection"
+        },
+        {
+          "code": "713897006",
+          "term": "Burkitt lymphoma co-occurrent with human immunodeficiency virus infection"
+        },
+        {
+          "code": "733834006",
+          "term": "Invasive carcinoma of uterine cervix co-occurrent with human immunodeficiency virus infection"
         }
       ],
       "fp_codes": [
@@ -4886,20 +4906,12 @@
           "term": "Disorder of central nervous system co-occurrent with human immunodeficiency virus infection"
         },
         {
-          "code": "713572001",
-          "term": "Malignant neoplastic disease co-occurrent with human immunodeficiency virus infection"
-        },
-        {
           "code": "713695001",
           "term": "Nephrotic syndrome co-occurrent with human immunodeficiency virus infection"
         },
         {
           "code": "713696000",
           "term": "Renal failure syndrome co-occurrent with human immunodeficiency virus infection"
-        },
-        {
-          "code": "713718006",
-          "term": "Diffuse non-Hodgkin immunoblastic lymphoma co-occurrent with human immunodeficiency virus infection"
         },
         {
           "code": "713722001",
@@ -4930,10 +4942,6 @@
           "term": "Infection caused by Dermatophyte co-occurrent with human immunodeficiency virus infection"
         },
         {
-          "code": "713844000",
-          "term": "Dementia co-occurrent with human immunodeficiency virus infection"
-        },
-        {
           "code": "713845004",
           "term": "Infection caused by Cryptosporidium co-occurrent with human immunodeficiency virus infection"
         },
@@ -4948,10 +4956,6 @@
         {
           "code": "713887002",
           "term": "Focal segmental glomerulosclerosis co-occurrent with human immunodeficiency virus infection"
-        },
-        {
-          "code": "713897006",
-          "term": "Burkitt lymphoma co-occurrent with human immunodeficiency virus infection"
         },
         {
           "code": "713964006",
@@ -4992,10 +4996,6 @@
         {
           "code": "72631000119101",
           "term": "Human immunodeficiency virus (HIV) II infection category B2"
-        },
-        {
-          "code": "733834006",
-          "term": "Invasive carcinoma of uterine cervix co-occurrent with human immunodeficiency virus infection"
         },
         {
           "code": "733835007",
@@ -5154,13 +5154,13 @@
     "included_plus_uncertain": {
       "codelist_name": "included_plus_uncertain",
       "n_ref_codes": 243,
-      "n_output_codes": 29,
-      "recall": 0.0165,
-      "precision": 0.1379,
-      "f1": 0.0294,
-      "tp_count": 4,
+      "n_output_codes": 34,
+      "recall": 0.037,
+      "precision": 0.2647,
+      "f1": 0.065,
+      "tp_count": 9,
       "fp_count": 25,
-      "fn_count": 239,
+      "fn_count": 234,
       "tp_codes": [
         {
           "code": "1153348007",
@@ -5177,6 +5177,26 @@
         {
           "code": "713488003",
           "term": "Presenile dementia co-occurrent with human immunodeficiency virus infection"
+        },
+        {
+          "code": "713572001",
+          "term": "Malignant neoplastic disease co-occurrent with human immunodeficiency virus infection"
+        },
+        {
+          "code": "713718006",
+          "term": "Diffuse non-Hodgkin immunoblastic lymphoma co-occurrent with human immunodeficiency virus infection"
+        },
+        {
+          "code": "713844000",
+          "term": "Dementia co-occurrent with human immunodeficiency virus infection"
+        },
+        {
+          "code": "713897006",
+          "term": "Burkitt lymphoma co-occurrent with human immunodeficiency virus infection"
+        },
+        {
+          "code": "733834006",
+          "term": "Invasive carcinoma of uterine cervix co-occurrent with human immunodeficiency virus infection"
         }
       ],
       "fp_codes": [
@@ -5975,20 +5995,12 @@
           "term": "Disorder of central nervous system co-occurrent with human immunodeficiency virus infection"
         },
         {
-          "code": "713572001",
-          "term": "Malignant neoplastic disease co-occurrent with human immunodeficiency virus infection"
-        },
-        {
           "code": "713695001",
           "term": "Nephrotic syndrome co-occurrent with human immunodeficiency virus infection"
         },
         {
           "code": "713696000",
           "term": "Renal failure syndrome co-occurrent with human immunodeficiency virus infection"
-        },
-        {
-          "code": "713718006",
-          "term": "Diffuse non-Hodgkin immunoblastic lymphoma co-occurrent with human immunodeficiency virus infection"
         },
         {
           "code": "713722001",
@@ -6019,10 +6031,6 @@
           "term": "Infection caused by Dermatophyte co-occurrent with human immunodeficiency virus infection"
         },
         {
-          "code": "713844000",
-          "term": "Dementia co-occurrent with human immunodeficiency virus infection"
-        },
-        {
           "code": "713845004",
           "term": "Infection caused by Cryptosporidium co-occurrent with human immunodeficiency virus infection"
         },
@@ -6037,10 +6045,6 @@
         {
           "code": "713887002",
           "term": "Focal segmental glomerulosclerosis co-occurrent with human immunodeficiency virus infection"
-        },
-        {
-          "code": "713897006",
-          "term": "Burkitt lymphoma co-occurrent with human immunodeficiency virus infection"
         },
         {
           "code": "713964006",
@@ -6081,10 +6085,6 @@
         {
           "code": "72631000119101",
           "term": "Human immunodeficiency virus (HIV) II infection category B2"
-        },
-        {
-          "code": "733834006",
-          "term": "Invasive carcinoma of uterine cervix co-occurrent with human immunodeficiency virus infection"
         },
         {
           "code": "733835007",
@@ -6242,41 +6242,15 @@
     }
   },
   "false_exclusions": {
-    "count": 5,
-    "codes": [
-      {
-        "code": "713572001",
-        "term": "Malignant neoplastic disease co-occurrent with human immunodeficiency virus infection (disorder)",
-        "rationale": "This code describes malignant neoplasm as a complication of HIV, not an instance of HIV infection itself; it is an AIDS-defining illness, not HIV."
-      },
-      {
-        "code": "713718006",
-        "term": "Diffuse non-Hodgkin immunoblastic lymphoma co-occurrent with human immunodeficiency virus infection (disorder)",
-        "rationale": "This code describes a specific lymphoma type as a complication of HIV, not an instance of HIV infection; it is an AIDS-defining illness."
-      },
-      {
-        "code": "713897006",
-        "term": "Burkitt lymphoma co-occurrent with human immunodeficiency virus infection (disorder)",
-        "rationale": "This code describes Burkitt lymphoma as a complication of HIV, not an instance of HIV infection; it is an AIDS-defining illness."
-      },
-      {
-        "code": "713844000",
-        "term": "Dementia co-occurrent with human immunodeficiency virus infection (disorder)",
-        "rationale": "Although the term contains 'human immunodeficiency virus infection', this code represents dementia as a complication of HIV rather than HIV infection itself; it is a downstream manifestation, not the primary condition."
-      },
-      {
-        "code": "733834006",
-        "term": "Invasive carcinoma of uterine cervix co-occurrent with human immunodeficiency virus infection (disorder)",
-        "rationale": "Although the term contains 'human immunodeficiency virus infection', this code represents cervical carcinoma as a complication of HIV rather than HIV infection itself; it is an AIDS-defining illness."
-      }
-    ]
+    "count": 0,
+    "codes": []
   },
   "uncertain_in_reference": {
     "count": 0,
     "codes": []
   },
-  "summary": "Recall: 1.7% (4 of 243 reference codes retrieved). Precision: 13.8%. F1: 2.9%. 5 reference codes were incorrectly excluded.",
-  "elapsed_seconds": 21.83,
+  "summary": "Recall: 3.7% (9 of 243 reference codes retrieved). Precision: 26.5%. F1: 6.5%. 0 reference codes were incorrectly excluded.",
+  "elapsed_seconds": 22.78,
   "pipeline_results_count": 100,
   "scored_codes": [
     {
@@ -6284,264 +6258,374 @@
       "term": "Human immunodeficiency virus [HIV] disease resulting in infectious and parasitic diseases",
       "vocabulary": "ICD-10 (WHO)",
       "decision": "include",
-      "confidence": 0.95,
-      "rationale": "This code explicitly names HIV disease and represents HIV infection with infectious/parasitic complications, matching the refset convention for 'X co-occurrent with HIV'.",
+      "confidence": 0.99,
+      "rationale": "This code explicitly names 'Human immunodeficiency virus [HIV] disease' and represents HIV with infectious/parasitic complications.",
       "sources": [
         "ChromaDB"
       ],
-      "usage_frequency": null
+      "usage_frequency": 1617,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital HES inpatient FCEs",
+      "usage_setting": "secondary_care_hes",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "B20.0",
       "term": "HIV disease resulting in mycobacterial infection",
       "vocabulary": "ICD-10 (WHO)",
       "decision": "include",
-      "confidence": 0.95,
-      "rationale": "This code explicitly names HIV disease and represents a manifestation of HIV infection, following the refset convention for 'X co-occurrent with HIV'.",
+      "confidence": 0.99,
+      "rationale": "This code explicitly names 'HIV disease' and represents a clinical manifestation of HIV infection.",
       "sources": [
         "ChromaDB"
       ],
-      "usage_frequency": null
+      "usage_frequency": 210,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital HES inpatient FCEs",
+      "usage_setting": "secondary_care_hes",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "B20.1",
       "term": "HIV disease resulting in other bacterial infections",
       "vocabulary": "ICD-10 (WHO)",
       "decision": "include",
-      "confidence": 0.95,
-      "rationale": "This code explicitly names HIV disease and represents a manifestation of HIV infection, following the refset convention for 'X co-occurrent with HIV'.",
+      "confidence": 0.99,
+      "rationale": "This code explicitly names 'HIV disease' and represents a clinical manifestation of HIV infection.",
       "sources": [
         "ChromaDB"
       ],
-      "usage_frequency": null
+      "usage_frequency": 124,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital HES inpatient FCEs",
+      "usage_setting": "secondary_care_hes",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "B20.2",
       "term": "HIV disease resulting in cytomegaloviral disease",
       "vocabulary": "ICD-10 (WHO)",
       "decision": "include",
-      "confidence": 0.95,
-      "rationale": "This code explicitly names HIV disease and represents a manifestation of HIV infection, following the refset convention for 'X co-occurrent with HIV'.",
+      "confidence": 0.99,
+      "rationale": "This code explicitly names 'HIV disease' and represents a clinical manifestation of HIV infection.",
       "sources": [
         "ChromaDB"
       ],
-      "usage_frequency": null
+      "usage_frequency": 45,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital HES inpatient FCEs",
+      "usage_setting": "secondary_care_hes",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "B20.3",
       "term": "HIV disease resulting in other viral infections",
       "vocabulary": "ICD-10 (WHO)",
       "decision": "include",
-      "confidence": 0.95,
-      "rationale": "This code explicitly names HIV disease and represents a manifestation of HIV infection, following the refset convention for 'X co-occurrent with HIV'.",
+      "confidence": 0.99,
+      "rationale": "This code explicitly names 'HIV disease' and represents a clinical manifestation of HIV infection.",
       "sources": [
         "ChromaDB"
       ],
-      "usage_frequency": null
+      "usage_frequency": 97,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital HES inpatient FCEs",
+      "usage_setting": "secondary_care_hes",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "B20.4",
       "term": "HIV disease resulting in candidiasis",
       "vocabulary": "ICD-10 (WHO)",
       "decision": "include",
-      "confidence": 0.95,
-      "rationale": "This code explicitly names HIV disease and represents a manifestation of HIV infection, following the refset convention for 'X co-occurrent with HIV'.",
+      "confidence": 0.99,
+      "rationale": "This code explicitly names 'HIV disease' and represents a clinical manifestation of HIV infection.",
       "sources": [
         "ChromaDB"
       ],
-      "usage_frequency": null
+      "usage_frequency": 43,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital HES inpatient FCEs",
+      "usage_setting": "secondary_care_hes",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "B20.6",
       "term": "HIV disease resulting in Pneumocystis jirovecii pneumonia",
       "vocabulary": "ICD-10 (WHO)",
       "decision": "include",
-      "confidence": 0.95,
-      "rationale": "This code explicitly names HIV disease and represents a manifestation of HIV infection, following the refset convention for 'X co-occurrent with HIV'.",
+      "confidence": 0.99,
+      "rationale": "This code explicitly names 'HIV disease' and represents a clinical manifestation of HIV infection.",
       "sources": [
         "ChromaDB"
       ],
-      "usage_frequency": null
+      "usage_frequency": 380,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital HES inpatient FCEs",
+      "usage_setting": "secondary_care_hes",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "B20.7",
       "term": "HIV disease resulting in multiple infections",
       "vocabulary": "ICD-10 (WHO)",
       "decision": "include",
-      "confidence": 0.95,
-      "rationale": "This code explicitly names HIV disease and represents a manifestation of HIV infection, following the refset convention for 'X co-occurrent with HIV'.",
+      "confidence": 0.99,
+      "rationale": "This code explicitly names 'HIV disease' and represents a clinical manifestation of HIV infection.",
       "sources": [
         "ChromaDB"
       ],
-      "usage_frequency": null
+      "usage_frequency": 506,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital HES inpatient FCEs",
+      "usage_setting": "secondary_care_hes",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "B20.8",
       "term": "HIV disease resulting in other infectious and parasitic diseases",
       "vocabulary": "ICD-10 (WHO)",
       "decision": "include",
-      "confidence": 0.95,
-      "rationale": "This code explicitly names HIV disease and represents a manifestation of HIV infection, following the refset convention for 'X co-occurrent with HIV'.",
+      "confidence": 0.99,
+      "rationale": "This code explicitly names 'HIV disease' and represents a clinical manifestation of HIV infection.",
       "sources": [
         "ChromaDB"
       ],
-      "usage_frequency": null
+      "usage_frequency": 109,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital HES inpatient FCEs",
+      "usage_setting": "secondary_care_hes",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "B20.9",
       "term": "HIV disease resulting in unspecified infectious or parasitic disease",
       "vocabulary": "ICD-10 (WHO)",
       "decision": "include",
-      "confidence": 0.95,
-      "rationale": "This code explicitly names HIV disease and represents a manifestation of HIV infection, following the refset convention for 'X co-occurrent with HIV'.",
+      "confidence": 0.99,
+      "rationale": "This code explicitly names 'HIV disease' and represents a clinical manifestation of HIV infection.",
       "sources": [
         "ChromaDB"
       ],
-      "usage_frequency": null
+      "usage_frequency": 96,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital HES inpatient FCEs",
+      "usage_setting": "secondary_care_hes",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "B21",
       "term": "Human immunodeficiency virus [HIV] disease resulting in malignant neoplasms",
       "vocabulary": "ICD-10 (WHO)",
       "decision": "include",
-      "confidence": 0.95,
-      "rationale": "This code explicitly names HIV disease and represents HIV-associated malignancies, following the refset convention for 'X co-occurrent with HIV'.",
+      "confidence": 0.99,
+      "rationale": "This code explicitly names 'Human immunodeficiency virus [HIV] disease' and represents HIV with malignant neoplasm complications.",
       "sources": [
         "ChromaDB"
       ],
-      "usage_frequency": null
+      "usage_frequency": 620,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital HES inpatient FCEs",
+      "usage_setting": "secondary_care_hes",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "B21.0",
       "term": "HIV disease resulting in Kaposi sarcoma",
       "vocabulary": "ICD-10 (WHO)",
       "decision": "include",
-      "confidence": 0.95,
-      "rationale": "This code explicitly names HIV disease and represents a manifestation of HIV infection, following the refset convention for 'X co-occurrent with HIV'.",
+      "confidence": 0.99,
+      "rationale": "This code explicitly names 'HIV disease' and represents a clinical manifestation of HIV infection.",
       "sources": [
         "ChromaDB"
       ],
-      "usage_frequency": null
+      "usage_frequency": 212,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital HES inpatient FCEs",
+      "usage_setting": "secondary_care_hes",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "B21.1",
       "term": "HIV disease resulting in Burkitt lymphoma",
       "vocabulary": "ICD-10 (WHO)",
       "decision": "include",
-      "confidence": 0.95,
-      "rationale": "This code explicitly names HIV disease and represents a manifestation of HIV infection, following the refset convention for 'X co-occurrent with HIV'.",
+      "confidence": 0.99,
+      "rationale": "This code explicitly names 'HIV disease' and represents a clinical manifestation of HIV infection.",
       "sources": [
         "ChromaDB"
       ],
-      "usage_frequency": null
+      "usage_frequency": 63,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital HES inpatient FCEs",
+      "usage_setting": "secondary_care_hes",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "B22",
       "term": "Human immunodeficiency virus [HIV] disease resulting in other specified diseases",
       "vocabulary": "ICD-10 (WHO)",
       "decision": "include",
-      "confidence": 0.95,
-      "rationale": "This code explicitly names HIV disease and represents HIV-related conditions, following the refset convention for 'X co-occurrent with HIV'.",
+      "confidence": 0.99,
+      "rationale": "This code explicitly names 'Human immunodeficiency virus [HIV] disease' and represents HIV with other specified disease complications.",
       "sources": [
         "ChromaDB"
       ],
-      "usage_frequency": null
+      "usage_frequency": 242,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital HES inpatient FCEs",
+      "usage_setting": "secondary_care_hes",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "B22.0",
       "term": "HIV disease resulting in encephalopathy",
       "vocabulary": "ICD-10 (WHO)",
       "decision": "include",
-      "confidence": 0.95,
-      "rationale": "This code explicitly names HIV disease and represents a manifestation of HIV infection, following the refset convention for 'X co-occurrent with HIV'.",
+      "confidence": 0.99,
+      "rationale": "This code explicitly names 'HIV disease' and represents a clinical manifestation of HIV infection.",
       "sources": [
         "ChromaDB"
       ],
-      "usage_frequency": null
+      "usage_frequency": 205,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital HES inpatient FCEs",
+      "usage_setting": "secondary_care_hes",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "B22.2",
       "term": "HIV disease resulting in wasting syndrome",
       "vocabulary": "ICD-10 (WHO)",
       "decision": "include",
-      "confidence": 0.95,
-      "rationale": "This code explicitly names HIV disease and represents a manifestation of HIV infection, following the refset convention for 'X co-occurrent with HIV'.",
+      "confidence": 0.99,
+      "rationale": "This code explicitly names 'HIV disease' and represents a clinical manifestation of HIV infection.",
       "sources": [
         "ChromaDB"
       ],
-      "usage_frequency": null
+      "usage_frequency": 12,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital HES inpatient FCEs",
+      "usage_setting": "secondary_care_hes",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "B23",
       "term": "Human immunodeficiency virus [HIV] disease resulting in other conditions",
       "vocabulary": "ICD-10 (WHO)",
       "decision": "include",
-      "confidence": 0.95,
-      "rationale": "This code explicitly names HIV disease and represents HIV-related conditions, following the refset convention for 'X co-occurrent with HIV'.",
+      "confidence": 0.99,
+      "rationale": "This code explicitly names 'Human immunodeficiency virus [HIV] disease' and represents HIV with other condition complications.",
       "sources": [
         "ChromaDB"
       ],
-      "usage_frequency": null
+      "usage_frequency": 328,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital HES inpatient FCEs",
+      "usage_setting": "secondary_care_hes",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "B23.0",
       "term": "Acute HIV infection syndrome",
       "vocabulary": "ICD-10 (WHO)",
       "decision": "include",
-      "confidence": 0.95,
-      "rationale": "This code explicitly names acute HIV infection syndrome, which is a direct manifestation of primary HIV infection.",
+      "confidence": 0.99,
+      "rationale": "This code explicitly names 'Acute HIV infection syndrome' and represents a clinical manifestation of HIV infection.",
       "sources": [
         "ChromaDB"
       ],
-      "usage_frequency": null
+      "usage_frequency": 14,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital HES inpatient FCEs",
+      "usage_setting": "secondary_care_hes",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "B23.2",
       "term": "HIV disease resulting in haematological and immunological abnormalities, not elsewhere classified",
       "vocabulary": "ICD-10 (WHO)",
       "decision": "include",
-      "confidence": 0.95,
-      "rationale": "This code explicitly names HIV disease and represents a manifestation of HIV infection, following the refset convention for 'X co-occurrent with HIV'.",
+      "confidence": 0.99,
+      "rationale": "This code explicitly names 'HIV disease' and represents a clinical manifestation of HIV infection.",
       "sources": [
         "ChromaDB"
       ],
-      "usage_frequency": null
+      "usage_frequency": 65,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital HES inpatient FCEs",
+      "usage_setting": "secondary_care_hes",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "B24",
       "term": "Unspecified human immunodeficiency virus [HIV] disease",
       "vocabulary": "ICD-10 (WHO)",
       "decision": "include",
-      "confidence": 0.95,
-      "rationale": "This code explicitly names unspecified HIV disease, which is a direct instance of HIV infection.",
+      "confidence": 0.99,
+      "rationale": "This code explicitly names 'Unspecified human immunodeficiency virus [HIV] disease' and represents HIV infection.",
       "sources": [
         "ChromaDB"
       ],
-      "usage_frequency": null
+      "usage_frequency": 520,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital HES inpatient FCEs",
+      "usage_setting": "secondary_care_hes",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "F02.4",
       "term": "Dementia in human immunodeficiency virus [HIV] disease",
       "vocabulary": "ICD-10 (WHO)",
       "decision": "include",
-      "confidence": 0.95,
-      "rationale": "This code explicitly names HIV disease and represents a manifestation of HIV infection, following the refset convention for 'X co-occurrent with HIV'.",
+      "confidence": 0.99,
+      "rationale": "This code explicitly names 'Dementia in human immunodeficiency virus [HIV] disease' and represents a clinical manifestation of HIV infection.",
       "sources": [
         "ChromaDB"
       ],
-      "usage_frequency": null
+      "usage_frequency": null,
+      "usage_status": "not_in_dataset",
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "O98.7",
       "term": "Human immunodeficiency virus [HIV] disease complicating pregnancy, childbirth and the puerperium",
       "vocabulary": "ICD-10 (WHO)",
       "decision": "include",
-      "confidence": 0.95,
-      "rationale": "This code explicitly names HIV disease and represents HIV infection complicating pregnancy, following the refset convention for 'X co-occurrent with HIV'.",
+      "confidence": 0.99,
+      "rationale": "This code explicitly names 'Human immunodeficiency virus [HIV] disease complicating pregnancy' and represents HIV infection in a specific context.",
       "sources": [
         "ChromaDB"
       ],
-      "usage_frequency": null
+      "usage_frequency": 80,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital HES inpatient FCEs",
+      "usage_setting": "secondary_care_hes",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "R75",
@@ -6553,7 +6637,12 @@
       "sources": [
         "ChromaDB"
       ],
-      "usage_frequency": null
+      "usage_frequency": 2,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital HES inpatient FCEs",
+      "usage_setting": "secondary_care_hes",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "Z21",
@@ -6561,11 +6650,16 @@
       "vocabulary": "ICD-10 (WHO)",
       "decision": "include",
       "confidence": 0.95,
-      "rationale": "Asymptomatic HIV infection is a clinical subtype of HIV infection and explicitly names the condition.",
+      "rationale": "Asymptomatic HIV infection status is a clinical subtype of HIV infection and confirms the patient has HIV.",
       "sources": [
         "ChromaDB"
       ],
-      "usage_frequency": null
+      "usage_frequency": null,
+      "usage_status": "not_in_dataset",
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "1153348007",
@@ -6573,11 +6667,16 @@
       "vocabulary": "SNOMED CT",
       "decision": "include",
       "confidence": 0.95,
-      "rationale": "Primary effusion lymphoma due to HIV infection explicitly names HIV in the term and represents an HIV-associated manifestation.",
+      "rationale": "Primary effusion lymphoma due to HIV infection explicitly names HIV in the term and is an HIV-associated manifestation.",
       "sources": [
         "ChromaDB"
       ],
-      "usage_frequency": null
+      "usage_frequency": null,
+      "usage_status": "not_in_dataset",
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": 607384,
+      "dmd_level": null
     },
     {
       "code": "442537007",
@@ -6585,12 +6684,17 @@
       "vocabulary": "SNOMED CT",
       "decision": "include",
       "confidence": 0.95,
-      "rationale": "Non-Hodgkin lymphoma associated with HIV infection explicitly names HIV and represents an HIV-associated manifestation.",
+      "rationale": "Non-Hodgkin lymphoma associated with HIV infection explicitly names HIV in the term and is an HIV-associated manifestation.",
       "sources": [
         "ChromaDB",
         "QOF Business Rules 2024-25"
       ],
-      "usage_frequency": null
+      "usage_frequency": null,
+      "usage_status": "withheld_below_5",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": 40484012,
+      "dmd_level": null
     },
     {
       "code": "713325002",
@@ -6598,12 +6702,17 @@
       "vocabulary": "SNOMED CT",
       "decision": "include",
       "confidence": 0.95,
-      "rationale": "Primary cerebral lymphoma co-occurrent with HIV infection explicitly names HIV and follows the refset convention for HIV-associated manifestations.",
+      "rationale": "Primary cerebral lymphoma co-occurrent with HIV infection explicitly names HIV in the term, matching NHS refset convention.",
       "sources": [
         "ChromaDB",
         "QOF Business Rules 2024-25"
       ],
-      "usage_frequency": null
+      "usage_frequency": null,
+      "usage_status": "not_in_dataset",
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": 37017112,
+      "dmd_level": null
     },
     {
       "code": "713483007",
@@ -6611,12 +6720,17 @@
       "vocabulary": "SNOMED CT",
       "decision": "include",
       "confidence": 0.95,
-      "rationale": "Reticulosarcoma co-occurrent with HIV infection explicitly names HIV and follows the refset convention for HIV-associated manifestations.",
+      "rationale": "Reticulosarcoma co-occurrent with HIV infection explicitly names HIV in the term, matching NHS refset convention.",
       "sources": [
         "ChromaDB",
         "QOF Business Rules 2024-25"
       ],
-      "usage_frequency": null
+      "usage_frequency": null,
+      "usage_status": "not_in_dataset",
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": 37017243,
+      "dmd_level": null
     },
     {
       "code": "713488003",
@@ -6624,12 +6738,107 @@
       "vocabulary": "SNOMED CT",
       "decision": "include",
       "confidence": 0.95,
-      "rationale": "Presenile dementia co-occurrent with HIV infection explicitly names HIV and follows the refset convention for HIV-associated manifestations.",
+      "rationale": "Presenile dementia co-occurrent with HIV infection explicitly names HIV in the term, matching NHS refset convention.",
       "sources": [
         "ChromaDB",
         "QOF Business Rules 2024-25"
       ],
-      "usage_frequency": null
+      "usage_frequency": null,
+      "usage_status": "not_in_dataset",
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": 37017247,
+      "dmd_level": null
+    },
+    {
+      "code": "713572001",
+      "term": "Malignant neoplastic disease co-occurrent with human immunodeficiency virus infection (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Term explicitly contains 'human immunodeficiency virus infection' and describes a manifestation co-occurrent with HIV, matching NHS refset convention for condition-named manifestations.",
+      "sources": [
+        "ChromaDB",
+        "QOF Business Rules 2024-25"
+      ],
+      "usage_frequency": null,
+      "usage_status": "withheld_below_5",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": 37017320,
+      "dmd_level": null
+    },
+    {
+      "code": "713718006",
+      "term": "Diffuse non-Hodgkin immunoblastic lymphoma co-occurrent with human immunodeficiency virus infection (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Term explicitly contains 'human immunodeficiency virus infection' and describes a lymphoma co-occurrent with HIV, matching the established refset pattern for HIV-related malignancies.",
+      "sources": [
+        "ChromaDB",
+        "QOF Business Rules 2024-25"
+      ],
+      "usage_frequency": null,
+      "usage_status": "not_in_dataset",
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": 37017442,
+      "dmd_level": null
+    },
+    {
+      "code": "713844000",
+      "term": "Dementia co-occurrent with human immunodeficiency virus infection (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Term explicitly contains 'human immunodeficiency virus infection' and describes dementia co-occurrent with HIV, matching the established refset convention for HIV-related manifestations.",
+      "sources": [
+        "ChromaDB",
+        "QOF Business Rules 2024-25"
+      ],
+      "usage_frequency": 10,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": 37017549,
+      "dmd_level": null
+    },
+    {
+      "code": "713897006",
+      "term": "Burkitt lymphoma co-occurrent with human immunodeficiency virus infection (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Term explicitly contains 'human immunodeficiency virus infection' and describes Burkitt lymphoma co-occurrent with HIV, matching the established refset pattern for HIV-related malignancies.",
+      "sources": [
+        "ChromaDB",
+        "QOF Business Rules 2024-25"
+      ],
+      "usage_frequency": 10,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": 37017595,
+      "dmd_level": null
+    },
+    {
+      "code": "733834006",
+      "term": "Invasive carcinoma of uterine cervix co-occurrent with human immunodeficiency virus infection (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "include",
+      "confidence": 0.95,
+      "rationale": "Term explicitly contains 'human immunodeficiency virus infection' and describes cervical carcinoma co-occurrent with HIV, matching the established refset convention for HIV-related malignancies.",
+      "sources": [
+        "ChromaDB",
+        "QOF Business Rules 2024-25"
+      ],
+      "usage_frequency": null,
+      "usage_status": "not_in_dataset",
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": 37116830,
+      "dmd_level": null
     },
     {
       "code": "A60",
@@ -6641,7 +6850,12 @@
       "sources": [
         "ChromaDB"
       ],
-      "usage_frequency": null
+      "usage_frequency": 420,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital HES inpatient FCEs",
+      "usage_setting": "secondary_care_hes",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "A98.4",
@@ -6649,11 +6863,16 @@
       "vocabulary": "ICD-10 (WHO)",
       "decision": "exclude",
       "confidence": 0.95,
-      "rationale": "Ebola virus disease is unrelated to HIV infection and appears to be a search artifact.",
+      "rationale": "Ebola virus disease is unrelated to HIV infection and does not contain 'HIV' or 'human immunodeficiency virus' in its term.",
       "sources": [
         "ChromaDB"
       ],
-      "usage_frequency": null
+      "usage_frequency": 1,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital HES inpatient FCEs",
+      "usage_setting": "secondary_care_hes",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "B00",
@@ -6661,11 +6880,16 @@
       "vocabulary": "ICD-10 (WHO)",
       "decision": "exclude",
       "confidence": 0.95,
-      "rationale": "Herpesviral infections are opportunistic infections in HIV, not instances of HIV infection itself.",
+      "rationale": "Herpesviral infections are opportunistic infections in HIV but do not contain 'HIV' in the term name.",
       "sources": [
         "ChromaDB"
       ],
-      "usage_frequency": null
+      "usage_frequency": 4606,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital HES inpatient FCEs",
+      "usage_setting": "secondary_care_hes",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "B00.4",
@@ -6673,11 +6897,16 @@
       "vocabulary": "ICD-10 (WHO)",
       "decision": "exclude",
       "confidence": 0.95,
-      "rationale": "Herpesviral encephalitis is a complication/opportunistic infection in HIV, not an instance of HIV infection.",
+      "rationale": "Herpesviral encephalitis is an opportunistic infection in HIV but does not contain 'HIV' in the term name.",
       "sources": [
         "ChromaDB"
       ],
-      "usage_frequency": null
+      "usage_frequency": 776,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital HES inpatient FCEs",
+      "usage_setting": "secondary_care_hes",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "B00.7",
@@ -6685,11 +6914,16 @@
       "vocabulary": "ICD-10 (WHO)",
       "decision": "exclude",
       "confidence": 0.95,
-      "rationale": "Disseminated herpesviral disease is an opportunistic infection in HIV, not an instance of HIV infection.",
+      "rationale": "Disseminated herpesviral disease is an opportunistic infection in HIV but does not contain 'HIV' in the term name.",
       "sources": [
         "ChromaDB"
       ],
-      "usage_frequency": null
+      "usage_frequency": 17,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital HES inpatient FCEs",
+      "usage_setting": "secondary_care_hes",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "B00.8",
@@ -6697,11 +6931,16 @@
       "vocabulary": "ICD-10 (WHO)",
       "decision": "exclude",
       "confidence": 0.95,
-      "rationale": "Other forms of herpesviral infection are opportunistic infections in HIV, not instances of HIV infection.",
+      "rationale": "Other forms of herpesviral infection are opportunistic infections in HIV but do not contain 'HIV' in the term name.",
       "sources": [
         "ChromaDB"
       ],
-      "usage_frequency": null
+      "usage_frequency": 156,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital HES inpatient FCEs",
+      "usage_setting": "secondary_care_hes",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "B00.9",
@@ -6709,11 +6948,16 @@
       "vocabulary": "ICD-10 (WHO)",
       "decision": "exclude",
       "confidence": 0.95,
-      "rationale": "Unspecified herpesviral infection is an opportunistic infection in HIV, not an instance of HIV infection.",
+      "rationale": "Herpesviral infection unspecified is an opportunistic infection in HIV but does not contain 'HIV' in the term name.",
       "sources": [
         "ChromaDB"
       ],
-      "usage_frequency": null
+      "usage_frequency": 381,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital HES inpatient FCEs",
+      "usage_setting": "secondary_care_hes",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "B25",
@@ -6721,11 +6965,16 @@
       "vocabulary": "ICD-10 (WHO)",
       "decision": "exclude",
       "confidence": 0.95,
-      "rationale": "Cytomegaloviral disease does not contain 'HIV' in its term name; it is an opportunistic infection in HIV, not an instance of HIV infection.",
+      "rationale": "Cytomegaloviral disease is an opportunistic infection in HIV but does not contain 'HIV' in the term name.",
       "sources": [
         "ChromaDB"
       ],
-      "usage_frequency": null
+      "usage_frequency": 733,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital HES inpatient FCEs",
+      "usage_setting": "secondary_care_hes",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "B25.1",
@@ -6733,11 +6982,16 @@
       "vocabulary": "ICD-10 (WHO)",
       "decision": "exclude",
       "confidence": 0.95,
-      "rationale": "Cytomegaloviral hepatitis does not contain 'HIV' in its term name; it is an opportunistic infection in HIV, not an instance of HIV infection.",
+      "rationale": "Cytomegaloviral hepatitis is an opportunistic infection in HIV but does not contain 'HIV' in the term name.",
       "sources": [
         "ChromaDB"
       ],
-      "usage_frequency": null
+      "usage_frequency": 100,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital HES inpatient FCEs",
+      "usage_setting": "secondary_care_hes",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "B27",
@@ -6745,11 +6999,16 @@
       "vocabulary": "ICD-10 (WHO)",
       "decision": "exclude",
       "confidence": 0.95,
-      "rationale": "Infectious mononucleosis does not contain 'HIV' in its term name; it is an opportunistic infection in HIV, not an instance of HIV infection.",
+      "rationale": "Infectious mononucleosis is not specifically an HIV infection and does not contain 'HIV' in the term name.",
       "sources": [
         "ChromaDB"
       ],
-      "usage_frequency": null
+      "usage_frequency": 5124,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital HES inpatient FCEs",
+      "usage_setting": "secondary_care_hes",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "B27.1",
@@ -6757,11 +7016,16 @@
       "vocabulary": "ICD-10 (WHO)",
       "decision": "exclude",
       "confidence": 0.95,
-      "rationale": "Cytomegaloviral mononucleosis does not contain 'HIV' in its term name; it is an opportunistic infection in HIV, not an instance of HIV infection.",
+      "rationale": "Cytomegaloviral mononucleosis is an opportunistic infection in HIV but does not contain 'HIV' in the term name.",
       "sources": [
         "ChromaDB"
       ],
-      "usage_frequency": null
+      "usage_frequency": 45,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital HES inpatient FCEs",
+      "usage_setting": "secondary_care_hes",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "D81",
@@ -6769,11 +7033,16 @@
       "vocabulary": "ICD-10 (WHO)",
       "decision": "exclude",
       "confidence": 0.95,
-      "rationale": "Combined immunodeficiencies are a different class of immunodeficiency disorders, not instances of HIV infection.",
+      "rationale": "Combined immunodeficiencies are congenital/genetic conditions distinct from HIV infection.",
       "sources": [
         "ChromaDB"
       ],
-      "usage_frequency": null
+      "usage_frequency": 1114,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital HES inpatient FCEs",
+      "usage_setting": "secondary_care_hes",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "D81.9",
@@ -6781,11 +7050,16 @@
       "vocabulary": "ICD-10 (WHO)",
       "decision": "exclude",
       "confidence": 0.95,
-      "rationale": "Unspecified combined immunodeficiency is a different class of immunodeficiency disorder, not an instance of HIV infection.",
+      "rationale": "Combined immunodeficiency unspecified is a congenital/genetic condition distinct from HIV infection.",
       "sources": [
         "ChromaDB"
       ],
-      "usage_frequency": null
+      "usage_frequency": 431,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital HES inpatient FCEs",
+      "usage_setting": "secondary_care_hes",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "D82.3",
@@ -6793,11 +7067,16 @@
       "vocabulary": "ICD-10 (WHO)",
       "decision": "exclude",
       "confidence": 0.95,
-      "rationale": "Immunodeficiency following hereditary defective response to Epstein-Barr virus is a different immunodeficiency disorder, not HIV infection.",
+      "rationale": "Immunodeficiency following hereditary defective response to Epstein-Barr virus is a genetic condition distinct from HIV infection.",
       "sources": [
         "ChromaDB"
       ],
-      "usage_frequency": null
+      "usage_frequency": 182,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital HES inpatient FCEs",
+      "usage_setting": "secondary_care_hes",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "D83",
@@ -6805,11 +7084,16 @@
       "vocabulary": "ICD-10 (WHO)",
       "decision": "exclude",
       "confidence": 0.95,
-      "rationale": "Common variable immunodeficiency is a different class of immunodeficiency disorder, not an instance of HIV infection.",
+      "rationale": "Common variable immunodeficiency is a primary immunodeficiency disorder distinct from HIV infection.",
       "sources": [
         "ChromaDB"
       ],
-      "usage_frequency": null
+      "usage_frequency": 6075,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital HES inpatient FCEs",
+      "usage_setting": "secondary_care_hes",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "D84",
@@ -6817,11 +7101,16 @@
       "vocabulary": "ICD-10 (WHO)",
       "decision": "exclude",
       "confidence": 0.95,
-      "rationale": "Other immunodeficiencies are a different class of immunodeficiency disorders, not instances of HIV infection.",
+      "rationale": "Other immunodeficiencies are primary immunodeficiency disorders distinct from HIV infection.",
       "sources": [
         "ChromaDB"
       ],
-      "usage_frequency": null
+      "usage_frequency": 1938,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital HES inpatient FCEs",
+      "usage_setting": "secondary_care_hes",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "D84.9",
@@ -6829,11 +7118,16 @@
       "vocabulary": "ICD-10 (WHO)",
       "decision": "exclude",
       "confidence": 0.95,
-      "rationale": "Unspecified immunodeficiency is a different class of immunodeficiency disorder, not an instance of HIV infection.",
+      "rationale": "Immunodeficiency unspecified refers to primary immunodeficiency disorders, not HIV infection.",
       "sources": [
         "ChromaDB"
       ],
-      "usage_frequency": null
+      "usage_frequency": 526,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital HES inpatient FCEs",
+      "usage_setting": "secondary_care_hes",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "P35",
@@ -6841,11 +7135,16 @@
       "vocabulary": "ICD-10 (WHO)",
       "decision": "exclude",
       "confidence": 0.95,
-      "rationale": "Congenital viral diseases is a broad category not specific to HIV; congenital HIV would be a subset but this code does not explicitly name HIV.",
+      "rationale": "Congenital viral diseases is a broad category not specific to HIV infection.",
       "sources": [
         "ChromaDB"
       ],
-      "usage_frequency": null
+      "usage_frequency": 346,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital HES inpatient FCEs",
+      "usage_setting": "secondary_care_hes",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "P35.1",
@@ -6857,7 +7156,12 @@
       "sources": [
         "ChromaDB"
       ],
-      "usage_frequency": null
+      "usage_frequency": 92,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital HES inpatient FCEs",
+      "usage_setting": "secondary_care_hes",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "P35.2",
@@ -6869,7 +7173,12 @@
       "sources": [
         "ChromaDB"
       ],
-      "usage_frequency": null
+      "usage_frequency": 81,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital HES inpatient FCEs",
+      "usage_setting": "secondary_care_hes",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "P35.3",
@@ -6881,7 +7190,12 @@
       "sources": [
         "ChromaDB"
       ],
-      "usage_frequency": null
+      "usage_frequency": 7,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital HES inpatient FCEs",
+      "usage_setting": "secondary_care_hes",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "Z11.4",
@@ -6889,11 +7203,16 @@
       "vocabulary": "ICD-10 (WHO)",
       "decision": "exclude",
       "confidence": 0.95,
-      "rationale": "Screening examination is an administrative code that does not confirm the patient has HIV infection.",
+      "rationale": "Screening examination is an administrative/preventive code, not a diagnostic confirmation of HIV infection.",
       "sources": [
         "ChromaDB"
       ],
-      "usage_frequency": null
+      "usage_frequency": 17,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital HES inpatient FCEs",
+      "usage_setting": "secondary_care_hes",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "Z20.6",
@@ -6905,7 +7224,12 @@
       "sources": [
         "ChromaDB"
       ],
-      "usage_frequency": null
+      "usage_frequency": 30,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital HES inpatient FCEs",
+      "usage_setting": "secondary_care_hes",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "Z22.6",
@@ -6917,7 +7241,12 @@
       "sources": [
         "ChromaDB"
       ],
-      "usage_frequency": null
+      "usage_frequency": null,
+      "usage_status": "not_in_dataset",
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "Z71.7",
@@ -6925,11 +7254,16 @@
       "vocabulary": "ICD-10 (WHO)",
       "decision": "exclude",
       "confidence": 0.95,
-      "rationale": "HIV counselling is an administrative/intervention code that does not confirm HIV infection diagnosis.",
+      "rationale": "HIV counselling is an administrative/preventive code, not a diagnostic confirmation of HIV infection.",
       "sources": [
         "ChromaDB"
       ],
-      "usage_frequency": null
+      "usage_frequency": null,
+      "usage_status": "not_in_dataset",
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "Z83.0",
@@ -6941,7 +7275,12 @@
       "sources": [
         "ChromaDB"
       ],
-      "usage_frequency": null
+      "usage_frequency": null,
+      "usage_status": "not_in_dataset",
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "1268488004",
@@ -6949,11 +7288,16 @@
       "vocabulary": "SNOMED CT",
       "decision": "exclude",
       "confidence": 0.95,
-      "rationale": "Primary carcinoma of stomach due to EBV is a complication of EBV, not HIV infection.",
+      "rationale": "Primary carcinoma of stomach due to EBV is a malignancy associated with a different virus, not HIV.",
       "sources": [
         "ChromaDB"
       ],
-      "usage_frequency": null
+      "usage_frequency": null,
+      "usage_status": "not_in_dataset",
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": 37167568,
+      "dmd_level": null
     },
     {
       "code": "1326101000000105",
@@ -6961,11 +7305,16 @@
       "vocabulary": "SNOMED CT",
       "decision": "exclude",
       "confidence": 0.95,
-      "rationale": "Shingles vaccine administration is a procedure code, not a diagnostic code for HIV infection.",
+      "rationale": "Varicella-zoster vaccine administration is a preventive procedure, not a diagnostic confirmation of HIV infection.",
       "sources": [
         "ChromaDB"
       ],
-      "usage_frequency": null
+      "usage_frequency": 439150,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "1326111000000107",
@@ -6973,11 +7322,16 @@
       "vocabulary": "SNOMED CT",
       "decision": "exclude",
       "confidence": 0.95,
-      "rationale": "Shingles vaccine administration is a procedure code, not a diagnostic code for HIV infection.",
+      "rationale": "Varicella-zoster vaccine administration is a preventive procedure, not a diagnostic confirmation of HIV infection.",
       "sources": [
         "ChromaDB"
       ],
-      "usage_frequency": null
+      "usage_frequency": 354630,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "196001008",
@@ -6985,11 +7339,16 @@
       "vocabulary": "SNOMED CT",
       "decision": "exclude",
       "confidence": 0.95,
-      "rationale": "COPD with acute lower respiratory infection is an unrelated comorbidity, not HIV infection.",
+      "rationale": "COPD with acute lower respiratory infection is a separate respiratory condition, not an instance of HIV infection.",
       "sources": [
         "ChromaDB"
       ],
-      "usage_frequency": null
+      "usage_frequency": 3250,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": 4110056,
+      "dmd_level": null
     },
     {
       "code": "233674008",
@@ -6997,11 +7356,16 @@
       "vocabulary": "SNOMED CT",
       "decision": "exclude",
       "confidence": 0.95,
-      "rationale": "Pulmonary emphysema in alpha-1 primary immunodeficiency is a different immunodeficiency condition, not HIV.",
+      "rationale": "Pulmonary emphysema in alpha-1 primary immunodeficiency is a separate genetic immunodeficiency, not HIV infection.",
       "sources": [
         "ChromaDB"
       ],
-      "usage_frequency": null
+      "usage_frequency": 10,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": 4050732,
+      "dmd_level": null
     },
     {
       "code": "275974002",
@@ -7009,11 +7373,16 @@
       "vocabulary": "SNOMED CT",
       "decision": "exclude",
       "confidence": 0.95,
-      "rationale": "MMR vaccine contraindication is a clinical situation code, not a diagnostic code for HIV infection.",
+      "rationale": "MMR vaccine contraindication is an administrative/clinical decision, not a diagnostic confirmation of HIV infection.",
       "sources": [
         "ChromaDB"
       ],
-      "usage_frequency": null
+      "usage_frequency": 5890,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": 4169640,
+      "dmd_level": null
     },
     {
       "code": "277654008",
@@ -7021,11 +7390,16 @@
       "vocabulary": "SNOMED CT",
       "decision": "exclude",
       "confidence": 0.95,
-      "rationale": "Enteropathy-associated T-cell lymphoma does not explicitly name HIV and is not specific to HIV infection.",
+      "rationale": "Enteropathy-associated T-cell lymphoma is a separate lymphoma type, not an instance of HIV infection.",
       "sources": [
         "ChromaDB"
       ],
-      "usage_frequency": null
+      "usage_frequency": 30,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": 4082627,
+      "dmd_level": null
     },
     {
       "code": "293117006",
@@ -7033,11 +7407,16 @@
       "vocabulary": "SNOMED CT",
       "decision": "exclude",
       "confidence": 0.95,
-      "rationale": "Adverse reaction to vaccine is a clinical situation code, not a diagnostic code for HIV infection.",
+      "rationale": "Adverse reaction to polio vaccine is a vaccine safety issue, not a diagnostic confirmation of HIV infection.",
       "sources": [
         "ChromaDB"
       ],
-      "usage_frequency": null
+      "usage_frequency": 50,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": 441199,
+      "dmd_level": null
     },
     {
       "code": "293125008",
@@ -7045,11 +7424,16 @@
       "vocabulary": "SNOMED CT",
       "decision": "exclude",
       "confidence": 0.95,
-      "rationale": "Adverse reaction to MMR vaccine is a clinical situation code, not a diagnostic code for HIV infection.",
+      "rationale": "Adverse reaction to MMR vaccine is a vaccine safety issue, not a diagnostic confirmation of HIV infection.",
       "sources": [
         "ChromaDB"
       ],
-      "usage_frequency": null
+      "usage_frequency": 120,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": 4099280,
+      "dmd_level": null
     },
     {
       "code": "294662001",
@@ -7057,11 +7441,16 @@
       "vocabulary": "SNOMED CT",
       "decision": "exclude",
       "confidence": 0.95,
-      "rationale": "Allergy to MMR vaccine is a clinical situation code, not a diagnostic code for HIV infection.",
+      "rationale": "Allergy to MMR vaccine is a vaccine safety issue, not a diagnostic confirmation of HIV infection.",
       "sources": [
         "ChromaDB"
       ],
-      "usage_frequency": null
+      "usage_frequency": 110,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "318861000119101",
@@ -7069,11 +7458,16 @@
       "vocabulary": "SNOMED CT",
       "decision": "exclude",
       "confidence": 0.95,
-      "rationale": "Seropositive rheumatoid arthritis is an unrelated autoimmune condition, not HIV infection.",
+      "rationale": "Seropositive rheumatoid arthritis of left hand is an autoimmune condition, not an instance of HIV infection.",
       "sources": [
         "ChromaDB"
       ],
-      "usage_frequency": null
+      "usage_frequency": null,
+      "usage_status": "withheld_below_5",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": 601032,
+      "dmd_level": null
     },
     {
       "code": "318931000119100",
@@ -7081,11 +7475,16 @@
       "vocabulary": "SNOMED CT",
       "decision": "exclude",
       "confidence": 0.95,
-      "rationale": "Seropositive rheumatoid arthritis is an unrelated autoimmune condition, not HIV infection.",
+      "rationale": "Seropositive rheumatoid arthritis of right hand is an autoimmune condition, not an instance of HIV infection.",
       "sources": [
         "ChromaDB"
       ],
-      "usage_frequency": null
+      "usage_frequency": null,
+      "usage_status": "withheld_below_5",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": 609061,
+      "dmd_level": null
     },
     {
       "code": "403979000",
@@ -7093,11 +7492,16 @@
       "vocabulary": "SNOMED CT",
       "decision": "exclude",
       "confidence": 0.95,
-      "rationale": "Endemic Kaposi sarcoma does not explicitly name HIV and is not specific to HIV infection.",
+      "rationale": "Endemic Kaposi sarcoma does not name HIV in the term and is a complication of HIV, not an instance of HIV infection itself.",
       "sources": [
         "ChromaDB"
       ],
-      "usage_frequency": null
+      "usage_frequency": null,
+      "usage_status": "not_in_dataset",
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": 4297202,
+      "dmd_level": null
     },
     {
       "code": "449292003",
@@ -7105,11 +7509,16 @@
       "vocabulary": "SNOMED CT",
       "decision": "exclude",
       "confidence": 0.95,
-      "rationale": "Non-Hodgkin's lymphoma of tonsil does not explicitly name HIV and is not specific to HIV infection.",
+      "rationale": "Non-Hodgkin's lymphoma of tonsil does not name HIV and is a separate lymphoma type, not an instance of HIV infection.",
       "sources": [
         "ChromaDB"
       ],
-      "usage_frequency": null
+      "usage_frequency": null,
+      "usage_status": "withheld_below_5",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": 40486637,
+      "dmd_level": null
     },
     {
       "code": "698726009",
@@ -7117,11 +7526,16 @@
       "vocabulary": "SNOMED CT",
       "decision": "exclude",
       "confidence": 0.95,
-      "rationale": "Dementia associated with viral encephalitis does not explicitly name HIV and is not specific to HIV infection.",
+      "rationale": "Dementia associated with viral encephalitis is a neurological complication of various viral infections, not HIV-specific.",
       "sources": [
         "ChromaDB"
       ],
-      "usage_frequency": null
+      "usage_frequency": null,
+      "usage_status": "not_in_dataset",
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": 44784560,
+      "dmd_level": null
     },
     {
       "code": "703625002",
@@ -7129,51 +7543,16 @@
       "vocabulary": "SNOMED CT",
       "decision": "exclude",
       "confidence": 0.95,
-      "rationale": "Kaposi sarcoma not associated with AIDS is explicitly stated as not associated with HIV/AIDS.",
+      "rationale": "Kaposi sarcoma not associated with AIDS does not name HIV and is a separate condition, not an instance of HIV infection.",
       "sources": [
         "ChromaDB"
       ],
-      "usage_frequency": null
-    },
-    {
-      "code": "713572001",
-      "term": "Malignant neoplastic disease co-occurrent with human immunodeficiency virus infection (disorder)",
-      "vocabulary": "SNOMED CT",
-      "decision": "exclude",
-      "confidence": 0.95,
-      "rationale": "This code describes malignant neoplasm as a complication of HIV, not an instance of HIV infection itself; it is an AIDS-defining illness, not HIV.",
-      "sources": [
-        "ChromaDB",
-        "QOF Business Rules 2024-25"
-      ],
-      "usage_frequency": null
-    },
-    {
-      "code": "713718006",
-      "term": "Diffuse non-Hodgkin immunoblastic lymphoma co-occurrent with human immunodeficiency virus infection (disorder)",
-      "vocabulary": "SNOMED CT",
-      "decision": "exclude",
-      "confidence": 0.95,
-      "rationale": "This code describes a specific lymphoma type as a complication of HIV, not an instance of HIV infection; it is an AIDS-defining illness.",
-      "sources": [
-        "ChromaDB",
-        "QOF Business Rules 2024-25"
-      ],
-      "usage_frequency": null
-    },
-    {
-      "code": "713897006",
-      "term": "Burkitt lymphoma co-occurrent with human immunodeficiency virus infection (disorder)",
-      "vocabulary": "SNOMED CT",
-      "decision": "exclude",
-      "confidence": 0.95,
-      "rationale": "This code describes Burkitt lymphoma as a complication of HIV, not an instance of HIV infection; it is an AIDS-defining illness.",
-      "sources": [
-        "ChromaDB",
-        "OMOPHub",
-        "QOF Business Rules 2024-25"
-      ],
-      "usage_frequency": null
+      "usage_frequency": null,
+      "usage_status": "withheld_below_5",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": 45766461,
+      "dmd_level": null
     },
     {
       "code": "714463003",
@@ -7181,11 +7560,16 @@
       "vocabulary": "SNOMED CT",
       "decision": "exclude",
       "confidence": 0.95,
-      "rationale": "This code describes primary effusion lymphoma caused by HHV-8, not HIV infection; it is unrelated to the queried condition.",
+      "rationale": "Term does not contain 'human immunodeficiency virus' or 'HIV'; it describes primary effusion lymphoma co-occurrent with HHV-8, which is an AIDS-defining illness but not named with HIV in the term.",
       "sources": [
         "ChromaDB"
       ],
-      "usage_frequency": null
+      "usage_frequency": null,
+      "usage_status": "not_in_dataset",
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": 37018062,
+      "dmd_level": null
     },
     {
       "code": "716586009",
@@ -7193,35 +7577,16 @@
       "vocabulary": "SNOMED CT",
       "decision": "exclude",
       "confidence": 0.95,
-      "rationale": "This code describes gastric carcinoma caused by EBV, not HIV infection; it is unrelated to the queried condition.",
+      "rationale": "Term does not contain 'human immunodeficiency virus' or 'HIV'; it describes gastric carcinoma due to EBV, which may be HIV-related but is not named with HIV in the term.",
       "sources": [
         "ChromaDB"
       ],
-      "usage_frequency": null
-    },
-    {
-      "code": "721255002",
-      "term": "Acquired prion disease (disorder)",
-      "vocabulary": "SNOMED CT",
-      "decision": "exclude",
-      "confidence": 0.95,
-      "rationale": "This code describes acquired prion disease, which is unrelated to HIV infection; it is a separate neurological condition.",
-      "sources": [
-        "ChromaDB"
-      ],
-      "usage_frequency": null
-    },
-    {
-      "code": "721311006",
-      "term": "Systemic Epstein-Barr virus positive T-cell lymphoproliferative disease of childhood (disorder)",
-      "vocabulary": "SNOMED CT",
-      "decision": "exclude",
-      "confidence": 0.95,
-      "rationale": "This code describes EBV-positive T-cell lymphoproliferative disease of childhood, which is unrelated to HIV infection.",
-      "sources": [
-        "ChromaDB"
-      ],
-      "usage_frequency": null
+      "usage_frequency": null,
+      "usage_status": "not_in_dataset",
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": 37396688,
+      "dmd_level": null
     },
     {
       "code": "722215002",
@@ -7229,47 +7594,16 @@
       "vocabulary": "SNOMED CT",
       "decision": "exclude",
       "confidence": 0.95,
-      "rationale": "This is a procedure code for varicella-zoster vaccine administration, not a diagnostic code for HIV infection.",
+      "rationale": "This is a procedure code for vaccine administration, not a diagnostic code for HIV infection or its manifestations.",
       "sources": [
         "ChromaDB"
       ],
-      "usage_frequency": null
-    },
-    {
-      "code": "724647003",
-      "term": "Diffuse large B-cell lymphoma co-occurrent with chronic inflammation caused by Epstein-Barr virus (disorder)",
-      "vocabulary": "SNOMED CT",
-      "decision": "exclude",
-      "confidence": 0.95,
-      "rationale": "This code describes diffuse large B-cell lymphoma caused by EBV, not HIV infection; it is unrelated to the queried condition.",
-      "sources": [
-        "ChromaDB"
-      ],
-      "usage_frequency": null
-    },
-    {
-      "code": "724777003",
-      "term": "Dementia due to infectious disease (disorder)",
-      "vocabulary": "SNOMED CT",
-      "decision": "exclude",
-      "confidence": 0.95,
-      "rationale": "This code describes dementia due to infectious disease generally, not HIV infection specifically; it is too broad and not HIV-specific.",
-      "sources": [
-        "ChromaDB"
-      ],
-      "usage_frequency": null
-    },
-    {
-      "code": "733192006",
-      "term": "Dementia due to herpes encephalitis (disorder)",
-      "vocabulary": "SNOMED CT",
-      "decision": "exclude",
-      "confidence": 0.95,
-      "rationale": "This code describes dementia due to herpes encephalitis, not HIV infection; it is unrelated to the queried condition.",
-      "sources": [
-        "ChromaDB"
-      ],
-      "usage_frequency": null
+      "usage_frequency": 7840,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "765434008",
@@ -7277,11 +7611,16 @@
       "vocabulary": "SNOMED CT",
       "decision": "exclude",
       "confidence": 0.95,
-      "rationale": "This code describes intellectual disability related to an HIV-associated protein, not HIV infection itself; it is a genetic/developmental condition unrelated to the queried condition.",
+      "rationale": "Term contains 'human immunodeficiency virus' but refers to a genetic protein (HIV-1 enhancer binding protein 2) and intellectual disability, not HIV infection itself.",
       "sources": [
         "ChromaDB"
       ],
-      "usage_frequency": null
+      "usage_frequency": 10,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": 35623128,
+      "dmd_level": null
     },
     {
       "code": "847091000000104",
@@ -7289,11 +7628,16 @@
       "vocabulary": "SNOMED CT",
       "decision": "exclude",
       "confidence": 0.95,
-      "rationale": "This code describes acute exacerbation of COPD, which is unrelated to HIV infection.",
+      "rationale": "This code describes acute exacerbation of COPD, which is unrelated to HIV infection and does not name the queried condition.",
       "sources": [
         "ChromaDB"
       ],
-      "usage_frequency": null
+      "usage_frequency": 33390,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": 44807895,
+      "dmd_level": null
     },
     {
       "code": "860826006",
@@ -7301,11 +7645,16 @@
       "vocabulary": "SNOMED CT",
       "decision": "exclude",
       "confidence": 0.95,
-      "rationale": "This code describes Creutzfeldt-Jakob disease caused by contaminated growth hormone, not HIV infection; it is unrelated to the queried condition.",
+      "rationale": "This code describes Creutzfeldt-Jakob disease caused by human growth hormone, which is unrelated to HIV infection.",
       "sources": [
         "ChromaDB"
       ],
-      "usage_frequency": null
+      "usage_frequency": null,
+      "usage_status": "not_in_dataset",
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": 3655293,
+      "dmd_level": null
     },
     {
       "code": "871898007",
@@ -7313,11 +7662,16 @@
       "vocabulary": "SNOMED CT",
       "decision": "exclude",
       "confidence": 0.95,
-      "rationale": "This is a procedure code for varicella-zoster vaccine administration, not a diagnostic code for HIV infection.",
+      "rationale": "This is a procedure code for vaccine administration, not a diagnostic code for HIV infection or its manifestations.",
       "sources": [
         "ChromaDB"
       ],
-      "usage_frequency": null
+      "usage_frequency": 1300,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": null,
+      "dmd_level": null
     },
     {
       "code": "888091000000108",
@@ -7325,11 +7679,16 @@
       "vocabulary": "SNOMED CT",
       "decision": "exclude",
       "confidence": 0.95,
-      "rationale": "This is a finding code for HPV-negative cervical smear, not a diagnostic code for HIV infection.",
+      "rationale": "This is a finding code for HPV-negative cervical smear, which is a screening result unrelated to HIV infection diagnosis.",
       "sources": [
         "ChromaDB"
       ],
-      "usage_frequency": null
+      "usage_frequency": 2554460,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": 44810558,
+      "dmd_level": null
     },
     {
       "code": "888111000000103",
@@ -7337,11 +7696,16 @@
       "vocabulary": "SNOMED CT",
       "decision": "exclude",
       "confidence": 0.95,
-      "rationale": "This is a finding code for HPV-positive cervical smear, not a diagnostic code for HIV infection.",
+      "rationale": "This is a finding code for HPV-positive cervical smear, which is a screening result unrelated to HIV infection diagnosis.",
       "sources": [
         "ChromaDB"
       ],
-      "usage_frequency": null
+      "usage_frequency": 420300,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": 44810559,
+      "dmd_level": null
     },
     {
       "code": "9691000175102",
@@ -7349,11 +7713,16 @@
       "vocabulary": "SNOMED CT",
       "decision": "exclude",
       "confidence": 0.95,
-      "rationale": "This is a situation code for declined varicella-zoster vaccination, not a diagnostic code for HIV infection.",
+      "rationale": "This is a situation code for declined vaccination, which is an administrative/screening-related code, not a diagnostic code for HIV infection.",
       "sources": [
         "ChromaDB"
       ],
-      "usage_frequency": null
+      "usage_frequency": 73260,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": 619945,
+      "dmd_level": null
     },
     {
       "code": "109980005",
@@ -7361,11 +7730,16 @@
       "vocabulary": "SNOMED CT",
       "decision": "exclude",
       "confidence": 0.9,
-      "rationale": "Malignant immunoproliferative disease is a complication/manifestation but does not explicitly name HIV in the term.",
+      "rationale": "Malignant immunoproliferative disease is a complication/manifestation, not an instance of HIV infection itself.",
       "sources": [
         "ChromaDB"
       ],
-      "usage_frequency": null
+      "usage_frequency": null,
+      "usage_status": "withheld_below_5",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": 4003834,
+      "dmd_level": null
     },
     {
       "code": "1260374003",
@@ -7373,11 +7747,16 @@
       "vocabulary": "SNOMED CT",
       "decision": "exclude",
       "confidence": 0.9,
-      "rationale": "Epilepsy due to congenital infectious disease is a complication of congenital infection, not HIV infection.",
+      "rationale": "Epilepsy due to congenital infectious disease does not specifically name HIV and is a complication of various infections.",
       "sources": [
         "ChromaDB"
       ],
-      "usage_frequency": null
+      "usage_frequency": null,
+      "usage_status": "not_in_dataset",
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": 37166920,
+      "dmd_level": null
     },
     {
       "code": "420302007",
@@ -7385,11 +7764,16 @@
       "vocabulary": "SNOMED CT",
       "decision": "exclude",
       "confidence": 0.9,
-      "rationale": "Reticulosarcoma with AIDS is a complication of AIDS but does not explicitly name HIV in the term.",
+      "rationale": "Reticulosarcoma with AIDS is a malignancy complication; term does not contain 'HIV' or 'human immunodeficiency virus'.",
       "sources": [
         "ChromaDB"
       ],
-      "usage_frequency": null
+      "usage_frequency": null,
+      "usage_status": "not_in_dataset",
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": 4226388,
+      "dmd_level": null
     },
     {
       "code": "420524008",
@@ -7397,11 +7781,16 @@
       "vocabulary": "SNOMED CT",
       "decision": "exclude",
       "confidence": 0.9,
-      "rationale": "Kaposi's sarcoma with AIDS is a complication of AIDS but does not explicitly name HIV in the term.",
+      "rationale": "Kaposi's sarcoma with AIDS is a malignancy complication; term does not contain 'HIV' or 'human immunodeficiency virus'.",
       "sources": [
         "ChromaDB"
       ],
-      "usage_frequency": null
+      "usage_frequency": 30,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": 4224096,
+      "dmd_level": null
     },
     {
       "code": "420614009",
@@ -7409,11 +7798,16 @@
       "vocabulary": "SNOMED CT",
       "decision": "exclude",
       "confidence": 0.9,
-      "rationale": "Organic dementia with AIDS is a complication of AIDS but does not explicitly name HIV in the term.",
+      "rationale": "Organic dementia with AIDS is a neurological complication; term does not contain 'HIV' or 'human immunodeficiency virus'.",
       "sources": [
         "ChromaDB"
       ],
-      "usage_frequency": null
+      "usage_frequency": null,
+      "usage_status": "not_in_dataset",
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": 4224860,
+      "dmd_level": null
     },
     {
       "code": "421023003",
@@ -7421,11 +7815,16 @@
       "vocabulary": "SNOMED CT",
       "decision": "exclude",
       "confidence": 0.9,
-      "rationale": "Presenile dementia with AIDS is a complication of AIDS but does not explicitly name HIV in the term.",
+      "rationale": "Presenile dementia with AIDS is a neurological complication; term does not contain 'HIV' or 'human immunodeficiency virus'.",
       "sources": [
         "ChromaDB"
       ],
-      "usage_frequency": null
+      "usage_frequency": null,
+      "usage_status": "not_in_dataset",
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": 4224240,
+      "dmd_level": null
     },
     {
       "code": "421283008",
@@ -7433,11 +7832,16 @@
       "vocabulary": "SNOMED CT",
       "decision": "exclude",
       "confidence": 0.9,
-      "rationale": "Primary lymphoma of brain with AIDS is a complication of AIDS but does not explicitly name HIV in the term.",
+      "rationale": "Primary lymphoma of brain with AIDS is a malignancy complication; term does not contain 'HIV' or 'human immunodeficiency virus'.",
       "sources": [
         "ChromaDB"
       ],
-      "usage_frequency": null
+      "usage_frequency": null,
+      "usage_status": "not_in_dataset",
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": 4227969,
+      "dmd_level": null
     },
     {
       "code": "421529006",
@@ -7445,11 +7849,16 @@
       "vocabulary": "SNOMED CT",
       "decision": "exclude",
       "confidence": 0.9,
-      "rationale": "Dementia with AIDS is a complication of AIDS but does not explicitly name HIV in the term.",
+      "rationale": "Dementia with AIDS is a neurological complication; term does not contain 'HIV' or 'human immunodeficiency virus'.",
       "sources": [
         "ChromaDB"
       ],
-      "usage_frequency": null
+      "usage_frequency": 20,
+      "usage_status": "counted",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": 4228133,
+      "dmd_level": null
     },
     {
       "code": "422282000",
@@ -7457,37 +7866,101 @@
       "vocabulary": "SNOMED CT",
       "decision": "exclude",
       "confidence": 0.9,
-      "rationale": "Malignant neoplasm with AIDS is a complication of AIDS but does not explicitly name HIV in the term.",
+      "rationale": "Malignant neoplasm with AIDS is a cancer complication; term does not contain 'HIV' or 'human immunodeficiency virus'.",
       "sources": [
         "ChromaDB"
       ],
-      "usage_frequency": null
+      "usage_frequency": null,
+      "usage_status": "not_in_dataset",
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": 4226357,
+      "dmd_level": null
     },
     {
-      "code": "713844000",
-      "term": "Dementia co-occurrent with human immunodeficiency virus infection (disorder)",
+      "code": "721255002",
+      "term": "Acquired prion disease (disorder)",
       "vocabulary": "SNOMED CT",
       "decision": "exclude",
       "confidence": 0.9,
-      "rationale": "Although the term contains 'human immunodeficiency virus infection', this code represents dementia as a complication of HIV rather than HIV infection itself; it is a downstream manifestation, not the primary condition.",
+      "rationale": "Term does not contain 'human immunodeficiency virus' or 'HIV'; acquired prion disease is not specifically an HIV manifestation and does not name the queried condition.",
       "sources": [
-        "ChromaDB",
-        "QOF Business Rules 2024-25"
+        "ChromaDB"
       ],
-      "usage_frequency": null
+      "usage_frequency": null,
+      "usage_status": "not_in_dataset",
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": 36715547,
+      "dmd_level": null
     },
     {
-      "code": "733834006",
-      "term": "Invasive carcinoma of uterine cervix co-occurrent with human immunodeficiency virus infection (disorder)",
+      "code": "721311006",
+      "term": "Systemic Epstein-Barr virus positive T-cell lymphoproliferative disease of childhood (disorder)",
       "vocabulary": "SNOMED CT",
       "decision": "exclude",
       "confidence": 0.9,
-      "rationale": "Although the term contains 'human immunodeficiency virus infection', this code represents cervical carcinoma as a complication of HIV rather than HIV infection itself; it is an AIDS-defining illness.",
+      "rationale": "Term does not contain 'human immunodeficiency virus' or 'HIV'; this describes EBV-positive T-cell lymphoproliferative disease of childhood, which is not specifically an HIV manifestation.",
       "sources": [
-        "ChromaDB",
-        "QOF Business Rules 2024-25"
+        "ChromaDB"
       ],
-      "usage_frequency": null
+      "usage_frequency": null,
+      "usage_status": "not_in_dataset",
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": 36715590,
+      "dmd_level": null
+    },
+    {
+      "code": "724647003",
+      "term": "Diffuse large B-cell lymphoma co-occurrent with chronic inflammation caused by Epstein-Barr virus (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.9,
+      "rationale": "Term does not contain 'human immunodeficiency virus' or 'HIV'; it describes DLBCL co-occurrent with chronic EBV inflammation, which may be HIV-related but is not named with HIV in the term.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "usage_frequency": null,
+      "usage_status": "withheld_below_5",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": 37110401,
+      "dmd_level": null
+    },
+    {
+      "code": "724777003",
+      "term": "Dementia due to infectious disease (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.9,
+      "rationale": "Term does not contain 'human immunodeficiency virus' or 'HIV'; dementia due to infectious disease is too broad and not specifically named as an HIV manifestation.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "usage_frequency": null,
+      "usage_status": "not_in_dataset",
+      "usage_source": null,
+      "usage_setting": null,
+      "concept_id": 37119154,
+      "dmd_level": null
+    },
+    {
+      "code": "733192006",
+      "term": "Dementia due to herpes encephalitis (disorder)",
+      "vocabulary": "SNOMED CT",
+      "decision": "exclude",
+      "confidence": 0.9,
+      "rationale": "Term does not contain 'human immunodeficiency virus' or 'HIV'; dementia due to herpes encephalitis is not specifically named as an HIV manifestation.",
+      "sources": [
+        "ChromaDB"
+      ],
+      "usage_frequency": null,
+      "usage_status": "withheld_below_5",
+      "usage_source": "NHS Digital primary care SNOMED reporting",
+      "usage_setting": "primary_care",
+      "concept_id": 37116467,
+      "dmd_level": null
     }
   ],
   "pipeline": "rag",

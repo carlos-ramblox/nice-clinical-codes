@@ -86,6 +86,7 @@ def enrich_with_umls(state: dict) -> dict:
             "usage_status": "not_in_dataset",
             "usage_source": None,
             "usage_setting": None,
+            "concept_id": None,
         })
 
     if new_codes:

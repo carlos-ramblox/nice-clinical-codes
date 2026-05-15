@@ -3,6 +3,8 @@
 from typing import TypedDict, Annotated
 from operator import add
 
+from app.services.dmd_classification import DmdLevel  # noqa: F401  (re-exported for callers)
+
 
 class ParsedCondition(TypedDict):
     name: str
@@ -16,6 +18,7 @@ class ParsedCondition(TypedDict):
     # are byte-identical to the pre-T29 shape.
     include_criteria: list[str]
     exclude_criteria: list[str]
+    include_descendants: bool
 
 
 class RetrievedCode(TypedDict):
@@ -27,6 +30,9 @@ class RetrievedCode(TypedDict):
     source: str  # "OMOPHub", "QOF", "OpenCodelists", "ChromaDB"
     domain: str  # "Condition", "Drug", "Procedure"
     similarity_score: float | None
+    # OMOP standard concept_id. None when no retriever resolved it;
+    # the OHDSI exporter routes those into a parallel `unmapped` array.
+    concept_id: int | None
     # OpenCodeCounts-derived fields (T31). usage_frequency is the
     # most-recent annual count from NHS Digital, or None when the code
     # is absent from the dataset OR when the count was withheld under
@@ -51,6 +57,7 @@ class RetrievedCode(TypedDict):
     # merger (deferred T01, blocked on T23/T24) does not need to
     # change the typed state shape again.
     rank: int
+    dmd_level: DmdLevel | None
 
 
 class EnrichedCode(TypedDict):
@@ -66,6 +73,8 @@ class EnrichedCode(TypedDict):
     usage_status: str | None
     usage_source: str | None
     usage_setting: str | None
+    concept_id: int | None
+    dmd_level: DmdLevel | None
 
 
 class ScoredCode(TypedDict):
@@ -80,6 +89,8 @@ class ScoredCode(TypedDict):
     usage_status: str | None
     usage_source: str | None
     usage_setting: str | None
+    concept_id: int | None
+    dmd_level: DmdLevel | None
 
 
 class ProvenanceRecord(TypedDict):
@@ -110,6 +121,7 @@ class PipelineState(TypedDict):
     # pre-T29 behaviour exactly.
     request_include_criteria: list[str]
     request_exclude_criteria: list[str]
+    request_include_descendants: bool | None
 
     # Retrieval — reducer merges parallel results
     retrieved_codes: Annotated[list[RetrievedCode], add]

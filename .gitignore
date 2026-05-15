@@ -50,6 +50,11 @@ backend/data/
 # Per-phenotype codelist cache for the HDR UK cross-reference panel.
 # Populated lazily, gitignored, busted via ?refresh=1 on the endpoint.
 data/cache/hdruk_phenotype_codes/
+# Per-ticket K=5 baseline runs (e.g. _preT37i/). 75 JSON files × 20MB each
+# baseline; kept locally for reproducibility, never committed. Summary
+# numbers always live in EVALUATION.md + the ticket's *_path_a_summary.md.
+data/test_sets/*/_pre*/
+data/test_sets/*/_post*/
 
 # ML artifacts
 *.joblib
@@ -93,6 +98,9 @@ docker-compose.override.yml
 AGENTS.md
 CLAUDE.md
 .claude/
+.agents/
+.specify/
+specs/
 
 # Jupyter
 .ipynb_checkpoints/

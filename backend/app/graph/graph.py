@@ -12,10 +12,14 @@ from app.graph.nodes.omophub_retriever import search_omophub, omophub_to_retriev
 from app.graph.nodes.chroma_retriever import retrieve_from_chromadb
 from app.graph.nodes.qof_retriever import retrieve_from_qof
 from app.graph.nodes.opencodelists_retriever import retrieve_from_opencodelists
+from app.graph.nodes.dmd_retriever import retrieve_from_dmd
+from app.graph.nodes.bnf_retriever import retrieve_from_bnf
 from app.graph.nodes.result_merger import merge_and_dedup
+from app.graph.nodes.concept_id_enricher import enrich_concept_ids
 from app.graph.nodes.usage_annotator import annotate_usage
 from app.graph.nodes.umls_enrichment_node import enrich_with_umls
 from app.graph.nodes.llm_reasoning import score_codes
+from app.graph.nodes.hierarchy_expander import expand_hierarchy
 from app.graph.nodes.output_assembly import assemble_output
 
 logger = logging.getLogger(__name__)
@@ -34,10 +38,12 @@ def query_parser_node(state: dict) -> dict:
     """
     inc = state.get("request_include_criteria") or None
     exc = state.get("request_exclude_criteria") or None
+    desc = state.get("request_include_descendants")
     result = parse_query(
         state["raw_query"],
         request_include_criteria=inc,
         request_exclude_criteria=exc,
+        request_include_descendants=desc,
     )
     return {
         "parsed_conditions": result["conditions"],
@@ -77,7 +83,13 @@ _RETRIEVERS: dict[str, tuple[str, Callable]] = {
     "chroma":        ("chroma_retriever",        retrieve_from_chromadb),
     "qof":           ("qof_retriever",           retrieve_from_qof),
     "opencodelists": ("opencodelists_retriever", retrieve_from_opencodelists),
+    "dmd":           ("dmd_retriever",           retrieve_from_dmd),
+    "bnf":           ("bnf_retriever",           retrieve_from_bnf),
 }
+
+# Public alias for callers that only need the set of retriever names
+# (e.g. routes.py's disable-all guard). Lets _RETRIEVERS stay private.
+RETRIEVER_NAMES: frozenset[str] = frozenset(_RETRIEVERS)
 
 
 def build_graph(disabled_retrievers: set[str] | None = None) -> StateGraph:
@@ -110,9 +122,11 @@ def build_graph(disabled_retrievers: set[str] | None = None) -> StateGraph:
     # always-present nodes
     graph.add_node("query_parser", query_parser_node)
     graph.add_node("result_merger", merge_and_dedup)
+    graph.add_node("concept_id_enricher", enrich_concept_ids)
     graph.add_node("usage_annotator", annotate_usage)
     graph.add_node("umls_enrichment", enrich_with_umls)
     graph.add_node("llm_reasoning", score_codes)
+    graph.add_node("hierarchy_expander", expand_hierarchy)
     graph.add_node("output_assembly", assemble_output)
 
     # active retrievers
@@ -130,11 +144,14 @@ def build_graph(disabled_retrievers: set[str] | None = None) -> StateGraph:
         graph.add_edge("query_parser", node_id)
         graph.add_edge(node_id, "result_merger")
 
-    # sequential: merger → usage annotator → UMLS enrichment → reasoning → output → END
-    graph.add_edge("result_merger", "usage_annotator")
+    # sequential: merger → concept_id enricher → usage annotator →
+    # UMLS enrichment → reasoning → output → END
+    graph.add_edge("result_merger", "concept_id_enricher")
+    graph.add_edge("concept_id_enricher", "usage_annotator")
     graph.add_edge("usage_annotator", "umls_enrichment")
     graph.add_edge("umls_enrichment", "llm_reasoning")
-    graph.add_edge("llm_reasoning", "output_assembly")
+    graph.add_edge("llm_reasoning", "hierarchy_expander")
+    graph.add_edge("hierarchy_expander", "output_assembly")
     graph.add_edge("output_assembly", END)
 
     return graph.compile()
@@ -165,6 +182,7 @@ async def run_pipeline(
     *,
     include_criteria: list[str] | None = None,
     exclude_criteria: list[str] | None = None,
+    include_descendants: bool | None = None,
 ) -> dict:
     """Run the full pipeline with a raw query string.
 
@@ -195,6 +213,8 @@ async def run_pipeline(
         initial["request_include_criteria"] = list(include_criteria)
     if exclude_criteria:
         initial["request_exclude_criteria"] = list(exclude_criteria)
+    if include_descendants is not None:
+        initial["request_include_descendants"] = bool(include_descendants)
     result = await pipe.ainvoke(initial)
     logger.info("Pipeline complete: %d codes in final list", len(result.get("final_code_list", [])))
     return result

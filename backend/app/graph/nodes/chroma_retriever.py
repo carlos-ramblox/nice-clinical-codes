@@ -1,6 +1,7 @@
 import logging
 
 from app.config import OMOPHUB_VOCABULARIES, RETRIEVAL_TOP_K
+from app.db.code_store import get_concept_id_for
 from app.db.vector_store import search
 
 logger = logging.getLogger(__name__)
@@ -51,6 +52,9 @@ def retrieve_from_chromadb(state: dict) -> dict:
             for i, r in enumerate(results, start=1):
                 r["source"] = "ChromaDB"
                 r["rank"] = i
+                r["concept_id"] = get_concept_id_for(
+                    r.get("vocabulary", ""), r.get("code", "")
+                )
                 all_codes.append(r)
 
         logger.info("ChromaDB: '%s' returned %d codes", name, len(all_codes) - before)
