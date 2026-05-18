@@ -508,6 +508,8 @@ Paired McNemar's test on per-code (pre, post) correctness:
 post-fix vs. pre-fix χ² = 42.93, p = 5.7 × 10⁻¹¹;
 cold-start vs. pre-fix χ² = 14.42, p = 1.5 × 10⁻⁴.
 
+The numbers above are measured at the deployed `MAX_CANDIDATES=100`. A two-cap sensitivity sweep (cap=100 vs cap=500, bare mode, K=5 on the 9 codelists with gold size > 100) found a mean ΔF1 of +0.202 (BCa 95 % CI [+0.069, +0.341]); see [`data/test_sets/benchmark_2026_04/cap_sensitivity_summary.md`](./data/test_sets/benchmark_2026_04/cap_sensitivity_summary.md) and the *Candidate-cap recall ceiling* section of [LIMITATIONS.md](./LIMITATIONS.md) for the per-codelist breakdown and the precision-vs-recall trade-off that keeps the default at 100.
+
 #### Vocabulary-filtered view (supplementary)
 
 | View | Mean P | Mean R | Mean F1 | Median F1 | F1 95 % CI |
