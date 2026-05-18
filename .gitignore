@@ -55,6 +55,7 @@ data/cache/hdruk_phenotype_codes/
 # numbers always live in EVALUATION.md + the ticket's *_path_a_summary.md.
 data/test_sets/*/_pre*/
 data/test_sets/*/_post*/
+data/test_sets/*/_cap*/
 
 # ML artifacts
 *.joblib

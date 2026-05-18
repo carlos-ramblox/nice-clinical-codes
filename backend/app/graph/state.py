@@ -141,3 +141,9 @@ class PipelineState(TypedDict):
     # Metadata
     sources_queried: Annotated[list[str], add]
     errors: Annotated[list[str], add]
+
+    candidates_pre_cap: list[dict]
+    candidates_before_cap_count: int
+    candidates_after_merger_cap_count: int
+    candidates_after_umls_cap_count: int
+    max_candidates_setting: int

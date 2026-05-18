@@ -144,6 +144,9 @@ def merge_and_dedup(state: dict) -> dict:
         )
 
     total_unique = len(deduped)
+    candidates_pre_cap = [
+        {"code": c["code"], "vocabulary": c["vocabulary"]} for c in deduped
+    ]
     deduped = _apply_drug_quota(deduped, conditions, MAX_CANDIDATES)
     if total_unique > MAX_CANDIDATES:
         logger.info("Capping %d candidates to top %d", total_unique, MAX_CANDIDATES)
@@ -156,4 +159,10 @@ def merge_and_dedup(state: dict) -> dict:
         len(codes), total_unique, len(deduped), multi_source, drug_kept,
     )
 
-    return {"enriched_codes": deduped}
+    return {
+        "enriched_codes": deduped,
+        "candidates_pre_cap": candidates_pre_cap,
+        "candidates_before_cap_count": total_unique,
+        "candidates_after_merger_cap_count": len(deduped),
+        "max_candidates_setting": MAX_CANDIDATES,
+    }

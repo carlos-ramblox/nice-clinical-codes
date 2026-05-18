@@ -104,7 +104,10 @@ def enrich_with_umls(state: dict) -> dict:
             logger.info("UMLS: capping %d codes back to %d", len(updated), MAX_CANDIDATES)
             updated = updated[:MAX_CANDIDATES]
         logger.info("UMLS: added %d new codes (%d total)", len(new_codes), len(updated))
-        return {"enriched_codes": updated}
+        return {
+            "enriched_codes": updated,
+            "candidates_after_umls_cap_count": len(updated),
+        }
 
     logger.info("UMLS: all suggestions already in code list")
-    return {}
+    return {"candidates_after_umls_cap_count": len(codes)}
