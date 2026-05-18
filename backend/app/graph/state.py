@@ -1,6 +1,6 @@
 """Pipeline state that flows through all LangGraph nodes."""
 
-from typing import TypedDict, Annotated
+from typing import TypedDict, Annotated, NotRequired
 from operator import add
 
 from app.services.dmd_classification import DmdLevel  # noqa: F401  (re-exported for callers)
@@ -142,8 +142,8 @@ class PipelineState(TypedDict):
     sources_queried: Annotated[list[str], add]
     errors: Annotated[list[str], add]
 
-    candidates_pre_cap: list[dict]
-    candidates_before_cap_count: int
-    candidates_after_merger_cap_count: int
-    candidates_after_umls_cap_count: int
-    max_candidates_setting: int
+    candidates_pre_cap: NotRequired[list[dict]]
+    candidates_before_cap_count: NotRequired[int]
+    candidates_after_merger_cap_count: NotRequired[int]
+    candidates_after_umls_cap_count: NotRequired[int]
+    max_candidates_setting: NotRequired[int]

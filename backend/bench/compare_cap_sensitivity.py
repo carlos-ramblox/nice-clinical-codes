@@ -16,6 +16,7 @@ from scipy.stats import bootstrap as scipy_bootstrap
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
+from app.db.code_normalize import normalize_code  # noqa: E402
 from app.evaluation.benchmark_aggregate import evaluate_one  # noqa: E402
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -77,7 +78,7 @@ def _bca_ci(values: list[float]) -> tuple[float, float]:
     try:
         res = scipy_bootstrap(
             (arr,), statistic=np.mean,
-            confidence_level=0.95, n_resamples=1000,
+            confidence_level=0.95, n_resamples=10_000,
             method="BCa", random_state=7,
         )
         return float(res.confidence_interval.low), float(res.confidence_interval.high)
@@ -86,13 +87,12 @@ def _bca_ci(values: list[float]) -> tuple[float, float]:
 
 
 def _gold_size(ts: list[dict]) -> int:
-    seen: set[str] = set()
-    for entry in ts:
-        for c in str(entry.get("Codelist", "")).split(";"):
-            c = c.strip().replace(".", "")
-            if c:
-                seen.add(c)
-    return len(seen)
+    return len({
+        normalize_code(c, "")
+        for entry in ts
+        for c in str(entry.get("Codelist", "")).split(";")
+        if c.strip()
+    })
 
 
 def main() -> int:
@@ -223,17 +223,46 @@ def _write_markdown(summary: dict, out_path: Path) -> None:
                  "survive at cap=500?")
     lines.append("")
     lines.append("The T37j +0.106 ΔF1 was computed against the pre-T37i baseline "
-                 "on all 15 codelists with mixed-mode (bare for 8, override for 7); "
-                 "see `T37j_path_a_summary.md`. This cap-sensitivity sweep is a "
-                 "different comparison axis (cap=100 vs cap=500 *within* bare "
-                 "mode on the 9 large-gold codelists), so the two ΔF1 numbers "
-                 "are not directly compared.")
+                 "on all 15 codelists in mixed mode (bare for 8, override for 7); "
+                 "see `T37j_path_a_summary.md`. This sweep is a different "
+                 "comparison axis (cap=100 vs cap=500 *within* bare mode on the "
+                 "9 large-gold codelists), so the two ΔF1 numbers are not on the "
+                 "same axis and cannot be directly subtracted.")
     lines.append("")
-    lines.append("The relevant question this sweep answers is: **was "
-                 "`MAX_CANDIDATES=100` a structural bottleneck on the 9 large-gold "
-                 "codelists in bare mode?** ΔF1 above the σ budget at cap=500 "
-                 "indicates yes; ΔF1 within ±σ indicates the cap was not "
-                 "load-bearing for bare-mode F1 on these lists.")
+    lift_dir = (
+        "is a structural bottleneck on bare-mode F1 for these codelists"
+        if summary["mean_delta_f1"] > summary["sigma_budget"]
+        else "is not the binding constraint on bare-mode F1 for these codelists"
+        if abs(summary["mean_delta_f1"]) <= summary["sigma_budget"]
+        else "binds bare-mode F1 in the opposite direction (precision-favoured) for these codelists"
+    )
+    lines.append(
+        f"What this sweep does say is that **`MAX_CANDIDATES=100` {lift_dir}**: "
+        f"lifting the cap to 500 produces a mean ΔF1 of "
+        f"**{summary['mean_delta_f1']:+.3f}** (BCa CI "
+        f"[{summary['bca_ci95_delta_f1'][0]:+.3f}, "
+        f"{summary['bca_ci95_delta_f1'][1]:+.3f}]). For context, T37j's lift "
+        f"was +0.106 on a different axis."
+    )
+    lines.append("")
+    lifts = sorted(rows, key=lambda r: -r["delta_f1"])
+    top_lifts = lifts[:4]
+    bottom = [r for r in lifts if r["delta_f1"] < 0]
+
+    def _fmt_row(r: dict) -> str:
+        return (f"`{r['short']}` {r['delta_f1']:+.3f} "
+                f"({r['cap100_f1']:.3f} → {r['cap500_f1']:.3f})")
+
+    lines.append("Top lifts: " + ", ".join(_fmt_row(r) for r in top_lifts) + ".")
+    if bottom:
+        lines.append("")
+        lines.append("Regressions at cap=500: "
+                     + ", ".join(_fmt_row(r) for r in bottom)
+                     + ". These are codelists where the cap was not the binding "
+                       "constraint at cap=100 (the larger pre-cap pool either "
+                       "surfaces non-gold candidates that the LLM scores `include`, "
+                       "hurting precision, or the upstream retrievers miss most of "
+                       "the gold regardless of cap).")
     lines.append("")
     lines.append("## Cap diagnostic interpretation")
     lines.append("")

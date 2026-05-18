@@ -9,7 +9,7 @@
 
 - Mean ΔF1 (cap=500 − cap=100) across 9 large-gold codelists: **+0.2023**
 - Median ΔF1: +0.1874
-- BCa 95 % CI (1 000 resamples, seed 7): [+0.0686, +0.3406]
+- BCa 95 % CI (1 000 resamples, seed 7): [+0.0723, +0.3432]
 - σ budget (per T37j convention): 0.012
 - **Verdict:** F1 LIFT at cap=500
 
@@ -31,16 +31,11 @@
 
 The T37j +0.106 ΔF1 was computed against the pre-T37i baseline on all 15 codelists in mixed mode (bare for 8, override for 7); see `T37j_path_a_summary.md`. This sweep is a different comparison axis (cap=100 vs cap=500 *within* bare mode on the 9 large-gold codelists), so the two ΔF1 numbers are not on the same axis and cannot be directly subtracted.
 
-What this sweep does say is that **`MAX_CANDIDATES=100` was the dominant bottleneck on bare-mode F1 for most of the large-gold codelists**: lifting the cap to 500 produces a mean ΔF1 of **+0.202** (BCa CI [+0.069, +0.341]), almost twice the magnitude of T37j's +0.106. The lift is concentrated on the codelists whose retriever pre-cap pool already contained the gold codes but the cap truncated them out:
+What this sweep does say is that **`MAX_CANDIDATES=100` is a structural bottleneck on bare-mode F1 for these codelists**: lifting the cap to 500 produces a mean ΔF1 of **+0.202** (BCa CI [+0.072, +0.343]). For context, T37j's lift was +0.106 on a different axis.
 
-- `lung_cancer` +0.540, `dementia` +0.491, `stroke` +0.281, `hypertension` +0.274 — all four show `mean gold pre-cap = gold_size` and `mean gold lost = 0` at cap=500, meaning the joint retriever set found every gold code and only the cap was hiding them.
-- `psychosis_schiz_bipolar` +0.187 and `asthma_pincer` +0.117 — both show pre-cap pools (2 721 / 1 544) that even cap=500 truncates, but only a handful of gold codes are lost to the cap=500 truncation.
-- `epilepsy` +0.058 is a partial lift — the pre-cap pool of 3 645 contains only 200 of 476 gold codes (the joint retrievers miss the rest) and cap=500 still loses 131 of those 200. Epilepsy is **retriever-bound**, not cap-bound, even at cap=500.
-- `hiv` −0.005 and `depression` −0.123 are bare-mode F1 regressions at cap=500. `hiv`'s pre-cap pool is only 100 with 9 gold codes — entirely retriever-bound, the cap is irrelevant. `depression`'s recall lifts +0.263 (0.545 → 0.808) but precision drops enough to net −0.123 on F1: the larger pool surfaces more non-gold candidates that the LLM scores `include`, and the precision drop exceeds the recall gain.
+Top lifts: `lung_cancer` +0.540 (0.242 → 0.782), `dementia` +0.491 (0.211 → 0.702), `stroke` +0.281 (0.522 → 0.803), `hypertension` +0.274 (0.307 → 0.581).
 
-**The T37j +0.106 ΔF1 should be read as a lift on top of a cap-truncated baseline**, not as the headline F1 achievable. The published methods F1 numbers were measured at `MAX_CANDIDATES=100`, which the diagnostic counts in this sweep show is the binding constraint on 6 of 9 large-gold codelists. A pipeline configured with `MAX_CANDIDATES=500` (everything else unchanged) sits ~0.20 F1 higher in bare mode on those codelists.
-
-The depression precision-drop pattern is the practical reason the live default is not being raised in this ticket: a cap lift is not strictly Pareto-better and a precision-vs-recall preference would need to be exposed at the API/UI layer before the default moves. See *Coverage gaps → Override mode* below for why the lift cannot be inferred for the descendant-closed override path from this sweep alone.
+Regressions at cap=500: `hiv` -0.005 (0.065 → 0.060), `depression` -0.123 (0.649 → 0.526). These are codelists where the cap was not the binding constraint at cap=100 (the larger pre-cap pool either surfaces non-gold candidates that the LLM scores `include`, hurting precision, or the upstream retrievers miss most of the gold regardless of cap).
 
 ## Cap diagnostic interpretation
 

@@ -41,6 +41,8 @@ from pathlib import Path
 import truststore  # noqa: E402
 truststore.inject_into_ssl()
 
+from app.db.code_normalize import normalize_code  # noqa: E402
+
 
 logger = logging.getLogger(__name__)
 logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(name)s: %(message)s")
@@ -63,19 +65,13 @@ USD_PER_SCORING_BATCH = 0.001
 USD_PER_QUERY_PARSE = 0.003
 
 
-def _norm_code(c: str) -> str:
-    return str(c).strip().replace(".", "")
-
-
 def _gold_set_from_test(test_set: list[dict]) -> set[str]:
-    out: set[str] = set()
-    for entry in test_set:
-        codes_raw = entry.get("Codelist", "")
-        for c in str(codes_raw).split(";"):
-            c = c.strip()
-            if c:
-                out.add(_norm_code(c))
-    return out
+    return {
+        normalize_code(c, "")
+        for entry in test_set
+        for c in str(entry.get("Codelist", "")).split(";")
+        if c.strip()
+    }
 
 
 def _output_dir(cap: int, mode: str) -> Path:
@@ -118,11 +114,11 @@ async def _one_run(
     envelope["pipeline"] = "rag"
     envelope["cold_start"] = False
 
-    pre_cap = pipeline_result.get("candidates_pre_cap", []) or []
-    pre_cap_keys = {_norm_code(c["code"]) for c in pre_cap}
-    enriched_keys = {_norm_code(c.get("code", "")) for c in enriched_codes}
+    pre_cap = pipeline_result.get("candidates_pre_cap") or []
+    pre_cap_keys = {normalize_code(c["code"], "") for c in pre_cap}
+    enriched_keys = {normalize_code(c.get("code", ""), "") for c in enriched_codes}
     final_included_keys = {
-        _norm_code(c.get("code", ""))
+        normalize_code(c.get("code", ""), "")
         for c in final_codes if c.get("decision") == "include"
     }
     gold = _gold_set_from_test(test_set)
@@ -138,7 +134,11 @@ async def _one_run(
         "max_candidates_setting": pipeline_result.get("max_candidates_setting"),
         "candidates_before_cap": pipeline_result.get("candidates_before_cap_count"),
         "candidates_after_first_cap": pipeline_result.get("candidates_after_merger_cap_count"),
-        "candidates_after_umls_cap": pipeline_result.get("candidates_after_umls_cap_count"),
+        "candidates_after_umls_cap": (
+            pipeline_result.get("candidates_after_umls_cap_count")
+            if pipeline_result.get("candidates_after_umls_cap_count") is not None
+            else pipeline_result.get("candidates_after_merger_cap_count")
+        ),
         "gold_codes_retrieved_before_cap": len(gold_pre),
         "gold_codes_after_caps": len(gold_post_caps),
         "gold_codes_lost_due_to_cap": len(gold_pre) - len(gold_post_caps),
@@ -218,7 +218,11 @@ def _spawn_child(
     runs: int,
 ) -> tuple[float, float]:
     """Spawn the child subprocess for one (cap, mode) batch. Returns (elapsed, cost)."""
-    env = {**os.environ, "MAX_CANDIDATES": str(cap)}
+    env = {
+        **os.environ,
+        "MAX_CANDIDATES": str(cap),
+        "EMIT_CAP_DIAGNOSTICS": "1",
+    }
     cmd = [
         sys.executable, "-m", "app.evaluation.run_cap_sensitivity",
         "--child", "--cap", str(cap), "--mode", mode, "--runs", str(runs),
@@ -241,11 +245,8 @@ def _spawn_child(
 def parent_main(args: argparse.Namespace) -> None:
     caps = [int(c) for c in args.caps.split(",")] if args.caps else list(CAPS)
 
-    if args.single_codelist:
-        bare_lists = [args.single_codelist]
-        override_lists = [args.single_codelist] if args.single_codelist in DESCENDANT_CLOSED else []
-    elif args.codelists:
-        wanted = [c.strip() for c in args.codelists.split(",") if c.strip()]
+    wanted = [c.strip() for c in args.codelists.split(",") if c.strip()] if args.codelists else None
+    if wanted:
         bare_lists = wanted
         override_lists = [c for c in wanted if c in DESCENDANT_CLOSED]
     else:
@@ -295,8 +296,6 @@ def main() -> None:
                         help="Comma-separated cap values to sweep (default: 100,300,500,1000)")
     parser.add_argument("--runs", type=int, default=5,
                         help="K runs per (codelist, cap, mode) (default: 5)")
-    parser.add_argument("--single-codelist", type=str, default=None,
-                        help="Restrict the sweep to one codelist (validation use)")
     parser.add_argument("--skip-override", action="store_true",
                         help="Skip the override mode (bare-only sweep)")
     parser.add_argument("--cap-usd", type=float, default=30.0,
