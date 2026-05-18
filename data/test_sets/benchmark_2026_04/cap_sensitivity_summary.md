@@ -14,16 +14,18 @@
 | Pre-fix baseline (cap=100, April K=1) | 15 | 0.49 | 0.53 | 0.71 | 0.51 | [0.36, 0.62] |
 | Post-fix default (cap=100, April K=1) | 15 | 0.57 | 0.67 | 0.88 | 0.49 | [0.44, 0.68] |
 | Post-T37j K=5 (cap=100, mode-matched) | 15 | **0.569** | 0.649 | 0.719 | 0.523 | [+0.414, +0.690] |
-| Post-T37j K=5 (cap=1000, mode-matched) | 8/15 | 0.626 (partial) | 0.625 | 0.624 | 0.712 | missing: stroke, asthma_pincer, copd, psychosis_schiz_bipolar, dementia, epilepsy, lung_cancer |
+| Post-T37j K=5 (cap=1000, mode-matched) | 15 | **0.638** | 0.613 | 0.629 | 0.720 | [+0.509, +0.727] |
 | cap=∞ supplementary K=1 | 0/15 | nan (partial) | nan | nan | nan | missing: heart_failure, diabetes_mellitus, hypertension, mi_icd10, atrial_fib_icd10, stroke, asthma_pincer, copd, depression, psychosis_schiz_bipolar, dementia, epilepsy, lung_cancer, hepatitis_c_chronic, hiv |
 
-*Cap=1000 mode-matched headline is provisional pending the override sweep (Wave 2). Missing codelists: ['stroke', 'asthma_pincer', 'copd', 'psychosis_schiz_bipolar', 'dementia', 'epilepsy', 'lung_cancer'].*
+**Headline mean F1 at cap=1000 (mode-matched): 0.638**, BCa 95 % CI [+0.509, +0.727].
 
 ## T37j delta-F1 across caps
 
 The T37j K=5 verification at cap=100 (`T37j_path_a_summary.md`) reported mean delta-F1 +0.106 (BCa CI [+0.049, +0.177]) vs the pre-T37i baseline, mode-matched. The relevant question for the methods paper is whether the same lift holds at cap=1000.
 
-*Mode-matched delta-F1 at cap=1000 is provisional: 8 of 15 codelists complete. Pending the override sweep at cap=1000 (Wave 2) for: stroke, asthma_pincer, copd, psychosis_schiz_bipolar, dementia, epilepsy, lung_cancer.*
+**T37j delta-F1 at cap=1000 (mode-matched, n=15):** mean **+0.070**, median +0.000, BCa 95 % CI [-0.030, +0.287]. Verdict: **AMBIGUOUS LIFT (CI crosses 0)**.
+
+**The T37j +0.106 delta-F1 does not unambiguously survive at cap=1000.** See per-codelist breakdown for the structural reason.
 
 ## Cap-lift delta-F1 (the structural-bottleneck axis)
 
@@ -39,17 +41,17 @@ This axis compares the SAME code state at different caps, isolating the cap as a
 
 | codelist | mode | gold | F1 cap=100 | F1 cap=500 | F1 cap=1000 |
 |---|---|---:|---:|---:|---:|
-| epilepsy | override | 476 | 0.550 (±0.000) | — | — |
-| lung_cancer | override | 363 | 0.402 (±0.054) | — | — |
-| dementia | override | 325 | 0.491 (±0.003) | — | — |
-| stroke | override | 266 | 0.698 (±0.000) | — | — |
+| epilepsy | override | 476 | 0.550 (±0.000) | 0.584 (±0.002) | 0.603 (±0.021) |
+| lung_cancer | override | 363 | 0.402 (±0.054) | 0.765 (±0.008) | 0.757 (±0.007) |
+| dementia | override | 325 | 0.491 (±0.003) | 0.684 (±0.012) | 0.694 (±0.007) |
+| stroke | override | 266 | 0.698 (±0.000) | 0.609 (±0.004) | 0.613 (±0.002) |
 | hiv | bare | 243 | 0.065 (±0.001) | 0.060 (±0.001) | 0.048 (±0.009) |
-| psychosis_schiz_bipolar | override | 198 | 0.510 (±0.010) | — | — |
-| asthma_pincer | override | 124 | 0.826 (±0.003) | — | — |
+| psychosis_schiz_bipolar | override | 198 | 0.510 (±0.010) | 0.455 (±0.014) | 0.575 (±0.009) |
+| asthma_pincer | override | 124 | 0.826 (±0.003) | 0.618 (±0.309) | 0.775 (±0.002) |
 | hypertension | bare | 117 | 0.307 (±0.009) | 0.581 (±0.048) | 0.567 (±0.045) |
 | depression | bare | 106 | 0.649 (±0.009) | 0.526 (±0.003) | 0.482 (±0.001) |
 | diabetes_mellitus | bare | 86 | 0.754 (±0.015) | 0.608 (±0.013) | 0.613 (±0.010) |
-| copd | override | 56 | 0.757 (±0.013) | — | — |
+| copd | override | 56 | 0.757 (±0.013) | 0.556 (±0.004) | 0.553 (±0.006) |
 | heart_failure | bare | 42 | 0.785 (±0.032) | 0.639 (±0.018) | 0.636 (±0.018) |
 | hepatitis_c_chronic | bare | 20 | 0.000 (±0.000) | 0.932 (±0.018) | 0.923 (±0.018) |
 | mi_icd10 | bare | 12 | 0.737 (±0.000) | 0.737 (±0.000) | 0.737 (±0.000) |
@@ -59,10 +61,17 @@ This axis compares the SAME code state at different caps, isolating the cap as a
 
 | codelist | gold | pre-cap pool | gold in pre-cap | gold lost | gold final |
 |---|---:|---:|---:|---:|---:|
+| epilepsy | 476 | 3645 | 200.0 | 131.0 | 216.4 |
+| lung_cancer | 363 | 421 | 363.0 | 0.0 | 262.6 |
+| dementia | 325 | 301 | 229.0 | 0.0 | 206.2 |
+| stroke | 266 | 377 | 266.0 | 0.0 | 247.0 |
 | hiv | 243 | 100 | 9.0 | 0.0 | 9.0 |
+| psychosis_schiz_bipolar | 198 | 2721 | 198.0 | 2.0 | 111.0 |
+| asthma_pincer | 124 | 1544 | 114.0 | 2.0 | 88.0 |
 | hypertension | 117 | 211 | 117.0 | 0.0 | 59.4 |
 | depression | 106 | 493 | 101.0 | 0.0 | 85.6 |
 | diabetes_mellitus | 86 | 185 | 86.0 | 0.0 | 77.6 |
+| copd | 56 | 133 | 51.0 | 0.0 | 34.8 |
 | heart_failure | 42 | 132 | 42.0 | 0.0 | 39.8 |
 | hepatitis_c_chronic | 20 | 134 | 20.0 | 0.0 | 19.2 |
 | mi_icd10 | 12 | 50 | 12.0 | 0.0 | 7.0 |
@@ -72,10 +81,17 @@ This axis compares the SAME code state at different caps, isolating the cap as a
 
 | codelist | gold | pre-cap pool | gold in pre-cap | gold lost | gold final |
 |---|---:|---:|---:|---:|---:|
+| epilepsy | 476 | 3645 | 200.0 | 115.0 | 230.8 |
+| lung_cancer | 363 | 421 | 363.0 | 0.0 | 258.0 |
+| dementia | 325 | 301 | 229.0 | 0.0 | 211.0 |
+| stroke | 266 | 377 | 266.0 | 0.0 | 249.8 |
 | hiv | 243 | 100 | 9.0 | 0.0 | 7.2 |
+| psychosis_schiz_bipolar | 198 | 2721 | 198.0 | 1.0 | 159.8 |
+| asthma_pincer | 124 | 1544 | 114.0 | 1.0 | 110.8 |
 | hypertension | 117 | 211 | 117.0 | 0.0 | 57.4 |
 | depression | 106 | 493 | 101.0 | 0.0 | 83.4 |
 | diabetes_mellitus | 86 | 185 | 86.0 | 0.0 | 77.4 |
+| copd | 56 | 133 | 51.0 | 0.0 | 34.4 |
 | heart_failure | 42 | 132 | 42.0 | 0.0 | 39.8 |
 | hepatitis_c_chronic | 20 | 134 | 20.0 | 0.0 | 19.2 |
 | mi_icd10 | 12 | 50 | 12.0 | 0.0 | 7.0 |
@@ -91,7 +107,6 @@ This axis compares the SAME code state at different caps, isolating the cap as a
 ## Coverage gaps
 
 - **cap=500 override sweep on the 7 descendant-closed codelists** is not yet run (Wave 2). Without it, the cap=500 line of the per-codelist table uses bare-mode for those codelists, which understates their F1 under the T37j convention.
-- **cap=1000 override sweep on the 7 descendant-closed codelists** is not yet run (Wave 2). The cap=1000 mode-matched headline and the cap=1000 T37j delta-F1 row are provisional until this lands.
 - **cap=∞ supplementary K=1** is not yet run (Wave 3, optional). The methods-paper discussion section would benefit from the absolute-ceiling reference but the two-anchor sensitivity curve (cap=100, cap=1000) suffices for the headline claim.
 - **Pre-T37i cap=1000 checkout** was deliberately skipped per the project-memory equivalence argument; see the note at the top.
 

@@ -207,12 +207,16 @@ def _paired_delta(loaded: dict, cap_a: str, cap_b: str, mode_match: bool, scope:
     }
 
 
-def _verdict(mean_delta: float) -> str:
+def _verdict(mean_delta: float, ci_low: float | None = None, ci_high: float | None = None) -> str:
+    crosses_zero = (
+        ci_low is not None and ci_high is not None
+        and ci_low <= 0 <= ci_high
+    )
     if mean_delta > SIGMA:
-        return "F1 LIFT"
+        return "AMBIGUOUS LIFT (CI crosses 0)" if crosses_zero else "F1 LIFT"
     if abs(mean_delta) <= SIGMA:
         return "F1 NEUTRAL"
-    return "F1 REGRESSION"
+    return "AMBIGUOUS REGRESSION (CI crosses 0)" if crosses_zero else "F1 REGRESSION"
 
 
 def _fmt_f1(m: dict | None) -> str:
@@ -329,11 +333,12 @@ def _write_markdown(loaded: dict) -> Path:
     lines.append("")
     p100_1000_mm = paired_100_1000_mode_matched
     if p100_1000_mm["n"] == len(loaded):
+        v = _verdict(p100_1000_mm['mean_delta'], p100_1000_mm['ci_low'], p100_1000_mm['ci_high'])
         lines.append(
             f"**T37j delta-F1 at cap=1000 (mode-matched, n={p100_1000_mm['n']}):** "
             f"mean **{p100_1000_mm['mean_delta']:+.3f}**, median {p100_1000_mm['median_delta']:+.3f}, "
             f"BCa 95 % CI [{p100_1000_mm['ci_low']:+.3f}, {p100_1000_mm['ci_high']:+.3f}]. "
-            f"Verdict: **{_verdict(p100_1000_mm['mean_delta'])}**."
+            f"Verdict: **{v}**."
         )
         survives = p100_1000_mm["mean_delta"] > SIGMA and p100_1000_mm["ci_low"] > 0
         if survives:
@@ -367,7 +372,7 @@ def _write_markdown(loaded: dict) -> Path:
             f"| {label} | {p['n']} | **{p['mean_delta']:+.3f}** | "
             f"{p['median_delta']:+.3f} | "
             f"[{p['ci_low']:+.3f}, {p['ci_high']:+.3f}] | "
-            f"**{_verdict(p['mean_delta'])}** |"
+            f"**{_verdict(p['mean_delta'], p['ci_low'], p['ci_high'])}** |"
         )
     lines.append("")
 

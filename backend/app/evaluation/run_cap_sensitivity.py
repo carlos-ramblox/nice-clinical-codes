@@ -171,6 +171,7 @@ async def _child_main(
     include_descendants = True if mode == "override" else None
     spent = 0.0
     t_start = time.perf_counter()
+    runs_executed = 0
 
     for s in selection:
         short = s["short"]
@@ -185,6 +186,7 @@ async def _child_main(
                 logger.info("[cap=%d %s %s run %d] already on disk", cap, mode, short, k)
                 continue
             spent += cost
+            runs_executed += 1
             inc = envelope["stages"].get("included_only", {})
             cd = envelope["cap_diagnostics"]
             logger.info(
@@ -199,16 +201,17 @@ async def _child_main(
             )
 
     elapsed = time.perf_counter() - t_start
-    meta = {
-        "cap": cap,
-        "mode": mode,
-        "runs": runs,
-        "codelists": [s["short"] for s in selection],
-        "elapsed_seconds": round(elapsed, 2),
-        "est_cost_usd": round(spent, 4),
-    }
-    (out_dir / "_meta.json").write_text(json.dumps(meta, indent=2), encoding="utf-8")
-    print(f"CHILD_DONE cap={cap} mode={mode} elapsed={elapsed:.1f}s spent=${spent:.4f}")
+    if runs_executed > 0:
+        meta = {
+            "cap": cap,
+            "mode": mode,
+            "runs": runs,
+            "codelists": [s["short"] for s in selection],
+            "elapsed_seconds": round(elapsed, 2),
+            "est_cost_usd": round(spent, 4),
+        }
+        (out_dir / "_meta.json").write_text(json.dumps(meta, indent=2), encoding="utf-8")
+    print(f"CHILD_DONE cap={cap} mode={mode} elapsed={elapsed:.1f}s spent=${spent:.4f} runs_executed={runs_executed}")
 
 
 def _spawn_child(
