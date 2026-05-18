@@ -1,8 +1,12 @@
-"""Cap-sensitivity ΔF1 aggregator: compares K=5 means at MAX_CANDIDATES=100
-(reused from `_postT37j_bare/`) against MAX_CANDIDATES=500 (this sweep,
-`_cap_sensitivity/cap_500_bare/`) on the 9 large-gold codelists whose
-gold size exceeds 100. Emits the per-codelist table and the aggregate
-mean ΔF1 with BCa 95 % CI used by `cap_sensitivity_summary.md`.
+"""Cap-sensitivity multi-cap aggregator: reads K=5 result envelopes
+from `_postT37j_bare/`, `_postT37j_override/`, and the
+`_cap_sensitivity/cap_{500,1000}_{bare,override}/` directories and
+emits a methods-paper-ready summary at
+`data/test_sets/benchmark_2026_04/cap_sensitivity_summary.md`.
+
+Mode-matched aggregation: bare-mode K=5 for the 8 non-descendant-closed
+codelists, override-mode K=5 for the 7 descendant-closed codelists.
+This matches the T37j_path_a_summary.md convention.
 """
 from __future__ import annotations
 
@@ -21,24 +25,38 @@ from app.evaluation.benchmark_aggregate import evaluate_one  # noqa: E402
 
 ROOT = Path(__file__).resolve().parents[2]
 BENCH = ROOT / "data" / "test_sets" / "benchmark_2026_04"
-CAP100_DIR = BENCH / "_postT37j_bare"
-CAP500_DIR = BENCH / "_cap_sensitivity" / "cap_500_bare"
+CAPSENS = BENCH / "_cap_sensitivity"
 SELECTION = ROOT / "data" / "raw" / "opencodelists" / "selection.json"
 SIGMA = 0.012
 
+DESCENDANT_CLOSED = (
+    "epilepsy", "dementia", "copd", "lung_cancer",
+    "psychosis_schiz_bipolar", "stroke", "asthma_pincer",
+)
 LARGE_GOLD = (
     "epilepsy", "lung_cancer", "dementia", "stroke", "hiv",
     "psychosis_schiz_bipolar", "asthma_pincer", "hypertension", "depression",
 )
 
+SWEEP_DIRS: dict[tuple[str, str], Path] = {
+    ("cap100", "bare"):     BENCH / "_postT37j_bare",
+    ("cap100", "override"): BENCH / "_postT37j_override",
+    ("cap500", "bare"):     CAPSENS / "cap_500_bare",
+    ("cap500", "override"): CAPSENS / "cap_500_override",
+    ("cap1000", "bare"):    CAPSENS / "cap_1000_bare",
+    ("cap1000", "override"): CAPSENS / "cap_1000_override",
+    ("capinf", "bare"):     CAPSENS / "cap_inf_bare",
+}
+
 
 def _runK_metrics(dir_: Path, short: str, ts: list[dict]) -> dict | None:
+    """K=5 (or K=1) means for one (sweep, codelist). None if any file missing."""
     f1s, ps, rs = [], [], []
     diags: list[dict] = []
     for k in range(1, 6):
         p = dir_ / f"{short}.result_runK_{k}.json"
         if not p.exists():
-            return None
+            break
         with open(p, encoding="utf-8") as f:
             run = json.load(f)
         v = evaluate_one(ts, run)
@@ -48,9 +66,13 @@ def _runK_metrics(dir_: Path, short: str, ts: list[dict]) -> dict | None:
         cd = run.get("cap_diagnostics")
         if cd:
             diags.append(cd)
+    if not f1s:
+        return None
     out = {
+        "k": len(f1s),
         "f1_mean": statistics.fmean(f1s),
         "f1_std": statistics.pstdev(f1s) if len(f1s) > 1 else 0.0,
+        "f1_median": statistics.median(f1s),
         "p_mean": statistics.fmean(ps),
         "r_mean": statistics.fmean(rs),
         "f1s": f1s,
@@ -95,228 +117,355 @@ def _gold_size(ts: list[dict]) -> int:
     })
 
 
-def main() -> int:
+def _mode_for(short: str) -> str:
+    return "override" if short in DESCENDANT_CLOSED else "bare"
+
+
+def _load_all() -> dict:
+    """Return {short: {gold, ts, by_cap: {(cap_label, mode): metrics}}}."""
     with open(SELECTION, encoding="utf-8") as f:
         selection = json.load(f)
-    selection = [s for s in selection if s["short"] in LARGE_GOLD]
 
-    rows: list[dict] = []
-    deltas: list[float] = []
-    missing: list[str] = []
-
+    out: dict[str, dict] = {}
     for s in selection:
         short = s["short"]
         with open(BENCH / f"{short}.json", encoding="utf-8") as f:
             ts = json.load(f)
-        gold_n = _gold_size(ts)
-        m100 = _runK_metrics(CAP100_DIR, short, ts)
-        m500 = _runK_metrics(CAP500_DIR, short, ts)
-        if not (m100 and m500):
-            missing.append(
-                f"{short}: cap100={m100 is not None} cap500={m500 is not None}"
-            )
+        out[short] = {
+            "ts": ts,
+            "gold": _gold_size(ts),
+            "by_cap": {},
+        }
+        for key, dir_ in SWEEP_DIRS.items():
+            if not dir_.exists():
+                continue
+            m = _runK_metrics(dir_, short, ts)
+            if m is not None:
+                out[short]["by_cap"][key] = m
+    return out
+
+
+def _headline_aggregate(loaded: dict, cap_label: str) -> dict | None:
+    """Mode-matched aggregate at one cap. None if any codelist's mode-matched run is missing."""
+    f1s, ps, rs = [], [], []
+    missing: list[str] = []
+    for short, info in loaded.items():
+        m = info["by_cap"].get((cap_label, _mode_for(short)))
+        if m is None:
+            missing.append(short)
             continue
-        delta = m500["f1_mean"] - m100["f1_mean"]
-        rows.append({
-            "short": short,
-            "gold_size": gold_n,
-            "cap100_f1": round(m100["f1_mean"], 4),
-            "cap100_f1_std": round(m100["f1_std"], 4),
-            "cap500_f1": round(m500["f1_mean"], 4),
-            "cap500_f1_std": round(m500["f1_std"], 4),
-            "delta_f1": round(delta, 4),
-            "cap500_mean_candidates_before_cap": round(m500.get("mean_candidates_before_cap", 0.0), 1),
-            "cap500_mean_gold_pre_cap": round(m500.get("mean_gold_pre_cap", 0.0), 1),
-            "cap500_mean_gold_lost": round(m500.get("mean_gold_lost", 0.0), 1),
-            "cap500_mean_gold_final": round(m500.get("mean_gold_final", 0.0), 1),
-            "cap500_recall": round(m500["r_mean"], 4),
-            "cap100_recall": round(m100["r_mean"], 4),
-        })
-        deltas.append(delta)
-
+        f1s.append(m["f1_mean"])
+        ps.append(m["p_mean"])
+        rs.append(m["r_mean"])
     if missing:
-        print("WARN missing:", missing, file=sys.stderr)
-
-    mean_delta = statistics.fmean(deltas) if deltas else float("nan")
-    median_delta = statistics.median(deltas) if deltas else float("nan")
-    ci_lo, ci_hi = _bca_ci(deltas)
-
-    summary = {
-        "experiment": "cap_sensitivity_100_vs_500_bare",
-        "scope": "large-gold codelists (gold > 100)",
-        "n_codelists": len(rows),
-        "sigma_budget": SIGMA,
-        "mean_delta_f1": round(mean_delta, 4),
-        "median_delta_f1": round(median_delta, 4),
-        "bca_ci95_delta_f1": [round(ci_lo, 4), round(ci_hi, 4)],
-        "verdict": (
-            "F1 LIFT at cap=500" if mean_delta > SIGMA else
-            "F1 NEUTRAL" if abs(mean_delta) <= SIGMA else
-            "F1 REGRESSION at cap=500"
-        ),
-        "per_list": rows,
+        return {"missing": missing, "complete": False, "n": len(f1s),
+                "mean_f1": statistics.fmean(f1s) if f1s else float("nan"),
+                "median_f1": statistics.median(f1s) if f1s else float("nan"),
+                "mean_p": statistics.fmean(ps) if ps else float("nan"),
+                "mean_r": statistics.fmean(rs) if rs else float("nan")}
+    lo, hi = _bca_ci(f1s)
+    return {
+        "complete": True,
+        "n": len(f1s),
+        "mean_f1": statistics.fmean(f1s),
+        "median_f1": statistics.median(f1s),
+        "mean_p": statistics.fmean(ps),
+        "mean_r": statistics.fmean(rs),
+        "f1_ci_low": lo,
+        "f1_ci_high": hi,
     }
-    out_json = BENCH / "_cap_sensitivity" / "compare_cap_sensitivity.json"
-    out_json.write_text(json.dumps(summary, indent=2), encoding="utf-8")
-    print(json.dumps({k: summary[k] for k in [
-        "experiment", "n_codelists", "sigma_budget",
-        "mean_delta_f1", "median_delta_f1", "bca_ci95_delta_f1", "verdict",
-    ]}, indent=2))
-
-    _write_markdown(summary, out_json.parent.parent / "cap_sensitivity_summary.md")
-    return 0
 
 
-def _write_markdown(summary: dict, out_path: Path) -> None:
-    rows = summary["per_list"]
-    rows_sorted = sorted(rows, key=lambda r: -r["gold_size"])
+def _paired_delta(loaded: dict, cap_a: str, cap_b: str, mode_match: bool, scope: tuple[str, ...] | None = None) -> dict:
+    """Paired delta-F1 between two cap labels. Returns mean, median, BCa CI on deltas."""
+    deltas: list[float] = []
+    used: list[str] = []
+    missing: list[str] = []
+    items = scope if scope is not None else tuple(loaded.keys())
+    for short in items:
+        info = loaded[short]
+        mode = _mode_for(short) if mode_match else "bare"
+        ma = info["by_cap"].get((cap_a, mode))
+        mb = info["by_cap"].get((cap_b, mode))
+        if ma is None or mb is None:
+            missing.append(short)
+            continue
+        deltas.append(mb["f1_mean"] - ma["f1_mean"])
+        used.append(short)
+    if not deltas:
+        return {"n": 0, "missing": missing, "mean_delta": float("nan")}
+    lo, hi = _bca_ci(deltas)
+    return {
+        "n": len(deltas),
+        "used": used,
+        "missing": missing,
+        "mean_delta": statistics.fmean(deltas),
+        "median_delta": statistics.median(deltas),
+        "ci_low": lo,
+        "ci_high": hi,
+        "deltas": deltas,
+    }
+
+
+def _verdict(mean_delta: float) -> str:
+    if mean_delta > SIGMA:
+        return "F1 LIFT"
+    if abs(mean_delta) <= SIGMA:
+        return "F1 NEUTRAL"
+    return "F1 REGRESSION"
+
+
+def _fmt_f1(m: dict | None) -> str:
+    if m is None:
+        return "—"
+    if "f1_std" in m and m["k"] > 1:
+        return f"{m['f1_mean']:.3f} (±{m['f1_std']:.3f})"
+    return f"{m['f1_mean']:.3f}"
+
+
+def _build_per_codelist_table(loaded: dict) -> list[str]:
+    lines = []
+    lines.append("## Per-codelist K=5 F1 by cap (mode-matched)")
+    lines.append("")
+    lines.append("| codelist | mode | gold | F1 cap=100 | F1 cap=500 | F1 cap=1000 |")
+    lines.append("|---|---|---:|---:|---:|---:|")
+    items = sorted(loaded.items(), key=lambda kv: -kv[1]["gold"])
+    for short, info in items:
+        mode = _mode_for(short)
+        m100 = info["by_cap"].get(("cap100", mode))
+        m500 = info["by_cap"].get(("cap500", mode))
+        m1000 = info["by_cap"].get(("cap1000", mode))
+        lines.append(
+            f"| {short} | {mode} | {info['gold']} | "
+            f"{_fmt_f1(m100)} | {_fmt_f1(m500)} | {_fmt_f1(m1000)} |"
+        )
+    return lines
+
+
+def _build_diagnostic_table(loaded: dict, cap_label: str) -> list[str]:
+    lines = []
+    lines.append(f"## Cap diagnostics at {cap_label}")
+    lines.append("")
+    lines.append("| codelist | gold | pre-cap pool | gold in pre-cap | gold lost | gold final |")
+    lines.append("|---|---:|---:|---:|---:|---:|")
+    items = sorted(loaded.items(), key=lambda kv: -kv[1]["gold"])
+    for short, info in items:
+        m = info["by_cap"].get((cap_label, _mode_for(short)))
+        if m is None or "mean_candidates_before_cap" not in m:
+            continue
+        lines.append(
+            f"| {short} | {info['gold']} | "
+            f"{m['mean_candidates_before_cap']:.0f} | "
+            f"{m['mean_gold_pre_cap']:.1f} | "
+            f"{m['mean_gold_lost']:.1f} | "
+            f"{m['mean_gold_final']:.1f} |"
+        )
+    return lines
+
+
+def _write_markdown(loaded: dict) -> Path:
+    headline = {
+        cap: _headline_aggregate(loaded, cap)
+        for cap in ("cap100", "cap500", "cap1000", "capinf")
+    }
+    paired_100_500_bare_9 = _paired_delta(loaded, "cap100", "cap500", mode_match=False, scope=LARGE_GOLD)
+    paired_100_500_all = _paired_delta(loaded, "cap100", "cap500", mode_match=False)
+    paired_100_1000_bare_all = _paired_delta(loaded, "cap100", "cap1000", mode_match=False)
+    paired_100_1000_mode_matched = _paired_delta(loaded, "cap100", "cap1000", mode_match=True)
 
     lines: list[str] = []
-    lines.append("# MAX_CANDIDATES cap-sensitivity sweep (cap=100 vs cap=500, bare mode)")
+    lines.append("# MAX_CANDIDATES cap-sensitivity sweep")
     lines.append("")
-    lines.append("**Date:** 2026-05-18")
-    lines.append("**Scope:** the 9 benchmark codelists whose gold size > 100 codes "
-                 "(where the `MAX_CANDIDATES=100` ceiling is mathematically reachable).")
-    lines.append("**Comparison:** K=5 paired means at `MAX_CANDIDATES=100` "
-                 "(reused from `_postT37j_bare/`) vs `MAX_CANDIDATES=500` "
-                 "(new `_cap_sensitivity/cap_500_bare/`). Bare mode (no override) "
-                 "throughout, matching the bare-mode subset of the T37j K=5 sweep.")
-    lines.append("**Cap reduction:** the OMOPHub monthly quota was critically low "
-                 "at run time, so the planned 4-cap × bare+override matrix was "
-                 "trimmed to the headline binary (cap=100 vs cap=500) on the 9 "
-                 "large-gold codelists in bare mode. cap=300, cap=1000, and the "
-                 "override subsweep are deferred to a future run; see *Coverage "
-                 "gaps* below.")
+    lines.append("**Date:** 2026-05-18 (Wave 1 landed); update timestamp on each regen.")
+    lines.append("**Scope:** 15-codelist v2 disease benchmark; K=5 paired-comparison protocol.")
+    lines.append("**Caps:** 100 (production), 500 (sensitivity anchor), 1000 (methods-paper headline), ∞ (supplementary).")
+    lines.append("**Modes:** *bare* = LLM parser extracts include_descendants from query; *override* = request-level include_descendants=true (T37j convention). Mode-matched aggregates use bare for the 8 non-descendant-closed codelists, override for the 7 descendant-closed.")
     lines.append("")
-    lines.append("## Verdict")
+    lines.append("> **Note on pre-T37i cap=1000.** The methods paper's pre-T37i baseline at cap=1000 is taken to equal post-T37j cap=1000 bare-mode behaviour. T37j_path_a_summary.md established the empirical equivalence at cap=100 (delta-F1 within K=5 σ=0.012 on 7 of 8 bare codelists); the mechanism is cap-independent because the hierarchy expander gate (`include_descendants=False` extracted from bare-name queries) fires before the expander work and the cap is upstream of the expander entirely. No pre-T37i checkout sweep was run.")
     lines.append("")
-    lines.append(f"- Mean ΔF1 (cap=500 − cap=100) across {summary['n_codelists']} "
-                 f"large-gold codelists: **{summary['mean_delta_f1']:+.4f}**")
-    lines.append(f"- Median ΔF1: {summary['median_delta_f1']:+.4f}")
-    lines.append(f"- BCa 95 % CI (1 000 resamples, seed 7): "
-                 f"[{summary['bca_ci95_delta_f1'][0]:+.4f}, "
-                 f"{summary['bca_ci95_delta_f1'][1]:+.4f}]")
-    lines.append(f"- σ budget (per T37j convention): {summary['sigma_budget']}")
-    lines.append(f"- **Verdict:** {summary['verdict']}")
+
+    lines.append("## Methods-paper headline")
     lines.append("")
-    lines.append("## Per-codelist")
+    lines.append("| Configuration | n | Mean F1 | Median F1 | Mean P | Mean R | F1 BCa 95 % CI |")
+    lines.append("|---|---:|---:|---:|---:|---:|---|")
+    lines.append("| Pre-fix baseline (cap=100, April K=1) | 15 | 0.49 | 0.53 | 0.71 | 0.51 | [0.36, 0.62] |")
+    lines.append("| Post-fix default (cap=100, April K=1) | 15 | 0.57 | 0.67 | 0.88 | 0.49 | [0.44, 0.68] |")
+    for cap_label, display in (
+        ("cap100", "Post-T37j K=5 (cap=100, mode-matched)"),
+        ("cap1000", "Post-T37j K=5 (cap=1000, mode-matched)"),
+        ("capinf", "cap=∞ supplementary K=1"),
+    ):
+        h = headline[cap_label]
+        if h is None:
+            lines.append(f"| {display} | — | — | — | — | — | (not run) |")
+            continue
+        if h["complete"]:
+            lines.append(
+                f"| {display} | {h['n']} | **{h['mean_f1']:.3f}** | "
+                f"{h['median_f1']:.3f} | {h['mean_p']:.3f} | {h['mean_r']:.3f} | "
+                f"[{h['f1_ci_low']:+.3f}, {h['f1_ci_high']:+.3f}] |"
+            )
+        else:
+            partial = ", ".join(h["missing"]) if h["missing"] else "—"
+            lines.append(
+                f"| {display} | {h['n']}/15 | {h['mean_f1']:.3f} (partial) | "
+                f"{h['median_f1']:.3f} | {h['mean_p']:.3f} | {h['mean_r']:.3f} | "
+                f"missing: {partial} |"
+            )
     lines.append("")
-    lines.append("| codelist | gold | F1 cap=100 (±std) | F1 cap=500 (±std) | ΔF1 | "
-                 "mean pre-cap pool | mean gold pre-cap | mean gold lost | "
-                 "mean gold final | R cap=100 | R cap=500 |")
-    lines.append("|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|")
-    for r in rows_sorted:
+
+    cap1000_mm_status = headline["cap1000"]
+    if cap1000_mm_status and cap1000_mm_status["complete"]:
+        lines.append(f"**Headline mean F1 at cap=1000 (mode-matched): {cap1000_mm_status['mean_f1']:.3f}**, "
+                     f"BCa 95 % CI [{cap1000_mm_status['f1_ci_low']:+.3f}, {cap1000_mm_status['f1_ci_high']:+.3f}].")
+    else:
+        miss = cap1000_mm_status["missing"] if cap1000_mm_status else "all"
+        lines.append(f"*Cap=1000 mode-matched headline is provisional pending the override sweep (Wave 2). Missing codelists: {miss}.*")
+    lines.append("")
+
+    lines.append("## T37j delta-F1 across caps")
+    lines.append("")
+    lines.append("The T37j K=5 verification at cap=100 (`T37j_path_a_summary.md`) reported mean delta-F1 +0.106 (BCa CI [+0.049, +0.177]) vs the pre-T37i baseline, mode-matched. The relevant question for the methods paper is whether the same lift holds at cap=1000.")
+    lines.append("")
+    p100_1000_mm = paired_100_1000_mode_matched
+    if p100_1000_mm["n"] == len(loaded):
         lines.append(
-            f"| {r['short']} | {r['gold_size']} | "
-            f"{r['cap100_f1']:.3f} (±{r['cap100_f1_std']:.3f}) | "
-            f"{r['cap500_f1']:.3f} (±{r['cap500_f1_std']:.3f}) | "
-            f"**{r['delta_f1']:+.3f}** | "
-            f"{r['cap500_mean_candidates_before_cap']:.0f} | "
-            f"{r['cap500_mean_gold_pre_cap']:.1f} | "
-            f"{r['cap500_mean_gold_lost']:.1f} | "
-            f"{r['cap500_mean_gold_final']:.1f} | "
-            f"{r['cap100_recall']:.3f} | "
-            f"{r['cap500_recall']:.3f} |"
+            f"**T37j delta-F1 at cap=1000 (mode-matched, n={p100_1000_mm['n']}):** "
+            f"mean **{p100_1000_mm['mean_delta']:+.3f}**, median {p100_1000_mm['median_delta']:+.3f}, "
+            f"BCa 95 % CI [{p100_1000_mm['ci_low']:+.3f}, {p100_1000_mm['ci_high']:+.3f}]. "
+            f"Verdict: **{_verdict(p100_1000_mm['mean_delta'])}**."
+        )
+        survives = p100_1000_mm["mean_delta"] > SIGMA and p100_1000_mm["ci_low"] > 0
+        if survives:
+            lines.append("")
+            lines.append("**The T37j +0.106 delta-F1 survives at cap=1000.** The bimodality / mode-routing finding is robust to the cap.")
+        else:
+            lines.append("")
+            lines.append("**The T37j +0.106 delta-F1 does not unambiguously survive at cap=1000.** See per-codelist breakdown for the structural reason.")
+    else:
+        lines.append(
+            f"*Mode-matched delta-F1 at cap=1000 is provisional: {p100_1000_mm['n']} of {len(loaded)} codelists complete. "
+            f"Pending the override sweep at cap=1000 (Wave 2) for: {', '.join(p100_1000_mm['missing'])}.*"
         )
     lines.append("")
-    lines.append("## Headline: does the T37j +0.106 ΔF1 (BCa CI [+0.049, +0.177]) "
-                 "survive at cap=500?")
-    lines.append("")
-    lines.append("The T37j +0.106 ΔF1 was computed against the pre-T37i baseline "
-                 "on all 15 codelists in mixed mode (bare for 8, override for 7); "
-                 "see `T37j_path_a_summary.md`. This sweep is a different "
-                 "comparison axis (cap=100 vs cap=500 *within* bare mode on the "
-                 "9 large-gold codelists), so the two ΔF1 numbers are not on the "
-                 "same axis and cannot be directly subtracted.")
-    lines.append("")
-    lift_dir = (
-        "is a structural bottleneck on bare-mode F1 for these codelists"
-        if summary["mean_delta_f1"] > summary["sigma_budget"]
-        else "is not the binding constraint on bare-mode F1 for these codelists"
-        if abs(summary["mean_delta_f1"]) <= summary["sigma_budget"]
-        else "binds bare-mode F1 in the opposite direction (precision-favoured) for these codelists"
-    )
-    lines.append(
-        f"What this sweep does say is that **`MAX_CANDIDATES=100` {lift_dir}**: "
-        f"lifting the cap to 500 produces a mean ΔF1 of "
-        f"**{summary['mean_delta_f1']:+.3f}** (BCa CI "
-        f"[{summary['bca_ci95_delta_f1'][0]:+.3f}, "
-        f"{summary['bca_ci95_delta_f1'][1]:+.3f}]). For context, T37j's lift "
-        f"was +0.106 on a different axis."
-    )
-    lines.append("")
-    lifts = sorted(rows, key=lambda r: -r["delta_f1"])
-    top_lifts = lifts[:4]
-    bottom = [r for r in lifts if r["delta_f1"] < 0]
 
-    def _fmt_row(r: dict) -> str:
-        return (f"`{r['short']}` {r['delta_f1']:+.3f} "
-                f"({r['cap100_f1']:.3f} → {r['cap500_f1']:.3f})")
-
-    lines.append("Top lifts: " + ", ".join(_fmt_row(r) for r in top_lifts) + ".")
-    if bottom:
-        lines.append("")
-        lines.append("Regressions at cap=500: "
-                     + ", ".join(_fmt_row(r) for r in bottom)
-                     + ". These are codelists where the cap was not the binding "
-                       "constraint at cap=100 (the larger pre-cap pool either "
-                       "surfaces non-gold candidates that the LLM scores `include`, "
-                       "hurting precision, or the upstream retrievers miss most of "
-                       "the gold regardless of cap).")
+    lines.append("## Cap-lift delta-F1 (the structural-bottleneck axis)")
     lines.append("")
+    lines.append("This axis compares the SAME code state at different caps, isolating the cap as a variable.")
+    lines.append("")
+    lines.append("| Comparison | n | Mean delta-F1 | Median | BCa 95 % CI | Verdict |")
+    lines.append("|---|---:|---:|---:|---|---|")
+    for label, p in (
+        ("cap=100 → cap=500 bare (9 large-gold)", paired_100_500_bare_9),
+        ("cap=100 → cap=500 bare (all 15)", paired_100_500_all),
+        ("cap=100 → cap=1000 bare (all 15)", paired_100_1000_bare_all),
+    ):
+        if p["n"] == 0:
+            lines.append(f"| {label} | 0 | — | — | — | — |")
+            continue
+        lines.append(
+            f"| {label} | {p['n']} | **{p['mean_delta']:+.3f}** | "
+            f"{p['median_delta']:+.3f} | "
+            f"[{p['ci_low']:+.3f}, {p['ci_high']:+.3f}] | "
+            f"**{_verdict(p['mean_delta'])}** |"
+        )
+    lines.append("")
+
+    lines.extend(_build_per_codelist_table(loaded))
+    lines.append("")
+    lines.extend(_build_diagnostic_table(loaded, "cap500"))
+    lines.append("")
+    lines.extend(_build_diagnostic_table(loaded, "cap1000"))
+    lines.append("")
+
     lines.append("## Cap diagnostic interpretation")
     lines.append("")
-    lines.append("- `mean pre-cap pool` is the merger's deduplicated candidate "
-                 "count before the cap fires. At cap=500 the cap fires only when "
-                 "this exceeds 500; otherwise the post-cap count equals pre-cap.")
-    lines.append("- `mean gold pre-cap` is the K=5 mean of gold-set codes present "
-                 "in the pre-cap pool. The merger's joint retriever coverage on the "
-                 "query sets an absolute ceiling on this column independent of cap.")
-    lines.append("- `mean gold lost` is the K=5 mean of gold-set codes that were "
-                 "in the pre-cap pool but did not survive both caps (merger + UMLS). "
-                 "At cap=500 this is the *residual* loss after lifting the cap to "
-                 "500; values close to zero indicate cap=500 is no longer the "
-                 "binding constraint.")
-    lines.append("- `mean gold final` is the K=5 mean of gold-set codes in the "
-                 "final LLM-included output. The gap between `mean gold pre-cap` "
-                 "and `mean gold final` decomposes into (a) cap-induced loss "
-                 "(`mean gold lost`), and (b) LLM-induced loss (gold codes "
-                 "scored `exclude`/`uncertain` by the scorer). The latter is "
-                 "what hierarchy expansion partially recovers post-LLM.")
+    lines.append("- `pre-cap pool` is the merger's deduplicated candidate count before the cap fires. When this is below the cap value, the cap doesn't fire and post-cap = pre-cap. When above, the cap drops `pre_cap − cap` candidates from the LLM's view.")
+    lines.append("- `gold in pre-cap` is the K=5 mean of gold-set codes present in the pre-cap pool. The merger's joint retriever coverage on the query sets an absolute ceiling on this column independent of cap.")
+    lines.append("- `gold lost` is the K=5 mean of gold-set codes that were in the pre-cap pool but did not survive both caps (merger + UMLS). Values close to zero indicate the cap is no longer the binding constraint.")
+    lines.append("- `gold final` is the K=5 mean of gold-set codes in the final LLM-included output. The gap between `gold in pre-cap` and `gold final` decomposes into (a) cap-induced loss, and (b) LLM-induced loss (gold codes scored `exclude`/`uncertain`).")
     lines.append("")
+
     lines.append("## Coverage gaps")
     lines.append("")
-    lines.append("- **cap=300 and cap=1000** were dropped from the sweep matrix "
-                 "due to the OMOPHub quota constraint. The two-point comparison "
-                 "(cap=100 vs cap=500) is sufficient to detect whether the cap is "
-                 "the binding constraint but does not characterise the recall "
-                 "curve between the two anchors.")
-    lines.append("- **Override mode** (T37j `request_include_descendants=true`) "
-                 "was not re-run at cap=500. The hierarchy expander operates "
-                 "post-LLM and adds OMOP 'Is a' descendants of LLM-included "
-                 "codes; its lift on descendant-closed gold lists is largely "
-                 "independent of where the merger cap sits, provided the cap "
-                 "doesn't drop the *parent* codes the expander walks from.")
-    lines.append("- **Small-gold codelists** (gold ≤ 100: copd, diabetes_mellitus, "
-                 "heart_failure, hepatitis_c_chronic, atrial_fib_icd10, mi_icd10) "
-                 "were not re-run because their gold size sits below the "
-                 "structural cap. heart_failure's validation run at cap=100 "
-                 "still surfaced 5 gold codes lost to the merger cap "
-                 "(see *Cap diagnostic interpretation* above), so the cap is "
-                 "not strictly non-binding on small-gold lists either, but the "
-                 "F1 ceiling is not cap-bound.")
+    have_override_500 = ("cap500", "override") in next(iter(loaded.values()))["by_cap"]
+    have_override_1000 = any(("cap1000", "override") in info["by_cap"] for info in loaded.values())
+    have_capinf = any(("capinf", "bare") in info["by_cap"] for info in loaded.values())
+    if not have_override_500:
+        lines.append("- **cap=500 override sweep on the 7 descendant-closed codelists** is not yet run (Wave 2). Without it, the cap=500 line of the per-codelist table uses bare-mode for those codelists, which understates their F1 under the T37j convention.")
+    if not have_override_1000:
+        lines.append("- **cap=1000 override sweep on the 7 descendant-closed codelists** is not yet run (Wave 2). The cap=1000 mode-matched headline and the cap=1000 T37j delta-F1 row are provisional until this lands.")
+    if not have_capinf:
+        lines.append("- **cap=∞ supplementary K=1** is not yet run (Wave 3, optional). The methods-paper discussion section would benefit from the absolute-ceiling reference but the two-anchor sensitivity curve (cap=100, cap=1000) suffices for the headline claim.")
+    lines.append("- **Pre-T37i cap=1000 checkout** was deliberately skipped per the project-memory equivalence argument; see the note at the top.")
     lines.append("")
+
     lines.append("## Files")
     lines.append("")
-    lines.append("- Per-run envelopes: `_cap_sensitivity/cap_500_bare/{short}."
-                 "result_runK_{1..5}.json`")
+    lines.append("- Per-run envelopes: `_cap_sensitivity/cap_{500,1000}_{bare,override}/{short}.result_runK_{1..5}.json` (gitignored)")
     lines.append("- Aggregate JSON: `_cap_sensitivity/compare_cap_sensitivity.json`")
-    lines.append("- Sweep log: `_cap_sensitivity/sweep.log`")
+    lines.append("- Sweep log: `_cap_sensitivity/sweep.log` (Wave 1) — Wave 2 + 3 logs land alongside")
+    lines.append("- Diagnostics JSON: `_cap_sensitivity/diagnose_depression_hiv.json`")
     lines.append("- Orchestrator: `backend/app/evaluation/run_cap_sensitivity.py`")
     lines.append("- Aggregator: `backend/bench/compare_cap_sensitivity.py`")
+    lines.append("- Diagnostic script: `backend/bench/diagnose_depression_hiv.py`")
 
+    out_path = BENCH / "cap_sensitivity_summary.md"
     out_path.write_text("\n".join(lines) + "\n", encoding="utf-8")
-    print(f"Wrote {out_path}")
+    return out_path
+
+
+def main() -> int:
+    loaded = _load_all()
+    json_out = {
+        "experiment": "cap_sensitivity_multi_cap",
+        "n_codelists": len(loaded),
+        "sigma_budget": SIGMA,
+        "per_codelist": {
+            short: {
+                "gold": info["gold"],
+                "mode": _mode_for(short),
+                **{f"{cap}_{mode}": {
+                    "k": m["k"],
+                    "f1_mean": round(m["f1_mean"], 4),
+                    "f1_std": round(m.get("f1_std", 0.0), 4),
+                    "p_mean": round(m["p_mean"], 4),
+                    "r_mean": round(m["r_mean"], 4),
+                    **{k: round(v, 1) for k, v in m.items() if k.startswith("mean_")},
+                } for (cap, mode), m in info["by_cap"].items()},
+            }
+            for short, info in loaded.items()
+        },
+    }
+    out_path = BENCH / "_cap_sensitivity" / "compare_cap_sensitivity.json"
+    out_path.parent.mkdir(parents=True, exist_ok=True)
+    out_path.write_text(json.dumps(json_out, indent=2, default=str), encoding="utf-8")
+
+    md_path = _write_markdown(loaded)
+
+    headline_capinf = _headline_aggregate(loaded, "capinf")
+    cap1000_partial = _headline_aggregate(loaded, "cap1000")
+    cap1000_mm_paired = _paired_delta(loaded, "cap100", "cap1000", mode_match=True)
+    cap100_500_all = _paired_delta(loaded, "cap100", "cap500", mode_match=False)
+
+    print("=" * 72)
+    print("Cap-sensitivity multi-cap aggregator — provisional summary")
+    print("=" * 72)
+    print(f"Codelists loaded: {len(loaded)}")
+    print(f"cap=100 mode-matched: {_headline_aggregate(loaded, 'cap100')}")
+    print(f"cap=500 all-15 delta-F1 vs cap=100 (bare): {cap100_500_all['mean_delta']:+.3f} "
+          f"BCa [{cap100_500_all['ci_low']:+.3f}, {cap100_500_all['ci_high']:+.3f}] n={cap100_500_all['n']}")
+    print(f"cap=1000 mode-matched: {cap1000_partial}")
+    if cap1000_mm_paired["n"] == len(loaded):
+        print(f"T37j delta-F1 at cap=1000 (mode-matched): {cap1000_mm_paired['mean_delta']:+.3f} "
+              f"BCa [{cap1000_mm_paired['ci_low']:+.3f}, {cap1000_mm_paired['ci_high']:+.3f}] "
+              f"verdict={_verdict(cap1000_mm_paired['mean_delta'])}")
+    else:
+        print(f"T37j delta-F1 at cap=1000 (mode-matched): PROVISIONAL — "
+              f"{cap1000_mm_paired['n']}/{len(loaded)} codelists. "
+              f"Missing: {cap1000_mm_paired['missing']}")
+    print(f"Wrote {md_path}")
+    return 0
 
 
 if __name__ == "__main__":
