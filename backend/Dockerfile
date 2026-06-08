@@ -34,6 +34,10 @@ COPY data/raw/opencodecounts/ data/raw/opencodecounts/
 
 RUN python -m app.ingestion.run_all --data-dir data
 
+# Fail the build if a required vocabulary is empty — run_all only warns on
+# missing source XML, which is how an image once shipped with no OPCS-4.
+RUN python -m app.ingestion.verify_corpus
+
 # --- Runtime stage ---
 FROM python:3.12-slim
 

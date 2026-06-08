@@ -65,3 +65,17 @@ app.include_router(public_codelists_router, prefix="/api")
 @app.get("/health")
 async def health_check():
     return {"status": "healthy", "version": app.version}
+
+
+@app.get("/health/corpus")
+async def corpus_health():
+    """Per-vocabulary code counts in the baked ChromaDB.
+
+    Lets an operator confirm after a deploy that the licensed TRUD
+    vocabularies (OPCS-4, ICD-10) are actually present — the gap that
+    shipped silently before the build-time guardrail existed. On-demand,
+    not on the liveness loop, so it stays off the 3s healthcheck budget.
+    """
+    from app.db.vector_store import count_by_vocabulary
+
+    return {"counts": count_by_vocabulary()}
