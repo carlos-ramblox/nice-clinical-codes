@@ -294,6 +294,37 @@ def test_none_concept_code_value_is_skipped_not_stringified():
     assert len(df) == 2
 
 
+def test_bulk_response_as_bare_list_is_parsed():
+    """Regression (Wood-8): the live API returns the bulk payload as
+    ``data: [{search_id, query, results, status}, ...]`` and the SDK
+    unwraps ``data``, so bulk_basic hands back a *list*, not the dict its
+    BulkSearchResponse type advertises. The old parser's
+    ``isinstance(response, dict) else []`` silently dropped every code."""
+    behaviour = {
+        ("Foo", "ICD10cm"):         [_row("I21", "ICD10cm")],
+        ("Acute Foo", "ICD10cm"):   [_row("I22", "ICD10cm")],
+        ("Chronic Foo", "ICD10cm"): [_row("I23", "ICD10cm")],
+    }
+
+    class _ListResponseClient(_FakeClient):
+        def bulk_basic(self, searches, *, defaults=None):
+            self.bulk_calls += 1
+            return [
+                {
+                    "search_id": s["search_id"],
+                    "query": s["query"],
+                    "results": list(self._behaviour.get((s["query"], s["vocabulary_ids"][0]), [])),
+                    "status": "completed",
+                }
+                for s in searches
+            ]
+
+    with patch.object(omr, "OMOPHub", lambda **_: _ListResponseClient(behaviour)):
+        df = omr.search_omophub("Foo", vocabularies={"ICD10cm": "ICD-10-CM"}, page_size=20)
+    assert sorted(df["concept_code"].tolist()) == ["I21", "I22", "I23"], \
+        "bare-list bulk response must not be dropped"
+
+
 def test_bulk_skips_per_item_failures_without_crashing_whole_query():
     """One search_id fails (status != completed); other items still flow through."""
     behaviour = {
