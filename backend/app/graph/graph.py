@@ -48,6 +48,7 @@ def query_parser_node(state: dict) -> dict:
     return {
         "parsed_conditions": result["conditions"],
         "vocabulary_cues": result.get("vocabulary_cues", []),
+        "disambiguation_suggestions": result.get("disambiguation_suggestions", []),
     }
 
 

@@ -19,6 +19,12 @@ class ParsedCondition(TypedDict):
     include_criteria: list[str]
     exclude_criteria: list[str]
     include_descendants: bool
+    # T37 disambiguation. Populated by the parser in the same
+    # structured-output call; default to high-confidence/empty so
+    # pre-T37 callers and the unambiguous path stay banner-free.
+    parse_confidence: float
+    alternatives: list[str]
+    detected_language: str
 
 
 class RetrievedCode(TypedDict):
@@ -113,6 +119,11 @@ class PipelineState(TypedDict):
     # doesn't pin a vocabulary; non-empty values flow through to
     # retriever fan-out and to output filtering.
     vocabulary_cues: list[str]
+
+    # T37 "Did you mean…?" suggestions. One dict per flagged condition,
+    # shaped like the API DisambiguationEntry model. Empty for
+    # unambiguous queries — the banner renders nothing in that case.
+    disambiguation_suggestions: list[dict]
 
     # Structured study-intent criteria supplied at the request boundary
     # (T29). When non-empty, query_parser_node applies them to every

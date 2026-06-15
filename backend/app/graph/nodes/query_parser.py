@@ -78,6 +78,20 @@ Descendant-expansion intent (T37j):
 - include_descendants is per-condition: all conditions in one query
   typically share the same value, but the schema leaves room for a
   future per-condition asymmetry.
+
+Disambiguation (T37) — populate parse_confidence, alternatives and detected_language per condition in this same call. Do not add an extra step; these are part of the structured output.
+- parse_confidence: 0.0-1.0, how sure you are the interpretation is the one the user meant. Plain, unambiguous queries score >= 0.9. Vague umbrella terms score below 0.75.
+- alternatives: other plausible clinical interpretations the user might have meant. Leave empty ([]) when the query is unambiguous. Do NOT invent alternatives for clear queries — an empty list is the correct answer for "type 2 diabetes" or "asthma".
+- detected_language: ISO 639-1 code of the query language ("en", "fr", "es", ...). Default "en". Always set the condition name to the standard English clinical term even when the query is non-English.
+- Clinical abbreviations are ambiguous: expand to your best guess as name, list the other common expansions in alternatives, e.g.:
+    "MS"  -> name "multiple sclerosis",        alternatives ["mitral stenosis"]
+    "DM"  -> name "diabetes mellitus",          alternatives ["dermatomyositis"]
+    "CA"  -> name "cancer",                      alternatives ["coronary artery", "cardiac arrest"]
+    "RA"  -> name "rheumatoid arthritis",        alternatives ["right atrium", "refractory anaemia"]
+    "MI"  -> name "myocardial infarction",       alternatives ["mitral insufficiency"]
+    "AS"  -> name "aortic stenosis",             alternatives ["ankylosing spondylitis"]
+- Likely misspellings: interpret the intended condition as name and put the corrected term in alternatives, e.g. "diabetis" -> name "diabetes mellitus", alternatives ["diabetes mellitus"].
+- Vague queries: pick the most likely interpretation as name, set a low parse_confidence, and list the other candidates in alternatives, e.g. "heart problem" -> alternatives ["heart failure", "ischaemic heart disease", "atrial fibrillation"].
 """
 
 
@@ -163,9 +177,76 @@ class Condition(BaseModel):
     )
     include_descendants: bool = Field(default=False)
 
+    # T37 additions — populated by Sonnet in the same structured-output call.
+    parse_confidence: float = Field(
+        default=1.0, ge=0.0, le=1.0,
+        description="Model's confidence the interpretation is correct (0.0-1.0)",
+    )
+    alternatives: list[str] = Field(
+        default_factory=list,
+        description="Candidate alternative interpretations when ambiguous; empty when unambiguous",
+    )
+    detected_language: str = Field(
+        default="en",
+        description="ISO 639-1 code of the detected query language",
+    )
+
 
 class ParsedQuery(BaseModel):
     conditions: list[Condition] = Field(description="Extracted clinical conditions")
+
+
+# Disambiguation flag thresholds (T37).
+PARSE_CONFIDENCE_FLAG_THRESHOLD = 0.75
+MIN_ALTERNATIVES_TO_SHOW = 1
+LANGUAGE_FLAG_NON_EN = True
+
+# Backstop for when Sonnet is overconfident and leaves alternatives empty.
+_AMBIGUOUS_ABBREVIATIONS: frozenset[str] = frozenset(
+    {"MS", "DM", "CA", "RA", "MI", "AS"}
+)
+# Match only all-caps tokens: a lower-case "as"/"mi" in prose must not trip
+# the backstop (the "no false-positive noise" acceptance criterion).
+_ABBREV_TOKEN = re.compile(r"\b[A-Z]{2,}\b")
+
+
+def should_flag_disambiguation(condition: Condition, raw_query: str) -> dict | None:
+    """Decide whether a parsed condition warrants a "Did you mean…?" banner.
+
+    Returns a dict shaped like the API ``DisambiguationEntry`` model
+    (``original_term``, ``interpreted_as``, ``alternatives``, ``reason``,
+    ``detected_language``) when any flag fires, else ``None``. A dict — not
+    the Pydantic model — keeps this graph-layer helper free of an import on
+    the API layer; ``routes.py`` validates the dict into ``DisambiguationEntry``.
+
+    Flagging is the boolean OR of §2.5: ambiguous abbreviation token,
+    non-English input, low parse confidence, or model-supplied alternatives.
+    ``reason`` is the single most-specific trigger in that priority order.
+    """
+    tokens = set(_ABBREV_TOKEN.findall(raw_query))
+    is_abbrev = bool(tokens & _AMBIGUOUS_ABBREVIATIONS)
+    non_english = LANGUAGE_FLAG_NON_EN and condition.detected_language != "en"
+    low_confidence = condition.parse_confidence < PARSE_CONFIDENCE_FLAG_THRESHOLD
+    has_alternatives = len(condition.alternatives) >= MIN_ALTERNATIVES_TO_SHOW
+
+    if is_abbrev:
+        reason = "ambiguous_abbreviation"
+    elif non_english:
+        reason = "non_english_input"
+    elif low_confidence:
+        reason = "low_parse_confidence"
+    elif has_alternatives:
+        reason = "possible_misspelling"
+    else:
+        return None
+
+    return {
+        "original_term": raw_query.strip(),
+        "interpreted_as": condition.name,
+        "alternatives": list(condition.alternatives),
+        "reason": reason,
+        "detected_language": condition.detected_language,
+    }
 
 
 def parse_query(
@@ -198,7 +279,7 @@ def parse_query(
     that omit the field don't silently strip extraction.
     """
     if not raw_query or not raw_query.strip():
-        return {"conditions": [], "coding_systems": ["SNOMED", "ICD10"]}
+        return {"conditions": [], "coding_systems": ["SNOMED", "ICD10"], "disambiguation_suggestions": []}
 
     cleaned_query, vocab_cues = extract_vocabulary_cues(raw_query)
     if vocab_cues:
@@ -251,10 +332,17 @@ def parse_query(
         conditions.append(d)
         all_systems.update(d["coding_systems"])
 
+    disambiguation_suggestions = [
+        entry
+        for c in result.conditions
+        if (entry := should_flag_disambiguation(c, raw_query)) is not None
+    ]
+
     parsed = {
         "conditions": conditions,
         "coding_systems": sorted(all_systems),
         "vocabulary_cues": vocab_cues,
+        "disambiguation_suggestions": disambiguation_suggestions,
     }
 
     logger.info(
