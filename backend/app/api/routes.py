@@ -46,7 +46,7 @@ _DISABLE_BNF_DESCRIPTION = (
 )
 
 from app.graph.graph import run_pipeline, RETRIEVER_NAMES
-from app.graph.nodes.query_parser import parse_query
+from app.graph.nodes.query_parser import parse_query, detect_query_typo
 from app.evaluation.evaluator import run_evaluation
 from app.baseline.llm_client import run_baseline
 from app.api import _search_cache
@@ -312,6 +312,17 @@ async def disambiguate(
             entries.append(DisambiguationEntry(**d))
         except Exception:
             logger.warning("Dropping malformed disambiguation entry: %r", d)
+
+    # only when nothing else flagged, so it can't override a real interpretation
+    if not entries:
+        interpreted = [c.get("name", "") for c in parsed.get("conditions", [])]
+        typo = detect_query_typo(query, interpreted)
+        if typo:
+            try:
+                entries.append(DisambiguationEntry(**typo))
+            except Exception:
+                logger.warning("Dropping malformed typo suggestion: %r", typo)
+
     return entries
 
 

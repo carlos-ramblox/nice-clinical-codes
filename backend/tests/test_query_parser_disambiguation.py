@@ -31,6 +31,7 @@ os.environ.setdefault("ANTHROPIC_API_KEY", "dummy-test-key")
 from app.graph.nodes.query_parser import (  # noqa: E402
     Condition,
     ParsedQuery,
+    detect_query_typo,
     parse_query,
     should_flag_disambiguation,
 )
@@ -71,13 +72,15 @@ _ABBREVIATIONS = {
 
 @pytest.mark.parametrize("abbrev,expansions", _ABBREVIATIONS.items())
 def test_ambiguous_abbreviation_produces_alternatives(abbrev, expansions):
-    cond = _condition(expansions[0], alternatives=expansions, parse_confidence=0.9)
+    # Simulate the overconfident live model: one sense as name, NO alternatives.
+    # The code backstop must still surface the full known sense set (>= 2).
+    cond = _condition(expansions[0], alternatives=[], parse_confidence=1.0)
     with _patch_llm_returning(cond):
         result = parse_query(abbrev)
 
-    assert len(result["conditions"][0]["alternatives"]) >= 2
     suggestions = result["disambiguation_suggestions"]
     assert suggestions and suggestions[0]["reason"] == "ambiguous_abbreviation"
+    assert len(suggestions[0]["alternatives"]) >= 2
 
 
 # --- Misspellings: corrected term appears in alternatives -------------------
@@ -177,6 +180,36 @@ def test_flag_reason_per_trigger_type():
 
     misspell = _condition("diabetes mellitus", parse_confidence=0.95, alternatives=["diabetes mellitus"])
     assert should_flag_disambiguation(misspell, "diabetis")["reason"] == "possible_misspelling"
+
+
+@pytest.mark.parametrize("typo,interpreted", [
+    ("diabetis", "diabetes mellitus"),
+    ("hypertenion", "hypertension"),
+    ("parkinsosn", "Parkinson's disease"),
+])
+def test_typo_backstop_flags_near_edit_match(typo, interpreted):
+    """A query word a small edit-distance from the LLM's interpretation (but
+    not exact) is flagged as a possible misspelling — the case the single
+    parse misses because the model corrects it confidently."""
+    entry = detect_query_typo(typo, [interpreted])
+    assert entry is not None
+    assert entry["reason"] == "possible_misspelling"
+    assert entry["interpreted_as"] == interpreted
+
+
+@pytest.mark.parametrize("query,interpreted", [
+    ("Type 2 diabetes mellitus", "type 2 diabetes mellitus"),  # exact
+    ("heart attack", "myocardial infarction"),                 # synonym, large edit
+    ("asthma", "asthma"),                                      # exact
+])
+def test_typo_backstop_no_false_positive(query, interpreted):
+    """Exact matches and legitimate synonyms/expansions must NOT be flagged —
+    the 'no false-positive noise' acceptance criterion."""
+    assert detect_query_typo(query, [interpreted]) is None
+
+
+def test_typo_backstop_returns_none_without_interpretation():
+    assert detect_query_typo("anything", []) is None
 
 
 def test_lowercase_prose_token_does_not_false_flag():

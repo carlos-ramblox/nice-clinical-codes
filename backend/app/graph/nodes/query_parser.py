@@ -1,3 +1,4 @@
+import difflib
 import logging
 import re
 from typing import Literal
@@ -201,13 +202,30 @@ PARSE_CONFIDENCE_FLAG_THRESHOLD = 0.75
 MIN_ALTERNATIVES_TO_SHOW = 1
 LANGUAGE_FLAG_NON_EN = True
 
-# Backstop for when Sonnet is overconfident and leaves alternatives empty.
-_AMBIGUOUS_ABBREVIATIONS: frozenset[str] = frozenset(
-    {"MS", "DM", "CA", "RA", "MI", "AS"}
-)
-# Match only all-caps tokens: a lower-case "as"/"mi" in prose must not trip
-# the backstop (the "no false-positive noise" acceptance criterion).
+# the model usually returns only the sense it picked as the name, so merge the
+# full set in to keep alternatives >= 2
+_AMBIGUOUS_ABBREVIATIONS: dict[str, tuple[str, ...]] = {
+    "MS": ("multiple sclerosis", "mitral stenosis"),
+    "DM": ("diabetes mellitus", "dermatomyositis"),
+    "CA": ("cancer", "coronary artery", "cardiac arrest"),
+    "RA": ("rheumatoid arthritis", "right atrium", "refractory anaemia"),
+    "MI": ("myocardial infarction", "mitral insufficiency"),
+    "AS": ("aortic stenosis", "ankylosing spondylitis"),
+}
+# all-caps only, so a lower-case "as"/"mi" in prose doesn't trip it
 _ABBREV_TOKEN = re.compile(r"\b[A-Z]{2,}\b")
+
+
+def _dedupe_preserve(terms: list[str]) -> list[str]:
+    """Case-insensitive de-dupe, first occurrence wins."""
+    seen: set[str] = set()
+    out: list[str] = []
+    for t in terms:
+        key = t.lower()
+        if key not in seen:
+            seen.add(key)
+            out.append(t)
+    return out
 
 
 def should_flag_disambiguation(condition: Condition, raw_query: str) -> dict | None:
@@ -224,13 +242,21 @@ def should_flag_disambiguation(condition: Condition, raw_query: str) -> dict | N
     ``reason`` is the single most-specific trigger in that priority order.
     """
     tokens = set(_ABBREV_TOKEN.findall(raw_query))
-    is_abbrev = bool(tokens & _AMBIGUOUS_ABBREVIATIONS)
+    matched_abbrevs = tokens & _AMBIGUOUS_ABBREVIATIONS.keys()
     non_english = LANGUAGE_FLAG_NON_EN and condition.detected_language != "en"
     low_confidence = condition.parse_confidence < PARSE_CONFIDENCE_FLAG_THRESHOLD
     has_alternatives = len(condition.alternatives) >= MIN_ALTERNATIVES_TO_SHOW
 
-    if is_abbrev:
+    alternatives = list(condition.alternatives)
+    if matched_abbrevs:
         reason = "ambiguous_abbreviation"
+        # known senses first, then the model's, so alternatives is always >= 2
+        known = [
+            sense
+            for abbr in sorted(matched_abbrevs)
+            for sense in _AMBIGUOUS_ABBREVIATIONS[abbr]
+        ]
+        alternatives = _dedupe_preserve(known + alternatives)
     elif non_english:
         reason = "non_english_input"
     elif low_confidence:
@@ -243,10 +269,48 @@ def should_flag_disambiguation(condition: Condition, raw_query: str) -> dict | N
     return {
         "original_term": raw_query.strip(),
         "interpreted_as": condition.name,
-        "alternatives": list(condition.alternatives),
+        "alternatives": alternatives,
         "reason": reason,
         "detected_language": condition.detected_language,
     }
+
+
+# the model corrects misspellings confidently and silently, so the flag logic
+# above never fires; match query words to its own interpretation by edit
+# distance instead — a small edit is a typo, a large one a synonym (skip)
+_TYPO_STOPWORDS = frozenset({
+    "and", "or", "with", "without", "excluding", "including", "not", "no",
+    "the", "of", "for", "due", "both", "type", "disease", "disorder",
+})
+_TYPO_MIN_TOKEN_LEN = 4
+_TYPO_RATIO_THRESHOLD = 0.8   # difflib ratio cutoff for a near-miss
+
+
+def detect_query_typo(raw_query: str, interpreted_terms: list[str]) -> dict | None:
+    """Return a possible_misspelling suggestion when a query word is a near
+    edit-distance match to a word in the LLM's interpretation, else None."""
+    cleaned, _ = extract_vocabulary_cues(raw_query)
+    query_tokens = [
+        t for t in re.findall(r"[a-z']+", cleaned.lower())
+        if len(t) >= _TYPO_MIN_TOKEN_LEN and t not in _TYPO_STOPWORDS
+    ]
+    if not query_tokens:
+        return None
+
+    for term in interpreted_terms:
+        term_tokens = set(re.findall(r"[a-z']+", term.lower()))
+        for qt in query_tokens:
+            if qt in term_tokens:
+                continue
+            if difflib.get_close_matches(qt, list(term_tokens), n=1, cutoff=_TYPO_RATIO_THRESHOLD):
+                return {
+                    "original_term": raw_query.strip(),
+                    "interpreted_as": term,
+                    "alternatives": [term],
+                    "reason": "possible_misspelling",
+                    "detected_language": "en",
+                }
+    return None
 
 
 def parse_query(
