@@ -185,7 +185,7 @@ def main() -> int:
     print(f"FPs at cap=100 (pooled): {d['cap100_fp_codes_unique']}")
     print(f"FPs at cap=500 (pooled): {d['cap500_fp_codes_pooled_unique']}")
     print(f"FPs unique to cap=500: {d['new_fps_cap500_only']}")
-    print(f"Bucket breakdown of cap=500-only FPs:")
+    print("Bucket breakdown of cap=500-only FPs:")
     for bucket, n in d["bucket_breakdown"].items():
         print(f"  {bucket:<35} {n:>3}")
 
@@ -198,7 +198,7 @@ def main() -> int:
     print(f"TP: {h['tp_count']}  FN: {h['fn_count']}  FP: {h['fp_count']}")
     print(f"Pre-cap pool at cap=500: {h['pre_cap_pool_at_500']} "
           f"(of which {h['gold_in_pre_cap_pool_at_500']} are gold)")
-    print(f"TP codes that DID surface:")
+    print("TP codes that DID surface:")
     for tp in h["tp_codes_surfaced"]:
         print(f"  {tp['code']:<20} {tp['term']}")
     print()

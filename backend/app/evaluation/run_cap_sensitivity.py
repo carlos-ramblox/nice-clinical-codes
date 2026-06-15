@@ -234,7 +234,7 @@ def _spawn_child(
         cmd += ["--codelists", ",".join(codelists)]
 
     logger.info("Spawning child: cap=%d mode=%s codelists=%s", cap, mode, codelists or "all")
-    result = subprocess.run(
+    subprocess.run(
         cmd, env=env, check=True,
         cwd=str(ROOT / "backend"),
     )

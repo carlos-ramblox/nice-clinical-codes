@@ -461,6 +461,7 @@ def main() -> int:
     print(f"cap=500 all-15 delta-F1 vs cap=100 (bare): {cap100_500_all['mean_delta']:+.3f} "
           f"BCa [{cap100_500_all['ci_low']:+.3f}, {cap100_500_all['ci_high']:+.3f}] n={cap100_500_all['n']}")
     print(f"cap=1000 mode-matched: {cap1000_partial}")
+    print(f"cap=inf mode-matched: {headline_capinf}")
     if cap1000_mm_paired["n"] == len(loaded):
         print(f"T37j delta-F1 at cap=1000 (mode-matched): {cap1000_mm_paired['mean_delta']:+.3f} "
               f"BCa [{cap1000_mm_paired['ci_low']:+.3f}, {cap1000_mm_paired['ci_high']:+.3f}] "
