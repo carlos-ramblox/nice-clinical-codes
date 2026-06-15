@@ -59,6 +59,37 @@ def test_unambiguous_search_has_null_disambiguation():
     assert resp.json()["disambiguation"] is None
 
 
+def test_disambiguate_endpoint_surfaces_entries():
+    """The parse-only endpoint returns flagged suggestions without running the
+    pipeline (parse_query is mocked, so no LLM/retriever calls happen)."""
+    parsed = {"conditions": [], "coding_systems": [], "disambiguation_suggestions": [
+        {"original_term": "MS", "interpreted_as": "multiple sclerosis",
+         "alternatives": ["mitral stenosis"], "reason": "ambiguous_abbreviation",
+         "detected_language": "en"},
+    ]}
+    with patch("app.api.routes.parse_query", return_value=parsed):
+        resp = client.get("/api/disambiguate", params={"query": "MS"})
+
+    assert resp.status_code == 200, resp.text
+    body = resp.json()
+    assert body[0]["reason"] == "ambiguous_abbreviation"
+    assert body[0]["alternatives"] == ["mitral stenosis"]
+
+
+def test_disambiguate_endpoint_empty_when_unambiguous():
+    parsed = {"conditions": [], "coding_systems": [], "disambiguation_suggestions": []}
+    with patch("app.api.routes.parse_query", return_value=parsed):
+        resp = client.get("/api/disambiguate", params={"query": "Type 2 diabetes mellitus"})
+
+    assert resp.status_code == 200, resp.text
+    assert resp.json() == []
+
+
+def test_disambiguate_endpoint_rejects_too_short_query():
+    resp = client.get("/api/disambiguate", params={"query": "M"})
+    assert resp.status_code == 422
+
+
 def test_malformed_disambiguation_entry_does_not_sink_results():
     """A suggestion with a reason outside the Literal is dropped, not 500'd —
     disambiguation is informational and must never sink a scored response."""

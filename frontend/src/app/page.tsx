@@ -9,12 +9,14 @@ import {
   exportCodesOhdsi,
   createCodelist,
   discoverPhenotypes,
+  disambiguateQuery,
   getPublicCount,
 } from "@/lib/api";
 import type {
   CodeResult,
   SearchResponse,
   PhenotypeDiscoveryResult,
+  DisambiguationEntry,
   AdoptedPhenotype,
   OhdsiExport,
 } from "@/lib/api";
@@ -481,6 +483,30 @@ export default function Home() {
   // hint. Non-empty array = fetched with results — render the full
   // sidebar. The render condition further hides the sidebar during
   // a pipeline run and once results are showing.
+  // T37 type-ahead disambiguation: parse-only "did you mean?" surfaced as the
+  // user types, before the expensive search runs. Debounced like discovery.
+  const [preflightDisambig, setPreflightDisambig] = useState<DisambiguationEntry[]>([]);
+  useEffect(() => {
+    const trimmed = query.trim();
+    if (trimmed.length < 2) {
+      setPreflightDisambig([]);
+      return;
+    }
+    const ctrl = new AbortController();
+    const timer = setTimeout(async () => {
+      try {
+        setPreflightDisambig(await disambiguateQuery(trimmed, ctrl.signal));
+      } catch {
+        // Parse-only hint is supplementary; on any failure just hide it.
+        setPreflightDisambig([]);
+      }
+    }, 300);
+    return () => {
+      clearTimeout(timer);
+      ctrl.abort();
+    };
+  }, [query]);
+
   const [discoveryRows, setDiscoveryRows] = useState<PhenotypeDiscoveryResult[] | null>(null);
   useEffect(() => {
     const trimmed = query.trim();
@@ -762,6 +788,16 @@ export default function Home() {
           </div>
         </form>
       </div>
+
+      {/* Type-ahead disambiguation — before the search runs, so the user
+          picks the right term instead of waiting on a best guess. */}
+      {!loading && !results && preflightDisambig.length > 0 && (
+        <DidYouMeanBanner
+          variant="preflight"
+          entries={preflightDisambig}
+          onReRun={(term) => runQuery(term)}
+        />
+      )}
 
       {/* HDR UK phenotype discovery sidebar + adoption */}
       {!loading && !results && discoveryRows !== null && (

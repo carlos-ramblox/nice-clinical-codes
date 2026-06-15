@@ -46,6 +46,7 @@ _DISABLE_BNF_DESCRIPTION = (
 )
 
 from app.graph.graph import run_pipeline, RETRIEVER_NAMES
+from app.graph.nodes.query_parser import parse_query
 from app.evaluation.evaluator import run_evaluation
 from app.baseline.llm_client import run_baseline
 from app.api import _search_cache
@@ -287,6 +288,31 @@ async def search_codes(
         include_descendants=resolved_include_descendants,
         disambiguation=disambiguation or None,
     )
+
+
+@router.get("/disambiguate", response_model=list[DisambiguationEntry])
+async def disambiguate(
+    query: str = Query(..., min_length=2, max_length=500),
+):
+    """Parse-only disambiguation for the type-ahead banner.
+
+    Runs the query parser alone — no retrieval, no scoring — so the UI can
+    surface "did you mean…?" before the user spends a full pipeline run on
+    an ambiguous best-guess. Returns an empty list when nothing is flagged.
+    """
+    try:
+        parsed = await asyncio.to_thread(parse_query, query)
+    except Exception as exc:
+        logger.error("Disambiguation parse failed: %s", exc)
+        raise HTTPException(status_code=500, detail="Disambiguation failed")
+
+    entries = []
+    for d in parsed.get("disambiguation_suggestions", []):
+        try:
+            entries.append(DisambiguationEntry(**d))
+        except Exception:
+            logger.warning("Dropping malformed disambiguation entry: %r", d)
+    return entries
 
 
 @router.get("/export/{search_id}")
