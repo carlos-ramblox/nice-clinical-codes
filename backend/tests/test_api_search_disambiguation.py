@@ -57,3 +57,21 @@ def test_unambiguous_search_has_null_disambiguation():
 
     assert resp.status_code == 200, resp.text
     assert resp.json()["disambiguation"] is None
+
+
+def test_malformed_disambiguation_entry_does_not_sink_results():
+    """A suggestion with a reason outside the Literal is dropped, not 500'd —
+    disambiguation is informational and must never sink a scored response."""
+    state = _state_with([
+        {"original_term": "x", "interpreted_as": "y", "alternatives": [],
+         "reason": "not_a_real_reason", "detected_language": "en"},
+        {"original_term": "MS", "interpreted_as": "multiple sclerosis",
+         "alternatives": ["mitral stenosis"], "reason": "ambiguous_abbreviation",
+         "detected_language": "en"},
+    ])
+    with patch("app.api.routes.run_pipeline", new=AsyncMock(return_value=state)):
+        resp = client.post("/api/search", json={"query": "MS"})
+
+    assert resp.status_code == 200, resp.text
+    disambiguation = resp.json()["disambiguation"]
+    assert [d["reason"] for d in disambiguation] == ["ambiguous_abbreviation"]

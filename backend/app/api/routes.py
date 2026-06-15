@@ -250,6 +250,15 @@ async def search_codes(
         include_descendants=resolved_include_descendants,
     )
 
+    # Disambiguation is informational and must never sink the response: drop
+    # a malformed entry rather than 500 a search that already has scored codes.
+    disambiguation = []
+    for d in result.get("disambiguation_suggestions", []):
+        try:
+            disambiguation.append(DisambiguationEntry(**d))
+        except Exception:
+            logger.warning("Dropping malformed disambiguation entry: %r", d)
+
     return SearchResponse(
         search_id=search_id,
         query=request.query,
@@ -276,10 +285,7 @@ async def search_codes(
         provenance_trail=result.get("provenance_trail", []),
         elapsed_seconds=elapsed,
         include_descendants=resolved_include_descendants,
-        disambiguation=[
-            DisambiguationEntry(**d)
-            for d in result.get("disambiguation_suggestions", [])
-        ] or None,
+        disambiguation=disambiguation or None,
     )
 
 
