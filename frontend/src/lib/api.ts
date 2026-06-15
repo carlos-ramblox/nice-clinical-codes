@@ -39,6 +39,22 @@ export interface CodeResult {
   dmd_level: DmdLevel | null;
 }
 
+// T37 disambiguation. Hand-mirrored from backend DisambiguationEntry in
+// routes.py — keep in sync (no codegen).
+export type DisambiguationReason =
+  | "ambiguous_abbreviation"
+  | "low_parse_confidence"
+  | "non_english_input"
+  | "possible_misspelling";
+
+export interface DisambiguationEntry {
+  original_term: string;
+  interpreted_as: string;
+  alternatives: string[];
+  reason: DisambiguationReason;
+  detected_language: string;
+}
+
 export interface SearchResponse {
   search_id: string;
   query: string;
@@ -48,6 +64,7 @@ export interface SearchResponse {
   provenance_trail: Record<string, unknown>[];
   elapsed_seconds: number;
   include_descendants: boolean;
+  disambiguation?: DisambiguationEntry[] | null;
 }
 
 export interface SearchOptions {

@@ -23,6 +23,7 @@ import { useUser } from "@/lib/useUser";
 import { downloadBlob, slugify } from "@/lib/download";
 import { getRecent, pushRecent, formatAgo, type RecentSearch } from "@/lib/recentSearches";
 import { ConfirmModal } from "./ConfirmModal";
+import { DidYouMeanBanner } from "./DidYouMeanBanner";
 
 const PAGE_SIZE = 20;
 
@@ -784,6 +785,14 @@ export default function Home() {
             Dismiss
           </button>
         </div>
+      )}
+
+      {/* "Did you mean…?" — non-blocking, above results; null when empty */}
+      {results && (
+        <DidYouMeanBanner
+          entries={response?.disambiguation ?? []}
+          onReRun={(alt) => runQuery(alt)}
+        />
       )}
 
       {/* Results + Provenance */}
