@@ -4,7 +4,7 @@ import io
 import logging
 import time
 import uuid
-from typing import Annotated
+from typing import Annotated, Literal
 
 import pandas as pd
 from fastapi import APIRouter, HTTPException, Query
@@ -46,6 +46,7 @@ _DISABLE_BNF_DESCRIPTION = (
 )
 
 from app.graph.graph import run_pipeline, RETRIEVER_NAMES
+from app.graph.nodes.query_parser import parse_query, detect_query_typo
 from app.evaluation.evaluator import run_evaluation
 from app.baseline.llm_client import run_baseline
 from app.api import _search_cache
@@ -148,6 +149,19 @@ class CodeResult(BaseModel):
     dmd_level: DmdLevel | None = None
 
 
+class DisambiguationEntry(BaseModel):
+    original_term: str
+    interpreted_as: str
+    alternatives: list[str]
+    reason: Literal[
+        "ambiguous_abbreviation",
+        "low_parse_confidence",
+        "non_english_input",
+        "possible_misspelling",
+    ]
+    detected_language: str = "en"
+
+
 class SearchResponse(BaseModel):
     search_id: str
     query: str
@@ -157,6 +171,7 @@ class SearchResponse(BaseModel):
     provenance_trail: list[dict]
     elapsed_seconds: float
     include_descendants: bool = False
+    disambiguation: list[DisambiguationEntry] | None = None
 
 
 # Endpoints
@@ -236,6 +251,15 @@ async def search_codes(
         include_descendants=resolved_include_descendants,
     )
 
+    # Disambiguation is informational and must never sink the response: drop
+    # a malformed entry rather than 500 a search that already has scored codes.
+    disambiguation = []
+    for d in result.get("disambiguation_suggestions", []):
+        try:
+            disambiguation.append(DisambiguationEntry(**d))
+        except Exception:
+            logger.warning("Dropping malformed disambiguation entry: %r", d)
+
     return SearchResponse(
         search_id=search_id,
         query=request.query,
@@ -262,7 +286,44 @@ async def search_codes(
         provenance_trail=result.get("provenance_trail", []),
         elapsed_seconds=elapsed,
         include_descendants=resolved_include_descendants,
+        disambiguation=disambiguation or None,
     )
+
+
+@router.get("/disambiguate", response_model=list[DisambiguationEntry])
+async def disambiguate(
+    query: str = Query(..., min_length=2, max_length=500),
+):
+    """Parse-only disambiguation for the type-ahead banner.
+
+    Runs the query parser alone — no retrieval, no scoring — so the UI can
+    surface "did you mean…?" before the user spends a full pipeline run on
+    an ambiguous best-guess. Returns an empty list when nothing is flagged.
+    """
+    try:
+        parsed = await asyncio.to_thread(parse_query, query)
+    except Exception as exc:
+        logger.error("Disambiguation parse failed: %s", exc)
+        raise HTTPException(status_code=500, detail="Disambiguation failed")
+
+    entries = []
+    for d in parsed.get("disambiguation_suggestions", []):
+        try:
+            entries.append(DisambiguationEntry(**d))
+        except Exception:
+            logger.warning("Dropping malformed disambiguation entry: %r", d)
+
+    # only when nothing else flagged, so it can't override a real interpretation
+    if not entries:
+        interpreted = [c.get("name", "") for c in parsed.get("conditions", [])]
+        typo = detect_query_typo(query, interpreted)
+        if typo:
+            try:
+                entries.append(DisambiguationEntry(**typo))
+            except Exception:
+                logger.warning("Dropping malformed typo suggestion: %r", typo)
+
+    return entries
 
 
 @router.get("/export/{search_id}")

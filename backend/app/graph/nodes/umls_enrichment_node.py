@@ -19,14 +19,14 @@ def enrich_with_umls(state: dict) -> dict:
 
     if not UMLS_EXPAND:
         logger.info("UMLS enrichment disabled, passing through")
-        return {}
+        return {"candidates_after_umls_cap_count": len(codes)}
 
     if not UMLS_API_KEY:
         logger.warning("UMLS_API_KEY not set, skipping enrichment")
-        return {}
+        return {"candidates_after_umls_cap_count": len(codes)}
 
     if not codes:
-        return {}
+        return {"candidates_after_umls_cap_count": 0}
 
     # build a DataFrame that UMLSEnricher expects
     rows = []
@@ -48,7 +48,7 @@ def enrich_with_umls(state: dict) -> dict:
 
     if suggestions.empty:
         logger.info("UMLS: no new suggestions found")
-        return {}
+        return {"candidates_after_umls_cap_count": len(codes)}
 
     # add new codes from suggestions back into enriched_codes
     existing_keys = {(c["code"], c["vocabulary"]) for c in codes}
@@ -104,7 +104,10 @@ def enrich_with_umls(state: dict) -> dict:
             logger.info("UMLS: capping %d codes back to %d", len(updated), MAX_CANDIDATES)
             updated = updated[:MAX_CANDIDATES]
         logger.info("UMLS: added %d new codes (%d total)", len(new_codes), len(updated))
-        return {"enriched_codes": updated}
+        return {
+            "enriched_codes": updated,
+            "candidates_after_umls_cap_count": len(updated),
+        }
 
     logger.info("UMLS: all suggestions already in code list")
-    return {}
+    return {"candidates_after_umls_cap_count": len(codes)}

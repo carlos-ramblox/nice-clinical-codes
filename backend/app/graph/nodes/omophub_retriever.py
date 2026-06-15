@@ -194,7 +194,16 @@ def search_omophub(
                 rows = query_vocabulary(client, variant, vocab_id, ps, domain_id)
                 _accept_rows(rows, vocab_id, seen, merged, cap)
     else:
-        items = response.get("results", []) if isinstance(response, dict) else []
+        # OMOPHub returns the bulk payload as ``data: [{search_id, query,
+        # results, status}, ...]`` and the SDK unwraps ``data``, so
+        # bulk_basic hands back a list — not the dict its own
+        # BulkSearchResponse type advertises. Accept both shapes.
+        if isinstance(response, dict):
+            items = response.get("results", [])
+        elif isinstance(response, list):
+            items = response
+        else:
+            items = []
         for item in items:
             if len(merged) >= cap:
                 break

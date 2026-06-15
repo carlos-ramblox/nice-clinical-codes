@@ -9,12 +9,14 @@ import {
   exportCodesOhdsi,
   createCodelist,
   discoverPhenotypes,
+  disambiguateQuery,
   getPublicCount,
 } from "@/lib/api";
 import type {
   CodeResult,
   SearchResponse,
   PhenotypeDiscoveryResult,
+  DisambiguationEntry,
   AdoptedPhenotype,
   OhdsiExport,
 } from "@/lib/api";
@@ -23,21 +25,45 @@ import { useUser } from "@/lib/useUser";
 import { downloadBlob, slugify } from "@/lib/download";
 import { getRecent, pushRecent, formatAgo, type RecentSearch } from "@/lib/recentSearches";
 import { ConfirmModal } from "./ConfirmModal";
+import { DidYouMeanBanner } from "./DidYouMeanBanner";
 
 const PAGE_SIZE = 20;
 
+// Offsets are tuned to the median disease query observed against the
+// running backend (Type 2 diabetes ≈ 25s wallclock; multi-condition
+// and drug queries are 3-4× slower and will park on the final step
+// until the real response lands). `offsetMs` is absolute time-from-start;
+// the consumer picks the latest entry whose offset has elapsed.
 const LOADING_STEPS = [
-  { label: "Parsing your query...", delay: 0 },
-  { label: "Searching OMOPHub for SNOMED and ICD-10 codes...", delay: 1500 },
-  { label: "Querying QOF business rules...", delay: 3000 },
-  { label: "Checking published code lists on OpenCodelists...", delay: 5000 },
-  { label: "Running semantic search across embedded codes...", delay: 7000 },
-  { label: "Merging and deduplicating results...", delay: 10000 },
-  { label: "Scoring codes with LLM reasoning...", delay: 13000 },
-  { label: "Almost done — assembling final results...", delay: 21000 },
+  { label: "Parsing your query...", offsetMs: 0 },
+  { label: "Running 6 retrievers in parallel (OMOPHub, QOF, OpenCodelists, ChromaDB, dm+d, BNF)...", offsetMs: 1500 },
+  { label: "Merging, OMOP enrichment, NHS usage, and UMLS synonyms...", offsetMs: 6500 },
+  { label: "Scoring each code with LLM reasoning...", offsetMs: 11500 },
+  { label: "Expanding hierarchy descendants where applicable...", offsetMs: 23500 },
+  { label: "Assembling final results...", offsetMs: 26500 },
 ];
 
-// T31: render the OpenCodeCounts-derived usage column for one code.
+// Progress bar saturates at 95% by this point; sits ~1500 ms past the
+// last LOADING_STEPS offset so the bar isn't already pegged when
+// "Assembling final results" lands.
+const PROGRESS_TOTAL_MS = 28000;
+
+const SAMPLE_QUERIES = [
+  "Type 2 diabetes",
+  "Asthma with COPD",
+  "Statins for primary prevention",
+  "Chronic kidney disease",
+];
+
+// UMLS-enriched codes are suggestions (synonym/narrower/sibling expansion
+// from the UMLS Metathesaurus), not direct retrievals. Route them to the
+// Review tab regardless of the LLM's decision so reviewers can validate
+// them separately.
+function isUmlsSuggestion(r: CodeResult): boolean {
+  return r.sources?.some((s) => s.startsWith("UMLS")) ?? false;
+}
+
+// Render the OpenCodeCounts-derived usage column for one code.
 // Three branches:
 //   counted          → "12,540" + setting-aware badge ("GP" or "HES")
 //   withheld_below_5 → "<5" with a tooltip explaining NHS Digital's
@@ -106,21 +132,16 @@ function DecisionBadge({ decision }: { decision: string }) {
 }
 
 function LoadingProgress() {
-  const [step, setStep] = useState(0);
   const [elapsed, setElapsed] = useState(0);
 
   useEffect(() => {
     const start = Date.now();
-    const timer = setInterval(() => {
-      const ms = Date.now() - start;
-      setElapsed(ms);
-      const nextStep = LOADING_STEPS.findLastIndex((s) => ms >= s.delay);
-      if (nextStep >= 0) setStep(nextStep);
-    }, 500);
+    const timer = setInterval(() => setElapsed(Date.now() - start), 500);
     return () => clearInterval(timer);
   }, []);
 
-  const progress = Math.min((elapsed / 25000) * 100, 95);
+  const step = Math.max(0, LOADING_STEPS.findLastIndex((s) => elapsed >= s.offsetMs));
+  const progress = Math.min((elapsed / PROGRESS_TOTAL_MS) * 100, 95);
 
   return (
     <div className="max-w-xl mx-auto py-16">
@@ -128,7 +149,7 @@ function LoadingProgress() {
         <div className="h-10 w-10 border-4 border-[#005EA5] border-t-transparent rounded-full animate-spin" />
 
         <p className="text-gray-700 text-sm font-medium text-center" aria-live="polite">
-          {LOADING_STEPS[step]?.label ?? "Processing..."}
+          {LOADING_STEPS[step].label}
         </p>
 
         <div
@@ -181,7 +202,7 @@ function PhenotypeDiscoverySidebar({
   // authoritative HDR UK detail page; the rationale is shown as a
   // visible caption (not a tooltip) so the persona can decide whether
   // a row deserves the click-through. No "use this phenotype" action,
-  // no auto-import — that's deferred to T34b / T35.
+  // no auto-import — adoption is an explicit user action below.
   //
   // Empty state: when discovery has fetched but found nothing, render
   // a one-line hint that tells the user the dual-path explicitly
@@ -251,7 +272,7 @@ function PhenotypeDiscoverySidebar({
               </span>
             </div>
             <div className="mt-1.5">
-              {/* T34b: explicit adoption action. Recorded in the user's
+              {/* Explicit adoption action. Recorded in the user's
                   in-memory state and applied on Save-as-Draft as a
                   phenotype_adopted audit-log event. The button morphs
                   to "Adopted" once the user has adopted; clicking again
@@ -354,10 +375,10 @@ function DecisionFilter({
   );
 }
 
-// T29 — comma-separated exclusion phrases the user types in the
-// Exclusions input. Split, trim, drop empty, dedupe (case-insensitive).
-// Returned in input order so the structured criteria the backend
-// receives are predictable.
+// Parse comma-separated exclusion phrases from the Exclusions input.
+// Split, trim, drop empty, dedupe (case-insensitive). Returned in
+// input order so the structured criteria the backend receives are
+// predictable.
 function parseExclusionsInput(raw: string): string[] {
   const seen = new Set<string>();
   const out: string[] = [];
@@ -374,7 +395,7 @@ function parseExclusionsInput(raw: string): string[] {
 
 export default function Home() {
   const [query, setQuery] = useState("");
-  // T29 — kept across searches on purpose: a user iterating on
+  // Kept across searches on purpose: a user iterating on
   // "diabetes" then "asthma" with the same "gestational" exclusion
   // shouldn't have to retype it.
   const [exclusionsInput, setExclusionsInput] = useState("");
@@ -402,7 +423,7 @@ export default function Home() {
   const [recent, setRecent] = useState<RecentSearch[]>([]);
   useEffect(() => { setRecent(getRecent()); }, []);
 
-  // T32: count of approved & non-private codelists. Surfaced in the hero
+  // Count of approved & non-private codelists. Surfaced in the hero
   // as "Browse N approved codelists" only when N > 0 -- the link is
   // pointless before any codelist has been approved, and a "0 approved"
   // claim would advertise an empty gallery to first-time visitors.
@@ -415,14 +436,12 @@ export default function Home() {
     return () => { cancelled = true; };
   }, []);
 
-  // T34b: adopted-phenotype state for the discovery sidebar.
+  // Adopted-phenotype state for the discovery sidebar.
   // Session-scoped on purpose: no localStorage, no server pre-state.
   // The persona model is "browse-then-decide": adoptions are a UI-layer
   // marker until the user commits the whole package via Save-as-Draft.
   // If they leave the page without saving, the adoptions disappear --
-  // matches the "I was browsing, I didn't commit" mental model. A
-  // future maintainer thinking about persisting these to localStorage
-  // should re-read the persona pre-flight first.
+  // matches the "I was browsing, I didn't commit" mental model.
   const [adoptedPhenotypes, setAdoptedPhenotypes] = useState<AdoptedPhenotype[]>([]);
   const adoptedIds = useMemo(
     () => new Set(adoptedPhenotypes.map((a) => a.phenotype_id)),
@@ -448,12 +467,11 @@ export default function Home() {
   const handleUnadoptPhenotype = (phenotypeId: string) => {
     // Session-only undo: lets a user un-adopt before they save without
     // having to refresh the page (which would lose every other adoption
-    // collected during the browse). After save, undo lives in the codelist
-    // detail page's audit log -- not yet exposed but available there.
+    // collected during the browse).
     setAdoptedPhenotypes((prev) => prev.filter((a) => a.phenotype_id !== phenotypeId));
   };
 
-  // HDR UK phenotype discovery (T34): surface candidate published
+  // HDR UK phenotype discovery: surface candidate published
   // phenotypes from the HDR UK Phenotype Library as the user types,
   // before they commit to running the pipeline. Debounced 300 ms;
   // gate at >=3 chars so we don't spam Haiku on partial words.
@@ -465,6 +483,30 @@ export default function Home() {
   // hint. Non-empty array = fetched with results — render the full
   // sidebar. The render condition further hides the sidebar during
   // a pipeline run and once results are showing.
+  // T37 type-ahead disambiguation: parse-only "did you mean?" surfaced as the
+  // user types, before the expensive search runs. Debounced like discovery.
+  const [preflightDisambig, setPreflightDisambig] = useState<DisambiguationEntry[]>([]);
+  useEffect(() => {
+    const trimmed = query.trim();
+    if (trimmed.length < 2) {
+      setPreflightDisambig([]);
+      return;
+    }
+    const ctrl = new AbortController();
+    const timer = setTimeout(async () => {
+      try {
+        setPreflightDisambig(await disambiguateQuery(trimmed, ctrl.signal));
+      } catch {
+        // Parse-only hint is supplementary; on any failure just hide it.
+        setPreflightDisambig([]);
+      }
+    }, 300);
+    return () => {
+      clearTimeout(timer);
+      ctrl.abort();
+    };
+  }, [query]);
+
   const [discoveryRows, setDiscoveryRows] = useState<PhenotypeDiscoveryResult[] | null>(null);
   useEffect(() => {
     const trimmed = query.trim();
@@ -491,13 +533,6 @@ export default function Home() {
     };
   }, [query]);
 
-  const SAMPLE_QUERIES = [
-    "Type 2 diabetes",
-    "Asthma with COPD",
-    "Hypertension in pregnancy",
-    "Chronic kidney disease",
-  ];
-
   const handleSaveAsDraft = () => {
     if (!response?.search_id) return;
     if (!user) {
@@ -513,11 +548,11 @@ export default function Home() {
   };
 
   const confirmSave = async () => {
-    if (!response?.search_id || !draftName.trim()) return;
+    if (saving || !response?.search_id || !draftName.trim()) return;
     setSaving(true);
     setSaveError(null);
     try {
-      // T34b: adoptions accumulated during the discovery-sidebar browse
+      // Adoptions accumulated during the discovery-sidebar browse
       // are submitted alongside the codelist. The backend records each
       // as a phenotype_adopted audit-log event for tamper-evidence.
       const cl = await createCodelist(
@@ -546,8 +581,8 @@ export default function Home() {
     setOhdsiCopied(false);
 
     try {
-      // T29 — pass the parsed exclusions through to the backend. Empty
-      // array is byte-identical on the wire to the pre-T29 request body
+      // Pass the parsed exclusions through to the backend. Empty array
+      // is byte-identical on the wire to the no-exclusions request body
       // (searchCodes drops the field when empty).
       const exclusions = parseExclusionsInput(exclusionsInput);
       const data = await searchCodes(q, {
@@ -574,6 +609,7 @@ export default function Home() {
   };
 
   const runQuery = (q: string) => {
+    if (loading) return;
     setQuery(q);
     runSearch(q);
   };
@@ -622,12 +658,6 @@ export default function Home() {
 
   const results = response?.results ?? null;
 
-  // UMLS-enriched codes are suggestions (synonym/narrower/sibling expansion from
-  // the UMLS Metathesaurus), not direct retrievals. Route them to the Review tab
-  // regardless of the LLM's decision so reviewers can validate them separately.
-  const isUmlsSuggestion = (r: CodeResult) =>
-    r.sources?.some((s) => s.startsWith("UMLS")) ?? false;
-
   const filteredResults = useMemo(() => {
     if (!results) return [];
     if (decisionFilter === "all") return results;
@@ -666,8 +696,9 @@ export default function Home() {
             Generate a clinical code list
           </h1>
           <p className="text-gray-600 text-base">
-            Search SNOMED CT and ICD-10 codes across NHS reference sets, QOF rules,
-            and published codelists.
+            Multi-source code discovery across SNOMED CT, ICD-10, OPCS-4 and UK drug
+            vocabularies (dm+d, BNF). Cross-references published phenotypes from the
+            HDR UK Phenotype Library, NHS QOF rules, and OpenCodelists.
           </p>
           {galleryCount != null && galleryCount > 0 && (
             <p className="mt-3 text-sm">
@@ -696,7 +727,7 @@ export default function Home() {
               type="text"
               value={query}
               onChange={(e) => setQuery(e.target.value)}
-              placeholder="Enter clinical condition (e.g. type 2 diabetes with hypertension)"
+              placeholder="Enter a clinical condition or drug class (e.g. type 2 diabetes; statins for primary prevention)"
               aria-label="Search clinical terms"
               className="flex-1 px-3 py-3 focus:outline-none"
             />
@@ -716,7 +747,7 @@ export default function Home() {
                   : "Search"}
             </button>
           </div>
-          {/* T29 — optional structured exclusions (Bennett 2023 mode 3).
+          {/* Optional structured exclusions (Bennett 2023 mode 3).
               A separate compact row keeps the primary search affordance
               visually unchanged for users who don't need carve-outs. */}
           <div className="mt-2 flex items-center gap-2 text-xs">
@@ -758,7 +789,17 @@ export default function Home() {
         </form>
       </div>
 
-      {/* HDR UK phenotype discovery sidebar (T34) + adoption (T34b) */}
+      {/* Type-ahead disambiguation — before the search runs, so the user
+          picks the right term instead of waiting on a best guess. */}
+      {!loading && !results && preflightDisambig.length > 0 && (
+        <DidYouMeanBanner
+          variant="preflight"
+          entries={preflightDisambig}
+          onReRun={(term) => runQuery(term)}
+        />
+      )}
+
+      {/* HDR UK phenotype discovery sidebar + adoption */}
       {!loading && !results && discoveryRows !== null && (
         <PhenotypeDiscoverySidebar
           rows={discoveryRows}
@@ -780,6 +821,14 @@ export default function Home() {
             Dismiss
           </button>
         </div>
+      )}
+
+      {/* "Did you mean…?" — non-blocking, above results; null when empty */}
+      {results && (
+        <DidYouMeanBanner
+          entries={response?.disambiguation ?? []}
+          onReRun={(alt) => runQuery(alt)}
+        />
       )}
 
       {/* Results + Provenance */}
@@ -818,7 +867,7 @@ export default function Home() {
                     <th className="px-4 py-2.5 font-medium">Sources</th>
                     <th
                       className="px-4 py-2.5 font-medium"
-                      // T31: column-header tooltip cites OpenCodeCounts and
+                      // Column-header tooltip cites OpenCodeCounts and
                       // names the rounding/withholding rules. The setting
                       // badge ("GP" or "HES") on each cell distinguishes
                       // primary care from HES inpatient counts so the bare
@@ -893,7 +942,9 @@ export default function Home() {
             <div className="px-5 py-3 flex flex-wrap items-center justify-between gap-y-3 border-t border-gray-200">
               <div className="flex items-center gap-2 text-xs text-gray-500">
                 <span>
-                  Showing {(page - 1) * PAGE_SIZE + 1}–{Math.min(page * PAGE_SIZE, filteredResults.length)} of {filteredResults.length}
+                  Showing {filteredResults.length === 0
+                    ? "0"
+                    : `${(page - 1) * PAGE_SIZE + 1}–${Math.min(page * PAGE_SIZE, filteredResults.length)}`} of {filteredResults.length}
                 </span>
                 {totalPages > 1 && (
                   <div className="flex gap-1 ml-2">
@@ -1102,7 +1153,7 @@ export default function Home() {
           value={draftName}
           onChange={(e) => setDraftName(e.target.value)}
           maxLength={200}
-          onKeyDown={(e) => { if (e.key === "Enter" && draftName.trim()) confirmSave(); }}
+          onKeyDown={(e) => { if (e.key === "Enter" && draftName.trim() && !saving) confirmSave(); }}
           className="w-full px-3 py-2 border border-gray-300 rounded text-sm focus:outline-none focus:border-[#005EA5]"
         />
         {saveError && (
