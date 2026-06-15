@@ -1,6 +1,6 @@
 """Pipeline state that flows through all LangGraph nodes."""
 
-from typing import TypedDict, Annotated
+from typing import TypedDict, Annotated, NotRequired
 from operator import add
 
 from app.services.dmd_classification import DmdLevel  # noqa: F401  (re-exported for callers)
@@ -19,6 +19,12 @@ class ParsedCondition(TypedDict):
     include_criteria: list[str]
     exclude_criteria: list[str]
     include_descendants: bool
+    # T37 disambiguation. Populated by the parser in the same
+    # structured-output call; default to high-confidence/empty so
+    # pre-T37 callers and the unambiguous path stay banner-free.
+    parse_confidence: float
+    alternatives: list[str]
+    detected_language: str
 
 
 class RetrievedCode(TypedDict):
@@ -114,6 +120,11 @@ class PipelineState(TypedDict):
     # retriever fan-out and to output filtering.
     vocabulary_cues: list[str]
 
+    # T37 "Did you mean…?" suggestions. One dict per flagged condition,
+    # shaped like the API DisambiguationEntry model. Empty for
+    # unambiguous queries — the banner renders nothing in that case.
+    disambiguation_suggestions: list[dict]
+
     # Structured study-intent criteria supplied at the request boundary
     # (T29). When non-empty, query_parser_node applies them to every
     # parsed condition and skips natural-language extraction for that
@@ -141,3 +152,9 @@ class PipelineState(TypedDict):
     # Metadata
     sources_queried: Annotated[list[str], add]
     errors: Annotated[list[str], add]
+
+    candidates_pre_cap: NotRequired[list[dict]]
+    candidates_before_cap_count: NotRequired[int]
+    candidates_after_merger_cap_count: NotRequired[int]
+    candidates_after_umls_cap_count: NotRequired[int]
+    max_candidates_setting: NotRequired[int]

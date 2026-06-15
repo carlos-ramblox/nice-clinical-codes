@@ -39,6 +39,22 @@ export interface CodeResult {
   dmd_level: DmdLevel | null;
 }
 
+// T37 disambiguation. Hand-mirrored from backend DisambiguationEntry in
+// routes.py — keep in sync (no codegen).
+export type DisambiguationReason =
+  | "ambiguous_abbreviation"
+  | "low_parse_confidence"
+  | "non_english_input"
+  | "possible_misspelling";
+
+export interface DisambiguationEntry {
+  original_term: string;
+  interpreted_as: string;
+  alternatives: string[];
+  reason: DisambiguationReason;
+  detected_language: string;
+}
+
 export interface SearchResponse {
   search_id: string;
   query: string;
@@ -48,6 +64,7 @@ export interface SearchResponse {
   provenance_trail: Record<string, unknown>[];
   elapsed_seconds: number;
   include_descendants: boolean;
+  disambiguation?: DisambiguationEntry[] | null;
 }
 
 export interface SearchOptions {
@@ -76,6 +93,22 @@ export async function searchCodes(
   if (!res.ok) {
     throw new Error(`Search failed: ${res.status}`);
   }
+  return res.json();
+}
+
+// Parse-only disambiguation for the type-ahead banner (T37). Runs the query
+// parser alone (no retrieval/scoring) so the "did you mean…?" hint can surface
+// before a full search. Returns [] when nothing is ambiguous.
+export async function disambiguateQuery(
+  query: string,
+  signal?: AbortSignal,
+): Promise<DisambiguationEntry[]> {
+  const params = new URLSearchParams({ query });
+  const res = await fetch(`${API_BASE}/disambiguate?${params.toString()}`, {
+    ...AUTH_FETCH,
+    signal,
+  });
+  if (!res.ok) throw new Error(`Disambiguate failed: ${res.status}`);
   return res.json();
 }
 

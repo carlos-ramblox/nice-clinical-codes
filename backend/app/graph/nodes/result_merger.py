@@ -1,6 +1,6 @@
 import logging
 
-from app.config import MAX_CANDIDATES, DRUG_VOCAB_QUOTA
+from app.config import MAX_CANDIDATES, DRUG_VOCAB_QUOTA, EMIT_CAP_DIAGNOSTICS
 from app.graph.vocab_matching import requested_vocab_set
 
 logger = logging.getLogger(__name__)
@@ -144,6 +144,10 @@ def merge_and_dedup(state: dict) -> dict:
         )
 
     total_unique = len(deduped)
+    pre_cap_snapshot = (
+        [{"code": c["code"], "vocabulary": c["vocabulary"]} for c in deduped]
+        if EMIT_CAP_DIAGNOSTICS else None
+    )
     deduped = _apply_drug_quota(deduped, conditions, MAX_CANDIDATES)
     if total_unique > MAX_CANDIDATES:
         logger.info("Capping %d candidates to top %d", total_unique, MAX_CANDIDATES)
@@ -156,4 +160,12 @@ def merge_and_dedup(state: dict) -> dict:
         len(codes), total_unique, len(deduped), multi_source, drug_kept,
     )
 
-    return {"enriched_codes": deduped}
+    out: dict = {
+        "enriched_codes": deduped,
+        "candidates_before_cap_count": total_unique,
+        "candidates_after_merger_cap_count": len(deduped),
+        "max_candidates_setting": MAX_CANDIDATES,
+    }
+    if pre_cap_snapshot is not None:
+        out["candidates_pre_cap"] = pre_cap_snapshot
+    return out

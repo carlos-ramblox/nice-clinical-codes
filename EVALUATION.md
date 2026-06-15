@@ -500,9 +500,13 @@ see *Methodology → Statistical methodology*).
 
 | View | Mean P | Mean R | Mean F1 | Median F1 | F1 IQR | F1 BCa CI | F1 stratified CI |
 |---|---|---|---|---|---|---|---|
-| Pre-fix | 0.71 | 0.51 | **0.49** | 0.53 | [0.21, 0.73] | [0.36, 0.62] | [0.44, 0.54] |
-| Post-fix default | 0.88 | 0.49 | **0.57** | 0.67 | [0.32, 0.74] | [0.44, 0.68] | [0.50, 0.63] |
-| Post-fix cold-start | 0.90 | 0.47 | **0.56** | 0.70 | [0.31, 0.74] | [0.43, 0.68] | [0.49, 0.64] |
+| Pre-fix (cap=100, April K=1) | 0.71 | 0.51 | **0.49** | 0.53 | [0.21, 0.73] | [0.36, 0.62] | [0.44, 0.54] |
+| Post-fix default (cap=100, April K=1) | 0.88 | 0.49 | **0.57** | 0.67 | [0.32, 0.74] | [0.44, 0.68] | [0.50, 0.63] |
+| Post-fix cold-start (cap=100, April K=1) | 0.90 | 0.47 | **0.56** | 0.70 | [0.31, 0.74] | [0.43, 0.68] | [0.49, 0.64] |
+| Post-T37j K=5 (cap=100, mode-matched) | 0.72 | 0.52 | **0.57** | 0.65 | — | [0.41, 0.69] | — |
+| **Post-T37j K=5 (cap=1000, mode-matched)** | **0.63** | **0.72** | **0.64** | 0.61 | — | **[0.51, 0.73]** | — |
+
+`Post-T37j K=5 (cap=1000, mode-matched)` is the methods-paper headline. cap=1000 lifts mean F1 by +0.07 over the production cap=100 baseline (paired K=5 ΔF1 +0.070, BCa 95 % CI [−0.030, +0.287] — the CI straddles zero because the lift is concentrated on the cap-bound large-gold codelists and ~half the benchmark is not cap-bound; the all-15 bare-mode cap-lift cap=100 → cap=1000 is +0.177 with BCa [+0.055, +0.362]). Production stays at cap=100 for latency reasons; the benchmark uses cap=1000 as the scientifically-honest configuration. See [`data/test_sets/benchmark_2026_04/cap_sensitivity_summary.md`](./data/test_sets/benchmark_2026_04/cap_sensitivity_summary.md) and *Candidate-cap recall ceiling* in [LIMITATIONS.md](./LIMITATIONS.md) for the per-codelist breakdown, the depression-precision regression at cap=1000, the HIV retriever-bound finding (joint retrievers surface only 9 of 243 gold codes on the bare query; an expanded-query probe lifts that to 243/243), and the T38 roadmap ticket on adaptive cap architecture.
 
 Paired McNemar's test on per-code (pre, post) correctness:
 post-fix vs. pre-fix χ² = 42.93, p = 5.7 × 10⁻¹¹;

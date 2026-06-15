@@ -82,6 +82,31 @@ def add_codes(codes: list[dict]) -> int:
     return len(ids)
 
 
+def count_by_vocabulary() -> dict[str, int]:
+    """Return a ``{vocabulary: count}`` map for the whole collection.
+
+    Used by the post-ingest build guardrail (:mod:`app.ingestion.verify_corpus`)
+    and the ``/health/corpus`` diagnostic. Pulls metadatas only (no documents
+    or embeddings) so it stays cheap at the ~50k-code corpus size.
+    """
+    collection = get_collection()
+    counts: dict[str, int] = {}
+    # Page through: an unbounded get() blows SQLite's variable limit once the
+    # collection passes ~32k rows.
+    PAGE = 2000
+    offset = 0
+    while True:
+        got = collection.get(include=["metadatas"], limit=PAGE, offset=offset)
+        metas = got.get("metadatas") or []
+        for meta in metas:
+            vocab = (meta or {}).get("vocabulary") or "(unknown)"
+            counts[vocab] = counts.get(vocab, 0) + 1
+        if len(metas) < PAGE:
+            break
+        offset += PAGE
+    return counts
+
+
 def search(query: str, top_k: int = 50, vocabulary: str | None = None) -> list[dict]:
     """
     Semantic search for clinical codes matching a query.
