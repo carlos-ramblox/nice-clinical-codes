@@ -4,7 +4,7 @@ import io
 import logging
 import time
 import uuid
-from typing import Annotated
+from typing import Annotated, Literal
 
 import pandas as pd
 from fastapi import APIRouter, HTTPException, Query
@@ -148,6 +148,19 @@ class CodeResult(BaseModel):
     dmd_level: DmdLevel | None = None
 
 
+class DisambiguationEntry(BaseModel):
+    original_term: str
+    interpreted_as: str
+    alternatives: list[str]
+    reason: Literal[
+        "ambiguous_abbreviation",
+        "low_parse_confidence",
+        "non_english_input",
+        "possible_misspelling",
+    ]
+    detected_language: str = "en"
+
+
 class SearchResponse(BaseModel):
     search_id: str
     query: str
@@ -157,6 +170,7 @@ class SearchResponse(BaseModel):
     provenance_trail: list[dict]
     elapsed_seconds: float
     include_descendants: bool = False
+    disambiguation: list[DisambiguationEntry] | None = None
 
 
 # Endpoints
@@ -262,6 +276,10 @@ async def search_codes(
         provenance_trail=result.get("provenance_trail", []),
         elapsed_seconds=elapsed,
         include_descendants=resolved_include_descendants,
+        disambiguation=[
+            DisambiguationEntry(**d)
+            for d in result.get("disambiguation_suggestions", [])
+        ] or None,
     )
 
 

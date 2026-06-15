@@ -76,4 +76,5 @@ def assemble_output(state: dict) -> dict:
         "final_code_list": final,
         "provenance_trail": provenance,
         "summary": summary,
+        "disambiguation_suggestions": state.get("disambiguation_suggestions", []),
     }
