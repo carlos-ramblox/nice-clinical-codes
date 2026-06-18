@@ -252,18 +252,72 @@ def _coerce_concept_id(value) -> int | None:
         return None
 
 
+_ALLOWED_VOCABULARIES = frozenset(OMOPHUB_VOCABULARIES.values())
+
+
+def _clean_str(value) -> str:
+    """Strip-and-normalise a field; None/NaN/bool collapse to ''.
+
+    pandas surfaces missing column values as ``float('nan')``, which is
+    truthy in Python and would otherwise short-circuit ``or`` fallbacks
+    and slip past ``dict.get(..., default)`` (which only uses the default
+    when the key itself is absent).
+    """
+    if value is None or isinstance(value, bool):
+        return ""
+    if isinstance(value, float) and value != value:  # NaN
+        return ""
+    return str(value).strip()
+
+
 def omophub_to_retrieved_codes(df: pd.DataFrame) -> list[dict]:
-    """Convert OMOPHub DataFrame rows to RetrievedCode dicts for the pipeline."""
-    return [
-        {
-            "code": str(row.get("concept_code", row.get("concept_id", ""))),
-            "term": row.get("concept_name", ""),
-            "vocabulary": row.get("_vocabulary_label", row.get("_query_vocabulary", "")),
+    """Convert OMOPHub DataFrame rows to RetrievedCode dicts for the pipeline.
+
+    Drops rows where ``concept_code`` is missing or whose vocabulary is not
+    one of the OMOP-side clinical coding systems we accept. OMOP internal
+    integer ids must never reach the merger as ``code`` values — they are
+    not valid SNOMED/ICD-10/OPCS-4 codes and are visually indistinguishable
+    from UMLS CUIs downstream. Drops are reported as a single aggregated
+    WARNING per failure type so a cap=500 pathological response can't
+    saturate the log sink.
+    """
+    out: list[dict] = []
+    dropped_missing: list[str] = []
+    dropped_vocab: list[str] = []
+    for row in df.to_dict(orient="records"):
+        code = _clean_str(row.get("concept_code"))
+        vocab = (
+            _clean_str(row.get("_vocabulary_label"))
+            or OMOPHUB_VOCABULARIES.get(_clean_str(row.get("_query_vocabulary")), "")
+        )
+        if not code:
+            dropped_missing.append(
+                f"concept_id={row.get('concept_id')!r} name={_clean_str(row.get('concept_name'))!r}"
+            )
+            continue
+        if vocab not in _ALLOWED_VOCABULARIES:
+            dropped_vocab.append(
+                f"concept_id={row.get('concept_id')!r} vocab={vocab!r} name={_clean_str(row.get('concept_name'))!r}"
+            )
+            continue
+        out.append({
+            "code": code,
+            "term": _clean_str(row.get("concept_name")),
+            "vocabulary": vocab,
             "source": "OMOPHub",
-            "domain": row.get("domain_id", "Unknown"),
+            "domain": _clean_str(row.get("domain_id")) or "Unknown",
             "similarity_score": None,
             "usage_frequency": None,
             "concept_id": _coerce_concept_id(row.get("concept_id")),
-        }
-        for row in df.to_dict(orient="records")
-    ]
+        })
+    if dropped_missing:
+        logger.warning(
+            "OMOPHub: dropped %d row(s) missing concept_code — %s",
+            len(dropped_missing), "; ".join(dropped_missing),
+        )
+    if dropped_vocab:
+        logger.warning(
+            "OMOPHub: dropped %d row(s) with non-clinical vocabulary — %s",
+            len(dropped_vocab), "; ".join(dropped_vocab),
+        )
+    return out
