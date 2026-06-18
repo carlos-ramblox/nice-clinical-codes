@@ -30,10 +30,10 @@ SESSION_SECRET = os.getenv("SESSION_SECRET", "dev-only-change-me")
 
 # Pipeline
 EMBEDDING_MODEL = os.getenv("EMBEDDING_MODEL", "NeuML/pubmedbert-base-embeddings")
-LLM_MODEL = os.getenv("LLM_MODEL", "claude-sonnet-4-20250514")
+LLM_MODEL = os.getenv("LLM_MODEL", "claude-sonnet-4-6")
 LLM_SCORING_MODEL = os.getenv("LLM_SCORING_MODEL", "claude-haiku-4-5-20251001")
 RETRIEVAL_TOP_K = int(os.getenv("RETRIEVAL_TOP_K", "50"))
-MAX_CANDIDATES = int(os.getenv("MAX_CANDIDATES", "100"))
+MAX_CANDIDATES = int(os.getenv("MAX_CANDIDATES", "500"))
 DRUG_VOCAB_QUOTA = int(os.getenv("DRUG_VOCAB_QUOTA", "15"))
 EMIT_CAP_DIAGNOSTICS = os.getenv("EMIT_CAP_DIAGNOSTICS", "0") == "1"
 

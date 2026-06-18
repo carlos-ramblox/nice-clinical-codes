@@ -110,7 +110,7 @@ async def main() -> int:
     print(f"  mean gold in pre-cap pool:     {baseline['mean_gold_in_pre_cap_pool']:.1f} / {len(gold)}")
     print(f"  mean gold in final output:     {baseline['mean_gold_in_final_output']:.1f}")
 
-    print(f"\nRunning expanded query (1 shot, cap=500 bare):")
+    print("\nRunning expanded query (1 shot, cap=500 bare):")
     print(f"  {EXPANDED_QUERY!r}")
     expanded = await _run_expanded(gold)
     print(f"  pre-cap pool size:             {expanded['pre_cap_size']}")
@@ -123,7 +123,7 @@ async def main() -> int:
 
     delta_pre = expanded["gold_in_pre_cap"] - baseline["mean_gold_in_pre_cap_pool"]
     delta_final = expanded["gold_in_final_output"] - baseline["mean_gold_in_final_output"]
-    print(f"\nDelta vs baseline:")
+    print("\nDelta vs baseline:")
     print(f"  gold lift in pre-cap pool:     {delta_pre:+.1f}")
     print(f"  gold lift in final output:     {delta_final:+.1f}")
 

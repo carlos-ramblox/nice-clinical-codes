@@ -104,7 +104,7 @@ The pipeline aims for the same query at time T to yield the same candidate codel
 **Deterministic by construction:**
 
 - **Both LLM stages run at `temperature=0`:** query parsing with Claude Sonnet 4 (`backend/app/graph/nodes/query_parser.py`) and per-code scoring with Claude Haiku 4.5 (`backend/app/graph/nodes/llm_reasoning.py`). Candidates are sorted by `(vocabulary, code)` before batching (`llm_reasoning.py:158`), so identical input yields identical prompt batches across runs.
-- **Model identifiers are pinned** to date-stamped IDs in `backend/app/config.py`: `claude-sonnet-4-20250514` for query parsing and `claude-haiku-4-5-20251001` for per-code scoring. Floating aliases such as "latest" are not used.
+- **Model identifiers are pinned** to date-stamped IDs in `backend/app/config.py`: `claude-sonnet-4-6` for query parsing and `claude-haiku-4-5-20251001` for per-code scoring. Floating aliases such as "latest" are not used.
 - **File-based sources are versioned snapshots:** QOF Business Rules (`Business_Rules_Combined_Change_Log_QOF+2024-25_v49.1.xlsm`), OPCS-4 (`OPCS411 CodesAndTitles Nov 2025 V1.0.xml`) and the OpenCodelists CSVs committed alongside the code under `data/raw/opencodelists/`.
 - **Embedding model is pinned** to `NeuML/pubmedbert-base-embeddings`, and ChromaDB is rebuilt from the versioned sources above during the Docker build (`backend/Dockerfile`, `ingest` stage) rather than pulled from a remote artefact.
 - **Approved codelists carry a SHA-256 digest** computed over the final per-code human decisions, alongside an audit log of the query, per-code AI decision / confidence / rationale, reviewer overrides and comments, reviewer identity and timestamps (`backend/app/db/hitl_store.py`). Together these support post-hoc reconstruction of any approved artefact.
@@ -215,7 +215,7 @@ The Docker build runs data ingestion automatically, no manual step needed. SQLit
 | `CHROMA_COLLECTION_NAME` | ChromaDB collection name | No (default: clinical_codes) |
 | `DATABASE_URL` | SQLite database path | No (default: sqlite:///./data/codes.db) |
 | `EMBEDDING_MODEL` | Sentence transformer model | No (default: NeuML/pubmedbert-base-embeddings) |
-| `LLM_MODEL` | Claude model ID for query parsing | No (default: claude-sonnet-4-20250514) |
+| `LLM_MODEL` | Claude model ID for query parsing | No (default: claude-sonnet-4-6) |
 | `LLM_SCORING_MODEL` | Claude model ID for per-code scoring | No (default: claude-haiku-4-5-20251001) |
 | `RETRIEVAL_TOP_K` | Max results per retrieval source | No (default: 50) |
 | `MAX_CANDIDATES` | Cap on candidates entering the merger | No (default: 100) |
