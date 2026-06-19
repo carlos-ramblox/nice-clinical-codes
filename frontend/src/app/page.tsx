@@ -11,6 +11,7 @@ import {
   discoverPhenotypes,
   disambiguateQuery,
   getPublicCount,
+  DEFAULT_SORT_MODE,
 } from "@/lib/api";
 import type {
   CodeResult,
@@ -19,7 +20,10 @@ import type {
   DisambiguationEntry,
   AdoptedPhenotype,
   OhdsiExport,
+  SortMode,
 } from "@/lib/api";
+import { sortResults } from "@/lib/sortResults";
+import { SortBy } from "./SortBy";
 import { DmdLevelBadge } from "@/lib/dmd";
 import { useUser } from "@/lib/useUser";
 import { downloadBlob, slugify } from "@/lib/download";
@@ -416,6 +420,7 @@ export default function Home() {
   const [draftName, setDraftName] = useState("");
   const [page, setPage] = useState(1);
   const [decisionFilter, setDecisionFilter] = useState("all");
+  const [sortMode, setSortMode] = useState<SortMode>(DEFAULT_SORT_MODE);
 
   const { user } = useUser();
   const router = useRouter();
@@ -577,6 +582,9 @@ export default function Home() {
     setSelectedCode(null);
     setPage(1);
     setDecisionFilter("all");
+    setSortMode(DEFAULT_SORT_MODE);
+    const sp = new URLSearchParams(window.location.search);
+    if (sp.has("sort")) router.replace(window.location.pathname, { scroll: false });
     setOhdsiExport(null);
     setOhdsiCopied(false);
 
@@ -667,8 +675,18 @@ export default function Home() {
     return results.filter((r) => r.decision === decisionFilter && !isUmlsSuggestion(r));
   }, [results, decisionFilter]);
 
-  const totalPages = Math.ceil(filteredResults.length / PAGE_SIZE);
-  const pagedResults = filteredResults.slice((page - 1) * PAGE_SIZE, page * PAGE_SIZE);
+  const sortedResults = useMemo(
+    () =>
+      sortResults(
+        filteredResults,
+        sortMode,
+        (response?.conditions_parsed ?? []) as { coding_systems?: string[] }[],
+      ),
+    [filteredResults, sortMode, response],
+  );
+
+  const totalPages = Math.ceil(sortedResults.length / PAGE_SIZE);
+  const pagedResults = sortedResults.slice((page - 1) * PAGE_SIZE, page * PAGE_SIZE);
 
   const decisionCounts = useMemo(() => {
     if (!results) return { all: 0, include: 0, exclude: 0, uncertain: 0 };
@@ -685,7 +703,7 @@ export default function Home() {
   }, [results]);
 
   // reset page when filter changes
-  useEffect(() => { setPage(1); }, [decisionFilter]);
+  useEffect(() => { setPage(1); }, [decisionFilter, sortMode]);
 
   return (
     <div className="max-w-7xl mx-auto px-6 py-8">
@@ -854,6 +872,12 @@ export default function Home() {
                   <span className="text-gray-400">{response.elapsed_seconds}s</span>
                 )}
               </div>
+            </div>
+            <div className="px-5 py-3 border-b border-gray-200">
+              <p className="text-xs text-gray-500 mb-2">
+                Sort affects display order only — the codelist-generation cap is applied before sorting.
+              </p>
+              <SortBy value={sortMode} onChange={setSortMode} />
             </div>
             <div className="overflow-x-auto">
               <table className="w-full text-sm">
