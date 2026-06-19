@@ -39,6 +39,18 @@ export interface CodeResult {
   dmd_level: DmdLevel | null;
 }
 
+// T30 — display sort for the live search page; not the codelist-review SortMode.
+export type SortMode = "default" | "vocabulary" | "usage" | "confidence";
+
+export const SORT_MODES: { value: SortMode; label: string }[] = [
+  { value: "default",    label: "Default" },
+  { value: "vocabulary", label: "Vocabulary" },
+  { value: "usage",      label: "Usage" },
+  { value: "confidence", label: "Confidence" },
+];
+
+export const DEFAULT_SORT_MODE: SortMode = "default";
+
 // T37 disambiguation. Hand-mirrored from backend DisambiguationEntry in
 // routes.py — keep in sync (no codegen).
 export type DisambiguationReason =
