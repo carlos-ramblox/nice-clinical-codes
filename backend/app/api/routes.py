@@ -162,6 +162,19 @@ class DisambiguationEntry(BaseModel):
     detected_language: str = "en"
 
 
+class ComorbiditySuggestion(BaseModel):
+    """One suggested comorbidity surfaced after the code list is assembled
+    (issue #28). Mirrors the ``ComorbidityHint`` TypedDict the
+    ``comorbidity_suggester`` node emits. Informational only — clearly
+    labelled in the UI as a *suggestion*, distinct from the scored codes.
+    """
+    condition_name: str
+    rationale: str
+    confidence: float
+    suggested_by: list[str]
+    cui: str | None = None
+
+
 class SearchResponse(BaseModel):
     search_id: str
     query: str
@@ -172,6 +185,7 @@ class SearchResponse(BaseModel):
     elapsed_seconds: float
     include_descendants: bool = False
     disambiguation: list[DisambiguationEntry] | None = None
+    comorbidity_suggestions: list[ComorbiditySuggestion] | None = None
 
 
 # Endpoints
@@ -260,6 +274,16 @@ async def search_codes(
         except Exception:
             logger.warning("Dropping malformed disambiguation entry: %r", d)
 
+    # Comorbidity suggestions are informational (issue #28) and, like
+    # disambiguation, must never sink a response that already has scored
+    # codes: drop a malformed hint rather than 500.
+    comorbidity_suggestions = []
+    for s in result.get("comorbidity_suggestions", []):
+        try:
+            comorbidity_suggestions.append(ComorbiditySuggestion(**s))
+        except Exception:
+            logger.warning("Dropping malformed comorbidity suggestion: %r", s)
+
     return SearchResponse(
         search_id=search_id,
         query=request.query,
@@ -287,6 +311,7 @@ async def search_codes(
         elapsed_seconds=elapsed,
         include_descendants=resolved_include_descendants,
         disambiguation=disambiguation or None,
+        comorbidity_suggestions=comorbidity_suggestions or None,
     )
 
 
