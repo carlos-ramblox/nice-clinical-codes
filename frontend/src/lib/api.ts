@@ -67,6 +67,16 @@ export interface DisambiguationEntry {
   detected_language: string;
 }
 
+// Issue #28 comorbidity suggester. Hand-mirrored from backend
+// ComorbiditySuggestion in routes.py — keep in sync (no codegen).
+export interface ComorbiditySuggestion {
+  condition_name: string;
+  rationale: string;
+  confidence: number;
+  suggested_by: string[];
+  cui?: string | null;
+}
+
 export interface SearchResponse {
   search_id: string;
   query: string;
@@ -77,6 +87,7 @@ export interface SearchResponse {
   elapsed_seconds: number;
   include_descendants: boolean;
   disambiguation?: DisambiguationEntry[] | null;
+  comorbidity_suggestions?: ComorbiditySuggestion[] | null;
 }
 
 export interface SearchOptions {

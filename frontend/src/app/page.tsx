@@ -1105,6 +1105,58 @@ export default function Home() {
         </div>
       )}
 
+      {/* Suggested comorbidities (#28) — informational, below the code
+          list, visually distinct (amber accent) so it never reads as part
+          of the returned codelist. Display-only; the "search this
+          condition" action is a follow-on. Null/empty until the LLM source
+          lands, so this renders nothing for now. */}
+      {results && (response?.comorbidity_suggestions?.length ?? 0) > 0 && (
+        <section
+          aria-label="Suggested comorbidities"
+          className="max-w-5xl mx-auto mt-6 border border-amber-200 bg-amber-50/40"
+        >
+          <div className="px-4 py-2.5 border-b border-amber-200 flex items-center gap-2">
+            <h3 className="font-[family-name:var(--font-lora)] text-sm font-semibold text-[#00436C]">
+              Suggested comorbidities
+            </h3>
+            <span className="inline-flex items-center px-1.5 py-0.5 rounded text-[10px] font-medium bg-amber-100 text-amber-800 border border-amber-200">
+              Suggestion
+            </span>
+            <p className="text-[11px] text-gray-500 ml-auto">
+              Clinically related conditions to consider — not part of the codelist above.
+            </p>
+          </div>
+          <ul className="divide-y divide-amber-100">
+            {response!.comorbidity_suggestions!.map((s) => (
+              <li key={s.cui ?? s.condition_name} className="px-4 py-3">
+                <div className="flex items-center justify-between gap-3 flex-wrap">
+                  <span className="text-sm font-medium text-gray-800">{s.condition_name}</span>
+                  <div className="flex items-center gap-1.5">
+                    {s.suggested_by.map((src) => (
+                      <span
+                        key={src}
+                        className="inline-flex items-center px-1.5 py-0.5 rounded text-[10px] font-medium bg-white text-amber-800 border border-amber-200"
+                        title={`Source: ${src}`}
+                      >
+                        {src}
+                      </span>
+                    ))}
+                    <span className="text-[11px] text-gray-500 tabular-nums" title="Suggestion confidence">
+                      {Math.round(s.confidence * 100)}%
+                    </span>
+                  </div>
+                </div>
+                {s.rationale && (
+                  <p className="mt-1 text-xs text-gray-600 italic" title={s.rationale}>
+                    {s.rationale}
+                  </p>
+                )}
+              </li>
+            ))}
+          </ul>
+        </section>
+      )}
+
       {/* No results */}
       {results && results.length === 0 && (
         <div className="text-center py-16 text-gray-400 text-sm">
