@@ -162,6 +162,15 @@ class DisambiguationEntry(BaseModel):
     detected_language: str = "en"
 
 
+class ComorbiditySuggestion(BaseModel):
+    # mirrors ComorbidityHint in state.py; keep in sync (no codegen)
+    condition_name: str = Field(min_length=1, max_length=200)
+    rationale: str = Field(max_length=500)
+    confidence: float = Field(ge=0.0, le=1.0)
+    suggested_by: list[str]
+    cui: str | None = None
+
+
 class SearchResponse(BaseModel):
     search_id: str
     query: str
@@ -172,6 +181,7 @@ class SearchResponse(BaseModel):
     elapsed_seconds: float
     include_descendants: bool = False
     disambiguation: list[DisambiguationEntry] | None = None
+    comorbidity_suggestions: list[ComorbiditySuggestion] | None = None
 
 
 # Endpoints
@@ -260,6 +270,14 @@ async def search_codes(
         except Exception:
             logger.warning("Dropping malformed disambiguation entry: %r", d)
 
+    # informational: drop a malformed hint rather than 500
+    comorbidity_suggestions = []
+    for s in result.get("comorbidity_suggestions", []):
+        try:
+            comorbidity_suggestions.append(ComorbiditySuggestion(**s))
+        except Exception:
+            logger.warning("Dropping malformed comorbidity suggestion: %r", s)
+
     return SearchResponse(
         search_id=search_id,
         query=request.query,
@@ -287,6 +305,7 @@ async def search_codes(
         elapsed_seconds=elapsed,
         include_descendants=resolved_include_descendants,
         disambiguation=disambiguation or None,
+        comorbidity_suggestions=comorbidity_suggestions or None,
     )
 
 

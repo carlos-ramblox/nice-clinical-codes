@@ -107,6 +107,15 @@ class ProvenanceRecord(TypedDict):
     enrichment_path: str | None  # e.g. "UMLS:RN (narrower) from CUI:C0011849"
 
 
+class ComorbidityHint(TypedDict):
+    # never written to export; emitted only by the comorbidity_suggester terminal node
+    condition_name: str
+    rationale: str
+    confidence: float
+    suggested_by: list[str]  # list not str: hints agreed by >1 source record each provider
+    cui: NotRequired[str]  # dedup key when available; absent in LLM-only path
+
+
 class PipelineState(TypedDict):
     # Input
     raw_query: str
@@ -148,6 +157,8 @@ class PipelineState(TypedDict):
     final_code_list: list[ScoredCode]
     provenance_trail: list[ProvenanceRecord]
     summary: dict  # {total, included, excluded, uncertain, sources_queried}
+    # additive — nothing upstream reads it
+    comorbidity_suggestions: NotRequired[list[ComorbidityHint]]
 
     # Metadata
     sources_queried: Annotated[list[str], add]
