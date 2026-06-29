@@ -54,6 +54,38 @@ VOCABULARY_DISPLAY_LABELS = {
     **OMOPHUB_VOCABULARIES,
     "DMD": "dm+d",
     "BNF": "BNF",
+    # OLS4 ontology vocabularies. vocabulary is derived from the obo_id
+    # prefix, so OLS4's merged `efo` graph surfaces several of these.
+    "MONDO": "MONDO",
+    "Orphanet": "Orphanet",
+    "HP": "HPO",
+    "EFO": "EFO",
+    "OAE": "OAE",
+}
+
+# OLS4 — EBI Ontology Lookup Service v4.
+# Stage A: `ols_retriever` queries these for phenotype/adverse-event recall.
+OLS4_BASE_URL = os.getenv("OLS4_BASE_URL", "https://www.ebi.ac.uk/ols4/api")
+OLS4_TIMEOUT = int(os.getenv("OLS4_TIMEOUT", "15"))
+
+# Stage B: `xref_enricher` maps OLS4 ontology concepts to SNOMED CT via each
+# concept's obo_xref. SNOMED only — ICD-10 stays with the existing retrievers
+# + hierarchy expander; UMLS CUI->code crosswalk is a separate ticket.
+OLS4_XREF_ENRICH = os.getenv("OLS4_XREF_ENRICH", "yes").strip().lower() == "yes"
+# predicate allow-list, lower-cased. MONDO/HP use equivalentto/exactmatch;
+# ORDO/Orphanet use "e" (Exact). ntbt/btnt (narrower/broader) excluded by default.
+OLS4_XREF_PREDICATES = {
+    p.strip().lower()
+    for p in os.getenv("OLS4_XREF_PREDICATES", "equivalentto,exactmatch,e").split(",")
+}
+OLS4_XREF_MAX_CONCEPTS = max(0, int(os.getenv("OLS4_XREF_MAX_CONCEPTS", "40")))  # cap term-detail calls (clamped >=0; a negative slice would invert the cap)
+# clamped >=1: ThreadPoolExecutor rejects max_workers<=0, and the node must
+# degrade (disable via OLS4_XREF_ENRICH), never crash, on a misconfigured value.
+OLS4_XREF_WORKERS = max(1, int(os.getenv("OLS4_XREF_WORKERS", "10")))   # parallel lookups
+# xref database -> canonical vocabulary (must match OMOPHUB_VOCABULARIES values
+# so xref codes dedup-merge with retriever-sourced ones).
+OLS4_XREF_VOCAB_MAP = {
+    "SCTID": "SNOMED CT",
 }
 
 # HDR UK Phenotype Library -- anonymous public read, no API key required.

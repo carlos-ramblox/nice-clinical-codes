@@ -14,7 +14,9 @@ from app.graph.nodes.qof_retriever import retrieve_from_qof
 from app.graph.nodes.opencodelists_retriever import retrieve_from_opencodelists
 from app.graph.nodes.dmd_retriever import retrieve_from_dmd
 from app.graph.nodes.bnf_retriever import retrieve_from_bnf
+from app.graph.nodes.ols_retriever import retrieve_from_ols
 from app.graph.nodes.result_merger import merge_and_dedup
+from app.graph.nodes.xref_enricher import enrich_with_xrefs
 from app.graph.nodes.concept_id_enricher import enrich_concept_ids
 from app.graph.nodes.usage_annotator import annotate_usage
 from app.graph.nodes.umls_enrichment_node import enrich_with_umls
@@ -87,6 +89,7 @@ _RETRIEVERS: dict[str, tuple[str, Callable]] = {
     "opencodelists": ("opencodelists_retriever", retrieve_from_opencodelists),
     "dmd":           ("dmd_retriever",           retrieve_from_dmd),
     "bnf":           ("bnf_retriever",           retrieve_from_bnf),
+    "ols":           ("ols_retriever",           retrieve_from_ols),
 }
 
 # Public alias for callers that only need the set of retriever names
@@ -124,6 +127,7 @@ def build_graph(disabled_retrievers: set[str] | None = None) -> StateGraph:
     # always-present nodes
     graph.add_node("query_parser", query_parser_node)
     graph.add_node("result_merger", merge_and_dedup)
+    graph.add_node("xref_enricher", enrich_with_xrefs)
     graph.add_node("concept_id_enricher", enrich_concept_ids)
     graph.add_node("usage_annotator", annotate_usage)
     graph.add_node("umls_enrichment", enrich_with_umls)
@@ -147,9 +151,11 @@ def build_graph(disabled_retrievers: set[str] | None = None) -> StateGraph:
         graph.add_edge("query_parser", node_id)
         graph.add_edge(node_id, "result_merger")
 
-    # sequential: merger → concept_id enricher → usage annotator →
-    # UMLS enrichment → reasoning → output → comorbidity suggester → END
-    graph.add_edge("result_merger", "concept_id_enricher")
+    # sequential: merger → xref enricher → concept_id enricher → usage
+    # annotator → UMLS enrichment → reasoning → output → comorbidity
+    # suggester → END
+    graph.add_edge("result_merger", "xref_enricher")
+    graph.add_edge("xref_enricher", "concept_id_enricher")
     graph.add_edge("concept_id_enricher", "usage_annotator")
     graph.add_edge("usage_annotator", "umls_enrichment")
     graph.add_edge("umls_enrichment", "llm_reasoning")
