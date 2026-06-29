@@ -96,6 +96,12 @@ def merge_and_dedup(state: dict) -> dict:
                 "sources": [c["source"]],
                 "source_count": 1,
             }
+            # Carry the OLS4 concept IRI through the merge so xref_enricher
+            # (issue #25) can fetch term-detail. Only ontology concepts set
+            # it; omit otherwise to leave the dict shape unchanged for all
+            # existing codes.
+            if c.get("iri"):
+                merged[key]["iri"] = c["iri"]
         else:
             existing = merged[key]
             # add source if not already tracked
@@ -122,6 +128,11 @@ def merge_and_dedup(state: dict) -> dict:
 
             if existing.get("dmd_level") is None and c.get("dmd_level") is not None:
                 existing["dmd_level"] = c["dmd_level"]
+
+            # upgrade the OLS4 IRI if a later (ontology) source supplies one
+            # and the first occurrence didn't — xref_enricher needs it.
+            if not existing.get("iri") and c.get("iri"):
+                existing["iri"] = c["iri"]
 
             # prefer longer/more descriptive term
             if len(c.get("term", "")) > len(existing.get("term", "")):

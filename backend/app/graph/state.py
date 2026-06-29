@@ -64,6 +64,9 @@ class RetrievedCode(TypedDict):
     # change the typed state shape again.
     rank: int
     dmd_level: DmdLevel | None
+    # OLS4 concept IRI. Set only by ols_retriever; lets xref_enricher
+    # fetch term-detail without rebuilding the URL from obo_id.
+    iri: NotRequired[str]
 
 
 class EnrichedCode(TypedDict):
@@ -81,6 +84,8 @@ class EnrichedCode(TypedDict):
     usage_setting: str | None
     concept_id: int | None
     dmd_level: DmdLevel | None
+    # OLS4 concept IRI, carried through the merge for xref_enricher.
+    iri: NotRequired[str]
 
 
 class ScoredCode(TypedDict):
