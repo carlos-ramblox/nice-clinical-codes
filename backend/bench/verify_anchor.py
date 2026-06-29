@@ -1,22 +1,11 @@
-"""Anchor-verification harness for the comorbidity suggester (issue #28).
+"""Anchor-verification harness for the comorbidity suggester.
 
-Runs a real query through ``run_pipeline`` and reports whether the
-skeleton's anchor extraction holds up against live pipeline state — the
-one genuinely uncertain thing before the LLM source is wired in
-(Phase-1 step 6). ``ScoredCode`` carries no back-link to the condition
-that produced it, so the skeleton anchors on "primary condition names +
-*all* included terms". This script lets you judge whether that compromise
-yields a clean, on-topic anchor or whether code->condition attribution is
-needed first.
+Usage (from ``backend/``)::
 
-Usage (from the ``backend/`` directory)::
+    python bench/verify_anchor.py
+    python bench/verify_anchor.py "patients with heart failure and type 2 diabetes"
 
-    python -m scripts.verify_anchor
-    python -m scripts.verify_anchor "patients with heart failure and type 2 diabetes"
-
-Requires ``ANTHROPIC_API_KEY`` (parser + scorer LLM calls) and the
-retriever backends reachable (Chroma, OMOPHub, etc. — see the repo-root
-``docker-compose.yml``). A ``backend/.env`` is auto-loaded by ``config``.
+Requires ANTHROPIC_API_KEY and retriever backends reachable (see repo-root docker-compose.yml).
 """
 
 import asyncio
@@ -25,11 +14,8 @@ import os
 import sys
 from pathlib import Path
 
-# Allow `python scripts/verify_anchor.py ...` as well as `-m scripts...`:
-# ensure the backend root (which holds the `app` package) is importable.
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
-# INFO so the node's "Comorbidity anchor: ..." line actually prints.
 logging.basicConfig(
     level=logging.INFO,
     format="%(asctime)s %(levelname)s %(name)s: %(message)s",
@@ -38,8 +24,7 @@ logging.basicConfig(
 from app.graph.graph import run_pipeline  # noqa: E402
 from app.graph.nodes.comorbidity_suggester import _extract_anchor  # noqa: E402
 
-# A multi-condition query so the primary/comorbidity split is actually
-# exercised — anchoring must keep the primary and drop the comorbidity.
+# multi-condition query exercises the primary/comorbidity split
 DEFAULT_QUERY = "patients with heart failure and type 2 diabetes"
 
 
@@ -77,14 +62,13 @@ async def main(query: str) -> None:
     print(f"  total final codes:   {len(final)}")
     print(f"  included codes:      {len(included)}")
     print(f"  primary conditions:  {len(anchor['primary_names'])}")
-    print(f"  comorbidity_suggestions (skeleton -> expect []): "
-          f"{result.get('comorbidity_suggestions')}")
+    print(f"  comorbidity_suggestions: {result.get('comorbidity_suggestions')}")
 
     _rule("judge")
     print("  1. Is the primary/comorbidity split correct above?")
     print("  2. Does the anchor keep ONLY the primary condition name(s)?")
     print("  3. Are the included_terms tight + on-topic, or noisy/too broad?")
-    print("     -> tight  : simple anchor holds, proceed to API step (step 4).")
+    print("     -> tight  : simple anchor holds, proceed to API step.")
     print("     -> broad  : refine code->condition attribution before the LLM step.")
 
 

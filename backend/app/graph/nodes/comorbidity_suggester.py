@@ -1,18 +1,3 @@
-"""Comorbidity suggester — terminal node (issue #28).
-
-After the code list is assembled, suggest clinically related comorbidities
-from the *included* codes so an analyst can broaden their search without
-knowing in advance what to look for. Built as a thin orchestrator over
-per-source collectors (LLM clinical reasoning, MedGen artifact, live
-PubTator) so additional sources slot in without a refactor (plan D3).
-
-Phase 1: the LLM source is live — Claude suggests comorbidities of the
-PRIMARY condition(s), merged/ranked/deduped and capped. The MedGen
-(Tier 1) and live-PubTator (Tier 2) collectors are still stubs that
-return ``[]`` until Phases 2/3. The node always returns
-``comorbidity_suggestions`` and never raises into the graph (plan D11).
-"""
-
 import logging
 
 from pydantic import BaseModel, Field
@@ -23,12 +8,9 @@ from app.graph.state import ComorbidityHint, ParsedCondition, ScoredCode
 
 logger = logging.getLogger(__name__)
 
-# Cap on the number of suggestions surfaced (plan: cap 10, tunable).
 MAX_SUGGESTIONS = 10
 
-# Only feed this many included terms to the LLM as secondary context — they
-# are vocabulary colour, not the anchor, so a long list adds prompt bloat
-# without changing the target condition.
+# cap: long term lists add prompt bloat without changing the anchor condition
 _MAX_CONTEXT_TERMS = 40
 
 
@@ -55,17 +37,18 @@ naming the clinical link.
 there are none, return an empty list."""
 
 
+def _xml_escape(s: str) -> str:
+    return s.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
+
+
 class _LlmComorbidity(BaseModel):
-    """One LLM-proposed comorbidity. Mirrors the LLM-visible slice of
-    ``ComorbidityHint`` — ``suggested_by`` is stamped in code, not asked of
-    the model."""
-    condition_name: str = Field(description="Canonical clinical condition name, never a code")
+    # suggested_by is stamped in code after the call, not asked of the model
+    condition_name: str = Field(min_length=1, description="Canonical clinical condition name, never a code")
     rationale: str = Field(description="One sentence naming the clinical link to the primary condition")
-    confidence: float = Field(description="0.0-1.0 confidence this is a relevant comorbidity")
+    confidence: float = Field(ge=0.0, le=1.0, description="0.0-1.0 confidence this is a relevant comorbidity")
 
 
 class ComorbiditySuggestions(BaseModel):
-    """Structured-output wrapper for the LLM call."""
     suggestions: list[_LlmComorbidity] = Field(description="Suggested comorbidities of the primary condition(s)")
 
 
@@ -73,21 +56,7 @@ def _extract_anchor(
     final_code_list: list[ScoredCode],
     parsed_conditions: list[ParsedCondition],
 ) -> dict:
-    """Build the anchor set the collectors reason from.
-
-    Anchors on the PRIMARY conditions only — never on codes that were
-    themselves comorbidity inclusions — so suggestions don't drift into
-    comorbidities-of-comorbidities (plan D5).
-
-    ``ScoredCode`` carries no link back to the condition that produced it,
-    so an included code cannot be attributed to a specific primary
-    condition. For P1 the anchor is therefore the primary condition *names*
-    (the clean signal — verified 2026-06-28) plus the *terms* of every
-    included code as secondary context. Anchor verification confirmed
-    ``included_terms`` can carry a comorbidity-derived code, so the LLM
-    prompt targets ``primary_names`` and treats ``included_terms`` as
-    background only.
-    """
+    # primary names only — avoids comorbidities-of-comorbidities drift
     primary_names = [
         c["name"]
         for c in parsed_conditions
@@ -101,15 +70,7 @@ def _extract_anchor(
     return {"primary_names": primary_names, "included_terms": included_terms}
 
 
-# --- per-source collectors ---
-
 async def _llm_suggestions(anchor: dict) -> list[ComorbidityHint]:
-    """LLM clinical-reasoning source (live since Phase 1 step 6).
-
-    Targets the primary condition(s); the included terms ride along only as
-    background context. Degrades to ``[]`` on any failure (missing key,
-    API error) so a suggestion problem never sinks the search.
-    """
     primary_names = anchor.get("primary_names", [])
     if not primary_names:
         logger.debug("Comorbidity LLM: no primary conditions to anchor on; skipping")
@@ -119,9 +80,11 @@ async def _llm_suggestions(anchor: dict) -> list[ComorbidityHint]:
         return []
 
     context_terms = anchor.get("included_terms", [])[:_MAX_CONTEXT_TERMS]
+    primary_block = "\n".join(_xml_escape(n) for n in primary_names)
+    context_block = "\n".join(_xml_escape(t) for t in context_terms)
     user_message = (
-        f"<primary_conditions>\n{chr(10).join(primary_names)}\n</primary_conditions>\n\n"
-        f"<codelist_terms_context>\n{chr(10).join(context_terms)}\n</codelist_terms_context>\n\n"
+        f"<primary_conditions>\n{primary_block}\n</primary_conditions>\n\n"
+        f"<codelist_terms_context>\n{context_block}\n</codelist_terms_context>\n\n"
         f"Suggest up to {MAX_SUGGESTIONS} conditions commonly comorbid with the "
         f"primary condition(s) above."
     )
@@ -153,26 +116,12 @@ async def _llm_suggestions(anchor: dict) -> list[ComorbidityHint]:
     ]
 
 
-def _medgen_artifact_suggestions(anchor: dict) -> list[ComorbidityHint]:
-    """Tier 1 MedGen artifact lookup. Stub until Phase 2."""
-    return []
-
-
-def _pubtator_live_suggestions(anchor: dict) -> list[ComorbidityHint]:
-    """Tier 2 live PubTator3 enrichment. Stub until Phase 3."""
-    return []
-
-
-# --- merge / rank ---
-
 def _normalize(name: str) -> str:
-    """Normalized dedup key for a condition name."""
     return " ".join(name.lower().split())
 
 
 def _tier(hint: ComorbidityHint) -> int:
-    """Ranking tier (lower = higher priority): agreed-by-both → MedGen-only
-    → LLM-only. Avoids a cross-source confidence-currency mismatch (plan)."""
+    # lower = higher priority; avoids direct LLM-vs-MedGen confidence comparison
     by = set(hint.get("suggested_by", []))
     if "LLM" in by and "MedGen" in by:
         return 0
@@ -185,17 +134,6 @@ def _merge_and_rank(
     per_source: list[list[ComorbidityHint]],
     parsed_conditions: list[ParsedCondition],
 ) -> list[ComorbidityHint]:
-    """Dedup across sources + against parsed conditions, tier-rank, cap.
-
-    - Dedup key: ``cui`` when present, else the normalized condition name.
-      A condition surfacing from >1 source collapses to one row whose
-      ``suggested_by`` is the union (the D8 ``["LLM","MedGen"]`` case),
-      keeping the highest confidence seen.
-    - Drops anything already in ``parsed_conditions`` (don't re-suggest what
-      the analyst already searched).
-    - Tier-rank, then by confidence within tier; stable sort; cap.
-    """
-    # Names the analyst already searched — never re-suggest these.
     parsed_names = {
         _normalize(c["name"]) for c in parsed_conditions if c.get("name")
     }
@@ -204,7 +142,7 @@ def _merge_and_rank(
     for source in per_source:
         for hint in source:
             name = hint.get("condition_name", "")
-            if not name:
+            if not name.strip():
                 continue
             norm = _normalize(name)
             if norm in parsed_names:
@@ -212,9 +150,8 @@ def _merge_and_rank(
             key = hint.get("cui") or norm
             existing = merged.get(key)
             if existing is None:
-                merged[key] = dict(hint)  # copy; we mutate suggested_by/confidence
+                merged[key] = dict(hint)
                 continue
-            # Same condition from another source: union provenance, keep best confidence.
             existing_by = list(existing.get("suggested_by", []))
             for src in hint.get("suggested_by", []):
                 if src not in existing_by:
@@ -232,20 +169,11 @@ def _merge_and_rank(
 
 
 async def suggest_comorbidities(state: dict) -> dict:
-    """LangGraph terminal node: emit comorbidity suggestions.
-
-    Always returns ``comorbidity_suggestions`` and never raises into the
-    pipeline — any failure is logged and degrades to an empty list so a
-    suggestion problem can't sink an otherwise-good search (plan D11).
-    Async because the LLM source is awaited (the graph drives the node via
-    ``ainvoke``, like the scoring node).
-    """
+    # never raises: a comorbidity failure must not sink an otherwise-good search
     final_code_list = state.get("final_code_list", [])
     parsed_conditions = state.get("parsed_conditions", [])
 
-    # No inclusions → nothing to suggest from (#28 acceptance criteria).
-    included = [c for c in final_code_list if c.get("decision") == "include"]
-    if not included:
+    if not any(c.get("decision") == "include" for c in final_code_list):
         return {"comorbidity_suggestions": []}
 
     try:
@@ -257,11 +185,7 @@ async def suggest_comorbidities(state: dict) -> dict:
             len(anchor["included_terms"]),
         )
 
-        per_source = [
-            await _llm_suggestions(anchor),
-            _medgen_artifact_suggestions(anchor),
-            _pubtator_live_suggestions(anchor),
-        ]
+        per_source = [await _llm_suggestions(anchor)]
         suggestions = _merge_and_rank(per_source, parsed_conditions)
     except Exception as exc:
         logger.error("Comorbidity suggester failed: %s", exc)

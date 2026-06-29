@@ -67,8 +67,7 @@ export interface DisambiguationEntry {
   detected_language: string;
 }
 
-// Issue #28 comorbidity suggester. Hand-mirrored from backend
-// ComorbiditySuggestion in routes.py — keep in sync (no codegen).
+// hand-mirrored from routes.py ComorbiditySuggestion; keep in sync (no codegen)
 export interface ComorbiditySuggestion {
   condition_name: string;
   rationale: string;

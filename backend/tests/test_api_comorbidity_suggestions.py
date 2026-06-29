@@ -1,7 +1,4 @@
-"""End-to-end (TestClient) check that /api/search surfaces the #28
-comorbidity_suggestions field additively. run_pipeline is mocked at the
-route boundary so the test stays offline (same pattern as
-test_api_search_disambiguation.py)."""
+"""End-to-end TestClient tests for the /api/search comorbidity_suggestions field."""
 from __future__ import annotations
 
 import os

@@ -1,19 +1,4 @@
-"""Phase-1 tests for the comorbidity_suggester node (issue #28).
-
-Covers the contract the node ships with the LLM source live:
-- anchor selection (primary-only; excludes excluded codes)
-- empty-inclusions short-circuit → []
-- LLM failure degrades to [] (never raises into the graph, plan D11)
-- LLM source maps to ComorbidityHint and stamps suggested_by=["LLM"]
-- determinism: temperature=0 + stable sort
-- merge/rank: dedup vs parsed_conditions, cross-source suggested_by
-  union, tier ordering (both > MedGen > LLM), cap 10
-
-The LLM is always mocked — no network, no key needed.
-
-Run from backend/:
-    pytest tests/test_comorbidity_suggester.py -v
-"""
+"""Unit tests for the comorbidity_suggester node. LLM always mocked — no network needed."""
 from __future__ import annotations
 
 import asyncio
@@ -59,9 +44,6 @@ def _hint(name: str, conf: float, by: list[str], cui: str | None = None) -> dict
 
 
 def _patch_llm(suggestions: list[dict] | None = None, *, raises: Exception | None = None):
-    """Patch ChatAnthropic in the node so the structured-output ainvoke
-    returns a result whose ``.suggestions`` are attribute-bearing objects
-    (the node reads ``s.condition_name`` etc.), or raises."""
     fake_struct = MagicMock()
     if raises is not None:
         fake_struct.ainvoke = AsyncMock(side_effect=raises)

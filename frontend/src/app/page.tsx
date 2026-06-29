@@ -1105,11 +1105,7 @@ export default function Home() {
         </div>
       )}
 
-      {/* Suggested comorbidities (#28) — informational, below the code
-          list, visually distinct (amber accent) so it never reads as part
-          of the returned codelist. Display-only; the "search this
-          condition" action is a follow-on. Null/empty until the LLM source
-          lands, so this renders nothing for now. */}
+      {/* amber accent: never reads as part of the returned codelist */}
       {results && (response?.comorbidity_suggestions?.length ?? 0) > 0 && (
         <section
           aria-label="Suggested comorbidities"

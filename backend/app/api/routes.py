@@ -163,14 +163,10 @@ class DisambiguationEntry(BaseModel):
 
 
 class ComorbiditySuggestion(BaseModel):
-    """One suggested comorbidity surfaced after the code list is assembled
-    (issue #28). Mirrors the ``ComorbidityHint`` TypedDict the
-    ``comorbidity_suggester`` node emits. Informational only — clearly
-    labelled in the UI as a *suggestion*, distinct from the scored codes.
-    """
-    condition_name: str
-    rationale: str
-    confidence: float
+    # mirrors ComorbidityHint in state.py; keep in sync (no codegen)
+    condition_name: str = Field(min_length=1, max_length=200)
+    rationale: str = Field(max_length=500)
+    confidence: float = Field(ge=0.0, le=1.0)
     suggested_by: list[str]
     cui: str | None = None
 
@@ -274,9 +270,7 @@ async def search_codes(
         except Exception:
             logger.warning("Dropping malformed disambiguation entry: %r", d)
 
-    # Comorbidity suggestions are informational (issue #28) and, like
-    # disambiguation, must never sink a response that already has scored
-    # codes: drop a malformed hint rather than 500.
+    # informational: drop a malformed hint rather than 500
     comorbidity_suggestions = []
     for s in result.get("comorbidity_suggestions", []):
         try:

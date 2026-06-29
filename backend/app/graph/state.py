@@ -108,20 +108,12 @@ class ProvenanceRecord(TypedDict):
 
 
 class ComorbidityHint(TypedDict):
-    # A suggested comorbidity surfaced after the code list is assembled
-    # (issue #28), produced by the comorbidity_suggester terminal node from
-    # the *included* codes. Never written to the export.
+    # never written to export; emitted only by the comorbidity_suggester terminal node
     condition_name: str
     rationale: str
     confidence: float
-    # All sources that surfaced this hint. A list (not str) so a hint that
-    # comes from more than one source records each on a single row, e.g.
-    # ["LLM"], ["MedGen"], ["LLM", "MedGen"], ["PubTator-live"].
-    suggested_by: list[str]
-    # Resolved CUI dedup key. NotRequired so the LLM-only P1 path (no CUI
-    # resolution yet — that arrives with the MedGen artifact in P2) and any
-    # name-only match stay byte-identical to the keyed shape.
-    cui: NotRequired[str]
+    suggested_by: list[str]  # list not str: hints agreed by >1 source record each provider
+    cui: NotRequired[str]  # dedup key when available; absent in LLM-only path
 
 
 class PipelineState(TypedDict):
@@ -165,11 +157,8 @@ class PipelineState(TypedDict):
     final_code_list: list[ScoredCode]
     provenance_trail: list[ProvenanceRecord]
     summary: dict  # {total, included, excluded, uncertain, sources_queried}
-    # Comorbidity suggestions (issue #28). Populated by the
-    # comorbidity_suggester terminal node from the included codes; empty
-    # when there are no inclusions or every source is disabled/failed.
-    # Additive — nothing upstream reads it.
-    comorbidity_suggestions: list[ComorbidityHint]
+    # additive — nothing upstream reads it
+    comorbidity_suggestions: NotRequired[list[ComorbidityHint]]
 
     # Metadata
     sources_queried: Annotated[list[str], add]
